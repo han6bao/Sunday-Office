@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Sunday Office sun mark (six rays) on deep navy -->
+  <rect width="64" height="64" rx="4" fill="#0f1e33"/>
+  <g fill="#c8a062">
+    <circle cx="32" cy="32" r="9"/>
+    <g opacity="0.95">
+      <rect x="30" y="9" width="4" height="12" rx="2"/>
+      <rect x="30" y="43" width="4" height="12" rx="2"/>
+      <rect x="9" y="30" width="12" height="4" rx="2"/>
+      <rect x="43" y="30" width="12" height="4" rx="2"/>
+      <rect x="13.3" y="13.3" width="12" height="4" rx="2" transform="rotate(45 19.3 15.3)"/>
+      <rect x="38.7" y="13.3" width="12" height="4" rx="2" transform="rotate(-45 44.7 15.3)"/>
+      <rect x="13.3" y="46.7" width="12" height="4" rx="2" transform="rotate(-45 19.3 48.7)"/>
+      <rect x="38.7" y="46.7" width="12" height="4" rx="2" transform="rotate(45 44.7 48.7)"/>
+    </g>
+  </g>
+</svg>
