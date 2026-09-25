@@ -94,7 +94,7 @@ export function Hero() {
         >
           <div className="so-hm-plate" aria-hidden="true">
             <img
-              src="/assets/work/office-contenders/c-08.jpg"
+              src="/assets/work/office-hero.jpg"
               alt=""
               loading="lazy"
               style={{
