@@ -293,7 +293,7 @@ function GreenGrillzPage() {
         {/* Links */}
         <div style={{ marginTop: 44 }}>
           <p className="so-micro" style={{ textAlign: "center" }}>THE PLAYERS</p>
-          <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "14px 30px", maxWidth: 640, margin: "0 auto" }}>
+          <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px 26px", maxWidth: 640, margin: "0 auto" }}>
             <a className="so-link-jump" href="https://www.instagram.com/maarcusadam/" target="_blank" rel="noreferrer">
               @MAARCUSADAM — THE JEWELER →
             </a>

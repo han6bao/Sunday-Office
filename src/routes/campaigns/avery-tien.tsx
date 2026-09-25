@@ -71,7 +71,7 @@ function AveryTienPage() {
         {/* Links */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro" style={{ textAlign: "center" }}>SEE HIS WORK</p>
-          <div className="mt-4" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "14px 30px", maxWidth: 640, margin: "0 auto" }}>
+          <div className="mt-4" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px 26px", maxWidth: 640, margin: "0 auto" }}>
             <a className="so-link-jump" href="https://www.instagram.com/averytien/" target="_blank" rel="noreferrer">
               INSTAGRAM — @AVERYTIEN →
             </a>

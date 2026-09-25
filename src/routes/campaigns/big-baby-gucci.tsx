@@ -97,7 +97,7 @@ function BigBabyGucciPage() {
             locked in. They saw the frames, reposted the post, kept it
             moving. Crew work.
           </p>
-          <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "14px 30px", maxWidth: 640, margin: "0 auto" }}>
+          <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px 26px", maxWidth: 640, margin: "0 auto" }}>
             <a className="so-link-jump" href="https://www.instagram.com/bettertemperatures/" target="_blank" rel="noreferrer">
               @BETTERTEMPERATURES →
             </a>
@@ -110,7 +110,7 @@ function BigBabyGucciPage() {
         {/* Links */}
         <div style={{ marginTop: 44 }}>
           <p className="so-micro" style={{ textAlign: "center" }}>KEEP UP WITH THE GUCCI</p>
-          <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", gap: "14px 30px", maxWidth: 640, margin: "0 auto" }}>
+          <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px 26px", maxWidth: 640, margin: "0 auto" }}>
             <a className="so-link-jump" href="https://open.spotify.com/artist/1ra8ujbJcZrV5aUjcfzFKs" target="_blank" rel="noreferrer">
               BIGBABYGUCCI — SPOTIFY →
             </a>
