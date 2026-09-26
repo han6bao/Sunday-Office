@@ -19,9 +19,11 @@ const PHOTOS = [
   { src: "/assets/campaigns/angie-tiara-beauty/at-11.jpg", cap: "the gold arch" },
 ];
 
-const SECTIONS = [
-  { label: "THE ROOMS — 6", range: [0, 6] as const },
-  { label: "IN THE SESSION — 3", range: [6, 9] as const },
+const HERO = "/assets/campaigns/angie-tiara-beauty/hero-lounge.png";
+
+const SECTIONS: { label: string; range: readonly [number, number]; hero?: boolean }[] = [
+  { label: "THE ROOMS — 6", range: [0, 6], hero: true },
+  { label: "IN THE SESSION — 3", range: [6, 9] },
 ];
 
 const PROCESS_STEPS = [
@@ -145,25 +147,77 @@ function AngieTiaraBeautyPage() {
               <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em" }}>
                 {sec.label}
               </p>
-              <div className="so-photo-grid mt-4">
-                {PHOTOS.slice(sec.range[0], sec.range[1]).map((ph, i) => {
-                  const idx = sec.range[0] + i;
-                  return (
-                    <button
-                      key={ph.src}
-                      className="so-photo-cell"
-                      type="button"
-                      onClick={() => setOpen(idx)}
-                      aria-label={ph.cap}
-                    >
-                      <img src={ph.src} alt={ph.cap} loading="lazy" />
-                      <span className="so-photo-cap">
-                        {String(idx + 1).padStart(2, "0")} · {ph.cap}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
+              {sec.hero ? (
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 14,
+                    alignItems: "flex-start",
+                    overflowX: "auto",
+                    paddingBottom: 10,
+                    marginTop: 16,
+                  }}
+                >
+                  {/* the hero frame — long and tall, everything else scrolls beside it */}
+                  <button
+                    className="so-photo-cell"
+                    type="button"
+                    onClick={() => setOpen(sec.range[0])}
+                    aria-label={PHOTOS[sec.range[0]].cap}
+                    style={{ flex: "0 0 auto", width: "min(330px, 70vw)", padding: 0, background: "none", border: 0, cursor: "pointer", textAlign: "left" }}
+                  >
+                    <img
+                      src={HERO}
+                      alt={PHOTOS[sec.range[0]].cap}
+                      loading="lazy"
+                      style={{ width: "100%", height: "auto", display: "block", borderRadius: 18 }}
+                    />
+                  </button>
+                  {PHOTOS.slice(sec.range[0] + 1, sec.range[1]).map((ph, i) => {
+                    const idx = sec.range[0] + 1 + i;
+                    return (
+                      <button
+                        key={ph.src}
+                        className="so-photo-cell"
+                        type="button"
+                        onClick={() => setOpen(idx)}
+                        aria-label={ph.cap}
+                        style={{ flex: "0 0 auto", width: "min(220px, 50vw)", padding: 0, background: "none", border: 0, cursor: "pointer", textAlign: "left" }}
+                      >
+                        <img
+                          src={ph.src}
+                          alt={ph.cap}
+                          loading="lazy"
+                          style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", display: "block", borderRadius: 14 }}
+                        />
+                        <span className="so-photo-cap">
+                          {String(idx + 1).padStart(2, "0")} · {ph.cap}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="so-photo-grid mt-4">
+                  {PHOTOS.slice(sec.range[0], sec.range[1]).map((ph, i) => {
+                    const idx = sec.range[0] + i;
+                    return (
+                      <button
+                        key={ph.src}
+                        className="so-photo-cell"
+                        type="button"
+                        onClick={() => setOpen(idx)}
+                        aria-label={ph.cap}
+                      >
+                        <img src={ph.src} alt={ph.cap} loading="lazy" />
+                        <span className="so-photo-cap">
+                          {String(idx + 1).padStart(2, "0")} · {ph.cap}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           ))}
         </div>
