@@ -94,7 +94,7 @@ export function Hero() {
         >
           <div className="so-hm-plate" aria-hidden="true">
             <img
-              src="/assets/work/office-hero.jpg"
+              src="/assets/work/hero-night-desk.jpg"
               alt=""
               loading="lazy"
               style={{
@@ -103,7 +103,7 @@ export function Hero() {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                objectPosition: "center top",
+                objectPosition: "center 38%",
                 display: "block",
               }}
             />
