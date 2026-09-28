@@ -66,19 +66,57 @@ function SoulSocialPage() {
         </p>
         <hr className="so-rule mt-6" />
 
-        {/* The night — and what was actually photographed */}
-        <div style={{ marginTop: 44, maxWidth: "58ch" }}>
-          <p className="so-micro">THE NIGHT</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            One night at <strong>Public House</strong> on Occidental — Soul
-            Social, 10pm to 2am, put on by <strong>Q’D UP</strong>,{" "}
-            <strong>Casa de Lipa</strong>, <strong>Girl Star Lab</strong> and the
-            house itself. I wasn’t there for the crowd. I shot the room it
-            happened in: the arch, the glow, the bottles, the tile, the sign
-            over the glass. That’s the part nobody thinks to photograph, and
-            it’s usually the reason people walk in. Every frame is shot long
-            and vertical on purpose — story assets, ready to post as they are.
-          </p>
+        {/* The night — the text, with the flyer up beside it */}
+        <div
+          className="so-case-cols"
+          style={{ marginTop: 44, alignItems: "start", gap: 36 }}
+        >
+          <div style={{ maxWidth: "58ch" }}>
+            <p className="so-micro">THE NIGHT</p>
+            <p style={{ marginTop: 12, lineHeight: 1.75 }}>
+              One night at <strong>Public House</strong> on Occidental — Soul
+              Social, 10pm to 2am, put on by <strong>Q’D UP</strong>,{" "}
+              <strong>Casa de Lipa</strong>, <strong>Girl Star Lab</strong> and
+              the house itself. I wasn’t there for the crowd. I shot the room it
+              happened in: the arch, the glow, the bottles, the tile, the sign
+              over the glass. That’s the part nobody thinks to photograph, and
+              it’s usually the reason people walk in. Every frame is shot long
+              and vertical on purpose — story assets, ready to post as they are.
+            </p>
+          </div>
+          <div>
+            <img
+              src={INVITE}
+              alt="The Soul Social flyer, designed and posted by Q'D UP"
+              loading="lazy"
+              style={{
+                width: "100%",
+                maxWidth: 340,
+                borderRadius: 14,
+                display: "block",
+                border: "1px solid var(--color-sepia)",
+              }}
+            />
+            <span className="so-photo-cap" style={{ fontSize: 12 }}>
+              THE FLYER — Q’D UP · POSTED ON INSTAGRAM
+            </span>
+            <p
+              className="so-micro"
+              style={{ marginTop: 12, lineHeight: 1.7, color: "var(--color-stone)" }}
+            >
+              NOT MINE — IT’S Q’D UP’S, POSTED ON THEIR INSTAGRAM
+            </p>
+            <div style={{ marginTop: 10 }}>
+              <a
+                className="so-link-jump"
+                href="https://www.instagram.com/p/DdbBDfcv8k9/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                THE POST — @2QD.UP →
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* The space — tap through it */}
@@ -198,72 +236,32 @@ function SoulSocialPage() {
           </div>
         </div>
 
-        {/* The invite */}
+        {/* Powered by */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE INVITE</p>
+          <p className="so-micro" style={{ textAlign: "center" }}>POWERED BY</p>
           <div
-            className="so-case-cols"
-            style={{ marginTop: 16, alignItems: "start", gap: 32 }}
+            style={{
+              marginTop: 14,
+              maxWidth: 760,
+              marginLeft: "auto",
+              marginRight: "auto",
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "10px 26px",
+            }}
           >
-            <div>
-              <img
-                src={INVITE}
-                alt="The Soul Social flyer, designed and posted by Q'D UP"
-                loading="lazy"
-                style={{
-                  width: "100%",
-                  maxWidth: 420,
-                  borderRadius: 14,
-                  display: "block",
-                  border: "1px solid var(--color-sepia)",
-                }}
-              />
-              <span className="so-photo-cap" style={{ fontSize: 12 }}>
-                THE FLYER — Q’D UP · POSTED ON INSTAGRAM
-              </span>
-            </div>
-            <div style={{ maxWidth: "48ch" }}>
-              <p style={{ lineHeight: 1.75 }}>
-                Not mine — the flyer is <strong>Q’D UP’s</strong>, posted on
-                their Instagram. A green tile wall, a red bag, four names across
-                the top. Everything on it turned out to be true: the tile, the
-                gold in the shelves, the room with the lights low.
-              </p>
-              <div style={{ marginTop: 16 }}>
-                <a
-                  className="so-link-jump"
-                  href="https://www.instagram.com/p/DdbBDfcv8k9/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  THE POST — @2QD.UP →
-                </a>
-              </div>
-              <p className="so-micro" style={{ marginTop: 24, color: "var(--color-stone)" }}>
-                POWERED BY
-              </p>
-              <div
-                style={{
-                  marginTop: 10,
-                  display: "flex",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                  gap: "10px 26px",
-                }}
+            {HOSTS.map((h) => (
+              <a
+                key={h.href}
+                className="so-link-jump"
+                href={h.href}
+                target="_blank"
+                rel="noreferrer"
               >
-                {HOSTS.map((h) => (
-                  <a
-                    key={h.href}
-                    className="so-link-jump"
-                    href={h.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {h.label}
-                  </a>
-                ))}
-              </div>
-            </div>
+                {h.label}
+              </a>
+            ))}
           </div>
         </div>
 
