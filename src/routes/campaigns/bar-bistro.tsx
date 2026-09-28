@@ -52,27 +52,6 @@ function BarBistroPage() {
         <p className="so-micro mt-3">TACOMA · EAT · DRINK · LIVE · PHOTOS BY HANA</p>
         <hr className="so-rule mt-6" />
 
-        {/* Hero — the spread above the text */}
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            aspectRatio: "16 / 10",
-            borderRadius: 20,
-            overflow: "hidden",
-            border: "1px solid var(--color-sepia)",
-            marginTop: 26,
-            background: "#0e0d0b",
-          }}
-        >
-          <img
-            src="/assets/campaigns/bar-bistro/bb-08.jpg"
-            alt="The three plates at Bar Bistro"
-            loading="lazy"
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-          />
-        </div>
-
         {/* The spot */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE SPOT</p>
