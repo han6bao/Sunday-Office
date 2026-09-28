@@ -51,7 +51,7 @@ export const currentWork: Work[] = [
     location: "Seattle · WA",
     year: "2026",
     motif: "stem",
-    url: "https://grean-iota.vercel.app/",
+    url: "https://grean-matcha.vercel.app/",
     color: "#f6f1e7",
     image: "/assets/campaigns/grean/featured-cover.png",
     logo: "/assets/work/grean-mark.png",
@@ -432,7 +432,7 @@ export const archive: ArchiveEntry[] = [
    * (4524 University Way NE, inside Elixir Dessert & Bar; open daily 9-2;
    * IG @drinkgrean, drinkgrean.com). "Good tea. Good people."
    */
-  { file: "ARCH 011", title: "Matcha Café · GREAN", category: "WEBSITES", place: "Seattle", year: "2026", motif: "stem", color: "#f6f1e7", logo: "/assets/work/grean-mark.png", url: "https://grean-iota.vercel.app/",
+  { file: "ARCH 011", title: "Matcha Café · GREAN", category: "WEBSITES", place: "Seattle", year: "2026", motif: "stem", color: "#f6f1e7", logo: "/assets/work/grean-mark.png", url: "https://grean-matcha.vercel.app/",
   tags: ["WEBSITES"],
   blurb: "Specialty matcha and hojicha in the U District. Good tea. Good people.",
 },

@@ -284,7 +284,7 @@ function WebsitesPage() {
           </p>
           <div className="so-cases" style={{ marginTop: 18 }}>
             {[
-              { f: "grean", t: "GREAN", d: "Matcha + Hojicha · Seattle", h: "https://grean-iota.vercel.app/", img: "/assets/campaigns/grean/featured-cover.png" },
+              { f: "grean", t: "GREAN", d: "Matcha + Hojicha · Seattle", h: "https://grean-matcha.vercel.app/", img: "/assets/campaigns/grean/featured-cover.png" },
               { f: "essential-brows", t: "Essential Brows", d: "Permanent Makeup · Milton, WA", h: "/campaigns/essential-brows-studio", img: "/assets/campaigns/essential-brows-studio/featured-cover.png" },
               { f: "jazmins-events", t: "Jazmin Events", d: "Weddings + Events · Oregon · PNW", h: "https://jazmins-events.vercel.app/", img: "/assets/campaigns/jazmins-events/featured-cover.png" },
             ].map((s) => (
