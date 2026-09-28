@@ -57,16 +57,6 @@ export const currentWork: Work[] = [
     logo: "/assets/work/grean-mark.png",
   },  {
     file: "PROJECT 004",
-    client: "Bar Bistro",
-    type: "CONTENT + SOCIAL FOR FOOD + DRINK",
-    service: "Content / Social · Food & Drink",
-    location: "Tacoma · WA",
-    year: "2023",
-    motif: "stem",
-    url: "/campaigns/bar-bistro",
-    image: "/assets/campaigns/bar-bistro/bb-01.jpg",
-  },  {
-    file: "PROJECT 005",
     client: "Soul Social at Public House",
     type: "EVENT SPACE PHOTOGRAPHY FOR A NIGHT SERIES",
     service: "Content / Event Photography",
@@ -75,6 +65,16 @@ export const currentWork: Work[] = [
     motif: "ring",
     url: "/campaigns/soul-social",
     image: "/assets/campaigns/soul-social/ss-01.jpg",
+  },  {
+    file: "PROJECT 005",
+    client: "Bar Bistro",
+    type: "CONTENT + SOCIAL FOR FOOD + DRINK",
+    service: "Content / Social · Food & Drink",
+    location: "Tacoma · WA",
+    year: "2023",
+    motif: "stem",
+    url: "/campaigns/bar-bistro",
+    image: "/assets/campaigns/bar-bistro/bb-01.jpg",
   },];
 
 export type ArchiveEntry = {
