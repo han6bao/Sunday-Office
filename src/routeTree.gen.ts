@@ -29,6 +29,7 @@ import { Route as PhotographyCreativeRouteImport } from './routes/photography/cr
 import { Route as PhotographyBrandsRouteImport } from './routes/photography/brands'
 import { Route as CampaignsTheIssueRouteImport } from './routes/campaigns/the-issue'
 import { Route as CampaignsStillDifferentRouteImport } from './routes/campaigns/still-different'
+import { Route as CampaignsSoulSocialRouteImport } from './routes/campaigns/soul-social'
 import { Route as CampaignsSoniqreignRouteImport } from './routes/campaigns/soniqreign'
 import { Route as CampaignsRockstarFlacoRouteImport } from './routes/campaigns/rockstar-flaco'
 import { Route as CampaignsReelclipRouteImport } from './routes/campaigns/reelclip'
@@ -150,6 +151,11 @@ const CampaignsTheIssueRoute = CampaignsTheIssueRouteImport.update({
 const CampaignsStillDifferentRoute = CampaignsStillDifferentRouteImport.update({
   id: '/campaigns/still-different',
   path: '/campaigns/still-different',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CampaignsSoulSocialRoute = CampaignsSoulSocialRouteImport.update({
+  id: '/campaigns/soul-social',
+  path: '/campaigns/soul-social',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CampaignsSoniqreignRoute = CampaignsSoniqreignRouteImport.update({
@@ -295,6 +301,7 @@ export interface FileRoutesByFullPath {
   '/campaigns/reelclip': typeof CampaignsReelclipRoute
   '/campaigns/rockstar-flaco': typeof CampaignsRockstarFlacoRoute
   '/campaigns/soniqreign': typeof CampaignsSoniqreignRoute
+  '/campaigns/soul-social': typeof CampaignsSoulSocialRoute
   '/campaigns/still-different': typeof CampaignsStillDifferentRoute
   '/campaigns/the-issue': typeof CampaignsTheIssueRoute
   '/photography/brands': typeof PhotographyBrandsRoute
@@ -338,6 +345,7 @@ export interface FileRoutesByTo {
   '/campaigns/reelclip': typeof CampaignsReelclipRoute
   '/campaigns/rockstar-flaco': typeof CampaignsRockstarFlacoRoute
   '/campaigns/soniqreign': typeof CampaignsSoniqreignRoute
+  '/campaigns/soul-social': typeof CampaignsSoulSocialRoute
   '/campaigns/still-different': typeof CampaignsStillDifferentRoute
   '/campaigns/the-issue': typeof CampaignsTheIssueRoute
   '/photography/brands': typeof PhotographyBrandsRoute
@@ -382,6 +390,7 @@ export interface FileRoutesById {
   '/campaigns/reelclip': typeof CampaignsReelclipRoute
   '/campaigns/rockstar-flaco': typeof CampaignsRockstarFlacoRoute
   '/campaigns/soniqreign': typeof CampaignsSoniqreignRoute
+  '/campaigns/soul-social': typeof CampaignsSoulSocialRoute
   '/campaigns/still-different': typeof CampaignsStillDifferentRoute
   '/campaigns/the-issue': typeof CampaignsTheIssueRoute
   '/photography/brands': typeof PhotographyBrandsRoute
@@ -427,6 +436,7 @@ export interface FileRouteTypes {
     | '/campaigns/reelclip'
     | '/campaigns/rockstar-flaco'
     | '/campaigns/soniqreign'
+    | '/campaigns/soul-social'
     | '/campaigns/still-different'
     | '/campaigns/the-issue'
     | '/photography/brands'
@@ -470,6 +480,7 @@ export interface FileRouteTypes {
     | '/campaigns/reelclip'
     | '/campaigns/rockstar-flaco'
     | '/campaigns/soniqreign'
+    | '/campaigns/soul-social'
     | '/campaigns/still-different'
     | '/campaigns/the-issue'
     | '/photography/brands'
@@ -513,6 +524,7 @@ export interface FileRouteTypes {
     | '/campaigns/reelclip'
     | '/campaigns/rockstar-flaco'
     | '/campaigns/soniqreign'
+    | '/campaigns/soul-social'
     | '/campaigns/still-different'
     | '/campaigns/the-issue'
     | '/photography/brands'
@@ -556,6 +568,7 @@ export interface RootRouteChildren {
   CampaignsReelclipRoute: typeof CampaignsReelclipRoute
   CampaignsRockstarFlacoRoute: typeof CampaignsRockstarFlacoRoute
   CampaignsSoniqreignRoute: typeof CampaignsSoniqreignRoute
+  CampaignsSoulSocialRoute: typeof CampaignsSoulSocialRoute
   CampaignsStillDifferentRoute: typeof CampaignsStillDifferentRoute
   CampaignsTheIssueRoute: typeof CampaignsTheIssueRoute
   PhotographyBrandsRoute: typeof PhotographyBrandsRoute
@@ -705,6 +718,13 @@ declare module '@tanstack/react-router' {
       path: '/campaigns/still-different'
       fullPath: '/campaigns/still-different'
       preLoaderRoute: typeof CampaignsStillDifferentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/campaigns/soul-social': {
+      id: '/campaigns/soul-social'
+      path: '/campaigns/soul-social'
+      fullPath: '/campaigns/soul-social'
+      preLoaderRoute: typeof CampaignsSoulSocialRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/campaigns/soniqreign': {
@@ -902,6 +922,7 @@ const rootRouteChildren: RootRouteChildren = {
   CampaignsReelclipRoute: CampaignsReelclipRoute,
   CampaignsRockstarFlacoRoute: CampaignsRockstarFlacoRoute,
   CampaignsSoniqreignRoute: CampaignsSoniqreignRoute,
+  CampaignsSoulSocialRoute: CampaignsSoulSocialRoute,
   CampaignsStillDifferentRoute: CampaignsStillDifferentRoute,
   CampaignsTheIssueRoute: CampaignsTheIssueRoute,
   PhotographyBrandsRoute: PhotographyBrandsRoute,

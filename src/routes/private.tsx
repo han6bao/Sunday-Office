@@ -29,6 +29,7 @@ const FILES: { t: string; h: string }[] = [
   { t: "ReelClip", h: "/campaigns/reelclip" },
   { t: "Rockstar Flaco", h: "/campaigns/rockstar-flaco" },
   { t: "Soniq Reign", h: "/campaigns/soniqreign" },
+  { t: "Soul Social · Public House", h: "/campaigns/soul-social" },
   { t: "Still Different", h: "/campaigns/still-different" },
   { t: "The Issue", h: "/campaigns/the-issue" },
 ];

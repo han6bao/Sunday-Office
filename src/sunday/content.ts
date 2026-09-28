@@ -328,6 +328,8 @@ export const archiveIndustryByFile: Record<string, string> = {
   "ARCH 030": "Events + Experiences", // Iconic 2000s Boat Party
   "ARCH 031": "Food + Hospitality", // Bar Bistro Tacoma
   "ARCH 032": "Events + Experiences", // Jazmin's Events + Coordinating
+  "ARCH 033": "Artists + Creatives", // Jaydyn F.
+  "ARCH 034": "Events + Experiences", // Soul Social at Public House
 };
 
 export const archiveCategories: Array<ArchiveCategory> = [
@@ -698,6 +700,20 @@ export const archive: ArchiveEntry[] = [
     industry: "Music + Nightlife",
     tags: ["CONTENT + SOCIAL", "PHOTOGRAPHY"],
     blurb: "BTS capture, photography and short-form support around a Seattle underground rap artist's releases — the visuals that keep the world moving between music videos.",
+ },
+  {
+    file: "ARCH 034",
+    title: "Event Space · Soul Social at Public House",
+    category: "CAMPAIGNS",
+    place: "Pioneer Square · Seattle",
+    year: "2026",
+    motif: "ring",
+    color: "#7A4A1E",
+    image: "/assets/campaigns/soul-social/ss-01.jpg",
+    url: "/campaigns/soul-social",
+    industry: "Events + Experiences",
+    tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL"],
+    blurb: "The room, not the party — one night's space photographed at Soul Social: the lit arch, the neon, the bottles, the flyer that packed it. Powered by Q'D UP, Casa de Lipa, Girl Star Lab and Public House.",
  },
 ];
 
