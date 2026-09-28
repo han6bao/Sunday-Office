@@ -40,7 +40,7 @@ const SPACE_STEPS = [
   },
   {
     t: "THE INVITE",
-    d: "Soul Social, Saturday 9.26.26, 10pm to 2am — the flyer did its job, the room did the rest.",
+    d: "Soul Social, Saturday 9.26.26, 10pm to 2am — Q’D UP’s flyer did its job, the room did the rest.",
   },
 ];
 
@@ -214,7 +214,7 @@ function SoulSocialPage() {
             <div>
               <img
                 src={INVITE}
-                alt="The Soul Social flyer — Public House, 9.26.26"
+                alt="The Soul Social flyer, designed and posted by Q'D UP"
                 loading="lazy"
                 style={{
                   width: "100%",
@@ -225,15 +225,26 @@ function SoulSocialPage() {
                 }}
               />
               <span className="so-photo-cap" style={{ fontSize: 12 }}>
-                SOUL SOCIAL · PUBLIC HOUSE · 9.26.26
+                THE FLYER — Q’D UP · POSTED ON INSTAGRAM
               </span>
             </div>
             <div style={{ maxWidth: "48ch" }}>
               <p style={{ lineHeight: 1.75 }}>
-                The flyer ran a green tile wall, a red bag and four names across
-                the top. Everything on it turned out to be true — the tile, the
+                Not mine — the flyer is <strong>Q’D UP’s</strong>, posted on
+                their Instagram. A green tile wall, a red bag, four names across
+                the top. Everything on it turned out to be true: the tile, the
                 gold in the shelves, the room with the lights low.
               </p>
+              <div style={{ marginTop: 16 }}>
+                <a
+                  className="so-link-jump"
+                  href="https://www.instagram.com/p/DdbBDfcv8k9/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  THE POST — @2QD.UP →
+                </a>
+              </div>
               <p className="so-micro" style={{ marginTop: 24, color: "var(--color-stone)" }}>
                 POWERED BY
               </p>

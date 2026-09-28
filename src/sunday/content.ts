@@ -723,7 +723,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/soul-social",
     industry: "Events + Experiences",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL"],
-    blurb: "The room, not the party — one night's space photographed at Soul Social: the lit arch, the neon, the bottles, the flyer that packed it. Powered by Q'D UP, Casa de Lipa, Girl Star Lab and Public House.",
+    blurb: "The room, not the party — one night's space photographed at Soul Social: the lit arch, the neon, the bottles. Q'D UP's flyer for the night sits alongside it, credited and linked. Powered by Q'D UP, Casa de Lipa, Girl Star Lab and Public House.",
  },
 ];
 
