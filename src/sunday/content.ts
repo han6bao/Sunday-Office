@@ -65,6 +65,16 @@ export const currentWork: Work[] = [
     motif: "stem",
     url: "/campaigns/bar-bistro",
     image: "/assets/campaigns/bar-bistro/bb-01.jpg",
+  },  {
+    file: "PROJECT 005",
+    client: "Soul Social at Public House",
+    type: "EVENT SPACE PHOTOGRAPHY FOR A NIGHT SERIES",
+    service: "Content / Event Photography",
+    location: "Pioneer Square · Seattle",
+    year: "2026",
+    motif: "ring",
+    url: "/campaigns/soul-social",
+    image: "/assets/campaigns/soul-social/ss-01.jpg",
   },];
 
 export type ArchiveEntry = {
