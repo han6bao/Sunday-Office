@@ -17,14 +17,6 @@ const PHOTOS = [
 
 const INVITE = "/assets/campaigns/soul-social/ss-06.jpg";
 
-const LAYOUT: { s: number; a: string }[] = [
-  { s: 2, a: "4 / 5" },
-  { s: 2, a: "4 / 5" },
-  { s: 2, a: "4 / 5" },
-  { s: 3, a: "4 / 5" },
-  { s: 3, a: "4 / 5" },
-];
-
 const SPACE_STEPS = [
   {
     t: "THE ARCH",
@@ -84,7 +76,8 @@ function SoulSocialPage() {
             house itself. I wasn’t there for the crowd. I shot the room it
             happened in: the arch, the glow, the bottles, the tile, the sign
             over the glass. That’s the part nobody thinks to photograph, and
-            it’s usually the reason people walk in.
+            it’s usually the reason people walk in. Every frame is shot long
+            and vertical on purpose — story assets, ready to post as they are.
           </p>
         </div>
 
@@ -151,56 +144,57 @@ function SoulSocialPage() {
           </div>
         </div>
 
-        {/* Frames */}
+        {/* Frames — long and vertical, the way they were shot */}
         <div style={{ marginTop: 72 }}>
           <p className="so-micro">THE FRAMES — 5 · BY HANA</p>
+          <p className="so-micro" style={{ marginTop: 6, color: "var(--color-stone)" }}>
+            SHOT VERTICAL · 9:16 · MADE FOR STORIES
+          </p>
           <div
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(6, minmax(0, 1fr))",
-              columnGap: 14,
-              rowGap: 20,
-              marginTop: 14,
-              alignItems: "start",
+              display: "flex",
+              gap: 14,
+              alignItems: "flex-start",
+              overflowX: "auto",
+              paddingBottom: 10,
+              marginTop: 16,
             }}
           >
-            {PHOTOS.map((ph, i) => {
-              const L = LAYOUT[i];
-              return (
-                <button
-                  key={ph.src}
-                  className="so-photo-cell"
-                  type="button"
-                  onClick={() => setOpen(i)}
-                  aria-label={ph.cap}
+            {PHOTOS.map((ph, i) => (
+              <button
+                key={ph.src}
+                className="so-photo-cell"
+                type="button"
+                onClick={() => setOpen(i)}
+                aria-label={ph.cap}
+                style={{
+                  flex: "0 0 auto",
+                  width: "min(240px, 58vw)",
+                  display: "block",
+                  padding: 0,
+                  background: "none",
+                  border: 0,
+                  cursor: "pointer",
+                  textAlign: "left",
+                }}
+              >
+                <img
+                  src={ph.src}
+                  alt={ph.cap}
+                  loading="lazy"
                   style={{
-                    gridColumn: `span ${L.s}`,
+                    width: "100%",
+                    aspectRatio: "9 / 16",
+                    objectFit: "cover",
+                    borderRadius: 14,
                     display: "block",
-                    padding: 0,
-                    background: "none",
-                    border: 0,
-                    cursor: "pointer",
-                    textAlign: "left",
                   }}
-                >
-                  <img
-                    src={ph.src}
-                    alt={ph.cap}
-                    loading="lazy"
-                    style={{
-                      width: "100%",
-                      aspectRatio: L.a,
-                      objectFit: "cover",
-                      borderRadius: 14,
-                      display: "block",
-                    }}
-                  />
-                  <span className="so-photo-cap" style={{ fontSize: 12 }}>
-                    {String(i + 1).padStart(2, "0")} · {ph.cap}
-                  </span>
-                </button>
-              );
-            })}
+                />
+                <span className="so-photo-cap" style={{ fontSize: 12 }}>
+                  {String(i + 1).padStart(2, "0")} · {ph.cap}
+                </span>
+              </button>
+            ))}
           </div>
         </div>
 
