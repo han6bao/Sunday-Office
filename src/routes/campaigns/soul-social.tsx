@@ -83,15 +83,84 @@ function SoulSocialPage() {
               it’s usually the reason people walk in. Every frame is shot long
               and vertical on purpose — story assets, ready to post as they are.
             </p>
+
+            {/* The space — the box sits right under the paragraph */}
+            <div style={{ marginTop: 56, scrollMarginTop: 120 }}>
+              <p className="so-micro" style={{ paddingBottom: 10 }}>THE SPACE</p>
+              <div
+                role="button"
+                tabIndex={0}
+                aria-label="The space — tap for the next"
+                onClick={() => setStep((s) => (s + 1) % SPACE_STEPS.length)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setStep((s) => (s + 1) % SPACE_STEPS.length);
+                  }
+                }}
+                style={{
+                  width: "100%",
+                  display: "block",
+                  textAlign: "left",
+                  borderTop: "1px solid var(--color-sepia)",
+                  borderBottom: "1px solid var(--color-sepia)",
+                  padding: "22px 2px 20px",
+                  cursor: "pointer",
+                  color: "inherit",
+                  font: "inherit",
+                }}
+              >
+                <p
+                  className="so-micro"
+                  style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}
+                >
+                  {SPACE_STEPS[step].t}
+                </p>
+                <p
+                  key={step}
+                  className="so-chapter-fade"
+                  style={{ margin: "12px 0 0", lineHeight: 1.78 }}
+                >
+                  {SPACE_STEPS[step].d}
+                </p>
+                <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 20 }}>
+                  {SPACE_STEPS.map((_, d) => (
+                    <span
+                      key={d}
+                      aria-hidden
+                      style={{
+                        width: 6,
+                        height: 6,
+                        borderRadius: 999,
+                        background: d === step ? "var(--color-verm)" : "var(--color-sepia)",
+                        display: "inline-block",
+                      }}
+                    />
+                  ))}
+                  <span
+                    className="so-micro"
+                    style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}
+                  >
+                    TAP FOR THE NEXT →
+                  </span>
+                </span>
+              </div>
+            </div>
           </div>
-          <div>
+          <div
+            style={{
+              justifySelf: "end",
+              width: "100%",
+              maxWidth: 360,
+              marginLeft: "auto",
+            }}
+          >
             <img
               src={INVITE}
               alt="The Soul Social flyer, designed and posted by Q'D UP"
               loading="lazy"
               style={{
                 width: "100%",
-                maxWidth: 340,
                 borderRadius: 14,
                 display: "block",
                 border: "1px solid var(--color-sepia)",
@@ -119,69 +188,6 @@ function SoulSocialPage() {
                 THE POST — @2QD.UP →
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* The space — tap through it */}
-        <div style={{ marginTop: 48, maxWidth: "62ch", scrollMarginTop: 120 }}>
-          <p className="so-micro" style={{ paddingBottom: 10 }}>THE SPACE</p>
-          <div
-            role="button"
-            tabIndex={0}
-            aria-label="The space — tap for the next"
-            onClick={() => setStep((s) => (s + 1) % SPACE_STEPS.length)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                setStep((s) => (s + 1) % SPACE_STEPS.length);
-              }
-            }}
-            style={{
-              width: "100%",
-              display: "block",
-              textAlign: "left",
-              borderTop: "1px solid var(--color-sepia)",
-              borderBottom: "1px solid var(--color-sepia)",
-              padding: "22px 2px 20px",
-              cursor: "pointer",
-              color: "inherit",
-              font: "inherit",
-            }}
-          >
-            <p
-              className="so-micro"
-              style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}
-            >
-              {SPACE_STEPS[step].t}
-            </p>
-            <p
-              key={step}
-              className="so-chapter-fade"
-              style={{ margin: "12px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}
-            >
-              {SPACE_STEPS[step].d}
-            </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 20 }}>
-              {SPACE_STEPS.map((_, d) => (
-                <span
-                  key={d}
-                  aria-hidden
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 999,
-                    background: d === step ? "var(--color-verm)" : "var(--color-sepia)",
-                    display: "inline-block",
-                  }}
-                />
-              ))}
-              <span
-                className="so-micro"
-                style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}
-              >
-                TAP FOR THE NEXT →
-              </span>
-            </span>
           </div>
         </div>
 
