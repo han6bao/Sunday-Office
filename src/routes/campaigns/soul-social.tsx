@@ -170,13 +170,13 @@ function SoulSocialPage() {
               className="so-micro"
               style={{ marginTop: 10, color: "var(--color-stone)" }}
             >
-              THE FLYER — Q’D UP · POSTED ON INSTAGRAM
+              THE FLYER — POSTED ON INSTAGRAM
             </p>
             <p
               className="so-micro"
               style={{ marginTop: 6, color: "var(--color-stone)" }}
             >
-              NOT MINE — THEIRS
+              CREDITS TO Q’D UP FOR THE FLYER
             </p>
             <div style={{ marginTop: 10 }}>
               <a
