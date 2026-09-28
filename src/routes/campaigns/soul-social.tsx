@@ -97,14 +97,17 @@ function SoulSocialPage() {
                 border: "1px solid var(--color-sepia)",
               }}
             />
-            <span className="so-photo-cap" style={{ fontSize: 12 }}>
-              THE FLYER — Q’D UP · POSTED ON INSTAGRAM
-            </span>
             <p
               className="so-micro"
-              style={{ marginTop: 12, lineHeight: 1.7, color: "var(--color-stone)" }}
+              style={{ marginTop: 10, color: "var(--color-stone)" }}
             >
-              NOT MINE — IT’S Q’D UP’S, POSTED ON THEIR INSTAGRAM
+              THE FLYER — Q’D UP · POSTED ON INSTAGRAM
+            </p>
+            <p
+              className="so-micro"
+              style={{ marginTop: 6, color: "var(--color-stone)" }}
+            >
+              NOT MINE — THEIRS
             </p>
             <div style={{ marginTop: 10 }}>
               <a
