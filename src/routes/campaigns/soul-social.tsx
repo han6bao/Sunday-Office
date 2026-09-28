@@ -89,23 +89,29 @@ function SoulSocialPage() {
         </div>
 
         {/* The space — tap through it */}
-        <div style={{ marginTop: 40, maxWidth: "62ch" }}>
-          <p className="so-micro">THE SPACE</p>
-          <button
-            type="button"
+        <div style={{ marginTop: 48, maxWidth: "62ch", scrollMarginTop: 120 }}>
+          <p className="so-micro" style={{ paddingBottom: 10 }}>THE SPACE</p>
+          <div
+            role="button"
+            tabIndex={0}
+            aria-label="The space — tap for the next"
             onClick={() => setStep((s) => (s + 1) % SPACE_STEPS.length)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                setStep((s) => (s + 1) % SPACE_STEPS.length);
+              }
+            }}
             style={{
               width: "100%",
               display: "block",
               textAlign: "left",
-              background: "none",
-              border: 0,
               borderTop: "1px solid var(--color-sepia)",
-              padding: "16px 2px 10px",
+              borderBottom: "1px solid var(--color-sepia)",
+              padding: "22px 2px 20px",
               cursor: "pointer",
               color: "inherit",
               font: "inherit",
-              marginTop: 10,
             }}
           >
             <p
@@ -117,11 +123,11 @@ function SoulSocialPage() {
             <p
               key={step}
               className="so-chapter-fade"
-              style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}
+              style={{ margin: "12px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}
             >
               {SPACE_STEPS[step].d}
             </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
+            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 20 }}>
               {SPACE_STEPS.map((_, d) => (
                 <span
                   key={d}
@@ -142,11 +148,11 @@ function SoulSocialPage() {
                 TAP FOR THE NEXT →
               </span>
             </span>
-          </button>
+          </div>
         </div>
 
         {/* Frames */}
-        <div style={{ marginTop: 56 }}>
+        <div style={{ marginTop: 72 }}>
           <p className="so-micro">THE FRAMES — 5 · BY HANA</p>
           <div
             style={{
