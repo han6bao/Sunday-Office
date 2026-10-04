@@ -10050,5 +10050,9 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .so-bw-sec.so-pricing + .so-bw-sec.so-pricing { margin-top: calc(-1 * clamp(40px, 6vw, 80px)); padding-top: 0; }
 .so-pricing .so-pk-card.is-feat .so-pk-tag { background: #151213; color: #f3ead9; }
 
+/* Start a project first, then Menu */
+.so-nav-inner > .so-nav-links { order: 1; margin-left: auto; margin-right: 0; }
+.so-nav-inner > .so-mobile-menu { order: 2; margin-left: 22px; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
