@@ -52,6 +52,7 @@ const FAQ = [
   { q: "I already have a logo. Do I need a new one?", a: "Usually not. If people already know it, the brand kit keeps it and builds everything else around it." },
   { q: "How long does it take?", a: "It depends on how much we're building. You'll get a timeline with your price before anything starts." },
   { q: "Do I need a website too?", a: <>Not right away. A brand works on its own, and many people add a website once the world is set. <a href="/websites">See websites →</a></> },
+  { q: "Do you design menus, signs and flyers?", a: "Yes. Flyers start at $75, menus at $150, A-frame signs at $125 and window or wall signs at $150. The print kit covers a menu, an A-frame and two signs for $400, all in your brand and ready to print." },
   { q: "What do I get at the end?", a: "The files for everything we made, ready to use, plus a simple guide that shows how it all fits together, so anyone you work with later can keep it consistent." },
 ];
 
@@ -160,7 +161,7 @@ function BrandingPage() {
               <a href="#included">What's included</a>
               <a href="#how">How it works</a>
               <a href="#fit">Which one fits</a>
-              <a href="#pricing">Pricing</a>
+              <a href="#pricing">Pricing + print</a>
               <a href="#built">Work</a>
               <a href="#faq">Questions</a>
             </nav>
@@ -204,6 +205,7 @@ function BrandingPage() {
             { t: "Logo", p: "from $350", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
             { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
             { t: "Full brand world", p: "from $1,500", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
+            { t: "Print + signage", p: "from $75", d: "Your brand, off the screen.", list: ["Flyers from $75", "Menus from $150", "A-frame signs from $125", "Window + wall signs from $150", "Print kit from $400: a menu, an A-frame + 2 signs"] },
           ]}
           foot="You'll know the number before anything starts."
         />

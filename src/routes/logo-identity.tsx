@@ -539,6 +539,7 @@ function LogoIdentityPage() {
             { t: "Logo", p: "from $350", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
             { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
             { t: "Full brand world", p: "from $1,500", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
+            { t: "Print + signage", p: "from $75", d: "Your brand, off the screen.", list: ["Flyers from $75", "Menus from $150", "A-frame signs from $125", "Window + wall signs from $150", "Print kit from $400: a menu, an A-frame + 2 signs"] },
           ]}
           foot="You'll know the final number before anything starts."
         />

@@ -165,7 +165,7 @@ function DirectionAndContentPage() {
             { t: "Full", p: "$2,500/mo", d: "I run your content.", list: ["2 pro shoots + iPhone content", "24 posts + 10 reels", "Instagram, TikTok, Facebook + LinkedIn", "Posting for you + a monthly check-in", "New Canva templates every month"] },
             { t: "Signature", p: "Ask me", d: "From $4,000 a month, built around you.", list: ["A styled campaign shoot every month", "Videographer-shot video + ad creative", "A custom template system", "Website updates + priority"] },
           ]}
-          foot="Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out."
+          foot={<>Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
         />
 
         <PriceList
