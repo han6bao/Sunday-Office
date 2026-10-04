@@ -10060,3 +10060,45 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 /* Start a project first, then Menu */
 .so-nav-inner > .so-nav-links { order: 1; margin-left: auto; margin-right: 0; }
 .so-nav-inner > .so-mobile-menu { order: 2; margin-left: 22px; }
+
+/* Top bar buttons: two matching pills, so they read as a pair */
+.so-nav .so-nav-link.cta,
+.so-nav .so-nav-burger {
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.so-nav-inner > .so-mobile-menu { margin-left: 10px; }
+/* Over the cover photo: cream pill + frosted glass pill */
+.so-nav.is-on-cover .so-nav-link.cta {
+  background: #f3ead9;
+  color: #151213 !important;
+  border: 1px solid #f3ead9;
+}
+.so-nav.is-on-cover .so-nav-link.cta:hover { background: #fff; border-color: #fff; }
+.so-nav.is-on-cover .so-nav-burger {
+  background: rgba(243, 234, 217, 0.12);
+  border: 1px solid rgba(243, 234, 217, 0.35);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #f3ead9;
+}
+/* After scrolling: black pill + outlined pill */
+.so-nav:not(.is-on-cover) .so-nav-link.cta {
+  background: #151213;
+  color: #f3ead9 !important;
+  border: 1px solid #151213;
+}
+.so-nav:not(.is-on-cover) .so-nav-burger {
+  border: 1px solid rgba(21, 18, 19, 0.2);
+  background: transparent;
+}
+.so-nav .so-nav-link.cta, .so-nav .so-nav-burger { border-radius: 999px !important; }
