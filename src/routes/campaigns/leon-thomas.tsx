@@ -191,7 +191,7 @@ function LeonThomasPage() {
                     loading="lazy"
                     style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", display: "block", borderRadius: 8 }}
                   />
-                  <p className="so-micro" style={{ margin: "8px 2px 0", color: "var(--color-stone)", letterSpacing: "0.14em" }}>
+                  <p className="so-micro" style={{ margin: "8px 2px 0", color: "#6f6474", letterSpacing: "0.14em" }}>
                     {f.n} · BY HANA
                   </p>
                 </a>

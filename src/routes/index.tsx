@@ -493,7 +493,7 @@ function CurrentWork() {
 
 function MeetHana() {
   return (
-    <Section id="about-hana">
+    <Section id="about-hana" className="so-keep-light">
       <div className="so-shell">
         <SecFile>FILE NO. 004 · MEET HANA</SecFile>
         <BigTitle max={72}>Meet <em>Hana.</em></BigTitle>

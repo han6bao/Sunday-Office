@@ -9665,5 +9665,242 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 /* Direction photo: keep her face and the Space Needle in frame */
 .so-wp-photo img[src*="kk-05"] { object-position: 50% 18%; }
 
+/* ============================================================
+   Mauve site: the Packages panel look everywhere.
+   Meet Hana (home) and the About page keep the light paper look.
+   ============================================================ */
+:root {
+  --so-m-bg: #8b779a;
+  --so-m-bg-2: #806c8f;
+  --so-m-bg-3: #95829f;
+  --so-m-ink: #f3ead9;
+  --so-m-soft: rgba(243, 234, 217, 0.82);
+  --so-m-line: rgba(243, 234, 217, 0.3);
+  --color-rice: var(--so-m-bg);
+  --color-rice-2: var(--so-m-bg-2);
+  --color-surface: var(--so-m-bg-2);
+  --color-ink: var(--so-m-ink);
+  --color-stone: var(--so-m-soft);
+  --color-line: var(--so-m-line);
+  --color-sand: var(--so-m-bg);
+  --color-sand-deep: var(--so-m-bg-2);
+  --color-cream: var(--so-m-bg);
+  --color-cream-deep: var(--so-m-bg-2);
+  --color-paper: var(--so-m-bg-2);
+  --color-paper-dark: var(--so-m-bg-2);
+  --color-navy: var(--so-m-ink);
+  --color-navy-soft: var(--so-m-soft);
+  --color-espresso: var(--so-m-ink);
+  --color-print: var(--so-m-soft);
+  --color-sepia: var(--so-m-line);
+  --color-celadon: var(--so-m-bg-2);
+  --color-verm: var(--so-m-ink);
+  --color-red: var(--so-m-ink);
+  --cut: #8b779a;
+}
+html,
+body {
+  background: var(--so-m-bg);
+  color: var(--so-m-ink);
+}
+.so-section {
+  background: transparent;
+  color: var(--so-m-ink);
+}
+.so-serif,
+.so-serif em {
+  color: var(--so-m-ink);
+}
+.so-micro,
+.so-micro-red {
+  color: var(--so-m-soft);
+}
+
+/* Keep the light paper look for the bio */
+.so-keep-light {
+  --color-rice: #efe6f2;
+  --color-rice-2: #e9dcee;
+  --color-surface: #e3d5e8;
+  --color-ink: #241f26;
+  --color-stone: #84798a;
+  --color-line: #dccde3;
+  --color-sand: #efe5f2;
+  --color-sand-deep: #dfd0e6;
+  --color-cream: #efe6f2;
+  --color-cream-deep: #e9dcee;
+  --color-paper: #e3d5e8;
+  --color-paper-dark: #dfd0e6;
+  --color-navy: #241f26;
+  --color-navy-soft: #84798a;
+  --color-espresso: #241f26;
+  --color-print: #84798a;
+  --color-sepia: #dccde3;
+  --color-celadon: #efe7f1;
+  --color-verm: #9e2b2e;
+  --color-red: #9e2b2e;
+  --cut: #efe6f2;
+  background: #efe6f2;
+  color: #241f26;
+}
+.so-keep-light .so-serif,
+.so-keep-light .so-serif em {
+  color: #241f26;
+}
+.so-keep-light .so-micro {
+  color: #84798a;
+}
+.so-keep-light .so-micro-red {
+  color: #9e2b2e;
+}
+
+/* Top bars sit on mauve */
+.so-nav.is-scrolled,
+.so-nav.is-scrolled .so-nav-inner,
+.so-sitebar {
+  background: rgba(139, 119, 154, 0.9);
+  border-color: rgba(243, 234, 217, 0.22);
+  color: var(--so-m-ink);
+}
+.so-sitebar a,
+.so-nav.is-scrolled .so-nav-link {
+  color: var(--so-m-ink);
+}
+
+/* Start a project: black, white boxes, runs straight into the black footer */
+.so-section.so-start-section {
+  --cut: #151213;
+  background: #151213;
+  color: #f3ead9;
+  border-bottom: 0;
+  padding-bottom: clamp(56px, 7vw, 96px);
+}
+.so-start-section .so-serif,
+.so-start-section .so-serif em,
+.so-start-section .so-start-head {
+  color: #f3ead9;
+}
+.so-start-section .so-micro,
+.so-start-section .so-micro-red {
+  color: rgba(243, 234, 217, 0.62);
+}
+.so-start-section p {
+  color: rgba(243, 234, 217, 0.82);
+}
+.so-start-section .so-rule,
+.so-start-section hr {
+  border-color: rgba(243, 234, 217, 0.18);
+  background: rgba(243, 234, 217, 0.18);
+}
+/* the boxes */
+.so-start-section .so-start-path,
+.so-start-section .so-office-card {
+  --color-ink: #151213;
+  --color-stone: #6f6474;
+  --color-line: #e4dbe8;
+  --color-rice: #ffffff;
+  --cut: #ffffff;
+  background: #ffffff;
+  color: #151213;
+  border-color: #ffffff;
+  box-shadow: none;
+}
+.so-start-section .so-start-path *,
+.so-start-section .so-office-card * {
+  border-color: #e4dbe8;
+}
+.so-start-section .so-start-path p,
+.so-start-section .so-start-path .so-serif,
+.so-start-section .so-office-card p,
+.so-start-section .so-office-card label,
+.so-start-section .so-office-card .so-serif,
+.so-start-section .so-office-card .so-serif em,
+.so-start-section .so-office-card h2,
+.so-start-section .so-office-card h3 {
+  color: #151213;
+}
+.so-start-section .so-start-path .so-micro,
+.so-start-section .so-office-card .so-micro {
+  color: #6f6474;
+}
+.so-start-section .so-office-card input,
+.so-start-section .so-office-card select,
+.so-start-section .so-office-card textarea {
+  color: #151213;
+  border-color: #d9cfdf;
+  background: transparent;
+}
+.so-start-section .so-start-path:hover,
+.so-start-section .so-start-path.is-on {
+  background: #f6f0f8;
+}
+.so-footer {
+  background: #151213;
+  border-top: 0;
+  margin-top: 0;
+}
+
+/* Light cards on the mauve: dark text inside */
+.so-at-feel, .so-cd-note, .so-fv-item.is-on, .so-hs-note, .so-li-shot, .so-tap-tab.is-on,
+.so-step.is-on, .so-step-dot, .so-step-more {
+  --color-ink: #241f26;
+  --color-stone: #6f6474;
+  --color-line: #dccde3;
+  --cut: #fbf6ee;
+  color: #241f26 !important;
+}
+.so-at-feel *, .so-cd-note *, .so-fv-item.is-on *, .so-hs-note *, .so-li-shot *, .so-tap-tab.is-on *,
+.so-step.is-on *, .so-step-more * {
+  color: #241f26 !important;
+}
+.so-at-feel .so-micro, .so-cd-note .so-micro, .so-li-shot .so-micro, .so-step-more .so-micro,
+.so-hs-note .so-micro {
+  color: #6f6474 !important;
+}
+.so-step-dot { color: #241f26 !important; }
+a[class*="so-lt"] .so-micro, .so-leon-frame .so-micro { color: #6f6474 !important; }
+
+/* Text that sat dark-on-light before: cream on the mauve */
+.so-bw-t, .so-step-t, .so-hs-kind-lead, .so-hs-tip-t, .so-bw-n, .so-wp-k,
+.so-jz-state, .so-gg-pfp, .so-bw-list li, .so-bw-sec li {
+  color: var(--so-m-ink) !important;
+}
+.so-bw-d, .so-step-d, .so-gg-pfp span, .so-gg-pfp + * {
+  color: var(--so-m-soft) !important;
+}
+.so-step:not(.is-on) .so-step-dot {
+  color: var(--so-m-ink) !important;
+  border-color: var(--so-m-line) !important;
+  background: transparent;
+}
+.so-gg-res .so-micro, .so-gg-nums span { color: var(--so-m-soft) !important; }
+.so-gg-nums b { color: var(--so-m-ink) !important; }
+.so-step:not(.is-on), .so-gg-res:not(.is-main) {
+  background: rgba(21, 18, 19, 0.14) !important;
+  border-color: rgba(243, 234, 217, 0.22) !important;
+}
+.so-start-section .so-start-card {
+  --cut: #ffffff;
+  background: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #151213 !important;
+}
+.so-start-section .so-start-card:hover,
+.so-start-section .so-start-card.is-on {
+  background: #f6f0f8 !important;
+}
+.so-start-section .so-start-card .so-start-p,
+.so-start-section .so-start-card .so-start-check,
+.so-start-section .so-start-card a {
+  color: #151213 !important;
+  border-color: #d9cfdf !important;
+}
+.so-start-section .so-start-card .so-start-d,
+.so-start-section .so-start-card .so-micro {
+  color: #6f6474 !important;
+}
+.so-start-section .so-start-path {
+  background: transparent !important;
+}
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

@@ -78,7 +78,7 @@ function AboutPage() {
   const go = (i: number) => setCh(Math.min(Math.max(i, 0), CHAPTERS.length - 1));
   const c = CHAPTERS[ch];
   return (
-    <div className="block" style={{ minHeight: "100dvh" }}>
+    <div className="block so-keep-light" style={{ minHeight: "100dvh" }}>
       <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16, flexWrap: "wrap", marginBottom: 40 }}>
