@@ -1,7 +1,20 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "bash ./scripts/vercel-build.sh",
-  "outputDirectory": ".vercel/output",
-  "installCommand": "bun install"
+  "installCommand": "echo 'static site: no install'",
+  "buildCommand": "cp -R public/. static/",
+  "outputDirectory": "static",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/campaigns/reelclip", "destination": "/", "permanent": true },
+    { "source": "/campaigns/rockstar-flaco", "destination": "/", "permanent": true },
+    { "source": "/campaigns/soniqreign", "destination": "/", "permanent": true },
+    { "source": "/campaigns/the-issue", "destination": "/", "permanent": true },
+    { "source": "/campaigns/soul-social", "destination": "/campaigns/public-house", "permanent": true },
+    { "source": "/campaigns/angie-tiara-beauty", "destination": "/campaigns/selaras-haus", "permanent": true },
+    { "source": "/creative-direction", "destination": "/creative-direction-content", "permanent": true },
+    { "source": "/archive", "destination": "/photography", "permanent": false },
+    { "source": "/private", "destination": "/", "permanent": false }
+  ]
 }

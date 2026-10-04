@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sundayoffice.agency/sitemap.xml
