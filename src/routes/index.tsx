@@ -584,7 +584,10 @@ const PACKAGES = [
   {
     n: "Monthly Content",
     who: "Ongoing content so your brand never goes quiet.",
-    items: ["A photo + video shoot every month", "Reels and posts, ready to publish", "A monthly content plan", "Website updates as needed"],
+    items: ["A pro shoot every month", "Posts, reels + captions, ready to publish", "Research + a monthly plan", "Canva templates you approve", "Plans from $600 a month"],
+    foot: "FROM $600 / MONTH",
+    href: "/creative-direction-content#monthly",
+    go: "See the plans",
   },
 ];
 
@@ -604,7 +607,7 @@ function Packages() {
         </div>
         <div className="so-pk-grid">
           {PACKAGES.map((p) => (
-            <a key={p.n} href="/#inquiry" className={"so-pk-card" + (p.tag ? " is-feat" : "")}>
+            <a key={p.n} href={"href" in p && p.href ? p.href : "/?need=Full+package+%28brand%2C+site+%2B+content%29&pkg=" + encodeURIComponent(p.n) + "#inquiry"} className={"so-pk-card" + (p.tag ? " is-feat" : "")}>
               <span className="so-pk-top">
                 <span className="so-pk-name">{p.n}</span>
                 {p.tag && <span className="so-pk-tag">{p.tag}</span>}
@@ -616,9 +619,9 @@ function Packages() {
                 ))}
               </ul>
               <span className="so-pk-foot">
-                <span className="so-micro">QUOTED PER PROJECT</span>
+                <span className="so-micro">{"foot" in p && p.foot ? p.foot : "QUOTED PER PROJECT"}</span>
                 <span className="so-pk-go">
-                  Ask about it <span className="arr" aria-hidden>→</span>
+                  {"go" in p && p.go ? p.go : "Ask about it"} <span className="arr" aria-hidden>→</span>
                 </span>
               </span>
             </a>

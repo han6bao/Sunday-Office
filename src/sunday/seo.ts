@@ -21,7 +21,7 @@ export const SEO: Record<string, Seo> = {
   "/branding": {
     title: "Branding + World Building in Seattle | Sunday Office",
     description:
-      "Seattle branding agency for local businesses: brand identity, brand kits, voice and the whole world around your logo. Brand kits from $650.",
+      "Seattle branding agency for local businesses: brand identity, brand kits, voice and the whole world around your logo. Logos from $350, brand kits from $550.",
   },
   "/logo-identity": {
     title: "Logo + Brand Identity Design in Seattle | Sunday Office",
@@ -71,7 +71,7 @@ export const SEO: Record<string, Seo> = {
   "/creative-direction-content": {
     title: "Creative Direction + Social Media Content Seattle | Sunday Office",
     description:
-      "Seattle creative direction and social media content: concepts, campaigns, art direction and content that keeps your brand going week after week.",
+      "Seattle creative direction and social media content: audits, strategy, Canva brand kits and monthly content plans from $600 a month.",
   },
 
   /* Case studies */

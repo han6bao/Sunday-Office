@@ -49,7 +49,7 @@ const FIT = [
   { label: "I don't have a website yet. I need the basics: what I do, my prices and a way to book.", pick: "Simple site", price: "$850", why: "Four to five clean pages, words written with you, and booking or inquiries plugged in. Everything most service businesses need to look ready." },
   { label: "Same, and I want people searching in Seattle to find me on Google.", pick: "Simple site + SEO", price: "$1,000", why: "The same site, set up so Google understands it: page titles, descriptions, local search and a sitemap." },
   { label: "I need more: galleries, a menu, lots of services or a custom feature.", pick: "Full site", price: "from $1,250", why: "More pages and more going on. We'll map out exactly what you need first, so the price matches the site." },
-  { label: "I already have a site that needs fixing, or I only need one page.", pick: "Landing pages + fixes", price: "Quoted", why: "A refresh, a repair or a single page, priced to what it actually needs. No starting over unless it makes sense." },
+  { label: "I already have a site that needs fixing, or I only need one page.", pick: "Landing pages + fixes", price: "from $250", why: "A refresh, a repair or a single page, priced to what it actually needs. No starting over unless it makes sense." },
 ];
 
 const FAQ = [
@@ -60,6 +60,7 @@ const FAQ = [
   { q: "I already have a site. Do we have to start over?", a: "Not unless it makes sense. We can fix what's broken, refresh the look, swap in better photos or tighten your portfolio. That's quoted separately from a full build." },
   { q: "What's the difference between the simple site and the SEO one?", a: "It's the same site. The SEO version adds the setup that helps Google understand you: page titles, descriptions, local Seattle search and a sitemap." },
   { q: "Will there be other costs?", a: "Some things you own, like your domain name, have their own small costs. I'll walk you through each one before we start, so nothing comes as a surprise." },
+  { q: "What if I need changes after launch?", a: "Every site comes with one round of small changes after launch, free. After that, updates are $70 each. Bigger changes get their own quote." },
 ];
 
 const REAL_TALK = [
@@ -149,12 +150,12 @@ function WebsitesPage() {
           need="Website"
           title="Where websites start."
           items={[
-            { t: "Simple site", p: "$850", d: "For businesses that need the basics done beautifully.", list: ["4 to 5 pages", "Design + build", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
-            { t: "Simple site + SEO", p: "$1,000", tag: "RECOMMENDED", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Page titles + descriptions", "Local Seattle search", "A sitemap for Google"] },
-            { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Galleries or menus", "Lots of services", "Case studies", "A more custom build"] },
-            { t: "Landing pages + fixes", p: "Quoted", d: "Priced to what it actually needs.", list: ["A single page", "A link-in-bio", "Fixes + a refresh", "Better photos or copy"] },
+            { t: "Simple site", p: "$850", d: "For businesses that need the basics done beautifully.", list: ["Research on your business + customers", "4 to 5 pages, designed + built", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
+            { t: "Simple site + SEO", p: "$1,000", tag: "RECOMMENDED", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Research into what people search in Seattle", "Page titles + descriptions", "Local search + a sitemap for Google"] },
+            { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Research + a full page plan", "Galleries or menus", "Lots of services or case studies", "A more custom build"] },
+            { t: "Landing pages + fixes", p: "from $250", d: "One page, or help for the site you have.", list: ["A single page", "A link-in-bio", "Fixes + a refresh", "Better photos or copy"] },
           ]}
-          foot="Every business is different, so the final price depends on what yours needs. You'll know the number before anything starts."
+          foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each. You'll know the final number before anything starts."
         />
 
         <WorkCards

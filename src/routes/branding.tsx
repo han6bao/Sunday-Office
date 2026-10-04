@@ -42,9 +42,9 @@ const STEPS = [
 ]
 
 const FIT = [
-  { label: "I have a logo I like, but nothing else matches yet.", pick: "Brand kit", price: "from $650", why: "We keep your logo and build the world around it: palette, type, the way you talk, and a one-page guide so everything finally matches." },
-  { label: "I'm starting from scratch, or my brand doesn't feel like me anymore.", pick: "Full brand world", price: "Quoted", why: "Logo, identity, voice and guide made from the ground up, often with photos or a website. Priced once we know the scope." },
-  { label: "I mostly just need a logo.", pick: "Logo + identity", price: "Quoted", why: "A logo and the few pieces that go with it, so it works everywhere from your sign to your profile picture." },
+  { label: "I have a logo I like, but nothing else matches yet.", pick: "Brand kit", price: "from $550", why: "We keep your logo and build the world around it: palette, type, the way you talk, and a one-page guide so everything finally matches." },
+  { label: "I'm starting from scratch, or my brand doesn't feel like me anymore.", pick: "Full brand world", price: "from $1,500", why: "Logo, identity, voice and guide made from the ground up, often with photos or a website. Priced once we know the scope." },
+  { label: "I mostly just need a logo.", pick: "Logo", price: "from $350", why: "A new logo with an icon and a wordmark, in every file you need, so it works everywhere from your sign to your profile picture." },
 ];
 
 const FAQ = [
@@ -201,8 +201,9 @@ function BrandingPage() {
           need="Branding"
           title="Where branding starts."
           items={[
-            { t: "Brand kit", p: "from $650", d: "Built around the logo you already have.", list: ["Color palette", "Type", "The way it talks", "A one-page guide"] },
-            { t: "Full brand world", p: "Quoted", d: "Everything from scratch, priced to the project.", list: ["Logo + identity", "Voice", "Brand guide", "Often with photos or a website"] },
+            { t: "Logo", p: "from $350", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
+            { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
+            { t: "Full brand world", p: "from $1,500", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
           ]}
           foot="You'll know the number before anything starts."
         />
@@ -266,7 +267,7 @@ function BrandingPage() {
           </a>
         </div>
       </div>
-      <BookBar service="Branding" price="from $650" need="Branding" />
+      <BookBar service="Branding" price="from $350" need="Branding" />
     </div>
   );
 }

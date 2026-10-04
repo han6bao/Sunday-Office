@@ -213,7 +213,7 @@ export function BackHome() {
   );
 }
 
-export type Price = { t: string; p: string; d: string; tag?: string; list?: string[] };
+export type Price = { t: string; p: string; d: string; tag?: string; list?: string[]; foot?: string };
 
 /** Pricing in the same cards as the homepage packages: name, price, who it's
  *  for, what's in it, and one tap to ask about it. */
@@ -257,7 +257,7 @@ export function PriceList({
               </ul>
             )}
             <span className="so-pk-foot">
-              <span className="so-micro">{x.p === "Quoted" ? "QUOTED PER PROJECT" : x.p.startsWith("from") ? "STARTING PRICE" : "FLAT PRICE"}</span>
+              <span className="so-micro">{x.foot ?? (x.p === "Quoted" ? "QUOTED PER PROJECT" : x.p === "Ask me" ? "BUILT AROUND YOU" : x.p.includes("/mo") ? "PER MONTH" : x.p.includes("/hr") ? "PER HOUR" : x.p.startsWith("from") ? "STARTING PRICE" : "FLAT PRICE")}</span>
               <span className="so-pk-go">
                 Ask about it <span className="arr" aria-hidden>→</span>
               </span>

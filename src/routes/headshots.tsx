@@ -16,13 +16,13 @@ const NOTES = [
 ];
 
 const FIT = [
-  { label: "I need one great photo for LinkedIn, work or a profile.", pick: "Standard", price: "$150", why: "Clean and simple: one look, one or two finished photos. Quick, easy and ready to use." },
-  { label: "I want options: a couple of outfits and a few different looks.", pick: "More looks", price: "$350", why: "More poses and an outfit change, so you have the right photo for every profile and platform." },
-  { label: "I'm building a brand and need photos for my website and socials.", pick: "Personal branding", price: "from $550", why: "A longer session with more looks and setups, planned around where the photos will live." },
+  { label: "I need one great photo for LinkedIn, work or a profile.", pick: "Standard", price: "$150", why: "Clean and simple: one look, one finished photo. Quick, easy and ready to use." },
+  { label: "I want options: a couple of outfits and a few different looks.", pick: "More looks", price: "$350", why: "Two outfits and five finished photos, so you have the right photo for every profile and platform." },
+  { label: "I'm building a brand and need photos for my website and socials.", pick: "Personal branding", price: "from $550", why: "A bigger gallery with more creative room, planned around where the photos will live." },
 ];
 
 const FAQ = [
-  { q: "How many photos do I get?", a: "The Standard session includes one or two finished photos. More looks and personal branding include more, and you'll know the exact number when you book." },
+  { q: "How many photos do I get?", a: "Standard includes 1 finished photo. More looks includes 5. Personal branding comes with a bigger gallery, and you'll know the exact number when you book." },
   { q: "Where do we shoot?", a: "We pick the spot together, based on the look you want and where the photos will be used." },
   { q: "What should I wear?", a: "Solid colors, softer necklines and clothes you already feel good in. Not sure? Bring a few options and we'll choose together on the day." },
   { q: "I've never had headshots taken. Will I be awkward?", a: "Most people feel that way at first. I direct you the whole time, from where to stand to how to tilt your chin, so all you have to do is show up." },
@@ -110,9 +110,9 @@ function HeadshotsPage() {
           <PriceList
             title="Headshot sessions."
             items={[
-              { t: "Standard", p: "$150", d: "Clean headshots, quick and easy.", list: ["One look", "One or two final photos", "Direction the whole time"] },
-              { t: "More looks", p: "$350", d: "Options for every profile.", list: ["More poses", "An outfit change", "Direction the whole time"] },
-              { t: "Personal branding", p: "from $550", tag: "MOST COMPLETE", d: "A fuller session for your brand.", list: ["More looks + setups", "Photos for your website", "Photos for your socials"] },
+              { t: "Standard", p: "$150", d: "One clean headshot, quick and easy.", list: ["A quick chat about what it's for", "One look", "1 finished photo", "Direction the whole time"] },
+              { t: "More looks", p: "$350", d: "Options for every profile.", list: ["Outfit guidance before the shoot", "2 outfits", "5 finished photos", "Direction the whole time"] },
+              { t: "Personal branding", p: "from $550", tag: "MOST COMPLETE", d: "A bigger gallery with more creative room.", list: ["A planning call + moodboard", "More looks + setups", "A bigger gallery", "Photos for your website + socials"] },
             ]}
             need="Headshots"
             foot={<>Not sure which one? <a className="so-bw-inline" href="#fit">Find yours →</a></>}

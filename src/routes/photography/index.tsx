@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { BackHome, BookBar, FaqList, FitPicker, ListBlock, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../../sunday/service-kit";
+import { BackHome, BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../../sunday/service-kit";
 
 export const Route = createFileRoute("/photography/")({
   head: () => seoHead("/photography"),
@@ -47,13 +47,13 @@ const STEPS = [
 
 const FIT = [
   { label: "A headshot or a few portraits of me.", pick: "Headshots", price: "from $150", why: "Clean, natural headshots with direction the whole time. Three session sizes, from one quick look to a full personal branding shoot.", pkg: "Headshots" },
-  { label: "Photos of my business: food, products, the space or my team.", pick: "Brand photography", price: "Quoted", why: "Planned around where the photos will live, so you get the shots your website, menu and feed actually need." },
-  { label: "Coverage of an event, a night or a performance.", pick: "Event coverage", price: "Quoted", why: "The moments people want to relive, edited and delivered ready to post while people are still talking about it." },
-  { label: "Something editorial, conceptual or for a campaign.", pick: "Creative shoot", price: "Quoted", why: "The idea comes first: references, styling and a look we agree on before the shoot day." },
+  { label: "Photos of my business: food, products, the space or my team.", pick: "Brand photography", price: "from $550", why: "A half-day shoot and 30+ edited photos, planned around where they'll live, so you get the shots your website, menu and feed actually need." },
+  { label: "Coverage of an event, a night or a performance.", pick: "Event coverage", price: "$150 an hour", why: "The moments people want to relive, edited and delivered ready to post while people are still talking about it. Two-hour minimum." },
+  { label: "Something editorial, conceptual or for a campaign.", pick: "Creative shoot", price: "from $550", why: "The idea comes first: the concept and a moodboard are included, so we agree on the look before the shoot day." },
 ];
 
 const FAQ = [
-  { q: "How much does a shoot cost?", a: <>Headshots start at $150 (<a href="/headshots#pricing">see sessions</a>). Everything else is quoted, because one product photo and a full campaign are very different jobs. You'll know the number before anything is booked.</> },
+  { q: "How much does a shoot cost?", a: <>Headshots start at $150 (<a href="/headshots#pricing">see sessions</a>). Brand and creative shoots start at $550, and events are $150 an hour with a two-hour minimum. You'll know the final number before anything is booked.</> },
   { q: "I've never been photographed. Is that okay?", a: "Most people haven't. I direct you the whole time, so you look like yourself, not stiff." },
   { q: "Where do we shoot?", a: "Wherever suits the photos: your space, a location we pick together, or somewhere that fits the look. We decide when we plan." },
   { q: "Can you do video on the same day?", a: <>Yes. Photos and video can come from the same shoot, so one day covers more. <a href="/moving-image">See moving image →</a></> },
@@ -134,13 +134,25 @@ function PhotographyPage() {
           </div>
         </section>
 
+        <PriceList
+          need="Photography"
+          title="Where shoots start."
+          items={[
+            { t: "Headshots", p: "from $150", d: "Clean, natural and actually you.", list: ["Three session sizes", "Direction the whole time", "See all sessions on the headshots page"] },
+            { t: "Brand photography", p: "from $550", tag: "FOR BUSINESSES", d: "Food, products, your space, your team.", list: ["A planning call + shot list", "Half-day shoot", "30+ edited photos", "Sized for web, social + print"] },
+            { t: "Event coverage", p: "$150/hr", d: "Two-hour minimum.", list: ["A quick call before the event", "The moments that matter", "Edited + ready to post"] },
+            { t: "Creative or editorial", p: "from $550", d: "For campaigns, artists and ideas.", list: ["Concept + moodboard included", "Styling + art direction", "Edited by hand"] },
+          ]}
+          foot="You'll know the final number before anything is booked."
+        />
+
         <FaqList items={FAQ} />
 
         <ServiceCta current="photography" title="Have something to shoot?" sub="CAMPAIGNS, CONTENT, HEADSHOTS AND EVERYTHING IN BETWEEN." />
 
         <BackHome />
       </div>
-      <BookBar service="Photography" price="headshots from $150" need="Photography" />
+      <BookBar service="Photography" price="from $150" need="Photography" />
     </div>
   );
 }

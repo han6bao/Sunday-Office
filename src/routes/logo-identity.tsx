@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { useState } from "react";
-import { BookBar, FaqList, ServiceCta } from "../sunday/service-kit";
+import { BookBar, FaqList, PriceList, ServiceCta } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/logo-identity")({
   head: () => seoHead("/logo-identity"),
@@ -532,9 +532,20 @@ function LogoIdentityPage() {
           </div>
         </section>
 
+        <PriceList
+          need="Logo / Identity"
+          title="Where logos start."
+          items={[
+            { t: "Logo", p: "from $350", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
+            { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
+            { t: "Full brand world", p: "from $1,500", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
+          ]}
+          foot="You'll know the final number before anything starts."
+        />
+
         <FaqList
           items={[
-            { q: "How much does a logo cost?", a: "It depends on how much you need. A brand kit built around a logo you already have starts at $650. A new logo and identity from scratch is quoted once we know what it needs to do." },
+            { q: "How much does a logo cost?", a: "A new logo starts at $350. A brand kit built around a logo you already have starts at $550, and a full brand world from scratch starts at $1,500." },
             { q: "Can you fix or clean up the logo I have?", a: "Yes. Sometimes a logo just needs redrawing, better spacing or versions that work small. We don't start over unless it makes sense." },
             { q: "What files do I get?", a: "Your logo in the formats you'll actually use: for print, for the web, light and dark versions, and sizes for your profile picture." },
             { q: "How many options will I see?", a: "We agree on a direction first, so the designs are already pointed the right way. Then we refine together until it feels like you." },
@@ -557,7 +568,7 @@ function LogoIdentityPage() {
           </a>
         </div>
       </div>
-      <BookBar service="Logo + Identity" need="Logo / Identity" />
+      <BookBar service="Logo + Identity" price="from $350" need="Logo / Identity" />
     </div>
   );
 }

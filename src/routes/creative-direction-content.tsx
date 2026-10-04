@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { BackHome, BookBar, CardRail, FaqList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BackHome, BookBar, CardRail, FaqList, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/creative-direction-content")({
   head: () => seoHead("/creative-direction-content"),
@@ -58,7 +58,10 @@ const STEPS = [
 ];
 
 const FAQ = [
-  { q: "Is this a one-time thing or monthly?", a: <>Either. Some people need the direction set once and then run with it. Others want content every month, which is what the Monthly Content package on the <a href="/#packages">homepage</a> is for.</> },
+  { q: "Is this a one-time thing or monthly?", a: "Either. Some people start with the audit and strategy session and run with it. Others want content every month, which is what the monthly plans are for. Monthly plans start with a 3-month commitment." },
+  { q: "Which platforms do you work with?", a: "Instagram, TikTok, Facebook and LinkedIn. Starter covers one platform, Growth covers two plus Facebook, and Full covers all four, including a LinkedIn plan." },
+  { q: "Do I get to approve things first?", a: "Always. Every template and every piece of the plan is yours to approve before anything goes out." },
+  { q: "What happens to the audit price if I sign up monthly?", a: "It comes off your first month. Growth and Full include the audit free in month one." },
   { q: "Do you post for me?", a: "If you want. Posting and rollout can be part of it, or I hand everything over ready for you to post." },
   { q: "What do you need from me?", a: "A conversation about your business and who you want to reach, and access to whatever you already have. We figure out the rest together." },
   { q: "How do we know it's working?", a: "We watch what lands: saves, shares, comments and who reaches out. The next round of content gets better because of it." },
@@ -82,6 +85,7 @@ function DirectionAndContentPage() {
           jumps={[
             { t: "What you get", h: "#get" },
             { t: "How it works", h: "#how" },
+            { t: "Monthly plans", h: "#monthly" },
             { t: "Work", h: "#work" },
             { t: "Questions", h: "#faq" },
           ]}
@@ -150,13 +154,38 @@ function DirectionAndContentPage() {
           ]}
         />
 
+        <PriceList
+          id="monthly"
+          need="Monthly content"
+          label="MONTHLY CONTENT"
+          title="Content every month."
+          items={[
+            { t: "Starter", p: "$600/mo", d: "An easy, affordable start.", list: ["1 pro photo shoot (1 hour, about 15 photos) + iPhone content", "8 posts on 1 platform", "Captions + a 30-day plan", "3 Canva templates you approve"] },
+            { t: "Growth", p: "$1,500/mo", tag: "MOST POPULAR", d: "The best value per post.", list: ["Pro photo + video shoot + iPhone content", "20 posts + 6 reels on 2 platforms, plus Facebook", "Monthly trend + competitor research", "15 Canva templates you approve", "Audit + strategy free in month one"] },
+            { t: "Full", p: "$2,500/mo", d: "I run your content.", list: ["2 pro shoots + iPhone content", "24 posts + 10 reels", "Instagram, TikTok, Facebook + LinkedIn", "Posting for you + a monthly check-in", "New Canva templates every month"] },
+            { t: "Signature", p: "Ask me", d: "From $4,000 a month, built around you.", list: ["A styled campaign shoot every month", "Videographer-shot video + ad creative", "A custom template system", "Website updates + priority"] },
+          ]}
+          foot="Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out."
+        />
+
+        <PriceList
+          id="start-smaller"
+          need="Creative Direction"
+          label="OR START SMALLER"
+          title="One-time help."
+          items={[
+            { t: "Audit + strategy", p: "from $400", d: "Know exactly what to post and why.", list: ["Research into your accounts, audience + competitors", "A 90-minute meeting", "3 to 4 topics + how often to post", "3 quick fixes for this week", "Comes off your first month if you go monthly"] },
+            { t: "Canva brand kit", p: "from $250", d: "Templates you can edit yourself.", list: ["15 templates in your colors + fonts", "4:5 + 1:1 posts", "Stories + story stickers", "Highlight covers", "You approve every template"] },
+          ]}
+        />
+
         <FaqList items={FAQ} />
 
         <ServiceCta current="direction" title="Let's make something real." sub="SET THE DIRECTION, THEN KEEP IT GOING." />
 
         <BackHome />
       </div>
-      <BookBar service="Creative Direction + Social" need="Creative Direction" />
+      <BookBar service="Creative Direction + Social" price="from $250" need="Creative Direction" />
     </div>
   );
 }
