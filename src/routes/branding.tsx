@@ -168,35 +168,7 @@ function BrandingPage() {
           </div>
         </div>
 
-        {/* What's included */}
-        <section id="included" className="so-bw-sec so-bw-inc">
-          <div>
-            <p className="so-micro">WHAT A WORLD INCLUDES</p>
-            <h2 className="so-serif so-bw-h">The foundation everything else is built on.</h2>
-          </div>
-          <div className="so-bw-list">
-            {INCLUDED.map((x) => (
-              <div key={x.t} className="so-bw-row">
-                <p className="so-bw-t">{x.t}</p>
-                <p className="so-bw-d">
-                  {x.d}
-                  {x.link && (
-                    <>
-                      {" "}
-                      <a className="so-bw-inline" href={x.link.h}>
-                        {x.link.t} →
-                      </a>
-                    </>
-                  )}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <ServiceSteps steps={STEPS} title="How a world gets built." />
-
-        <FitPicker need="Branding" question="Where is your brand right now?" options={FIT} />
 
         <PriceList
           need="Branding"
@@ -262,12 +234,6 @@ function BrandingPage() {
 
         {/* CTA */}
         <ServiceCta current="branding" title="One piece or the whole world." sub="IT DOESN'T NEED TO BE FIGURED OUT YET." />
-
-        <div style={{ marginTop: 56 }}>
-          <a href="/" className="so-arrow">
-            <span className="arr">←</span> Back to Sunday Office
-          </a>
-        </div>
       </div>
       <BookBar service="Branding" price="from $350" need="Branding" />
     </div>

@@ -140,11 +140,7 @@ function WebsitesPage() {
           <a className="so-micro" href="/campaigns/essential-brows-studio">HOW IT WAS MADE →</a>
         </div>
 
-        <ListBlock id="get" label="WHAT YOU GET" title="Everything a website needs to work." rows={INCLUDED} />
-
         <ServiceSteps steps={STEPS} title="From first talk to live site." />
-
-        <FitPicker need="Website" question="Where are you right now?" options={FIT} />
 
         <PriceList
           need="Website"
@@ -167,13 +163,9 @@ function WebsitesPage() {
           ]}
         />
 
-        <TapStory id="real-talk" label="THE REAL TALK" title="Why a website, and why with me." chapters={REAL_TALK} />
-
         <FaqList items={FAQ} />
 
         <ServiceCta current="websites" title="Ready for a site that feels like you?" sub="ONE PAGE OR A WHOLE SITE. WE'LL FIGURE OUT WHAT YOU NEED." />
-
-        <BackHome />
       </div>
       <BookBar service="Websites" price="from $850" need="Website" />
     </div>

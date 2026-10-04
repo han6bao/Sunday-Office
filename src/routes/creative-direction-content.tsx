@@ -111,39 +111,7 @@ function DirectionAndContentPage() {
           </div>
         </section>
 
-        {/* What you get — two halves */}
-        <section id="get" className="so-bw-sec">
-          <p className="so-micro">WHAT YOU GET</p>
-          <h2 className="so-serif so-bw-h">Two halves of one job.</h2>
-          <div className="so-cd-two">
-            <div>
-              <p className="so-bw-t">Creative direction</p>
-              <p className="so-bw-d">The idea and the look, set before anything gets made.</p>
-              <ul>
-                {DIRECTION.map((x) => (
-                  <li key={x}>{x}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="so-bw-t">Social + content</p>
-              <p className="so-bw-d">The posts that keep the world alive after launch.</p>
-              <ul>
-                {SOCIAL.map((x) => (
-                  <li key={x}>{x}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
         <ServiceSteps steps={STEPS} title="How it keeps going." />
-
-        <CardRail
-          label="CREATIVE NOTES"
-          title="A few things I believe about content."
-          cards={NOTES.map((x) => ({ t: x.t[0] + x.t.slice(1).toLowerCase(), d: x.d }))}
-        />
 
         <WorkCards
           label="DIRECTION + CONTENT I'VE DONE"
@@ -182,8 +150,6 @@ function DirectionAndContentPage() {
         <FaqList items={FAQ} />
 
         <ServiceCta current="direction" title="Let's make something real." sub="SET THE DIRECTION, THEN KEEP IT GOING." />
-
-        <BackHome />
       </div>
       <BookBar service="Creative Direction + Social" price="from $250" need="Creative Direction" />
     </div>

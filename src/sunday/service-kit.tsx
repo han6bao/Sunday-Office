@@ -33,7 +33,6 @@ export function ServiceSteps({ steps, label = "HOW IT WORKS", id = "how", title 
               <p className="so-flow-t">{s.t}</p>
               <p className="so-flow-d">{s.d}</p>
             </div>
-            {s.more && <p className="so-flow-more">{s.more}</p>}
           </li>
         ))}
       </ol>
@@ -145,16 +144,6 @@ export function ServiceCta({ title, sub, current }: { title: string; sub: string
           </li>
         ))}
       </ol>
-      <div className="so-bw-cta-next">
-        <p className="so-micro">MORE WAYS TO BUILD YOUR WORLD</p>
-        <div className="so-bw-cta-links">
-          {SERVICES_NAV.filter((s) => s.k !== current).map((r) => (
-            <a key={r.k} href={r.h}>
-              {r.t} <span aria-hidden>→</span>
-            </a>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }
@@ -171,7 +160,7 @@ export function ServiceIntro({
   title: string;
   lead: ReactNode;
   aside?: ReactNode;
-  jumps: { t: string; h: string }[];
+  jumps?: { t: string; h: string }[];
 }) {
   return (
     <>
@@ -190,13 +179,6 @@ export function ServiceIntro({
               {aside}
             </p>
           )}
-          <nav className="so-bw-jump" aria-label="On this page">
-            {jumps.map((j) => (
-              <a key={j.h} href={j.h}>
-                {j.t}
-              </a>
-            ))}
-          </nav>
         </div>
       </div>
     </>
@@ -344,17 +326,33 @@ export function FaqList({ items, label = "QUESTIONS", title = "Before you book."
         </p>
       </div>
       <div className="so-faq">
-        {items.map((f, n) => (
-          <details key={f.q} className="so-faq-item" open={n === 0}>
-            <summary>
-              <span>{f.q}</span>
-              <span className="so-faq-icon" aria-hidden />
-            </summary>
-            <div className="so-faq-a">{f.a}</div>
-          </details>
+        {items.slice(0, 4).map((f) => (
+          <FaqItem key={f.q} f={f} />
         ))}
+        {items.length > 4 && (
+          <details className="so-faq-more">
+            <summary className="so-micro">
+              {items.length - 4} MORE {items.length - 4 === 1 ? "QUESTION" : "QUESTIONS"} <span aria-hidden>+</span>
+            </summary>
+            {items.slice(4).map((f) => (
+              <FaqItem key={f.q} f={f} />
+            ))}
+          </details>
+        )}
       </div>
     </section>
+  );
+}
+
+function FaqItem({ f }: { f: Faq }) {
+  return (
+    <details className="so-faq-item">
+      <summary>
+        <span>{f.q}</span>
+        <span className="so-faq-icon" aria-hidden />
+      </summary>
+      <div className="so-faq-a">{f.a}</div>
+    </details>
   );
 }
 

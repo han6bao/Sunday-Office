@@ -102,11 +102,7 @@ function PhotographyPage() {
           </div>
         </section>
 
-        <ListBlock id="get" label="WHAT YOU GET" title="Photos that look good and get used." rows={INCLUDED} />
-
         <ServiceSteps steps={STEPS} title="How a shoot comes together." />
-
-        <FitPicker need="Photography" question="What do you need photos of?" options={FIT} />
 
         <WorkCards
           label="SHOOTS I'VE DONE"
@@ -149,8 +145,6 @@ function PhotographyPage() {
         <FaqList items={FAQ} />
 
         <ServiceCta current="photography" title="Have something to shoot?" sub="CAMPAIGNS, CONTENT, HEADSHOTS AND EVERYTHING IN BETWEEN." />
-
-        <BackHome />
       </div>
       <BookBar service="Photography" price="from $150" need="Photography" />
     </div>

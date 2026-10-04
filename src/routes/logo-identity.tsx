@@ -269,54 +269,6 @@ function LogoIdentityPage() {
           </span>
         </a>
 
-        {/* Where you're starting */}
-        <section className="so-bw-sec so-bw-inc">
-          <div>
-            <p className="so-micro">WHERE ARE YOU STARTING?</p>
-            <h2 className="so-serif so-bw-h">Wherever you are, we build from there.</h2>
-          </div>
-          <div className="so-bw-list">
-            {LEVELS.map((x) => (
-              <div key={x.t} className="so-bw-row">
-                <p className="so-bw-t">{x.t}</p>
-                <p className="so-bw-d">{x.d}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* What you get */}
-        <section id="get" className="so-bw-sec so-bw-inc">
-          <div>
-            <p className="so-micro">WHAT YOU GET</p>
-            <h2 className="so-serif so-bw-h">Only the pieces you need.</h2>
-            <p className="so-bw-d" style={{ maxWidth: "34ch" }}>
-              Not every project needs every piece. We'll figure out what yours does.
-            </p>
-          </div>
-          <div className="so-bw-list">
-            {BUILDS.map((x) => (
-              <div key={x.t} className="so-bw-row">
-                <p className="so-bw-t">{x.t}</p>
-                <p className="so-bw-d">{x.d}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Advice */}
-        <section className="so-bw-sec so-bw-how">
-          <p className="so-micro">WORTH KNOWING</p>
-          <div className="so-li-tips">
-            {ADVICE.map((a) => (
-              <div key={a.t}>
-                <p className="so-bw-t">{a.t}</p>
-                <p className="so-bw-d">{a.d}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* FIND YOUR DIRECTION */}
         <div
           id="direction"
@@ -555,19 +507,6 @@ function LogoIdentityPage() {
         />
 
         <ServiceCta current="logo" title="You don't have to know what you need yet." sub="BRING THE IDEA, THE BUSINESS, OR THE HALF-FINISHED LOGO." />
-
-        <div className="so-room-more">
-          <p className="so-micro">PART OF BRANDING + WORLD BUILDING</p>
-          <a href="/branding" className="so-room-more-link">
-            Build a World <span className="arr" aria-hidden>→</span>
-          </a>
-        </div>
-
-        <div style={{ marginTop: 56 }}>
-          <a href="/" className="so-arrow">
-            <span className="arr">←</span> Back to Sunday Office
-          </a>
-        </div>
       </div>
       <BookBar service="Logo + Identity" price="from $350" need="Logo / Identity" />
     </div>

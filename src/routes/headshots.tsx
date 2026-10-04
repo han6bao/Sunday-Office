@@ -115,11 +115,8 @@ function HeadshotsPage() {
               { t: "Personal branding", p: "from $550", tag: "MOST COMPLETE", d: "A bigger gallery with more creative room.", list: ["A planning call + moodboard", "More looks + setups", "A bigger gallery", "Photos for your website + socials"] },
             ]}
             need="Headshots"
-            foot={<>Not sure which one? <a className="so-bw-inline" href="#fit">Find yours →</a></>}
           />
         </div>
-
-        <FitPicker need="Headshots" question="What are the photos for?" options={FIT} />
 
         {/* Three kinds */}
         <section className="so-bw-sec">
@@ -151,23 +148,6 @@ function HeadshotsPage() {
           </div>
         </section>
 
-        {/* Before your session */}
-        <section className="so-bw-sec">
-          <p className="so-micro">BEFORE YOUR SESSION</p>
-          <h2 className="so-serif so-bw-h">Four things to know.</h2>
-          <div className="so-hs-tips">
-            {ADVICE.map((a, i) => (
-              <div key={a.t} className="so-hs-tip">
-                <span className="so-hs-tip-n">{String(i + 1).padStart(2, "0")}</span>
-                <p className="so-hs-tip-t">{a.t.charAt(0) + a.t.slice(1).toLowerCase()}</p>
-                <p className="so-bw-d">{a.d}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <CardRail label="HOW I WORK" title="What to expect from me." cards={NOTES} />
-
         <FaqList items={FAQ} />
 
         {/* CTA */}
@@ -180,12 +160,6 @@ function HeadshotsPage() {
             </div>
           </div>
         </section>
-
-        <div style={{ marginTop: 56 }}>
-          <a href="/" className="so-arrow">
-            <span className="arr">←</span> Back to Sunday Office
-          </a>
-        </div>
       </div>
       <BookBar service="Headshots" price="from $150" need="Headshots" />
     </div>

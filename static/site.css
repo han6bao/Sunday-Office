@@ -43,7 +43,7 @@
   --color-sepia: #dccde3;
   --color-red: #9e2b2e;
 
-  --font-sans: "Manrope Variable", "Manrope", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Manrope Variable", "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-display: "Playfair Display", "Times New Roman", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
   --font-cjk: "Zhi Mang Xing", "KaiTi", "STKaiti", serif;
@@ -10196,6 +10196,15 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .so-darkframe-title em,
 .so-start-head .so-serif em { color: #c9b0d9 !important; }
 .so-pk-head .so-serif em { color: #f3ead9 !important; }
+
+/* ---------- Calmer pages: fewer blocks, more air ---------- */
+.so-bw-jump { display: none !important; }
+.so-faq-more { border-top: 0; }
+.so-faq-more > summary { list-style: none; cursor: pointer; padding: 18px 0 6px; display: inline-flex; gap: 10px; align-items: center; opacity: .7; }
+.so-faq-more > summary::-webkit-details-marker { display: none; }
+.so-faq-more[open] > summary { display: none; }
+.so-faq-more > summary:hover { opacity: 1; }
+.so-bw-cta-full .so-next { margin-bottom: 0; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

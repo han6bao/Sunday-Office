@@ -91,16 +91,6 @@ function MovingImagePage() {
           </figcaption>
         </figure>
 
-        <ListBlock label="WHAT IT'S FOR" title="Three kinds of moving image." rows={KINDS} />
-
-        <ListBlock
-          id="get"
-          label="WHAT YOU GET"
-          title="One shoot, more than one cut."
-          note="Polished or raw, the style follows the project."
-          rows={INCLUDED}
-        />
-
         <ServiceSteps steps={STEPS} title="From idea to every cut." />
 
         <WorkCards
@@ -125,8 +115,6 @@ function MovingImagePage() {
         <FaqList items={FAQ} />
 
         <ServiceCta current="moving" title="Have something that should move?" sub="ITS OWN PROJECT, OR PART OF A BIGGER CAMPAIGN." />
-
-        <BackHome />
       </div>
       <BookBar service="Moving Image" price="from $350" need="Video / Moving Image" />
     </div>

@@ -362,14 +362,6 @@ function BuildYourWorld() {
             <p className="so-about-copy so-bw2-p">
               An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction, for local businesses and the artists who make this city feel like home.
             </p>
-            <WorldPicker
-              rooms={[
-                { k: "Brand", line: "the feeling, the look, the voice", img: "/assets/campaigns/essential-brows-studio/brand-kit.jpg", cap: "Essential Brows · brand kit", h: "/campaigns/essential-brows-studio" },
-                { k: "Digital", line: "where the world lives", img: "/assets/work/websites-photo.jpg", cap: "Websites + digital", h: "/websites" },
-                { k: "Image", line: "what the world looks like", img: "/assets/headshots/creative-01.jpg", cap: "Headshots · Seattle", h: "/headshots" },
-                { k: "Direction", line: "how it all comes together", img: "/assets/campaigns/kenshi-killz/kk-05.jpg", cap: "Creative direction", h: "/creative-direction-content" },
-              ]}
-            />
           </div>
         </div>
 
@@ -749,14 +741,6 @@ function Index() {
         <BuildYourWorld />
         <CurrentWork />
         <TheProof />
-        <ScrollReel
-          items={REEL}
-          title={
-            <h2 className="so-serif so-reel-title">
-              In the <em>frame.</em>
-            </h2>
-          }
-        />
         <MeetHana />
         <Packages />
         <StartAProject />
