@@ -17,6 +17,7 @@ import {
   BnShot,
   BnSwatches,
   BnThenNow,
+  BnTour,
   BuildNotes,
 } from "../../sunday/build-notes";
 
@@ -104,6 +105,17 @@ function JazminsCase() {
           <strong>the brand has to do the reassuring.</strong>
         </p>
       </BnSec>
+
+      <BnTour
+        url="Jazmin's Events · the brand"
+        href={SITE}
+        items={[
+          { t: "The brand in use", d: "Cards, stationery, feed and stories.", img: `${A}/kit-in-action.jpg` },
+          { t: "The brand guide", d: "Logos, palette, type and texture.", img: `${A}/kit-guide.jpg` },
+          { t: "The brand board", d: "Stationery, wax seals and stamps.", img: `${A}/kit-board.jpg` },
+          { t: "Instagram templates", d: "Ten posts she fills in herself.", img: `${A}/kit-instagram.jpg` },
+        ]}
+      />
 
       <BnSec
         no="Brief"
@@ -238,7 +250,7 @@ function JazminsCase() {
       </BnDecisions>
 
       <BnNote
-        media={<img src={`${A}/je-monogram-ivory.svg`} alt="The JE monogram" loading="lazy" />}
+        media={<img src={`${A}/je-monogram-black.svg`} alt="The JE monogram" className="bn-mark" />}
         label="A note on the brand"
         title={
           <>

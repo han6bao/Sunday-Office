@@ -1,4 +1,4 @@
-import type { CSSProperties, ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { SiteBar } from "./site-bar";
 
 /* Build notes: a designer's notebook for each case study.
@@ -30,11 +30,145 @@ export function BuildNotes({ theme, children }: { theme: BnTheme; children: Reac
     "--bn-deep-ink": theme.deepInk,
     "--bn-deep-mute": theme.deepMute,
   } as CSSProperties;
+  const root = useRef<HTMLDivElement>(null);
+  const bar = useRef<HTMLDivElement>(null);
+  const [zoom, setZoom] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    // Reveal blocks as they scroll in. Added only after load, so nothing hides without JavaScript.
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const sel =
+      ".bn-hero > *, .bn-facts > div, .bn-tn > *, .bn-sec > div, .bn-rules > div, .bn-cmp tbody tr, .bn-decisions > header, .bn-dec, .bn-sw > div, .bn-stats > div, .bn-logo-note, .bn-next li, .bn-tour, .bn-close > *";
+    const items = Array.from(el.querySelectorAll<HTMLElement>(sel));
+    let io: IntersectionObserver | null = null;
+    if (!reduce) {
+      items.forEach((n) => {
+        const sibs = n.parentElement ? Array.from(n.parentElement.children) : [];
+        n.style.setProperty("--bn-d", `${Math.min(sibs.indexOf(n), 6) * 70}ms`);
+        n.classList.add("bn-rv");
+      });
+      io = new IntersectionObserver(
+        (es) => es.forEach((e) => e.isIntersecting && (e.target.classList.add("is-in"), io?.unobserve(e.target))),
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+      );
+      items.forEach((n) => io!.observe(n));
+    }
+    // Reading progress in the client's accent color.
+    const onScroll = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      if (bar.current) bar.current.style.transform = `scaleX(${h > 0 ? Math.min(window.scrollY / h, 1) : 0})`;
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // Tap any screenshot to see it large.
+    const onClick = (e: MouseEvent) => {
+      const img = (e.target as HTMLElement).closest(".bn-shot img, .bn-now-img img") as HTMLImageElement | null;
+      if (!img || img.closest("a")) return;
+      setZoom({ src: img.currentSrc || img.src, alt: img.alt });
+    };
+    el.addEventListener("click", onClick);
+    return () => {
+      io?.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      el.removeEventListener("click", onClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!zoom) return;
+    const k = (e: KeyboardEvent) => e.key === "Escape" && setZoom(null);
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  }, [zoom]);
+
   return (
-    <div className="bn" style={vars}>
+    <div className="bn" style={vars} ref={root}>
+      <div className="bn-progress" ref={bar} aria-hidden />
       <SiteBar />
       <div className="bn-wrap">{children}</div>
+      {zoom && (
+        <button type="button" className="bn-zoom" onClick={() => setZoom(null)} aria-label="Close">
+          <img src={zoom.src} alt={zoom.alt} />
+          <span className="bn-note">Tap anywhere to close</span>
+        </button>
+      )}
     </div>
+  );
+}
+
+export type TourItem = { t: string; d: string; video?: string; poster?: string; img?: string };
+
+/** "Take the tour": a browser frame with screen recordings of the best parts.
+ *  Tap a moment to play it. Each one moves on to the next when it ends. */
+export function BnTour({ url, href, items, note }: { url: string; href?: string; items: TourItem[]; note?: ReactNode }) {
+  const [i, setI] = useState(0);
+  const vid = useRef<HTMLVideoElement>(null);
+  const cur = items[i];
+  const next = () => setI((n) => (n + 1) % items.length);
+
+  useEffect(() => {
+    const v = vid.current;
+    if (v) {
+      v.muted = true;
+      v.play().catch(() => {});
+      return;
+    }
+    const id = window.setTimeout(next, 4200);
+    return () => window.clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [i]);
+
+  return (
+    <section className="bn-tour" aria-label="Take the tour">
+      <div className="bn-tour-side">
+        <p className="bn-note">
+          <b>Take the tour</b> · Tap a moment
+        </p>
+        <ol className="bn-tour-list">
+          {items.map((x, n) => (
+            <li key={x.t}>
+              <button type="button" className={n === i ? "is-on" : ""} aria-pressed={n === i} onClick={() => setI(n)}>
+                <span className="bn-tour-no">{String(n + 1).padStart(2, "0")}</span>
+                <span>
+                  <span className="bn-tour-t">{x.t}</span>
+                  <span className="bn-tour-d">{x.d}</span>
+                </span>
+              </button>
+            </li>
+          ))}
+        </ol>
+        {note && <p className="bn-tour-note">{note}</p>}
+      </div>
+      <figure className="bn-tour-frame">
+        <div className="bn-chrome" aria-hidden>
+          <i />
+          <i />
+          <i />
+          <span>{url}</span>
+          {href && (
+            <a className="bn-tour-visit" href={href} target="_blank" rel="noreferrer">
+              Visit ↗
+            </a>
+          )}
+        </div>
+        <div className="bn-tour-screen">
+          {cur.video ? (
+            <video key={cur.video} ref={vid} poster={cur.poster} muted playsInline autoPlay preload="auto" onEnded={next} aria-label={cur.t}>
+              <source src={`${cur.video}.webm`} type="video/webm" />
+              <source src={`${cur.video}.mp4`} type="video/mp4" />
+            </video>
+          ) : (
+            <img key={cur.img} src={cur.img} alt={cur.t} />
+          )}
+          <span className="bn-tour-bar" key={"b" + i} style={{ animationDuration: cur.video ? "0s" : "4.2s" }} aria-hidden />
+        </div>
+        <figcaption>
+          {String(i + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")} · {cur.t}
+        </figcaption>
+      </figure>
+    </section>
   );
 }
 

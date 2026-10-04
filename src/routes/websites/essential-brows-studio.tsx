@@ -16,6 +16,7 @@ import {
   BnSec,
   BnShot,
   BnThenNow,
+  BnTour,
   BuildNotes,
 } from "../../sunday/build-notes";
 
@@ -110,6 +111,20 @@ function EssentialBrowsCase() {
           So I built her a site that does the explaining, with <strong>"Book Your Brows" one tap away on every page.</strong>
         </p>
       </BnSec>
+
+      <BnTour
+        url="essentialbrows.studio"
+        href={SITE}
+        items={[
+          { t: "The first screen", d: "What the studio does, in one line.", video: `${A}/videos/01-wake-up`, poster: `${A}/f1.jpg` },
+          { t: "Which brow is yours?", d: "Three techniques, matched to how you live.", video: `${A}/videos/02-which-brow`, poster: `${A}/f2.jpg` },
+          { t: "The candidate quiz", d: "Find out before you book.", video: `${A}/videos/04-quiz`, poster: `${A}/f4.jpg` },
+          { t: "Prices and touch-ups", d: "The full menu, every button to booking.", video: `${A}/videos/06-services`, poster: `${A}/f6.jpg` },
+          { t: "The results", d: "A gallery of finished brows.", video: `${A}/videos/07-gallery`, poster: `${A}/f7.jpg` },
+          { t: "The whole studio", d: "Her story, training and socials.", video: `${A}/videos/09-tour`, poster: `${A}/f9.jpg` },
+        ]}
+        note="Screen recordings from the live site."
+      />
 
       <BnSec
         no="Brief"
