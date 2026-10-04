@@ -1,4 +1,15 @@
-export function renderErrorPage(): string {
+function esc(t: string) {
+  return t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c] as string);
+}
+
+function describe(error: unknown): string {
+  if (error == null) return "";
+  if (error instanceof Error) return `${error.name}: ${error.message}\n${(error.stack ?? "").split("\n").slice(1, 12).join("\n")}`;
+  try { return JSON.stringify(error).slice(0, 2000); } catch { return String(error); }
+}
+
+export function renderErrorPage(error?: unknown): string {
+  const detail = describe(error);
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -24,6 +35,7 @@ export function renderErrorPage(): string {
         <button class="primary" onclick="location.reload()">Try again</button>
         <a class="secondary" href="/">Go home</a>
       </div>
+      ${detail ? `<details style="margin-top:2rem;text-align:left;color:#9ca3af;font-size:11px"><summary style="cursor:pointer">details</summary><pre style="white-space:pre-wrap;word-break:break-word">${esc(detail)}</pre></details>` : ""}
     </div>
   </body>
 </html>`;
