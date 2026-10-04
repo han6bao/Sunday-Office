@@ -9668,3 +9668,6 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
   width: 34px;
   height: 34px;
 }
+
+/* Direction photo: keep her face and the Space Needle in frame */
+.so-wp-photo img[src*="kk-05"] { object-position: 50% 18%; }

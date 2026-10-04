@@ -344,7 +344,7 @@ function BuildYourWorld() {
     { k: "BRANDING", step: "Start here", t: "Branding + World Building", lead: "The world behind the work.", d: "The logo is the flag. The world around it is the territory. Strategy, identity, the feeling, the look, the way it talks: everything else is built on this.", h: "/branding", cta: "Build your world", img: "/assets/work/build-a-world-2.jpg" },
     { k: "DIGITAL", step: "Then", t: "Websites + Digital", lead: "Where the world lives.", d: "Websites, digital experiences, landing pages, interactive work.", h: "/websites", cta: "Open", img: "/assets/work/websites-photo.jpg" },
     { k: "IMAGE", step: "Then", t: "Photography + Moving Image", lead: "What the world looks like.", d: "Photography, campaigns, reels, brand films, music visuals.", h: "/photography", cta: "Open", img: "/assets/photography/avery-01.jpg" },
-    { k: "DIRECTION", step: "And", t: "Creative Direction + Social", lead: "How the world comes together.", d: "Concept development, campaigns, art direction, social + content direction.", h: "/creative-direction-content", cta: "Open", img: "/assets/work/studio-directors.jpg" },
+    { k: "DIRECTION", step: "And", t: "Creative Direction + Social", lead: "How the world comes together.", d: "Concept development, campaigns, art direction, social + content direction.", h: "/creative-direction-content", cta: "Open", img: "/assets/campaigns/kenshi-killz/kk-05.jpg" },
   ];
   const [brand, ...rest] = rooms;
 
@@ -367,7 +367,7 @@ function BuildYourWorld() {
                 { k: "Brand", line: "the feeling, the look, the voice", img: "/assets/campaigns/essential-brows-studio/brand-kit.jpg", cap: "Essential Brows · brand kit", h: "/campaigns/essential-brows-studio" },
                 { k: "Digital", line: "where the world lives", img: "/assets/work/websites-photo.jpg", cap: "Websites + digital", h: "/websites" },
                 { k: "Image", line: "what the world looks like", img: "/assets/headshots/creative-01.jpg", cap: "Headshots · Seattle", h: "/headshots" },
-                { k: "Direction", line: "how it all comes together", img: "/assets/work/studio-directors.jpg", cap: "Creative direction", h: "/creative-direction-content" },
+                { k: "Direction", line: "how it all comes together", img: "/assets/campaigns/kenshi-killz/kk-05.jpg", cap: "Creative direction", h: "/creative-direction-content" },
               ]}
             />
           </div>
