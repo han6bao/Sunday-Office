@@ -3,6 +3,7 @@ import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
+import { CaseFacts } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/chutneys")({
   head: () => seoHead("/campaigns/chutneys"),
@@ -29,7 +30,13 @@ function ChutneysPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>
           Chutneys.
         </h1>
-        <p className="so-micro mt-3">NORTH INDIAN · BELLEVUE · COMMERCIAL & CAMPAIGN BY HANA</p>
+        <p className="so-micro mt-3">NORTH INDIAN · BELLEVUE · COMMERCIAL AND PHOTOS BY HANA HONG</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Chutneys, a North Indian restaurant in downtown Bellevue" },
+            { k: "WHAT I DID", v: "A commercial, plus promo photos for their social media and website, shot and edited by me" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/chutneys/ch-02.jpg" alt="Chutneys Bellevue, Indian food photography" pos="center" />
 
         {/* The spot */}
@@ -37,22 +44,19 @@ function ChutneysPage() {
           <p className="so-micro">THE SPOT</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             Chutneys is an upscale North Indian restaurant in downtown
-            Bellevue, serving modern Mumbai flavors in a polished dining
-            room. The kitchen mixes comfort food and street-food favorites
-            with Chinese-inspired dishes. The food feels familiar, with a
-            few surprises.
+            Bellevue, serving modern Mumbai flavors. The menu mixes comfort
+            food and street-food favorites with Chinese-inspired dishes.
           </p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            They also cater. For small dinners up to big celebrations, the
-            catering team brings live cooking and regional dishes to the
-            party. You'll find the restaurant at City Square, 938 110th Ave
-            NE #5, Bellevue.
+            They also cater, from small dinners to big celebrations, with
+            live cooking and regional dishes. The restaurant is at City
+            Square, 938 110th Ave NE #5, Bellevue.
           </p>
         </div>
 
         {/* The commercial — hosted on-site */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">THE COMMERCIAL · MADE FOR CHUTNEYS BELLEVUE</p>
+          <p className="so-micro">THE COMMERCIAL</p>
           <div
             style={{
               position: "relative",
@@ -84,13 +88,15 @@ function ChutneysPage() {
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
           <p className="so-micro">THE CAMPAIGN</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            Along with the film, I shot promo photos for Chutneys' social media and website: the plates, the room and the color of the food, all edited by me.
+            Along with the commercial, I shot promo photos for Chutneys'
+            social media and website. I photographed the plates and the
+            dining room, and I did all the editing.
           </p>
         </div>
 
         {/* The photos */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">THE PHOTOS · BY HANA</p>
+          <p className="so-micro">PHOTOS BY HANA HONG</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18, marginTop: 12 }}>
             {SHOTS.map((s) => (
               <div key={s.src}>

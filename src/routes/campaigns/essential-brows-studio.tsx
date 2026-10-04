@@ -1,10 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { useEffect, useRef, useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
 import { InViewVideo } from "../../sunday/loop-video";
-import { TapStory } from "../../sunday/service-kit";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/essential-brows-studio")({
   head: () => seoHead("/campaigns/essential-brows-studio"),
@@ -14,9 +13,9 @@ export const Route = createFileRoute("/campaigns/essential-brows-studio")({
 const A = "/assets/campaigns/essential-brows-studio";
 
 const FACTS = [
-  { k: "CLIENT", v: "Aliya, Essential Brows" },
-  { k: "WHAT I DID", v: "Website design + build, brand kit, voice + copy, domain and booking setup" },
-  { k: "LIVE SITE", v: "essentialbrows.studio", h: "https://www.essentialbrows.studio/" },
+  { k: "FOR", v: "Aliya, owner of Essential Brows, a brow studio" },
+  { k: "WHAT I DID", v: "Website design and build, brand kit, copy, domain and booking setup" },
+  { k: "RESULT", v: "Live at essentialbrows.studio", h: "https://www.essentialbrows.studio/" },
   { k: "YEAR", v: "2026" },
 ];
 
@@ -24,64 +23,29 @@ const FACTS = [
 const CLIPS = ["01-wake-up", "02-which-brow", "03-dropdowns", "04-quiz", "05-faq", "06-services", "07-gallery", "08-training", "09-tour"];
 
 const FEATURES = [
-  { t: "Wake up with your brows already done", d: "The site opens on exactly what it sells." },
+  { t: "Wake up with your brows already done", d: "The site opens on what the studio does." },
   { t: "Which brow is yours?", d: "Three techniques, matched to how you live, before you book." },
-  { t: "Everything unfolds", d: "Tap a treatment and the details open. No digging." },
-  { t: "Am I a good candidate?", d: "The quiz answers the scariest question up front." },
+  { t: "Everything unfolds", d: "Tap a treatment to open its details." },
+  { t: "Am I a good candidate?", d: "A short quiz tells people if they're a candidate before they book." },
   { t: "Questions, answered", d: "From what nano brows are to whether it hurts." },
-  { t: "Priced and timed", d: "The full menu and touch-up schedule. Every button books." },
+  { t: "Priced and timed", d: "The full menu and touch-up schedule. Every button links to booking." },
   { t: "The work, first", d: "A gallery of results, so you can see the finished brows." },
   { t: "Training, too", d: "One-on-one and small-group training with Aliya." },
-  { t: "The whole studio", d: "Her story, photos, prices and socials in one scroll." },
+  { t: "The whole studio", d: "Her story, photos, prices and socials on one page." },
 ];
 
-/** One screen at a time: pick a feature, watch it on the site. */
-function FeatureViewer() {
-  const [i, setI] = useState(0);
-  const listRef = useRef<HTMLOListElement>(null);
-  const f = FEATURES[i];
-  useEffect(() => {
-    const box = listRef.current;
-    const on = box?.querySelector<HTMLElement>(".so-fv-item.is-on");
-    if (!box || !on || box.scrollWidth <= box.clientWidth) return;
-    box.scrollTo({ left: on.offsetLeft - (box.clientWidth - on.offsetWidth) / 2, behavior: "smooth" });
-  }, [i]);
-  return (
-    <div className="so-fv">
-      <ol ref={listRef} className="so-fv-list" aria-label="Site features">
-        {FEATURES.map((x, n) => (
-          <li key={x.t}>
-            <button
-              type="button"
-              className={"so-fv-item" + (n === i ? " is-on" : "")}
-              aria-pressed={n === i}
-              onClick={() => setI(n)}
-            >
-              <span className="so-fv-no">{String(n + 1).padStart(2, "0")}</span>
-              {x.t}
-            </button>
-          </li>
-        ))}
-      </ol>
-      <div className="so-fv-stage">
-        <div className="so-fv-screen" key={i}>
-          <InViewVideo base={`${A}/videos/${CLIPS[i]}`} poster={`${A}/f${i + 1}.jpg`} label={f.t} />
-        </div>
-        <div className="so-fv-cap">
-          <p className="so-bw-t">{f.t}</p>
-          <p className="so-bw-d">{f.d}</p>
-          <button
-            type="button"
-            className="so-fv-next"
-            onClick={() => setI((n) => (n + 1) % FEATURES.length)}
-          >
-            {i < FEATURES.length - 1 ? `Next: ${FEATURES[i + 1].t} →` : "Back to the start ↺"}
-          </button>
-        </div>
+/** Every feature, each with its clip from the live site. */
+const FEATURE_ROWS = FEATURES.map((x, i) => ({
+  t: x.t,
+  d: (
+    <>
+      <div className="so-fv-screen">
+        <InViewVideo base={`${A}/videos/${CLIPS[i]}`} poster={`${A}/f${i + 1}.jpg`} label={x.t} />
       </div>
-    </div>
-  );
-}
+      <p style={{ marginTop: 10 }}>{x.d}</p>
+    </>
+  ),
+}));
 
 function EssentialBrowsCase() {
   return (
@@ -98,26 +62,11 @@ function EssentialBrowsCase() {
           Essential Brows Studio.
         </h1>
         <p className="so-bw-intro-lead" style={{ marginTop: 18, maxWidth: "46ch" }}>
-          A brow studio that ran on a booking link. Now it has a home: one place
-          that shows the work, answers the questions and books the appointment.
+          Essential Brows used to run on a booking link. I built Aliya a website
+          that shows her work, answers client questions and books appointments.
         </p>
 
-        <dl className="so-eb-facts">
-          {FACTS.map((f) => (
-            <div key={f.k}>
-              <dt className="so-micro">{f.k}</dt>
-              <dd>
-                {f.h ? (
-                  <a className="so-bw-inline" href={f.h} target="_blank" rel="noreferrer">
-                    {f.v} ↗
-                  </a>
-                ) : (
-                  f.v
-                )}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <CaseFacts items={FACTS} />
 
         <a href="https://www.essentialbrows.studio/" target="_blank" rel="noreferrer" className="so-li-shot">
           <img src={`${A}/site-desktop.jpg`} alt="The Essential Brows homepage: Wake up with your brows already done." />
@@ -134,10 +83,10 @@ function EssentialBrowsCase() {
             <div className="so-eb-before">
               <p className="so-micro">BEFORE</p>
               <p className="so-bw-d">
-                The studio ran on a booking link. People found her, booked, showed
-                up. But the link couldn't show the work, explain nano versus ombre,
-                or answer the questions people had at midnight. So Aliya answered
-                them herself, over and over.
+                The studio ran on a booking link. It handled appointments, but it
+                couldn't show her work, explain nano versus ombre brows, or answer
+                the questions people had late at night. Aliya answered them herself,
+                one message at a time.
               </p>
             </div>
             <div className="so-eb-now">
@@ -145,10 +94,9 @@ function EssentialBrowsCase() {
               <p className="so-eb-now-big">Now she has a place for all of it.</p>
               <p className="so-bw-d">
                 Clients can see which brow is theirs, whether they're a candidate,
-                what it costs and how long it takes, all before they message her.
-                "Book Your Brows" is one tap away on every page. She sends one link
-                instead of explaining the studio ten times a day, and puts that time
-                back into the craft, new clients and training.
+                what it costs and how long it takes before they message her.
+                "Book Your Brows" is one tap away on every page. Now she can send
+                one link instead of explaining the studio again and again.
               </p>
             </div>
           </div>
@@ -158,13 +106,12 @@ function EssentialBrowsCase() {
         <section className="so-bw-sec so-eb-kit">
           <div>
             <p className="so-micro">HER LOGO, KEPT</p>
-            <h2 className="so-serif so-bw-h">I didn't make the logo. I built everything around it.</h2>
+            <h2 className="so-serif so-bw-h">I kept her logo and built the brand around it.</h2>
             <p className="so-bw-d" style={{ maxWidth: "46ch" }}>
-              Aliya already had a mark she loved, and it already felt like her. So
-              instead of starting over, I kept it and made the rest match: the
-              palette, the type, the buttons, and the way the brand talks. It all
-              lives in a one-page brand kit, so anything she makes next stays
-              consistent.
+              Aliya already had a mark she loved. I kept it and matched the rest
+              to it: the palette, the type, the buttons and the way the brand
+              talks. It all lives in a one-page brand kit, so anything she makes
+              next stays consistent.
             </p>
             <ul className="so-eb-feel">
               {["Natural", "Polished", "Customized", "Calm", "Precise", "Timeless"].map((w) => (
@@ -178,43 +125,38 @@ function EssentialBrowsCase() {
           </figure>
         </section>
 
-        {/* The story behind it — one tap-through box */}
-        <TapStory
+        {/* Behind the build */}
+        <CaseRead
           label="BEHIND THE BUILD"
-          chapters={[
+          items={[
             {
-              tab: "Built from her feed",
-              head: "Same studio, feed to site.",
-              body: "Before designing anything, I went through her Instagram: black and white, soft neutrals, close crops on the brow, nothing loud. The site follows the same rules, so moving from her feed to her site feels like walking into the same room.",
+              t: "Built from her feed",
+              d: "Before designing anything, I went through her Instagram: black and white, soft neutrals, close crops on the brow. The site follows the same style, so her feed and her site feel like the same studio.",
             },
             {
-              tab: "The voice",
-              head: "Calm, direct, a little warm.",
-              body: "I wrote the words to sound like her: honest, never pushy, clear enough that nobody has to ask twice. \"Wake up with your brows already done.\" \"Which brow is yours?\" \"Answer honestly.\" \"Don't take our word for it. See the brows.\"",
+              t: "The voice",
+              d: "I wrote the copy to sound like her: honest, calm and clear. A few lines from the site: \"Wake up with your brows already done.\" \"Which brow is yours?\" \"Answer honestly.\" \"Don't take our word for it. See the brows.\"",
             },
             {
-              tab: "Built for the phone",
-              head: "Where her clients actually are.",
-              body: "Her clients arrive on their phones, so the site was designed there first. New clients meet the studio, find their brow and book before she says a word.",
+              t: "Built for the phone",
+              d: "Her clients find her on their phones, so I designed the site for mobile first. New clients can learn about the studio, find their brow and book without messaging her.",
             },
             {
-              tab: "The setup",
-              head: "From zero to connected.",
-              body: "A real domain, an email that catches every inquiry, and every button going straight into her booking system. I walked her through each step with plain instructions, so she left with a site that was fully set up and ready to go.",
+              t: "The setup",
+              d: "I set up her domain and an email for inquiries, and linked every button to her booking system. I walked her through each step with plain instructions, so she left with everything connected.",
             },
             {
-              tab: "Why it matters",
-              head: "The front door.",
-              body: "Her clients drive in from Tacoma, Puyallup, Federal Way and everywhere in between. For a beauty business, the website is where people decide. It's open at midnight, it answers the same questions every time, and it makes the drive feel worth it before anyone leaves the house.",
+              t: "Why it matters",
+              d: "Her clients drive in from Tacoma, Puyallup, Federal Way and nearby towns. For a beauty business, the website is often where people decide to book. Hers answers the same questions at any hour, so clients know what to expect before they make the drive.",
             },
           ]}
         />
 
         {/* What the site does */}
         <section className="so-bw-sec">
-          <p className="so-micro">WHAT THE SITE DOES · TAP TO SEE EACH ONE</p>
-          <h2 className="so-serif so-bw-h">Everything clients ask, answered on the site.</h2>
-          <FeatureViewer />
+          <p className="so-micro">WHAT THE SITE DOES</p>
+          <h2 className="so-serif so-bw-h">The questions clients ask, answered on the site.</h2>
+          <CaseRead label="FEATURE BY FEATURE · CLIPS FROM THE LIVE SITE" items={FEATURE_ROWS} />
         </section>
 
         {/* Review */}

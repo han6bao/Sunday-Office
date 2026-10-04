@@ -3,6 +3,7 @@ import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
+import { CaseFacts } from "../../sunday/case-kit";
 import type { CSSProperties } from "react";
 import { useState } from "react";
 
@@ -54,16 +55,22 @@ function BarBistroPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Bar Bistro.
         </h1>
-        <p className="so-micro mt-3">TACOMA · EAT · DRINK · LIVE · PHOTOS BY HANA</p>
+        <p className="so-micro mt-3">NEW AMERICAN · TACOMA · PHOTOS BY HANA HONG</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Bar Bistro, a New American restaurant and bar in Tacoma" },
+            { k: "WHAT I DID", v: "Food and drink photos for their social media, plus a table shoot with Tacoma Uncovered" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/bar-bistro/bb-01.jpg" alt="Cocktails at Bar Bistro, Tacoma, food and drink photography" pos="center 55%" />
 
         {/* The spot */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE SPOT</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            A New American spot in east Tacoma at 1718 99th St E. Their
-            motto is eat, drink, live, and they do Northwest flavors with a
-            serious kitchen and bar. Every Sunday they run{" "}
+            A New American restaurant in east Tacoma at 1718 99th St E. The
+            menu is built on Northwest flavors, with a full kitchen and bar.
+            Every Sunday they run{" "}
             <strong>Sunday Supper</strong>, served family-style in limited
             portions until it runs out.
           </p>
@@ -73,8 +80,8 @@ function BarBistroPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE SOCIAL</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            These are the photos I shoot for their socials. Dark and warm,
-            and meant to make people hungry.
+            I shoot the food and drink photos for their social media. I keep
+            the edit dark and warm.
           </p>
         </div>
 
@@ -82,8 +89,8 @@ function BarBistroPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE COLLAB · TACOMA FOOD INFLUENCERS</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            <strong>Tacoma Uncovered</strong> came in, and we shot the whole
-            table together.{" "}
+            <strong>Tacoma Uncovered</strong>, a Tacoma food account, came in
+            and we shot the whole table together.{" "}
             <a className="so-link-jump" href="https://www.instagram.com/tacoma_uncovered/" target="_blank" rel="noreferrer">
               @TACOMA_UNCOVERED →
             </a>
@@ -92,7 +99,7 @@ function BarBistroPage() {
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE PHOTOS · 7 · BY HANA</p>
+          <p className="so-micro">PHOTOS BY HANA HONG · 7</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
               const L = LAYOUT[i];

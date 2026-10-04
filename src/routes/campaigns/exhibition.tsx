@@ -3,6 +3,7 @@ import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/exhibition")({
   head: () => seoHead("/campaigns/exhibition"),
@@ -48,45 +49,45 @@ const LAYOUT: { s: number; a: string }[] = [
 const OWNER = [
   {
     t: "WHO HE IS",
-    d: "Exhibition is a streetwear label out of the Pacific Northwest, and the owner is the face of it. The brand looks like his world: bold typography, tech-washed motifs and a style that doesn't bother explaining itself.",
+    d: "Exhibition is a streetwear label from the Pacific Northwest, and the owner is the face of it. The brand uses bold typography and tech-washed motifs.",
   },
   {
     t: "THE BRAND",
-    d: "The INTL script, the memory card, the eye and the controller show up across tees, hoodies, denim and cut-and-sew pieces. It feels like a generation's camera roll dumped onto clothes: lo-fi, direct, all over the place.",
+    d: "The INTL script, the memory card, the eye and the controller show up across tees, hoodies, denim and cut-and-sew pieces. The graphics feel lo-fi and direct, like a camera roll printed onto clothes.",
   },
   {
     t: "THE DROP",
-    d: "For the campaign we shot it raw: exposed concrete, hard light, a wall that has seen some things. The clothes are the focus, and the people wearing them tell the story.",
+    d: "For the campaign we shot it raw, with exposed concrete and hard light. The clothes are the focus, and the people wearing them carry the story.",
   },
 ];
 
 const PLAY = [
   {
     t: "THE MOVE",
-    d: "For a clothing brand, one smart move is to partner with local creatives. A shoot like this covers your marketing and your content at the same time. The drop gets its photos, and the artists get seen.",
+    d: "For a clothing brand, it makes sense to partner with local creatives. A shoot like this covers your marketing and your content at the same time. The drop gets its photos, and the artists get seen.",
   },
   {
     t: "THE PARTNERS",
-    d: "Partnering with creators isn't doing them a favor. They are the campaign. The photographers, the musicians and the cast all post, and everyone's content feeds everyone else's. One project ends up on a dozen platforms.",
+    d: "The creators are a big part of the campaign. The photographers, the musicians and the cast all post, so one project shows up on many people's pages at once.",
   },
   {
     t: "THE CAST",
-    d: "The owner himself, plus painters, rappers, producers and personalities from across Seattle's creative scene. We picked the cast with Soniq Reign, so the drop is as much about the people as the clothes.",
+    d: "The owner himself, plus painters, rappers, producers and personalities from Seattle's creative scene. We picked the cast with Soniq Reign, so the drop features the people as much as the clothes.",
   },
 ];
 
 const THOUGHT = [
   {
     t: "THE SHOOT",
-    d: "My thought process is always the light and the pose. Most people in these photos aren't models, so it's on me to get the angles, light and directions right. Someone who's never posed should walk away looking like a natural.",
+    d: "I always start with the light and the pose. Most people in these photos aren't models, so it's on me to get the angles, light and directions right. I want someone who has never posed to come away looking comfortable.",
   },
   {
     t: "THE EDIT",
-    d: "Raw enough to feel real, polished enough to look professional. The concrete stays gritty, the prints stay loud, and the color grade stays consistent so the whole set hangs together.",
+    d: "I kept the edit raw enough to feel real and clean enough to look professional. The concrete stays gritty and the prints stay bold, with one consistent color grade across the set.",
   },
   {
     t: "THE FEEDBACK",
-    d: "The best part is what people say after: \"I don't really model, but you made me look and feel great.\" That's what I'm going for. The camera is my excuse to make someone feel seen.",
+    d: "My favorite part is what people say after: \"I don't really model, but you made me look and feel great.\" That's what I'm going for when I photograph someone.",
   },
 ];
 
@@ -100,9 +101,6 @@ const ARTISTS = [
 
 function ExhibitionPage() {
   const [open, setOpen] = useState<number | null>(null);
-  const [owner, setOwner] = useState(0);
-  const [play, setPlay] = useState(0);
-  const [thought, setThought] = useState(0);
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
@@ -117,14 +115,21 @@ function ExhibitionPage() {
           Exhibition.
         </h1>
         <p className="so-micro mt-3">EXHIBITION.INTERNATIONAL · @exhibition.intl · SEATTLE</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Exhibition, Pacific Northwest streetwear label" },
+            { k: "WHAT I DID", v: "Campaign photos, posing direction, editing" },
+            { k: "YEAR", v: "Summer 2026" },
+          ]}
+        />
         <p style={{ marginTop: 22, maxWidth: "54ch", lineHeight: 1.55 }}>
-          A streetwear drop, shot raw. The owner, the cast and the clothes all in one campaign.
+          Campaign photos for a streetwear drop, with the owner and a cast of Seattle creatives wearing the clothes.
         </p>
         <CaseCover src="/assets/campaigns/exhibition/exh1.jpg" alt="Exhibition streetwear campaign, Seattle" pos="center 25%" />
 
         {/* The frames — one full-width editorial grid */}
         <div style={{ marginTop: 40 }}>
-          <p className="so-micro">THE CAMPAIGN · 14 FRAMES · PHOTOS BY HANA</p>
+          <p className="so-micro">THE CAMPAIGN · 14 FRAMES · PHOTOS BY HANA HONG</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
               const L = LAYOUT[i];
@@ -152,68 +157,11 @@ function ExhibitionPage() {
           </div>
         </div>
 
-        {/* The play — why brands + creators partner */}
-        <div
-          style={{
-            marginTop: 44,
-            border: "1px solid var(--color-sepia)",
-            borderRadius: 22,
-            background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-            padding: "24px",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
-            <p className="so-micro">THE PLAY</p>
-            <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-              {play + 1} / 3 · TAP THE BOX FOR THE NEXT
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setPlay((s) => (s + 1) % PLAY.length)}
-            style={{
-              width: "100%",
-              display: "block",
-              textAlign: "left",
-              background: "none",
-              border: 0,
-              borderTop: "1px solid var(--color-sepia)",
-              padding: "16px 2px 10px",
-              cursor: "pointer",
-              color: "inherit",
-              font: "inherit",
-            }}
-          >
-            <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-              {PLAY[play].t}
-            </p>
-            <p key={play} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
-              {PLAY[play].d}
-            </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
-              {PLAY.map((_, d) => (
-                <span
-                  key={d}
-                  aria-hidden
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 999,
-                    background: d === play ? "var(--color-verm)" : "var(--color-sepia)",
-                    display: "inline-block",
-                  }}
-                />
-              ))}
-              <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}>
-                TAP FOR THE NEXT →
-              </span>
-            </span>
-          </button>
-        </div>
+        <CaseRead label="THE PLAY" items={PLAY.map((x) => ({ t: x.t, d: x.d }))} />
 
         {/* Frames 08–10 */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">FRAMES 08 TO 10 · PHOTOS BY HANA</p>
+          <p className="so-micro">FRAMES 08 TO 10 · PHOTOS BY HANA HONG</p>
           <div className="so-photo-grid mt-3">
             {PHOTOS.slice(7, 10).map((ph, i) => (
               <button key={ph.src} className="so-photo-cell" type="button" onClick={() => setOpen(i + 7)} aria-label={ph.cap}>
@@ -273,64 +221,7 @@ function ExhibitionPage() {
           </div>
         </div>
 
-        {/* My thought process */}
-        <div
-          style={{
-            marginTop: 44,
-            border: "1px solid var(--color-sepia)",
-            borderRadius: 22,
-            background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-            padding: "24px",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
-            <p className="so-micro">MY THOUGHT PROCESS</p>
-            <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-              {thought + 1} / 3 · TAP THE BOX FOR THE NEXT
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setThought((s) => (s + 1) % THOUGHT.length)}
-            style={{
-              width: "100%",
-              display: "block",
-              textAlign: "left",
-              background: "none",
-              border: 0,
-              borderTop: "1px solid var(--color-sepia)",
-              padding: "16px 2px 10px",
-              cursor: "pointer",
-              color: "inherit",
-              font: "inherit",
-            }}
-          >
-            <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-              {THOUGHT[thought].t}
-            </p>
-            <p key={thought} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
-              {THOUGHT[thought].d}
-            </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
-              {THOUGHT.map((_, d) => (
-                <span
-                  key={d}
-                  aria-hidden
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 999,
-                    background: d === thought ? "var(--color-verm)" : "var(--color-sepia)",
-                    display: "inline-block",
-                  }}
-                />
-              ))}
-              <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}>
-                TAP FOR THE NEXT →
-              </span>
-            </span>
-          </button>
-        </div>
+        <CaseRead label="MY THOUGHT PROCESS" items={THOUGHT.map((x) => ({ t: x.t, d: x.d }))} />
 
         {/* Lightbox */}
         {open !== null && (
@@ -370,7 +261,7 @@ function ExhibitionPage() {
             The advice is free.
           </p>
           <p style={{ marginTop: 10, maxWidth: "58ch", lineHeight: 1.55, color: "rgba(245,242,234,0.85)" }}>
-            If you're a brand that needs a campaign or an artist who needs photos, I'll tell you honestly what I'd do. No pitch, no pressure. Ask me anything.
+            If you're a brand that needs a campaign or an artist who needs photos, I'll tell you honestly what I'd do, with no sales pitch. Ask me anything.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 20 }}>
             <a

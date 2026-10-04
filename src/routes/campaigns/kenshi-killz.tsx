@@ -4,6 +4,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/kenshi-killz")({
   head: () => seoHead("/campaigns/kenshi-killz"),
@@ -34,7 +35,13 @@ function KenshiKillzPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Kenshi Killz.
         </h1>
-        <p className="so-micro mt-3">@KENSHIKILLA · SEATTLE · PHOTOS BY HANA</p>
+        <p className="so-micro mt-3">@KENSHIKILLA · SEATTLE · PHOTOS BY HANA HONG</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Kenshi Killz, Seattle artist" },
+            { k: "WHAT I DID", v: "Promo photos, plus location and on-set help for her ReelClip TV performance" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/kenshi-killz/kk-03.jpg" alt="Kenshi Killz, Seattle artist promo photography" pos="center 35%" />
 
         {/* The artist */}
@@ -42,14 +49,11 @@ function KenshiKillzPage() {
           <p className="so-micro">THE ARTIST</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             <strong>Kenshi Killz</strong> (@kenshikilla) is a Seattle artist
-            with a big sound, bigger fits and a voice that carries. She's a
-            fixture in the community and a co-founder of{" "}
-            <strong>For The Girls PNW</strong> (@forthegirlspnw), which lifts
-            up the women of the scene. Her full album{" "}
-            <em>He Rules Us All</em> is out now on Bandcamp. She's
-            performed at the <strong>Capitol Hill Block Party</strong>,
-            headlined Belltown Bloom's "Rock Can Roll" at Sunset Tavern,
-            and plays stages all over the city.
+            and a co-founder of <strong>For The Girls PNW</strong>{" "}
+            (@forthegirlspnw), which supports women in the local scene. Her
+            album <em>He Rules Us All</em> is out on Bandcamp. She has played
+            the <strong>Capitol Hill Block Party</strong> and headlined
+            Belltown Bloom's "Rock Can Roll" at Sunset Tavern.
           </p>
         </div>
 
@@ -58,30 +62,29 @@ function KenshiKillzPage() {
           <p className="so-micro">THE TV PERFORMANCE</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             Before the promo photos, she filmed a{" "}
-            <strong>television-style performance</strong> live with{" "}
-            <strong>ReelClip</strong>, one videographer with one camera,
-            made for her to post and promote. I helped with the{" "}
-            <strong>location and overall assistance</strong> for that
-            session, making sure the room was ready before the lights
-            came up.
+            <strong>TV-style performance</strong> with{" "}
+            <strong>ReelClip</strong>, one videographer and one camera, for
+            her to post and promote. I helped with the{" "}
+            <strong>location and general assistance</strong> for that
+            session and had the room ready before filming started.
           </p>
         </div>
 
         {/* The shoot */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
-          <p className="so-micro">THE SHOOT · PROMO PHOTOS BY HANA</p>
+          <p className="so-micro">THE SHOOT · PROMO PHOTOS</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            A keffiyeh over her shoulders, a coin headpiece catching the
-            sun, MILTON across the jersey. We propped a vintage TV on the
-            ledge and shot six frames at golden hour with the Space Needle
-            in the corner. They were made for her promo, so I kept them
-            grainy and bright.
+            She wore a keffiyeh over her shoulders, a coin headpiece and a
+            jersey with MILTON across it. We set a vintage TV on the ledge
+            and shot at golden hour, with the Space Needle in the corner of
+            the frame. The photos were for her promo, so I kept them grainy
+            and bright.
           </p>
         </div>
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES · 6 · BY HANA</p>
+          <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA HONG</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button

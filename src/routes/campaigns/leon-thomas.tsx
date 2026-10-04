@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/leon-thomas")({
   head: () => seoHead("/campaigns/leon-thomas"),
@@ -12,29 +12,23 @@ export const Route = createFileRoute("/campaigns/leon-thomas")({
 const CHAPTERS: { t: string; d: string }[] = [
   {
     t: "THE ARTIST",
-    d: "Leon Thomas is a Grammy-winning R&B artist. A lot of people first knew him as Andre Harris, the singer on Victorious. Right now he's in his Mutts Don't Heel era, with the HEEL deluxe edition out, and he's selling out venues across the country.",
+    d: "Leon Thomas is a Grammy-winning R&B artist. Many people first knew him as Andre Harris, the singer on Victorious. He was touring on Mutts Don't Heel, with the HEEL deluxe edition out.",
   },
   {
     t: "THE NIGHT",
-    d: "After his Mutts Don't Heel Tour stop at The Showbox, Leon kept going. He pulled up to Vice Seattle (Capitol Hill, 1532 Minor Ave) for the official afterparty and performed his biggest songs into the early morning, the Victorious theme included.",
+    d: "After his Mutts Don't Heel Tour stop at The Showbox, Leon went to Vice Seattle (Capitol Hill, 1532 Minor Ave) for the official afterparty. He performed his biggest songs there into the early morning, including the Victorious theme.",
   },
   {
-    t: "THE FEATURE",
-    d: "Dubsea wrote it up on December 16, 2025: \"Leon Thomas Makes Special Appearance at VICE for 'Mutts Don't Heel' Tour Afterparty,\" with photos credited to Hana Hong. One article promoted the artist's tour, the club's calendar and the Seattle music scene around them.",
+    t: "THE SEATTLE LINK",
+    d: "In the Victorious and iCarly crossover, \"iParty with Victorious,\" the iCarly crew goes to a party Andre throws in Seattle. Years later, Leon played that show's theme song at a party in Seattle.",
   },
   {
-    t: "THE NICK LINK",
-    d: "Seattle keeps showing up in Leon's story. He played the Victorious theme that night, from the show that made him famous. In the Victorious × iCarly crossover special, \"iParty with Victorious,\" the iCarly crew goes to a party Andre throws in Seattle. Years later, he's in the same city at another party.",
-  },
-  {
-    t: "HANA'S ROLE",
-    d: "I shot the night: the afterparty photos, the promo shots, and the photos used in the Dubsea write-up and on the club's page.",
+    t: "MY ROLE",
+    d: "I photographed the night: the afterparty, the performance and the promo shots.",
   },
 ];
 
 function LeonThomasPage() {
-  const [step, setStep] = useState(0);
-  const c = CHAPTERS[step];
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
       <SiteBar />
@@ -48,6 +42,17 @@ function LeonThomasPage() {
           Leon Thomas.
         </h1>
         <p className="so-micro mt-3">MUTTS DON'T HEEL AFTERPARTY · VICE SEATTLE · PHOTOS BY HANA HONG</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Leon Thomas, Grammy-winning R&B artist, and Vice Seattle" },
+            { k: "WHAT I DID", v: "Afterparty photos, performance photos, promo shots" },
+            {
+              k: "RESULT",
+              v: "My photos ran in a published write-up of the night",
+              h: "https://www.dubsea.com/music/leon-thomas-makes-special-appearance-at-vice-seattle-for-tour-afterparty",
+            },
+          ]}
+        />
         <hr className="so-rule mt-6" />
 
         {/* Hero */}
@@ -71,75 +76,18 @@ function LeonThomasPage() {
           />
         </div>
 
-        {/* The story — one chapter at a time, tap to advance */}
+        {/* The story */}
         <div style={{ marginTop: 44 }}>
-          <div
-            style={{
-              border: "1px solid var(--color-sepia)",
-              borderRadius: 22,
-              background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-              padding: "26px 26px 22px",
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16, flexWrap: "wrap" }}>
-              <p className="so-micro">THE STORY · LEON THOMAS × VICE SEATTLE</p>
-              <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-                {step + 1} / 5 · TAP THE BOX FOR THE NEXT
-              </p>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setStep((s) => (s + 1) % CHAPTERS.length)}
-              style={{
-                width: "100%",
-                display: "block",
-                textAlign: "left",
-                background: "none",
-                border: 0,
-                borderTop: "1px solid var(--color-sepia)",
-                padding: "18px 2px 12px",
-                cursor: "pointer",
-                color: "inherit",
-                font: "inherit",
-              }}
-            >
-              <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-                {c.t}
-              </p>
-              <p key={step} className="so-chapter-fade" style={{ margin: "10px 0 0", lineHeight: 1.55, maxWidth: "72ch" }}>
-                {c.d}
-              </p>
-              <span style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 14 }}>
-                {CHAPTERS.map((_, d) => (
-                  <span
-                    key={d}
-                    aria-hidden
-                    style={{
-                      width: 7,
-                      height: 7,
-                      borderRadius: 999,
-                      background: d === step ? "var(--color-verm)" : "var(--color-sepia)",
-                      display: "inline-block",
-                    }}
-                  />
-                ))}
-                <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.14em", marginLeft: 6 }}>
-                  TAP FOR THE NEXT →
-                </span>
-              </span>
-            </button>
-          </div>
+          <CaseRead label="THE STORY · LEON THOMAS × VICE SEATTLE" items={CHAPTERS.map((x) => ({ t: x.t, d: x.d }))} />
         </div>
 
-        {/* The supporters — everyone the night lifted */}
+        {/* Who was involved */}
         <div style={{ marginTop: 48 }}>
           <p className="so-micro">WHO WAS INVOLVED</p>
           <div style={{ marginTop: 6, display: "grid", gap: 0, maxWidth: "62ch" }}>
             {[
-              { t: "LEON THOMAS", d: "The artist. Grammy-winning R&B, in town on the Mutts Don't Heel Tour, and he came to the afterparty. I was there with the camera." },
-              { t: "DUBSEA", d: "The Seattle culture site that wrote up the night in 'Leon Thomas Makes Special Appearance at VICE for Tour Afterparty,' using my photos, credited to Hana Hong." },
-              { t: "VICE SEATTLE", d: "The Capitol Hill club at 1532 Minor Ave that hosted the official afterparty. I shot the night, so the club had coverage and the write-up had photos." },
+              { t: "LEON THOMAS", d: "The artist. He was in town on the Mutts Don't Heel Tour and came to the afterparty to perform." },
+              { t: "VICE SEATTLE", d: "The Capitol Hill club at 1532 Minor Ave that hosted the official afterparty. I photographed the night for them." },
             ].map((s) => (
               <div key={s.t} style={{ borderTop: "1px solid var(--color-sepia)", padding: "16px 2px 14px" }}>
                 <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
@@ -151,18 +99,17 @@ function LeonThomasPage() {
           </div>
         </div>
 
-        {/* The feature — the tell + a couple of frames */}
+        {/* Frames from the night */}
         <div style={{ marginTop: 48 }}>
-          <p className="so-micro">THE WRITE-UP</p>
+          <p className="so-micro">FROM THE NIGHT</p>
           <div className="so-case-cols" style={{ marginTop: 16, alignItems: "start" }}>
             <div style={{ maxWidth: "52ch" }}>
               <p style={{ margin: 0, lineHeight: 1.55 }}>
-                Dubsea wrote up the night, covering the club and the
-                artist, with my photos credited. Here are two of the
-                photos they used. Tap one to read the full article.
+                Dubsea wrote up the night and used my photos, credited to Hana Hong.
+                These are two of them. Tap one to read the article.
               </p>
               <p className="so-micro" style={{ marginTop: 14, color: "var(--color-verm)", letterSpacing: "0.14em", fontWeight: 700 }}>
-                PHOTOS CREDITED TO HANA HONG
+                PHOTOS BY HANA HONG
               </p>
             </div>
             <div style={{ display: "grid", gap: 14 }}>
@@ -187,12 +134,12 @@ function LeonThomasPage() {
                 >
                   <img
                     src={f.src}
-                    alt={`Leon Thomas, photo from the Dubsea feature`}
+                    alt="Leon Thomas at the Vice Seattle afterparty"
                     loading="lazy"
                     style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", display: "block", borderRadius: 8 }}
                   />
                   <p className="so-micro" style={{ margin: "8px 2px 0", color: "#6f6474", letterSpacing: "0.14em" }}>
-                    {f.n} · BY HANA
+                    {f.n}
                   </p>
                 </a>
               ))}
@@ -200,17 +147,17 @@ function LeonThomasPage() {
           </div>
         </div>
 
-        {/* The attract line */}
+        {/* For venues */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
-          <p className="so-micro">IF THAT'S YOUR WORLD</p>
+          <p className="so-micro">FOR VENUES AND BRANDS</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            One good night helps everyone. The club gets promoted, the artist gets coverage, and the photos keep getting shared. If you run a venue or a brand and want photos like these, let's talk.
+            Photos from a night like this get used by the club, the artist and the press. If you run a venue or a brand and want your nights covered, let's talk.
           </p>
         </div>
 
         {/* Links */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro" style={{ textAlign: "center" }}>THE FEATURE & THE PLAYERS</p>
+          <p className="so-micro" style={{ textAlign: "center" }}>LINKS</p>
           <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px 26px", maxWidth: 640, margin: "0 auto" }}>
             <a
               className="so-link-jump"

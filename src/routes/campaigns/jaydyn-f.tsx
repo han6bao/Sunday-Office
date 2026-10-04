@@ -4,6 +4,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/jaydyn-f")({
   head: () => seoHead("/campaigns/jaydyn-f"),
@@ -11,13 +12,13 @@ export const Route = createFileRoute("/campaigns/jaydyn-f")({
 });
 
 const CONTRIBUTED = [
-  "Behind-the-scenes capture",
+  "Behind-the-scenes video",
   "Photography",
-  "Social-content support",
-  "Short-form content thinking",
-  "Additional visual moments around music releases",
-  "Photos used by the artist on social",
-  "Shooting for his stories and rolling out content around music-video drops",
+  "Social content support",
+  "Short-form content ideas",
+  "Extra photos and clips around music releases",
+  "Photos he posted on his own social",
+  "Shooting for his stories and posting around music-video drops",
 ];
 
 const REELS = [
@@ -45,15 +46,22 @@ function JaydynCase() {
     <div className="block" style={{ minHeight: "100dvh" }}>
       <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
-        <a href="/creative-direction-content" className="so-arrow" style={{ marginBottom: 40 }}>
-          <span className="arr">←</span> Back to Creative Direction + Social
+        <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
+          <span className="arr">←</span> Back to Sunday Office
         </a>
 
         <p className="so-micro so-micro-red">CASE STUDY · ARTIST SOCIAL · MUSIC</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Jaydyn F.
         </h1>
-        <p className="so-micro mt-3">SEATTLE HIP-HOP / RAP · ARTFUL SOCIAL AROUND MUSIC RELEASES</p>
+        <p className="so-micro mt-3">SEATTLE HIP-HOP / RAP · PHOTOS AND SOCIAL AROUND MUSIC RELEASES</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Jaydyn F., Seattle rapper" },
+            { k: "WHAT I DID", v: "Photos, behind-the-scenes video and social content around his releases" },
+            { k: "RESULT", v: "120K views on the reel I shot", h: "https://www.instagram.com/p/DORrPfiklMt/" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/jaydyn-f/jd-04.jpg" alt="Jaydyn F., Seattle artist photography" pos="center 35%" />
 
         {/* The artist — text left, the frame right */}
@@ -61,11 +69,10 @@ function JaydynCase() {
           <div>
             <p className="so-micro">THE ARTIST</p>
             <p style={{ marginTop: 12, lineHeight: 1.5 }}>
-              Jaydyn F. moves through Seattle's underground rap world. He
-              makes music, throws shows and brings different corners of the
-              scene into the same room: local artists, touring names,
-              friends and collaborators. People like UnoTheActivist and
-              ILY KIMCHI end up around him too. It's all kinds of sounds and all levels of artists, and that's what makes it fun.
+              Jaydyn F. is part of Seattle's underground rap scene. He makes
+              music, throws shows and brings local artists, touring names
+              and friends into the same room. People like UnoTheActivist and
+              ILY KIMCHI end up around him too.
             </p>
           </div>
           <div style={{ display: "grid", gap: 14 }}>
@@ -106,7 +113,7 @@ function JaydynCase() {
         <div style={{ marginTop: 28, maxWidth: "58ch" }}>
           <p className="so-micro">THE NEED</p>
           <p style={{ marginTop: 12, lineHeight: 1.5 }}>
-            Regular photos and video around his releases, so there's always something new to post between drops instead of one polished video and nothing else.
+            He wanted regular photos and video around his releases, so there's always something new to post between drops.
           </p>
         </div>
 
@@ -137,13 +144,13 @@ function JaydynCase() {
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
           <p className="so-micro">ONE VIDEO, MORE THAN ONE LIFE</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            One music video can turn into BTS clips, short edits, teasers, stills, launch posts and follow-ups. The video only comes out once, but the content around it can keep going for weeks.
+            One music video can turn into BTS clips, short edits, teasers, stills, launch posts and follow-ups. That gives him weeks of posts from one shoot.
           </p>
         </div>
 
         {/* The work — tap any frame to scroll through */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">THE WORK · TAP TO OPEN</p>
+          <p className="so-micro">THE WORK · PHOTOS BY HANA HONG · TAP TO OPEN</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 14, marginTop: 14 }}>
             {GALLERY.map((g, i) => (
               <button
@@ -197,7 +204,7 @@ function JaydynCase() {
             padding: "24px",
           }}
         >
-          <p className="so-micro">RESULTS · REAL NUMBERS FROM THE POSTS</p>
+          <p className="so-micro">RESULTS · NUMBERS FROM THE POSTS</p>
           <div style={{ marginTop: 12, display: "grid", gap: 0 }}>
             {REELS.map((r) => (
               <a
@@ -239,23 +246,20 @@ function JaydynCase() {
                 @realwrldjake →
               </a>) is an LA-based music video director and editor managed by
               Zero Zero MGMT. He’s worked with artists like Bhad Bhabie,
-              TEZZUS and Lil Tracy, and he’s still connected to Seattle’s
-              local music scene. He shoots with Jaydyn regularly, and I’ve
-              helped with lighting on some of his video sets. Everyone knows
-              each other and everyone pitches in.
+              TEZZUS and Lil Tracy, and he still has ties to Seattle’s music
+              scene. He shoots with Jaydyn regularly, and I’ve helped with
+              lighting on some of his video sets.
             </p>
           </div>
           <div style={{ maxWidth: "58ch" }}>
             <p className="so-micro">THE COMMUNITY</p>
             <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-              A lot of this is for promotion, but it's also about the
-              people. I want to be around people who care about the
-              community and actually put something into it. Working with
-              them feels good: the work gets made, and the scene gets
-              stronger along the way. I appreciate all of it.
+              A lot of this is promotion, and I also do it for the people.
+              I like working with people who care about the community and
+              put something into it. I appreciate all of them.
             </p>
             <p style={{ marginTop: 14, lineHeight: 1.55 }}>
-              The goal was to give him more ways to stay visible and recognizable between releases, and more than one post to show for it.
+              The goal was to keep him visible between releases, with more than one post for each drop.
             </p>
           </div>
         </div>
@@ -299,8 +303,8 @@ function JaydynCase() {
         <CaseBookingCta />
 
         <div style={{ marginTop: 56 }}>
-          <a href="/creative-direction-content" className="so-arrow">
-            <span className="arr">←</span> Back to Creative Direction + Social
+          <a href="/" className="so-arrow">
+            <span className="arr">←</span> Back to Sunday Office
           </a>
         </div>
       </div>

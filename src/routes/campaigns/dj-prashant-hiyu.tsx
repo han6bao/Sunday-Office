@@ -4,6 +4,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/dj-prashant-hiyu")({
   head: () => seoHead("/campaigns/dj-prashant-hiyu"),
@@ -48,25 +49,24 @@ const LAYOUT: { s: number; a: string }[] = [
 const DEEP = [
   {
     t: "THE HIYU",
-    d: "The Hiyu is an old Seattle ferry that got a million-dollar renovation and became a floating venue, with two open decks and two bar lounges. It sails Lake Union, Lake Washington and Puget Sound, boarding at MOHAI off Terry Ave N. Basically the city's party ferry.",
+    d: "The Hiyu is a former Seattle ferry that got a million-dollar renovation and became a floating venue, with two open decks and two bar lounges. It sails Lake Union, Lake Washington and Puget Sound, boarding at MOHAI off Terry Ave N.",
   },
   {
     t: "THE DJ",
-    d: "DJ Prashant (Prashant Kakad) calls himself a full-time party starter. He grew up in Mumbai, came to the U.S. for grad school and landed an engineering job at Intel. Then he quit to start Bollywood Dreams Entertainment, because music was never going to be his side gig. He sings, MCs, choreographs and DJs, and his Hollywood and Bollywood mixes get everyone off the wall, in Mumbai or Seattle.",
+    d: "DJ Prashant (Prashant Kakad) grew up in Mumbai and came to the U.S. for grad school, then left an engineering job at Intel to start Bollywood Dreams Entertainment. He sings, MCs, choreographs and DJs, mixing Hollywood and Bollywood.",
   },
   {
     t: "THE CULTURE",
-    d: "This is Indian American culture out in the open. It's Y2K nostalgia through a Desi lens, since the 2000s club hits and the Bollywood bangers came from the same decade. People raised on both soundtracks showed up dressed like it was 2003 and danced to Punjabi music on a ferry, with the whole skyline behind them.",
+    d: "The theme was Y2K through a Desi lens. The 2000s club hits and the Bollywood hits came from the same decade, so people raised on both dressed like it was 2003 and danced to Punjabi music with the skyline behind them.",
   },
   {
-    t: "OUTSIDE THE BOX",
-    d: "I shot the night: the crowd, the DJ, the whole deck. I worked with the Hiyu's team and DJ Prashant on the social side, so I treated the deck like a set and shot with posting in mind. The photos work as promotion, and the event can keep using them long after the night is over.",
+    t: "MY ROLE",
+    d: "I photographed the night: the crowd, the DJ and the decks. I worked with the Hiyu's team and DJ Prashant on the social side, so I shot with posting in mind. The event can keep using the photos for promotion.",
   },
 ];
 
 function BoatPartyPage() {
   const [open, setOpen] = useState<number | null>(null);
-  const [deep, setDeep] = useState(0);
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
@@ -80,7 +80,14 @@ function BoatPartyPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Iconic 2000s Boat Party.
         </h1>
-        <p className="so-micro mt-3">DJ PRASHANT · HOLLYWOOD × BOLLYWOOD · ON THE HIYU · PHOTOS BY HANA</p>
+        <p className="so-micro mt-3">DJ PRASHANT · HOLLYWOOD × BOLLYWOOD · ON THE HIYU · PHOTOS BY HANA HONG</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "DJ Prashant and the Hiyu, a floating event venue in Seattle" },
+            { k: "WHAT I DID", v: "Event photos of the crowd, the DJ and the decks, shot for social" },
+            { k: "RESULT", v: "The Hiyu posted my photos; the post passed 12.5K views" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/dj-prashant-hiyu/djp-04.jpg" alt="Iconic 2000s Boat Party on the Hiyu, Seattle event photography" pos="center" />
 
         <div className="so-reel-row is-solo">
@@ -90,93 +97,38 @@ function BoatPartyPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE EVENT</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            Four hours on the water, Y2K outfits in full effect. Boarding
-            at 7, sail at 8, and then it's just Seattle spinning past.
-            There were three rooms: Prashant outside playing Bollywood,
-            Punjabi and 2000s club hits, EDM in the Salish room, and reggaeton
-            in Pau Hana. Lil Jon to Sunidhi Chauhan, all in one night.</p>
+            Four hours on the water with a Y2K dress code. Boarding was
+            at 7 and the boat sailed at 8. There were three rooms:
+            Prashant outside playing Bollywood, Punjabi and 2000s club
+            hits, EDM in the Salish room, and reggaeton in Pau Hana. The
+            music went from Lil Jon to Sunidhi Chauhan.</p>
         </div>
 
-        {/* The intro — super short */}
+        {/* The intro */}
         <div style={{ marginTop: 20, maxWidth: "58ch" }}>
           <p style={{ lineHeight: 1.55 }}>
-            <strong>The Hiyu</strong>, a former state ferry that's now a
-            floating arts, entertainment and event venue on Lake Union,
-            posted my work from the night. Having a venue that big in Seattle post my photos on their own feed meant a lot, and the post passed 12.5K views. The night itself was hosted by{" "}
+            <strong>The Hiyu</strong>, a former state ferry that's now an
+            event venue on Lake Union, posted my photos from the night on
+            its own feed. That meant a lot to me. The night was hosted by{" "}
             <strong>DJ Prashant</strong>, owner of{" "}
             <a href="https://www.instagram.com/jaiho.seattle/" target="_blank" rel="noreferrer" style={{ color: "var(--color-verm)", textDecoration: "underline", textUnderlineOffset: 3 }}>
               @jaiho.seattle →
             </a>
-            , who runs Indian and Indian American nightlife around the
-            city. Some of his events are themed, and all of them celebrate
-            the culture.
+            , who runs Indian and Indian American nightlife events around
+            the city.
           </p>
         </div>
 
-        {/* Go deeper — tap through */}
-        <div
-          style={{
-            marginTop: 40,
-            border: "1px solid var(--color-sepia)",
-            borderRadius: 22,
-            background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-            padding: "24px",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
-            <p className="so-micro">GO DEEPER</p>
-            <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-              {deep + 1} / 4 · TAP THE BOX FOR THE NEXT
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setDeep((s) => (s + 1) % DEEP.length)}
-            style={{
-              width: "100%",
-              display: "block",
-              textAlign: "left",
-              background: "none",
-              border: 0,
-              borderTop: "1px solid var(--color-sepia)",
-              padding: "16px 2px 10px",
-              cursor: "pointer",
-              color: "inherit",
-              font: "inherit",
-            }}
-          >
-            <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-              {DEEP[deep].t}
-            </p>
-            <p key={deep} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
-              {DEEP[deep].d}
-            </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
-              {DEEP.map((_, d) => (
-                <span
-                  key={d}
-                  aria-hidden
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 999,
-                    background: d === deep ? "var(--color-verm)" : "var(--color-sepia)",
-                    display: "inline-block",
-                  }}
-                />
-              ))}
-              <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}>
-                TAP FOR THE NEXT →
-              </span>
-            </span>
-          </button>
+        {/* Go deeper */}
+        <div style={{ marginTop: 40 }}>
+          <CaseRead label="GO DEEPER" items={DEEP.map((x) => ({ t: x.t, d: x.d }))} />
         </div>
           </div>
         </div>
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES · 14 · BY HANA</p>
+          <p className="so-micro">THE FRAMES · 14 · PHOTOS BY HANA HONG</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
               const L = LAYOUT[i];

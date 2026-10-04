@@ -3,6 +3,7 @@ import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/avery-tien")({
   head: () => seoHead("/campaigns/avery-tien"),
@@ -28,6 +29,12 @@ function AveryTienPage() {
           Avery Tien.
         </h1>
         <p className="so-micro mt-3">TIEN · SEATTLE, WA · ALT FASHION DESIGNER</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Avery Tien, Seattle fashion designer (TIEN)" },
+            { k: "WHAT I DID", v: "Portraits" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/avery-tien/at01.jpg" alt="Avery Tien, Seattle fashion designer, portrait by Hana Hong" pos="center 30%" />
 
         {/* The designer */}
@@ -35,12 +42,9 @@ function AveryTienPage() {
           <p className="so-micro">THE DESIGNER</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             <strong>Avery Tien</strong> is a self-taught fashion designer
-            working under the label <strong>TIEN</strong>. He makes unusual
-            shapes and silhouettes out of repurposed materials. He shows at{" "}
-            <strong>Bumbershoot</strong>'s Fashion District, where the
-            clothing designers get seen, and he's a regular in Seattle's
-            alternative scene. In his words:
-            "I'm trying to push the envelope on people's creativity and
+            who works under the label <strong>TIEN</strong>. He makes
+            unusual shapes out of repurposed materials. In his words: "I'm
+            trying to push the envelope on people's creativity and
             self-expression, and the best way I've found to do that is
             with clothing."
           </p>
@@ -50,15 +54,11 @@ function AveryTienPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE COMMUNITY</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            He's usually at the <strong>Seattle art walk</strong> every
-            first Thursday of the month, showing his work and supporting
-            the scene. At Bumbershoot 2025 he brought{" "}
-            <strong>Rockstar Dreams</strong> to the Fashion District runway,
-            and he came back in 2026 as a Merchant Village fashion merchant.
-            The pieces cross over between runway and market: fringe shorts,
-            black-and-leather shorts, and a billed cargo vest that first
-            showed on the runway. A lot of what he does is for this
-            community.
+            He shows his work at the <strong>Seattle art walk</strong> on the
+            first Thursday of most months. At <strong>Bumbershoot</strong>{" "}
+            2025 he brought <strong>Rockstar Dreams</strong> to the Fashion
+            District runway, and in 2026 he came back as a Merchant Village
+            fashion merchant.
           </p>
         </div>
 
@@ -66,11 +66,9 @@ function AveryTienPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE STYLE</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            It's Seattle fashion, but not the clean version. He takes
-            repurposed materials and reassembles them instead of starting
-            over, so you get tough streetwear with a bit of folk-horror
-            romance in it. Nothing comes off the rack. Every piece was
-            found first and then rebuilt, so each one is one of a kind.
+            He rebuilds found materials into new clothes, so every piece is
+            one of a kind. The look is tough streetwear
+            with a bit of folk-horror romance.
           </p>
         </div>
 
@@ -89,7 +87,7 @@ function AveryTienPage() {
 
         {/* Portraits */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE PHOTOS · PORTRAITS BY HANA</p>
+          <p className="so-micro">THE PHOTOS · PHOTOS BY HANA HONG</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <div key={ph.src} className="so-photo-cell">

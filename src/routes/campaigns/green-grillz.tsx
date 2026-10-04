@@ -3,7 +3,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
-import { TapStory } from "../../sunday/service-kit";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/green-grillz")({
   head: () => seoHead("/campaigns/green-grillz"),
@@ -18,37 +18,31 @@ const PHOTOS = [
 ];
 
 const FACTS = [
-  { k: "CLIENT", v: "Marcus Adam, custom jeweler" },
-  { k: "THE FACE", v: "Nine Vicious" },
-  { k: "WHAT I DID", v: "Photography, marketing + promotion" },
-  { k: "PHOTOS", v: "Sunday Office" },
+  { k: "FOR", v: "Marcus Adam, custom jeweler" },
+  { k: "WHAT I DID", v: "Photographed Nine Vicious in his grillz, then marketing and promotion" },
+  { k: "RESULT", v: "6K likes on his most-liked post; 35K views on the promo post" },
 ];
 
 const STORY = [
   {
-    tab: "The jeweler",
-    head: "Custom pieces for artists.",
-    body: "Marcus Adam (@maarcusadam) is a private jeweler who makes custom grillz for artists. The work was already great. The goal was getting it in front of more of the right people.",
+    t: "THE JEWELER",
+    d: "Marcus Adam (@maarcusadam) is a private jeweler who makes custom grillz for artists. He wanted his work in front of more of the right people.",
   },
   {
-    tab: "The face",
-    head: "Nine Vicious.",
-    body: "Treyvion Echols, born in Athens, Georgia and raised in Atlanta. He went from SoundCloud uploads to one of the underground's fastest-rising names, broke through in 2024 with \"U Fancy?\", got the Young Thug co-sign and joined YSL. Pitchfork has compared his early work to Young Thug and Ken Carson.",
+    t: "THE FACE",
+    d: "Nine Vicious is a rapper from Georgia who was signed to Young Thug's YSL Records. Pitchfork has compared his early work to Young Thug and Ken Carson.",
   },
   {
-    tab: "The idea",
-    head: "Let the face sell the piece.",
-    body: "A strong image of the right person wearing the work does more than any product shot. So I photographed Nine in the green set and built the promotion around those photos.",
+    t: "THE IDEA",
+    d: "A good photo of the right person wearing the piece shows it better than a product shot. I photographed Nine in the green set and built the promotion around those photos.",
   },
   {
-    tab: "What happened",
-    head: "The image took on a life of its own.",
-    body: "The post became the most-liked on Marcus's page and the promo post reached the discovery page. Then something I didn't see coming: people started using the photos as their own profile pictures. For a custom jeweler, that kind of visibility brings in new clients and keeps him top of mind.",
+    t: "WHAT HAPPENED",
+    d: "The post became the most-liked on Marcus's page, and the promo post reached the discovery page. Then fans started using the photos as their profile pictures, which I didn't expect. For a custom jeweler, that kind of visibility helps new clients find him.",
   },
   {
-    tab: "Why it matters",
-    head: "It works for any face with a purpose.",
-    body: "It doesn't need to be a celebrity. An artist, a founder, a business with something to say: when the image looks like what you're building, the right people find you.",
+    t: "WHY IT MATTERS",
+    d: "This works without a celebrity too. An artist, a founder or a small business can get the same result when the photos match what they're building.",
   },
 ];
 
@@ -71,19 +65,12 @@ function GreenGrillzPage() {
           and helped promote them. It became the most-liked post on his page.
         </p>
 
-        <dl className="so-eb-facts">
-          {FACTS.map((f) => (
-            <div key={f.k}>
-              <dt className="so-micro">{f.k}</dt>
-              <dd>{f.v}</dd>
-            </div>
-          ))}
-        </dl>
+        <CaseFacts items={FACTS} />
 
         <button type="button" className="so-gg-hero" onClick={() => setOpen(0)} aria-label="Open the hero photo">
           <img src={PHOTOS[0].src} alt="Nine Vicious wearing the green grillz" />
         </button>
-        <p className="so-micro so-gg-cred">PHOTOGRAPHY BY SUNDAY OFFICE</p>
+        <p className="so-micro so-gg-cred">PHOTO BY HANA HONG</p>
 
         {/* Results */}
         <section className="so-bw-sec">
@@ -107,20 +94,20 @@ function GreenGrillzPage() {
             </div>
             <div className="so-gg-res">
               <p className="so-micro">AND THEN</p>
-              <p className="so-gg-pfp">The photo became people's profile picture.</p>
+              <p className="so-gg-pfp">Fans used the photo as their profile picture.</p>
               <p className="so-bw-d" style={{ marginTop: 8 }}>
-                Fans started using it as their own avatar on X and everywhere
-                else. Nobody asked them to.
+                People started using it as their own avatar on X and other
+                platforms.
               </p>
             </div>
           </div>
         </section>
 
-        <TapStory label="THE STORY" chapters={STORY} />
+        <CaseRead label="THE STORY" items={STORY.map((x) => ({ t: x.t, d: x.d }))} />
 
         {/* The set */}
         <section className="so-bw-sec">
-          <p className="so-micro">THE SET · PHOTOGRAPHY BY SUNDAY OFFICE</p>
+          <p className="so-micro">THE SET · PHOTOS BY HANA HONG</p>
           <div className="so-gg-grid">
             {PHOTOS.slice(1).map((ph, i) => (
               <button key={ph.src} type="button" className="so-gg-cell" onClick={() => setOpen(i + 1)} aria-label={ph.cap}>
@@ -148,7 +135,7 @@ function GreenGrillzPage() {
             <div className="so-photo-lb-card">
               <img src={PHOTOS[open].src} alt={PHOTOS[open].cap} />
               <div className="so-photo-lb-meta">
-                <span className="so-micro">{PHOTOS[open].cap} · SUNDAY OFFICE</span>
+                <span className="so-micro">{PHOTOS[open].cap}</span>
                 <button className="lb-btn" aria-label="Close" onClick={() => setOpen(null)}>
                   ✕
                 </button>

@@ -4,6 +4,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/paradice")({
   head: () => seoHead("/campaigns/paradice"),
@@ -25,37 +26,35 @@ const PHOTOS = [
 const ARTIST = [
   {
     t: "WHO HE IS",
-    d: "Itz Pz (Peezy, if you know him) is a Seattle rapper making music with his group and team inside the ReelClip circle. He tells stories in his songs, and people around the city are paying attention: Life of Pz, EFFORTLESS, the YN TAKEOVER EP.",
+    d: "Itz Pz (Peezy, if you know him) is a Seattle rapper who makes music with his group and team in the ReelClip circle. His releases include Life of Pz, EFFORTLESS and the YN TAKEOVER EP.",
   },
   {
     t: "THE PICTURES",
-    d: "I shot him in the paisley session before the deal. He used the pictures for his socials and promotions. Then a lot of people started using these photos as their own profile pictures on Twitter and everywhere else. The photo turned into their avatar.",
+    d: "I shot him in the paisley session before the deal. He used the pictures for his socials and promotions, and then a lot of people started using these photos as their own profile pictures on Twitter and other apps.",
   },
   {
     t: "THE SIGNING",
-    d: "A couple months after the shoot, he signed to Empire Records. That's the label that released Kendrick Lamar's Section.80. Its hip-hop roster runs from Nipsey Hussle and Tyga to XXXTentacion, Snoop Dogg, Cardi B, Young Dolph, Key Glock, King Von, Larry June, Blxst, Lucki and Fat Joe, and on the R&B and soul side there's Anderson .Paak, T-Pain, Tink, Yung Bleu and Dree. These photos are from right before that, at the end of his independent run.",
+    d: "A couple of months after the shoot, he signed to Empire Records, the label that released Kendrick Lamar's Section.80. These photos are from right before that, at the end of his independent run.",
   },
 ];
 
 const THOUGHT = [
   {
     t: "THE LIGHT",
-    d: "I helped bring the lighting up for this one. Straight studio, hard even light against the white wall. With a setup like that, the print and his face both show up exactly as they are.",
+    d: "I helped set up the lighting for this one: straight studio, hard even light against a white wall. That setup shows the print and his face clearly.",
   },
   {
     t: "THE EDIT",
-    d: "I edited it dark and gritty, with high saturation and a lo-fi grain that keeps the clothes looking real. No gloss, no set dressing. The paisley carries it, and the photos feel like the street they came from.",
+    d: "I edited it dark and gritty, with high saturation and a lo-fi grain that keeps the clothes looking real. There was no set dressing, so the paisley print does most of the work.",
   },
   {
     t: "THE WHY",
-    d: "This is what a collective is for. One artist's pictures promote him, the brand he's wearing and the circle behind him. Artists get promo, clothing companies get a campaign, and it all comes from the same photos.",
+    d: "One artist's pictures can promote him, the brand he's wearing and the circle behind him. The artist gets promo photos and the clothing brand gets a campaign from the same shoot.",
   },
 ];
 
 function ParadicePage() {
   const [open, setOpen] = useState<number | null>(null);
-  const [art, setArt] = useState(0);
-  const [thought, setThought] = useState(0);
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
@@ -70,66 +69,16 @@ function ParadicePage() {
           Itz Pz.
         </h1>
         <p className="so-micro mt-3">SHOT IN THE PAISLEY SESSION × PARADICE WORLDWIDE · REELCLIP CIRCLE · BEFORE THE EMPIRE SIGNING</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Itz Pz, Seattle rapper, in Paradice Worldwide" },
+            { k: "WHAT I DID", v: "Studio photos, lighting setup, editing" },
+            { k: "RESULT", v: "He used the photos for his socials and promo, and fans started using them as their profile pictures" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/paradice/pz05.jpg" alt="Itz Pz for Paradice Worldwide, Seattle streetwear campaign" pos="center 30%" />
 
-        {/* The artist — tap through */}
-        <div
-          style={{
-            marginTop: 44,
-            border: "1px solid var(--color-sepia)",
-            borderRadius: 22,
-            background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-            padding: "24px",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
-            <p className="so-micro">THE ARTIST</p>
-            <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-              {art + 1} / 3 · TAP THE BOX FOR THE NEXT
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setArt((s) => (s + 1) % ARTIST.length)}
-            style={{
-              width: "100%",
-              display: "block",
-              textAlign: "left",
-              background: "none",
-              border: 0,
-              borderTop: "1px solid var(--color-sepia)",
-              padding: "16px 2px 10px",
-              cursor: "pointer",
-              color: "inherit",
-              font: "inherit",
-            }}
-          >
-            <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-              {ARTIST[art].t}
-            </p>
-            <p key={art} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
-              {ARTIST[art].d}
-            </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
-              {ARTIST.map((_, d) => (
-                <span
-                  key={d}
-                  aria-hidden
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 999,
-                    background: d === art ? "var(--color-verm)" : "var(--color-sepia)",
-                    display: "inline-block",
-                  }}
-                />
-              ))}
-              <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}>
-                TAP FOR THE NEXT →
-              </span>
-            </span>
-          </button>
-        </div>
+        <CaseRead label="THE ARTIST" items={ARTIST.map((x) => ({ t: x.t, d: x.d }))} />
 
         {/* The brand */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
@@ -139,74 +88,17 @@ function ParadicePage() {
             by Ari Glass and Harry "Clean" out of 2919 Rainier Ave S. Their
             motto is "TAKING CHANCES.": heavyweight pattern work, dice and
             destiny references, and the paisley print that became their
-            signature. The store is part of the scene too, with clothing and creative work under one roof.
+            signature. The store sells the clothing and hosts creative work in the same space.
           </p>
         </div>
 
-        {/* My thought process — tap through */}
-        <div
-          style={{
-            marginTop: 44,
-            border: "1px solid var(--color-sepia)",
-            borderRadius: 22,
-            background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-            padding: "24px",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
-            <p className="so-micro">MY THOUGHT PROCESS</p>
-            <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-              {thought + 1} / 3 · TAP THE BOX FOR THE NEXT
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setThought((s) => (s + 1) % THOUGHT.length)}
-            style={{
-              width: "100%",
-              display: "block",
-              textAlign: "left",
-              background: "none",
-              border: 0,
-              borderTop: "1px solid var(--color-sepia)",
-              padding: "16px 2px 10px",
-              cursor: "pointer",
-              color: "inherit",
-              font: "inherit",
-            }}
-          >
-            <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-              {THOUGHT[thought].t}
-            </p>
-            <p key={thought} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
-              {THOUGHT[thought].d}
-            </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
-              {THOUGHT.map((_, d) => (
-                <span
-                  key={d}
-                  aria-hidden
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 999,
-                    background: d === thought ? "var(--color-verm)" : "var(--color-sepia)",
-                    display: "inline-block",
-                  }}
-                />
-              ))}
-              <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}>
-                TAP FOR THE NEXT →
-              </span>
-            </span>
-          </button>
-        </div>
+        <CaseRead label="MY THOUGHT PROCESS" items={THOUGHT.map((x) => ({ t: x.t, d: x.d }))} />
 
         {/* For artists + brands */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
           <p className="so-micro">FOR ARTISTS + CLOTHING BRANDS</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            If you're an artist, these are photos you can promote yourself with. If you're a clothing brand, this is how your pieces look worn by the right people. One shoot covers both.
+            If you're an artist, these are photos you can promote yourself with. If you're a clothing brand, this shows your pieces worn by people your customers follow. One shoot can cover both.
           </p>
         </div>
 
@@ -216,9 +108,8 @@ function ParadicePage() {
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             The session comes out of the same creative circle as{" "}
             <strong>Soniq Reign</strong> and <strong>ReelClip</strong>:
-            artists, labels and studios around Seattle's scene who keep
-            working together. It's the same people showing up for each
-            other, shoot after shoot, all over the city.
+            artists, labels and studios around Seattle who keep working
+            together from one shoot to the next.
           </p>
         </div>
 
@@ -226,8 +117,8 @@ function ParadicePage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE LOOK · GRITTY / ALT / HIGH SATURATION</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            Straight studio, unretouched and pushed hard. Dark and gritty
-            on purpose, so the paisley print stands out.
+            Straight studio and unretouched, with the edit pushed hard. I kept
+            it dark and gritty so the paisley print stands out.
           </p>
         </div>
 
@@ -269,7 +160,7 @@ function ParadicePage() {
             padding: "24px",
           }}
         >
-          <p className="so-micro">THE NUMBERS · LIVE FROM HIS SPOTIFY</p>
+          <p className="so-micro">HIS NUMBERS · SPOTIFY</p>
           <div
             style={{
               display: "grid",
@@ -296,28 +187,12 @@ function ParadicePage() {
                 TOP TRACK · CLAP SUM
               </p>
             </div>
-            <div>
-              <p className="so-serif" style={{ fontSize: 30, margin: 0 }}>
-                6,129+
-              </p>
-              <p className="so-micro" style={{ marginTop: 6, color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-                PLAYS ON YN TAKEOVER PT. 1 · 4 TRACKS · OUT 3.27.26
-              </p>
-            </div>
           </div>
-          <p style={{ margin: "16px 0 0", lineHeight: 1.55, maxWidth: "58ch" }}>
-            The EP's biggest so far: <strong>Pullin' Stuntz at 5,012</strong> and{" "}
-            <strong>Stay Wimme at 1,117</strong>, and the record has been out
-            since March. Rough money math, if you're curious: at Spotify's
-            public per-stream rate the EP has made somewhere around $20 to $50
-            gross so far. Features split that and the deal takes its cut. The
-            real money starts when the next 100K hits.
-          </p>
         </div>
 
         {/* Gallery */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE SESSION · 9 FRAMES · PHOTOS BY HANA</p>
+          <p className="so-micro">THE SESSION · 9 FRAMES · PHOTOS BY HANA HONG</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button

@@ -10206,5 +10206,14 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .so-faq-more > summary:hover { opacity: 1; }
 .so-bw-cta-full .so-next { margin-bottom: 0; }
 
+/* ---------- Case studies: plain reading rows ---------- */
+.so-case-read { margin-top: 56px; }
+.so-case-read-list { margin-top: 14px; border-top: 1px solid var(--color-sepia); }
+.so-case-read-row { display: grid; grid-template-columns: minmax(140px, 220px) 1fr; gap: 10px 32px; padding: 20px 0; border-bottom: 1px solid var(--color-sepia); }
+.so-case-read-t { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--color-verm); font-weight: 600; padding-top: 4px; }
+.so-case-read-d { line-height: 1.6; max-width: 62ch; }
+.so-case-read-d p + p { margin-top: 10px; }
+@media (max-width: 700px) { .so-case-read-row { grid-template-columns: 1fr; } }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

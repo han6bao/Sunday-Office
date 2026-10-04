@@ -4,6 +4,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/still-different")({
   head: () => seoHead("/campaigns/still-different"),
@@ -34,7 +35,13 @@ function StillDifferentPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Still Different.
         </h1>
-        <p className="so-micro mt-3">IN ETC TACOMA · PHOTOS BY HANA</p>
+        <p className="so-micro mt-3">IN ETC TACOMA · PHOTOS BY HANA HONG</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Still Different, 206 hip-hop MC" },
+            { k: "WHAT I DID", v: "Artist photos at ETC, a Tacoma streetwear label" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/still-different/sd-05.jpg" alt="Still Different at ETC Tacoma, artist photography" pos="center 35%" />
 
         {/* The artist */}
@@ -42,10 +49,8 @@ function StillDifferentPage() {
           <p className="so-micro">THE ARTIST</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             <strong>Still Different</strong> is an MC with deep roots in the
-            206 hip-hop scene. He's gone by that name since his first
-            project in 2013 and never traded it for an easier one. Live
-            shows are where he's most at home: straight to the mic, no
-            frills, the way the local circuit likes it.
+            206 hip-hop scene. He has used that name since his first project
+            in 2013. He is most at home performing live.
           </p>
         </div>
 
@@ -53,13 +58,10 @@ function StillDifferentPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE GEAR · ETC TACOMA</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            For this shoot he wore <strong>ETC</strong>, a Tacoma
-            streetwear label that puts its hometown right on the chest. The
-            jacket says <strong>ETC · 1996 OFFICIAL DREAM</strong> on
-            the sleeve and spells <strong>TACOMA</strong> across the front,
-            with the big red C on the back. No borrowed logos or LA
-            labels. The gear is made in T-Town for T-Town, and he showed
-            up in it.
+            For this shoot he wore <strong>ETC</strong>, a streetwear label
+            from Tacoma. The jacket says <strong>ETC · 1996 OFFICIAL
+            DREAM</strong> on the sleeve, <strong>TACOMA</strong> across the
+            front, and has a big red C on the back.
           </p>
         </div>
 
@@ -67,40 +69,36 @@ function StillDifferentPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">WHY TACOMA MATTERS</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            Tacoma is the port town down the road from Seattle, and it has
-            always had to build its own thing while the bigger city got the
-            attention. That's where its scene came from: hip-hop,
-            streetwear, DIY shows and artists working hard with nobody
-            watching. The city on the jacket is his hometown, and wearing it across your chest tells people exactly where you're from.
+            Tacoma is the port town just south of Seattle. It has its own
+            hip-hop, streetwear and DIY show scene. Tacoma is his hometown,
+            and the jacket puts the name right across his chest.
           </p>
         </div>
 
         {/* The TV segment */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
-          <p className="so-micro">THE TV SEGMENT · A SEPARATE THING</p>
+          <p className="so-micro">THE TV SEGMENT</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            The same visit included a television-performance segment shot
-            with{" "}
-            <strong>ReelClip</strong> (one videographer, one camera), but
-            that has its own page. These frames are the other side of the
-            visit: the artist, the gear and the room, straight from my camera.
+            The same visit included a TV-performance segment filmed by{" "}
+            <strong>ReelClip</strong>, with one videographer and one camera.
+            The photos on this page are from my camera.
           </p>
         </div>
 
         {/* The shoot */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
-          <p className="so-micro">THE SHOOT · PHOTOS BY HANA</p>
+          <p className="so-micro">THE SHOOT</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            White room, bright ceiling lights, a rack of tees and a vintage
-            mic on a stand. He pointed up at the light fixture, sat on the
-            orange couch like he owned it, and let the jacket do the rest.
-            Six frames, and we didn't need to dress the set at all.
+            The room was white, with bright ceiling lights, a rack of tees
+            and a vintage mic on a stand. He pointed up at the light
+            fixture and sat back on the orange couch. We didn't change
+            anything in the room. I took these six photos.
           </p>
         </div>
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES · 6</p>
+          <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA HONG</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button

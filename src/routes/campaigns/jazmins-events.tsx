@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
+import { CaseFacts } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/jazmins-events")({
   head: () => seoHead("/campaigns/jazmins-events"),
@@ -12,16 +13,16 @@ const A = "/assets/campaigns/jazmins-events";
 const SITE = "https://jazmins-events.vercel.app/";
 
 const FACTS = [
-  { k: "CLIENT", v: "Jazmin, founder + planner" },
-  { k: "WHAT I DID", v: "Brand identity, brand guide + board, Instagram templates, logos + seals, website" },
-  { k: "STATUS", v: "Branding done · website in progress" },
+  { k: "FOR", v: "Jazmin, founder and planner of Jazmin's Events & Coordinating" },
+  { k: "WHAT I DID", v: "Brand identity, brand guide and board, Instagram templates, logos and seals, website" },
+  { k: "STATUS", v: "Branding done, website in progress" },
   { k: "YEAR", v: "2026" },
 ];
 
 const STAGES = [
   { s: "done", t: "Brand identity", d: "Logo, monogram, palette, type and voice." },
   { s: "done", t: "Brand kit", d: "Guide, board, 10 Instagram templates and seals, all editable in Canva." },
-  { s: "now", t: "Website", d: "Built and being finished with her.", link: true },
+  { s: "now", t: "Website", d: "Built. We're finishing it together.", link: true },
   { s: "next", t: "Launch", d: "Real photos and couples' words go in as she books." },
 ];
 
@@ -59,19 +60,13 @@ function JazminsCase() {
           <span className="so-status">Website in progress</span>
         </p>
         <p className="so-bw-intro-lead" style={{ marginTop: 18, maxWidth: "48ch" }}>
-          A brand-new wedding planning business that I built from scratch:
-          the print pieces, the feed and the site. The branding is done, and
-          we're finishing the website together now.
+          Jazmin was starting a wedding planning business. I built her brand
+          from scratch: the print pieces, the Instagram templates and the
+          website. The branding is done, and we're finishing the website
+          together now.
         </p>
 
-        <dl className="so-eb-facts">
-          {FACTS.map((f) => (
-            <div key={f.k}>
-              <dt className="so-micro">{f.k}</dt>
-              <dd>{f.v}</dd>
-            </div>
-          ))}
-        </dl>
+        <CaseFacts items={FACTS} />
 
         <div className="so-jz-hero">
           <img className="so-jz-mono" src={`${A}/je-monogram-ivory.svg`} alt="The JE monogram" />
@@ -115,17 +110,15 @@ function JazminsCase() {
           </div>
           <div>
             <p className="so-bw-d" style={{ marginTop: 0 }}>
-              Planning a wedding showed Jazmin just how many details sit behind
-              one beautiful day. Her business grew from that: a love of bringing
-              the details together, so the people at the center can actually
-              enjoy what they planned.
+              Planning a wedding showed Jazmin how many details sit behind one
+              day. She started her business because she loves bringing those
+              details together, so the couple can enjoy what they planned.
             </p>
             <p className="so-bw-d">
-              Whether a couple needs her for a few final pieces or from beginning
-              to end, she wants them to feel like someone is genuinely in their
-              corner.
+              Whether a couple needs her for a few final pieces or from start to
+              finish, she wants them to feel that someone is in their corner.
             </p>
-            <p className="so-micro so-jz-from">IN HER WORDS, FROM HER ABOUT PAGE</p>
+            <p className="so-micro so-jz-from">FROM HER ABOUT PAGE</p>
           </div>
         </section>
 
@@ -133,30 +126,31 @@ function JazminsCase() {
         <section className="so-bw-sec so-bw-inc">
           <div>
             <p className="so-micro">HOW I APPROACHED IT</p>
-            <h2 className="so-serif so-bw-h">Calm first. Then romantic.</h2>
+            <h2 className="so-serif so-bw-h">Calm first, then romantic.</h2>
           </div>
           <div className="so-bw-list">
             <div className="so-bw-row">
               <p className="so-bw-t">Calm</p>
               <p className="so-bw-d">
                 Couples arrive carrying a lot: venues, vendors, families,
-                timelines. If the brand felt frantic, nobody would trust her with
-                the day.
+                timelines. The brand needed to feel calm so they would trust her
+                with the day.
               </p>
             </div>
             <div className="so-bw-row">
-              <p className="so-bw-t">For who books</p>
+              <p className="so-bw-t">For the couples</p>
               <p className="so-bw-d">
-                Light, airy and romantic: arches, botanicals, creams and greens,
-                script flourishes. It should feel like the wedding they're
+                Light and romantic: arches, botanicals, creams and greens, and
+                script flourishes, so it looks like the wedding they're
                 picturing.
               </p>
             </div>
             <div className="so-bw-row">
               <p className="so-bw-t">Show first</p>
               <p className="so-bw-d">
-                We'd never worked together, so I built her a clickable mockup
-                before asking for anything. She could see it and say yes.
+                We hadn't worked together before, so I built her a clickable
+                mockup before asking for anything. She could see it first, then
+                decide.
               </p>
             </div>
           </div>
@@ -166,11 +160,11 @@ function JazminsCase() {
         <section className="so-bw-sec so-eb-kit">
           <div>
             <p className="so-micro">THE BRAND</p>
-            <h2 className="so-serif so-bw-h">Elegant, intentional, romantic.</h2>
+            <h2 className="so-serif so-bw-h">Elegant and romantic.</h2>
             <p className="so-bw-d" style={{ maxWidth: "46ch" }}>
-              Thoughtful planning for couples who want to feel present in their
-              day, not responsible for running it. Tactile, never flat, like paper
-              you can touch.
+              Thoughtful planning for couples who want to be present on their day
+              while someone else runs it. The look is tactile, like paper you can
+              touch.
             </p>
             <div className="so-jz-swatches">
               {PALETTE.map((c) => (
@@ -182,9 +176,10 @@ function JazminsCase() {
               ))}
             </div>
             <p className="so-bw-d so-jz-why">
-              <strong>Why green.</strong> Green is calm, balance and new beginnings.
-              In a season that can feel overwhelming, it tells couples they're in
-              steady hands. Ivory keeps it warm. A touch of gold makes it special.
+              <strong>Why green.</strong> Green stands for calm, balance and new
+              beginnings. During a stressful season, it tells couples they're in
+              steady hands. Ivory keeps it warm, and a touch of gold makes it feel
+              special.
             </p>
             <div className="so-jz-type">
               <p><span className="so-micro">HEADLINES</span> Timeless Romantic</p>
@@ -220,7 +215,7 @@ function JazminsCase() {
             <p className="so-bw-d" style={{ maxWidth: "44ch", marginTop: 0 }}>
               Welcome, services, how it works, FAQ, kind words, now booking and the
               website launch. She drops in her photos and edits the words in Canva,
-              so her feed stays on-brand without me.
+              so she can keep her feed on-brand on her own.
             </p>
           </div>
           <figure className="so-eb-fig" style={{ marginTop: 22 }}>
@@ -241,7 +236,7 @@ function JazminsCase() {
           <div className="so-jz-head">
             <div>
               <p className="so-micro">THE WEBSITE · IN PROGRESS</p>
-              <h2 className="so-serif so-bw-h">Planning should have a plan too.</h2>
+              <h2 className="so-serif so-bw-h">A site that walks couples through her process.</h2>
             </div>
             <a className="so-bw-cta-btn so-jz-sitebtn" href={SITE} target="_blank" rel="noreferrer">
               SEE THE SITE SO FAR ↗
@@ -273,7 +268,7 @@ function JazminsCase() {
           </p>
         </section>
 
-        <CaseBookingCta note="STARTING SOMETHING NEW? THE BRAND AND THE SITE CAN BE BUILT AS ONE WORLD." />
+        <CaseBookingCta note="STARTING SOMETHING NEW? I CAN BUILD THE BRAND AND THE SITE TOGETHER." />
 
         <p className="so-micro so-eb-credit">
           BRAND IDENTITY, BRAND KIT + WEBSITE BY SUNDAY OFFICE

@@ -4,6 +4,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
+import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/dj-wzrd")({
   head: () => seoHead("/campaigns/dj-wzrd"),
@@ -34,23 +35,28 @@ function DjWzrdPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           DJ WZRD.
         </h1>
-        <p className="so-micro mt-3">AT CULTURA · CAPITOL HILL · PHOTOS BY HANA</p>
+        <p className="so-micro mt-3">AT CULTURA · CAPITOL HILL · PHOTOS BY HANA HONG</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "DJ WZRD, touring DJ and producer" },
+            { k: "WHAT I DID", v: "Nightlife photos of his set at Cultura, Capitol Hill" },
+            { k: "RESULT", v: "He reposted the shot" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/dj-wzrd/dj-03.jpg" alt="DJ WZRD at Cultura, Capitol Hill Seattle, nightlife photography" pos="center 40%" />
 
         {/* The DJ */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE DJ</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            <strong>DJ WZRD</strong> is a world-touring DJ and producer who
-            plays music across borders (Mexico, Los Angeles, Seattle,
-            Canada, Sacramento) and builds his sets on instinct: <em>"If I don't understand the language of a song,
-            I'll still play it if it has a good vibe."</em> He's performed
-            at the 10th Anniversary of EDC Mexico, holds a residency at
-            Six Flags Mexico, appears on Pitbull's <em>Globalization</em>{" "}
-            (Ritmolucion) on SiriusXM and on TV Azteca, and his YouTube
-            has pulled over 16 million views. He wears white frames and a
-            gold VZZRD chain, and he reads a crowd better than almost
-            anyone.
+            <strong>DJ WZRD</strong> is a touring DJ and producer who plays
+            in Mexico, Los Angeles, Seattle, Canada and Sacramento. He picks
+            songs by feel: <em>"If I don't understand the language of a song,
+            I'll still play it if it has a good vibe."</em> He has played the
+            10th Anniversary of EDC Mexico, holds a residency at Six Flags
+            Mexico, and appears on Pitbull's <em>Globalization</em>{" "}
+            (Ritmolucion) on SiriusXM and on TV Azteca. His YouTube has over
+            16 million views.
           </p>
         </div>
 
@@ -59,11 +65,10 @@ function DjWzrdPage() {
           <p className="so-micro">THE VENUE · CULTURA</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             <strong>Cultura Seattle</strong> calls itself "Seattle's #1
-            Latin club," and it sits in the heart of <strong>Capitol Hill</strong> at{" "}
-            <strong>916 E Pike St</strong>. Reggaeton, dembow, merengue and
-            cumbia nights with international DJs, VIP tables, bottle
-            service, and lasers through the smoke. This was one of those
-            nights. It sold out, and people still talk about it.
+            Latin club." It's on <strong>Capitol Hill</strong> at{" "}
+            <strong>916 E Pike St</strong>, with reggaeton, dembow, merengue
+            and cumbia nights, international DJs, VIP tables and lasers
+            through the smoke. This night was sold out.
           </p>
         </div>
 
@@ -71,11 +76,11 @@ function DjWzrdPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE NIGHT</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            Pink and purple light, a packed room, and one guy in white
-            frames up above it all with his hands on the decks, mic pulled
-            in, chain catching the strobe. The halo shot sums up the whole
-            night for me. The room shot underneath backs it up: packed,
-            loud, nowhere to move.
+            The room was lit pink and purple and packed wall to wall. He
+            stood above the crowd in his white frames and gold VZZRD chain,
+            hands on the decks and the mic pulled in. The halo shot is my
+            favorite from the night. The wide room shot shows how full it
+            was.
           </p>
         </div>
 
@@ -83,15 +88,14 @@ function DjWzrdPage() {
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE PROMO</p>
           <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-            He reposted the shot, so the whole night went back out on his
-            feed: the booth, the crowd, the chain. It didn't need a
-            caption. That's what good promo photos are for.
+            He reposted the shot on his own feed, so the night reached his
+            followers too.
           </p>
         </div>
 
         {/* Frames — hero halo, room under, then the middle four */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES · 6 · BY HANA</p>
+          <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA HONG</p>
 
           {/* hero */}
           <button

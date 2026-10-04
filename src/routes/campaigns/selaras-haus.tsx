@@ -3,6 +3,7 @@ import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
+import { CaseFacts } from "../../sunday/case-kit";
 import { useState } from "react";
 
 export const Route = createFileRoute("/campaigns/selaras-haus")({
@@ -42,7 +43,13 @@ function SelarasHausPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Selaras Haus.
         </h1>
-        <p className="so-micro mt-3">BY ANGIE TIARA · SKIN, SCALP + MAKEUP BOUTIQUE · TACOMA · INTERIOR PHOTOS BY HANA</p>
+        <p className="so-micro mt-3">BY ANGIE TIARA · SKIN, SCALP + MAKEUP BOUTIQUE · TACOMA · PHOTOS BY HANA HONG</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Selaras Haus, Angie Tiara's skin, scalp and makeup boutique in Tacoma" },
+            { k: "WHAT I DID", v: "Interior photos of her new space for her social media and branding" },
+          ]}
+        />
         <CaseCover src="/assets/campaigns/angie-tiara-beauty/at-13.jpg" alt="Inside Selaras Haus, a beauty boutique in Tacoma, interior photography" pos="center" />
 
         {/* Who she is | the studio — two columns */}
@@ -55,7 +62,7 @@ function SelarasHausPage() {
                 by <strong>Angie Tiara</strong>, a makeup artist and licensed
                 esthetician. She does makeup, facials and head spa treatments:
                 scalp analysis, double wash, steam, exfoliation and a warm herbal
-                rinse people drive over for.
+                rinse.
               </p>
             </div>
           </div>
@@ -63,12 +70,11 @@ function SelarasHausPage() {
             <div style={{ maxWidth: "58ch" }}>
               <p className="so-micro">THE STUDIO</p>
               <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-                Her brand-new space at <strong>1001 Pacific
-                Ave</strong> in downtown Tacoma. The photos basically sell
-                the place: the clean treatment room, the gold water arch
-                over the sink, the gold-framed mirror at the station,
-                hydrangeas in the corner. It's a calm, warm room that
-                matches her work.
+                Her brand-new space is at <strong>1001 Pacific
+                Ave</strong> in downtown Tacoma. I photographed the
+                treatment room, the gold water arch over the sink, the
+                gold-framed mirror at the station and the hydrangeas in
+                the corner.
               </p>
             </div>
           </div>
@@ -78,14 +84,14 @@ function SelarasHausPage() {
         <div className="so-at-feel">
           <p className="so-micro">THE FEEL</p>
           <p className="so-at-feel-t">
-            Natural, soft and warm. That's how Angie wants people to feel the
-            moment they walk in, so that's how I shot it.
+            Angie wants the space to feel natural, soft and warm from the
+            moment people walk in. I shot it with that in mind.
           </p>
         </div>
 
         {/* Frames — organized by room / session */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">INTERIOR PHOTOS · 6 · BY HANA</p>
+          <p className="so-micro">PHOTOS BY HANA HONG · 6</p>
           {SECTIONS.map((sec) => (
             <div key={sec.label} style={{ marginTop: 34 }}>
               <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em" }}>
@@ -170,9 +176,9 @@ function SelarasHausPage() {
         <div className="so-at-use">
           <p className="so-micro">WHAT THE PHOTOS ARE FOR</p>
           <p className="so-at-use-t">
-            Interior photos of the space, made to show clients what it feels like before they book. Angie uses them across her social media and her branding, and for her
-            brand-new space, <strong>Selaras Haus</strong>: her skin, scalp and makeup
-            boutique.
+            The photos show clients what the space feels like before they
+            book. Angie uses them across her social media and branding for{" "}
+            <strong>Selaras Haus</strong>.
           </p>
         </div>
 
