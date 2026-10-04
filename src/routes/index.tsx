@@ -498,7 +498,7 @@ function MeetHana() {
         <SecFile>FILE NO. 004 · MEET HANA</SecFile>
         <BigTitle max={72}>Meet <em>Hana.</em></BigTitle>
         <p className="so-micro mt-3">
-          FOUNDER / PHOTOGRAPHER
+          FOUNDER / PHOTOGRAPHER / CREATIVE PRODUCER
         </p>
         <div className="so-profile mt-8">
           <Parallax range={[-10, 10]}>
@@ -540,7 +540,7 @@ function MeetHana() {
               </div>
               <div className="so-profile-credit">
                 <p className="so-micro">ROLE</p>
-                <p style={{ marginTop: 6 }}>Founder + Photographer</p>
+                <p style={{ marginTop: 6 }}>Founder, Photographer + Creative Producer</p>
               </div>
               <div className="so-profile-credit" style={{ borderTop: 0 }}>
                 <p className="so-micro">WORKS WITH</p>

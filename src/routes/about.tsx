@@ -96,7 +96,7 @@ function AboutPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>
           Meet Hana.
         </h1>
-        <p className="so-micro mt-3">FOUNDER / PHOTOGRAPHER</p>
+        <p className="so-micro mt-3">FOUNDER / PHOTOGRAPHER / CREATIVE PRODUCER</p>
 
         <div className="so-profile" style={{ marginTop: 44 }}>
           <div>
@@ -136,7 +136,7 @@ function AboutPage() {
               </div>
               <div className="so-profile-credit">
                 <p className="so-micro">ROLE</p>
-                <p style={{ marginTop: 6 }}>Founder + Photographer</p>
+                <p style={{ marginTop: 6 }}>Founder, Photographer + Creative Producer</p>
               </div>
               <div className="so-profile-credit" style={{ borderTop: 0 }}>
                 <p className="so-micro">WORKS WITH</p>
