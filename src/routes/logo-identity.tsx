@@ -34,14 +34,14 @@ const IDENTITIES = [
     t: "Jazmin's Events",
     w: "Logo, identity + website",
     img: "/assets/campaigns/jazmins-events/brand-guide.png",
-    h: "/campaigns/jazmins-events",
+    h: "/websites/jazmins-events",
     d: "A script mark and soft, botanical system for a wedding planner, carried onto her site.",
   },
   {
     t: "Essential Brows",
     w: "Brand kit + website · her logo",
     img: "/assets/campaigns/essential-brows-studio/site-desktop.jpg",
-    h: "/campaigns/essential-brows-studio",
+    h: "/websites/essential-brows-studio",
     d: "She kept her logo. I built the palette, type and voice around it.",
   },
 ];
@@ -257,7 +257,7 @@ function LogoIdentityPage() {
           </div>
         </div>
 
-        <a href="/campaigns/jazmins-events" className="so-li-shot">
+        <a href="/websites/jazmins-events" className="so-li-shot">
           <img
             src="/assets/campaigns/jazmins-events/featured-cover.png"
             alt="The Jazmin's Events wordmark on textured paper"

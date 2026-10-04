@@ -19,8 +19,8 @@ import {
   BuildNotes,
 } from "../../sunday/build-notes";
 
-export const Route = createFileRoute("/campaigns/essential-brows-studio")({
-  head: () => seoHead("/campaigns/essential-brows-studio"),
+export const Route = createFileRoute("/websites/essential-brows-studio")({
+  head: () => seoHead("/websites/essential-brows-studio"),
   component: EssentialBrowsCase,
 });
 

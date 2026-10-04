@@ -20,8 +20,8 @@ import {
   BuildNotes,
 } from "../../sunday/build-notes";
 
-export const Route = createFileRoute("/campaigns/jazmins-events")({
-  head: () => seoHead("/campaigns/jazmins-events"),
+export const Route = createFileRoute("/websites/jazmins-events")({
+  head: () => seoHead("/websites/jazmins-events"),
   component: JazminsCase,
 });
 

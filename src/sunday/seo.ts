@@ -75,12 +75,12 @@ export const SEO: Record<string, Seo> = {
   },
 
   /* Case studies */
-  "/campaigns/essential-brows-studio": {
+  "/websites/essential-brows-studio": {
     title: "Essential Brows Studio Website + Brand Kit | Sunday Office Seattle",
     description:
       "Case study: website design, brand kit, copy and booking setup for Essential Brows, a permanent brow studio in Milton, WA, by Seattle agency Sunday Office.",
   },
-  "/campaigns/jazmins-events": {
+  "/websites/jazmins-events": {
     title: "Jazmin's Events Branding + Website | Sunday Office Seattle",
     description:
       "Case study: brand identity, brand guide, Instagram templates and website for Jazmin's Events & Coordinating, a wedding planner, by Sunday Office.",

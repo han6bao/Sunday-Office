@@ -57,8 +57,8 @@ const FAQ = [
 ];
 
 const BUILT = [
-  { c: "Jazmin's Events", s: "In progress", w: "Brand + website", note: "A brand-new wedding planner, branded from scratch. Website in progress.", img: "/assets/campaigns/jazmins-events/featured-cover.png", h: "/campaigns/jazmins-events" },
-  { c: "Essential Brows", w: "Brand kit, voice + website", note: "Her logo, kept. A calm, clean world built around it.", img: "/assets/campaigns/essential-brows-studio/featured-cover.png", h: "/campaigns/essential-brows-studio" },
+  { c: "Jazmin's Events", s: "In progress", w: "Brand + website", note: "A brand-new wedding planner, branded from scratch. Website in progress.", img: "/assets/campaigns/jazmins-events/featured-cover.png", h: "/websites/jazmins-events" },
+  { c: "Essential Brows", w: "Brand kit, voice + website", note: "Her logo, kept. A calm, clean world built around it.", img: "/assets/campaigns/essential-brows-studio/featured-cover.png", h: "/websites/essential-brows-studio" },
 ];
 
 

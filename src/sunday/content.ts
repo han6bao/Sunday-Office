@@ -44,7 +44,7 @@ export const currentWork: Work[] = [
     location: "Milton · WA",
     year: "2026",
     motif: "porcelain",
-    url: "/campaigns/essential-brows-studio",
+    url: "/websites/essential-brows-studio",
     image: "/assets/campaigns/essential-brows-studio/featured-cover.png",
     color: "#faf9f7",
   },  {
@@ -57,7 +57,7 @@ export const currentWork: Work[] = [
     year: "2026",
     motif: "stem",
     status: "In progress",
-    url: "/campaigns/jazmins-events",
+    url: "/websites/jazmins-events",
     image: "/assets/campaigns/jazmins-events/featured-cover.png",
     color: "#f3efe8",
   },  {
@@ -658,7 +658,7 @@ export const archive: ArchiveEntry[] = [
     motif: "stem",
     color: "#ece4d8",
     image: "/assets/campaigns/jazmins-events/brand-guide.png",
-    url: "/campaigns/jazmins-events",
+    url: "/websites/jazmins-events",
     industry: "Events + Experiences",
     tags: ["WEBSITES", "BRANDING + IDENTITY"],
     blurb: "A brand-new Pacific Northwest wedding planner. The branding is finished and the website is being built with her. You live the moment; we'll handle the rest.",

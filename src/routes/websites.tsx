@@ -137,7 +137,7 @@ function WebsitesPage() {
         </div>
         <div className="so-web-cap">
           <span className="so-micro">A SITE I BUILT · ESSENTIAL BROWS STUDIO · DESKTOP + PHONE</span>
-          <a className="so-micro" href="/campaigns/essential-brows-studio">HOW IT WAS MADE →</a>
+          <a className="so-micro" href="/websites/essential-brows-studio">HOW IT WAS MADE →</a>
         </div>
 
         <ServiceSteps steps={STEPS} title="From first talk to live site." />
@@ -158,8 +158,8 @@ function WebsitesPage() {
           label="SITES I'VE BUILT"
           items={[
             { t: "GREAN", w: "Website · matcha café", d: "A website for a matcha and hojicha café in Seattle's U District.", img: "/assets/campaigns/grean/featured-cover.png", h: "https://grean-matcha.vercel.app/" },
-            { t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home.", img: "/assets/campaigns/essential-brows-studio/featured-cover.png", h: "/campaigns/essential-brows-studio" },
-            { t: "Jazmin's Events", s: "In progress", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch.", img: "/assets/campaigns/jazmins-events/featured-cover.png", h: "/campaigns/jazmins-events" },
+            { t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home.", img: "/assets/campaigns/essential-brows-studio/featured-cover.png", h: "/websites/essential-brows-studio" },
+            { t: "Jazmin's Events", s: "In progress", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch.", img: "/assets/campaigns/jazmins-events/featured-cover.png", h: "/websites/jazmins-events" },
           ]}
         />
 

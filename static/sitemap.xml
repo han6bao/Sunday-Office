@@ -9,12 +9,10 @@
   <url><loc>https://sundayoffice.agency/campaigns/chutneys</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/dj-prashant-hiyu</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/dj-wzrd</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://sundayoffice.agency/campaigns/essential-brows-studio</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/exhibition</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/green-grillz</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/highway</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/jaydyn-f</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://sundayoffice.agency/campaigns/jazmins-events</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/kenshi-killz</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/leon-thomas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://sundayoffice.agency/campaigns/paradice</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -32,4 +30,6 @@
   <url><loc>https://sundayoffice.agency/photography</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://sundayoffice.agency/photography/people</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://sundayoffice.agency/websites</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sundayoffice.agency/websites/essential-brows-studio</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://sundayoffice.agency/websites/jazmins-events</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
