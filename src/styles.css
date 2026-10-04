@@ -10422,3 +10422,10 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn .bn-tour-frame .bn-chrome span, .bn .bn-tour-frame figcaption { color: var(--bn-mute); border-top-color: var(--bn-rule); }
 .bn a.bn-tour-visit { color: var(--bn-ink); }
 .bn-tour-bar { background: var(--bn-accent); }
+.bn-strip-sec { margin-top: clamp(40px, 5vw, 72px); display: grid; gap: 14px; }
+.bn-strip { display: grid; grid-template-columns: repeat(var(--bn-cols, 3), minmax(0, 1fr)); gap: 8px; }
+.bn-strip figure { margin: 0; aspect-ratio: var(--bn-ratio, 4 / 5); overflow: hidden; background: var(--bn-paper-2); }
+.bn-strip img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.bn-strip figure:hover img { transform: scale(1.03); }
+@media (max-width: 900px) { .bn-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.bn-tour-screen img { object-fit: contain; object-position: center; background: var(--bn-paper-2); }

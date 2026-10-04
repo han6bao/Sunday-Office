@@ -40,7 +40,7 @@ export function BuildNotes({ theme, children }: { theme: BnTheme; children: Reac
     // Reveal blocks as they scroll in. Added only after load, so nothing hides without JavaScript.
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const sel =
-      ".bn-hero > *, .bn-facts > div, .bn-tn > *, .bn-sec > div, .bn-rules > div, .bn-cmp tbody tr, .bn-decisions > header, .bn-dec, .bn-sw > div, .bn-stats > div, .bn-logo-note, .bn-next li, .bn-tour, .bn-close > *";
+      ".bn-hero > *, .bn-facts > div, .bn-tn > *, .bn-sec > div, .bn-rules > div, .bn-cmp tbody tr, .bn-decisions > header, .bn-dec, .bn-sw > div, .bn-stats > div, .bn-logo-note, .bn-next li, .bn-tour, .bn-strip figure, .bn-close > *";
     const items = Array.from(el.querySelectorAll<HTMLElement>(sel));
     let io: IntersectionObserver | null = null;
     if (!reduce) {
@@ -64,7 +64,7 @@ export function BuildNotes({ theme, children }: { theme: BnTheme; children: Reac
     window.addEventListener("scroll", onScroll, { passive: true });
     // Tap any screenshot to see it large.
     const onClick = (e: MouseEvent) => {
-      const img = (e.target as HTMLElement).closest(".bn-shot img, .bn-now-img img") as HTMLImageElement | null;
+      const img = (e.target as HTMLElement).closest(".bn-shot img, .bn-now-img img, .bn-strip img") as HTMLImageElement | null;
       if (!img || img.closest("a")) return;
       setZoom({ src: img.currentSrc || img.src, alt: img.alt });
     };
@@ -470,5 +470,21 @@ export function BnCredit({ left, right }: { left: ReactNode; right: ReactNode })
       </p>
       <p>{right}</p>
     </footer>
+  );
+}
+
+/** A grid of photos. Tap any one to see it large. */
+export function BnStrip({ photos, cols = 3, ratio = "4 / 5", label }: { photos: { src: string; alt: string }[]; cols?: number; ratio?: string; label?: ReactNode }) {
+  return (
+    <section className="bn-strip-sec">
+      {label && <p className="bn-note">{label}</p>}
+      <div className="bn-strip" style={{ ["--bn-cols" as string]: cols, ["--bn-ratio" as string]: ratio }}>
+        {photos.map((p) => (
+          <figure key={p.src}>
+            <img src={p.src} alt={p.alt} loading="lazy" />
+          </figure>
+        ))}
+      </div>
+    </section>
   );
 }

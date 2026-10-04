@@ -1,206 +1,240 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
-import { SiteBar } from "../../sunday/site-bar";
-import { CaseBookingCta } from "../../sunday/services";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
-import { useState } from "react";
+import {
+  BnBar,
+  BnClose,
+  BnCredit,
+  BnDec,
+  BnDecisions,
+  BnFacts,
+  BnHero,
+  BnNote,
+  BnRules,
+  BnSec,
+  BnShot,
+  BnStrip,
+  BnTour,
+  BuildNotes,
+} from "../../sunday/build-notes";
 
 export const Route = createFileRoute("/campaigns/public-house")({
   head: () => seoHead("/campaigns/public-house"),
   component: PublicHousePage,
 });
 
-/* Venue photography for Public House, made for their social media. */
+const A = "/assets/campaigns/soul-social";
+const IG = "https://www.instagram.com/publichouseseattle/";
+
+/* Their room after dark: a near-black bar, warm cream light, and the amber glow under the back-bar bottles. */
+const THEME = {
+  paper: "#0d0d0c",
+  paper2: "#171614",
+  ink: "#f2ede5",
+  ink2: "rgba(242, 237, 229, 0.74)",
+  mute: "#8e877d",
+  rule: "rgba(242, 237, 229, 0.14)",
+  accent: "#c9a46a",
+  deep: "#1c1b19",
+  deepInk: "#f2ede5",
+  deepMute: "#a59d91",
+};
+
+/* Venue photography for Public House, made for their social media. Vertical 9:16. */
 const PHOTOS = [
-  { src: "/assets/campaigns/soul-social/ss-01.jpg", cap: "the arch" },
-  { src: "/assets/campaigns/soul-social/ss-02.jpg", cap: "public house, on screen" },
-  { src: "/assets/campaigns/soul-social/ss-03.jpg", cap: "the sign" },
-  { src: "/assets/campaigns/soul-social/ss-04.jpg", cap: "behind the bar" },
-  { src: "/assets/campaigns/soul-social/ss-05.jpg", cap: "the bottles" },
+  { src: `${A}/ss-01.jpg`, alt: "The lit arch over the back bar at Public House" },
+  { src: `${A}/ss-02.jpg`, alt: "Public House, on screen" },
+  { src: `${A}/ss-03.jpg`, alt: "The Public House sign" },
+  { src: `${A}/ss-04.jpg`, alt: "Behind the bar at Public House" },
+  { src: `${A}/ss-05.jpg`, alt: "The bottles on the back bar at Public House" },
 ];
 
-
-const SPACE_STEPS = [
-  {
-    t: "THE BACK BAR",
-    d: "One lit arch with shelves up to the ceiling. The light sits under the bottles, so the whole wall glows.",
-  },
-  {
-    t: "THE LIGHT",
-    d: "Warm amber under the shelves and neon over the glass, with the rest of the room kept dark. I shot it the way it looks in person.",
-  },
-  {
-    t: "THE ROOM",
-    d: "Dark wood, foil ductwork across the ceiling and a view straight into a white-tiled kitchen. It sits in an old Pioneer Square building.",
-  },
-  {
-    t: "THE FORMAT",
-    d: "Everything is vertical, so the photos drop straight into stories and posts without cropping.",
-  },
-]
-
-
 function PublicHousePage() {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
-    <div className="block" style={{ minHeight: "100dvh" }}>
-      <SiteBar />
-      <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
-        <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
-          <span className="arr">←</span> Back to Sunday Office
-        </a>
+    <BuildNotes theme={THEME}>
+      <BnBar left="Public House" right="Photography" />
 
-        <p className="so-micro so-micro-red">VENUE PHOTOGRAPHY · BAR + EVENT SPACE</p>
-        <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
-          Public House.
-        </h1>
-        <p className="so-micro mt-3">
-          210 OCCIDENTAL AVE S · PIONEER SQUARE · SEATTLE
+      <BnHero
+        note="Notes by Hana · Sunday Office"
+        title={
+          <>
+            A bar that glows. <em>Shot the way it looks.</em>
+          </>
+        }
+        lede="I photographed Public House, a bar and event space in Pioneer Square, for their social media. One question guided the shoot: would the photos feel like standing in the room at night?"
+      />
+
+      <BnFacts
+        items={[
+          { k: "For", v: "Public House, a bar and event space in Pioneer Square, Seattle" },
+          { k: "What I did", v: "Vertical venue photos for their social media" },
+          { k: "Where", v: "210 Occidental Ave S, Pioneer Square, Seattle" },
+          { k: "Find them", v: "@publichouseseattle", h: IG },
+        ]}
+      />
+
+      <BnTour
+        url="@publichouseseattle"
+        href={IG}
+        items={[
+          { t: "The arch", d: "One lit arch with shelves up to the ceiling.", img: PHOTOS[0].src },
+          { t: "Behind the bar", d: "The back bar, lit from under the bottles.", img: PHOTOS[3].src },
+          { t: "The bottles", d: "Amber light under the shelves, neon over the glass.", img: PHOTOS[4].src },
+          { t: "The sign", d: "Their name, in their own light.", img: PHOTOS[2].src },
+          { t: "On screen", d: "Public House, as it shows up on a phone.", img: PHOTOS[1].src },
+        ]}
+        note="Photos by Hana Hong."
+      />
+
+      <BnSec
+        no="00"
+        label="Where they started"
+        title={
+          <>
+            A room with character. <em>A feed that needed it.</em>
+          </>
+        }
+      >
+        <p>
+          <strong>Public House</strong> is a bar and event space in an old Pioneer Square building. The room has dark wood, foil ductwork
+          across the ceiling and a view straight into a white-tiled kitchen.
         </p>
-        <p className="so-micro mt-2" style={{ color: "var(--color-stone)" }}>
-          PHOTOS BY HANA HONG
+        <p>
+          They needed photos for their social media. I shot the space itself: the lit back bar, the neon, the bottles and the tile.
         </p>
-        <CaseFacts
+      </BnSec>
+
+      <BnStrip
+        label={
+          <>
+            <b>The photos</b> · Photos by Hana Hong · Vertical 9:16
+          </>
+        }
+        photos={PHOTOS}
+        cols={5}
+        ratio="9 / 16"
+      />
+
+      <BnSec
+        no="Brief"
+        label="Rules I set myself"
+        title={
+          <>
+            Four rules <em>before the first frame.</em>
+          </>
+        }
+      >
+        <BnRules
           items={[
-            { k: "FOR", v: "Public House, a bar and event space in Pioneer Square, Seattle" },
-            { k: "WHAT I DID", v: "Vertical venue photos for their social media" },
+            { t: "The back bar leads", d: "The lit arch is the first thing you notice in the room, so it comes first in the photos too." },
+            { t: "Keep the dark", d: "The rest of the room stays dark in person. The photos should keep it that way." },
+            { t: "Shoot it as it is", d: "Warm amber and neon, the way it looks when you walk in." },
+            { t: "Vertical only", d: "Everything is made for stories and posts, so nothing needs cropping later." },
           ]}
         />
-        <CaseCover src="/assets/campaigns/soul-social/ss-04-bw.jpg" alt="Behind the bar at Public House, Pioneer Square Seattle, black and white" pos="center 40%" />
+      </BnSec>
 
-        {/* The night — the text, with the flyer up beside it */}
-        <div
-          className="so-case-cols"
-          style={{ marginTop: 44, alignItems: "start", gap: 36 }}
+      <BnDecisions
+        title={
+          <>
+            What I decided, <em>and why.</em>
+          </>
+        }
+      >
+        <BnDec
+          no="01"
+          label="Subject"
+          title={
+            <>
+              Start with <em>the back bar.</em>
+            </>
+          }
+          call="One lit arch with shelves up to the ceiling. The light sits under the bottles, so the whole wall glows."
+          why="It is the center of the room and the part people remember. Building the set around it gives their feed one clear picture of the place."
         >
-          <div style={{ maxWidth: "58ch" }}>
-            <p className="so-micro">THE SHOOT</p>
-            <p style={{ marginTop: 12, lineHeight: 1.55 }}>
-              I photographed <strong>Public House</strong>, a bar and event
-              space in Pioneer Square, for their social media. I shot the space
-              itself: the lit back bar, the neon, the bottles and the tile.
-            </p>
+          <BnShot src={PHOTOS[0].src} alt={PHOTOS[0].alt} cap="The arch" />
+        </BnDec>
 
-            {/* The space */}
-            <div style={{ marginTop: 56 }}>
-              <CaseRead label="THE SPACE" items={SPACE_STEPS.map((x) => ({ t: x.t, d: x.d }))} />
-            </div>
-          </div>
-          <div className="so-ph-note">
-            <img src={PHOTOS[1].src} alt="Public House sign on screen" loading="lazy" />
-          </div>
-        </div>
-
-        {/* Frames — long and vertical, the way they were shot */}
-        <div style={{ marginTop: 72 }}>
-          <p className="so-micro">PHOTOS BY HANA HONG · 5</p>
-          <p className="so-micro" style={{ marginTop: 6, color: "var(--color-stone)" }}>
-            VERTICAL 9:16 · MADE FOR STORIES + POSTS
-          </p>
-          <div
-            style={{
-              display: "flex",
-              gap: 14,
-              alignItems: "flex-start",
-              overflowX: "auto",
-              paddingBottom: 10,
-              marginTop: 16,
-            }}
-          >
-            {PHOTOS.map((ph, i) => (
-              <button
-                key={ph.src}
-                className="so-photo-cell"
-                type="button"
-                onClick={() => setOpen(i)}
-                aria-label={ph.cap}
-                style={{
-                  flex: "0 0 auto",
-                  width: "min(240px, 58vw)",
-                  display: "block",
-                  padding: 0,
-                  background: "none",
-                  border: 0,
-                  cursor: "pointer",
-                  textAlign: "left",
-                }}
-              >
-                <img
-                  src={ph.src}
-                  alt={ph.cap}
-                  loading="lazy"
-                  style={{
-                    width: "100%",
-                    aspectRatio: "9 / 16",
-                    objectFit: "cover",
-                    borderRadius: 14,
-                    display: "block",
-                  }}
-                />
-                <span className="so-photo-cap" style={{ fontSize: 12 }}>
-                  {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* The room */}
-        <div style={{ marginTop: 48 }}>
-          <p className="so-micro" style={{ textAlign: "center" }}>VISIT PUBLIC HOUSE</p>
-          <div style={{ marginTop: 14, display: "flex", justifyContent: "center" }}>
-            <a
-              className="so-link-jump"
-              href="https://www.instagram.com/publichouseseattle/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              PUBLIC HOUSE · @PUBLICHOUSESEATTLE →
-            </a>
-          </div>
-          <p
-            className="so-micro"
-            style={{
-              marginTop: 14,
-              textAlign: "center",
-              color: "var(--color-stone)",
-              letterSpacing: "0.1em",
-            }}
-          >
-            210 OCCIDENTAL AVE S · SEATTLE, WA · PIONEER SQUARE
-          </p>
-        </div>
-
-        <CaseBookingCta />
-
-        <div style={{ marginTop: 56 }}>
-          <a href="/" className="so-arrow">
-            <span className="arr">←</span> Back to Sunday Office
-          </a>
-        </div>
-      </div>
-
-      {/* Lightbox */}
-      {open !== null && (
-        <div
-          className="lb-overlay so-photo-lb"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setOpen(null);
-          }}
+        <BnDec
+          no="02"
+          label="Light"
+          title={
+            <>
+              Keep the room <em>as it feels.</em>
+            </>
+          }
+          call="Warm amber under the shelves and neon over the glass, with the rest of the room kept dark. I shot it the way it looks in person."
+          why="A bar at night is about the light. Brightening the whole room would make it look like a different place from the one people walk into."
         >
-          <div className="so-photo-lb-card">
-            <img src={PHOTOS[open].src} alt={PHOTOS[open].cap} />
-            <div className="so-photo-lb-meta">
-              <span className="so-micro">{PHOTOS[open].cap}</span>
-              <button className="lb-btn" aria-label="Close" onClick={() => setOpen(null)}>
-                ✕
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+          <BnShot src={PHOTOS[4].src} alt={PHOTOS[4].alt} cap="The bottles" />
+        </BnDec>
+
+        <BnDec
+          no="03"
+          label="Details"
+          title={
+            <>
+              The room <em>around the bar.</em>
+            </>
+          }
+          call="Dark wood, foil ductwork across the ceiling, the sign and the view into the white-tiled kitchen."
+          why="These details show the old Pioneer Square building the bar lives in. They give the feed more to post than one view of the bar."
+        >
+          <BnShot src={PHOTOS[2].src} alt={PHOTOS[2].alt} cap="The sign" />
+        </BnDec>
+
+        <BnDec
+          no="04"
+          label="Format"
+          title={
+            <>
+              Vertical, <em>from the start.</em>
+            </>
+          }
+          call="Every photo is 9:16, so it drops straight into stories and posts without cropping."
+          why="The photos were made for their social media. Shooting vertical meant every frame was ready to post as it was."
+        >
+          <BnShot src={PHOTOS[1].src} alt={PHOTOS[1].alt} cap="Public House, on screen" />
+        </BnDec>
+      </BnDecisions>
+
+      <BnNote
+        media={<img src={`${A}/ss-04-bw.jpg`} alt="Behind the bar at Public House, Pioneer Square Seattle, black and white" loading="lazy" />}
+        label="A note on credit"
+        title={
+          <>
+            Their bar. <em>My photos of it.</em>
+          </>
+        }
+      >
+        The room, the bar and the name belong to Public House. The photos are mine, made for their social media.
+      </BnNote>
+
+      <BnClose
+        note="The short version"
+        title={
+          <>
+            A glowing back bar, <em>ready for their feed.</em>
+          </>
+        }
+        cta={{ t: "Start a project", h: "/?need=Photography#inquiry" }}
+      >
+        I shot Public House the way it looks at night, in a vertical format made for stories and posts.
+      </BnClose>
+
+      <BnCredit
+        left="An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction."
+        right={
+          <>
+            Photos by Hana Hong.
+            <br />
+            Public House · 210 Occidental Ave S, Seattle ·{" "}
+            <a href={IG} target="_blank" rel="noreferrer">
+              @publichouseseattle
+            </a>{" "}
+            <a href="/">Back to Sunday Office →</a>
+          </>
+        }
+      />
+    </BuildNotes>
   );
 }
