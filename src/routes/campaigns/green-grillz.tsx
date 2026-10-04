@@ -29,9 +29,9 @@ const NINE = "https://www.instagram.com/ninevicious/";
 
 const PHOTOS = [
   { src: `${A}/gg01.jpg`, alt: "Nine Vicious wearing the green grillz" },
-  { src: `${A}/gg02.jpg`, alt: "The green set · 02" },
-  { src: `${A}/gg03.jpg`, alt: "The green set · 03" },
-  { src: `${A}/gg04.jpg`, alt: "The green set · 04" },
+  { src: `${A}/gg02.jpg`, alt: "Close-up of the green grillz" },
+  { src: `${A}/gg03.jpg`, alt: "The green grillz, front view" },
+  { src: `${A}/gg04.jpg`, alt: "The green grillz on a glass shelf" },
 ];
 
 /* A black ground like the photos, with the green of the grillz as the accent. */
@@ -72,17 +72,9 @@ function GreenGrillzPage() {
         ]}
       />
 
-      <BnTour
-        url="@maarcusadam"
-        href={MARCUS}
-        items={[
-          { t: "The green set", d: "Nine Vicious wearing the grillz.", img: PHOTOS[0].src },
-          { t: "The green set · 02", d: "From the same shoot.", img: PHOTOS[1].src },
-          { t: "The green set · 03", d: "From the same shoot.", img: PHOTOS[2].src },
-          { t: "The green set · 04", d: "From the same shoot.", img: PHOTOS[3].src },
-        ]}
-        note="Photos by Hana."
-      />
+      <div style={{ marginTop: 28 }}>
+        <BnShot src={PHOTOS[0].src} alt={PHOTOS[0].alt} cap="Nine Vicious in the green grillz · Photo by Hana" />
+      </div>
 
       <BnSec
         no="00"
@@ -102,18 +94,18 @@ function GreenGrillzPage() {
           Thug and Ken Carson.
         </p>
         <p>
-          My job was to photograph Nine in the green set and build the promotion around those photos.
+          My job was to photograph Nine wearing the green set and build the promotion around that photo.
         </p>
       </BnSec>
 
       <BnStrip
         label={
           <>
-            <b>The photos</b> · Photos by Hana
+            <b>The piece</b> · Product photos of the grillz, not taken by me
           </>
         }
-        photos={PHOTOS}
-        cols={4}
+        photos={PHOTOS.slice(1)}
+        cols={3}
         ratio="4 / 5"
       />
 
@@ -128,9 +120,9 @@ function GreenGrillzPage() {
       >
         <BnRules
           items={[
-            { t: "The grillz are the subject", d: "Every frame has to show the piece clearly, even when the person wearing it is well known." },
+            { t: "The grillz are the subject", d: "The photo has to show the piece clearly, even when the person wearing it is well known." },
             { t: "The right person wears it", d: "A good photo of the right person wearing the piece shows it better than a product shot." },
-            { t: "Shoot for the promotion", d: "The photos had to work as posts, since the promotion would be built around them." },
+            { t: "Shoot for the promotion", d: "The photo had to work as a post, since the promotion would be built around it." },
             { t: "Credit the maker", d: "Marcus made the grillz. The work should lead people back to him." },
           ]}
         />
@@ -168,7 +160,7 @@ function GreenGrillzPage() {
           call="The whole shoot centered on a single set of grillz."
           why="Keeping to one piece gave the posts one clear thing to look at and talk about."
         >
-          <BnShot src={PHOTOS[1].src} alt={PHOTOS[1].alt} cap="The green set · 02" />
+          <BnShot src={PHOTOS[1].src} alt={PHOTOS[1].alt} cap="The green set · product photo, not mine" />
         </BnDec>
 
         <BnDec
@@ -176,13 +168,12 @@ function GreenGrillzPage() {
           label="Promotion"
           title={
             <>
-              Built around <em>the photos.</em>
+              Built around <em>the photo.</em>
             </>
           }
-          call="After the shoot I handled the marketing and promotion, using these photos as the center of it."
-          why="For a custom jeweler, visibility is how new clients find him. The photos were the strongest thing we had to show."
+          call="After the shoot I handled the marketing and promotion, with my photo of Nine at the center of it."
+          why="For a custom jeweler, visibility is how new clients find him. A well-known artist wearing the piece was the strongest thing we had to show."
         >
-          <BnShot src={PHOTOS[2].src} alt={PHOTOS[2].alt} cap="The green set · 03" />
         </BnDec>
       </BnDecisions>
 
@@ -212,22 +203,22 @@ function GreenGrillzPage() {
           ]}
         />
         <p>
-          Then fans started using the photo as their profile picture on X and other platforms, which I didn't expect. For a custom
+          Then fans started using my photo of Nine as their profile picture on X and other platforms, which I didn't expect. For a custom
           jeweler, that kind of visibility helps new clients find him.
         </p>
       </BnSec>
 
       <BnNote
-        media={<img src={PHOTOS[3].src} alt={PHOTOS[3].alt} loading="lazy" />}
+        media={<img src={PHOTOS[0].src} alt={PHOTOS[0].alt} loading="lazy" />}
         label="A note on credit"
         title={
           <>
-            His grillz. <em>My photos.</em>
+            His grillz. <em>My photo.</em>
           </>
         }
       >
-        The grillz are Marcus Adam's work, and Nine Vicious is the artist wearing them. The photos are mine, and so is the promotion built
-        around them.
+        The grillz are Marcus Adam's work, and Nine Vicious is the artist wearing them. The photo of Nine is mine, and so is the promotion
+        built around it. The close-up product photos of the grillz are not mine.
       </BnNote>
 
       <BnClose
@@ -247,7 +238,7 @@ function GreenGrillzPage() {
         left="An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction."
         right={
           <>
-            Photos by Hana.
+            Photo of Nine Vicious by Hana. Product photos of the grillz are not mine.
             <br />
             Grillz by Marcus Adam,{" "}
             <a href={MARCUS} target="_blank" rel="noreferrer">

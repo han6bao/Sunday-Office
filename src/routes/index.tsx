@@ -724,7 +724,7 @@ const REEL = [
   { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", t: "Selaras Haus", w: "INTERIORS · BEAUTY", h: "/campaigns/selaras-haus" },
   { src: "/assets/campaigns/leon-thomas/lt-01.jpg", t: "Leon Thomas × Vice", w: "NIGHTLIFE · EVENT", h: "/campaigns/leon-thomas" },
   { src: "/assets/campaigns/bar-bistro/bb-01.jpg", t: "Bar Bistro", w: "FOOD + DRINK", h: "/campaigns/bar-bistro" },
-  { src: "/assets/campaigns/green-grillz/gg02.jpg", t: "Nine Vicious", w: "CUSTOM GRILLZ", h: "/campaigns/green-grillz" },
+  { src: "/assets/campaigns/green-grillz/gg01.jpg", t: "Nine Vicious", w: "CUSTOM GRILLZ", h: "/campaigns/green-grillz" },
   { src: "/assets/campaigns/still-different/sd-02.jpg", t: "Still Different", w: "ARTIST · PORTRAIT", h: "/campaigns/still-different" },
   { src: "/assets/campaigns/soul-social/ss-04.jpg", t: "Public House", w: "VENUE · SOCIAL", h: "/campaigns/public-house" },
 ];
