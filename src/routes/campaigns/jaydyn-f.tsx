@@ -150,7 +150,7 @@ function JaydynCase() {
 
         {/* The work — tap any frame to scroll through */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">THE WORK · PHOTOS BY HANA HONG · TAP TO OPEN</p>
+          <p className="so-micro">THE WORK · PHOTOS BY HANA · TAP TO OPEN</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 14, marginTop: 14 }}>
             {GALLERY.map((g, i) => (
               <button

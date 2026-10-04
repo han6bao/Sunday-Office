@@ -137,7 +137,7 @@ function HeadshotsPage() {
                       <img
                         key={s}
                         src={`/assets/headshots/${s}.jpg`}
-                        alt={`${k.t} headshot ${i + 1} by Hana Hong, Seattle headshot photographer`}
+                        alt={`${k.t} headshot ${i + 1} by Hana, Seattle headshot photographer`}
                         loading="lazy"
                       />
                     ))}

@@ -129,7 +129,7 @@ function ExhibitionPage() {
 
         {/* The frames — one full-width editorial grid */}
         <div style={{ marginTop: 40 }}>
-          <p className="so-micro">THE CAMPAIGN · 14 FRAMES · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">THE CAMPAIGN · 14 FRAMES · PHOTOS BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
               const L = LAYOUT[i];
@@ -161,7 +161,7 @@ function ExhibitionPage() {
 
         {/* Frames 08–10 */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">FRAMES 08 TO 10 · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">FRAMES 08 TO 10 · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-3">
             {PHOTOS.slice(7, 10).map((ph, i) => (
               <button key={ph.src} className="so-photo-cell" type="button" onClick={() => setOpen(i + 7)} aria-label={ph.cap}>

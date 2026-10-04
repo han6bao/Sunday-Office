@@ -35,7 +35,7 @@ function KenshiKillzPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Kenshi Killz.
         </h1>
-        <p className="so-micro mt-3">@KENSHIKILLA · SEATTLE · PHOTOS BY HANA HONG</p>
+        <p className="so-micro mt-3">@KENSHIKILLA · SEATTLE · PHOTOS BY HANA</p>
         <CaseFacts
           items={[
             { k: "FOR", v: "Kenshi Killz, Seattle artist" },
@@ -84,7 +84,7 @@ function KenshiKillzPage() {
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button

@@ -41,7 +41,7 @@ function LeonThomasPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>
           Leon Thomas.
         </h1>
-        <p className="so-micro mt-3">MUTTS DON'T HEEL AFTERPARTY · VICE SEATTLE · PHOTOS BY HANA HONG</p>
+        <p className="so-micro mt-3">MUTTS DON'T HEEL AFTERPARTY · VICE SEATTLE · PHOTOS BY HANA</p>
         <CaseFacts
           items={[
             { k: "FOR", v: "Leon Thomas, Grammy-winning R&B artist, and Vice Seattle" },
@@ -105,11 +105,11 @@ function LeonThomasPage() {
           <div className="so-case-cols" style={{ marginTop: 16, alignItems: "start" }}>
             <div style={{ maxWidth: "52ch" }}>
               <p style={{ margin: 0, lineHeight: 1.55 }}>
-                Dubsea wrote up the night and used my photos, credited to Hana Hong.
+                Dubsea wrote up the night and used my photos, with credit.
                 These are two of them. Tap one to read the article.
               </p>
               <p className="so-micro" style={{ marginTop: 14, color: "var(--color-verm)", letterSpacing: "0.14em", fontWeight: 700 }}>
-                PHOTOS BY HANA HONG
+                PHOTOS BY HANA
               </p>
             </div>
             <div style={{ display: "grid", gap: 14 }}>

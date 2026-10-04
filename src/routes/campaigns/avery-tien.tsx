@@ -35,7 +35,7 @@ function AveryTienPage() {
             { k: "WHAT I DID", v: "Portraits" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/avery-tien/at01.jpg" alt="Avery Tien, Seattle fashion designer, portrait by Hana Hong" pos="center 30%" />
+        <CaseCover src="/assets/campaigns/avery-tien/at01.jpg" alt="Avery Tien, Seattle fashion designer, portrait by Hana" pos="center 30%" />
 
         {/* The designer */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
@@ -87,7 +87,7 @@ function AveryTienPage() {
 
         {/* Portraits */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE PHOTOS · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">THE PHOTOS · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <div key={ph.src} className="so-photo-cell">

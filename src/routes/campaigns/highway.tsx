@@ -52,7 +52,7 @@ function HighwayPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 88px)", marginTop: 14 }}>
           Highway.
         </h1>
-        <p className="so-micro mt-3">@HIGHWAY2009 · SEATTLE, WA · FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA HONG</p>
+        <p className="so-micro mt-3">@HIGHWAY2009 · SEATTLE, WA · FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA</p>
         <CaseFacts
           items={[
             { k: "FOR", v: "Highway, Seattle rapper" },
@@ -73,7 +73,7 @@ function HighwayPage() {
             style={{ width: "100%", maxWidth: 420, display: "block", borderRadius: 14, aspectRatio: "1 / 1", objectFit: "cover" }}
           />
           <p className="so-micro" style={{ marginTop: 10, color: "var(--color-verm)", letterSpacing: "0.14em" }}>
-            FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA HONG
+            FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA
           </p>
           <div className="mt-3" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a className="so-link-jump" href="https://soundcloud.com/highway2009/sets/forever" target="_blank" rel="noreferrer">
@@ -123,7 +123,7 @@ function HighwayPage() {
 
         {/* The set */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE SET · A FEW FRAMES · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">THE SET · A FEW FRAMES · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
             {[
               { src: "/assets/campaigns/highway-chitos/hc01.jpg", cap: "frame 01" },

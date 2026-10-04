@@ -9,12 +9,12 @@ export const SEO: Record<string, Seo> = {
   "/": {
     title: "Sunday Office | Seattle Creative Agency for Branding, Websites + Photography",
     description:
-      "Sunday Office is a Seattle creative agency for local businesses and artists: branding, website design, photography, video, creative direction and social content. Founded by Seattle photographer Hana Hong.",
+      "Sunday Office is a Seattle creative agency for local businesses and artists: branding, website design, photography, video, creative direction and social content. Founded by Seattle photographer Hana.",
   },
   "/about": {
-    title: "About Hana Hong | Seattle Photographer + Founder of Sunday Office",
+    title: "About Hana | Seattle Photographer + Founder of Sunday Office",
     description:
-      "Meet Hana Hong, Seattle photographer and founder of Sunday Office, a Seattle creative agency for branding, websites, photography and creative direction.",
+      "Meet Hana, Seattle photographer and founder of Sunday Office, a Seattle creative agency for branding, websites, photography and creative direction.",
   },
 
   /* Services */
@@ -36,12 +36,12 @@ export const SEO: Record<string, Seo> = {
   "/photography": {
     title: "Seattle Photographer for Brands, Portraits + Events | Sunday Office",
     description:
-      "Seattle photography for brands, businesses and artists: portraits, headshots, food, product, interiors, events and campaigns, planned and directed by Hana Hong.",
+      "Seattle photography for brands, businesses and artists: portraits, headshots, food, product, interiors, events and campaigns, planned and directed by Hana.",
   },
   "/photography/people": {
     title: "Portrait + Personal Branding Photography Seattle | Sunday Office",
     description:
-      "Portraits, artist photos and personal branding photography in Seattle by Hana Hong of Sunday Office.",
+      "Portraits, artist photos and personal branding photography in Seattle by Hana of Sunday Office.",
   },
   "/photography/brands": {
     title: "Brand, Food + Interior Photography Seattle | Sunday Office",
@@ -51,7 +51,7 @@ export const SEO: Record<string, Seo> = {
   "/photography/events": {
     title: "Event + Nightlife Photography Seattle | Sunday Office",
     description:
-      "Seattle event photography: nightlife, concerts, afterparties and live coverage by Hana Hong of Sunday Office.",
+      "Seattle event photography: nightlife, concerts, afterparties and live coverage by Hana of Sunday Office.",
   },
   "/photography/creative": {
     title: "Editorial + Creative Photography Seattle | Sunday Office",
@@ -61,7 +61,7 @@ export const SEO: Record<string, Seo> = {
   "/headshots": {
     title: "Seattle Headshot Photographer | Headshots from $150 | Sunday Office",
     description:
-      "Professional and creative headshots in Seattle by Hana Hong. Sessions from $150, with direction the whole time so you look like yourself.",
+      "Professional and creative headshots in Seattle by Hana. Sessions from $150, with direction the whole time so you look like yourself.",
   },
   "/moving-image": {
     title: "Seattle Video Production: Brand Films, Commercials + Reels | Sunday Office",
@@ -113,15 +113,15 @@ export const SEO: Record<string, Seo> = {
   "/campaigns/leon-thomas": {
     title: "Leon Thomas Afterparty Photography at Vice Seattle | Sunday Office",
     description:
-      "Nightlife photography of Leon Thomas at the Mutts Don't Heel tour afterparty at Vice Seattle, shot by Hana Hong.",
+      "Nightlife photography of Leon Thomas at the Mutts Don't Heel tour afterparty at Vice Seattle, photographed by Hana.",
   },
   "/campaigns/avery-tien": {
     title: "Avery Tien Fashion Portraits Seattle | Sunday Office",
-    description: "Fashion portraits of Seattle designer Avery Tien, photographed by Hana Hong of Sunday Office.",
+    description: "Fashion portraits of Seattle designer Avery Tien, photographed by Hana of Sunday Office.",
   },
   "/campaigns/big-baby-gucci": {
     title: "Big Baby Gucci Live Concert Photography | Sunday Office Seattle",
-    description: "Live music photography of Big Baby Gucci by Seattle photographer Hana Hong of Sunday Office.",
+    description: "Live music photography of Big Baby Gucci by Seattle photographer Hana of Sunday Office.",
   },
   "/campaigns/chitos": {
     title: "Chitos International Art Direction + Photography | Sunday Office Seattle",
@@ -134,7 +134,7 @@ export const SEO: Record<string, Seo> = {
   },
   "/campaigns/dj-wzrd": {
     title: "DJ WZRD Nightlife Photography Seattle | Sunday Office",
-    description: "Nightlife and DJ photography of DJ WZRD by Seattle photographer Hana Hong of Sunday Office.",
+    description: "Nightlife and DJ photography of DJ WZRD by Seattle photographer Hana of Sunday Office.",
   },
   "/campaigns/exhibition": {
     title: "Exhibition Streetwear Campaign Seattle | Sunday Office",
@@ -142,7 +142,7 @@ export const SEO: Record<string, Seo> = {
   },
   "/campaigns/highway": {
     title: "Highway Album Cover Photography Seattle | Sunday Office",
-    description: "Album cover photography for Seattle rapper Highway by Hana Hong of Sunday Office.",
+    description: "Album cover photography for Seattle rapper Highway by Hana of Sunday Office.",
   },
   "/campaigns/jaydyn-f": {
     title: "Jaydyn F. Artist Social Content Seattle | Sunday Office",
@@ -150,7 +150,7 @@ export const SEO: Record<string, Seo> = {
   },
   "/campaigns/kenshi-killz": {
     title: "Kenshi Killz Artist Promo Photography Seattle | Sunday Office",
-    description: "Promo photography for Seattle artist Kenshi Killz by Hana Hong of Sunday Office.",
+    description: "Promo photography for Seattle artist Kenshi Killz by Hana of Sunday Office.",
   },
   "/campaigns/paradice": {
     title: "Itz Pz × Paradice Worldwide Streetwear Campaign Seattle | Sunday Office",
@@ -158,7 +158,7 @@ export const SEO: Record<string, Seo> = {
   },
   "/campaigns/still-different": {
     title: "Still Different Artist + Gear Photography Seattle | Sunday Office",
-    description: "Artist and gear photography for Still Different by Seattle photographer Hana Hong of Sunday Office.",
+    description: "Artist and gear photography for Still Different by Seattle photographer Hana of Sunday Office.",
   },
 };
 

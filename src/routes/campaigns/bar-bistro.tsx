@@ -83,7 +83,7 @@ function BarBistroPage() {
           { t: "The trio", d: "Berries, citrus and three glasses.", img: PHOTOS[5].src },
           { t: "Sunlight service", d: "Cake and a cocktail out on the patio.", img: PHOTOS[6].src },
         ]}
-        note="Photos by Hana Hong."
+        note="Photos by Hana."
       />
 
       <BnSec
@@ -108,7 +108,7 @@ function BarBistroPage() {
       <BnStrip
         label={
           <>
-            <b>The photos</b> · Photos by Hana Hong
+            <b>The photos</b> · Photos by Hana
           </>
         }
         photos={PHOTOS}
@@ -235,7 +235,7 @@ function BarBistroPage() {
         left="An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction."
         right={
           <>
-            Photos by Hana Hong. Table shoot with{" "}
+            Photos by Hana. Table shoot with{" "}
             <a href={TU} target="_blank" rel="noreferrer">
               @tacoma_uncovered ↗
             </a>

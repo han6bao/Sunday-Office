@@ -10429,3 +10429,12 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-strip figure:hover img { transform: scale(1.03); }
 @media (max-width: 900px) { .bn-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .bn-tour-screen img { object-fit: contain; object-position: center; background: var(--bn-paper-2); }
+
+/* Photo tours: a plain box, no browser bar */
+.bn .bn-tour-frame.is-photos { background: transparent; border: 0; }
+.bn-tour-frame.is-photos .bn-tour-screen { aspect-ratio: auto; height: min(74vh, 680px); background: transparent; display: grid; place-items: center; }
+.bn-tour-frame.is-photos .bn-tour-screen img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; background: none; border: 1px solid var(--bn-rule); }
+.bn-tour-frame.is-photos .bn-tour-bar { display: none; }
+.bn .bn-tour-frame.is-photos figcaption { border-top: 0; padding: 12px 0 0; text-align: center; }
+.bn a.bn-tour-link { display: inline-block; margin-top: 14px; font: 500 11.5px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--bn-ink); text-decoration: none; border-bottom: 1px solid var(--bn-accent); padding-bottom: 2px; }
+@media (max-width: 900px) { .bn-tour-frame.is-photos .bn-tour-screen { height: auto; max-height: 72vh; } .bn-tour-frame.is-photos .bn-tour-screen img { max-height: 72vh; } }

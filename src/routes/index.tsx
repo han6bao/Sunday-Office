@@ -497,7 +497,7 @@ function MeetHana() {
             <div>
               <img
                 src="/assets/work/hero-hana-01.jpg"
-                alt="Hana Hong, Seattle photographer and founder of Sunday Office, at her desk"
+                alt="Hana, Seattle photographer and founder of Sunday Office, at her desk"
                 loading="lazy"
                 style={{
                   width: "100%",

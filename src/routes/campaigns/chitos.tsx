@@ -111,7 +111,7 @@ function ChitosPage() {
 
         {/* Frames */}
         <div style={{ marginTop: 64, borderTop: "1px solid var(--color-sepia)", paddingTop: 24 }}>
-          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>01 · THE FRAMES · 3 · PHOTOS BY HANA HONG</p>
+          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>01 · THE FRAMES · 3 · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button
@@ -133,7 +133,7 @@ function ChitosPage() {
 
         {/* From the post — clips */}
         <div style={{ marginTop: 56, borderTop: "1px solid var(--color-sepia)", paddingTop: 24 }}>
-          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>02 · FROM THE POST · CLIPS BY HANA HONG</p>
+          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>02 · FROM THE POST · CLIPS BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginTop: 12 }}>
             {["clip-01", "clip-02", "clip-03"].map((c) => (
               <a

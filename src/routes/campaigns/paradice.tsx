@@ -192,7 +192,7 @@ function ParadicePage() {
 
         {/* Gallery */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE SESSION · 9 FRAMES · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">THE SESSION · 9 FRAMES · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button

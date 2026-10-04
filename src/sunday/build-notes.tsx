@@ -106,6 +106,7 @@ export function BnTour({ url, href, items, note }: { url: string; href?: string;
   const [i, setI] = useState(0);
   const vid = useRef<HTMLVideoElement>(null);
   const cur = items[i];
+  const photos = items.every((x) => !x.video);
   const next = () => setI((n) => (n + 1) % items.length);
 
   useEffect(() => {
@@ -140,19 +141,26 @@ export function BnTour({ url, href, items, note }: { url: string; href?: string;
           ))}
         </ol>
         {note && <p className="bn-tour-note">{note}</p>}
+        {photos && href && (
+          <a className="bn-tour-link" href={href} target="_blank" rel="noreferrer">
+            {url} ↗
+          </a>
+        )}
       </div>
-      <figure className="bn-tour-frame">
-        <div className="bn-chrome" aria-hidden>
-          <i />
-          <i />
-          <i />
-          <span>{url}</span>
-          {href && (
-            <a className="bn-tour-visit" href={href} target="_blank" rel="noreferrer">
-              Visit ↗
-            </a>
-          )}
-        </div>
+      <figure className={"bn-tour-frame" + (photos ? " is-photos" : "")}>
+        {!photos && (
+          <div className="bn-chrome" aria-hidden>
+            <i />
+            <i />
+            <i />
+            <span>{url}</span>
+            {href && (
+              <a className="bn-tour-visit" href={href} target="_blank" rel="noreferrer">
+                Visit ↗
+              </a>
+            )}
+          </div>
+        )}
         <div className="bn-tour-screen">
           {cur.video ? (
             <video key={cur.video} ref={vid} poster={cur.poster} muted playsInline autoPlay preload="auto" onEnded={next} aria-label={cur.t}>

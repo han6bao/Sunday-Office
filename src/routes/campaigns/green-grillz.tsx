@@ -81,7 +81,7 @@ function GreenGrillzPage() {
           { t: "The green set · 03", d: "From the same shoot.", img: PHOTOS[2].src },
           { t: "The green set · 04", d: "From the same shoot.", img: PHOTOS[3].src },
         ]}
-        note="Photos by Hana Hong."
+        note="Photos by Hana."
       />
 
       <BnSec
@@ -109,7 +109,7 @@ function GreenGrillzPage() {
       <BnStrip
         label={
           <>
-            <b>The photos</b> · Photos by Hana Hong
+            <b>The photos</b> · Photos by Hana
           </>
         }
         photos={PHOTOS}
@@ -247,7 +247,7 @@ function GreenGrillzPage() {
         left="An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction."
         right={
           <>
-            Photos by Hana Hong.
+            Photos by Hana.
             <br />
             Grillz by Marcus Adam,{" "}
             <a href={MARCUS} target="_blank" rel="noreferrer">

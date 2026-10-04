@@ -80,7 +80,7 @@ function BoatPartyPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Iconic 2000s Boat Party.
         </h1>
-        <p className="so-micro mt-3">DJ PRASHANT · HOLLYWOOD × BOLLYWOOD · ON THE HIYU · PHOTOS BY HANA HONG</p>
+        <p className="so-micro mt-3">DJ PRASHANT · HOLLYWOOD × BOLLYWOOD · ON THE HIYU · PHOTOS BY HANA</p>
         <CaseFacts
           items={[
             { k: "FOR", v: "DJ Prashant and the Hiyu, a floating event venue in Seattle" },
@@ -128,7 +128,7 @@ function BoatPartyPage() {
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES · 14 · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">THE FRAMES · 14 · PHOTOS BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
               const L = LAYOUT[i];

@@ -82,7 +82,7 @@ function PublicHousePage() {
           { t: "The sign", d: "Their name, in their own light.", img: PHOTOS[2].src },
           { t: "On screen", d: "Public House, as it shows up on a phone.", img: PHOTOS[1].src },
         ]}
-        note="Photos by Hana Hong."
+        note="Photos by Hana."
       />
 
       <BnSec
@@ -106,7 +106,7 @@ function PublicHousePage() {
       <BnStrip
         label={
           <>
-            <b>The photos</b> · Photos by Hana Hong · Vertical 9:16
+            <b>The photos</b> · Photos by Hana · Vertical 9:16
           </>
         }
         photos={PHOTOS}
@@ -225,7 +225,7 @@ function PublicHousePage() {
         left="An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction."
         right={
           <>
-            Photos by Hana Hong.
+            Photos by Hana.
             <br />
             Public House · 210 Occidental Ave S, Seattle ·{" "}
             <a href={IG} target="_blank" rel="noreferrer">

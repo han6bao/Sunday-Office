@@ -102,7 +102,7 @@ function AboutPage() {
           <div>
             <img
               src="/assets/about-hana.jpg"
-              alt="Hana Hong, Seattle photographer and founder of Sunday Office, at her desk at night"
+              alt="Hana, Seattle photographer and founder of Sunday Office, at her desk at night"
               loading="lazy"
               style={{
                 width: "100%",

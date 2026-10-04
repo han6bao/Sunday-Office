@@ -35,7 +35,7 @@ function DjWzrdPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           DJ WZRD.
         </h1>
-        <p className="so-micro mt-3">AT CULTURA · CAPITOL HILL · PHOTOS BY HANA HONG</p>
+        <p className="so-micro mt-3">AT CULTURA · CAPITOL HILL · PHOTOS BY HANA</p>
         <CaseFacts
           items={[
             { k: "FOR", v: "DJ WZRD, touring DJ and producer" },
@@ -95,7 +95,7 @@ function DjWzrdPage() {
 
         {/* Frames — hero halo, room under, then the middle four */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA</p>
 
           {/* hero */}
           <button

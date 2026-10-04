@@ -78,7 +78,7 @@ function ChutneysPage() {
           { t: "The chicken", d: "Glazed, with tall crisps, against the dark room.", img: PHOTOS[2].src },
           { t: "The skillet", d: "A fried egg, pickles and soft buns on a board.", img: PHOTOS[3].src },
         ]}
-        note="Photos by Hana Hong."
+        note="Photos by Hana."
       />
 
       <BnSec
@@ -103,7 +103,7 @@ function ChutneysPage() {
       <BnStrip
         label={
           <>
-            <b>The photos</b> · Photos by Hana Hong
+            <b>The photos</b> · Photos by Hana
           </>
         }
         photos={PHOTOS}
@@ -232,7 +232,7 @@ function ChutneysPage() {
         left="An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction."
         right={
           <>
-            Photos by Hana Hong. Commercial shot and edited by Hana Hong.
+            Photos by Hana. Commercial shot and edited by Hana.
             <br />
             <a href={SITE} target="_blank" rel="noreferrer">
               chutneysinbellevue.com ↗

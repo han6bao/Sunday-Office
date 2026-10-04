@@ -83,7 +83,7 @@ function SelarasHausPage() {
           { t: "The station", d: "The gold-framed mirror where she does makeup.", img: PHOTOS[4].src },
           { t: "The corner", d: "Hydrangeas, and a little softness.", img: PHOTOS[5].src },
         ]}
-        note="Photos by Hana Hong."
+        note="Photos by Hana."
       />
 
       <BnSec
@@ -109,7 +109,7 @@ function SelarasHausPage() {
       <BnStrip
         label={
           <>
-            <b>The photos</b> · Photos by Hana Hong
+            <b>The photos</b> · Photos by Hana
           </>
         }
         photos={PHOTOS}
@@ -234,7 +234,7 @@ function SelarasHausPage() {
         left="An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction."
         right={
           <>
-            Photos by Hana Hong.
+            Photos by Hana.
             <br />
             Selaras Haus by Angie Tiara · 1001 Pacific Ave, Tacoma ·{" "}
             <a href={IG} target="_blank" rel="noreferrer">

@@ -36,7 +36,7 @@ function BigBabyGucciPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           Big Baby Gucci.
         </h1>
-        <p className="so-micro mt-3">BIGBABYGUCCI · LIVE SET · PHOTOS BY HANA HONG</p>
+        <p className="so-micro mt-3">BIGBABYGUCCI · LIVE SET · PHOTOS BY HANA</p>
         <CaseFacts
           items={[
             { k: "FOR", v: "Big Baby Gucci, Charlotte rapper" },
@@ -120,7 +120,7 @@ function BigBabyGucciPage() {
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE PHOTOS · 8 · PHOTOS BY HANA HONG</p>
+          <p className="so-micro">THE PHOTOS · 8 · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button
