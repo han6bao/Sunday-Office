@@ -10159,3 +10159,47 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
   .so-nav:not(.is-on-cover) .so-nav-link.cta { background: #f3ead9 !important; color: #151213 !important; border-color: #f3ead9 !important; }
   .so-nav:not(.is-on-cover) .so-nav-burger { border: 1px solid rgba(243, 234, 217, 0.35) !important; color: #f3ead9; }
 }
+
+/* ============================================================
+   Landing page headings: option 4, a modern serif with one
+   italic word. One line, nothing overlapping. Meet Hana keeps
+   its own look.
+   ============================================================ */
+.so-build-title,
+.so-proof-title,
+.so-darkframe-title,
+.so-pk-head .so-serif,
+.so-start-head .so-serif,
+.so-reel-title {
+  font-family: "Instrument Serif", "Fraunces", Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 0.98 !important;
+  text-wrap: balance;
+}
+.so-build-title em,
+.so-proof-title em,
+.so-darkframe-title em,
+.so-pk-head .so-serif em,
+.so-start-head .so-serif em,
+.so-reel-title em {
+  font-family: inherit !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  font-size: 1em !important;
+  line-height: inherit !important;
+  letter-spacing: -0.01em !important;
+  display: inline !important;
+  position: static !important;
+  transform: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  -webkit-text-stroke: 0 !important;
+  paint-order: normal !important;
+  z-index: auto !important;
+  color: #8b779a !important;
+}
+/* on dark sections the italic word goes soft lilac, on the mauve panel it goes cream */
+.so-darkframe-title em,
+.so-start-head .so-serif em { color: #c9b0d9 !important; }
+.so-pk-head .so-serif em { color: #f3ead9 !important; }
