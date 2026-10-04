@@ -40,7 +40,7 @@ const IDENTITIES = [
   {
     t: "Essential Brows",
     w: "Brand kit + website · her logo",
-    img: "/assets/work/essential-brows.png",
+    img: "/assets/campaigns/essential-brows-studio/site-desktop.jpg",
     h: "/campaigns/essential-brows-studio",
     d: "She kept her logo. I built the palette, type and voice around it.",
   },
@@ -259,11 +259,12 @@ function LogoIdentityPage() {
 
         <a href="/campaigns/jazmins-events" className="so-li-shot">
           <img
-            src="/assets/campaigns/jazmins-events/kit-in-action.jpg"
-            alt="Jazmin's Events identity on business cards, stationery and signage"
+            src="/assets/campaigns/jazmins-events/featured-cover.png"
+            alt="The Jazmin's Events wordmark on textured paper"
+            style={{ aspectRatio: "21 / 9", objectFit: "cover", objectPosition: "center 52%" }}
           />
           <span className="so-li-cap">
-            <span className="so-micro">THE IDENTITY IN USE · JAZMIN'S EVENTS</span>
+            <span className="so-micro">THE WORDMARK · JAZMIN'S EVENTS</span>
             <span className="so-micro so-li-cap-go">SEE THE PROJECT →</span>
           </span>
         </a>
