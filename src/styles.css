@@ -10050,3 +10050,6 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
   .so-bookbar.is-on { transform: none; }
   .so-bookbar-t span { display: none; }
 }
+.so-pricing .so-pk-card.is-feat { transform: translateY(-10px); box-shadow: 0 24px 50px -24px rgba(21, 18, 19, 0.55); }
+@media (hover: hover) { .so-pricing .so-pk-card.is-feat:hover { transform: translateY(-13px); } }
+@media (max-width: 620px) { .so-pricing .so-pk-card.is-feat { transform: none; } }

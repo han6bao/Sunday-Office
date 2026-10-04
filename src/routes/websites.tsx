@@ -150,7 +150,7 @@ function WebsitesPage() {
           title="Where websites start."
           items={[
             { t: "Simple site", p: "$850", d: "For businesses that need the basics done beautifully.", list: ["4 to 5 pages", "Design + build", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
-            { t: "Simple site + SEO", p: "$1,000", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Page titles + descriptions", "Local Seattle search", "A sitemap for Google"] },
+            { t: "Simple site + SEO", p: "$1,000", tag: "RECOMMENDED", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Page titles + descriptions", "Local Seattle search", "A sitemap for Google"] },
             { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Galleries or menus", "Lots of services", "Case studies", "A more custom build"] },
             { t: "Landing pages + fixes", p: "Quoted", d: "Priced to what it actually needs.", list: ["A single page", "A link-in-bio", "Fixes + a refresh", "Better photos or copy"] },
           ]}
