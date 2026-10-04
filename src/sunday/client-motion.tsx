@@ -1139,6 +1139,10 @@ export function NavState() {
       const cover = document.querySelector(".so-cover");
       const nav = document.querySelector(".so-nav");
       if (nav) nav.classList.toggle("is-on-cover", !!cover && window.scrollY < window.innerHeight - 80);
+      // Once the big cover button slides up under the bar, its twin joins Menu up top.
+      const btn = document.querySelector(".so-cover-btn");
+      const navH = nav ? nav.getBoundingClientRect().height : 80;
+      if (nav) nav.classList.toggle("cta-in", !btn || btn.getBoundingClientRect().bottom < navH);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

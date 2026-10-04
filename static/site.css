@@ -10129,5 +10129,29 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .so-nav .so-nav-links { transition: opacity 0.3s ease, transform 0.3s ease; }
 .so-nav.is-on-cover .so-nav-links { opacity: 0; transform: translateY(-6px); pointer-events: none; }
 
+/* The cover button "moves" into the bar: once it scrolls under, its twin appears beside Menu */
+.so-nav .so-nav-links { transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.so-nav:not(.cta-in) .so-nav-links { opacity: 0 !important; transform: translateX(-14px) !important; pointer-events: none; }
+.so-nav.cta-in .so-nav-links { opacity: 1 !important; transform: none !important; pointer-events: auto; }
+@media (max-width: 860px) {
+  .so-nav .so-nav-links { display: flex !important; }
+  .so-nav .so-nav-link.cta { height: 38px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
+  .so-nav .so-nav-burger { height: 38px; padding: 0 14px; }
+  .so-nav-inner > .so-mobile-menu { margin-left: 8px; }
+  /* the pair up top replaces the bottom bar on the homepage */
+  .so-startbar { display: none !important; }
+}
+/* no pink ring after tapping Menu; keep a ring for keyboard users */
+.so-nav .so-nav-burger:focus { outline: none; }
+.so-nav .so-nav-burger:focus-visible { outline: 2px solid #c9b0d9; outline-offset: 3px; }
+@media (max-width: 860px) {
+  .so-nav .so-brandlock { flex-shrink: 0; }
+  .so-nav .so-brandlock svg { width: 32px !important; height: 32px !important; min-width: 32px; flex-shrink: 0; }
+  .so-nav .so-brandlock span { display: none !important; }
+  /* scrolled bar on phones is black: cream pill + outlined pill */
+  .so-nav:not(.is-on-cover) .so-nav-link.cta { background: #f3ead9 !important; color: #151213 !important; border-color: #f3ead9 !important; }
+  .so-nav:not(.is-on-cover) .so-nav-burger { border: 1px solid rgba(243, 234, 217, 0.35) !important; color: #f3ead9; }
+}
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
