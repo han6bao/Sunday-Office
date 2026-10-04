@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { useState } from "react";
-import { ServiceCta } from "../sunday/service-kit";
+import { BookBar, FaqList, ServiceCta } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/logo-identity")({
   head: () => seoHead("/logo-identity"),
@@ -531,6 +531,16 @@ function LogoIdentityPage() {
           </div>
         </section>
 
+        <FaqList
+          items={[
+            { q: "How much does a logo cost?", a: "It depends on how much you need. A brand kit built around a logo you already have starts at $650. A new logo and identity from scratch is quoted once we know what it needs to do." },
+            { q: "Can you fix or clean up the logo I have?", a: "Yes. Sometimes a logo just needs redrawing, better spacing or versions that work small. We don't start over unless it makes sense." },
+            { q: "What files do I get?", a: "Your logo in the formats you'll actually use: for print, for the web, light and dark versions, and sizes for your profile picture." },
+            { q: "How many options will I see?", a: "We agree on a direction first, so the designs are already pointed the right way. Then we refine together until it feels like you." },
+            { q: "Do I need the full brand too?", a: <>Not always. If you want everything to match, the logo can grow into a full brand world. <a href="/branding">See branding →</a></> },
+          ]}
+        />
+
         <ServiceCta current="logo" title="You don't have to know what you need yet." sub="BRING THE IDEA, THE BUSINESS, OR THE HALF-FINISHED LOGO." />
 
         <div className="so-room-more">
@@ -546,6 +556,7 @@ function LogoIdentityPage() {
           </a>
         </div>
       </div>
+      <BookBar service="Logo + Identity" need="Logo / Identity" />
     </div>
   );
 }

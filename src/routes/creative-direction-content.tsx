@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { useState } from "react";
-import { BackHome, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BackHome, BookBar, CardRail, FaqList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/creative-direction-content")({
   head: () => seoHead("/creative-direction-content"),
@@ -58,10 +57,15 @@ const STEPS = [
   },
 ];
 
+const FAQ = [
+  { q: "Is this a one-time thing or monthly?", a: <>Either. Some people need the direction set once and then run with it. Others want content every month, which is what the Monthly Content package on the <a href="/#packages">homepage</a> is for.</> },
+  { q: "Do you post for me?", a: "If you want. Posting and rollout can be part of it, or I hand everything over ready for you to post." },
+  { q: "What do you need from me?", a: "A conversation about your business and who you want to reach, and access to whatever you already have. We figure out the rest together." },
+  { q: "How do we know it's working?", a: "We watch what lands: saves, shares, comments and who reaches out. The next round of content gets better because of it." },
+  { q: "Can you shoot the content too?", a: <>Yes. Photos, video, graphics and the words on top can all come from me, so it looks like it belongs together. <a href="/photography">Photography →</a></> },
+];
+
 function DirectionAndContentPage() {
-  const [note, setNote] = useState(0);
-  const n = NOTES[note];
-  const title = n.t[0] + n.t.slice(1).toLowerCase();
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
       <SiteBar />
@@ -79,6 +83,7 @@ function DirectionAndContentPage() {
             { t: "What you get", h: "#get" },
             { t: "How it works", h: "#how" },
             { t: "Work", h: "#work" },
+            { t: "Questions", h: "#faq" },
           ]}
         />
 
@@ -128,26 +133,13 @@ function DirectionAndContentPage() {
           </div>
         </section>
 
-        <ServiceSteps steps={STEPS} />
+        <ServiceSteps steps={STEPS} title="How it keeps going." />
 
-        {/* Creative notes */}
-        <section className="so-bw-sec">
-          <button
-            type="button"
-            className="so-cd-note"
-            onClick={() => setNote((c) => (c + 1) % NOTES.length)}
-            aria-label="Show another creative note"
-          >
-            <span className="so-micro" style={{ color: "var(--color-verm)" }}>
-              CREATIVE NOTE · {note + 1} OF {NOTES.length}
-            </span>
-            <span key={note} className="so-serif so-chapter-fade">{title}</span>
-            <span className="so-bw-d">{n.d}</span>
-            <span className="so-micro" style={{ marginTop: 14, color: "var(--color-stone)" }}>
-              TAP FOR THE NEXT ONE →
-            </span>
-          </button>
-        </section>
+        <CardRail
+          label="CREATIVE NOTES"
+          title="A few things I believe about content."
+          cards={NOTES.map((x) => ({ t: x.t[0] + x.t.slice(1).toLowerCase(), d: x.d }))}
+        />
 
         <WorkCards
           label="DIRECTION + CONTENT I'VE DONE"
@@ -158,10 +150,13 @@ function DirectionAndContentPage() {
           ]}
         />
 
+        <FaqList items={FAQ} />
+
         <ServiceCta current="direction" title="Let's make something real." sub="SET THE DIRECTION, THEN KEEP IT GOING." />
 
         <BackHome />
       </div>
+      <BookBar service="Creative Direction + Social" need="Creative Direction" />
     </div>
   );
 }

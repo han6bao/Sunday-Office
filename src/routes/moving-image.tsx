@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { BackHome, ListBlock, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BackHome, BookBar, FaqList, ListBlock, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/moving-image")({
   head: () => seoHead("/moving-image"),
@@ -50,6 +50,14 @@ const STEPS = [
   },
 ];
 
+const FAQ = [
+  { q: "How much does a video cost?", a: "Every video is quoted, because a 15-second reel and a homepage film are different jobs. Tell me where it will live and what it needs to do, and you'll get a clear price before anything is booked." },
+  { q: "Do you come up with the idea?", a: "Yes. Every project starts with the idea and the feeling, and I plan the shots around that. If you already have an idea, we build from yours." },
+  { q: "Will I get vertical versions for Reels and TikTok?", a: "Yes. One shoot gets cut for everywhere you need it: the main piece, vertical cuts, short teasers and loops." },
+  { q: "Can I get photos from the same shoot?", a: <>Yes. I grab stills along the way, so one day of production covers more than one need. <a href="/photography">See photography →</a></> },
+  { q: "Will it work with the sound off?", a: "It's made to. Captions and pacing are planned so it works muted in the feed and with the sound up." },
+];
+
 function MovingImagePage() {
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
@@ -69,6 +77,7 @@ function MovingImagePage() {
             { t: "What you get", h: "#get" },
             { t: "How it works", h: "#how" },
             { t: "Work", h: "#work" },
+            { t: "Questions", h: "#faq" },
           ]}
         />
 
@@ -92,7 +101,7 @@ function MovingImagePage() {
           rows={INCLUDED}
         />
 
-        <ServiceSteps steps={STEPS} />
+        <ServiceSteps steps={STEPS} title="From idea to every cut." />
 
         <WorkCards
           label="VIDEO I'VE MADE"
@@ -102,10 +111,13 @@ function MovingImagePage() {
           ]}
         />
 
+        <FaqList items={FAQ} />
+
         <ServiceCta current="moving" title="Have something that should move?" sub="ITS OWN PROJECT, OR PART OF A BIGGER CAMPAIGN." />
 
         <BackHome />
       </div>
+      <BookBar service="Moving Image" need="Video / Moving Image" />
     </div>
   );
 }

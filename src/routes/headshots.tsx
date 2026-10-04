@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { useState } from "react";
-import { PriceList } from "../sunday/service-kit";
+import { BookBar, CardRail, FaqList, FitPicker, PriceList, bookHref } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/headshots")({
   head: () => seoHead("/headshots"),
@@ -10,10 +9,24 @@ export const Route = createFileRoute("/headshots")({
 });
 
 const NOTES = [
-  "Light is the first thing I think about. It shapes your face, sets the mood, and makes you look like your favorite version of yourself.",
-  "You don't need to know how to pose. I'll tell you where to stand, how to move, and talk you through it the whole time.",
-  "A real smile beats a perfect one. We go for the feeling first and sort out the technical side after.",
-  "Your hundredth shoot or your first, you get the same care and the same light.",
+  { t: "Light comes first", d: "Light is the first thing I think about. It shapes your face, sets the mood, and makes you look like your favorite version of yourself." },
+  { t: "You don't need to pose", d: "I'll tell you where to stand, how to move, and talk you through it the whole time." },
+  { t: "Real over perfect", d: "A real smile beats a perfect one. We go for the feeling first and sort out the technical side after." },
+  { t: "Same care, every time", d: "Your hundredth shoot or your first, you get the same care and the same light." },
+];
+
+const FIT = [
+  { label: "I need one great photo for LinkedIn, work or a profile.", pick: "Standard", price: "$150", why: "Clean and simple: one look, one or two finished photos. Quick, easy and ready to use." },
+  { label: "I want options: a couple of outfits and a few different looks.", pick: "More looks", price: "$350", why: "More poses and an outfit change, so you have the right photo for every profile and platform." },
+  { label: "I'm building a brand and need photos for my website and socials.", pick: "Personal branding", price: "from $550", why: "A longer session with more looks and setups, planned around where the photos will live." },
+];
+
+const FAQ = [
+  { q: "How many photos do I get?", a: "The Standard session includes one or two finished photos. More looks and personal branding include more, and you'll know the exact number when you book." },
+  { q: "Where do we shoot?", a: "We pick the spot together, based on the look you want and where the photos will be used." },
+  { q: "What should I wear?", a: "Solid colors, softer necklines and clothes you already feel good in. Not sure? Bring a few options and we'll choose together on the day." },
+  { q: "I've never had headshots taken. Will I be awkward?", a: "Most people feel that way at first. I direct you the whole time, from where to stand to how to tilt your chin, so all you have to do is show up." },
+  { q: "How do I book?", a: <>Send the form with Headshots picked and tell me what the photos are for. I'll reply with times. <a href={bookHref("Headshots")}>Start here →</a></> },
 ];
 
 const ADVICE = [
@@ -63,7 +76,6 @@ const KINDS = [
 ];
 
 function HeadshotsPage() {
-  const [note, setNote] = useState(0);
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
       <SiteBar />
@@ -83,7 +95,7 @@ function HeadshotsPage() {
               Your hundredth headshot or your first, I'll guide you through it. Lighting, posing and expression are my job. Tell me what it's for and I'll plan the session around that.
             </p>
             <div className="so-hs-ctas">
-              <a href="/#inquiry" className="so-hs-btn">Book a session →</a>
+              <a href={bookHref("Headshots")} className="so-hs-btn">Book a session →</a>
               <a href="#pricing" className="so-bw-inline">See pricing</a>
             </div>
           </div>
@@ -94,17 +106,20 @@ function HeadshotsPage() {
           </div>
         </div>
 
-        <div id="pricing" style={{ scrollMarginTop: 80 }}>
+        <div style={{ scrollMarginTop: 80 }}>
           <PriceList
             title="Headshot sessions."
             items={[
-              { t: "Standard", p: "$150", d: "Basic, clean headshots. One look, one or two final photos. Quick and easy." },
-              { t: "More looks", p: "$350", d: "A couple more poses and an outfit change, so you have options for every profile." },
-              { t: "Personal branding", p: "from $550", tag: "MOST COMPLETE", d: "A more extensive session for your brand: more looks, more setups, photos for your site and socials." },
+              { t: "Standard", p: "$150", d: "Clean headshots, quick and easy.", list: ["One look", "One or two final photos", "Direction the whole time"] },
+              { t: "More looks", p: "$350", d: "Options for every profile.", list: ["More poses", "An outfit change", "Direction the whole time"] },
+              { t: "Personal branding", p: "from $550", tag: "MOST COMPLETE", d: "A fuller session for your brand.", list: ["More looks + setups", "Photos for your website", "Photos for your socials"] },
             ]}
-            foot={<>Not sure which one? <a className="so-bw-inline" href="/#inquiry">Ask me →</a></>}
+            need="Headshots"
+            foot={<>Not sure which one? <a className="so-bw-inline" href="#fit">Find yours →</a></>}
           />
         </div>
+
+        <FitPicker need="Headshots" question="What are the photos for?" options={FIT} />
 
         {/* Three kinds */}
         <section className="so-bw-sec">
@@ -151,16 +166,16 @@ function HeadshotsPage() {
           </div>
         </section>
 
-        {/* Note + CTA */}
+        <CardRail label="HOW I WORK" title="What to expect from me." cards={NOTES} />
+
+        <FaqList items={FAQ} />
+
+        {/* CTA */}
         <section className="so-hs-close">
-          <button type="button" className="so-hs-note" onClick={() => setNote((n) => (n + 1) % NOTES.length)}>
-            <span className="so-micro">A NOTE FROM HANA · TAP FOR ANOTHER</span>
-            <span key={note} className="so-hs-note-q so-chapter-fade">"{NOTES[note]}"</span>
-          </button>
           <div className="so-hs-close-cta">
             <p className="so-serif so-hs-close-t">Ready when <em>you are.</em></p>
             <div className="so-hs-ctas">
-              <a href="/#inquiry" className="so-hs-btn is-light">Book a session →</a>
+              <a href={bookHref("Headshots")} className="so-hs-btn is-light">Book a session →</a>
               <a href="/photography" className="so-hs-more">More photography</a>
             </div>
           </div>
@@ -172,6 +187,7 @@ function HeadshotsPage() {
           </a>
         </div>
       </div>
+      <BookBar service="Headshots" price="from $150" need="Headshots" />
     </div>
   );
 }

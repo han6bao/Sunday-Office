@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { PriceList, ServiceCta, ServiceSteps } from "../sunday/service-kit";
+import { BookBar, FaqList, FitPicker, PriceList, ServiceCta, ServiceSteps } from "../sunday/service-kit";
 import { useState } from "react";
 import { AESTHETICS } from "../sunday/aesthetics";
 
@@ -40,6 +40,20 @@ const STEPS = [
     more: "Then the world gets a home and a face: a website, photos, video and content, all made from the same place.",
   },
 ]
+
+const FIT = [
+  { label: "I have a logo I like, but nothing else matches yet.", pick: "Brand kit", price: "from $650", why: "We keep your logo and build the world around it: palette, type, the way you talk, and a one-page guide so everything finally matches." },
+  { label: "I'm starting from scratch, or my brand doesn't feel like me anymore.", pick: "Full brand world", price: "Quoted", why: "Logo, identity, voice and guide made from the ground up, often with photos or a website. Priced once we know the scope." },
+  { label: "I mostly just need a logo.", pick: "Logo + identity", price: "Quoted", why: "A logo and the few pieces that go with it, so it works everywhere from your sign to your profile picture." },
+];
+
+const FAQ = [
+  { q: "What's the difference between a logo and a brand?", a: "A logo is one mark. A brand is everything around it: the colors, the type, the way you talk and the feeling people get when they see you. The logo is part of the world, not all of it." },
+  { q: "I already have a logo. Do I need a new one?", a: "Usually not. If people already know it, the brand kit keeps it and builds everything else around it." },
+  { q: "How long does it take?", a: "It depends on how much we're building. You'll get a timeline with your price before anything starts." },
+  { q: "Do I need a website too?", a: <>Not right away. A brand works on its own, and many people add a website once the world is set. <a href="/websites">See websites →</a></> },
+  { q: "What do I get at the end?", a: "The files for everything we made, ready to use, plus a simple guide that shows how it all fits together, so anyone you work with later can keep it consistent." },
+];
 
 const BUILT = [
   { c: "Jazmin's Events", s: "In progress", w: "Brand + website", note: "A brand-new wedding planner, branded from scratch. Website in progress.", img: "/assets/campaigns/jazmins-events/featured-cover.png", h: "/campaigns/jazmins-events" },
@@ -145,7 +159,10 @@ function BrandingPage() {
             <nav className="so-bw-jump" aria-label="On this page">
               <a href="#included">What's included</a>
               <a href="#how">How it works</a>
+              <a href="#fit">Which one fits</a>
+              <a href="#pricing">Pricing</a>
               <a href="#built">Work</a>
+              <a href="#faq">Questions</a>
             </nav>
           </div>
         </div>
@@ -176,13 +193,16 @@ function BrandingPage() {
           </div>
         </section>
 
-        <ServiceSteps steps={STEPS} />
+        <ServiceSteps steps={STEPS} title="How a world gets built." />
+
+        <FitPicker need="Branding" question="Where is your brand right now?" options={FIT} />
 
         <PriceList
+          need="Branding"
           title="Where branding starts."
           items={[
-            { t: "Brand kit", p: "from $650", d: "Built around the logo you already have: palette, type, the way it talks, and a one-page guide." },
-            { t: "Full brand world", p: "Quoted", d: "Logo, identity, voice and guide from scratch, often with photos or a website. Priced to the project." },
+            { t: "Brand kit", p: "from $650", d: "Built around the logo you already have.", list: ["Color palette", "Type", "The way it talks", "A one-page guide"] },
+            { t: "Full brand world", p: "Quoted", d: "Everything from scratch, priced to the project.", list: ["Logo + identity", "Voice", "Brand guide", "Often with photos or a website"] },
           ]}
           foot="You'll know the number before anything starts."
         />
@@ -235,6 +255,8 @@ function BrandingPage() {
           <AestheticGen />
         </section>
 
+        <FaqList items={FAQ} />
+
         {/* CTA */}
         <ServiceCta current="branding" title="One piece or the whole world." sub="IT DOESN'T NEED TO BE FIGURED OUT YET." />
 
@@ -244,6 +266,7 @@ function BrandingPage() {
           </a>
         </div>
       </div>
+      <BookBar service="Branding" price="from $650" need="Branding" />
     </div>
   );
 }

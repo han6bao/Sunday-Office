@@ -14,48 +14,29 @@ export const SERVICES_NAV = [
 
 export type Step = { t: string; d: string; more?: string };
 
-/** "How it works" — tap a step and it lifts into its own tinted box,
- *  with a little more detail underneath. */
-export function ServiceSteps({ steps, label = "HOW IT WORKS", id = "how" }: { steps: Step[]; label?: string; id?: string }) {
-  const [on, setOn] = useState(0);
-  const cur = steps[on];
+/** "How it works": every step visible at once, no tapping needed.
+ *  A thin line connects them; hovering a step lifts it a little. */
+export function ServiceSteps({ steps, label = "HOW IT WORKS", id = "how", title }: { steps: Step[]; label?: string; id?: string; title?: string }) {
   return (
-    <section id={id} className="so-bw-sec so-bw-how so-steps">
-      <div className="so-steps-head">
+    <section id={id} className="so-bw-sec so-flow">
+      <div className="so-flow-head">
         <p className="so-micro">{label}</p>
-        <p className="so-micro so-steps-hint">TAP A STEP</p>
+        <h2 className="so-serif so-bw-h">{title ?? `${steps.length} steps, start to finish.`}</h2>
       </div>
-      <ol className="so-steps-row" style={{ gridTemplateColumns: `repeat(${steps.length}, minmax(0, 1fr))` }}>
+      <ol className="so-flow-list">
         {steps.map((s, i) => (
-          <li key={s.t}>
-            <button
-              type="button"
-              className={"so-step" + (i === on ? " is-on" : "") + (i < on ? " is-past" : "")}
-              aria-pressed={i === on}
-              onClick={() => setOn(i)}
-            >
-              <span className="so-step-dot" aria-hidden>
-                {i + 1}
-              </span>
-              <span className="so-step-t">{s.t}</span>
-              <span className="so-step-d">{s.d}</span>
-            </button>
+          <li key={s.t} className="so-flow-step">
+            <span className="so-flow-no" aria-hidden>
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div className="so-flow-main">
+              <p className="so-flow-t">{s.t}</p>
+              <p className="so-flow-d">{s.d}</p>
+            </div>
+            {s.more && <p className="so-flow-more">{s.more}</p>}
           </li>
         ))}
       </ol>
-      {cur.more && (
-        <div key={on} className="so-step-more so-chapter-fade">
-          <span className="so-micro">
-            STEP {on + 1} · {cur.t.toUpperCase()}
-          </span>
-          <p>{cur.more}</p>
-          {on < steps.length - 1 && (
-            <button type="button" className="so-step-next" onClick={() => setOn(on + 1)}>
-              Next: {steps[on + 1].t} →
-            </button>
-          )}
-        </div>
-      )}
     </section>
   );
 }
@@ -127,6 +108,22 @@ export function WorkCards({ id = "work", label, items }: { id?: string; label: s
 }
 
 /** The closing box: one clear next step, plus the rest of the services. */
+const NEED_FOR: Record<string, string> = {
+  branding: "Branding",
+  logo: "Logo / Identity",
+  websites: "Website",
+  photography: "Photography",
+  headshots: "Headshots",
+  moving: "Video / Moving Image",
+  direction: "Creative Direction",
+};
+
+const NEXT = [
+  { t: "Send the form", d: "A few lines about what you need. It takes about two minutes, and rough ideas are welcome." },
+  { t: "I reply", d: "Within a few days, with questions or a time to talk it through." },
+  { t: "You get a plan", d: "What it includes, the timeline and the price. You'll know the number before anything starts." },
+];
+
 export function ServiceCta({ title, sub, current }: { title: string; sub: string; current: string }) {
   return (
     <div className="so-bw-cta so-bw-cta-full">
@@ -135,10 +132,19 @@ export function ServiceCta({ title, sub, current }: { title: string; sub: string
           <p className="so-serif so-bw-cta-t">{title}</p>
           <p className="so-micro so-bw-cta-s">{sub}</p>
         </div>
-        <a href="/#inquiry" className="so-bw-cta-btn">
+        <a href={bookHref(NEED_FOR[current] ?? "Not sure yet / Other")} className="so-bw-cta-btn">
           START A PROJECT →
         </a>
       </div>
+      <ol className="so-next">
+        {NEXT.map((x, n) => (
+          <li key={x.t}>
+            <span className="so-micro">{String(n + 1).padStart(2, "0")}</span>
+            <p className="so-next-t">{x.t}</p>
+            <p className="so-next-d">{x.d}</p>
+          </li>
+        ))}
+      </ol>
       <div className="so-bw-cta-next">
         <p className="so-micro">MORE WAYS TO BUILD YOUR WORLD</p>
         <div className="so-bw-cta-links">
@@ -207,34 +213,56 @@ export function BackHome() {
   );
 }
 
-export type Price = { t: string; p: string; d: string; tag?: string };
+export type Price = { t: string; p: string; d: string; tag?: string; list?: string[] };
 
-/** Simple, honest pricing cards. */
+/** Pricing in the same cards as the homepage packages: name, price, who it's
+ *  for, what's in it, and one tap to ask about it. */
 export function PriceList({
   id = "pricing",
   label = "PRICING",
   title,
   items,
   foot,
+  need,
 }: {
   id?: string;
   label?: string;
   title: string;
   items: Price[];
   foot?: ReactNode;
+  need?: string;
 }) {
   return (
-    <section id={id} className="so-bw-sec">
+    <section id={id} className="so-bw-sec so-pricing">
       <p className="so-micro">{label}</p>
       <h2 className="so-serif so-bw-h">{title}</h2>
-      <div className="so-prices" style={{ gridTemplateColumns: `repeat(${Math.min(items.length, 4)}, minmax(0, 1fr))` }}>
+      <div className="so-pk-grid" style={{ gridTemplateColumns: `repeat(${Math.min(items.length, 4)}, minmax(0, 1fr))` }}>
         {items.map((x) => (
-          <div key={x.t} className={"so-price" + (x.p === "Quoted" ? " is-quoted" : "")}>
-            {x.tag && <span className="so-micro so-price-tag">{x.tag}</span>}
-            <p className="so-bw-t">{x.t}</p>
-            <p className="so-price-p">{x.p}</p>
-            <p className="so-bw-d">{x.d}</p>
-          </div>
+          <a
+            key={x.t}
+            href={need ? bookHref(need, `${x.t} (${x.p})`) : "/#inquiry"}
+            className={"so-pk-card" + (x.tag ? " is-feat" : "")}
+          >
+            <span className="so-pk-top">
+              <span className="so-pk-name">{x.t}</span>
+              {x.tag && <span className="so-pk-tag">{x.tag}</span>}
+            </span>
+            <span className="so-pk-price">{x.p}</span>
+            <span className="so-pk-who">{x.d}</span>
+            {x.list && x.list.length > 0 && (
+              <ul className="so-pk-list">
+                {x.list.map((it) => (
+                  <li key={it}>{it}</li>
+                ))}
+              </ul>
+            )}
+            <span className="so-pk-foot">
+              <span className="so-micro">{x.p === "Quoted" ? "QUOTED PER PROJECT" : x.p.startsWith("from") ? "STARTING PRICE" : "FLAT PRICE"}</span>
+              <span className="so-pk-go">
+                Ask about it <span className="arr" aria-hidden>→</span>
+              </span>
+            </span>
+          </a>
         ))}
       </div>
       {foot && <p className="so-bw-d so-price-foot">{foot}</p>}
@@ -244,58 +272,231 @@ export function PriceList({
 
 export type Chapter = { tab: string; head: string; body: string };
 
-/** The tap-through box: tabs along the side, one paragraph at a time.
- *  Tap a tab to jump, or tap the paragraph to read the next one. */
-export function TapStory({ label, chapters, id }: { label: string; chapters: Chapter[]; id?: string }) {
+/** Questions on the left, the answer on the right. Every answer shares one
+ *  grid cell, so the box never jumps in height. On a phone it becomes an
+ *  accordion: tap a question, the answer opens right under it. */
+export function TapStory({ label, chapters, id, title }: { label: string; chapters: Chapter[]; id?: string; title?: string }) {
   const [i, setI] = useState(0);
-  const tabsRef = useRef<HTMLDivElement>(null);
-  const next = () => setI((n) => (n + 1) % chapters.length);
-  useEffect(() => {
-    const box = tabsRef.current;
-    const on = box?.querySelector<HTMLElement>(".so-tap-tab.is-on");
-    if (!box || !on || box.scrollWidth <= box.clientWidth) return;
-    box.scrollTo({ left: on.offsetLeft - (box.clientWidth - on.offsetWidth) / 2, behavior: "smooth" });
-  }, [i]);
-  const c = chapters[i];
+  const go = (n: number) => setI((n + chapters.length) % chapters.length);
   return (
-    <section id={id} className="so-bw-sec">
-      <div className="so-tap">
-        <div ref={tabsRef} className="so-tap-tabs" role="tablist" aria-label={label}>
-          <p className="so-micro so-tap-label">{label}</p>
-          {chapters.map((ch, n) => (
+    <section id={id} className="so-bw-sec so-qa-sec">
+      <div className="so-qa-head">
+        <p className="so-micro">{label}</p>
+        {title && <h2 className="so-serif so-bw-h">{title}</h2>}
+      </div>
+      <div className="so-qa" style={{ ["--qa-n" as string]: chapters.length }}>
+        {chapters.map((c, n) => (
+          <div key={c.tab} className={"so-qa-item" + (n === i ? " is-on" : "")} style={{ ["--qa-row" as string]: n + 1 }}>
             <button
-              key={ch.tab}
               type="button"
-              role="tab"
-              aria-selected={n === i}
-              className={"so-tap-tab" + (n === i ? " is-on" : "")}
+              className="so-qa-tab"
+              aria-expanded={n === i}
+              aria-controls={`${id ?? "qa"}-${n}`}
               onClick={() => setI(n)}
             >
-              <span className="so-tap-no">{String(n + 1).padStart(2, "0")}</span>
-              {ch.tab}
+              <span className="so-qa-no">{String(n + 1).padStart(2, "0")}</span>
+              <span className="so-qa-tab-t">{c.tab}</span>
+              <span className="so-qa-plus" aria-hidden>{n === i ? "–" : "+"}</span>
+            </button>
+            <div id={`${id ?? "qa"}-${n}`} className="so-qa-panel" role="region" aria-hidden={n !== i}>
+              <p className="so-qa-panel-h">{c.head}</p>
+              <p className="so-qa-panel-b">{c.body}</p>
+              <div className="so-qa-nav">
+                <span className="so-micro">
+                  {String(n + 1).padStart(2, "0")} / {String(chapters.length).padStart(2, "0")}
+                </span>
+                <span className="so-qa-nav-btns">
+                  <button type="button" onClick={() => go(n - 1)} aria-label="Previous">←</button>
+                  <button type="button" onClick={() => go(n + 1)} aria-label="Next">
+                    {n < chapters.length - 1 ? `Next: ${chapters[n + 1].tab}` : "Back to the start"} →
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ---------------- Booking helpers ---------------- */
+
+/** A link into the inquiry form with the service (and package) already picked. */
+export function bookHref(need: string, pkg?: string) {
+  const q = new URLSearchParams({ need });
+  if (pkg) q.set("pkg", pkg);
+  return `/?${q.toString()}#inquiry`;
+}
+
+export type Faq = { q: string; a: ReactNode };
+
+/** Plain answers to what people ask before booking. */
+export function FaqList({ items, label = "QUESTIONS", title = "Before you book.", id = "faq" }: { items: Faq[]; label?: string; title?: string; id?: string }) {
+  return (
+    <section id={id} className="so-bw-sec so-faq-sec">
+      <div>
+        <p className="so-micro">{label}</p>
+        <h2 className="so-serif so-bw-h">{title}</h2>
+        <p className="so-bw-d" style={{ maxWidth: "34ch" }}>
+          Something else on your mind? Ask it in the form, or email{" "}
+          <span className="so-faq-mail">hello@sundayoffice.agency</span>.
+        </p>
+      </div>
+      <div className="so-faq">
+        {items.map((f, n) => (
+          <details key={f.q} className="so-faq-item" open={n === 0}>
+            <summary>
+              <span>{f.q}</span>
+              <span className="so-faq-icon" aria-hidden />
+            </summary>
+            <div className="so-faq-a">{f.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+export type FitOption = { label: string; pick: string; price: string; why: string; pkg?: string };
+
+/** "Which one fits?" Tap the line that sounds like you, get one clear suggestion. */
+export function FitPicker({
+  need,
+  question,
+  options,
+  label = "NOT SURE WHICH ONE?",
+  id = "fit",
+}: {
+  need: string;
+  question: string;
+  options: FitOption[];
+  label?: string;
+  id?: string;
+}) {
+  const [on, setOn] = useState<number | null>(null);
+  const o = on === null ? null : options[on];
+  return (
+    <section id={id} className="so-bw-sec so-fit">
+      <div className="so-fit-q">
+        <p className="so-micro">{label}</p>
+        <h2 className="so-serif so-bw-h">{question}</h2>
+        <div className="so-fit-opts" role="radiogroup" aria-label={question}>
+          {options.map((x, n) => (
+            <button
+              key={x.label}
+              type="button"
+              role="radio"
+              aria-checked={on === n}
+              className={"so-fit-opt" + (on === n ? " is-on" : "")}
+              onClick={() => setOn(n)}
+            >
+              <span className="so-fit-dot" aria-hidden />
+              {x.label}
             </button>
           ))}
         </div>
-        <button type="button" className="so-tap-body" onClick={next} aria-label="Read the next one">
-          <span key={i} className="so-chapter-fade so-tap-inner">
-            <span className="so-micro so-tap-count">
-              {String(i + 1).padStart(2, "0")} / {String(chapters.length).padStart(2, "0")}
-            </span>
-            <span className="so-tap-head">{c.head}</span>
-            <span className="so-tap-text">{c.body}</span>
-          </span>
-          <span className="so-tap-foot">
-            <span className="so-tap-dots" aria-hidden>
-              {chapters.map((_, n) => (
-                <span key={n} className={n === i ? "is-on" : ""} />
-              ))}
-            </span>
-            <span className="so-micro so-tap-next">
-              {i < chapters.length - 1 ? `TAP FOR THE NEXT: ${chapters[i + 1].tab.toUpperCase()} →` : "TAP TO START AGAIN ↺"}
-            </span>
-          </span>
-        </button>
+      </div>
+      <div className={"so-fit-a" + (o ? " is-on" : "")} aria-live="polite">
+        {o ? (
+          <div key={on} className="so-chapter-fade so-fit-card">
+            <p className="so-micro">MY SUGGESTION</p>
+            <p className="so-fit-pick">{o.pick}</p>
+            <p className="so-fit-price">{o.price}</p>
+            <p className="so-fit-why">{o.why}</p>
+            <a className="so-fit-go" href={bookHref(need, o.pkg ?? o.pick)}>
+              Start with this <span aria-hidden>→</span>
+            </a>
+          </div>
+        ) : (
+          <div className="so-fit-empty">
+            <p className="so-micro">YOUR SUGGESTION SHOWS UP HERE</p>
+            <p>Pick the line that sounds most like you. It's only a starting point, and we can change it once we talk.</p>
+          </div>
+        )}
       </div>
     </section>
+  );
+}
+
+/** A row of cards you can swipe or step through with arrows. Everything is
+ *  on the page at once, nothing hidden behind a tap. */
+export function CardRail({ label, title, cards, id }: { label: string; title?: string; cards: { t: string; d: string }[]; id?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [at, setAt] = useState(0);
+  const move = (dir: number) => {
+    const el = ref.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>(".so-rail-card");
+    const step = card ? card.offsetWidth + 16 : el.clientWidth * 0.8;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const on = () => {
+      const card = el.querySelector<HTMLElement>(".so-rail-card");
+      const w = card ? card.offsetWidth + 16 : 1;
+      setAt(Math.round(el.scrollLeft / w));
+    };
+    el.addEventListener("scroll", on, { passive: true });
+    return () => el.removeEventListener("scroll", on);
+  }, []);
+  return (
+    <section id={id} className="so-bw-sec so-rail-sec">
+      <div className="so-rail-head">
+        <div>
+          <p className="so-micro">{label}</p>
+          {title && <h2 className="so-serif so-bw-h">{title}</h2>}
+        </div>
+        <div className="so-rail-btns">
+          <span className="so-micro">
+            {String(Math.min(at + 1, cards.length)).padStart(2, "0")} / {String(cards.length).padStart(2, "0")}
+          </span>
+          <button type="button" onClick={() => move(-1)} aria-label="Previous">←</button>
+          <button type="button" onClick={() => move(1)} aria-label="Next">→</button>
+        </div>
+      </div>
+      <div ref={ref} className="so-rail" tabIndex={0} aria-label={label}>
+        {cards.map((c, n) => (
+          <article key={c.t} className="so-rail-card">
+            <span className="so-micro">{String(n + 1).padStart(2, "0")}</span>
+            <p className="so-rail-t">{c.t}</p>
+            <p className="so-rail-d">{c.d}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/** A small bar that follows you down the page once you're past the top,
+ *  so booking is always one tap away. Hides at the closing box. */
+export function BookBar({ service, price, need }: { service: string; price?: string; need: string }) {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const on = () => {
+      const end = document.querySelector(".so-bw-cta, .so-hs-close");
+      const endTop = end ? end.getBoundingClientRect().top : Infinity;
+      setShow(window.scrollY > 640 && endTop > window.innerHeight * 0.9);
+    };
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    window.addEventListener("resize", on);
+    return () => {
+      window.removeEventListener("scroll", on);
+      window.removeEventListener("resize", on);
+    };
+  }, []);
+  return (
+    <div className={"so-bookbar" + (show ? " is-on" : "")} aria-hidden={!show}>
+      <span className="so-bookbar-t">
+        <b>{service}</b>
+        {price && <span>{price}</span>}
+      </span>
+      <a href={bookHref(need)} tabIndex={show ? 0 : -1}>
+        Start a project <span aria-hidden>→</span>
+      </a>
+    </div>
   );
 }

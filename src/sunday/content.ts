@@ -861,10 +861,12 @@ export function recommend(answers: Record<string, string | undefined>): {
 /* ---- Office hours / form fields ---- */
 export const needOptions = [
   "Website",
+  "Branding",
+  "Logo / Identity",
   "Photography",
+  "Headshots",
   "Social Media / Content",
   "Creative Direction",
-  "Branding",
   "Video / Moving Image",
   "Campaign",
   "Full package (brand, site + content)",

@@ -656,7 +656,7 @@ const inquiryFields: Array<{
   { id: "business", label: "Business / Project", type: "input", placeholder: "What are we calling it", col: "half" },
   { id: "website", label: "Website / Instagram", type: "input", placeholder: "link", col: "half" },
   { id: "need", label: "What do you think you need?", type: "select", col: "half" },
-  { id: "budget", label: "Investment range", type: "select", col: "half", options: ["Under $2,500", "$2,500 to $5,000", "$5,000 to $10,000", "$10,000+", "Not sure yet"] },
+  { id: "budget", label: "Investment range", type: "select", col: "half", options: ["Under $500", "$500 to $1,500", "$1,500 to $5,000", "$5,000 to $10,000", "$10,000+", "Not sure yet"] },
   { id: "timeline", label: "Ideal timeline", type: "input", placeholder: "This month, next season, whenever it's right", col: "full" },
   { id: "about", label: "Tell me about it.", type: "textarea", col: "full" },
 ];
@@ -689,7 +689,11 @@ export function InquiryForm() {
   const goBack = () => setWizStep((s) => Math.max(0, s - 1));
   // Pre-fill from the Project Finder — selections carry through.
   const finder = getFinderAnswers();
-  const needPrefill = finder["need"] ?? "";
+  // Links from the service pages carry ?need=…&pkg=… so the form arrives filled in.
+  const urlQ = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
+  const urlNeed = urlQ?.get("need") ?? "";
+  const urlPkg = urlQ?.get("pkg") ?? "";
+  const needPrefill = (urlNeed && needOptions.includes(urlNeed) ? urlNeed : "") || (finder["need"] ?? "");
   const workingWith = finder["working-with"] ?? "";
   // "Not sure" gets a gentle prompt in the message area.
   const aboutPlaceholder =
@@ -763,7 +767,7 @@ export function InquiryForm() {
     >
       {needPrefill && (
         <p className="so-micro so-micro-red" style={{ gridColumn: "1 / -1" }}>
-          FROM YOUR PROJECT FINDER · YOU SELECTED: {needPrefill}
+          YOU PICKED: {needPrefill}{urlPkg ? " · " + urlPkg : ""}
           {workingWith ? " · " + workingWith : ""}
         </p>
       )}
@@ -802,7 +806,7 @@ export function InquiryForm() {
             <textarea
               id={"inq-" + f.id}
               name={f.id}
-              defaultValue={f.id === "about" && needPrefill.includes("Not sure") ? "" : undefined}
+              defaultValue={f.id === "about" && urlPkg ? `I'm interested in: ${urlPkg}.\n\n` : f.id === "about" && needPrefill.includes("Not sure") ? "" : undefined}
               placeholder={f.id === "about" ? aboutPlaceholder : f.placeholder}
             />
           ) : f.type === "select" && f.id === "need" ? (

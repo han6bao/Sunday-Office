@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { BackHome, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, TapStory, WorkCards } from "../sunday/service-kit";
+import { BackHome, BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, TapStory, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/websites")({
   head: () => seoHead("/websites"),
@@ -15,36 +15,6 @@ const INCLUDED = [
   { t: "Words + photos", d: "Help writing what goes on each page, and choosing the photos that show you best." },
   { t: "The setup", d: "Your domain, the email your form sends to, and your booking link, all plugged in." },
   { t: "After launch", d: "Edits, updates and hosting, so the site keeps up with your business." },
-];
-
-const KINDS = [
-  {
-    t: "Artists + creatives",
-    d: (
-      <>
-        Portfolios where the work does the talking: galleries, film, music, the people you've worked with.{" "}
-        <em>What matters most:</em> big images, fast loading, one clear way to book you.
-      </>
-    ),
-  },
-  {
-    t: "Businesses + services",
-    d: (
-      <>
-        Booking, prices, reviews and answers, so clients decide before they message you.{" "}
-        <em>What matters most:</em> say what you do, what it costs, and make booking one tap.
-      </>
-    ),
-  },
-  {
-    t: "Small brands + places",
-    d: (
-      <>
-        A real home for the place people already recommend: hours, menu, story, real photos.{" "}
-        <em>What matters most:</em> one link with everything on it, everywhere you're mentioned.
-      </>
-    ),
-  },
 ];
 
 const STEPS = [
@@ -75,10 +45,21 @@ const STEPS = [
   },
 ];
 
-const GOOD_TO_KNOW = [
-  { t: "No logo yet?", d: <>That's fine. We can start with the brand first. <a className="so-bw-inline" href="/branding">Build a World →</a></> },
-  { t: "Not techy?", d: "You don't need to be. I handle the tech and walk you through anything you need to do." },
-  { t: "Already have a site?", d: "We can fix what's broken, refresh the look, swap in better photos or tighten your portfolio, without starting over. That's quoted separately from a full build." },
+const FIT = [
+  { label: "I don't have a website yet. I need the basics: what I do, my prices and a way to book.", pick: "Simple site", price: "$850", why: "Four to five clean pages, words written with you, and booking or inquiries plugged in. Everything most service businesses need to look ready." },
+  { label: "Same, and I want people searching in Seattle to find me on Google.", pick: "Simple site + SEO", price: "$1,000", why: "The same site, set up so Google understands it: page titles, descriptions, local search and a sitemap." },
+  { label: "I need more: galleries, a menu, lots of services or a custom feature.", pick: "Full site", price: "from $1,250", why: "More pages and more going on. We'll map out exactly what you need first, so the price matches the site." },
+  { label: "I already have a site that needs fixing, or I only need one page.", pick: "Landing pages + fixes", price: "Quoted", why: "A refresh, a repair or a single page, priced to what it actually needs. No starting over unless it makes sense." },
+];
+
+const FAQ = [
+  { q: "Do I need my words and photos ready?", a: "No. Writing the words with you is part of every site, and we choose the photos together. If you need new photos, I can shoot those too." },
+  { q: "How long does it take?", a: "It depends on how many pages you need and how quickly we gather your words and photos. You'll get a timeline with your price before anything starts." },
+  { q: "I'm not techy. Is that a problem?", a: "Not at all. I handle the tech and walk you through anything you need to do on your end, in plain words." },
+  { q: "Do I need a logo first?", a: <>No. If you don't have one yet, we can start with the brand. <a href="/branding">Build a World →</a></> },
+  { q: "I already have a site. Do we have to start over?", a: "Not unless it makes sense. We can fix what's broken, refresh the look, swap in better photos or tighten your portfolio. That's quoted separately from a full build." },
+  { q: "What's the difference between the simple site and the SEO one?", a: "It's the same site. The SEO version adds the setup that helps Google understand you: page titles, descriptions, local Seattle search and a sitemap." },
+  { q: "Will there be other costs?", a: "Some things you own, like your domain name, have their own small costs. I'll walk you through each one before we start, so nothing comes as a surprise." },
 ];
 
 const REAL_TALK = [
@@ -110,7 +91,7 @@ const REAL_TALK = [
   {
     tab: "The honest part",
     head: "What I am, and what I'm not.",
-    body: "I don't specialize in SEO, and I won't pretend to. What I'm good at is understanding your business in your own words, so your website actually gets made, feels like you, and works.",
+    body: "I set up the search basics properly: page titles, descriptions, local Seattle search and a sitemap, so Google understands what you do. What I won't do is promise you the top spot, because nobody honestly can. What I'm good at is understanding your business in your own words, so your website actually gets made, feels like you, and works.",
   },
 ];
 
@@ -132,8 +113,10 @@ function WebsitesPage() {
           jumps={[
             { t: "What you get", h: "#get" },
             { t: "How it works", h: "#how" },
+            { t: "Which one fits", h: "#fit" },
             { t: "Pricing", h: "#pricing" },
             { t: "Work", h: "#work" },
+            { t: "Questions", h: "#faq" },
           ]}
         />
 
@@ -158,24 +141,18 @@ function WebsitesPage() {
 
         <ListBlock id="get" label="WHAT YOU GET" title="Everything a website needs to work." rows={INCLUDED} />
 
-        <TapStory id="real-talk" label="THE REAL TALK" chapters={REAL_TALK} />
+        <ServiceSteps steps={STEPS} title="From first talk to live site." />
 
-        <ListBlock
-          label="WHICH ONE SOUNDS LIKE YOU?"
-          title="Different sites for different needs."
-          note="Every site is built around how your business actually runs."
-          rows={KINDS}
-        />
-
-        <ServiceSteps steps={STEPS} />
+        <FitPicker need="Website" question="Where are you right now?" options={FIT} />
 
         <PriceList
+          need="Website"
           title="Where websites start."
           items={[
-            { t: "Simple site", p: "$850", d: "A clean 4 to 5 page site: design, build, words, booking or inquiries, and the setup to get it live." },
-            { t: "Simple site + SEO", p: "$1,000", d: "Everything in the simple site, set up to be found on Google: page titles, descriptions, local Seattle search and a sitemap." },
-            { t: "Full site", p: "from $1,250", d: "More pages and more going on: galleries, menus, services, case studies or a more custom build." },
-            { t: "Landing pages + fixes", p: "Quoted", d: "A single page, a link-in-bio, or fixes and a refresh for a site you already have. Priced to what it needs." },
+            { t: "Simple site", p: "$850", d: "For businesses that need the basics done beautifully.", list: ["4 to 5 pages", "Design + build", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
+            { t: "Simple site + SEO", p: "$1,000", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Page titles + descriptions", "Local Seattle search", "A sitemap for Google"] },
+            { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Galleries or menus", "Lots of services", "Case studies", "A more custom build"] },
+            { t: "Landing pages + fixes", p: "Quoted", d: "Priced to what it actually needs.", list: ["A single page", "A link-in-bio", "Fixes + a refresh", "Better photos or copy"] },
           ]}
           foot="Every business is different, so the final price depends on what yours needs. You'll know the number before anything starts."
         />
@@ -189,12 +166,15 @@ function WebsitesPage() {
           ]}
         />
 
-        <ListBlock label="GOOD TO KNOW" title="Before you ask." rows={GOOD_TO_KNOW} />
+        <TapStory id="real-talk" label="THE REAL TALK" title="Why a website, and why with me." chapters={REAL_TALK} />
+
+        <FaqList items={FAQ} />
 
         <ServiceCta current="websites" title="Ready for a site that feels like you?" sub="ONE PAGE OR A WHOLE SITE. WE'LL FIGURE OUT WHAT YOU NEED." />
 
         <BackHome />
       </div>
+      <BookBar service="Websites" price="from $850" need="Website" />
     </div>
   );
 }

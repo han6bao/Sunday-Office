@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { BackHome, ListBlock, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../../sunday/service-kit";
+import { BackHome, BookBar, FaqList, FitPicker, ListBlock, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../../sunday/service-kit";
 
 export const Route = createFileRoute("/photography/")({
   head: () => seoHead("/photography"),
@@ -45,6 +45,21 @@ const STEPS = [
   },
 ];
 
+const FIT = [
+  { label: "A headshot or a few portraits of me.", pick: "Headshots", price: "from $150", why: "Clean, natural headshots with direction the whole time. Three session sizes, from one quick look to a full personal branding shoot.", pkg: "Headshots" },
+  { label: "Photos of my business: food, products, the space or my team.", pick: "Brand photography", price: "Quoted", why: "Planned around where the photos will live, so you get the shots your website, menu and feed actually need." },
+  { label: "Coverage of an event, a night or a performance.", pick: "Event coverage", price: "Quoted", why: "The moments people want to relive, edited and delivered ready to post while people are still talking about it." },
+  { label: "Something editorial, conceptual or for a campaign.", pick: "Creative shoot", price: "Quoted", why: "The idea comes first: references, styling and a look we agree on before the shoot day." },
+];
+
+const FAQ = [
+  { q: "How much does a shoot cost?", a: <>Headshots start at $150 (<a href="/headshots#pricing">see sessions</a>). Everything else is quoted, because one product photo and a full campaign are very different jobs. You'll know the number before anything is booked.</> },
+  { q: "I've never been photographed. Is that okay?", a: "Most people haven't. I direct you the whole time, so you look like yourself, not stiff." },
+  { q: "Where do we shoot?", a: "Wherever suits the photos: your space, a location we pick together, or somewhere that fits the look. We decide when we plan." },
+  { q: "Can you do video on the same day?", a: <>Yes. Photos and video can come from the same shoot, so one day covers more. <a href="/moving-image">See moving image →</a></> },
+  { q: "How do I get my photos?", a: "I pick the best frames, edit them by hand and deliver them sized for your website, your feed and print." },
+];
+
 function PhotographyPage() {
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
@@ -64,6 +79,8 @@ function PhotographyPage() {
             { t: "Browse the rooms", h: "#rooms" },
             { t: "What you get", h: "#get" },
             { t: "How it works", h: "#how" },
+            { t: "Which one fits", h: "#fit" },
+            { t: "Questions", h: "#faq" },
           ]}
         />
 
@@ -87,7 +104,9 @@ function PhotographyPage() {
 
         <ListBlock id="get" label="WHAT YOU GET" title="Photos that look good and get used." rows={INCLUDED} />
 
-        <ServiceSteps steps={STEPS} />
+        <ServiceSteps steps={STEPS} title="How a shoot comes together." />
+
+        <FitPicker need="Photography" question="What do you need photos of?" options={FIT} />
 
         <WorkCards
           label="SHOOTS I'VE DONE"
@@ -115,10 +134,13 @@ function PhotographyPage() {
           </div>
         </section>
 
+        <FaqList items={FAQ} />
+
         <ServiceCta current="photography" title="Have something to shoot?" sub="CAMPAIGNS, CONTENT, HEADSHOTS AND EVERYTHING IN BETWEEN." />
 
         <BackHome />
       </div>
+      <BookBar service="Photography" price="headshots from $150" need="Photography" />
     </div>
   );
 }
