@@ -7,63 +7,32 @@ import type { CSSProperties } from "react";
    ============================================================ */
 
 /** The Sunday Office sun: a small printer's mark with SIX rays. */
+/* Sunday Office mark: an outer ring, an inner circle and six rays.
+   Drawn on a 200 × 200 grid and scaled to any size; colour comes from `color`. */
+const MARK_PATH =
+  "M 182 100 A 82 82 0 1 1 18 100 A 82 82 0 1 1 182 100 Z M 175 100 A 75 75 0 1 1 25 100 A 75 75 0 1 1 175 100 Z M 135 100 A 35 35 0 1 1 65 100 A 35 35 0 1 1 135 100 Z M 135 96.5 L 175 96.5 L 175 103.5 L 135 103.5 Z M 120.531 128.561 L 140.531 163.202 L 134.469 166.702 L 114.469 132.061 Z M 85.531 132.061 L 65.531 166.702 L 59.469 163.202 L 79.469 128.561 Z M 65 103.5 L 25 103.5 L 25 96.5 L 65 96.5 Z M 79.469 71.439 L 59.469 36.798 L 65.531 33.298 L 85.531 67.939 Z M 114.469 67.939 L 134.469 33.298 L 140.531 36.798 L 120.531 71.439 Z";
+
 export function SunMark({
   size = 40,
   color = "var(--color-gold-deep)",
-  ring = true,
   className,
 }: {
   size?: number;
   color?: string;
+  /** Kept for older call sites; the ring is part of the mark now. */
   ring?: boolean;
   className?: string;
 }) {
-  const c = size / 2;
-  const r1 = size * 0.2;
-  const r2 = size * 0.405;
-  const rays: { x1: number; y1: number; x2: number; y2: number }[] = [];
-  for (let i = 0; i < 6; i++) {
-    const a = (i * 60 * Math.PI) / 180;
-    rays.push({
-      x1: c + r1 * Math.cos(a),
-      y1: c + r1 * Math.sin(a),
-      x2: c + r2 * Math.cos(a),
-      y2: c + r2 * Math.sin(a),
-    });
-  }
   return (
     <svg
       width={size}
       height={size}
-      viewBox={`0 0 ${size} ${size}`}
+      viewBox="0 0 200 200"
       className={className}
       role="img"
-      aria-label="Sunday Office sun mark"
+      aria-label="Sunday Office mark"
     >
-      {ring && (
-        <circle
-          cx={c}
-          cy={c}
-          r={size * 0.46}
-          fill="none"
-          stroke={color}
-          strokeWidth={Math.max(1, size * 0.012)}
-          opacity={0.55}
-        />
-      )}
-      <circle cx={c} cy={c} r={r1} fill={color} />
-      {rays.map((r, i) => (
-        <line
-          key={i}
-          x1={r.x1}
-          y1={r.y1}
-          x2={r.x2}
-          y2={r.y2}
-          stroke={color}
-          strokeWidth={Math.max(1.2, size * 0.02)}
-          strokeLinecap="round"
-        />
-      ))}
+      <path fillRule="evenodd" fill={color} d={MARK_PATH} />
     </svg>
   );
 }
@@ -72,9 +41,12 @@ export function SunMark({
 export function BlessingStamp({
   size = 120,
   color = "var(--color-emboss)",
+  dark = false,
 }: {
   size?: number;
   color?: string;
+  /** Pressed into a dark ground (the footer) instead of paper. */
+  dark?: boolean;
 }) {
   const charSize = size * 0.26;
   const c = size / 2;
@@ -86,9 +58,11 @@ export function BlessingStamp({
     return `${(c + rr * Math.cos(a)).toFixed(1)},${(c + rr * Math.sin(a)).toFixed(1)}`;
   });
   const ring = `M${pts.join(" L")} Z`;
-  const HIGHLIGHT = "rgba(255,255,255,0.55)"; // light catches the raised top edge
-  const SHADOW = "rgba(30,22,34,0.4)";         // dark sits in the recessed bottom edge
-  const dy = Math.max(0.8, size * 0.006);      // relief depth
+  /* Pressed INTO the paper, exactly like the "Sunday Office." wordmark:
+     shadow along the top inner wall, light catching the bottom edge. */
+  const HIGHLIGHT = dark ? "rgba(255,255,255,0.09)" : "rgba(255,255,255,0.9)";
+  const SHADOW = dark ? "rgba(0,0,0,0.7)" : "rgba(122,104,74,0.42)";
+  const dy = Math.max(0.8, size * 0.008);     // press depth
 
   const chars = ["福", "祿", "壽"];
   return (
@@ -97,18 +71,18 @@ export function BlessingStamp({
       height={size}
       viewBox={`0 0 ${size} ${size}`}
       role="img"
-      aria-label="Three blessings — fortune, prosperity, longevity"
+      aria-label="Three blessings: fortune, prosperity, longevity"
       style={{ overflow: "visible" }}
     >
-      {/* Raised outer ring: dark below, light above, main tone in between */}
-      <path d={ring} fill="none" stroke={SHADOW} strokeWidth={size * 0.014} transform={`translate(0, ${dy})`} strokeLinejoin="round" opacity={0.9} />
-      <path d={ring} fill="none" stroke={HIGHLIGHT} strokeWidth={size * 0.014} transform={`translate(0, ${-dy})`} strokeLinejoin="round" opacity={0.9} />
+      {/* Pressed ring: light below, shadow above, main tone on top */}
+      <path d={ring} fill="none" stroke={HIGHLIGHT} strokeWidth={size * 0.017} transform={`translate(0, ${dy})`} strokeLinejoin="round" />
+      <path d={ring} fill="none" stroke={SHADOW} strokeWidth={size * 0.017} transform={`translate(0, ${-dy})`} strokeLinejoin="round" style={{ filter: "blur(0.6px)" }} />
       <path d={ring} fill="none" stroke={color} strokeWidth={size * 0.017} strokeLinejoin="round" opacity={0.96} />
 
       {/* inner hairline */}
       <circle cx={c} cy={c} r={size * 0.42} fill="none" stroke={color} strokeWidth={size * 0.0035} opacity={0.4} />
 
-      {/* Raised characters: shadow, highlight, then body */}
+      {/* Pressed characters: light below, shadow above, then body */}
       {chars.map((ch, i) => {
         const y = size * (0.38 + i * 0.24);
         const common = {
@@ -120,10 +94,10 @@ export function BlessingStamp({
         };
         return (
           <g key={ch}>
-            <text {...common} transform={`translate(0, ${dy})`} fill={SHADOW} opacity={0.85}>
+            <text {...common} transform={`translate(0, ${dy})`} fill={HIGHLIGHT}>
               {ch}
             </text>
-            <text {...common} transform={`translate(0, ${-dy})`} fill={HIGHLIGHT} opacity={0.9}>
+            <text {...common} transform={`translate(0, ${-dy})`} fill={SHADOW} style={{ filter: "blur(0.6px)" }}>
               {ch}
             </text>
             <text {...common} fill={color} opacity={0.97} style={{ fontFamily: "var(--font-cjk), 'KaiTi', 'STKaiti', serif" }}>

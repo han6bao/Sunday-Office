@@ -1,28 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import type { CSSProperties } from "react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/campaigns/chitos")({
+  head: () => seoHead("/campaigns/chitos"),
   component: ChitosPage,
 });
 
 const BRAND = [
   {
     t: "WHO HE IS",
-    d: "CHITO is the graffiti-era visual artist behind Chitos International — an instantly recognizable monochrome hand. His work has shown up across Givenchy, Veilance and Issey Miyake, and he fronted the Supreme SS23 campaign alongside Highway for THEM Magazine. Seattle's fringe star of the fashion world.",
+    d: "CHITO is the graffiti-era visual artist behind Chitos International, and you can spot his monochrome hand right away. His work has shown up across Givenchy, Veilance and Issey Miyake, and he fronted the Supreme SS23 campaign alongside Highway for THEM Magazine. He's Seattle's fringe star in the fashion world.",
   },
   {
     t: "WHAT THEY SELL",
-    d: "Street luxury in monochrome — clothing and collectible pieces, dropped like records. Right now it's CHITOss26, available direct from the brand. Same marks on the clothes as on the walls: the product is the art.",
+    d: "Street luxury in monochrome: clothing and collectible pieces, released in drops like records. Right now it's CHITOss26, available direct from the brand. The marks on the clothes are the same ones on the walls, so the product is the art.",
   },
   {
     t: "THE FOLLOWING",
-    d: "94,371 followers on Instagram at @chito.international — a real audience that moves when pieces drop. The kind of following that turns one post into a waiting list.",
+    d: "94,371 followers on Instagram at @chito.international. It's a real audience that shows up when pieces drop, and one post can turn into a waiting list.",
   },
   {
     t: "THE CLIENTELE",
-    d: "Celebrity clientele, Seattle scene clientele, street-luxury buyers — artists and the people around them. The brand runs on visibility: the right look in front of the right people, at the right time.",
+    d: "Celebrities, people from the Seattle scene and street-luxury buyers, mostly artists and the people around them. The brand runs on visibility, so the look has to get in front of the right people at the right time.",
   },
 ];
 
@@ -33,10 +37,10 @@ const PHOTOS = [
 ];
 
 const BLACK: CSSProperties = {
-  background: "#0e0e10",
+  background: "color-mix(in srgb, var(--color-paper) 72%, #fffaf2)",
   aspectRatio: "1 / 1",
   borderRadius: 14,
-  border: "1px solid rgba(236, 231, 221, 0.12)",
+  border: "1px dashed var(--color-sepia)",
   display: "block",
 };
 
@@ -46,6 +50,7 @@ function ChitosPage() {
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -56,7 +61,7 @@ function ChitosPage() {
           Chitos International.
         </h1>
         <p className="so-micro mt-3">CHITO · GRAFFITI-ERA VISUAL ARTIST · SEATTLE</p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/highway-chitos/hc01.jpg" alt="Chitos International, Seattle art direction and photography" pos="center" />
 
         {/* The house of Chito — tap through */}
         <div
@@ -93,7 +98,7 @@ function ChitosPage() {
             <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
               {BRAND[brand].t}
             </p>
-            <p key={brand} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
+            <p key={brand} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
               {BRAND[brand].d}
             </p>
             <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
@@ -119,46 +124,43 @@ function ChitosPage() {
 
         {/* The campaign — used as their ad */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
-          <p className="so-micro">THE CAMPAIGN — COUNT BOSS</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            "COUNT BOSS" is a campaign — the shoot that brought Highway and
-            CHITO into one frame, and the brand ran it as their
-            advertisement. Used for promotion: the set on the feed, the
-            pieces on display, Seattle's music and graffiti scenes as brand
-            identity. Monochrome, street-level, built to sell the world.
-            Creative direction by Hana; the frames live right here.
+          <p className="so-micro">THE CAMPAIGN · COUNT BOSS</p>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            "COUNT BOSS" is the shoot that put Highway and CHITO in the same
+            photos, and the brand ran it as their advertisement. They used
+            it for promotion: the set on their feed, the pieces on display,
+            and Seattle's music and graffiti scenes as part of the brand's
+            identity. Black and white, street level, made to sell. I did the creative direction, and the photos are below.
           </p>
           <div className="mt-3">
             <a className="so-link-jump" href="/campaigns/highway">
-              HIGHWAY — THE FACE OF COUNT BOSS →
+              HIGHWAY · THE FACE OF COUNT BOSS →
             </a>
           </div>
         </div>
 
         {/* Keep going — the bigger rooms */}
         <div style={{ marginTop: 44, maxWidth: "58ch", borderTop: "1px solid var(--color-sepia)", paddingTop: 24 }}>
-          <p className="so-micro">KEEP GOING — WHERE THE WORK LIVES</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            One campaign is one frame. Chitos International is a whole
-            world — and there are rooms here for building it, directing it
-            and keeping it alive.
+          <p className="so-micro">KEEP GOING · MORE OF THE WORK</p>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            One campaign is only one piece. If you're building something bigger like Chitos International, here's how I help with the brand, the direction and the content.
           </p>
           <div className="mt-3" style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             <a className="so-link-jump" href="/branding">
-              BUILD THE BRAND — WORLD BUILDING →
+              BUILD THE BRAND · WORLD BUILDING →
             </a>
             <a className="so-link-jump" href="/creative-direction-content">
-              CAMPAIGNS + CONTENT — CREATIVE DIRECTION & SOCIAL →
+              CAMPAIGNS + CONTENT · CREATIVE DIRECTION & SOCIAL →
             </a>
             <a className="so-link-jump" href="/photography">
-              THE PHOTOGRAPHY — MORE CAMPAIGNS →
+              THE PHOTOGRAPHY · MORE CAMPAIGNS →
             </a>
           </div>
         </div>
 
         {/* Frames */}
         <div style={{ marginTop: 64, borderTop: "1px solid var(--color-sepia)", paddingTop: 24 }}>
-          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>01 · THE FRAMES — 3 · BY HANA</p>
+          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>01 · THE FRAMES · 3 · BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button
@@ -177,24 +179,10 @@ function ChitosPage() {
           </div>
         </div>
 
-        {/* More frames placeholder */}
-        <div style={{ marginTop: 56, borderTop: "1px solid var(--color-sepia)", paddingTop: 24 }}>
-          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>02 · MORE FRAMES — TO BE PLACED</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18, marginTop: 8 }}>
-            {[1, 2, 3].map((n) => (
-              <div key={n}>
-                <div style={BLACK} />
-                <p className="so-micro" style={{ marginTop: 10 }}>
-                  FRAME 0{n + 3} · TO BE PLACED
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* From the post — clips */}
         <div style={{ marginTop: 56, borderTop: "1px solid var(--color-sepia)", paddingTop: 24 }}>
-          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>03 · FROM THE POST — CLIPS BY HANA</p>
+          <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>02 · FROM THE POST · CLIPS BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14, marginTop: 12 }}>
             {["clip-01", "clip-02", "clip-03"].map((c) => (
               <a
@@ -206,7 +194,7 @@ function ChitosPage() {
               >
                 <img
                   src={`/assets/campaigns/highway-chitos/clips/${c}.gif`}
-                  alt={`Count Boss — clip from the set`}
+                  alt={`Count Boss, clip from the set`}
                   loading="lazy"
                   style={{ width: "100%", display: "block", borderRadius: 14, border: "1px solid var(--color-sepia)", background: "#0e0e10" }}
                 />
@@ -214,7 +202,7 @@ function ChitosPage() {
             ))}
           </div>
           <p className="so-micro" style={{ marginTop: 12, color: "var(--color-stone)" }}>
-            THE CLIPS LIVE ON THE POST — @HIGHWAY2009 · OPENING THE FILE →
+            THE CLIPS ARE ON THE POST · @HIGHWAY2009 · TAP TO OPEN →
           </p>
         </div>
 

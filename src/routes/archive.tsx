@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteBar } from "../sunday/site-bar";
 import { useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { archive } from "../sunday/content";
@@ -7,15 +8,16 @@ import type { ArchiveEntry, ProjectTag } from "../sunday/content";
 
 export const Route = createFileRoute("/archive")({
   component: ArchiveIndex,
+  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
 });
 
 const PASSWORD = "sundayoffice";
 
 const ROOMS = [
-  { t: "Brand + Identity →", h: "/branding", d: "The world behind the work — strategy, identity, image, digital, direction, content." },
-  { t: "Websites + Digital →", h: "/websites", d: "Where the world lives — websites, digital experiences, landing pages, interactive work." },
-  { t: "Photography + Moving Image →", h: "/photography", d: "What the world looks like — photography, campaigns, reels, brand films, music visuals." },
-  { t: "Creative Direction + Social →", h: "/creative-direction-content", d: "How the world comes together — concept development, campaigns, art direction, social + content direction." },
+  { t: "Branding + World Building →", h: "/branding", d: "The world behind the work: strategy, identity, image, digital, direction, content." },
+  { t: "Websites + Digital →", h: "/websites", d: "Where the world lives: websites, digital experiences, landing pages, interactive work." },
+  { t: "Photography + Moving Image →", h: "/photography", d: "What the world looks like: photography, campaigns, reels, brand films, music visuals." },
+  { t: "Creative Direction + Social →", h: "/creative-direction-content", d: "How the world comes together: concept development, campaigns, art direction, social + content direction." },
 ];
 
 function countOf(tag: ProjectTag): number {
@@ -49,7 +51,7 @@ function ProjectRow({ e }: { e: ArchiveEntry }) {
           {entryTags(e)}
         </p>
         {e.blurb ? (
-          <p style={{ marginTop: 6, fontSize: 13.5, color: "var(--ax-muted)", maxWidth: "64ch", lineHeight: 1.6 }}>
+          <p style={{ marginTop: 6, fontSize: 13.5, color: "var(--ax-muted)", maxWidth: "64ch", lineHeight: 1.5 }}>
             {e.blurb}
           </p>
         ) : null}
@@ -88,6 +90,7 @@ function ArchiveIndex() {
   if (!authed) {
     return (
       <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
         <div className="so-shell" style={{ paddingTop: 140, paddingBottom: 80 }}>
           <p className="so-micro so-micro-red">PRIVATE FILE ROOM · STAFF ONLY</p>
           <h1 className="so-serif" style={{ fontSize: "clamp(36px, 7vw, 84px)", marginTop: 14 }}>
@@ -135,7 +138,7 @@ function ArchiveIndex() {
             </div>
             {err && (
               <p className="so-micro" style={{ marginTop: 12, color: "var(--color-verm)", letterSpacing: "0.14em" }}>
-                NOPE — TRY AGAIN.
+                NOPE. TRY AGAIN.
               </p>
             )}
           </div>
@@ -171,7 +174,7 @@ function ArchiveIndex() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>
           The Archive.
         </h1>
-        <p style={{ marginTop: 20, maxWidth: "58ch", lineHeight: 1.78, color: "var(--ax-muted)" }}>
+        <p style={{ marginTop: 20, maxWidth: "58ch", lineHeight: 1.55, color: "var(--ax-muted)" }}>
           One archive. Every part of the world. Browse by discipline or
           open the full collection.
         </p>
@@ -213,7 +216,7 @@ function ArchiveIndex() {
                   <p className="so-serif" style={{ fontSize: "clamp(18px, 2.3vw, 26px)", margin: 0, color: "var(--ax-muted)" }}>
                     {r.t}
                   </p>
-                  <p className="so-micro" style={{ marginTop: 8, color: "var(--ax-muted)", lineHeight: 1.6, letterSpacing: "0.06em" }}>
+                  <p className="so-micro" style={{ marginTop: 8, color: "var(--ax-muted)", lineHeight: 1.5, letterSpacing: "0.06em" }}>
                     {r.d}
                   </p>
                   <p className="so-micro" style={{ marginTop: 14, color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>

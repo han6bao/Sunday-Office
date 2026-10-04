@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type { CSSProperties, ReactNode } from "react";
+import { seoHead } from "../sunday/seo";
+import { useEffect, useState } from "react";
+import { LitText, ScrollReel, WorldPicker } from "../sunday/scroll-moments";
+import type { CSSProperties, MouseEvent, ReactNode } from "react";
 import {
   SunMark,
   BlessingStamp,
@@ -13,9 +16,7 @@ import {
 import {
   Parallax,
   DarkGallery,
-  ProjectFinder,
-  DirectoryAccordion,
-  InquiryForm,
+    InquiryForm,
   Reveal,
   SiteIntro,
   HeroOrb,
@@ -25,6 +26,7 @@ import {
 import { Hero } from "../sunday/hero";
 
 export const Route = createFileRoute("/")({
+  head: () => seoHead("/"),
   component: Index,
 });
 
@@ -84,6 +86,51 @@ function BigTitle({
 
 /* ------------------------------------------------------------ */
 
+/* Tapping a link in the mobile menu should close the menu. */
+function closeMenu(e: MouseEvent<HTMLAnchorElement>) {
+  e.currentTarget.closest("details")?.removeAttribute("open");
+}
+
+/* Phones only: a black "Start a project" button pinned to the bottom.
+   It slides up once you're past the opening section and slides away
+   again as the Office Hours form comes into view. */
+function MobileStartBar() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const form = document.getElementById("office-hours");
+      const reachedForm = form
+        ? form.getBoundingClientRect().top < window.innerHeight * 0.85
+        : false;
+      setShow(window.scrollY > window.innerHeight * 0.6 && !reachedForm);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+  return (
+    <a
+      href="#office-hours"
+      className={"so-startbar" + (show ? " is-visible" : "")}
+      aria-hidden={!show}
+      tabIndex={show ? 0 : -1}
+    >
+      <span>Start a project</span>
+      <span className="arr" aria-hidden>→</span>
+    </a>
+  );
+}
+
 function Header() {
   return (
     <header className="so-nav">
@@ -103,29 +150,33 @@ function Header() {
             Start a project →
           </a>
         </nav>
-        <details className="so-mobile-menu" style={{ position: "relative" }}>
-          <summary className="so-nav-burger" aria-label="Menu" style={{ cursor: "pointer", listStyle: "none" }}>
-            Menu
+        <details className="so-mobile-menu">
+          <summary className="so-nav-burger" aria-label="Menu">
+            <span className="so-burger-lines" aria-hidden>
+              <span />
+              <span />
+            </span>
+            <span className="so-burger-label" />
           </summary>
-          <div
-            style={{
-              position: "absolute",
-              right: 0,
-              top: 48,
-              background: "var(--color-cream)",
-              border: "1px solid var(--color-sepia)",
-              padding: "10px 18px",
-              display: "grid",
-              gap: 6,
-              minWidth: 180,
-              boxShadow: "0 12px 30px rgba(15,30,51,0.12)",
-            }}
-          >
-            {navLinks.map((l) => (
-              <a key={l.href} className="so-nav-link" href={l.href}>
-                {l.label}
-              </a>
-            ))}
+          <div className="so-menu-panel">
+            <p className="so-micro so-menu-file">MENU</p>
+            <nav className="so-menu-list" aria-label="Mobile">
+              {navLinks.map((l, i) => (
+                <a key={l.href} className="so-menu-link" href={l.href} onClick={closeMenu}>
+                  <span className="so-menu-no">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="so-menu-name">{l.label}</span>
+                  <span className="so-menu-arr" aria-hidden>→</span>
+                </a>
+              ))}
+            </nav>
+            <a className="so-menu-cta" href="#office-hours" onClick={closeMenu}>
+              Start a project →
+            </a>
+            <div className="so-menu-foot">
+              <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>
+              <a href="https://www.instagram.com/sundayoffice.ag">@sundayoffice.ag</a>
+              <span className="so-micro">SEATTLE, WA</span>
+            </div>
           </div>
         </details>
       </div>
@@ -198,54 +249,223 @@ function TheOffice() {
   );
 }
 
-function WhoWeAre() {
+type StartItem = { n: string; p: string; d: string; path: { t: string; h: string }[] };
+
+/* Three ways in. Hover tints a card, tap picks it and shows where to begin. */
+function StartPicker({ items }: { items: StartItem[] }) {
+  const [pick, setPick] = useState<number | null>(null);
+  return (
+    <div className="so-starts">
+      <p className="so-micro so-starts-cap">MOST PEOPLE START ONE OF THREE WAYS · WHICH ONE ARE YOU?</p>
+      <div className="so-starts-grid">
+        {items.map((st, i) => {
+          const on = pick === i;
+          return (
+            <div
+              key={st.p}
+              role="button"
+              tabIndex={0}
+              aria-pressed={on}
+              className={"so-start-card tone-" + (i + 1) + (on ? " is-on" : "") + (pick !== null && !on ? " is-dim" : "")}
+              onClick={() => setPick(on ? null : i)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setPick(on ? null : i);
+                }
+              }}
+            >
+              <span className="so-start-top">
+                <span className="so-micro so-start-no">{st.n}</span>
+                <span className="so-start-check" aria-hidden>{on ? "✓" : "+"}</span>
+              </span>
+              <p className="so-start-p">{st.p}</p>
+              <p className="so-start-d">{st.d}</p>
+              <div className="so-start-path">
+                {st.path.map((x) => (
+                  <a key={x.t} href={x.h} onClick={(e) => e.stopPropagation()}>
+                    {x.t}
+                  </a>
+                ))}
+              </div>
+              {on && (
+                <div className="so-start-go so-chapter-fade">
+                  <a href={st.path[0].h} onClick={(e) => e.stopPropagation()} className="so-start-go-main">
+                    Start with {st.path[0].t.toLowerCase()} →
+                  </a>
+                  <a href="/#inquiry" onClick={(e) => e.stopPropagation()}>
+                    Or tell me about it
+                  </a>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+const starts = [
+  {
+    n: "01",
+    p: "Starting fresh",
+    d: "New name, new idea, nothing built yet.",
+    path: [
+      { t: "Brand", h: "/branding" },
+      { t: "Website", h: "/websites" },
+      { t: "Photos", h: "/photography" },
+    ],
+  },
+  {
+    n: "02",
+    p: "Refreshing",
+    d: "You've grown, and it doesn't look like you anymore.",
+    path: [
+      { t: "Brand kit", h: "/branding" },
+      { t: "New photos", h: "/photography" },
+      { t: "Website", h: "/websites" },
+    ],
+  },
+  {
+    n: "03",
+    p: "Just need content",
+    d: "The brand is there. You need more of it.",
+    path: [
+      { t: "Photos", h: "/photography" },
+      { t: "Video", h: "/moving-image" },
+      { t: "Social", h: "/creative-direction-content" },
+    ],
+  },
+];
+
+function BuildYourWorld() {
+  const rooms = [
+    { k: "BRANDING", step: "Start here", t: "Branding + World Building", lead: "The world behind the work.", d: "The logo is the flag. The world around it is the territory. Strategy, identity, the feeling, the look, the way it talks: everything else is built on this.", h: "/branding", cta: "Build your world", img: "/assets/work/build-a-world-2.jpg" },
+    { k: "DIGITAL", step: "Then", t: "Websites + Digital", lead: "Where the world lives.", d: "Websites, digital experiences, landing pages, interactive work.", h: "/websites", cta: "Open", img: "/assets/work/websites-photo.jpg" },
+    { k: "IMAGE", step: "Then", t: "Photography + Moving Image", lead: "What the world looks like.", d: "Photography, campaigns, reels, brand films, music visuals.", h: "/photography", cta: "Open", img: "/assets/photography/avery-01.jpg" },
+    { k: "DIRECTION", step: "And", t: "Creative Direction + Social", lead: "How the world comes together.", d: "Concept development, campaigns, art direction, social + content direction.", h: "/creative-direction-content", cta: "Open", img: "/assets/work/studio-directors.jpg" },
+  ];
+  const [brand, ...rest] = rooms;
 
   return (
-    <Section id="about">
+    <Section id="build" className="so-build-section">
       <div className="so-shell">
-        <SecFile>FILE NO. 001 · WHO WE ARE</SecFile>
-        <div className="so-about-grid">
-          <div>
-            <p className="eyebrow-cap so-about-eyebrow">
-              SUNDAY OFFICE IS AN INDEPENDENT CREATIVE AGENCY.
+        <SecFile>FILE NO. 001 · BUILD YOUR WORLD</SecFile>
+        <div className="so-build-head so-bw2">
+          <div className="so-bw2-left">
+            <h2 className="so-serif so-build-title">Build your <em>world.</em></h2>
+            <LitText
+              className="so-about-copy so-lit"
+              text="A brand is more than a logo. It's the feeling people get when they find you, and everything that follows."
+            />
+            <p className="so-about-copy so-bw2-p">
+              An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction, for local businesses and the artists who make this city feel like home.
             </p>
-            <p className="so-about-copy">
-              Photography is where we begin most naturally. But the work can
-              become a website, a campaign, a film, a visual identity, a
-              content system, or something we haven't named yet. The point
-              isn't to make more things. It's to figure out what actually
-              needs to be made.
-            </p>
-            <p className="so-about-copy" style={{ marginTop: 18 }}>
-              Artists and celebrities have sat in front of the lens —
-              along with first-time founders and everyone in between. Same
-              care either way: make it feel like them.
-            </p>
-            <Reveal delay={0.05}>
-              <div className="so-manifesto mt-8">
-                <span className="line">
-                  Strategy in <em>mind.</em>
-                </span>
-                <span className="line">
-                  Culture at <em>heart.</em>
-                </span>
-                <span className="line">
-                  Story in <em>everything.</em>
-                </span>
-              </div>
-            </Reveal>
+            <WorldPicker
+              rooms={[
+                { k: "Brand", line: "the feeling, the look, the voice", img: "/assets/campaigns/essential-brows-studio/brand-kit.jpg", cap: "Essential Brows · brand kit", h: "/campaigns/essential-brows-studio" },
+                { k: "Digital", line: "where the world lives", img: "/assets/work/websites-photo.jpg", cap: "Websites + digital", h: "/websites" },
+                { k: "Image", line: "what the world looks like", img: "/assets/headshots/creative-01.jpg", cap: "Headshots · Seattle", h: "/headshots" },
+                { k: "Direction", line: "how it all comes together", img: "/assets/work/studio-directors.jpg", cap: "Creative direction", h: "/creative-direction-content" },
+              ]}
+            />
           </div>
-<div className="so-fu-seal">
-            <span className="so-stamp-plain">
-              <BlessingStamp size={120} color="var(--color-emboss)" />
+        </div>
+
+        <div className="so-path">
+          <a href={brand.h} className="so-path-lead is-text">
+            <span className="so-path-body">
+              <span className="so-path-start so-path-start-inline">{brand.step}</span>
+              <span className="so-path-title">{brand.t}</span>
+              <span className="so-path-lead-line">{brand.lead}</span>
+              <span className="so-room-desc">{brand.d}</span>
+              <span className="so-path-cta">
+                {brand.cta} <span className="arr" aria-hidden>→</span>
+              </span>
             </span>
-            <p className="so-micro so-fu-seal-cap">
-              福祿壽 — FORTUNE · PROSPERITY · LONGEVITY
-            </p>
+          </a>
+          <div className="so-path-rest">
+            <p className="so-micro so-path-then">THEN WE BRING IT TO LIFE</p>
+            {rest.map((r, i) => (
+              <a key={r.t} href={r.h} className="so-room so-path-room">
+                <span className="so-room-media">
+                  <img src={r.img} alt={r.t + ", Sunday Office Seattle"} loading="lazy" />
+                </span>
+                <span className="so-room-body">
+                  <span className="so-room-title">
+                    {r.t} <span className="arr" aria-hidden>→</span>
+                  </span>
+                  <span className="so-room-desc">
+                    <em>{r.lead}</em> {r.d}
+                  </span>
+                </span>
+              </a>
+            ))}
           </div>
+        </div>
+
+      </div>
+    </Section>
+  );
+}
+
+/* The work, and where it went: story first, the figure as a quiet footnote. */
+function TheProof() {
+  const notes = [
+    { p: "One video", d: "A single piece of content that reached 8.5M impressions.", n: "2M+", u: "views", h: "/creative-direction-content" },
+    { p: "Cut", d: "Pitched a video idea to Cut and helped bring the right people on camera. It passed a million views on YouTube.", n: "1M+", u: "views", h: "/creative-direction-content" },
+    { p: "Nine Vicious × Custom Grillz", d: "I photographed Nine Vicious in jeweler Marcus Adam's custom grillz. Fans started using it as their profile picture.", n: "", u: "Visit his most-liked post", h: "https://www.instagram.com/maarcusadam/", ext: true },
+  ];
+  return (
+    <Section id="proof">
+      <div className="so-shell">
+        <SecFile>FILE NO. 003 · WHERE THE WORK WENT</SecFile>
+        <div className="so-proof-head">
+          <h2 className="so-serif so-proof-title">Worlds people actually <em>see.</em></h2>
+          <p className="so-proof-intro">
+            Sunday Office exists to make good ideas visible, give them a
+            world to live in, and let the right people recognize them when
+            they see them.
+          </p>
+        </div>
+        <div className="so-notes-list">
+          {notes.map((n) => (
+            <a
+              key={n.p}
+              href={n.h}
+              className={"so-note-row" + ("ext" in n ? " is-ext" : "")}
+              {...("ext" in n ? { target: "_blank", rel: "noreferrer" } : {})}
+            >
+              <span className="so-note-p">
+                {n.p} <span className="so-note-arr" aria-hidden>{"ext" in n ? "↗" : "→"}</span>
+              </span>
+              <span className="so-note-d">{n.d}</span>
+              <span className="so-note-f">
+                {n.n ? <>{n.n} </> : null}<span className="so-note-u">{n.u}</span>
+              </span>
+            </a>
+          ))}
         </div>
       </div>
     </Section>
+  );
+}
+
+/* Hana's philosophy, in her own words, between sections. */
+function Interlude({ children }: { children: ReactNode }) {
+  return (
+    <div className="so-interlude">
+      <div className="so-shell">
+        <Reveal>
+          <span className="so-quote-mark so-emboss" aria-hidden>
+            “
+          </span>
+          <p className="so-quote">{children}</p>
+          <p className="so-micro so-quote-by">— HANA</p>
+        </Reveal>
+      </div>
+    </div>
   );
 }
 
@@ -257,87 +477,15 @@ function CurrentWork() {
           <div className="so-darkframe-head">
             <div>
               <span className="so-df-tic" aria-hidden />
-              <h2 className="so-darkframe-title">Featured Work</h2>
+              <h2 className="so-darkframe-title">Featured <em>work.</em></h2>
             </div>
             <div className="so-darkframe-meta">
-              <span className="so-micro">FILE NO. 002 · SELECTED 2023–2026</span>
-              <span className="so-lab so-df-hint">DRAG / SWIPE → CLICK</span>
+              <span className="so-micro">FILE NO. 002 · SELECTED WORK · SEATTLE · 2023 TO 2026</span>
+              <span className="so-lab so-df-hint">SWIPE → TAP TO OPEN</span>
             </div>
           </div>
         </div>
         <DarkGallery items={currentWork} />
-        <div className="so-shell">
-          <p
-            className="so-micro so-print-dark-dim"
-            style={{ marginTop: 22 }}
-          >
-            THE WORK BELOW IS HELD IN THE OFFICE'S DARKROOM FRAME · EACH PROJECT
-            WILL OPEN WITH ITS OWN STORY
-          </p>
-        </div>
-      </div>
-    </Section>
-  );
-}
-
-function WhatWeDo() {
-  const rooms = [
-    { t: "Brand + Identity →", d: "The world behind the work — strategy, identity, image, digital, direction, content.", h: "/branding" },
-    { t: "Websites + Digital →", d: "Where the world lives — websites, digital experiences, landing pages, interactive work.", h: "/websites" },
-    { t: "Photography + Moving Image →", d: "What the world looks like — photography, campaigns, reels, brand films, music visuals.", h: "/photography" },
-    { t: "Creative Direction + Social →", d: "How the world comes together — concept development, campaigns, art direction, social + content direction.", h: "/creative-direction-content" },
-  ];
-  return (
-    <Section id="what-we-do">
-      <div className="so-shell">
-        <p className="so-micro so-micro-red">FILE NO. 003 · WHAT WE DO · THE FOUR ROOMS</p>
-        <p className="so-serif" style={{ fontSize: "clamp(30px, 4.4vw, 50px)", marginTop: 14, lineHeight: 1.15, maxWidth: "22ch" }}>
-          We build worlds.
-        </p>
-        <p style={{ marginTop: 12, maxWidth: "52ch", color: "var(--color-print)" }}>
-          Four rooms, every part of the work. Start with one or build the
-          whole world.
-        </p>
-        <p className="so-serif" style={{ marginTop: 18, fontStyle: "italic", color: "#55286F", fontSize: "clamp(16px, 2vw, 22px)", marginBottom: 0 }}>
-          brand. digital. image. direction.
-        </p>
-                <div
-          style={{
-            margin: "38px auto 0",
-            maxWidth: "86ch",
-            border: "1px solid var(--color-sepia)",
-          }}
-        >
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}>
-            {rooms.map((r, i) => (
-              <a
-                key={r.t}
-                href={r.h}
-                style={{
-                  display: "block",
-                  textDecoration: "none",
-                  color: "inherit",
-                  borderTop: i >= 2 ? "1px solid var(--color-sepia)" : "none",
-                  borderLeft: i % 2 === 1 ? "1px solid var(--color-sepia)" : "none",
-                  padding: "26px 26px 22px",
-                  minHeight: 170,
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--color-verm)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--color-print)")}
-              >
-                <p className="so-serif" style={{ fontSize: "clamp(18px, 2.3vw, 26px)", margin: 0, color: "var(--color-stone)" }}>
-                  {r.t}
-                </p>
-                <p className="so-micro" style={{ marginTop: 8, color: "var(--color-stone)", lineHeight: 1.6, letterSpacing: "0.06em" }}>
-                  {r.d}
-                </p>
-                <p className="so-micro" style={{ marginTop: 14, color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-                  OPEN →
-                </p>
-              </a>
-            ))}
-          </div>
-        </div>
       </div>
     </Section>
   );
@@ -348,22 +496,23 @@ function MeetHana() {
     <Section id="about-hana">
       <div className="so-shell">
         <SecFile>FILE NO. 004 · MEET HANA</SecFile>
-        <BigTitle>Meet Hana.</BigTitle>
+        <BigTitle max={72}>Meet <em>Hana.</em></BigTitle>
         <p className="so-micro mt-3">
-          PHOTOGRAPHER / CREATIVE DIRECTOR / FOUNDER
+          FOUNDER / PHOTOGRAPHER
         </p>
         <div className="so-profile mt-8">
           <Parallax range={[-10, 10]}>
             <div>
               <img
-                src="/assets/hana-portrait.jpg"
-                alt="Hana — portrait"
+                src="/assets/work/hero-hana-01.jpg"
+                alt="Hana Hong, Seattle photographer and founder of Sunday Office, at her desk"
                 loading="lazy"
                 style={{
                   width: "100%",
                   aspectRatio: "3 / 4",
                   objectFit: "cover",
-                  borderRadius: 16,
+                  objectPosition: "90% 30%",
+                  borderRadius: 8,
                   border: "1px solid var(--color-sepia)",
                   display: "block",
                 }}
@@ -387,15 +536,15 @@ function MeetHana() {
             <div className="so-profile-credits mt-6">
               <div className="so-profile-credit">
                 <p className="so-micro">BASED</p>
-                <p style={{ marginTop: 6 }}>Seattle / Tacoma</p>
+                <p style={{ marginTop: 6 }}>Seattle, WA</p>
               </div>
               <div className="so-profile-credit">
                 <p className="so-micro">ROLE</p>
-                <p style={{ marginTop: 6 }}>Founder / Creative Director / Photographer</p>
+                <p style={{ marginTop: 6 }}>Founder + Photographer</p>
               </div>
               <div className="so-profile-credit" style={{ borderTop: 0 }}>
-                <p className="so-micro">OFFICE</p>
-                <p style={{ marginTop: 6 }}>Sunday</p>
+                <p className="so-micro">WORKS WITH</p>
+                <p style={{ marginTop: 6 }}>Brands, businesses + artists</p>
               </div>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 24, flexWrap: "wrap" }}>
@@ -413,60 +562,98 @@ function MeetHana() {
   );
 }
 
-function WhatYouNeed() {
+
+/* Packages: what most local businesses book. Quoted per project. */
+const PACKAGES = [
+  {
+    n: "The Refresh",
+    who: "For established businesses ready for a sharper look.",
+    items: ["Brand photo session (half day)", "4 short-form videos", "Website refresh or a new landing page", "Social media asset kit"],
+  },
+  {
+    n: "The Launch",
+    who: "Everything you need to open, or reopen, like a premium brand.",
+    items: ["Full custom website", "Brand kit: logo suite, colors, type, guidelines", "Full-day photo + video shoot", "30 days of ready-to-post content", "Launch strategy session"],
+    tag: "Full build",
+  },
+  {
+    n: "The Signature",
+    who: "A complete brand build or rebrand, with campaign-level content.",
+    items: ["Everything in The Launch", "Brand campaign shoot (photo + video)", "Brand film", "Rollout plan and content calendar", "Priority scheduling"],
+  },
+  {
+    n: "Monthly Content",
+    who: "Ongoing content so your brand never goes quiet.",
+    items: ["A photo + video shoot every month", "Reels and posts, ready to publish", "A monthly content plan", "Website updates as needed"],
+  },
+];
+
+function Packages() {
   return (
-    <Section id="finder" className="so-black-block">
+    <Section id="packages" className="so-pk-section">
       <div className="so-shell">
-        <SecFile>FILE NO. 005 · WHAT DO YOU NEED?</SecFile>
-        <div className="so-quiz-intro">
-          <big className="so-serif so-big-line">
-            Enough about us.
-          </big>
-          <p className="so-quiz-copy">
-            What are you working on? If you're not sure what you need, that is
-            kind of our job — answer a few questions and we'll point you
-            somewhere useful.
+        <SecFile>FILE NO. 005 · PACKAGES</SecFile>
+        <div className="so-pk-head">
+          <BigTitle max={72}>One partner. Your <em>whole brand.</em></BigTitle>
+          <p className="so-pk-lead">
+            Most local businesses end up hiring a web designer, a photographer,
+            a videographer and a social person, then wonder why nothing matches.
+            These bring it under one roof. One point of contact: you run the
+            business, I handle how it looks.
           </p>
         </div>
-        <div className="mt-8">
-          <ProjectFinder />
+        <div className="so-pk-grid">
+          {PACKAGES.map((p) => (
+            <a key={p.n} href="/#inquiry" className={"so-pk-card" + (p.tag ? " is-feat" : "")}>
+              <span className="so-pk-top">
+                <span className="so-pk-name">{p.n}</span>
+                {p.tag && <span className="so-pk-tag">{p.tag}</span>}
+              </span>
+              <span className="so-pk-who">{p.who}</span>
+              <ul className="so-pk-list">
+                {p.items.map((it) => (
+                  <li key={it}>{it}</li>
+                ))}
+              </ul>
+              <span className="so-pk-foot">
+                <span className="so-micro">QUOTED PER PROJECT</span>
+                <span className="so-pk-go">
+                  Ask about it <span className="arr" aria-hidden>→</span>
+                </span>
+              </span>
+            </a>
+          ))}
         </div>
-      </div>
-    </Section>
-  );
-}
-
-function TheDirectory() {
-  return (
-    <Section id="directory">
-      <div className="so-shell">
-        <SecFile>FILE NO. 006 · THE DIRECTORY</SecFile>
-        <BigTitle>The Directory</BigTitle>
-        <p style={{ maxWidth: "46ch", marginTop: 14, color: "var(--color-print)" }}>
-          A clean index of everything Sunday Office can do. Photography is
-          where we begin; the rest is where the idea goes. Open a category to
-          see what sits under it.
+        <p className="so-pk-alc">
+          Just need one thing? Headshots, a website or a brand kit can be booked on their own.{" "}
+          <a className="so-bw-inline" href="/#build">See services →</a>
         </p>
-        <div className="mt-8">
-          <DirectoryAccordion />
-        </div>
       </div>
     </Section>
   );
 }
 
-function OfficeHours() {
+function StartAProject() {
   return (
-    <Section id="office-hours" style={{ paddingBlock: "clamp(26px, 4vw, 48px)" }}>
+    <Section id="office-hours" className="so-start-section">
       <div className="so-shell">
-        <SecFile>FILE NO. 007 · OFFICE HOURS</SecFile>
-        <BigTitle max={64}>Office Hours</BigTitle>
-        <div className="so-office-card">
-          <p className="eyebrow-cap mt-4">Have something in mind?</p>
-          <p style={{ maxWidth: "52ch", marginTop: 12, color: "var(--color-print)" }}>
-            It doesn't need to be completely figured out. Tell us what you're
-            making, what's not working, or what you wish it looked like.
-          </p>
+        <SecFile>FILE NO. 006 · START A PROJECT</SecFile>
+        <div className="so-start-head">
+          <BigTitle max={88}>Start <em>building.</em></BigTitle>
+          <div className="so-start-side">
+            <p>
+              It doesn't need to be figured out. Tell me what you're making,
+              what's not working, or what you wish it looked like. I reply
+              within a few days.
+            </p>
+            <p className="so-micro">BOOKING NEW PROJECTS · SEATTLE</p>
+          </div>
+        </div>
+
+        <StartPicker items={starts} />
+
+        <div className="so-office-card" id="inquiry">
+          <p className="eyebrow-cap mt-4">The inquiry</p>
           <InquiryForm />
         </div>
       </div>
@@ -482,15 +669,24 @@ function Footer() {
           <div>
             <div className="so-footer-wordmark so-emboss-dark">Sunday Office</div>
             <p className="so-micro" style={{ marginTop: 12 }}>
-              PHOTOGRAPHY-LED CREATIVE WORK FOR PEOPLE WITH SOMETHING WORTH
-              SEEING
+              WE BUILD WORLDS FOR PEOPLE WITH SOMETHING WORTH SEEING
             </p>
             <div className="mt-4">
               <SunMark size={34} color="#f4eff5" />
             </div>
           </div>
           <div>
-            <h5>Office</h5>
+            <h5>What we do</h5>
+            <a className="foot-link" href="/branding">Branding + World Building</a>
+            <a className="foot-link" href="/logo-identity">Logos + Identity</a>
+            <a className="foot-link" href="/websites">Websites + Digital</a>
+            <a className="foot-link" href="/photography">Photography</a>
+            <a className="foot-link" href="/headshots">Headshots</a>
+            <a className="foot-link" href="/moving-image">Moving Image</a>
+            <a className="foot-link" href="/creative-direction-content">Creative Direction + Social</a>
+          </div>
+          <div>
+            <h5>Contact</h5>
             <a className="foot-link" href="mailto:hello@sundayoffice.agency">
               hello@sundayoffice.agency
             </a>
@@ -503,23 +699,18 @@ function Footer() {
           </div>
           <div>
             <h5>Find us</h5>
-            <a className="foot-link" href="#">
-              Seattle / Tacoma
-            </a>
-            <a className="foot-link" href="mailto:hello@sundayoffice.agency">
-              hello@sundayoffice.agency
-            </a>
+            <span className="foot-link">Seattle, WA</span>
             <a className="foot-link" href="https://www.instagram.com/sundayoffice.ag">
               @sundayoffice.ag
             </a>
           </div>
         </div>
         <div className="so-footer-bottom">
-          <p className="so-micro">© 2026 SUNDAY OFFICE — ALL RIGHTS RESERVED</p>
+          <p className="so-micro">© 2026 SUNDAY OFFICE · ALL RIGHTS RESERVED</p>
           <div className="so-footer-seals">
             <SunMark size={26} color="#f4eff5" />
             <span className="so-stamp-plain">
-              <BlessingStamp size={40} color="var(--color-emboss)" />
+              <BlessingStamp size={40} color="var(--color-emboss)" dark />
             </span>
             <span className="so-stamp-plain">
               <CreationSeal size={26} color="var(--color-emboss)" />
@@ -532,6 +723,17 @@ function Footer() {
   );
 }
 
+
+const REEL = [
+  { src: "/assets/campaigns/kenshi-killz/kk-01.jpg", t: "Kenshi Killz", w: "ARTIST · PROMO", h: "/campaigns/kenshi-killz" },
+  { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", t: "Selaras Haus", w: "INTERIORS · BEAUTY", h: "/campaigns/selaras-haus" },
+  { src: "/assets/campaigns/leon-thomas/lt-01.jpg", t: "Leon Thomas × Vice", w: "NIGHTLIFE · EVENT", h: "/campaigns/leon-thomas" },
+  { src: "/assets/campaigns/bar-bistro/bb-01.jpg", t: "Bar Bistro", w: "FOOD + DRINK", h: "/campaigns/bar-bistro" },
+  { src: "/assets/campaigns/green-grillz/gg02.jpg", t: "Nine Vicious", w: "CUSTOM GRILLZ", h: "/campaigns/green-grillz" },
+  { src: "/assets/campaigns/still-different/sd-02.jpg", t: "Still Different", w: "ARTIST · PORTRAIT", h: "/campaigns/still-different" },
+  { src: "/assets/campaigns/soul-social/ss-04.jpg", t: "Public House", w: "VENUE · SOCIAL", h: "/campaigns/public-house" },
+];
+
 function Index() {
   return (
     <div>
@@ -541,15 +743,23 @@ function Index() {
       <Header />
 <main>
         <Hero />
-        <WhoWeAre />
+        <BuildYourWorld />
         <CurrentWork />
-        <WhatWeDo />
+        <TheProof />
+        <ScrollReel
+          items={REEL}
+          title={
+            <h2 className="so-serif so-reel-title">
+              In the <em>frame.</em>
+            </h2>
+          }
+        />
         <MeetHana />
-        <WhatYouNeed />
-        <TheDirectory />
-        <OfficeHours />
+        <Packages />
+        <StartAProject />
       </main>
       <Footer />
+      <MobileStartBar />
     </div>
   );
 }

@@ -1,38 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
 
 export const Route = createFileRoute("/campaigns/highway")({
+  head: () => seoHead("/campaigns/highway"),
   component: HighwayPage,
 });
 
 const ARTIST = [
   {
     t: "WHO HE IS",
-    d: "Highway (@highway2009) is a Seattle-based artist — rapper, storyteller and visual presence. His Monochrome project set the tone: sharp, black-and-white, fashion-forward imagery rolled out across visuals and a limited apparel line. A rising breakout in Seattle's music scene, with clothing brands taking notice.",
+    d: "Highway (@highway2009) is a Seattle rapper who tells stories and cares a lot about how things look. His Monochrome project set the tone with sharp black-and-white imagery that ran across his visuals and a limited apparel line. He's breaking out in Seattle's music scene, and clothing brands are starting to notice.",
   },
   {
     t: "THE COVER",
-    d: "His latest, Forever (Count Fast Millionaire), landed with a cover photographed by Hana. Test shots first, then the direction locked, then the frames — the cover and the content grew from one session.",
+    d: "I photographed the cover for his latest, Forever (Count Fast Millionaire). We did test shots first, settled on the direction, then shot. The cover and the rest of the content all came from that one session.",
   },
   {
     t: "THE LOOK",
-    d: "Dark and grainy. Low light, heavy film grain, high contrast — monochrome, like the music and the clothes are the same thing. Nothing glossy, nothing soft. Street luxury, printed in charcoal.",
+    d: "Dark and grainy. Low light, heavy film grain, high contrast, all in monochrome so the music and the clothes feel like one thing. Nothing glossy or soft. Street luxury in shades of charcoal.",
   },
 ];
 
 const PROCESS = [
   {
     t: "THE OPENING",
-    d: "I arrived at the shoot and he already had the whole concept. So I stayed open — take his creative direction, see what I can do with it.",
+    d: "When I got to the shoot, he already had the whole concept. So I stayed open, took his creative direction and saw what I could do with it.",
   },
   {
     t: "THE TEST SHOTS",
-    d: "I gave him some test shots first — quick edits so he could feel the direction before we committed. He liked what he saw, so we went with it.",
+    d: "I gave him some test shots first, with quick edits so he could see the direction before we committed. He liked them, so we went with it.",
   },
   {
     t: "THE DELIVERY",
-    d: "The frames that came out of that session ended up on his cover and his socials. That's the process: listen, test, lock, deliver.",
+    d: "The photos from that session ended up on his cover and his socials. That's how I like to work: listen, test, decide, deliver.",
   },
 ];
 
@@ -42,6 +45,7 @@ function HighwayPage() {
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -51,7 +55,7 @@ function HighwayPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 88px)", marginTop: 14 }}>
           Highway.
         </h1>
-        <p className="so-micro mt-3">@HIGHWAY2009 · SEATTLE, WA · FOREVER (COUNT FAST MILLIONAIRE) — COVER PHOTO BY HANA</p>
+        <p className="so-micro mt-3">@HIGHWAY2009 · SEATTLE, WA · FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA</p>
         <hr className="so-rule mt-6" />
 
         {/* The artist — tap through */}
@@ -89,7 +93,7 @@ function HighwayPage() {
             <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
               {ARTIST[art].t}
             </p>
-            <p key={art} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
+            <p key={art} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
               {ARTIST[art].d}
             </p>
             <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
@@ -117,29 +121,29 @@ function HighwayPage() {
         <div style={{ marginTop: 44 }}>
           <img
             src="/assets/campaigns/highway-chitos/forever-cover.jpg"
-            alt="Forever (Count Fast Millionaire) — album cover"
+            alt="Forever (Count Fast Millionaire) album cover"
             loading="lazy"
             style={{ width: "100%", maxWidth: 420, display: "block", borderRadius: 14, aspectRatio: "1 / 1", objectFit: "cover" }}
           />
           <p className="so-micro" style={{ marginTop: 10, color: "var(--color-verm)", letterSpacing: "0.14em" }}>
-            FOREVER (COUNT FAST MILLIONAIRE) — COVER PHOTO BY HANA
+            FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA
           </p>
           <div className="mt-3" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a className="so-link-jump" href="https://soundcloud.com/highway2009/sets/forever" target="_blank" rel="noreferrer">
-              FOREVER — SOUNDCLOUD →
+              FOREVER · SOUNDCLOUD →
             </a>
             <a className="so-link-jump" href="https://soundcloud.com/highway2009" target="_blank" rel="noreferrer">
               @HIGHWAY2009 →
             </a>
             <a className="so-link-jump" href="https://www.instagram.com/p/DY9dDCtGy0H/" target="_blank" rel="noreferrer">
-              THE POST — INSTAGRAM →
+              THE POST · INSTAGRAM →
             </a>
           </div>
         </div>
 
         {/* The visuals credit — small, not a headline */}
         <p className="so-micro" style={{ marginTop: 14, color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-          COVER VISUALS BY — TO BE DISCOVERED · CREDITED THE SECOND THEY'RE FOUND
+          COVER VISUALS BY: STILL TRACKING THEM DOWN · CREDIT GOES HERE AS SOON AS I DO
         </p>
 
         {/* My process — tap through */}
@@ -177,7 +181,7 @@ function HighwayPage() {
             <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
               {PROCESS[proc].t}
             </p>
-            <p key={proc} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
+            <p key={proc} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
               {PROCESS[proc].d}
             </p>
             <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
@@ -204,15 +208,15 @@ function HighwayPage() {
         {/* For album covers */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
           <p className="so-micro">FOR YOUR ALBUM COVER</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            This is what the process can look like: you bring the concept —
-            or sometimes we build it together. World building is part of
-            what I do, so the idea can come first and the camera follows.
-            Test shots, direction locked, frames delivered.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            Here's how it can go: you bring the concept, or we build it
+            together. World building is part of what I do, so we can start
+            with the idea and bring the camera in after. Test shots first,
+            then we settle the direction, then I deliver the photos.
           </p>
           <div className="mt-3" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a className="so-link-jump" href="/branding">
-              WORLD BUILDING — BUILD A WORLD FIRST →
+              WORLD BUILDING · BUILD A WORLD FIRST →
             </a>
           </div>
         </div>
@@ -220,21 +224,21 @@ function HighwayPage() {
         {/* The collab */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
           <p className="so-micro">THE COLLABORATION</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            Count Boss — the shoot that brought Highway and CHITO into one
-            frame, styled in the Chitos International monochrome. Two
-            Seattle scenes, one roll of film.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            Count Boss was the shoot that put Highway and CHITO in the same
+            photos, styled in Chitos International monochrome. Two Seattle
+            scenes in one session.
           </p>
           <div className="mt-3">
             <a className="so-link-jump" href="/campaigns/chitos">
-              CHITOS INTERNATIONAL — THE OTHER HALF →
+              CHITOS INTERNATIONAL · THE OTHER HALF →
             </a>
           </div>
         </div>
 
         {/* The set */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE SET — A FEW FRAMES · BY HANA</p>
+          <p className="so-micro">THE SET · A FEW FRAMES · BY HANA</p>
           <div className="so-photo-grid mt-6">
             {[
               { src: "/assets/campaigns/highway-chitos/hc01.jpg", cap: "frame 01" },
@@ -248,7 +252,7 @@ function HighwayPage() {
             ))}
           </div>
           <p className="so-micro" style={{ marginTop: 12, color: "var(--color-stone)" }}>
-            MORE FROM THE SET LIVES ON THE POST — @HIGHWAY2009
+            MORE FROM THE SET ON THE POST · @HIGHWAY2009
           </p>
         </div>
 

@@ -16,9 +16,9 @@ import appMetaJson from "../app-meta.json";
 
 declare const __HF_DESIGN_INSPECTOR__: boolean;
 
-const DEFAULT_TITLE = "Sunday Office";
+const DEFAULT_TITLE = "Sunday Office | Seattle Creative Agency";
 const DEFAULT_DESCRIPTION =
-  "An independent creative agency. Photography-led creative work — good ideas deserve somewhere to go.";
+  "Sunday Office is an independent creative agency built to help you develop your world, starting with the brand and bringing it to life through websites, photography and creative direction.";
 
 type AppMeta = {
   og_title?: string | null;
@@ -72,7 +72,19 @@ function buildHead(meta: AppMeta) {
         : []),
       ...(ogVideo ? [{ property: "og:video", content: ogVideo }] : []),
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Sunday Office", "description": "Seattle creative agency for branding, website design, photography, video, creative direction and social content.", "url": "https://sundayoffice.agency", "email": "hello@sundayoffice.agency", "founder": {"@type": "Person", "name": "Hana Hong", "jobTitle": "Founder + Photographer"}, "address": {"@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "addressCountry": "US"}, "areaServed": [{"@type": "City", "name": "Seattle"}, {"@type": "State", "name": "Washington"}], "sameAs": ["https://www.instagram.com/sundayoffice.ag"], "knowsAbout": ["Branding", "Brand identity", "Website design", "Photography", "Headshots", "Video production", "Creative direction", "Social media content"]}),
+      },
+    ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Pinyon+Script&display=swap",
+      },
       { rel: "stylesheet", href: appCss },
       ...(favicon ? [{ rel: "icon", type: "image/svg+xml", href: favicon }] : []),
     ],
@@ -91,7 +103,7 @@ function NotFoundComponent() {
           The page you are looking for has moved or never existed.
         </p>
         <a className="so-btn so-btn-ghost mt-6" href="/">
-          Back to the office
+          Back to the homepage
         </a>
       </div>
     </div>

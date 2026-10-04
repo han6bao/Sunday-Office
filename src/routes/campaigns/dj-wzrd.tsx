@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
 
 export const Route = createFileRoute("/campaigns/dj-wzrd")({
+  head: () => seoHead("/campaigns/dj-wzrd"),
   component: DjWzrdPage,
 });
 
@@ -20,6 +24,7 @@ function DjWzrdPage() {
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -30,64 +35,63 @@ function DjWzrdPage() {
           DJ WZRD.
         </h1>
         <p className="so-micro mt-3">AT CULTURA · CAPITOL HILL · PHOTOS BY HANA</p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/dj-wzrd/dj-03.jpg" alt="DJ WZRD at Cultura, Capitol Hill Seattle, nightlife photography" pos="center 40%" />
 
         {/* The DJ */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE DJ</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             <strong>DJ WZRD</strong> is a world-touring DJ and producer who
-            plays music that doesn't care about borders — Mexico, Los
-            Angeles, Seattle, Canada, Sacramento — with a set list built on
-            instinct: <em>"If I don't understand the language of a song,
+            plays music across borders (Mexico, Los Angeles, Seattle,
+            Canada, Sacramento) and builds his sets on instinct: <em>"If I don't understand the language of a song,
             I'll still play it if it has a good vibe."</em> He's performed
             at the 10th Anniversary of EDC Mexico, holds a residency at
             Six Flags Mexico, appears on Pitbull's <em>Globalization</em>{" "}
             (Ritmolucion) on SiriusXM and on TV Azteca, and his YouTube
-            has pulled over 16 million views. White frames, gold VZZRD
-            chain, and a crowd-reading superpower.
+            has pulled over 16 million views. He wears white frames and a
+            gold VZZRD chain, and he reads a crowd better than almost
+            anyone.
           </p>
         </div>
 
         {/* The venue */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
-          <p className="so-micro">THE VENUE — CULTURA</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            <strong>Cultura Seattle</strong> — "Seattle's #1 Latin club,"
-            planted in the heart of <strong>Capitol Hill</strong> at{" "}
+          <p className="so-micro">THE VENUE · CULTURA</p>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            <strong>Cultura Seattle</strong> calls itself "Seattle's #1
+            Latin club," and it sits in the heart of <strong>Capitol Hill</strong> at{" "}
             <strong>916 E Pike St</strong>. Reggaeton, dembow, merengue and
             cumbia nights with international DJs, VIP tables, bottle
             service, and lasers through the smoke. This was one of those
-            nights — sold out, and nobody's forgotten it.
+            nights. It sold out, and people still talk about it.
           </p>
         </div>
 
         {/* The night */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE NIGHT</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            Pink and purple light, the place packed, and one guy in white
-            frames up above it all. Hands on the decks, mic pulled in,
-            chain catching the strobe. The halo shot is the one that says
-            it best — the whole night in a single frame — and the room
-            shot underneath just backs it up: packed, loud, nowhere to
-            move.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            Pink and purple light, a packed room, and one guy in white
+            frames up above it all with his hands on the decks, mic pulled
+            in, chain catching the strobe. The halo shot sums up the whole
+            night for me. The room shot underneath backs it up: packed,
+            loud, nowhere to move.
           </p>
         </div>
 
         {/* The promo */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE PROMO</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            He reposted the shot. One tap and the whole night went back
-            out on his feed — booth, crowd, chain, all of it. No caption
-            needed. That's the promo doing its job.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            He reposted the shot, so the whole night went back out on his
+            feed: the booth, the crowd, the chain. It didn't need a
+            caption. That's what good promo photos are for.
           </p>
         </div>
 
         {/* Frames — hero halo, room under, then the middle four */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES — 6 · BY HANA</p>
+          <p className="so-micro">THE FRAMES · 6 · BY HANA</p>
 
           {/* hero */}
           <button
@@ -104,7 +108,7 @@ function DjWzrdPage() {
               style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover", display: "block" }}
             />
             <span className="so-photo-cap" style={{ fontSize: 12 }}>
-              THE HERO — {PHOTOS[5].cap.toUpperCase()} · CLICK TO EXPAND
+              THE HERO · {PHOTOS[5].cap.toUpperCase()} · CLICK TO EXPAND
             </span>
           </button>
 
@@ -123,7 +127,7 @@ function DjWzrdPage() {
               style={{ width: "100%", aspectRatio: "21 / 9", objectFit: "cover", display: "block" }}
             />
             <span className="so-photo-cap" style={{ fontSize: 12 }}>
-              THE ROOM — {PHOTOS[0].cap.toUpperCase()}
+              THE ROOM · {PHOTOS[0].cap.toUpperCase()}
             </span>
           </button>
 
@@ -139,7 +143,7 @@ function DjWzrdPage() {
               >
                 <img src={ph.src} alt={ph.cap} loading="lazy" style={{ aspectRatio: "4 / 5", objectFit: "cover" }} />
                 <span className="so-photo-cap">
-                  {String(2 + i).padStart(2, "0")} · {ph.cap}
+                  {String(2 + i).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
                 </span>
               </button>
             ))}

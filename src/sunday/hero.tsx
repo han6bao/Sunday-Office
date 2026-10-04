@@ -1,12 +1,6 @@
 "use client";
 
-import { useRef, type CSSProperties, type ReactNode } from "react";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { type CSSProperties, type ReactNode } from "react";
 
 /* Staggered entrance on load — the hero typesets itself as you arrive. */
 function Rise({ i = 0, children }: { i?: number; children: ReactNode }) {
@@ -17,110 +11,51 @@ function Rise({ i = 0, children }: { i?: number; children: ReactNode }) {
   );
 }
 
-/* Each letter rises in sequence — the masthead typesets itself. */
-function Letters({ text }: { text: string }) {
-  return (
-    <>
-      {text.split("").map((ch, i) => (
-        <span
-          key={i}
-          className="so-let"
-          style={{ "--i": i } as CSSProperties}
-          aria-hidden={ch === " "}
-        >
-          {ch === " " ? "\u00A0" : ch}
-        </span>
-      ))}
-    </>
-  );
-}
-
-/**
- * The opening — petite typography, one wide future-office plate, and quiet
- * scroll interplay. Nothing shouts: as the visitor scrolls, the text drifts
- * up and fades gently, the plate settles into place and then recedes, and
- * the next section takes over on its own.
- */
 export function Hero() {
-  const ref = useRef<HTMLElement | null>(null);
-  const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const textOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -64]);
-  const plateOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.35, 0.85, 1],
-    [0.92, 1, 1, 0]
-  );
-  const plateScale = useTransform(scrollYProgress, [0, 0.4], [0.98, 1]);
-  const plateY = useTransform(scrollYProgress, [0.6, 1], [0, -26]);
-
   return (
-    <section id="top" className="so-hero" ref={ref}>
-      <div className="so-shell">
-        <motion.div
-          className="so-hero-copy"
-          style={reduce ? undefined : { opacity: textOpacity, y: textY }}
-        >
-          <h1 className="so-hero-title so-emboss">
-            <Letters text="Sunday" />
-            &nbsp;
-            <Letters text="Office." />
-          </h1>
-          <Rise i={1}>
-            <p className="so-hero-locale">
-              Independent creative agency · Seattle / Tacoma + beyond
-            </p>
-          </Rise>
-          <Rise i={2}>
-            <p className="so-hero-sub">
-              Good ideas deserve somewhere to go.
-            </p>
-          </Rise>
-        </motion.div>
-
-        <motion.figure
-          className="so-hero-mount"
-          aria-label="The Sunday Office"
-          style={
-            reduce
-              ? undefined
-              : { opacity: plateOpacity, scale: plateScale, y: plateY }
-          }
-        >
-          <div className="so-hm-plate" aria-hidden="true">
-            <img
-              src="/assets/work/hero-night-desk.jpg"
-              alt=""
-              loading="lazy"
-              style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center 38%",
-                display: "block",
-              }}
-            />
-          </div>
-          <figcaption className="so-hm-cap">
-            <span>The Office</span>
-            <span className="sep" aria-hidden="true">
-              /
-            </span>
-            <span>Seattle</span>
-            <span className="sep" aria-hidden="true">
-              /
-            </span>
-            <span>Established 2026</span>
-          </figcaption>
-        </motion.figure>
+    <section id="top" className="so-cover">
+      <img
+        className="so-cover-img"
+        src="/assets/work/hero-night-desk.jpg"
+        alt="Hana at her desk at night, camera beside the keyboard"
+      />
+      <span className="so-cover-shade" aria-hidden />
+      <div className="so-cover-inner">
+        <h1 className="so-cover-title">
+          {/* The script cuts a clear gap through SUNDAY, so the photo shows through. */}
+          <span className="sr-only">Sunday Office, a Seattle creative agency</span>
+          <svg className="so-cover-mark" viewBox="0 0 1000 330" aria-hidden="true" focusable="false">
+            <defs>
+              <mask id="so-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="1000" height="330">
+                <rect x="0" y="0" width="1000" height="330" fill="#fff" />
+                <text x="500" y="250" textAnchor="middle" className="so-mark-script" fill="#000" stroke="#000" strokeWidth="10" strokeLinejoin="round">
+                  Office
+                </text>
+              </mask>
+            </defs>
+            <text x="508" y="170" textAnchor="middle" className="so-mark-caps" mask="url(#so-cut)">
+              SUNDAY
+            </text>
+            <text x="500" y="250" textAnchor="middle" className="so-mark-script">
+              Office
+            </text>
+          </svg>
+        </h1>
+        <Rise i={2}>
+          <p className="so-cover-sub">
+            A Seattle creative agency building brands, websites and imagery
+            for the businesses worth knowing
+          </p>
+        </Rise>
+        <Rise i={3}>
+          <a href="#office-hours" className="so-cover-btn">
+            Start a project
+          </a>
+        </Rise>
       </div>
+      <a href="#build" className="so-cover-down" aria-label="Scroll down">
+        <span aria-hidden>↓</span>
+      </a>
     </section>
   );
 }

@@ -63,7 +63,12 @@ export function Parallax({
 }
 
 /** THE DARK FRAME — a draggable / swipeable horizontal viewer. */
-export function DarkGallery({ items }: { items: Work[] }) {
+export function DarkGallery({ items: all }: { items: Work[] }) {
+  const niches = Array.from(new Set(all.map((w) => w.niche).filter(Boolean))) as string[];
+  const [niche, setNiche] = useState<string | null>(null);
+  const NOW = "__now";
+  const hasNow = all.some((w) => w.status === "In progress");
+  const items = niche === NOW ? all.filter((w) => w.status === "In progress") : niche ? all.filter((w) => w.niche === niche) : all;
   const trackRef = useRef<HTMLDivElement>(null);
   const [grabbing, setGrabbing] = useState(false);
   const [detail, setDetail] = useState<number | null>(null);
@@ -102,10 +107,76 @@ export function DarkGallery({ items }: { items: Work[] }) {
 
   const w = detail !== null ? items[detail] : undefined;
 
+  const [ends, setEnds] = useState({ start: true, end: false });
+  const syncEnds = () => {
+    const el = trackRef.current;
+    if (!el) return;
+    setEnds({
+      start: el.scrollLeft <= 4,
+      end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 4,
+    });
+  };
+  useEffect(() => {
+    syncEnds();
+    const el = trackRef.current;
+    if (!el) return;
+    el.addEventListener("scroll", syncEnds, { passive: true });
+    window.addEventListener("resize", syncEnds);
+    return () => {
+      el.removeEventListener("scroll", syncEnds);
+      window.removeEventListener("resize", syncEnds);
+    };
+  }, [niche]);
+  const nudge = (dir: 1 | -1) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>(".so-workcard");
+    const step = card ? card.offsetWidth + 32 : el.clientWidth * 0.8;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
+  };
+
+  const pick = (n: string | null) => {
+    setNiche(n);
+    setDetail(null);
+    if (trackRef.current) trackRef.current.scrollLeft = 0;
+  };
+
   return (
     <>
+    <div className="so-shell so-gallery-bar">
+      {niches.length > 1 && (
+        <div className="so-niche-row" role="group" aria-label="Filter work">
+          <button type="button" className={"so-niche" + (niche === null ? " is-on" : "")} aria-pressed={niche === null} onClick={() => pick(null)}>
+            All
+          </button>
+          {niches.map((n) => (
+            <button key={n} type="button" className={"so-niche" + (niche === n ? " is-on" : "")} aria-pressed={niche === n} onClick={() => pick(n)}>
+              {n}
+            </button>
+          ))}
+          {hasNow && (
+            <button type="button" className={"so-niche so-niche-now" + (niche === NOW ? " is-on" : "")} aria-pressed={niche === NOW} onClick={() => pick(NOW)}>
+              <span className="so-niche-dot" aria-hidden /> On the desk now
+            </button>
+          )}
+        </div>
+      )}
+      <div className="so-gallery-nav">
+        <button type="button" className="so-gallery-btn" aria-label="Previous" disabled={ends.start} onClick={() => nudge(-1)}>
+          ←
+        </button>
+        <button type="button" className="so-gallery-btn" aria-label="Next" disabled={ends.end} onClick={() => nudge(1)}>
+          →
+        </button>
+      </div>
+    </div>
     <div
       ref={trackRef}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === "ArrowRight") { e.preventDefault(); nudge(1); }
+        if (e.key === "ArrowLeft") { e.preventDefault(); nudge(-1); }
+      }}
       className={"so-gallery-scroll" + (grabbing ? " grabbing" : "")}
       onPointerDown={(e) => {
         const el = trackRef.current;
@@ -114,7 +185,7 @@ export function DarkGallery({ items }: { items: Work[] }) {
         setGrabbing(true);
       }}
       role="region"
-      aria-label="Featured work — drag to scroll"
+      aria-label="Featured work. Drag to scroll"
     >
       <div className="so-gallery-track">
         {items.map((w, i) => {
@@ -154,6 +225,7 @@ export function DarkGallery({ items }: { items: Work[] }) {
                 ) : (
                   <FramePlate motif={w.motif} ratio="tall" caption={w.file} />
                 )}
+                {w.status && <span className={"so-status so-status-on-card" + (w.status === "Launched" ? " is-live" : "")}>{w.status}</span>}
                 <span className="so-workcard-hover" aria-hidden>
                   <span>View project</span>
                   <span className="caret" aria-hidden>
@@ -162,7 +234,7 @@ export function DarkGallery({ items }: { items: Work[] }) {
                 </span>
               </div>
             <div className="so-workcard-cap">
-              <span className="so-micro">{w.file}</span>
+              <span className="so-micro">{w.niche ? w.niche.toUpperCase() : w.file}</span>
               <span className="t">{w.type ?? w.service}</span>
               <span className="c" style={{ fontWeight: 700, letterSpacing: "0.06em", marginTop: 2 }}>
                 {w.client}
@@ -196,7 +268,7 @@ export function DarkGallery({ items }: { items: Work[] }) {
                 e.preventDefault();
                 setDetail(i);
               }}
-              aria-label={`Project ${w.client} — open details`}
+              aria-label={`Open details for ${w.client}`}
             >
               {inner}
             </a>
@@ -380,7 +452,16 @@ export function ProjectFinder() {
           </h3>
           <p style={{ maxWidth: "52ch", marginTop: 16 }}>{rec.copy}</p>
           <div className="so-wiz-answer-actions">
-            <a href="#office-hours" className="so-btn">
+            <a
+              href="#inquiry"
+              className="so-btn"
+              onClick={(e) => {
+                const el = document.getElementById("inquiry");
+                if (!el) return;
+                e.preventDefault();
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
+            >
               {rec.cta} →
             </a>
             <button
@@ -399,8 +480,7 @@ export function ProjectFinder() {
 
       {!started && !allAnswered && (
         <p className="eyebrow-cap">
-          Not sure what you need? That is kind of our job. Answer a few
-          questions and we will point you somewhere useful.
+          Answer three quick questions and we'll point you somewhere useful.
         </p>
       )}
     </div>
@@ -469,6 +549,46 @@ export function LikeTag({
 
 /** THE DIRECTORY — an openable index. Click a category to open it; the
    header darkens when it is open; click again to close. Nothing else. */
+/* Where each Directory category (and its items) opens to. */
+const directoryLinks: Record<string, { href: string; label: string; items?: Record<string, string> }> = {
+  "Creative Direction": { href: "/creative-direction-content", label: "Open Creative Direction" },
+  Photography: {
+    href: "/photography",
+    label: "Open Photography",
+    items: {
+      Commercial: "/photography/brands",
+      Editorial: "/photography/creative",
+      Portrait: "/photography/people",
+      Fashion: "/photography/creative",
+      "Food + Hospitality": "/photography/brands",
+      Product: "/photography/brands",
+      Headshots: "/headshots",
+      "Model Digitals": "/headshots",
+    },
+  },
+  Digital: {
+    href: "/websites",
+    label: "Open Websites + Digital",
+    items: { Websites: "/websites", "Landing Pages": "/websites" },
+  },
+  "Campaigns + Content": {
+    href: "/creative-direction-content",
+    label: "Open Campaigns + Content",
+    items: {
+      "Social Content": "/creative-direction-content",
+      "Video / Reels": "/moving-image",
+      Music: "/moving-image",
+      Commercials: "/moving-image",
+    },
+  },
+  Identity: {
+    href: "/logo-identity",
+    label: "Open Identity",
+    items: { "Select Brand Direction": "/branding", "Select Logo Work": "/logo-identity" },
+  },
+  "Who We Work With": { href: "#finder", label: "Find what you need" },
+};
+
 export function DirectoryAccordion() {
   const [open, setOpen] = useState<Record<number, boolean>>({});
   return (
@@ -495,11 +615,24 @@ export function DirectoryAccordion() {
             </button>
             {isOpen && (
               <div className="so-dir-body">
-                {col.items.map((it) => (
-                  <div key={it} className="so-dir-item">
-                    {it}
-                  </div>
-                ))}
+                {col.items.map((it) => {
+                  const href = directoryLinks[col.head]?.items?.[it];
+                  return href ? (
+                    <a key={it} href={href} className="so-dir-item so-dir-item-link">
+                      <span>{it}</span>
+                      <span className="arr" aria-hidden>→</span>
+                    </a>
+                  ) : (
+                    <div key={it} className="so-dir-item">
+                      {it}
+                    </div>
+                  );
+                })}
+                {directoryLinks[col.head] && (
+                  <a href={directoryLinks[col.head].href} className="so-dir-room">
+                    {directoryLinks[col.head].label} <span className="arr" aria-hidden>→</span>
+                  </a>
+                )}
               </div>
             )}
           </div>
@@ -522,12 +655,10 @@ const inquiryFields: Array<{
   { id: "email", label: "Email", type: "input", placeholder: "you@studio.com", col: "half" },
   { id: "business", label: "Business / Project", type: "input", placeholder: "What are we calling it", col: "half" },
   { id: "website", label: "Website / Instagram", type: "input", placeholder: "link", col: "half" },
-  { id: "based", label: "Where are you based?", type: "input", placeholder: "City", col: "half" },
-  { id: "timeline", label: "Ideal timeline", type: "input", placeholder: "This month / next quarter / whenever", col: "half" },
-  { id: "budget", label: "Project budget", type: "input", placeholder: "Range, if you have one", col: "half" },
   { id: "need", label: "What do you think you need?", type: "select", col: "half" },
-  { id: "about", label: "Tell us a little about what you're working on.", type: "textarea", col: "full" },
-  { id: "else", label: "Anything else we should know?", type: "textarea", col: "full" },
+  { id: "budget", label: "Investment range", type: "select", col: "half", options: ["Under $2,500", "$2,500 to $5,000", "$5,000 to $10,000", "$10,000+", "Not sure yet"] },
+  { id: "timeline", label: "Ideal timeline", type: "input", placeholder: "This month, next season, whenever it's right", col: "full" },
+  { id: "about", label: "Tell me about it.", type: "textarea", col: "full" },
 ];
 
 export function InquiryForm() {
@@ -563,14 +694,10 @@ export function InquiryForm() {
   // "Not sure" gets a gentle prompt in the message area.
   const aboutPlaceholder =
     needPrefill.includes("Not sure")
-      ? "Tell us a little about what you're working on — even a rough thought helps."
-      : "Tell us a little about what you're working on.";
+      ? "What you're working on. Even a rough idea helps."
+      : "What you're making, what's not working, what you wish it looked like.";
 
   const inquiryNeedList = needOptions;
-  const scrollToFinder = () => {
-    const el = document.getElementById("finder");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -586,12 +713,12 @@ export function InquiryForm() {
           email: data.email,
           business: data.business,
           website: data.website,
-          based: data.based,
+          based: data.based ?? "",
           timeline: data.timeline,
           budget: data.budget,
           need: data.need,
           about: data.about,
-          else: data.else,
+          else: data.else ?? "",
         },
       });
       if (result.ok) {
@@ -600,11 +727,11 @@ export function InquiryForm() {
       }
       setSendError(
         result.notConfigured
-          ? "The office inbox isn't connected just yet — please email hello@sundayoffice.studio directly."
-          : result.error ?? "Something went wrong — please email us directly at hello@sundayoffice.studio.",
+          ? "The form isn't connected yet. Please email hello@sundayoffice.agency directly."
+          : result.error ?? "Something went wrong. Please email us at hello@sundayoffice.agency.",
       );
     } catch {
-      setSendError("The office can't receive messages right now — please email hello@sundayoffice.studio directly.");
+      setSendError("The form can't send right now. Please email hello@sundayoffice.agency directly.");
     } finally {
       setSending(false);
     }
@@ -615,12 +742,11 @@ export function InquiryForm() {
       <div className="so-finder-answer" data-screenshot-safe>
         <p className="so-micro so-micro-red">received</p>
         <h3 className="so-serif" style={{ fontSize: "clamp(22px,3vw,34px)", marginTop: 10 }}>
-          Thank you — the office will be in touch.
+          Thank you. We'll be in touch soon.
         </h3>
         <p style={{ maxWidth: "48ch", marginTop: 14 }}>
-          We read every inquiry and reply within a few days. If it is
-          time-sensitive, the quickest way to us is the form above or a note to
-          the office.
+          We read every message and reply within a few days. If it's
+          urgent, email hello@sundayoffice.agency.
         </p>
         <button className="so-btn so-btn-ghost mt-6" onClick={() => setSent(false)}>
           Send another
@@ -695,7 +821,7 @@ export function InquiryForm() {
               <option value="" disabled>
                 Choose one
               </option>
-              {inquiryNeedList.map((o) => (
+              {(f.options ?? inquiryNeedList).map((o) => (
                 <option key={o} value={o}>
                   {o}
                 </option>
@@ -737,9 +863,9 @@ export function InquiryForm() {
         const filled = inquiryFields.filter((fld) => vals[fld.id]?.trim());
         return (
           <div className="so-wiz-review" data-screenshot-safe>
-            <p className="so-micro">YOUR ANSWERS — CHECK BEFORE YOU SEND</p>
+            <p className="so-micro">CHECK YOUR ANSWERS BEFORE YOU SEND</p>
             {filled.length === 0 ? (
-              <p className="so-micro">Nothing filled in yet — a quick hello is fine.</p>
+              <p className="so-micro">Nothing filled in yet. A quick hello is fine.</p>
             ) : (
               <div className="so-wiz-review-rows">
                 {filled.map((fld) => (
@@ -759,7 +885,7 @@ export function InquiryForm() {
                 ← Edit answers
               </button>
               <button type="submit" className="so-btn" disabled={sending}>
-                {sending ? "Sending…" : "Send to the office"} <span aria-hidden>→</span>
+                {sending ? "Sending…" : "Send"} <span aria-hidden>→</span>
               </button>
             </div>
           </div>
@@ -768,7 +894,7 @@ export function InquiryForm() {
       <div className="so-form-submit">
         {!wizard && (
           <button type="submit" className="so-btn" disabled={sending}>
-            {sending ? "Sending…" : "Send to the office"} <span aria-hidden>→</span>
+            {sending ? "Sending…" : "Send"} <span aria-hidden>→</span>
           </button>
         )}
         {mobile ? (
@@ -784,13 +910,7 @@ export function InquiryForm() {
           </button>
         ) : null}
         <p className="so-micro mt-4">
-          <button
-            type="button"
-            className="so-link-jump"
-            onClick={scrollToFinder}
-          >
-            Not sure what you need? Take the project finder ↑
-          </button>
+          Or email <a className="so-link-jump" href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>
         </p>
       </div>
     </form>
@@ -1011,6 +1131,10 @@ export function NavState() {
     const onScroll = () => {
       const v = window.scrollY > 24;
       setScrolled((prev) => (prev === v ? prev : v));
+      // Over the full-screen cover photo, the bar goes clear.
+      const cover = document.querySelector(".so-cover");
+      const nav = document.querySelector(".so-nav");
+      if (nav) nav.classList.toggle("is-on-cover", !!cover && window.scrollY < window.innerHeight - 80);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

@@ -1,254 +1,110 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { seoHead } from "../sunday/seo";
+import { SiteBar } from "../sunday/site-bar";
+import { BackHome, ListBlock, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/moving-image")({
+  head: () => seoHead("/moving-image"),
   component: MovingImagePage,
 });
 
-const LANES = [
-  {
-    t: "ARTISTS + MUSIC",
-    sub: "MUSIC VIDEOS · VISUALIZERS · RELEASE CONTENT",
-    img: "/assets/campaigns/jaydyn-f/jd-09.jpg",
-    h: "/campaigns/jaydyn-f",
-  },
-  {
-    t: "BRANDS + CAMPAIGNS",
-    sub: "BRAND FILMS · CAMPAIGN MOTION · SOCIAL",
-    img: "/assets/campaigns/exhibition/exh8.jpg",
-    h: "/campaigns/exhibition",
-  },
-  {
-    t: "EVENTS + CULTURE",
-    sub: "RECAPS · PERFORMANCES · DOCUMENTARY MOMENTS",
-    img: "/assets/campaigns/leon-thomas/night-02.jpg",
-    h: "/campaigns/leon-thomas",
-  },
+const KINDS = [
+  { t: "Artists + music", d: "Music video support, visualizers, behind the scenes and release content that keeps going between drops." },
+  { t: "Brands + campaigns", d: "Commercials, brand films and campaign cuts for your site and your feed." },
+  { t: "Events + culture", d: "Recaps, performances and the moments people want to relive." },
 ];
 
-const NOTES = [
-  { t: "START WITH THE IDEA", d: "Not every project needs motion. When it does, it should have a reason to move." },
-  { t: "ONE SHOOT, MORE THAN ONE CUT", d: "Hero film, vertical cuts, teasers, loops and still frames can come from the same production." },
-  { t: "POLISHED OR RAW", d: "Clean commercial work or something stranger. The treatment follows the world." },
+const INCLUDED = [
+  { t: "The idea", d: "Not every project needs motion. When it does, it should have a reason to move." },
+  { t: "Filming", d: "On location or in the studio, planned around the shots that matter." },
+  { t: "Editing + color", d: "Cut, colored and finished so it feels like your brand." },
+  { t: "Cuts for everywhere", d: "One shoot, many pieces: the main film, vertical cuts, teasers, loops and stills." },
+  { t: "Sound on or off", d: "Captions and pacing that work whether people watch muted or with the sound up." },
 ];
 
-const LINKS = [
-  { t: "Creative Direction →", h: "/creative-direction-content", d: "The idea behind it" },
-  { t: "Photography →", h: "/photography", d: "The stills beside it" },
-  { t: "Social + Content →", h: "/creative-direction-content", d: "Where it keeps moving" },
+const STEPS = [
+  {
+    t: "The idea",
+    d: "What it should make people feel.",
+    more: "We start with the feeling and where it will live. A 15-second reel and a homepage film are different jobs, so the idea comes first.",
+  },
+  {
+    t: "Plan",
+    d: "Shots, place, timing.",
+    more: "A simple plan: the key shots, the location, the look, and how many cuts we'll need for each platform.",
+  },
+  {
+    t: "Shoot",
+    d: "Video and stills together.",
+    more: "We film, and grab stills along the way, so one day of production covers more than one need.",
+  },
+  {
+    t: "Edit",
+    d: "Cut, color, sound.",
+    more: "I edit, color and finish it, polished and commercial or rawer and stranger, whatever the project calls for.",
+  },
+  {
+    t: "Cut for everywhere",
+    d: "Ready to post.",
+    more: "You get the main piece plus the versions you need: vertical, short teasers, loops and stills, so it keeps working long after it's posted.",
+  },
 ];
 
 function MovingImagePage() {
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
-      <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
-        <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
-          <span className="arr">←</span> Back to Sunday Office
-        </a>
+      <SiteBar />
+      <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <ServiceIntro
+          label="SERVICES · MOVING IMAGE · SEATTLE"
+          title="Moving Image."
+          lead="Commercials, music content, brand films and event recaps. Video for when the idea needs to move, made to keep working long after it's posted."
+          aside={
+            <>
+              Often paired with <a className="so-bw-inline" href="/photography">Photography →</a> and{" "}
+              <a className="so-bw-inline" href="/creative-direction-content">Creative Direction →</a>
+            </>
+          }
+          jumps={[
+            { t: "What you get", h: "#get" },
+            { t: "How it works", h: "#how" },
+            { t: "Work", h: "#work" },
+          ]}
+        />
 
-        <p className="so-micro so-micro-red">SERVICES · MOVING IMAGE</p>
-        <h1 className="so-serif" style={{ fontSize: "clamp(44px, 8vw, 104px)", marginTop: 14 }}>
-          Moving Image.
-        </h1>
-        <p className="so-micro mt-3">MOTION, ONE CAPABILITY INSIDE A BIGGER CREATIVE SYSTEM</p>
+        <figure className="so-mi-film">
+          <video controls playsInline preload="metadata" poster="/assets/campaigns/chutneys/commercial-poster.jpg">
+            <source src="/assets/campaigns/chutneys/commercial.mp4" type="video/mp4" />
+          </video>
+          <figcaption>
+            <span className="so-micro">A COMMERCIAL I MADE FOR CHUTNEYS BELLEVUE · PRESS PLAY</span>
+            <a className="so-micro" href="/campaigns/chutneys">SEE THE PROJECT →</a>
+          </figcaption>
+        </figure>
 
-        <div style={{ marginTop: 24, maxWidth: "58ch" }}>
-          <p style={{ margin: 0, lineHeight: 1.75 }}>
-            Music videos, brand films, event recaps, content for the feed —
-            motion that moves the world around it.
-          </p>
-        </div>
+        <ListBlock label="WHAT IT'S FOR" title="Three kinds of moving image." rows={KINDS} />
 
-        {/* The featured film — big 16:9 */}
-        <div style={{ marginTop: 40 }}>
-          <a
-            href="/campaigns/jaydyn-f"
-            style={{ position: "relative", display: "block", textDecoration: "none", borderRadius: 20, overflow: "hidden", border: "1px solid var(--color-sepia)" }}
-          >
-            <img
-              src="/assets/campaigns/jaydyn-f/jd-07.jpg"
-              alt="Jaydyn F. — in motion"
-              loading="lazy"
-              style={{ width: "100%", aspectRatio: "16 / 9", objectFit: "cover", display: "block" }}
-            />
-            <span
-              style={{
-                position: "absolute",
-                inset: 0,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                background: "rgba(0,0,0,0.12)",
-              }}
-            >
-              <span
-                style={{
-                  width: 74,
-                  height: 74,
-                  borderRadius: 999,
-                  background: "#f5f2ea",
-                  display: "grid",
-                  placeItems: "center",
-                  boxShadow: "0 6px 24px rgba(0,0,0,0.25)",
-                }}
-              >
-                <span
-                  style={{
-                    width: 0,
-                    height: 0,
-                    borderLeft: "22px solid #131210",
-                    borderTop: "14px solid transparent",
-                    borderBottom: "14px solid transparent",
-                    marginLeft: 5,
-                  }}
-                />
-              </span>
-            </span>
-          </a>
-          <p className="so-micro" style={{ marginTop: 10, color: "var(--color-stone)", letterSpacing: "0.12em" }}>
-            STILL FROM · JAYDYN F. — IN MOTION · BY HANA
-          </p>
-        </div>
+        <ListBlock
+          id="get"
+          label="WHAT YOU GET"
+          title="One shoot, more than one cut."
+          note="Polished or raw, the style follows the project."
+          rows={INCLUDED}
+        />
 
-        {/* Three lanes */}
-        <div style={{ marginTop: 56 }}>
-          <div className="so-cases" style={{ gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 14 }}>
-            {LANES.map((l) => (
-              <a
-                key={l.t}
-                href={l.h}
-                style={{ display: "block", textDecoration: "none", color: "inherit" }}
-              >
-                <img
-                  src={l.img}
-                  alt={l.t}
-                  loading="lazy"
-                  style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", borderRadius: 16, display: "block", border: "1px solid var(--color-sepia)" }}
-                />
-                <p className="so-micro" style={{ marginTop: 12, letterSpacing: "0.14em", fontWeight: 700 }}>
-                  {l.t}
-                </p>
-                <p className="so-micro" style={{ marginTop: 6, color: "var(--color-stone)", letterSpacing: "0.08em", lineHeight: 1.7 }}>
-                  {l.sub}
-                </p>
-              </a>
-            ))}
-          </div>
-        </div>
+        <ServiceSteps steps={STEPS} />
 
-        {/* Editorial notes */}
-        <div style={{ marginTop: 56, maxWidth: "72ch" }}>
-          {NOTES.map((n) => (
-            <div key={n.t} style={{ borderTop: "1px solid var(--color-sepia)", padding: "16px 2px 14px" }}>
-              <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.14em", fontWeight: 700 }}>
-                {n.t}
-              </p>
-              <p style={{ margin: "8px 0 0", lineHeight: 1.78 }}>
-                {n.d}
-              </p>
-            </div>
-          ))}
-        </div>
+        <WorkCards
+          label="VIDEO I'VE MADE"
+          items={[
+            { t: "Chutneys Bellevue", w: "Commercial + photos", d: "A commercial and promo photos for a North Indian restaurant.", img: "/assets/campaigns/chutneys/ch-01.jpg", h: "/campaigns/chutneys" },
+            { t: "Jaydyn F.", w: "Release content", d: "Behind the scenes and short clips around his music.", img: "/assets/campaigns/jaydyn-f/jd-07.jpg", h: "/campaigns/jaydyn-f" },
+          ]}
+        />
 
-        {/* Motion doesn't live alone */}
-        <div style={{ marginTop: 56 }}>
-          <p className="so-micro">MOTION DOESN'T LIVE ALONE.</p>
-          <div style={{ marginTop: 6, display: "grid", gap: 0 }}>
-            {LINKS.map((r) => (
-              <a
-                key={r.t}
-                href={r.h}
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 12,
-                  alignItems: "baseline",
-                  justifyContent: "space-between",
-                  textDecoration: "none",
-                  color: "inherit",
-                  borderTop: "1px solid var(--color-sepia)",
-                  padding: "16px 2px 14px",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--color-verm)")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--color-sepia)")}
-              >
-                <span className="so-serif" style={{ fontSize: "clamp(18px, 2.2vw, 24px)" }}>
-                  {r.t}
-                </span>
-                <span className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.12em" }}>
-                  {r.d}
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
+        <ServiceCta current="moving" title="Have something that should move?" sub="ITS OWN PROJECT, OR PART OF A BIGGER CAMPAIGN." />
 
-        {/* CTA */}
-        <div
-          style={{
-            marginTop: 56,
-            padding: "26px 28px",
-            borderRadius: 18,
-            background: "#131210",
-            color: "#f5f2ea",
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 18,
-          }}
-        >
-          <div>
-            <p className="so-serif" style={{ fontSize: "clamp(20px, 2.6vw, 28px)", margin: 0, color: "#f5f2ea", lineHeight: 1.25 }}>
-              HAVE SOMETHING THAT SHOULD MOVE?
-            </p>
-            <p className="so-micro" style={{ marginTop: 8, color: "rgba(245,242,234,0.85)", letterSpacing: "0.08em", lineHeight: 1.8, maxWidth: "46ch" }}>
-              MOTION CAN LIVE INSIDE A LARGER CAMPAIGN OR STAND ON ITS OWN
-              WHEN THE IDEA CALLS FOR IT.
-            </p>
-          </div>
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
-            <a
-              href="/#office-hours"
-              style={{
-                textDecoration: "none",
-                margin: 0,
-                background: "#f5f2ea",
-                color: "#131210",
-                borderRadius: 999,
-                padding: "11px 20px",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                fontSize: 12,
-                whiteSpace: "nowrap",
-              }}
-            >
-              ADD MOTION TO A PROJECT →
-            </a>
-            <a
-              href="/photography"
-              style={{
-                textDecoration: "none",
-                margin: 0,
-                border: "1px solid #f5f2ea",
-                color: "#f5f2ea",
-                borderRadius: 999,
-                padding: "11px 20px",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                fontSize: 12,
-                whiteSpace: "nowrap",
-              }}
-            >
-              THE WORK →
-            </a>
-          </div>
-        </div>
-
-        <div style={{ marginTop: 56 }}>
-          <a href="/" className="so-arrow">
-            <span className="arr">←</span> Back to Sunday Office
-          </a>
-        </div>
+        <BackHome />
       </div>
     </div>
   );

@@ -1,15 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteBar } from "../sunday/site-bar";
 import { useState } from "react";
 
 export const Route = createFileRoute("/private")({
   component: PrivateRoom,
+  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
 });
 
 /* The staff key — change it any time. */
 const PASSWORD = "sundayoffice";
 
 const FILES: { t: string; h: string }[] = [
-  { t: "Angie Tiara Beauty", h: "/campaigns/angie-tiara-beauty" },
+  { t: "Selaras Haus by Angie Tiara", h: "/campaigns/selaras-haus" },
   { t: "Avery Tien", h: "/campaigns/avery-tien" },
   { t: "Bar Bistro", h: "/campaigns/bar-bistro" },
   { t: "Big Baby Gucci", h: "/campaigns/big-baby-gucci" },
@@ -19,19 +21,15 @@ const FILES: { t: string; h: string }[] = [
   { t: "DJ Wzrd", h: "/campaigns/dj-wzrd" },
   { t: "Essential Brows Studio", h: "/campaigns/essential-brows-studio" },
   { t: "Exhibition", h: "/campaigns/exhibition" },
-  { t: "Green Grillz · Nine Vicious", h: "/campaigns/green-grillz" },
+  { t: "Nine Vicious × Custom Grillz", h: "/campaigns/green-grillz" },
   { t: "Highway", h: "/campaigns/highway" },
   { t: "Jaydyn F.", h: "/campaigns/jaydyn-f" },
   { t: "Jazmin Events", h: "/campaigns/jazmins-events" },
   { t: "Kenshi Killz", h: "/campaigns/kenshi-killz" },
   { t: "Leon Thomas", h: "/campaigns/leon-thomas" },
   { t: "Itz Pz.", h: "/campaigns/paradice" },
-  { t: "ReelClip", h: "/campaigns/reelclip" },
-  { t: "Rockstar Flaco", h: "/campaigns/rockstar-flaco" },
-  { t: "Soniq Reign", h: "/campaigns/soniqreign" },
-  { t: "Soul Social · Public House", h: "/campaigns/soul-social" },
+  { t: "Public House · Venue photography", h: "/campaigns/public-house" },
   { t: "Still Different", h: "/campaigns/still-different" },
-  { t: "The Issue", h: "/campaigns/the-issue" },
 ];
 
 const ROOMS: { t: string; h: string }[] = [
@@ -61,16 +59,17 @@ function PrivateRoom() {
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <p className="so-micro so-micro-red">PRIVATE FILE ROOM · STAFF ONLY</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
           The File Room.
         </h1>
-        <p className="so-micro mt-3">EVERY PORTFOLIO PAGE, ONE PLACE — BEHIND THE LOCK.</p>
+        <p className="so-micro mt-3">EVERY PORTFOLIO PAGE, ONE PLACE · BEHIND THE LOCK.</p>
 
         {!authed ? (
           <div style={{ marginTop: 40, maxWidth: 420 }}>
-            <p style={{ lineHeight: 1.75, color: "var(--color-stone)" }}>
+            <p style={{ lineHeight: 1.55, color: "var(--color-stone)" }}>
               Type the key to open every archive and case file.
             </p>
             <div style={{ display: "flex", gap: 10, marginTop: 16 }}>
@@ -117,14 +116,14 @@ function PrivateRoom() {
             </div>
             {err && (
               <p className="so-micro" style={{ marginTop: 12, color: "var(--color-verm)", letterSpacing: "0.14em" }}>
-                NOPE — TRY AGAIN.
+                NOPE. TRY AGAIN.
               </p>
             )}
           </div>
         ) : (
           <>
             <div style={{ marginTop: 44 }}>
-              <p className="so-micro">THE CASE FILES — 22</p>
+              <p className="so-micro">THE CASE FILES · 22</p>
               <div style={{ marginTop: 10, display: "grid", gap: 0 }}>
                 {FILES.map((f, i) => (
                   <a

@@ -1,309 +1,143 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
+import { TapStory } from "../../sunday/service-kit";
 
 export const Route = createFileRoute("/campaigns/green-grillz")({
+  head: () => seoHead("/campaigns/green-grillz"),
   component: GreenGrillzPage,
 });
 
 const PHOTOS = [
-  { src: "/assets/campaigns/green-grillz/gg01.jpg", cap: "Green set · shot 01" },
-  { src: "/assets/campaigns/green-grillz/gg02.jpg", cap: "Green set · shot 02" },
-  { src: "/assets/campaigns/green-grillz/gg03.jpg", cap: "Green set · shot 03" },
-  { src: "/assets/campaigns/green-grillz/gg04.jpg", cap: "Green set · shot 04" },
+  { src: "/assets/campaigns/green-grillz/gg01.jpg", cap: "The green set · 01" },
+  { src: "/assets/campaigns/green-grillz/gg02.jpg", cap: "The green set · 02" },
+  { src: "/assets/campaigns/green-grillz/gg03.jpg", cap: "The green set · 03" },
+  { src: "/assets/campaigns/green-grillz/gg04.jpg", cap: "The green set · 04" },
 ];
 
-const CELEB = [
-  {
-    t: "WHO HE IS",
-    d: "Nine Vicious — Treyvion Echols, born 2002 in Athens, Georgia, raised in Atlanta. He went from SoundCloud uploads in the late 2010s to one of the underground's fastest-rising names, breaking through in 2024 with \"U Fancy?\".",
-  },
-  {
-    t: "THE CO-SIGN + THE RUN",
-    d: "Young Thug came out and quoted \"U Fancy?\" on X — the co-sign everyone waits for — and Nine joined the YSL roster. He's been prolific since: Studio Addict, Tumblr Music, For Nothing, Emotions, the Sedition mixtape — with Pitchfork comparing his early work to Young Thug and Ken Carson, and a feature on Kanye West's Bully.",
-  },
-  {
-    t: "THE FACE",
-    d: "In the underground, the face is the brand. Before the music gets a chance to speak, people see him — the grillz, the look, the posture — and decide if they're in. That's why these pictures matter. The sound sells the song, but the image sells the artist.",
-  },
+const FACTS = [
+  { k: "CLIENT", v: "Marcus Adam, custom jeweler" },
+  { k: "THE FACE", v: "Nine Vicious" },
+  { k: "WHAT I DID", v: "Photography, marketing + promotion" },
+  { k: "PHOTOS", v: "Sunday Office" },
 ];
 
-const WHY = [
+const STORY = [
   {
-    t: "THE UNDERGROUND",
-    d: "The underground rap scene runs on momentum and visuals. No big campaign budget — just moments made to feel like events. A picture that makes someone stop, save, repost, set as their profile — that's the machine.",
+    tab: "The jeweler",
+    head: "Custom pieces for artists.",
+    body: "Marcus Adam (@maarcusadam) is a private jeweler who makes custom grillz for artists. The work was already great. The goal was getting it in front of more of the right people.",
   },
   {
-    t: "THE VISIBILITY",
-    d: "Good visuals build connections you can't buy: follows, features, collabs, call-outs. One strong image travels further than a press release — it gets picked up, reposted, made into avatars. Visibility is the currency.",
+    tab: "The face",
+    head: "Nine Vicious.",
+    body: "Treyvion Echols, born in Athens, Georgia and raised in Atlanta. He went from SoundCloud uploads to one of the underground's fastest-rising names, broke through in 2024 with \"U Fancy?\", got the Young Thug co-sign and joined YSL. Pitchfork has compared his early work to Young Thug and Ken Carson.",
   },
   {
-    t: "THE FACE OF PURPOSE",
-    d: "And it doesn't need to be a celebrity. The same logic works for anyone with a face and a purpose — an artist, a founder, a business with something to say. Make yourself look like what you're building, and the right people find you.",
+    tab: "The idea",
+    head: "Let the face sell the piece.",
+    body: "A strong image of the right person wearing the work does more than any product shot. So I photographed Nine in the green set and built the promotion around those photos.",
+  },
+  {
+    tab: "What happened",
+    head: "The image took on a life of its own.",
+    body: "The post became the most-liked on Marcus's page and the promo post reached the discovery page. Then something I didn't see coming: people started using the photos as their own profile pictures. For a custom jeweler, that kind of visibility brings in new clients and keeps him top of mind.",
+  },
+  {
+    tab: "Why it matters",
+    head: "It works for any face with a purpose.",
+    body: "It doesn't need to be a celebrity. An artist, a founder, a business with something to say: when the image looks like what you're building, the right people find you.",
   },
 ];
 
 function GreenGrillzPage() {
   const [open, setOpen] = useState<number | null>(null);
-  const [celeb, setCeleb] = useState(0);
-  const [why, setWhy] = useState(0);
-
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
-      <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
+      <SiteBar />
+      <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 96 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
 
-        <p className="so-micro so-micro-red">CAMPAIGN · CELEBRITY · CUSTOM JEWELRY</p>
-        <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>
-          Green Grillz.
+        <p className="so-micro so-micro-red">CASE FILE · MARKETING · CUSTOM JEWELRY</p>
+        <h1 className="so-serif" style={{ fontSize: "clamp(40px, 7vw, 88px)", marginTop: 14 }}>
+          Nine Vicious × Custom Grillz.
         </h1>
-        <p className="so-micro mt-3">NINE VICIOUS — CUSTOM GRILLZ · GRILLZ PHOTOS BY MARCUS ADAM @MAARCUSADAM</p>
-        <hr className="so-rule mt-6" />
+        <p className="so-bw-intro-lead" style={{ marginTop: 18, maxWidth: "48ch" }}>
+          I photographed Nine Vicious in jeweler Marcus Adam's custom grillz
+          and helped promote them. It became the most-liked post on his page.
+        </p>
 
-        {/* The celebrity — tap through */}
-        <div
-          style={{
-            marginTop: 44,
-            border: "1px solid var(--color-sepia)",
-            borderRadius: 22,
-            background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-            padding: "24px",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
-            <p className="so-micro">THE CELEBRITY</p>
-            <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-              {celeb + 1} / 3 · TAP THE BOX FOR THE NEXT
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setCeleb((s) => (s + 1) % CELEB.length)}
-            style={{
-              width: "100%",
-              display: "block",
-              textAlign: "left",
-              background: "none",
-              border: 0,
-              borderTop: "1px solid var(--color-sepia)",
-              padding: "16px 2px 10px",
-              cursor: "pointer",
-              color: "inherit",
-              font: "inherit",
-            }}
-          >
-            <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-              {CELEB[celeb].t}
-            </p>
-            <p key={celeb} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
-              {CELEB[celeb].d}
-            </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
-              {CELEB.map((_, d) => (
-                <span
-                  key={d}
-                  aria-hidden
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 999,
-                    background: d === celeb ? "var(--color-verm)" : "var(--color-sepia)",
-                    display: "inline-block",
-                  }}
-                />
-              ))}
-              <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}>
-                TAP FOR THE NEXT →
-              </span>
-            </span>
-          </button>
-        </div>
+        <dl className="so-eb-facts">
+          {FACTS.map((f) => (
+            <div key={f.k}>
+              <dt className="so-micro">{f.k}</dt>
+              <dd>{f.v}</dd>
+            </div>
+          ))}
+        </dl>
 
-        {/* The jeweler */}
-        <div style={{ marginTop: 44, maxWidth: "58ch" }}>
-          <p className="so-micro">THE JEWELER</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            <strong>Marcus Adam</strong> — <strong>@MAARCUSADAM</strong> on
-            Instagram — is the jeweler behind the set. A private jeweler
-            and celebrity jeweler working custom pieces for artists, his
-            post of the green grillz did real numbers of its own.
-          </p>
-        </div>
+        <button type="button" className="so-gg-hero" onClick={() => setOpen(0)} aria-label="Open the hero photo">
+          <img src={PHOTOS[0].src} alt="Nine Vicious wearing the green grillz" />
+        </button>
+        <p className="so-micro so-gg-cred">PHOTOGRAPHY BY SUNDAY OFFICE</p>
 
-        {/* The traction */}
-        <div style={{ marginTop: 48 }}>
-          <p className="so-micro">THE TRACTION — REAL NUMBERS</p>
-          <div className="so-cases" style={{ gridTemplateColumns: "repeat(3, minmax(0, 1fr))", marginTop: 18 }}>
-            <div style={{ border: "1px solid var(--color-sepia)", borderRadius: 16, padding: "22px", background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)" }}>
-              <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.14em", fontWeight: 700 }}>
-                THE JEWELER'S POST
-              </p>
-              <div style={{ display: "flex", gap: 22, flexWrap: "wrap", marginTop: 14 }}>
-                <div>
-                  <p className="so-serif" style={{ fontSize: 28, margin: 0 }}>6K</p>
-                  <p className="so-micro" style={{ color: "var(--color-stone)", marginTop: 4 }}>LIKES</p>
-                </div>
-                <div>
-                  <p className="so-serif" style={{ fontSize: 28, margin: 0 }}>389</p>
-                  <p className="so-micro" style={{ color: "var(--color-stone)", marginTop: 4 }}>REPOSTS</p>
-                </div>
-                <div>
-                  <p className="so-serif" style={{ fontSize: 28, margin: 0 }}>355</p>
-                  <p className="so-micro" style={{ color: "var(--color-stone)", marginTop: 4 }}>SAVES</p>
-                </div>
+        {/* Results */}
+        <section className="so-bw-sec">
+          <p className="so-micro">THE RESULTS</p>
+          <div className="so-gg-results">
+            <div className="so-gg-res is-main">
+              <p className="so-micro">HIS POST · MOST-LIKED ON HIS PAGE</p>
+              <div className="so-gg-nums">
+                <div><b>6K</b><span>likes</span></div>
+                <div><b>389</b><span>reposts</span></div>
+                <div><b>355</b><span>saves</span></div>
               </div>
             </div>
-            <div style={{ border: "1px solid var(--color-sepia)", borderRadius: 16, padding: "22px", background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)" }}>
-              <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.14em", fontWeight: 700 }}>
-                THE PHOTOGRAPHER'S POST
-              </p>
-              <div style={{ display: "flex", gap: 22, flexWrap: "wrap", marginTop: 14 }}>
-                <div>
-                  <p className="so-serif" style={{ fontSize: 28, margin: 0 }}>3.5K+</p>
-                  <p className="so-micro" style={{ color: "var(--color-stone)", marginTop: 4 }}>LIKES</p>
-                </div>
-                <div>
-                  <p className="so-serif" style={{ fontSize: 28, margin: 0 }}>4,116</p>
-                  <p className="so-micro" style={{ color: "var(--color-stone)", marginTop: 4 }}>REPOSTS</p>
-                </div>
-                <div>
-                  <p className="so-serif" style={{ fontSize: 28, margin: 0 }}>635</p>
-                  <p className="so-micro" style={{ color: "var(--color-stone)", marginTop: 4 }}>SHARES</p>
-                </div>
+            <div className="so-gg-res">
+              <p className="so-micro">THE PROMO POST · MADE THE DISCOVERY PAGE</p>
+              <div className="so-gg-nums">
+                <div><b>35K</b><span>views</span></div>
+                <div><b>4,116</b><span>reposts</span></div>
+                <div><b>635</b><span>shares</span></div>
               </div>
-              <p className="so-micro" style={{ marginTop: 12, color: "var(--color-stone)" }}>
-                35K VIEWS · 229 PROFILE VISITS · 70.4% FEED REACH — MADE THE DISCOVERY PAGE
-              </p>
             </div>
-            <div style={{ border: "1px solid var(--color-sepia)", borderRadius: 16, padding: "22px", background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)" }}>
-              <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.14em", fontWeight: 700 }}>
-                THE PROFILE PICTURES
-              </p>
-              <p style={{ marginTop: 14, lineHeight: 1.78 }}>
-                The wildest part: a lot of people started using these
-                photos as their profile pictures on Twitter and
-                everywhere else. The image became the avatar.
+            <div className="so-gg-res">
+              <p className="so-micro">AND THEN</p>
+              <p className="so-gg-pfp">The photo became people's profile picture.</p>
+              <p className="so-bw-d" style={{ marginTop: 8 }}>
+                Fans started using it as their own avatar on X and everywhere
+                else. Nobody asked them to.
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Why it matters — tap through */}
-        <div
-          style={{
-            marginTop: 48,
-            border: "1px solid var(--color-sepia)",
-            borderRadius: 22,
-            background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-            padding: "24px",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 14, flexWrap: "wrap" }}>
-            <p className="so-micro">WHY IT MATTERS</p>
-            <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-              {why + 1} / 3 · TAP THE BOX FOR THE NEXT
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => setWhy((s) => (s + 1) % WHY.length)}
-            style={{
-              width: "100%",
-              display: "block",
-              textAlign: "left",
-              background: "none",
-              border: 0,
-              borderTop: "1px solid var(--color-sepia)",
-              padding: "16px 2px 10px",
-              cursor: "pointer",
-              color: "inherit",
-              font: "inherit",
-            }}
-          >
-            <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-              {WHY[why].t}
-            </p>
-            <p key={why} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
-              {WHY[why].d}
-            </p>
-            <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
-              {WHY.map((_, d) => (
-                <span
-                  key={d}
-                  aria-hidden
-                  style={{
-                    width: 6,
-                    height: 6,
-                    borderRadius: 999,
-                    background: d === why ? "var(--color-verm)" : "var(--color-sepia)",
-                    display: "inline-block",
-                  }}
-                />
-              ))}
-              <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.13em", marginLeft: 5 }}>
-                TAP FOR THE NEXT →
-              </span>
-            </span>
-          </button>
-        </div>
+        <TapStory label="THE STORY" chapters={STORY} />
 
-        {/* The set — jeweler's photos */}
-        <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE SET — 4 SHOTS · GRILLZ PHOTOS BY MARCUS ADAM @MAARCUSADAM</p>
-
-          {/* The hero — the jeweler's picture, big */}
-          <button
-            type="button"
-            onClick={() => setOpen(0)}
-            aria-label={PHOTOS[0].cap}
-            style={{ display: "block", width: "100%", background: "none", border: 0, padding: 0, cursor: "zoom-in", marginTop: 18 }}
-          >
-            <img
-              src={PHOTOS[0].src}
-              alt={PHOTOS[0].cap}
-              loading="lazy"
-              style={{ width: "100%", display: "block", borderRadius: 16 }}
-            />
-          </button>
-          <p className="so-micro" style={{ marginTop: 8, color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-            THE HERO — GREEN SET · PHOTO BY MARCUS ADAM @MAARCUSADAM
-          </p>
-
-          {/* The rest — smaller */}
-          <div className="so-photo-grid" style={{ marginTop: 28 }}>
+        {/* The set */}
+        <section className="so-bw-sec">
+          <p className="so-micro">THE SET · PHOTOGRAPHY BY SUNDAY OFFICE</p>
+          <div className="so-gg-grid">
             {PHOTOS.slice(1).map((ph, i) => (
-              <button
-                key={ph.src}
-                className="so-photo-cell"
-                type="button"
-                onClick={() => setOpen(i + 1)}
-                aria-label={ph.cap}
-              >
+              <button key={ph.src} type="button" className="so-gg-cell" onClick={() => setOpen(i + 1)} aria-label={ph.cap}>
                 <img src={ph.src} alt={ph.cap} loading="lazy" />
-                <span className="so-photo-cap">
-                  {String(i + 2).padStart(2, "0")} · {ph.cap}
-                </span>
               </button>
             ))}
           </div>
-        </div>
-
-        {/* Links */}
-        <div style={{ marginTop: 44 }}>
-          <p className="so-micro" style={{ textAlign: "center" }}>THE PLAYERS</p>
-          <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px 26px", maxWidth: 640, margin: "0 auto" }}>
-            <a className="so-link-jump" href="https://www.instagram.com/maarcusadam/" target="_blank" rel="noreferrer">
-              @MAARCUSADAM — THE JEWELER →
+          <div className="so-gg-links">
+            <a className="so-bw-inline" href="https://www.instagram.com/maarcusadam/" target="_blank" rel="noreferrer">
+              @maarcusadam ↗
             </a>
-            <a className="so-link-jump" href="https://www.instagram.com/ninevicious/" target="_blank" rel="noreferrer">
-              @NINEVICIOUS →
+            <a className="so-bw-inline" href="https://www.instagram.com/ninevicious/" target="_blank" rel="noreferrer">
+              @ninevicious ↗
             </a>
           </div>
-        </div>
+        </section>
 
-        {/* Lightbox */}
         {open !== null && (
           <div
             className="lb-overlay so-photo-lb"
@@ -314,7 +148,7 @@ function GreenGrillzPage() {
             <div className="so-photo-lb-card">
               <img src={PHOTOS[open].src} alt={PHOTOS[open].cap} />
               <div className="so-photo-lb-meta">
-                <span className="so-micro">{PHOTOS[open].cap}</span>
+                <span className="so-micro">{PHOTOS[open].cap} · SUNDAY OFFICE</span>
                 <button className="lb-btn" aria-label="Close" onClick={() => setOpen(null)}>
                   ✕
                 </button>
@@ -323,9 +157,9 @@ function GreenGrillzPage() {
           </div>
         )}
 
-        <CaseBookingCta />
+        <CaseBookingCta note="HAVE SOMETHING PEOPLE SHOULD SEE? LET'S GET IT IN FRONT OF THEM." />
 
-        <div style={{ marginTop: 56 }}>
+        <div style={{ marginTop: 40 }}>
           <a href="/" className="so-arrow">
             <span className="arr">←</span> Back to Sunday Office
           </a>

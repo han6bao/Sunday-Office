@@ -34,7 +34,7 @@ export function ServicePage({
 
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE ROOM</p>
-          <div style={{ marginTop: 12, lineHeight: 1.78 }}>{blurb}</div>
+          <div style={{ marginTop: 12, lineHeight: 1.55 }}>{blurb}</div>
         </div>
 
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
@@ -43,7 +43,7 @@ export function ServicePage({
             {includes.map((n) => (
               <div key={n} style={{ display: "flex", gap: 12, alignItems: "baseline", borderTop: "1px solid var(--color-sepia)", paddingTop: 10 }}>
                 <span className="so-micro" style={{ color: "var(--color-verm)", minWidth: 18 }}>
-                  —
+                  ·
                 </span>
                 <span>{n}</span>
               </div>
@@ -66,11 +66,11 @@ export function ServicePage({
           }}
         >
           <p className="so-micro" style={{ maxWidth: "44ch", color: "#f5f2ea" }}>
-            LET'S TALK ABOUT WHAT THIS ROOM CAN DO FOR YOUR WORLD.
+            LET'S TALK ABOUT WHAT YOU'RE BUILDING.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <a
-              href="/#office-hours"
+              href="/#inquiry"
               style={{
                 textDecoration: "none",
                 margin: 0,
@@ -133,8 +133,8 @@ export function CaseBookingCta({ note }: { note?: string }) {
         gap: 16,
       }}
     >
-      <p className="so-micro" style={{ maxWidth: "46ch", lineHeight: 1.8, color: "#f5f2ea" }}>
-        {note ?? "INTO SOMETHING LIKE THIS? YOUR PROJECT DESERVES THE SAME TREATMENT."}
+      <p className="so-micro" style={{ maxWidth: "46ch", lineHeight: 1.55, color: "#f5f2ea" }}>
+        {note ?? "LIKE WHAT YOU SEE? LET'S TALK ABOUT YOUR PROJECT."}
       </p>
       <a
         href="/#office-hours"

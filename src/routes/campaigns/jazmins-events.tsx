@@ -1,280 +1,285 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 
 export const Route = createFileRoute("/campaigns/jazmins-events")({
+  head: () => seoHead("/campaigns/jazmins-events"),
   component: JazminsCase,
 });
 
-const SERVICES = [
-  { t: "Wedding Coordination", d: "You've done the planning. Now let us run the day — timelines, vendors, the flow, the solves." },
-  { t: "Partial Planning", d: "A little guidance can go a long way. Support customized around what you already have done." },
-  { t: "Full Planning + Coordination", d: "From the first idea to the last dance — one cohesive celebration, start to finish." },
+const A = "/assets/campaigns/jazmins-events";
+const SITE = "https://jazmins-events.vercel.app/";
+
+const FACTS = [
+  { k: "CLIENT", v: "Jazmin, founder + planner" },
+  { k: "WHAT I DID", v: "Brand identity, brand guide + board, Instagram templates, logos + seals, website" },
+  { k: "STATUS", v: "Branding done · website in progress" },
+  { k: "YEAR", v: "2026" },
 ];
 
+const STAGES = [
+  { s: "done", t: "Brand identity", d: "Logo, monogram, palette, type and voice." },
+  { s: "done", t: "Brand kit", d: "Guide, board, 10 Instagram templates and seals, all editable in Canva." },
+  { s: "now", t: "Website", d: "Built and being finished with her.", link: true },
+  { s: "next", t: "Launch", d: "Real photos and couples' words go in as she books." },
+];
+
+const PALETTE = [
+  { n: "Sage", m: "Soft + serene", hex: "#8D9F88" },
+  { n: "Ivory", m: "Warm + inviting", hex: "#F6F1E4" },
+  { n: "Forest", m: "Grounded", hex: "#2F4639" },
+  { n: "Gold", m: "Understated luxury", hex: "#C9B17A" },
+  { n: "Linen", m: "Natural + timeless", hex: "#E4DED2" },
+];
+
+const SERVICES = [
+  { t: "Wedding Coordination", d: "You've done the planning. Now let us run the day." },
+  { t: "Partial Planning", d: "A little guidance can go a long way." },
+  { t: "Full Planning + Coordination", d: "From the first idea to the last dance." },
+];
+
+const PROCESS = ["Tell us everything", "Let's talk", "Make a plan", "We keep it moving", "Go enjoy your day"];
+
 function JazminsCase() {
-  const [paraStep, setParaStep] = useState(0);
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 96 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
 
+        {/* Hero */}
         <p className="so-micro so-micro-red">CASE FILE · BRANDING + WEBSITE · WEDDINGS + EVENTS</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 7vw, 88px)", marginTop: 14 }}>
-          Jazmin's Events + Coordinating.
+          Jazmin's Events &amp; Coordinating.
         </h1>
-        <p className="so-micro mt-3">OREGON · PNW — WEDDINGS · EVENTS · MEANINGFUL MOMENTS</p>
-        <hr className="so-rule mt-6" />
+        <p style={{ marginTop: 14 }}>
+          <span className="so-status">Website in progress</span>
+        </p>
+        <p className="so-bw-intro-lead" style={{ marginTop: 18, maxWidth: "48ch" }}>
+          A brand-new wedding planning business that I built from scratch:
+          the print pieces, the feed and the site. The branding is done, and
+          we're finishing the website together now.
+        </p>
 
-        {/* HERO IMAGE SLOT — Hana is replacing this with a new visual */}
-
-        {/* My thought process — tap through, Hana's voice */}
-        <div style={{ marginTop: 48 }}>
-          <div
-            style={{
-              border: "1px solid var(--color-sepia)",
-              borderRadius: 22,
-              background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-              padding: "26px 26px 22px",
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16, flexWrap: "wrap" }}>
-              <p className="so-micro">MY THOUGHT PROCESS</p>
-              <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-                {paraStep + 1} / 4 · TAP THE BOX FOR THE NEXT
-              </p>
+        <dl className="so-eb-facts">
+          {FACTS.map((f) => (
+            <div key={f.k}>
+              <dt className="so-micro">{f.k}</dt>
+              <dd>{f.v}</dd>
             </div>
+          ))}
+        </dl>
 
-            {[
-              "Event planning is a million things to take care of at once - venues, vendors, timelines, families, the weather. So every person landing on a planner's site is already carrying that load. My first job was calm: if the site felt frantic, how could anyone trust her with the day?",
-              "I also knew exactly who books this - women, mostly, planning one of the most romantic days of their lives. So everything leans light and airy and feminine: the arch shapes, the botanical touches, the creams and greens, the script flourishes. The brand should feel like the wedding they're picturing.",
-              "And the honest part: Jazmin didn't know me from anyone. A complete stranger asking for her business. So before any contract, I built her a mockup - a real, clickable vision of the site she could hold up and say yes to. That's how you earn trust when nobody knows your name yet: you show the work before you ask for the job.",
-              "The whole thing is meant to be walked through - every page of the website, every piece of the branding, clickable and open. Nothing hidden, nothing to take on faith. You can see it all yourself.",
-            ].map((para, i) =>
-              i === paraStep ? (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => setParaStep((s) => (s + 1) % 4)}
-                  style={{
-                    width: "100%",
-                    display: "block",
-                    textAlign: "left",
-                    background: "none",
-                    border: 0,
-                    borderTop: "1px solid var(--color-sepia)",
-                    padding: "18px 2px 12px",
-                    cursor: "pointer",
-                    color: "inherit",
-                    font: "inherit",
-                  }}
-                >
-                  <p style={{ margin: 0, lineHeight: 1.78, maxWidth: "72ch" }}>{para}</p>
-                  <span style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 14 }}>
-                    {[0, 1, 2, 3].map((d) => (
-                      <span
-                        key={d}
-                        aria-hidden
-                        style={{
-                          width: 7,
-                          height: 7,
-                          borderRadius: 999,
-                          background: d === paraStep ? "var(--color-verm)" : "var(--color-sepia)",
-                          display: "inline-block",
-                        }}
-                      />
-                    ))}
-                    <span className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.14em", marginLeft: 6 }}>
-                      TAP FOR THE NEXT →
-                    </span>
-                  </span>
-                </button>
-              ) : null
-            )}
-          </div>
+        <div className="so-jz-hero">
+          <img className="so-jz-mono" src={`${A}/je-monogram-ivory.svg`} alt="The JE monogram" />
+          <p className="so-jz-tag">You live the moment.</p>
+          <p className="so-jz-tag2">We'll handle the rest.</p>
+          <p className="so-micro so-jz-small">WEDDINGS · EVENTS · MEANINGFUL MOMENTS</p>
+          <img className="so-jz-seal" src={`${A}/seal-gold.png`} alt="Jazmin's Events gold wax seal" />
         </div>
 
-        {/* Story + mockup | the site — two columns */}
-        <div className="so-case-cols" style={{ marginTop: 44, alignItems: "start" }}>
+        {/* Where it stands */}
+        <section className="so-bw-sec so-bw-how">
+          <p className="so-micro">WHERE IT STANDS</p>
+          <ol className="so-jz-stages">
+            {STAGES.map((st) => (
+              <li key={st.t} className={"is-" + st.s}>
+                <span className="so-jz-dot" aria-hidden>
+                  {st.s === "done" ? "✓" : ""}
+                </span>
+                <p className="so-bw-t">{st.t}</p>
+                <p className="so-micro so-jz-state">
+                  {st.s === "done" ? "DONE" : st.s === "now" ? "IN PROGRESS" : "NEXT"}
+                </p>
+                <p className="so-bw-d">{st.d}</p>
+                {st.link && (
+                  <a className="so-bw-inline" href={SITE} target="_blank" rel="noreferrer">
+                    See the site so far ↗
+                  </a>
+                )}
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        {/* Her story */}
+        <section className="so-bw-sec so-jz-story">
           <div>
-            <div style={{ maxWidth: "58ch" }}>
-              <p className="so-micro">THE STORY</p>
-              <p style={{ marginTop: 12, lineHeight: 1.78 }}>
-                Jazmin is Oregon-born with Pacific Northwest roots, and she
-                walked into this project the rarest way a new business can:
-                already booked. She started this company with clients lined
-                up — a brand-new name, a full calendar, and a skill set
-                she's spent years building. The kind of planner who makes a
-                wedding look inevitable, because it was never her first
-                one.
+            <p className="so-micro">HER STORY</p>
+            <p className="so-serif so-jz-quote">
+              "I know what it feels like to be on the other side of the aisle."
+            </p>
+          </div>
+          <div>
+            <p className="so-bw-d" style={{ marginTop: 0 }}>
+              Planning a wedding showed Jazmin just how many details sit behind
+              one beautiful day. Her business grew from that: a love of bringing
+              the details together, so the people at the center can actually
+              enjoy what they planned.
+            </p>
+            <p className="so-bw-d">
+              Whether a couple needs her for a few final pieces or from beginning
+              to end, she wants them to feel like someone is genuinely in their
+              corner.
+            </p>
+            <p className="so-micro so-jz-from">IN HER WORDS, FROM HER ABOUT PAGE</p>
+          </div>
+        </section>
+
+        {/* How I approached it */}
+        <section className="so-bw-sec so-bw-inc">
+          <div>
+            <p className="so-micro">HOW I APPROACHED IT</p>
+            <h2 className="so-serif so-bw-h">Calm first. Then romantic.</h2>
+          </div>
+          <div className="so-bw-list">
+            <div className="so-bw-row">
+              <p className="so-bw-t">Calm</p>
+              <p className="so-bw-d">
+                Couples arrive carrying a lot: venues, vendors, families,
+                timelines. If the brand felt frantic, nobody would trust her with
+                the day.
               </p>
             </div>
-
-            <div style={{ marginTop: 36 }}>
-              <p className="so-micro">THE MOCKUP</p>
-              <p style={{ marginTop: 12, lineHeight: 1.78 }}>
-                The whole thing started with a mockup. Hana threw together
-                a quick one-page site just to show the shape of it — the
-                feel, the voice, where everything would live. Jazmin loved
-                it. So they locked in with it: the mockup became the real
-                thing, and the real thing became the site that takes her
-                inquiries today.
+            <div className="so-bw-row">
+              <p className="so-bw-t">For who books</p>
+              <p className="so-bw-d">
+                Light, airy and romantic: arches, botanicals, creams and greens,
+                script flourishes. It should feel like the wedding they're
+                picturing.
+              </p>
+            </div>
+            <div className="so-bw-row">
+              <p className="so-bw-t">Show first</p>
+              <p className="so-bw-d">
+                We'd never worked together, so I built her a clickable mockup
+                before asking for anything. She could see it and say yes.
               </p>
             </div>
           </div>
+        </section>
 
+        {/* The brand */}
+        <section className="so-bw-sec so-eb-kit">
           <div>
-            <div style={{ maxWidth: "58ch" }}>
-              <p className="so-micro">THE SITE</p>
-              <p style={{ marginTop: 12, lineHeight: 1.78 }}>
-                The site opens the way the brand feels — calm, confident,
-                editorial. "You live the moment. We'll handle the rest."
-                Services that meet couples wherever they are: coordination
-                only, partial support, or the whole journey. An inquiry
-                form up front, a process that walks them from "we're
-                engaged" to "go enjoy your day," and an FAQ that answers
-                the real questions before they're asked.
-              </p>
-              <p style={{ marginTop: 14, lineHeight: 1.78 }}>
-                On a phone it reads like a well-set table — everything
-                exactly where it should be, nothing shouting. Because the
-                brand and the site were built as one thing, the voice
-                never wavers from first scroll to booking.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* The brand — what it feels like, boxed with the guide */}
-        <div style={{ marginTop: 48 }}>
-          <div
-            style={{
-              border: "1px solid var(--color-sepia)",
-              borderRadius: 22,
-              background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-              padding: "26px 26px 24px",
-            }}
-          >
-            <p className="so-micro">THE BRAND — HOW IT FEELS</p>
-            <div className="so-brand-pair" style={{ marginTop: 16 }}>
-              <div>
-                <p style={{ margin: 0, lineHeight: 1.78, maxWidth: "58ch" }}>
-                  Elegant, intentional, romantic, editorial, soft, refined,
-                  timeless. The kit works in sage and ivory with forest,
-                  gold and linen — Playfair Display in the headlines, Lora
-                  in the body, Allura for the flourishes. Textured paper,
-                  linen and soft wash. Arch shapes, divider lines,
-                  botanical accents and quiet editorial details, from the
-                  business card to the story template.
-                </p>
-                <p style={{ marginTop: 14, lineHeight: 1.78, maxWidth: "58ch" }}>
-                  It's a brand that feels like a well-planned wedding:
-                  considered, warm, and built to last the whole way
-                  through — paper, feed and everything between.
-                </p>
-                <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 18 }}>
-                  {["SAGE", "IVORY", "FOREST", "GOLD", "LINEN"].map((c) => (
-                    <span
-                      key={c}
-                      className="so-micro"
-                      style={{
-                        border: "1px solid var(--color-sepia)",
-                        borderRadius: 999,
-                        padding: "7px 14px",
-                        color: "var(--color-stone)",
-                        letterSpacing: "0.14em",
-                      }}
-                    >
-                      {c}
-                    </span>
-                  ))}
+            <p className="so-micro">THE BRAND</p>
+            <h2 className="so-serif so-bw-h">Elegant, intentional, romantic.</h2>
+            <p className="so-bw-d" style={{ maxWidth: "46ch" }}>
+              Thoughtful planning for couples who want to feel present in their
+              day, not responsible for running it. Tactile, never flat, like paper
+              you can touch.
+            </p>
+            <div className="so-jz-swatches">
+              {PALETTE.map((c) => (
+                <div key={c.n}>
+                  <span className="so-jz-sw" style={{ background: c.hex }} />
+                  <p className="so-bw-t">{c.n}</p>
+                  <p className="so-micro">{c.hex}</p>
                 </div>
-              </div>
-              <img
-                src="/assets/campaigns/jazmins-events/brand-guide.png"
-                alt="Jazmin's Events — the brand guide"
-                loading="lazy"
-                style={{ width: "100%", height: "auto", borderRadius: 16, border: "1px solid var(--color-sepia)", display: "block" }}
-              />
+              ))}
+            </div>
+            <p className="so-bw-d so-jz-why">
+              <strong>Why green.</strong> Green is calm, balance and new beginnings.
+              In a season that can feel overwhelming, it tells couples they're in
+              steady hands. Ivory keeps it warm. A touch of gold makes it special.
+            </p>
+            <div className="so-jz-type">
+              <p><span className="so-micro">HEADLINES</span> Timeless Romantic</p>
+              <p><span className="so-micro">BODY</span> Cormorant Garamond</p>
+              <p><span className="so-micro">SCRIPT</span> Bakendy</p>
             </div>
           </div>
-        </div>
+          <figure className="so-eb-kit-img">
+            <img src={`${A}/kit-guide.jpg`} alt="Jazmin's Events brand guide: logos, palette, typography and texture" loading="lazy" />
+            <figcaption className="so-micro">BRAND GUIDE · EDITION 01</figcaption>
+          </figure>
+        </section>
 
-        {/* The stroke plate — a quiet dark break */}
-        <img
-          src="/assets/campaigns/jazmins-events/arch-strokes.png"
-          alt=""
-          aria-hidden
-          loading="lazy"
-          style={{ width: "100%", height: "auto", borderRadius: 22, display: "block", marginTop: 48, border: "1px solid #1b1a17" }}
-        />
+        {/* Board + in use */}
+        <section className="so-bw-sec so-jz-pair">
+          <figure className="so-eb-fig">
+            <img src={`${A}/kit-board.jpg`} alt="Brand board: stationery, wax seals, stamps and the palette" loading="lazy" />
+            <figcaption className="so-micro">THE BRAND BOARD</figcaption>
+          </figure>
+          <figure className="so-eb-fig">
+            <img src={`${A}/kit-in-action.jpg`} alt="The identity on business cards, stationery, a social post and a story" loading="lazy" />
+            <figcaption className="so-micro">IN USE · CARDS, STATIONERY, FEED, STORIES</figcaption>
+          </figure>
+        </section>
 
-        {/* Quote band — the tagline on the black plate */}
-        <div
-          style={{
-            marginTop: 48,
-            borderRadius: 22,
-            backgroundImage: "url(/assets/campaigns/jazmins-events/black-plate.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            padding: "84px 30px",
-            textAlign: "center",
-            border: "1px solid #1b1a17",
-          }}
-        >
-          <p className="so-serif" style={{ fontSize: "clamp(30px, 4.6vw, 54px)", lineHeight: 1.2, color: "#f5f2ea", margin: 0 }}>
-            "You live the moment.
-            <br />
-            We'll handle the rest."
-          </p>
-          <p className="so-micro" style={{ marginTop: 18, color: "rgba(245,242,234,0.72)", letterSpacing: "0.2em" }}>
-            WEDDINGS TODAY. A BRIGHTER TOMORROW.
-          </p>
-        </div>
+        {/* Instagram */}
+        <section className="so-bw-sec">
+          <div className="so-jz-head">
+            <div>
+              <p className="so-micro">INSTAGRAM TEMPLATES</p>
+              <h2 className="so-serif so-bw-h">Ten posts, ready to fill.</h2>
+            </div>
+            <p className="so-bw-d" style={{ maxWidth: "44ch", marginTop: 0 }}>
+              Welcome, services, how it works, FAQ, kind words, now booking and the
+              website launch. She drops in her photos and edits the words in Canva,
+              so her feed stays on-brand without me.
+            </p>
+          </div>
+          <figure className="so-eb-fig" style={{ marginTop: 22 }}>
+            <img src={`${A}/kit-instagram.jpg`} alt="Ten Instagram post templates in sage, ivory and forest" loading="lazy" />
+          </figure>
+          <div className="so-jz-seals">
+            <img src={`${A}/seal-green.png`} alt="Green wax seal" loading="lazy" />
+            <img src={`${A}/seal-gold.png`} alt="Gold wax seal" loading="lazy" />
+            <p className="so-bw-d">
+              Plus the JE monogram in forest, ivory and gold, and wax seals for the
+              finishing touches.
+            </p>
+          </div>
+        </section>
 
-        {/* The services — from the live site, no prices */}
-        <div style={{ marginTop: 48 }}>
-          <p className="so-micro">THE SERVICES — AS SHE BOOKS THEM</p>
-          <div style={{ marginTop: 14, display: "grid", gap: 10, maxWidth: "72ch" }}>
+        {/* The website */}
+        <section className="so-bw-sec so-bw-how">
+          <div className="so-jz-head">
+            <div>
+              <p className="so-micro">THE WEBSITE · IN PROGRESS</p>
+              <h2 className="so-serif so-bw-h">Planning should have a plan too.</h2>
+            </div>
+            <a className="so-bw-cta-btn so-jz-sitebtn" href={SITE} target="_blank" rel="noreferrer">
+              SEE THE SITE SO FAR ↗
+            </a>
+          </div>
+          <div className="so-li-tips" style={{ marginTop: 22 }}>
             {SERVICES.map((s) => (
-              <div key={s.t} style={{ display: "flex", gap: 12, alignItems: "baseline", borderTop: "1px solid var(--color-sepia)", paddingTop: 10 }}>
-                <span className="so-micro" style={{ color: "var(--color-verm)", minWidth: 18 }}>
-                  —
-                </span>
-                <span>
-                  <strong>{s.t}</strong> — {s.d}
-                </span>
+              <div key={s.t}>
+                <p className="so-bw-t">{s.t}</p>
+                <p className="so-bw-d">{s.d}</p>
               </div>
             ))}
-            <div style={{ display: "flex", gap: 12, alignItems: "baseline", borderTop: "1px solid var(--color-sepia)", paddingTop: 10 }}>
-              <span className="so-micro" style={{ color: "var(--color-verm)", minWidth: 18 }}>
-                —
-              </span>
-              <span>
-                <strong>Beyond the aisle</strong> — birthdays, showers, engagements,
-                anniversaries, intimate gatherings. Weddings are the heart; every
-                celebration is welcome.
-              </span>
-            </div>
           </div>
-        </div>
-
-        <div style={{ marginTop: 48, maxWidth: "58ch" }}>
-          <p className="so-micro">THE PROCESS</p>
-          <p style={{ marginTop: 12, lineHeight: 1.78 }}>
-            Inquiry, then a conversation. Choose the level of support,
-            build the plan, watch it come together, and when the day
-            arrives — be in it. The site carries that whole journey,
-            from "tell us everything" to "enjoy your day."
+          <p className="so-micro" style={{ marginTop: 26, color: "var(--color-stone)" }}>
+            HOW IT WORKS ON HER SITE
           </p>
-        </div>
+          <ol className="so-jz-process">
+            {PROCESS.map((p, i) => (
+              <li key={p}>
+                <span className="so-bw-n">{String(i + 1).padStart(2, "0")}</span> {p}
+              </li>
+            ))}
+          </ol>
+          <p className="so-bw-d" style={{ marginTop: 20, maxWidth: "64ch" }}>
+            The site already has her services, the process, an FAQ and an inquiry
+            form. What's left is hers to fill as she grows: her portrait, real
+            photos from her events, and words from her first couples. I'm helping
+            her get each piece in.
+          </p>
+        </section>
 
-        {/* The black book bar */}
-        <CaseBookingCta note="A BRAND AND A SITE BUILT AS ONE WORLD, BEFORE THE BUSINESS EVEN OPENED ITS DOORS. YOURS COULD BE NEXT." />
+        <CaseBookingCta note="STARTING SOMETHING NEW? THE BRAND AND THE SITE CAN BE BUILT AS ONE WORLD." />
 
-        <div style={{ marginTop: 56 }}>
+        <p className="so-micro so-eb-credit">
+          BRAND IDENTITY, BRAND KIT + WEBSITE BY SUNDAY OFFICE
+        </p>
+
+        <div style={{ marginTop: 40 }}>
           <a href="/" className="so-arrow">
             <span className="arr">←</span> Back to Sunday Office
           </a>

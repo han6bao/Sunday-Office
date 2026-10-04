@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
 
 export const Route = createFileRoute("/campaigns/kenshi-killz")({
+  head: () => seoHead("/campaigns/kenshi-killz"),
   component: KenshiKillzPage,
 });
 
@@ -20,6 +24,7 @@ function KenshiKillzPage() {
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -30,59 +35,53 @@ function KenshiKillzPage() {
           Kenshi Killz.
         </h1>
         <p className="so-micro mt-3">@KENSHIKILLA · SEATTLE · PHOTOS BY HANA</p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/kenshi-killz/kk-03.jpg" alt="Kenshi Killz, Seattle artist promo photography" pos="center 35%" />
 
         {/* The artist */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE ARTIST</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             <strong>Kenshi Killz</strong> (@kenshikilla) is a Seattle artist
-            with a stage presence you can't look away from — big sounds,
-            bigger fits, and a voice that carries. Around the community
-            she's a fixture: a co-founder of{" "}
-            <strong>For The Girls PNW</strong> (@forthegirlspnw), lifting up
-            the women of the scene, while her own music runs loud — full
-            album <em>He Rules Us All</em> out now on Bandcamp. She's
+            with a big sound, bigger fits and a voice that carries. She's a
+            fixture in the community and a co-founder of{" "}
+            <strong>For The Girls PNW</strong> (@forthegirlspnw), which lifts
+            up the women of the scene. Her full album{" "}
+            <em>He Rules Us All</em> is out now on Bandcamp. She's
             performed at the <strong>Capitol Hill Block Party</strong>,
             headlined Belltown Bloom's "Rock Can Roll" at Sunset Tavern,
-            and keeps the city's stages hot.
+            and plays stages all over the city.
           </p>
         </div>
 
         {/* TV performance */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE TV PERFORMANCE</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            Before the promo pictures came the picture that moved: her{" "}
-            <strong>television-style performance</strong>, shot live with{" "}
-            <strong>ReelClip</strong> — one person, one camera, straight to
-            the screen, built for her to post and push. Hana helped with the{" "}
-            <strong>location and overall assistance</strong> behind that
-            session — making sure the room was right before the lights
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            Before the promo photos, she filmed a{" "}
+            <strong>television-style performance</strong> live with{" "}
+            <strong>ReelClip</strong>, one videographer with one camera,
+            made for her to post and promote. I helped with the{" "}
+            <strong>location and overall assistance</strong> for that
+            session, making sure the room was ready before the lights
             came up.
           </p>
-          <div className="mt-3">
-            <a className="so-link-jump" href="/campaigns/reelclip">
-              REELCLIP — TV PERFORMANCES →
-            </a>
-          </div>
         </div>
 
         {/* The shoot */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
-          <p className="so-micro">THE SHOOT — PROMO PHOTOS BY HANA</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            The keffiyeh over her shoulders, the coin headpiece catching
-            the sun, MILTON on the jersey like a family name. That vintage
-            TV on the ledge just sat there like it was waiting for a
-            signal. Six frames, golden hour, the Space Needle in the
-            corner. Shot for her promo — grainy, bright, no apologies.
+          <p className="so-micro">THE SHOOT · PROMO PHOTOS BY HANA</p>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            A keffiyeh over her shoulders, a coin headpiece catching the
+            sun, MILTON across the jersey. We propped a vintage TV on the
+            ledge and shot six frames at golden hour with the Space Needle
+            in the corner. They were made for her promo, so I kept them
+            grainy and bright.
           </p>
         </div>
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES — 6 · BY HANA</p>
+          <p className="so-micro">THE FRAMES · 6 · BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button
@@ -94,7 +93,7 @@ function KenshiKillzPage() {
               >
                 <img src={ph.src} alt={ph.cap} loading="lazy" />
                 <span className="so-photo-cap">
-                  {String(i + 1).padStart(2, "0")} · {ph.cap}
+                  {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
                 </span>
               </button>
             ))}
@@ -106,13 +105,13 @@ function KenshiKillzPage() {
           <p className="so-micro" style={{ textAlign: "center" }}>VISIT KENSHI</p>
           <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px 26px", maxWidth: 640, margin: "0 auto" }}>
             <a className="so-link-jump" href="https://www.instagram.com/kenshikilla/" target="_blank" rel="noreferrer">
-              @KENSHIKILLA — INSTAGRAM →
+              @KENSHIKILLA · INSTAGRAM →
             </a>
             <a className="so-link-jump" href="https://killzzz.bandcamp.com/album/he-rules-us-all" target="_blank" rel="noreferrer">
-              "HE RULES US ALL" — BANDCAMP →
+              "HE RULES US ALL" · BANDCAMP →
             </a>
             <a className="so-link-jump" href="https://www.instagram.com/forthegirlspnw/" target="_blank" rel="noreferrer">
-              @FORTHEGIRLSPNW —
+              @FORTHEGIRLSPNW →
             </a>
           </div>
         </div>

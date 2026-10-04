@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
 
 export const Route = createFileRoute("/campaigns/jaydyn-f")({
+  head: () => seoHead("/campaigns/jaydyn-f"),
   component: JaydynCase,
 });
 
@@ -18,11 +22,11 @@ const CONTRIBUTED = [
 
 const REELS = [
   { n: "REEL 1", stats: "120K VIEWS · 6K LIKES · 760 SHARES · 58 REPOSTS", note: "the one I shot for Instagram", u: "https://www.instagram.com/p/DORrPfiklMt/" },
-  { n: "REEL 2", stats: "30K VIEWS · 1.5K LIKES · 304 SHARES · 38 REPOSTS", note: "he cut it — I contributed", u: "https://www.instagram.com/reel/DOE71FMEkqQ/" },
+  { n: "REEL 2", stats: "30K VIEWS · 1.5K LIKES · 304 SHARES · 38 REPOSTS", note: "he cut it, I contributed", u: "https://www.instagram.com/reel/DOE71FMEkqQ/" },
 ];
 
 const GALLERY = [
-  { src: "/assets/campaigns/jaydyn-f/jd-07.jpg", cap: "THE HERO — IN MOTION", hero: true },
+  { src: "/assets/campaigns/jaydyn-f/jd-07.jpg", cap: "THE HERO · IN MOTION", hero: true },
   { src: "/assets/campaigns/jaydyn-f/jd-01.jpg", cap: "01", hero: false },
   { src: "/assets/campaigns/jaydyn-f/jd-02.jpg", cap: "02", hero: false },
   { src: "/assets/campaigns/jaydyn-f/jd-03.jpg", cap: "03", hero: false },
@@ -39,6 +43,7 @@ function JaydynCase() {
   const [gal, setGal] = useState<number | null>(null);
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/creative-direction-content" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Creative Direction + Social
@@ -49,21 +54,18 @@ function JaydynCase() {
           Jaydyn F.
         </h1>
         <p className="so-micro mt-3">SEATTLE HIP-HOP / RAP · ARTFUL SOCIAL AROUND MUSIC RELEASES</p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/jaydyn-f/jd-04.jpg" alt="Jaydyn F., Seattle artist photography" pos="center 35%" />
 
         {/* The artist — text left, the frame right */}
         <div className="so-case-cols" style={{ marginTop: 28, alignItems: "start" }}>
           <div>
             <p className="so-micro">THE ARTIST</p>
-            <p style={{ marginTop: 12, lineHeight: 1.6 }}>
-              Jaydyn F. moves through Seattle's underground rap world —
-              making music, throwing shows and bringing different corners
-              of the scene into the same room. Local artists, touring
-              names, friends, collaborators; people like UnoTheActivist
-              and ILY KIMCHI can all end up somewhere in the orbit. It's
-              not one sound or one level of artist. That's kind of the
-              point. It's a small world with a much bigger one running
-              through it.
+            <p style={{ marginTop: 12, lineHeight: 1.5 }}>
+              Jaydyn F. moves through Seattle's underground rap world. He
+              makes music, throws shows and brings different corners of the
+              scene into the same room: local artists, touring names,
+              friends and collaborators. People like UnoTheActivist and
+              ILY KIMCHI end up around him too. It's all kinds of sounds and all levels of artists, and that's what makes it fun.
             </p>
           </div>
           <div style={{ display: "grid", gap: 14 }}>
@@ -83,7 +85,7 @@ function JaydynCase() {
             >
               <img
                 src="/assets/campaigns/jaydyn-f/jd-artist.jpg"
-                alt="Jaydyn F. — hands over face, three frames"
+                alt="Jaydyn F., hands over face, three frames"
                 loading="lazy"
                 style={{
                   width: "100%",
@@ -103,10 +105,8 @@ function JaydynCase() {
         {/* The need */}
         <div style={{ marginTop: 28, maxWidth: "58ch" }}>
           <p className="so-micro">THE NEED</p>
-          <p style={{ marginTop: 12, lineHeight: 1.6 }}>
-            Ongoing visual support around music releases and artist
-            visibility — not just one polished final video, but enough
-            content to keep the world moving between releases.
+          <p style={{ marginTop: 12, lineHeight: 1.5 }}>
+            Regular photos and video around his releases, so there's always something new to post between drops instead of one polished video and nothing else.
           </p>
         </div>
 
@@ -125,7 +125,7 @@ function JaydynCase() {
             {CONTRIBUTED.map((c) => (
               <div key={c} style={{ display: "flex", gap: 12, alignItems: "baseline", borderTop: "1px solid var(--color-sepia)", paddingTop: 10 }}>
                 <span className="so-micro" style={{ color: "var(--color-verm)", minWidth: 18 }}>
-                  —
+                  ·
                 </span>
                 <span>{c}</span>
               </div>
@@ -136,17 +136,14 @@ function JaydynCase() {
         {/* One video, more than one life */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
           <p className="so-micro">ONE VIDEO, MORE THAN ONE LIFE</p>
-          <p style={{ marginTop: 12, lineHeight: 1.78 }}>
-            One larger music-video release can become BTS clips, short-form
-            edits, teaser moments, stills, launch posts and follow-up
-            content. The video lives once; the world around it keeps
-            moving.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            One music video can turn into BTS clips, short edits, teasers, stills, launch posts and follow-ups. The video only comes out once, but the content around it can keep going for weeks.
           </p>
         </div>
 
         {/* The work — tap any frame to scroll through */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">THE WORK — TAP TO OPEN</p>
+          <p className="so-micro">THE WORK · TAP TO OPEN</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 14, marginTop: 14 }}>
             {GALLERY.map((g, i) => (
               <button
@@ -166,7 +163,7 @@ function JaydynCase() {
               >
                 <img
                   src={g.src}
-                  alt={g.cap}
+                  alt={`Jaydyn F., Seattle artist photography ${g.cap}`}
                   loading="lazy"
                   style={{
                     width: "100%",
@@ -200,7 +197,7 @@ function JaydynCase() {
             padding: "24px",
           }}
         >
-          <p className="so-micro">RESULTS — REAL NUMBERS FROM THE POSTS</p>
+          <p className="so-micro">RESULTS · REAL NUMBERS FROM THE POSTS</p>
           <div style={{ marginTop: 12, display: "grid", gap: 0 }}>
             {REELS.map((r) => (
               <a
@@ -223,7 +220,7 @@ function JaydynCase() {
                     WATCH ON INSTAGRAM →
                   </p>
                 </div>
-                <p className="so-serif" style={{ fontSize: 22, margin: 0, textAlign: "right" }}>
+                <p className="so-serif so-jd-stats" style={{ fontSize: 22, margin: 0, textAlign: "right" }}>
                   {r.stats}
                 </p>
               </a>
@@ -234,37 +231,31 @@ function JaydynCase() {
         {/* The circle + the community — side by side */}
         <div className="so-case-cols" style={{ marginTop: 44, alignItems: "start" }}>
           <div style={{ maxWidth: "58ch" }}>
-            <p className="so-micro">THE CIRCLE — REAL WORLD JAKE</p>
-            <p style={{ marginTop: 12, lineHeight: 1.78 }}>
-              Around Jaydyn’s releases is a small, connected crew.{" "}
-              <strong>Real World Jake</strong> —{" "}
+            <p className="so-micro">THE CIRCLE · REAL WORLD JAKE</p>
+            <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+              There’s a small group of people around Jaydyn’s releases who all know each other.{" "}
+              <strong>Real World Jake</strong> (
               <a href="https://www.instagram.com/realwrldjake/" target="_blank" rel="noreferrer" style={{ color: "var(--color-verm)", textDecoration: "underline", textUnderlineOffset: 3 }}>
                 @realwrldjake →
-              </a>{" "}
-              — is an LA-based music video director and editor managed by
-              Zero Zero MGMT. His work spans artists like Bhad Bhabie,
-              TEZZUS, Lil Tracy, and others, while still staying connected
-              to Seattle’s local music scene. He also shoots with Jaydyn
-              regularly. I’ve assisted with lighting on some of his video
-              sets too — it’s the kind of environment where everyone knows
-              each other, everyone contributes, and everyone brings a
-              hand.
+              </a>) is an LA-based music video director and editor managed by
+              Zero Zero MGMT. He’s worked with artists like Bhad Bhabie,
+              TEZZUS and Lil Tracy, and he’s still connected to Seattle’s
+              local music scene. He shoots with Jaydyn regularly, and I’ve
+              helped with lighting on some of his video sets. Everyone knows
+              each other and everyone pitches in.
             </p>
           </div>
           <div style={{ maxWidth: "58ch" }}>
             <p className="so-micro">THE COMMUNITY</p>
-            <p style={{ marginTop: 12, lineHeight: 1.78 }}>
-              A lot of this is for promotion — but it's also about the
-              people around it. It matters to be connected to people who
-              care about the community and actually contribute to it.
-              There's something fulfilling about working with people like
-              that — the work gets made, and the scene gets stronger along
-              the way. I appreciate every part of it.
+            <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+              A lot of this is for promotion, but it's also about the
+              people. I want to be around people who care about the
+              community and actually put something into it. Working with
+              them feels good: the work gets made, and the scene gets
+              stronger along the way. I appreciate all of it.
             </p>
-            <p style={{ marginTop: 14, lineHeight: 1.78 }}>
-              The goal wasn't to make one post. It was to give the artist
-              more ways to stay visible, recognizable, and connected to the
-              world around the music.
+            <p style={{ marginTop: 14, lineHeight: 1.55 }}>
+              The goal was to give him more ways to stay visible and recognizable between releases, and more than one post to show for it.
             </p>
           </div>
         </div>
@@ -278,7 +269,7 @@ function JaydynCase() {
             }}
           >
             <div className="so-photo-lb-card">
-              <img src={GALLERY[gal].src} alt={GALLERY[gal].cap} />
+              <img src={GALLERY[gal].src} alt={`Jaydyn F., Seattle artist photography ${GALLERY[gal].cap}`} />
               <div className="so-photo-lb-meta">
                 <span className="so-micro">{GALLERY[gal].cap}</span>
                 <div style={{ display: "flex", gap: 8, alignItems: "center" }}>

@@ -1,22 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 
 export const Route = createFileRoute("/campaigns/exhibition")({
+  head: () => seoHead("/campaigns/exhibition"),
   component: ExhibitionPage,
 });
 
 const PHOTOS = [
-  { src: "/assets/campaigns/exhibition/exh1.jpg", cap: "NO GUIDANCE studio — face front" },
+  { src: "/assets/campaigns/exhibition/exh1.jpg", cap: "NO GUIDANCE studio, face front" },
   { src: "/assets/campaigns/exhibition/exh2.jpg", cap: "Exhibition · owner, straight on" },
   { src: "/assets/campaigns/exhibition/exh3.jpg", cap: "Exhibition · looking down" },
   { src: "/assets/campaigns/exhibition/exh4.jpg", cap: "Exhibition · cap grip" },
   { src: "/assets/campaigns/exhibition/exh5.jpg", cap: "Yellow hoodie, concrete room" },
-  { src: "/assets/campaigns/exhibition/exh6.jpg", cap: "2.T.W. Studios — over the shoulder" },
+  { src: "/assets/campaigns/exhibition/exh6.jpg", cap: "2.T.W. Studios, over the shoulder" },
   { src: "/assets/campaigns/exhibition/exh7.jpg", cap: "Hood up, eyes closed" },
   { src: "/assets/campaigns/exhibition/exh8.jpg", cap: "Exhibition · full length" },
   { src: "/assets/campaigns/exhibition/exh9.jpg", cap: "Headscarf, gold, controller print" },
   { src: "/assets/campaigns/exhibition/exh10.jpg", cap: "We are not playing" },
-  { src: "/assets/campaigns/exhibition/exh11.jpg", cap: "Eye tee — full length" },
+  { src: "/assets/campaigns/exhibition/exh11.jpg", cap: "Eye tee, full length" },
   { src: "/assets/campaigns/exhibition/exh12.jpg", cap: "The eye, against the wall" },
   { src: "/assets/campaigns/exhibition/exh13.jpg", cap: "Down at his feet" },
   { src: "/assets/campaigns/exhibition/exh14.jpg", cap: "Beanie, eyes low" },
@@ -44,45 +48,45 @@ const LAYOUT: { s: number; a: string }[] = [
 const OWNER = [
   {
     t: "WHO HE IS",
-    d: "Exhibition is a streetwear label out of the Pacific Northwest — and the owner is the face of it. The brand runs on his world: bold typography, tech-washed motifs, and the kind of look that doesn't ask to be understood, it just is.",
+    d: "Exhibition is a streetwear label out of the Pacific Northwest, and the owner is the face of it. The brand looks like his world: bold typography, tech-washed motifs and a style that doesn't bother explaining itself.",
   },
   {
     t: "THE BRAND",
-    d: "The INTL script, the memory card, the eye, the controller — carried across tees, hoodies, denim and cut-and-sew pieces. It reads like a file dump of a generation: lo-fi, direct, and everywhere at once.",
+    d: "The INTL script, the memory card, the eye and the controller show up across tees, hoodies, denim and cut-and-sew pieces. It feels like a generation's camera roll dumped onto clothes: lo-fi, direct, all over the place.",
   },
   {
     t: "THE DROP",
-    d: "For the campaign we shot the work in the raw — exposed concrete, hard light, a wall that has seen things. The clothes stay the hero; the people in them make the story.",
+    d: "For the campaign we shot it raw: exposed concrete, hard light, a wall that has seen some things. The clothes are the focus, and the people wearing them tell the story.",
   },
 ];
 
 const PLAY = [
   {
     t: "THE MOVE",
-    d: "For a clothing brand, this is the creative way out: partner with people who make. A shoot like this is marketing strategy and content strategy in one — the drop gets its visuals, and the artists get their platform moment.",
+    d: "For a clothing brand, one smart move is to partner with local creatives. A shoot like this covers your marketing and your content at the same time. The drop gets its photos, and the artists get seen.",
   },
   {
     t: "THE PARTNERS",
-    d: "Partnering with creators isn't a favor — it's the campaign. The photographers, the musicians, the cast — everyone's content feeds everyone else. One project, a dozen platforms, all carrying the same world.",
+    d: "Partnering with creators isn't doing them a favor. They are the campaign. The photographers, the musicians and the cast all post, and everyone's content feeds everyone else's. One project ends up on a dozen platforms.",
   },
   {
     t: "THE CAST",
-    d: "The owner himself, painters, rappers, producers and personalities from across Seattle's creative scene — curated with Soniq Reign. The drop isn't just clothes anymore; it's the people wearing them.",
+    d: "The owner himself, plus painters, rappers, producers and personalities from across Seattle's creative scene. We picked the cast with Soniq Reign, so the drop is as much about the people as the clothes.",
   },
 ];
 
 const THOUGHT = [
   {
     t: "THE SHOOT",
-    d: "My thought process is always the light and the pose. Most people in the frame aren't models — so the job is making the angles, the light and the directions do the work, so someone who's never posed walks away looking like they do it daily.",
+    d: "My thought process is always the light and the pose. Most people in these photos aren't models, so it's on me to get the angles, light and directions right. Someone who's never posed should walk away looking like a natural.",
   },
   {
     t: "THE EDIT",
-    d: "Keep it raw enough to feel real, polished enough to feel professional. The concrete stays gritty, the prints stay loud, and the grade stays consistent so the whole set reads like one world.",
+    d: "Raw enough to feel real, polished enough to look professional. The concrete stays gritty, the prints stay loud, and the color grade stays consistent so the whole set hangs together.",
   },
   {
     t: "THE FEEDBACK",
-    d: "The real win is what people say after: \"I don't really model, but you made me look and feel great.\" That's the whole point — the camera is the excuse to make someone feel seen.",
+    d: "The best part is what people say after: \"I don't really model, but you made me look and feel great.\" That's what I'm going for. The camera is my excuse to make someone feel seen.",
   },
 ];
 
@@ -102,6 +106,7 @@ function ExhibitionPage() {
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -112,15 +117,14 @@ function ExhibitionPage() {
           Exhibition.
         </h1>
         <p className="so-micro mt-3">EXHIBITION.INTERNATIONAL · @exhibition.intl · SEATTLE</p>
-        <p style={{ marginTop: 22, maxWidth: "54ch", lineHeight: 1.75 }}>
-          A streetwear drop, shot in the raw. The owner, the cast, the
-          clothes — one campaign, everyone carried to the same world.
+        <p style={{ marginTop: 22, maxWidth: "54ch", lineHeight: 1.55 }}>
+          A streetwear drop, shot raw. The owner, the cast and the clothes all in one campaign.
         </p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/exhibition/exh1.jpg" alt="Exhibition streetwear campaign, Seattle" pos="center 25%" />
 
         {/* The frames — one full-width editorial grid */}
         <div style={{ marginTop: 40 }}>
-          <p className="so-micro">THE CAMPAIGN — 14 FRAMES · PHOTOS BY HANA</p>
+          <p className="so-micro">THE CAMPAIGN · 14 FRAMES · PHOTOS BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
               const L = LAYOUT[i];
@@ -140,7 +144,7 @@ function ExhibitionPage() {
                     style={{ width: "100%", aspectRatio: L.a, objectFit: "cover", borderRadius: 14, display: "block" }}
                   />
                   <span className="so-photo-cap" style={{ fontSize: 12 }}>
-                    {String(i + 1).padStart(2, "0")} · {ph.cap}
+                    {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
                   </span>
                 </button>
               );
@@ -183,7 +187,7 @@ function ExhibitionPage() {
             <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
               {PLAY[play].t}
             </p>
-            <p key={play} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
+            <p key={play} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
               {PLAY[play].d}
             </p>
             <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
@@ -209,12 +213,12 @@ function ExhibitionPage() {
 
         {/* Frames 08–10 */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">FRAMES 08–10 · PHOTOS BY HANA</p>
+          <p className="so-micro">FRAMES 08 TO 10 · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-3">
             {PHOTOS.slice(7, 10).map((ph, i) => (
               <button key={ph.src} className="so-photo-cell" type="button" onClick={() => setOpen(i + 7)} aria-label={ph.cap}>
                 <img src={ph.src} alt={ph.cap} loading="lazy" />
-                <span className="so-photo-cap">{String(i + 8).padStart(2, "0")} · {ph.cap}</span>
+                <span className="so-photo-cap">{String(i + 8).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span></span>
               </button>
             ))}
           </div>
@@ -224,13 +228,11 @@ function ExhibitionPage() {
         <div className="so-case-cols" style={{ marginTop: 44, alignItems: "start" }}>
           <div style={{ maxWidth: "58ch" }}>
             <p className="so-micro">THE PARTNERSHIP</p>
-            <p style={{ marginTop: 12, lineHeight: 1.78 }}>
+            <p style={{ marginTop: 12, lineHeight: 1.55 }}>
               For this campaign we partnered with{" "}
-              <a href="/campaigns/soniqreign" style={{ color: "var(--color-verm)", textDecoration: "underline", textUnderlineOffset: 3 }}>
-                Soniq Reign →
-              </a>{" "}
-              — "Sonic Unity, Uplifting Community" — to bring local artists
-              and musicians into the frame and curate the cast modelling the
+              Soniq Reign{" "}
+              ("Sonic Unity, Uplifting Community") to bring local artists
+              and musicians into the shoot and pick the cast modelling the
               drop.
             </p>
           </div>
@@ -240,6 +242,7 @@ function ExhibitionPage() {
               {ARTISTS.map((a) => (
               <div
                 key={a.name}
+                className="so-credit-row"
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
@@ -305,7 +308,7 @@ function ExhibitionPage() {
             <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
               {THOUGHT[thought].t}
             </p>
-            <p key={thought} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
+            <p key={thought} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
               {THOUGHT[thought].d}
             </p>
             <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
@@ -366,10 +369,8 @@ function ExhibitionPage() {
           <p className="so-serif" style={{ fontSize: "clamp(22px, 3vw, 32px)", marginTop: 12, lineHeight: 1.25 }}>
             The advice is free.
           </p>
-          <p style={{ marginTop: 10, maxWidth: "58ch", lineHeight: 1.75, color: "rgba(245,242,234,0.85)" }}>
-            Whether you're a brand that needs a campaign or an artist that
-            needs frames, I'll tell you straight what I'd do — no pitch,
-            no pressure. Ask me anything.
+          <p style={{ marginTop: 10, maxWidth: "58ch", lineHeight: 1.55, color: "rgba(245,242,234,0.85)" }}>
+            If you're a brand that needs a campaign or an artist who needs photos, I'll tell you honestly what I'd do. No pitch, no pressure. Ask me anything.
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 20 }}>
             <a

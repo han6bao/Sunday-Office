@@ -31,7 +31,14 @@ type AppEnv = {
 };
 
 export function bindings(): AppEnv {
-  // Vercel variant: no Cloudflare Workers runtime, so no `env` object.
-  // Server env vars are read via process.env where needed.
-  return {} as AppEnv;
+  // Vercel variant: no Cloudflare Workers runtime, so read the server's
+  // environment variables (set in Vercel → Project → Settings → Environment Variables).
+  const env = (typeof process !== "undefined" ? process.env : {}) as Record<string, string | undefined>;
+  return {
+    HF_ENV: env.HF_ENV,
+    APP_SLUG: env.APP_SLUG,
+    RESEND_API_KEY: env.RESEND_API_KEY,
+    INQUIRY_TO: env.INQUIRY_TO,
+    INQUIRY_FROM: env.INQUIRY_FROM,
+  } as AppEnv;
 }

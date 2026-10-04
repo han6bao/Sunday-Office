@@ -1,8 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
 
 export const Route = createFileRoute("/campaigns/dj-prashant-hiyu")({
+  head: () => seoHead("/campaigns/dj-prashant-hiyu"),
   component: BoatPartyPage,
 });
 
@@ -44,19 +48,19 @@ const LAYOUT: { s: number; a: string }[] = [
 const DEEP = [
   {
     t: "THE HIYU",
-    d: "The Hiyu is Seattle's old ferry boat, turned into a floating venue — million-dollar reno, two open decks, two bar lounges. It sails Lake Union, Lake Washington and Puget Sound, boarding at MOHAI off Terry Ave N. Basically the city's party ferry.",
+    d: "The Hiyu is an old Seattle ferry that got a million-dollar renovation and became a floating venue, with two open decks and two bar lounges. It sails Lake Union, Lake Washington and Puget Sound, boarding at MOHAI off Terry Ave N. Basically the city's party ferry.",
   },
   {
     t: "THE DJ",
-    d: "DJ Prashant (Prashant Kakad) calls himself a full-time party starter. Straight out of Mumbai, came to the U.S. for grad school, got the engineering job at Intel — and quit it to start Bollywood Dreams Entertainment, because the music was never going to be the side gig. Singer, MC, choreographer, DJ — he blends Hollywood and Bollywood into something that gets everyone off the wall, Mumbai or Seattle.",
+    d: "DJ Prashant (Prashant Kakad) calls himself a full-time party starter. He grew up in Mumbai, came to the U.S. for grad school and landed an engineering job at Intel. Then he quit to start Bollywood Dreams Entertainment, because music was never going to be his side gig. He sings, MCs, choreographs and DJs, and his Hollywood and Bollywood mixes get everyone off the wall, in Mumbai or Seattle.",
   },
   {
     t: "THE CULTURE",
-    d: "This is the Indian American thing, out in the open. Y2K nostalgia through a Desi lens — the 2000s club hits and the Bollywood bangers are the same decade, no separating them. Kids raised on both soundtracks showing up dressed like 2003 and dancing to Punjabi on a ferry. The culture doesn't stay home — it takes the skyline.",
+    d: "This is Indian American culture out in the open. It's Y2K nostalgia through a Desi lens, since the 2000s club hits and the Bollywood bangers came from the same decade. People raised on both soundtracks showed up dressed like it was 2003 and danced to Punjabi music on a ferry, with the whole skyline behind them.",
   },
   {
     t: "OUTSIDE THE BOX",
-    d: "Hana shot the night — the crowd, the DJ, the whole deck — but it was never just event photography. Working the social angle with the Hiyu's team and DJ Prashant, she treated the deck like a set: frames built to move, moments made to post. The pictures aren't documentation, they're promotion — the night becomes content the event keeps using.",
+    d: "I shot the night: the crowd, the DJ, the whole deck. I worked with the Hiyu's team and DJ Prashant on the social side, so I treated the deck like a set and shot with posting in mind. The photos work as promotion, and the event can keep using them long after the night is over.",
   },
 ];
 
@@ -66,6 +70,7 @@ function BoatPartyPage() {
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -76,38 +81,35 @@ function BoatPartyPage() {
           Iconic 2000s Boat Party.
         </h1>
         <p className="so-micro mt-3">DJ PRASHANT · HOLLYWOOD × BOLLYWOOD · ON THE HIYU · PHOTOS BY HANA</p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/dj-prashant-hiyu/djp-04.jpg" alt="Iconic 2000s Boat Party on the Hiyu, Seattle event photography" pos="center" />
 
-        <div className="so-reel-row">
+        <div className="so-reel-row is-solo">
           <div> {/* text column */}
 
         {/* The event */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE EVENT</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
             Four hours on the water, Y2K outfits in full effect. Boarding
             at 7, sail at 8, and then it's just Seattle spinning past.
-            Three rooms, three vibes — Prashant outside doing Bollywood,
-            Punjabi and 2000s club hits, EDM in the Salish room, reggaeton
-            in Pau Hana. Lil Jon to Sunidhi Chauhan, one night, no stops.</p>
+            There were three rooms: Prashant outside playing Bollywood,
+            Punjabi and 2000s club hits, EDM in the Salish room, and reggaeton
+            in Pau Hana. Lil Jon to Sunidhi Chauhan, all in one night.</p>
         </div>
 
         {/* The intro — super short */}
         <div style={{ marginTop: 20, maxWidth: "58ch" }}>
-          <p style={{ lineHeight: 1.78 }}>
-            <strong>The Hiyu</strong> — a state ferry turned Seattle's
-            premier floating arts, entertainment and event venue on Lake
-            Union — posted my work from the night. A venue this central to
-            Seattle culture putting the photos on their own feed is the
-            kind of support that keeps a scene alive: 12.5K views and
-            counting. The night itself was hosted by{" "}
+          <p style={{ lineHeight: 1.55 }}>
+            <strong>The Hiyu</strong>, a former state ferry that's now a
+            floating arts, entertainment and event venue on Lake Union,
+            posted my work from the night. Having a venue that big in Seattle post my photos on their own feed meant a lot, and the post passed 12.5K views. The night itself was hosted by{" "}
             <strong>DJ Prashant</strong>, owner of{" "}
             <a href="https://www.instagram.com/jaiho.seattle/" target="_blank" rel="noreferrer" style={{ color: "var(--color-verm)", textDecoration: "underline", textUnderlineOffset: 3 }}>
               @jaiho.seattle →
             </a>
-            , who runs Indian American and Indian nightlife through the
-            city — some of it themed, all of it bringing the culture to
-            life.
+            , who runs Indian and Indian American nightlife around the
+            city. Some of his events are themed, and all of them celebrate
+            the culture.
           </p>
         </div>
 
@@ -146,7 +148,7 @@ function BoatPartyPage() {
             <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
               {DEEP[deep].t}
             </p>
-            <p key={deep} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
+            <p key={deep} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
               {DEEP[deep].d}
             </p>
             <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
@@ -170,31 +172,11 @@ function BoatPartyPage() {
           </button>
         </div>
           </div>
-          <div className="so-reel-side" style={{ position: "sticky", top: 84 }}>
-            <div
-              style={{
-                aspectRatio: "9 / 16",
-                borderRadius: 18,
-                border: "1px solid rgba(236, 231, 221, 0.16)",
-                background: "#131210",
-                display: "grid",
-                placeItems: "center",
-                padding: 14,
-                textAlign: "center",
-              }}
-            >
-              <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.16em", lineHeight: 1.9 }}>
-                SOCIAL REEL · TO BE PLACED
-                <br />
-                THE HIYU × DJ PRASHANT
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES — 14 · BY HANA</p>
+          <p className="so-micro">THE FRAMES · 14 · BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
               const L = LAYOUT[i];
@@ -214,7 +196,7 @@ function BoatPartyPage() {
                     style={{ width: "100%", aspectRatio: L.a, objectFit: "cover", borderRadius: 14, display: "block" }}
                   />
                   <span className="so-photo-cap" style={{ fontSize: 12 }}>
-                    {String(i + 1).padStart(2, "0")} · {ph.cap}
+                    {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
                   </span>
                 </button>
               );
@@ -227,13 +209,13 @@ function BoatPartyPage() {
           <p className="so-micro" style={{ textAlign: "center" }}>THE NIGHT, CONTINUED</p>
           <div className="mt-3" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px 26px", maxWidth: 640, margin: "0 auto" }}>
             <a className="so-link-jump" href="https://www.eventbrite.com/e/iconic-2000s-boat-party-dj-prashant-hollywood-x-bollywood-the-hiyu-tickets-1999005770070" target="_blank" rel="noreferrer">
-              THE EVENT — EVENTBRITE →
+              THE EVENT · EVENTBRITE →
             </a>
             <a className="so-link-jump" href="https://onthehiyu.com/" target="_blank" rel="noreferrer">
               ON THE HIYU →
             </a>
             <a className="so-link-jump" href="https://dreamsperfected.com/djprashant/" target="_blank" rel="noreferrer">
-              DJ PRASHANT — BOLLYWOOD DREAMS →
+              DJ PRASHANT · BOLLYWOOD DREAMS →
             </a>
           </div>
           <p className="so-micro" style={{ marginTop: 14, textAlign: "center", color: "var(--color-stone)", letterSpacing: "0.1em" }}>

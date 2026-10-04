@@ -8,8 +8,10 @@ export const Route = createFileRoute('/robots.txt')({
         const body = [
           'User-agent: *',
           'Allow: /',
+          'Disallow: /archive',
+          'Disallow: /private',
           '',
-          `Sitemap: ${origin}/sitemap.xml`,
+          `Sitemap: https://sundayoffice.agency/sitemap.xml`,
         ].join('\n')
         return new Response(body, {
           headers: {

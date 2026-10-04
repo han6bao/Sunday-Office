@@ -19,24 +19,28 @@ export type Work = {
   color?: string;
   logo?: string;
   logotext?: { main: string; sub?: string; color?: string };
+  niche?: string;
+  status?: string;
 };
 
 export const currentWork: Work[] = [
   {
     file: "PROJECT 001",
-    client: "Angie Tiara Beauty",
-    type: "CONTENT + SOCIAL FOR A BEAUTY BUSINESS",
-    service: "Content / Social Photography",
+    client: "Selaras Haus",
+    niche: "Beauty",
+    type: "INTERIOR PHOTOGRAPHY FOR A BEAUTY BOUTIQUE",
+    service: "Interior Photography",
     location: "Tacoma · WA",
     year: "2026",
     motif: "stem",
-    url: "/campaigns/angie-tiara-beauty",
+    url: "/campaigns/selaras-haus",
     image: "/assets/campaigns/angie-tiara-beauty/at-01.jpg",
   },  {
     file: "PROJECT 002",
     client: "Essential Brows",
+    niche: "Beauty",
     type: "WEBSITE FOR A BROW STUDIO",
-    service: "Websites / Brand Direction",
+    service: "Websites / Brand Kit",
     location: "Milton · WA",
     year: "2026",
     motif: "porcelain",
@@ -44,10 +48,24 @@ export const currentWork: Work[] = [
     image: "/assets/campaigns/essential-brows-studio/featured-cover.png",
     color: "#faf9f7",
   },  {
+    file: "PROJECT 002B",
+    client: "Jazmin's Events",
+    niche: "Independent Services",
+    type: "BRAND + WEBSITE FOR A WEDDING PLANNER",
+    service: "Branding / Website",
+    location: "PNW",
+    year: "2026",
+    motif: "stem",
+    status: "In progress",
+    url: "/campaigns/jazmins-events",
+    image: "/assets/campaigns/jazmins-events/featured-cover.png",
+    color: "#f3efe8",
+  },  {
     file: "PROJECT 003",
     client: "GREAN",
+    niche: "Food + Drink",
     type: "WEBSITE FOR A MATCHA CAFÉ",
-    service: "Websites / Brand Direction",
+    service: "Website",
     location: "Seattle · WA",
     year: "2026",
     motif: "stem",
@@ -55,19 +73,21 @@ export const currentWork: Work[] = [
     color: "#f6f1e7",
     image: "/assets/campaigns/grean/featured-cover.png",
     logo: "/assets/work/grean-mark.png",
-  },  {
+  },    {
     file: "PROJECT 004",
-    client: "Soul Social at Public House",
-    type: "EVENT SPACE PHOTOGRAPHY FOR A NIGHT SERIES",
-    service: "Content / Event Photography",
+    client: "Public House",
+    niche: "Food + Drink",
+    type: "VENUE PHOTOGRAPHY FOR A BAR + EVENT SPACE",
+    service: "Venue Photography",
     location: "Pioneer Square · Seattle",
     year: "2026",
     motif: "ring",
-    url: "/campaigns/soul-social",
+    url: "/campaigns/public-house",
     image: "/assets/campaigns/soul-social/ss-01.jpg",
   },  {
     file: "PROJECT 005",
     client: "Bar Bistro",
+    niche: "Food + Drink",
     type: "CONTENT + SOCIAL FOR FOOD + DRINK",
     service: "Content / Social · Food & Drink",
     location: "Tacoma · WA",
@@ -132,34 +152,34 @@ export const archivePanels: ArchivePanel[] = [
     tag: "PHOTOGRAPHY",
     name: "Photography",
     dark: true,
-    blurb: "Portraits, series and campaigns — shot, graded, hung.",
-    intro: "The still room. Portraits, series and campaigns shot on film and sensor — light, texture and the city in between. A small selection lives here; the full vault is on the other side of the door.",
-    darkIntro: "The darkroom. Deep espresso, cream type, images first. Portraits and campaigns — shot by the office, graded, and hung like prints.",
+    blurb: "Portraits, series and campaigns. Shot, graded and hung.",
+    intro: "The still room. Portraits, series and campaigns shot on film and digital, with the city in between. A small selection lives here. The full archive is behind the door.",
+    darkIntro: "The darkroom. Deep espresso, cream type, images first. Portraits and campaigns I shot and graded, hung like prints.",
   },
   {
     id: "creative-direction",
     tag: "CREATIVE DIRECTION",
     name: "Creative Direction",
     dark: true,
-    blurb: "Concepts, mood, art direction — the thinking before the frame.",
-    intro: "The mood. Concepts, moodboards, visual treatments, styling and art direction — the thinking that happens before the shutter. Below: directions that shipped; behind the door, the full body of work.",
-    darkIntro: "After hours. Concepts and moodboards, styling and art direction — the office's thinking, shown as it was made: references, treatments and the final frames that came out of them.",
+    blurb: "Concepts, mood and art direction. The thinking before the shoot.",
+    intro: "The mood. Concepts, moodboards, treatments, styling and art direction: the thinking that happens before the shutter. Below are directions that made it out. The full body of work is behind the door.",
+    darkIntro: "After hours. Concepts, moodboards, styling and art direction, shown the way they were made: references, treatments and the final photos that came out of them.",
   },
   {
     id: "moving-image",
     tag: "MOVING IMAGE",
     name: "Moving Image",
     dark: true,
-    blurb: "Music videos, reels, brand films — the picture that moves.",
-    intro: "The picture that moves. Music videos, reels, brand films and performance pieces — shot, cut, colored and shipped for artists and brands. A selective capability, shown here as it shipped.",
-    darkIntro: "The screening room. Selected films, cinematic stills and the work in motion — music videos, reels and brand films, framed dark for viewing.",
+    blurb: "Music videos, reels and brand films.",
+    intro: "Pictures that move. Music videos, reels, brand films and performance pieces, shot, cut and colored for artists and brands. I take on a few of these, shown here as they were released.",
+    darkIntro: "The screening room. Selected films and stills from music videos, reels and brand films, framed dark for viewing.",
   },
   {
     id: "websites",
     tag: "WEBSITES",
     name: "Websites",
     dark: false,
-    blurb: "Storefronts and offices — designed, built, live.",
+    blurb: "Storefronts and offices. Designed, built and live.",
     intro: "",
   },
   {
@@ -167,7 +187,7 @@ export const archivePanels: ArchivePanel[] = [
     tag: "BRANDING + IDENTITY",
     name: "Branding + Identity",
     dark: false,
-    blurb: "The whole world — marks, systems, direction and the look of a thing.",
+    blurb: "Marks, systems, direction and how the whole thing looks.",
     intro: "",
   },
   {
@@ -175,7 +195,7 @@ export const archivePanels: ArchivePanel[] = [
     tag: "CONTENT + SOCIAL",
     name: "Content + Social",
     dark: false,
-    blurb: "Feeds, reels and short-form — plus motion cut from what you already have.",
+    blurb: "Feeds, reels and short-form, plus motion cut from what you already have.",
     intro: "",
   },
 ];
@@ -206,15 +226,14 @@ export const websiteMeta: Record<string, {
 }> = {
   "ARCH 001": { bucket: "FOOD + HOSPITALITY", cardLine: "Desserts · Tacoma, WA", note: "Custom desserts for weeks that call for celebration.", visual: "mobile", image: "/assets/websites/dipped/preview.jpg" },
   "ARCH 002": { bucket: "BEAUTY + WELLNESS", cardLine: "Jaw Specialist · Tacoma, WA", note: "A medical practice with a soft, confident face.", visual: "branding" },
-  "ARCH 010": { bucket: "FOOD + HOSPITALITY", cardLine: "Pastry Shop · Seattle, WA", note: "French technique, Japanese inspiration — handmade in Seattle.", visual: "screen", image: "/assets/websites/mitten/preview.jpg" },
+  "ARCH 010": { bucket: "FOOD + HOSPITALITY", cardLine: "Pastry Shop · Seattle, WA", note: "French technique, Japanese inspiration, handmade in Seattle.", visual: "screen", image: "/assets/websites/mitten/preview.jpg" },
   "ARCH 011": { bucket: "FOOD + HOSPITALITY", cardLine: "Matcha & Hojicha · Seattle, WA", note: "Specialty matcha in the U District. Good tea. Good people.", visual: "mobile", image: "/assets/websites/grean/preview.jpg" },
   "ARCH 012": { bucket: "PHOTOGRAPHY + CREATIVE", cardLine: "Photography Portfolio · NC / VA", note: "Portraits, weddings and boudoir across NC + VA.", visual: "photo", image: "/assets/work/britts-cover.jpg" },
-  "ARCH 013": { bucket: "PHOTOGRAPHY + CREATIVE", cardLine: "Photography · S. Indiana", note: "Portrait and lifestyle work — emerald, grounded.", visual: "screen", image: "/assets/websites/heart-homestead/preview.jpg" },
   "ARCH 014": { bucket: "PHOTOGRAPHY + CREATIVE", cardLine: "Mobile Photo Studio · Maryland", note: "A studio that brings the session to you.", visual: "mobile", image: "/assets/websites/mobile-memories/preview.jpg" },
-  "ARCH 018": { bucket: "BEAUTY + WELLNESS", cardLine: "Permanent Makeup · Milton, WA", note: "Aliya's brow studio — no website before, just a booking link. Now a full interactive site that explains everything, so she redirects clients instead of repeating herself.", visual: "screen", image: "/assets/websites/essential-brows/preview.jpg" },
+  "ARCH 018": { bucket: "BEAUTY + WELLNESS", cardLine: "Permanent Makeup · Milton, WA", note: "Aliya's brow studio had no website, just a booking link. Now it has a full interactive site that explains everything, so she can send clients there instead of repeating herself.", visual: "screen", image: "/assets/websites/essential-brows/preview.jpg" },
   "ARCH 019": { bucket: "BEAUTY + WELLNESS", cardLine: "Salon · Federal Way, WA", note: "Everything beauty, one spot.", visual: "mobile", image: "/assets/websites/beauty-spot/preview.jpg" },
-  "ARCH 029": { bucket: "FOOD + HOSPITALITY", cardLine: "Matcha + Boba · Seattle, WA", note: "More than boba — matcha-first in the U District.", visual: "screen", image: "/assets/websites/yoka/preview.jpg" },
-  "ARCH 032": { bucket: "WEDDINGS + EVENTS", cardLine: "Wedding Planning · Oregon, PNW", note: "Brand-new business that started already booked — a mockup became the site that takes her inquiries.", visual: "photo", image: "/assets/campaigns/jazmins-events/brand-guide.png" },
+  "ARCH 029": { bucket: "FOOD + HOSPITALITY", cardLine: "Matcha + Boba · Seattle, WA", note: "More than boba. Matcha first, in the U District.", visual: "screen", image: "/assets/websites/yoka/preview.jpg" },
+  "ARCH 032": { bucket: "WEDDINGS + EVENTS", cardLine: "Wedding Planning · Oregon, PNW", note: "A brand-new wedding planner. Branding done, website in progress.", visual: "photo", image: "/assets/campaigns/jazmins-events/brand-guide.png" },
 };
 
 /** Curated picks for the top of the Websites archive. */
@@ -235,7 +254,7 @@ export const photoSection: Record<string, PhotoSection> = {
   "ARCH 005": "PEOPLE + EDITORIAL",   // Avery Tien
   "ARCH 027": "ARTISTS + MUSIC",      // Highway 2009
   "ARCH 009": "ARTISTS + MUSIC",      // Paradice Worldwide
-  "ARCH 016": "PEOPLE + EDITORIAL",   // Green Grillz
+  "ARCH 016": "PEOPLE + EDITORIAL",   // Nine Vicious × Custom Grillz
   "ARCH 022": "ARTISTS + MUSIC",      // Kenshi Killz
   "ARCH 023": "ARTISTS + MUSIC",      // Rockstar Flaco
   "ARCH 026": "ARTISTS + MUSIC",      // Still Different
@@ -318,10 +337,9 @@ export const archiveIndustryByFile: Record<string, string> = {
   "ARCH 010": "Food + Hospitality", // Mitten
   "ARCH 011": "Food + Hospitality", // GREAN
   "ARCH 012": "Artists + Creatives", // Britt's Photography 423
-  "ARCH 013": "Artists + Creatives", // Heart & Homestead
   "ARCH 014": "Artists + Creatives", // Mobile Memories Photography
   "ARCH 015": "Artists + Creatives", // Soniq Reign
-  "ARCH 016": "Products + Retail", // Green grillz (Nine Vicious)
+  "ARCH 016": "Products + Retail", // Nine Vicious × Custom Grillz
   "ARCH 017": "Events + Experiences", // Leon Thomas x Vice Seattle
   "ARCH 018": "Beauty + Wellness", // Essential Brows
   "ARCH 019": "Beauty + Wellness", // Beauty Spot
@@ -339,7 +357,7 @@ export const archiveIndustryByFile: Record<string, string> = {
   "ARCH 031": "Food + Hospitality", // Bar Bistro Tacoma
   "ARCH 032": "Events + Experiences", // Jazmin's Events + Coordinating
   "ARCH 033": "Artists + Creatives", // Jaydyn F.
-  "ARCH 034": "Events + Experiences", // Soul Social at Public House
+  "ARCH 034": "Events + Experiences", // Public House
 };
 
 export const archiveCategories: Array<ArchiveCategory> = [
@@ -363,43 +381,19 @@ export const archive: ArchiveEntry[] = [
 },
   { file: "ARCH 003", title: "Streetwear Label · Exhibition × Soniq Reign", category: "CAMPAIGNS", place: "Seattle", year: "2026", motif: "sun", color: "#141414", logotext: { main: "EXHIBITION", sub: "INTL · SUMMER 2026", color: "#f5f5f5" }, url: "/campaigns/exhibition",
   tags: ["PHOTOGRAPHY", "CREATIVE DIRECTION", "CAMPAIGN"],
-  blurb: "Streetwear drop shot in the Soniq Reign circle — tees, denim, the moment between takes.",
+  blurb: "A streetwear drop shot with the Soniq Reign circle. Tees, denim and the moments between takes.",
 },
   { file: "ARCH 004", title: "Photography · Night series, blue hour", category: "PHOTOGRAPHY", place: "Seattle", year: "2026", motif: "sun", image: "/assets/photography/beach-01.jpg",
   tags: ["PHOTOGRAPHY"],
-  blurb: "Blue hour on the water — a series held in the city's dark.",
+  blurb: "Blue hour on the water, a series shot after dark in the city.",
 },
   { file: "ARCH 005", title: "Photography · Avery Tien, campaign portraits", category: "PHOTOGRAPHY", place: "Seattle", year: "2025", motif: "monogram", image: "/assets/photography/avery-01.jpg", url: "/campaigns/avery-tien",
   tags: ["PHOTOGRAPHY", "CREATIVE DIRECTION", "CAMPAIGN"],
-  blurb: "Portraits for TIEN — Bumbershoot's Fashion District, repurposed fabric, worn-in edge.",
+  blurb: "Portraits for TIEN at Bumbershoot's Fashion District. Repurposed fabric with a worn-in edge.",
 },
   { file: "ARCH 006", title: "Photography · Shoreline, city lights on water", category: "PHOTOGRAPHY", place: "Seattle", year: "2026", motif: "porcelain", image: "/assets/photography/night-01.jpg",
   tags: ["PHOTOGRAPHY"],
   blurb: "City lights on water, shot slow and held.",
-},
-  /*
-   * @reelclip — Seattle videographer (music videos + reels,
-   *   supporting Seattle artists; NOT a record label, no live sets. Hana: filming sets,
-   *   locations; primary role photography — BTS + creative portraits for the
-   *   artists (Saunjay, Tooley, TB Nino, 3Way Heff + more).
-   */
-  { file: "ARCH 007", title: "Videography · @reelclip", category: "CAMPAIGNS", place: "Seattle", year: "2026", motif: "sun", color: "#111116", logo: "/assets/work/reelclip-logo.jpg", url: "/campaigns/reelclip",
-  tags: ["MOVING IMAGE", "CREATIVE DIRECTION", "CAMPAIGN"],
-  blurb: "Music video + reel videography for Seattle artists — share-ready, Seattle-bred.",
-},
-  /*
-   * The Issue — independent fashion publication (theissue.higgsfield.app).
-   * IG @theissue__ ("seattle's fashion postcard", bio "sent from the city
-   * of sea"). Showcases primarily Seattle fashion; interviews the people
-   * behind it — "something for the culture." Hana: creative image side,
-   * filming + color correcting. Brand: signal red #E31B23 + cream
-   * (postage-stamp mark, heart + Space Needle). Filed under MOVING IMAGE
-   * per owner; easy to move.
-   */
-  { file: "ARCH 008", title: "Fashion Publication · The Issue", category: "MOVING IMAGE", place: "Seattle", year: "2026", motif: "stem", color: "#E31B23", logotext: { main: "THE ISSUE", sub: "FASHION PUBLICATION", color: "#FFF9E5"}, url: "/campaigns/the-issue",
-  tags: ["MOVING IMAGE", "CREATIVE DIRECTION", "CONTENT + SOCIAL"],
-  blurb: "Seattle's fashion postcard — interviews, moving images and the culture between posts.",
-
 },
   /*
    * Paradice Worldwide — Seattle streetwear clothing brand (2919 Rainier Ave S,
@@ -414,7 +408,7 @@ export const archive: ArchiveEntry[] = [
    */
   { file: "ARCH 009", title: "Streetwear Clothing Brand · Paradice Worldwide × ITZ PZ", category: "CAMPAIGNS", place: "Seattle", year: "2026", motif: "sun", color: "#111116", logo: "/assets/work/paradice-logo.jpg", url: "/campaigns/paradice",
   tags: ["PHOTOGRAPHY", "CREATIVE DIRECTION", "CAMPAIGN"],
-  blurb: "Streetwear at 2919 Rainier — ITZ PZ in the paisley collection.",
+  blurb: "Streetwear from 2919 Rainier, with ITZ PZ in the paisley collection.",
 },
   /*
    * Mitten Sweets & Coffee — French-Japanese pastry shop, Seattle
@@ -425,7 +419,7 @@ export const archive: ArchiveEntry[] = [
    */
   { file: "ARCH 010", title: "French-Japanese Bakery · Mitten Sweets & Coffee", category: "WEBSITES", place: "Seattle", year: "2026", motif: "porcelain", color: "#581818", logo: "/assets/work/mittens-logo.jpg", url: "https://mittens-nine.vercel.app/",
   tags: ["WEBSITES"],
-  blurb: "French technique, Japanese inspiration — a pastry kitchen's storefront, handmade in Seattle.",
+  blurb: "French technique, Japanese inspiration. A storefront for a pastry kitchen, handmade in Seattle.",
 },
   /*
    * GREAN — specialty matcha & hojicha café, Seattle U District
@@ -440,33 +434,20 @@ export const archive: ArchiveEntry[] = [
      boudoir, events, wildlife; also video). */
   { file: "ARCH 012", title: "Artists + Creatives · Britt's Photography 423", category: "WEBSITES", place: "NC / VA", year: "2026", motif: "sun", image: "/assets/work/britts-cover.jpg", url: "https://www.brittsphotography423.com/",
   tags: ["WEBSITES"],
-  blurb: "Portraits, weddings and boudoir across NC + VA — a photographer's own portfolio.",
+  blurb: "A photographer's own portfolio: portraits, weddings and boudoir across NC + VA.",
 
 },
 
-  /* Heart & Homestead — Southern Indiana portrait + lifestyle photographer (Emily). */
-  { file: "ARCH 013", title: "Artists + Creatives · Heart & Homestead", category: "WEBSITES", place: "Indiana", year: "2026", motif: "stem", color: "#1D3B2E", logo: "/assets/work/hh-logo.png", url: "https://heart-and-homestead.vercel.app/",
-  tags: ["WEBSITES"],
-  blurb: "Southern Indiana portrait + lifestyle work — emerald, grounded.",
-},
   /* Mobile Memories Photography — Tim Sinnott, mobile photo studio, Middle River MD. */
   { file: "ARCH 014", title: "Artists + Creatives · Mobile Memories Photography", category: "WEBSITES", place: "Maryland", year: "2026", motif: "sun", color: "#2B231A", logo: "/assets/work/mm-logo.png", url: "https://mobile-memories-photography.vercel.app/",
   tags: ["WEBSITES"],
-  blurb: "A mobile studio that brings the session to you — Middle River, Maryland.",
+  blurb: "A mobile studio in Middle River, Maryland that brings the session to you.",
 },
-  /* Soniq Reign — Greater Seattle creative collective (@soniqreign, "Sonic Unity,
-     Uplifting Community", soniqreign.com). Page: creative direction + moving image;
-     8 music videos in post; Hana: set design, brand photography, brand planning,
-     concept sourcing, finding artists, graphic design. */
-  { file: "ARCH 015", title: "Artists + Creatives · Soniq Reign", category: "CAMPAIGNS", place: "Seattle", year: "2026", motif: "sun", color: "#000000", logo: "/assets/work/soniqreign-logo.jpg", url: "/campaigns/soniqreign",
-  tags: ["MOVING IMAGE", "CREATIVE DIRECTION", "CAMPAIGN"],
-  blurb: "Sonic Unity, Uplifting Community — creative direction across the collective, 8 music videos in post.",
-},
-  /* Green grillz set — custom grillz studio campaign, Nine Vicious (YSL rapper).
+  /* Nine Vicious × Custom Grillz set — custom grillz studio campaign, Nine Vicious (YSL rapper).
      Client name + revenue milestones to be confirmed. Photos by Hana. */
-  { file: "ARCH 016", title: "Products + Retail · Green Grillz — Nine Vicious", category: "CAMPAIGNS", place: "Seattle", year: "2026", motif: "sun", image: "/assets/campaigns/green-grillz/gg01.jpg", url: "/campaigns/green-grillz",
+  { file: "ARCH 016", title: "Products + Retail · Nine Vicious × Custom Grillz", category: "CAMPAIGNS", place: "Seattle", year: "2026", motif: "sun", image: "/assets/campaigns/green-grillz/gg01.jpg", url: "/campaigns/green-grillz",
   tags: ["PHOTOGRAPHY", "CREATIVE DIRECTION", "CAMPAIGN"],
-  blurb: "Custom grillz campaign — Nine Vicious, high shine, shot in Seattle.",
+  blurb: "Photography and marketing for jeweler Marcus Adam's custom grillz, with Nine Vicious as the face.",
 },
   {
     file: "ARCH 017",
@@ -481,7 +462,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/leon-thomas",
     industry: "Events + Experiences",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL", "CAMPAIGN"],
-    blurb: "Mutts Don't Heel afterparty at Vice Seattle — published by Dubsea, photos by Hana.",
+    blurb: "The Mutts Don't Heel afterparty at Vice Seattle. Published by Dubsea, photos by Hana.",
   },
   {
     file: "ARCH 018",
@@ -496,7 +477,7 @@ export const archive: ArchiveEntry[] = [
     url: "https://www.essentialbrows.studio/",
     industry: "Beauty + Wellness",
     tags: ["WEBSITES"],
-    blurb: "Aliya is a permanent makeup artist + trainer in Milton. She ran on a booking link for years — now the site explains the whole studio so she can just redirect clients and get back to brows.",
+    blurb: "Aliya is a permanent makeup artist + trainer in Milton. She ran on a booking link for years. Now the site explains the whole studio, so she can point clients there and get back to brows.",
  },
   {
     file: "ARCH 019",
@@ -510,7 +491,7 @@ export const archive: ArchiveEntry[] = [
     url: "https://beauty-spot-seven.vercel.app/",
     industry: "Beauty + Wellness",
     tags: ["WEBSITES"],
-    blurb: "Federal Way salon — a site with the same polish as the chair.",
+    blurb: "A Federal Way salon, with a site as polished as the chair.",
   },
 
   {
@@ -524,7 +505,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/chutneys",
     industry: "Food + Hospitality",
     tags: ["MOVING IMAGE", "PHOTOGRAPHY", "CONTENT + SOCIAL", "CAMPAIGN"],
-    blurb: "North Indian in Bellevue — a commercial made for the kitchen, and the plates that feed the feeds.",
+    blurb: "North Indian food in Bellevue. A commercial for the kitchen, plus plates for their social feeds.",
   },
 
   {
@@ -538,7 +519,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/big-baby-gucci",
     industry: "Artists + Creatives",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL"],
-    blurb: "Charlotte's SoundCloud prince, loud in the dark — the live set, sepia and smoke.",
+    blurb: "Charlotte's SoundCloud prince, loud in the dark. The live set in sepia and smoke.",
       frontHidden: true,},
 
   {
@@ -552,21 +533,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/kenshi-killz",
     industry: "Artists + Creatives",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL"],
-    blurb: "TV performance + the promo shoot — keffiyeh, coins, and a vintage TV against the Seattle sun.",
-  },
-
-  {
-    file: "ARCH 023",
-    title: "Artists + Creatives · Rockstar Flaco",
-    category: "CAMPAIGNS",
-    place: "Seattle",
-    year: "2026",
-    motif: "sun",
-    image: "/assets/campaigns/rockstar-flaco/rf-01.jpg",
-    url: "/campaigns/rockstar-flaco",
-    industry: "Artists + Creatives",
-    tags: ["PHOTOGRAPHY", "MOVING IMAGE", "CREATIVE DIRECTION", "CAMPAIGN"],
-    blurb: "Facilitated by the Soniq Reign × ReelClip circle, photographed by Hana — the set that ran on the family.",
+    blurb: "A TV performance and the promo shoot. Keffiyeh, coins and a vintage TV in the Seattle sun.",
   },
 
   {
@@ -580,21 +547,21 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/dj-wzrd",
     industry: "Artists + Creatives",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL", "CAMPAIGN"],
-    blurb: "The sold-out Cultura night in pink and purple — white frames, gold chain, crowd in the air.",
+    blurb: "The sold-out Cultura night in pink and purple. White frames, a gold chain, hands in the air.",
       frontHidden: true,},
 
   {
     file: "ARCH 025",
-    title: "Beauty + Wellness · Angie Tiara Beauty",
+    title: "Beauty + Wellness · Selaras Haus by Angie Tiara",
     category: "CAMPAIGNS",
     place: "Tacoma · WA",
     year: "2026",
     motif: "stem",
     image: "/assets/campaigns/angie-tiara-beauty/at-01.jpg",
-    url: "/campaigns/angie-tiara-beauty",
+    url: "/campaigns/selaras-haus",
     industry: "Beauty + Wellness",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL"],
-    blurb: "Makeup + esthetics with a head-spa heart — the studio, the gold water arch, and the feed that keeps her booked.",
+    blurb: "Interior photography for Angie Tiara's skin, scalp and makeup boutique in Tacoma. Natural, soft and warm.",
   },
 
   {
@@ -608,7 +575,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/still-different",
     industry: "Artists + Creatives",
     tags: ["PHOTOGRAPHY", "CREATIVE DIRECTION", "CAMPAIGN"],
-    blurb: "The MC in the ETC jacket — TACOMA on the chest, mic in hand, six frames from the white room.",
+    blurb: "The MC in the ETC jacket, TACOMA on the chest and mic in hand. Six frames from the white room.",
   },
 
   {
@@ -622,7 +589,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/highway",
     industry: "Artists + Creatives",
     tags: ["PHOTOGRAPHY", "CREATIVE DIRECTION", "CAMPAIGN"],
-    blurb: "Monochrome-era Seattle artist — Forever (Count Fast Millionaire), cover by Hana.",
+    blurb: "A Seattle artist in his monochrome era. Forever (Count Fast Millionaire), cover by Hana.",
   },
   {
     file: "ARCH 028",
@@ -636,7 +603,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/chitos",
     industry: "Products + Retail",
     tags: ["CREATIVE DIRECTION", "CAMPAIGN"],
-    blurb: "Graffiti-era visual artist and the monochrome label — Givenchy to Supreme SS23.",
+    blurb: "A visual artist from the graffiti era and his monochrome label, from Givenchy to Supreme SS23.",
   },
 
   {
@@ -651,7 +618,7 @@ export const archive: ArchiveEntry[] = [
     url: "https://yoka-two.vercel.app/",
     industry: "Food + Hospitality",
     tags: ["WEBSITES"],
-    blurb: "Matcha and boba in Seattle — more than a drink, built quiet and bold.",
+    blurb: "Matcha and boba in Seattle. A site that's quiet and bold at once.",
   },
 
   {
@@ -665,7 +632,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/dj-prashant-hiyu",
     industry: "Events + Experiences",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL", "CAMPAIGN"],
-    blurb: "DJ Prashant × The Hiyu — Y2K on the water, Bollywood to club hits, and the Indian American culture loud on the deck.",
+    blurb: "DJ Prashant × The Hiyu. Y2K on the water, Bollywood to club hits, with Indian American culture loud on the deck.",
   },
 
   {
@@ -679,7 +646,7 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/bar-bistro",
     industry: "Food + Hospitality",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL", "CAMPAIGN"],
-    blurb: "Eat. Drink. Live — craft cocktails and the plates people screenshot, with Tacoma's food accounts in the room.",
+    blurb: "Eat. Drink. Live. Craft cocktails and plates people screenshot, with Tacoma's food accounts in the room.",
   },
 
   {
@@ -694,12 +661,12 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/jazmins-events",
     industry: "Events + Experiences",
     tags: ["WEBSITES", "BRANDING + IDENTITY"],
-    blurb: "A brand-new planning business, already booked — branding and a mockup-turned-live-site for a Pacific Northwest planner. You live the moment; the site handles the rest.",
+    blurb: "A brand-new Pacific Northwest wedding planner. The branding is finished and the website is being built with her. You live the moment; we'll handle the rest.",
  },
 
   {
     file: "ARCH 033",
-    title: "Artist Social · Jaydyn F. — Underground Rap",
+    title: "Artist Social · Jaydyn F. · Underground Rap",
     category: "CAMPAIGNS",
     place: "Seattle",
     year: "2025",
@@ -709,21 +676,21 @@ export const archive: ArchiveEntry[] = [
     url: "/campaigns/jaydyn-f",
     industry: "Music + Nightlife",
     tags: ["CONTENT + SOCIAL", "PHOTOGRAPHY"],
-    blurb: "BTS capture, photography and short-form support around a Seattle underground rap artist's releases — the visuals that keep the world moving between music videos.",
+    blurb: "BTS, photography and short-form around a Seattle underground rap artist's releases. The visuals that keep things moving between music videos.",
  },
   {
     file: "ARCH 034",
-    title: "Event Space · Soul Social at Public House",
+    title: "Bar + Event Space · Public House",
     category: "CAMPAIGNS",
     place: "Pioneer Square · Seattle",
     year: "2026",
     motif: "ring",
     color: "#7A4A1E",
     image: "/assets/campaigns/soul-social/ss-01.jpg",
-    url: "/campaigns/soul-social",
+    url: "/campaigns/public-house",
     industry: "Events + Experiences",
     tags: ["PHOTOGRAPHY", "CONTENT + SOCIAL"],
-    blurb: "The room, not the party — one night's space photographed at Soul Social: the lit arch, the neon, the bottles. Q'D UP's flyer for the night sits alongside it, credited and linked. Powered by Q'D UP, Casa de Lipa, Girl Star Lab and Public House.",
+    blurb: "Venue photography for a Pioneer Square bar and event space, shot vertical for their stories and posts.",
  },
 ];
 
@@ -848,45 +815,45 @@ export function recommend(answers: Record<string, string | undefined>): {
     return {
       headline: "Start with a conversation.",
       copy:
-        "When you aren't sure what you need, we start by looking at what you have. A short conversation, a look at your current work, and one clear direction. No proposal before we understand the problem.",
+        "If you're not sure what you need, we start by looking at what you already have. We'll have a short conversation, look at your current work, and agree on one clear next step. No proposal until we understand what's going on.",
       cta: "Ask for an introduction",
     };
   }
   if (need.includes("photograph")) {
     return {
-      headline: "Begin where we begin.",
-      copy: `New photography for ${withWhat || "your work"} is the fastest way to look like the business you are. We plan a shoot that can also feed your website and your feed.`,
+      headline: "Start with new photos.",
+      copy: `New photos for ${withWhat || "your work"} are the quickest way to look as good as your business really is. We'll plan one shoot that gives you photos for your website and your social media.`,
       cta: "Request a shoot",
     };
   }
   if (need.includes("website")) {
     return {
-      headline: "Make the frame first.",
+      headline: "Start with your website.",
       copy:
-        "Your website should hold photography as well as words. We start with the creative direction, then build a page that lets the images do the talking.",
+        "Your website should show your work, not just describe it. We decide on the look first, then build a site where the photos carry most of the story.",
       cta: "Request a website",
     };
   }
   if (need.includes("direct") || need.includes("brand")) {
     return {
-      headline: "Clarify the direction.",
+      headline: "Start with the direction.",
       copy:
-        "Before anything gets made, we settle the visual direction and the story. This is where the work either lands or doesn't.",
+        "Before anything gets made, we decide how it should look and what story it tells. Getting this right makes everything after it easier.",
       cta: "Request creative direction",
     };
   }
   if (need.includes("campaign") || need.includes("content") || need.includes("video")) {
     return {
-      headline: "A campaign with one voice.",
+      headline: "Start with a campaign.",
       copy:
-        "You need content that holds together as a campaign, not a handful of one-off posts. We art-direct it so it looks like one thing on purpose.",
+        "You need content that works together as a campaign instead of random one-off posts. We plan it so everything looks like it belongs together.",
       cta: "Request a campaign",
     };
   }
   return {
     headline: "Let's figure out what needs to be made.",
     copy:
-      "You told us a little, and that's enough to begin. We will listen, look at the work, and tell you the one thing that would move you forward most.",
+      "You've told us enough to get started. We'll listen, look at what you have, and tell you the one thing that would help you most right now.",
     cta: "Send an inquiry",
   };
 }
@@ -900,11 +867,13 @@ export const needOptions = [
   "Branding",
   "Video / Moving Image",
   "Campaign",
+  "Full package (brand, site + content)",
+  "Monthly content",
   "Not sure yet / Other",
 ];
 
 export const navLinks = [
+  { label: "Build your world", href: "#build" },
   { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Directory", href: "#directory" },
+  { label: "About", href: "/about" },
 ];

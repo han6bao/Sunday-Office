@@ -1,7 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { seoHead } from "../sunday/seo";
+import { SiteBar } from "../sunday/site-bar";
 import { useState } from "react";
 
 export const Route = createFileRoute("/about")({
+  head: () => seoHead("/about"),
   component: AboutPage,
 });
 
@@ -76,6 +79,7 @@ function AboutPage() {
   const c = CHAPTERS[ch];
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16, flexWrap: "wrap", marginBottom: 40 }}>
           <a href="/" className="so-arrow">
@@ -85,13 +89,6 @@ function AboutPage() {
             <span className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
               SUNDAY OFFICE / INDEPENDENT CREATIVE AGENCY
             </span>
-            <a
-              href="/private"
-              className="so-micro"
-              style={{ color: "var(--color-stone)", letterSpacing: "0.14em", textDecoration: "none" }}
-            >
-              FILE ROOM
-            </a>
           </span>
         </div>
 
@@ -99,13 +96,13 @@ function AboutPage() {
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>
           Meet Hana.
         </h1>
-        <p className="so-micro mt-3">PHOTOGRAPHER / CREATIVE DIRECTOR / FOUNDER</p>
+        <p className="so-micro mt-3">FOUNDER / PHOTOGRAPHER</p>
 
         <div className="so-profile" style={{ marginTop: 44 }}>
           <div>
             <img
-              src="/assets/hana-portrait.jpg"
-              alt="Hana — portrait"
+              src="/assets/about-hana.jpg"
+              alt="Hana Hong, Seattle photographer and founder of Sunday Office, at her desk at night"
               loading="lazy"
               style={{
                 width: "100%",
@@ -135,15 +132,15 @@ function AboutPage() {
             <div className="so-profile-credits" style={{ marginTop: 26 }}>
               <div className="so-profile-credit">
                 <p className="so-micro">BASED</p>
-                <p style={{ marginTop: 6 }}>Seattle / Tacoma</p>
+                <p style={{ marginTop: 6 }}>Seattle, WA</p>
               </div>
               <div className="so-profile-credit">
                 <p className="so-micro">ROLE</p>
-                <p style={{ marginTop: 6 }}>Founder / Creative Director / Photographer</p>
+                <p style={{ marginTop: 6 }}>Founder + Photographer</p>
               </div>
               <div className="so-profile-credit" style={{ borderTop: 0 }}>
-                <p className="so-micro">OFFICE</p>
-                <p style={{ marginTop: 6 }}>Sunday</p>
+                <p className="so-micro">WORKS WITH</p>
+                <p style={{ marginTop: 6 }}>Brands, businesses + artists</p>
               </div>
             </div>
             <p className="so-hero-sub" style={{ marginTop: 26 }}>
@@ -179,7 +176,7 @@ function AboutPage() {
               MORE ABOUT HANA
             </p>
             <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.2em" }}>
-              01 — 06
+              01 / 06
             </p>
           </div>
 
@@ -244,11 +241,11 @@ function AboutPage() {
               className="so-chapter-pane"
               role="button"
               tabIndex={0}
-              onClick={() => go(ch + 1)}
+              onClick={() => go(ch === CHAPTERS.length - 1 ? 0 : ch + 1)}
               onKeyDown={(ev) => {
                 if (ev.key === "Enter" || ev.key === " ") {
                   ev.preventDefault();
-                  go(ch + 1);
+                  go(ch === CHAPTERS.length - 1 ? 0 : ch + 1);
                 }
               }}
               aria-label="Tap for the next chapter"
@@ -281,7 +278,7 @@ function AboutPage() {
                 </p>
                 <div key={ch} className="so-chapter-fade" style={{ marginTop: 18, maxWidth: "62ch", display: "grid", gap: 14 }}>
                   {c.p.map((para) => (
-                    <p key={para.slice(0, 24)} style={{ margin: 0, lineHeight: 1.78 }}>
+                    <p key={para.slice(0, 24)} style={{ margin: 0, lineHeight: 1.55 }}>
                       {para}
                     </p>
                   ))}

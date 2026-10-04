@@ -1,50 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
 
 export const Route = createFileRoute("/campaigns/paradice")({
+  head: () => seoHead("/campaigns/paradice"),
   component: ParadicePage,
 });
 
 const PHOTOS = [
-  { src: "/assets/campaigns/paradice/pz01.jpg", cap: "Paisley, face down — hands in pockets" },
-  { src: "/assets/campaigns/paradice/pz02.jpg", cap: "The back — PARADICE seal on the windbreaker" },
+  { src: "/assets/campaigns/paradice/pz01.jpg", cap: "Paisley, face down, hands in pockets" },
+  { src: "/assets/campaigns/paradice/pz02.jpg", cap: "The back, with the PARADICE seal on the windbreaker" },
   { src: "/assets/campaigns/paradice/pz03.jpg", cap: "Hood pulled, hand to the chest" },
-  { src: "/assets/campaigns/paradice/pz04.jpg", cap: "Look down — the RADICE half-mark" },
-  { src: "/assets/campaigns/paradice/pz05.jpg", cap: "PARADICE script — chest level" },
-  { src: "/assets/campaigns/paradice/pz06.jpg", cap: "BRIDGE piece — adjusting the zip" },
+  { src: "/assets/campaigns/paradice/pz04.jpg", cap: "Looking down at the RADICE half-mark" },
+  { src: "/assets/campaigns/paradice/pz05.jpg", cap: "PARADICE script at chest level" },
+  { src: "/assets/campaigns/paradice/pz06.jpg", cap: "BRIDGE piece, adjusting the zip" },
   { src: "/assets/campaigns/paradice/pz07.jpg", cap: "Hands out, mid-verse" },
-  { src: "/assets/campaigns/paradice/pz08.jpg", cap: "The smile — collar held" },
+  { src: "/assets/campaigns/paradice/pz08.jpg", cap: "The smile, collar held" },
   { src: "/assets/campaigns/paradice/pz09.jpg", cap: "Arms out, in motion" },
 ];
 
 const ARTIST = [
   {
     t: "WHO HE IS",
-    d: "Itz Pz — Peezy to the ones who know — a Seattle artist making music with his group and team inside the ReelClip circle. Rapper, storyteller, one of the city's rising voices: Life of Pz, EFFORTLESS, the YN TAKEOVER EP.",
+    d: "Itz Pz (Peezy, if you know him) is a Seattle rapper making music with his group and team inside the ReelClip circle. He tells stories in his songs, and people around the city are paying attention: Life of Pz, EFFORTLESS, the YN TAKEOVER EP.",
   },
   {
     t: "THE PICTURES",
-    d: "Hana shot him in the paisley session before the deal. He used the pictures for his socials and promotions. The wildest part: a lot of people started using these photos as their profile pictures on Twitter and everywhere else — the image became the avatar.",
+    d: "I shot him in the paisley session before the deal. He used the pictures for his socials and promotions. Then a lot of people started using these photos as their own profile pictures on Twitter and everywhere else. The photo turned into their avatar.",
   },
   {
     t: "THE SIGNING",
-    d: "A couple months after the shoot, he signed to Empire Records — the label system that released Kendrick Lamar's Section.80 and has championed a roster that runs from Nipsey Hussle and Tyga to XXXTentacion, Snoop Dogg, Cardi B, Young Dolph, Key Glock, King Von, Larry June, Blxst, Lucki and Fat Joe on the hip-hop side — and Anderson .Paak, T-Pain, Tink, Yung Bleu and Dree on the R&B + soul side. These frames sit right before that chapter: the last of the independent run.",
+    d: "A couple months after the shoot, he signed to Empire Records. That's the label that released Kendrick Lamar's Section.80. Its hip-hop roster runs from Nipsey Hussle and Tyga to XXXTentacion, Snoop Dogg, Cardi B, Young Dolph, Key Glock, King Von, Larry June, Blxst, Lucki and Fat Joe, and on the R&B and soul side there's Anderson .Paak, T-Pain, Tink, Yung Bleu and Dree. These photos are from right before that, at the end of his independent run.",
   },
 ];
 
 const THOUGHT = [
   {
     t: "THE LIGHT",
-    d: "I helped bring the lighting up for this one. Straight studio, hard even light against the white wall — the kind of setup where the print and the face both have nowhere to hide.",
+    d: "I helped bring the lighting up for this one. Straight studio, hard even light against the white wall. With a setup like that, the print and his face both show up exactly as they are.",
   },
   {
     t: "THE EDIT",
-    d: "I edited it dark and gritty — high saturation, a low-fi grain that keeps the clothes honest. No gloss, no set dressing. The paisley does the talking, and the photo feels like the street it came from.",
+    d: "I edited it dark and gritty, with high saturation and a lo-fi grain that keeps the clothes looking real. No gloss, no set dressing. The paisley carries it, and the photos feel like the street they came from.",
   },
   {
     t: "THE WHY",
-    d: "It's what a collective is for. One artist's pictures promote him, promote the brand on his back, promote the circle behind him. For artists: this is your promo. For clothing companies: this is your campaign. Everyone wins off the same frame.",
+    d: "This is what a collective is for. One artist's pictures promote him, the brand he's wearing and the circle behind him. Artists get promo, clothing companies get a campaign, and it all comes from the same photos.",
   },
 ];
 
@@ -55,6 +59,7 @@ function ParadicePage() {
 
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -65,7 +70,7 @@ function ParadicePage() {
           Itz Pz.
         </h1>
         <p className="so-micro mt-3">SHOT IN THE PAISLEY SESSION × PARADICE WORLDWIDE · REELCLIP CIRCLE · BEFORE THE EMPIRE SIGNING</p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/paradice/pz05.jpg" alt="Itz Pz for Paradice Worldwide, Seattle streetwear campaign" pos="center 30%" />
 
         {/* The artist — tap through */}
         <div
@@ -102,7 +107,7 @@ function ParadicePage() {
             <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
               {ARTIST[art].t}
             </p>
-            <p key={art} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
+            <p key={art} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
               {ARTIST[art].d}
             </p>
             <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
@@ -128,14 +133,13 @@ function ParadicePage() {
 
         {/* The brand */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
-          <p className="so-micro">THE BRAND — PARADICE WORLDWIDE</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            Paradice Worldwide is the streetwear label from South Seattle —
-            Ari Glass and Harry "Clean," out of 2919 Rainier Ave S. Their
-            voice is "TAKING CHANCES.": heavyweight pattern work, dice and
+          <p className="so-micro">THE BRAND · PARADICE WORLDWIDE</p>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            Paradice Worldwide is a streetwear label from South Seattle, run
+            by Ari Glass and Harry "Clean" out of 2919 Rainier Ave S. Their
+            motto is "TAKING CHANCES.": heavyweight pattern work, dice and
             destiny references, and the paisley print that became their
-            signature. The store doubles as the culture — clothing and
-            creative under one roof, lifting the scene around them.
+            signature. The store is part of the scene too, with clothing and creative work under one roof.
           </p>
         </div>
 
@@ -174,7 +178,7 @@ function ParadicePage() {
             <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
               {THOUGHT[thought].t}
             </p>
-            <p key={thought} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.78, maxWidth: "62ch" }}>
+            <p key={thought} className="so-chapter-fade" style={{ margin: "8px 0 0", lineHeight: 1.55, maxWidth: "62ch" }}>
               {THOUGHT[thought].d}
             </p>
             <span style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 12 }}>
@@ -201,57 +205,54 @@ function ParadicePage() {
         {/* For artists + brands */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
           <p className="so-micro">FOR ARTISTS + CLOTHING BRANDS</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            If you're an artist: these are the pictures that promote you.
-            If you're a clothing company: this is the frame your brand
-            lives in. One shoot, both worlds — the collective makes sure
-            of it.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            If you're an artist, these are photos you can promote yourself with. If you're a clothing brand, this is how your pieces look worn by the right people. One shoot covers both.
           </p>
         </div>
 
         {/* The circle */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE CIRCLE</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            The session lives inside the same creative circle as{" "}
-            <strong>Soniq Reign</strong> and <strong>ReelClip</strong> —
-            artists, labels and studios around Seattle's scene, moving as
-            one. Same crews, same energy, one long running session across
-            the city.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            The session comes out of the same creative circle as{" "}
+            <strong>Soniq Reign</strong> and <strong>ReelClip</strong>:
+            artists, labels and studios around Seattle's scene who keep
+            working together. It's the same people showing up for each
+            other, shoot after shoot, all over the city.
           </p>
         </div>
 
         {/* The look */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
-          <p className="so-micro">THE LOOK — GRITTY / ALT / HIGH SATURATION</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            Straight studio, unretouched, pushed hard — dark and gritty is
-            the point. The paisley print does the talking.
+          <p className="so-micro">THE LOOK · GRITTY / ALT / HIGH SATURATION</p>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            Straight studio, unretouched and pushed hard. Dark and gritty
+            on purpose, so the paisley print stands out.
           </p>
         </div>
 
         {/* The artist card */}
         <div style={{ marginTop: 36 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "minmax(180px, 260px) 1fr", gap: 24, marginTop: 14, alignItems: "start" }}>
+          <div className="so-stack-sm" style={{ display: "grid", gridTemplateColumns: "minmax(180px, 260px) 1fr", gap: 24, marginTop: 14, alignItems: "start" }}>
             <img
               src="/assets/campaigns/paradice/itzpz-cover.jpg"
-              alt="YN TAKEOVER Pt. 1 — EP cover"
+              alt="YN TAKEOVER Pt. 1 EP cover"
               loading="lazy"
               style={{ width: "100%", display: "block", borderRadius: 14, aspectRatio: "1 / 1", objectFit: "cover" }}
             />
             <div>
-              <p style={{ lineHeight: 1.75 }}>
-                <strong>Itz Pz</strong> — now out on the <em>YN TAKEOVER
-                Pt. 1</em> EP (2026), the record that follows his Empire
-                Records signing. The paisley-era session below was shot
-                before the deal; the takeover came right after.
+              <p style={{ lineHeight: 1.55 }}>
+                <strong>Itz Pz</strong> is out now with the <em>YN TAKEOVER
+                Pt. 1</em> EP (2026), his first record since signing with
+                Empire Records. I shot the paisley session below before the
+                deal, and the EP came right after.
               </p>
               <div className="mt-3" style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
                 <a className="so-link-jump" href="https://open.spotify.com/album/3zjU0GNnGqslUioWMdnYG1" target="_blank" rel="noreferrer">
-                  YN TAKEOVER PT. 1 — SPOTIFY →
+                  YN TAKEOVER PT. 1 · SPOTIFY →
                 </a>
                 <a className="so-link-jump" href="https://open.spotify.com/artist/26FIRgKw5rjzNaeGY5Nrr2" target="_blank" rel="noreferrer">
-                  ITZ PZ — ARTIST PAGE →
+                  ITZ PZ · ARTIST PAGE →
                 </a>
               </div>
             </div>
@@ -268,7 +269,7 @@ function ParadicePage() {
             padding: "24px",
           }}
         >
-          <p className="so-micro">THE NUMBERS — LIVE FROM HIS SPOTIFY</p>
+          <p className="so-micro">THE NUMBERS · LIVE FROM HIS SPOTIFY</p>
           <div
             style={{
               display: "grid",
@@ -292,7 +293,7 @@ function ParadicePage() {
                 281,599
               </p>
               <p className="so-micro" style={{ marginTop: 6, color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-                TOP TRACK — CLAP SUM
+                TOP TRACK · CLAP SUM
               </p>
             </div>
             <div>
@@ -304,19 +305,19 @@ function ParadicePage() {
               </p>
             </div>
           </div>
-          <p style={{ margin: "16px 0 0", lineHeight: 1.75, maxWidth: "58ch" }}>
+          <p style={{ margin: "16px 0 0", lineHeight: 1.55, maxWidth: "58ch" }}>
             The EP's biggest so far: <strong>Pullin' Stuntz at 5,012</strong> and{" "}
-            <strong>Stay Wimme at 1,117</strong> — and the record has been out
-            since March. Rough money read, if you're curious: at Spotify's
-            public per-stream rate the EP sits somewhere around $20–$50 gross
-            so far. Features split it, the deal takes its cut — the real
-            number starts when the next 100K hits.
+            <strong>Stay Wimme at 1,117</strong>, and the record has been out
+            since March. Rough money math, if you're curious: at Spotify's
+            public per-stream rate the EP has made somewhere around $20 to $50
+            gross so far. Features split that and the deal takes its cut. The
+            real money starts when the next 100K hits.
           </p>
         </div>
 
         {/* Gallery */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE SESSION — 9 FRAMES · PHOTOS BY HANA</p>
+          <p className="so-micro">THE SESSION · 9 FRAMES · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button
@@ -328,7 +329,7 @@ function ParadicePage() {
               >
                 <img src={ph.src} alt={ph.cap} loading="lazy" />
                 <span className="so-photo-cap">
-                  {String(i + 1).padStart(2, "0")} · {ph.cap}
+                  {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
                 </span>
               </button>
             ))}

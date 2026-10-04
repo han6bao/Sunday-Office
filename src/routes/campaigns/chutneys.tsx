@@ -1,7 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 
 export const Route = createFileRoute("/campaigns/chutneys")({
+  head: () => seoHead("/campaigns/chutneys"),
   component: ChutneysPage,
 });
 
@@ -15,6 +19,7 @@ const SHOTS = [
 function ChutneysPage() {
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -25,31 +30,29 @@ function ChutneysPage() {
           Chutneys.
         </h1>
         <p className="so-micro mt-3">NORTH INDIAN · BELLEVUE · COMMERCIAL & CAMPAIGN BY HANA</p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/chutneys/ch-02.jpg" alt="Chutneys Bellevue, Indian food photography" pos="center" />
 
         {/* The spot */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE SPOT</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            Chutneys is an upscale North Indian restaurant in the heart of
-            downtown Bellevue — an elevated journey through the flavors of
-            modern Mumbai. The kitchen fuses comfort food and street-food
-            favorites with Chinese-inspired dishes, each plate made with
-            care and a lot of heart: familiar, warm, and a little
-            unexpected, the way Indian food in a new city should be.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            Chutneys is an upscale North Indian restaurant in downtown
+            Bellevue, serving modern Mumbai flavors in a polished dining
+            room. The kitchen mixes comfort food and street-food favorites
+            with Chinese-inspired dishes. The food feels familiar, with a
+            few surprises.
           </p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            It's a dining room and an event kitchen in one. For gatherings
-            of any size, the catering side brings live cooking and rich
-            regional flavors straight to the party — from intimate dinners
-            to full celebrations. Find it at City Square, 938 110th Ave NE
-            #5, Bellevue.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            They also cater. For small dinners up to big celebrations, the
+            catering team brings live cooking and regional dishes to the
+            party. You'll find the restaurant at City Square, 938 110th Ave
+            NE #5, Bellevue.
           </p>
         </div>
 
         {/* The commercial — hosted on-site */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">THE COMMERCIAL — MADE FOR CHUTNEYS BELLEVUE</p>
+          <p className="so-micro">THE COMMERCIAL · MADE FOR CHUTNEYS BELLEVUE</p>
           <div
             style={{
               position: "relative",
@@ -73,24 +76,21 @@ function ChutneysPage() {
             </video>
           </div>
           <p className="so-micro" style={{ marginTop: 12, color: "var(--color-stone)" }}>
-            PLAYED FROM THE OFFICE'S OWN VAULT · MADE FOR CHUTNEYS BELLEVUE
+            A COMMERCIAL MADE FOR CHUTNEYS BELLEVUE
           </p>
         </div>
 
         {/* The campaign */}
         <div style={{ marginTop: 44, maxWidth: "58ch" }}>
           <p className="so-micro">THE CAMPAIGN</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            Beyond the film — the still frames that feed the feeds. Promo
-            photography for Chutneys' socials and their website: the plates,
-            the room, the color of the food. Seasoned, plated, and graded
-            in the office.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            Along with the film, I shot promo photos for Chutneys' social media and website: the plates, the room and the color of the food, all edited by me.
           </p>
         </div>
 
         {/* The photos */}
         <div style={{ marginTop: 44 }}>
-          <p className="so-micro">THE PHOTOS — BY HANA</p>
+          <p className="so-micro">THE PHOTOS · BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18, marginTop: 12 }}>
             {SHOTS.map((s) => (
               <div key={s.src}>

@@ -1,9 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CaseCover } from "../../sunday/case-cover";
+import { seoHead } from "../../sunday/seo";
+import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import type { CSSProperties } from "react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/campaigns/bar-bistro")({
+  head: () => seoHead("/campaigns/bar-bistro"),
   component: BarBistroPage,
 });
 
@@ -29,10 +33,10 @@ const LAYOUT: { s: number; a: string }[] = [
 ];
 
 const BLACK: CSSProperties = {
-  background: "#0e0e10",
+  background: "color-mix(in srgb, var(--color-paper) 72%, #fffaf2)",
   aspectRatio: "4 / 5",
   borderRadius: 14,
-  border: "1px solid rgba(236, 231, 221, 0.12)",
+  border: "1px dashed var(--color-sepia)",
   display: "block",
 };
 
@@ -40,6 +44,7 @@ function BarBistroPage() {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <div className="block" style={{ minHeight: "100dvh" }}>
+      <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 80 }}>
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
@@ -50,34 +55,35 @@ function BarBistroPage() {
           Bar Bistro.
         </h1>
         <p className="so-micro mt-3">TACOMA · EAT · DRINK · LIVE · PHOTOS BY HANA</p>
-        <hr className="so-rule mt-6" />
+        <CaseCover src="/assets/campaigns/bar-bistro/bb-01.jpg" alt="Cocktails at Bar Bistro, Tacoma, food and drink photography" pos="center 55%" />
 
         {/* The spot */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE SPOT</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            New American in east Tacoma — 1718 99th St E. Eat, drink,
-            live: Northwest flavors, a serious kitchen and bar. Every
-            Sunday: <strong>Sunday Supper</strong> — family-style, limited,
-            gone when it's gone.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            A New American spot in east Tacoma at 1718 99th St E. Their
+            motto is eat, drink, live, and they do Northwest flavors with a
+            serious kitchen and bar. Every Sunday they run{" "}
+            <strong>Sunday Supper</strong>, served family-style in limited
+            portions until it runs out.
           </p>
         </div>
 
         {/* The social */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE SOCIAL</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            The frames that feed their socials — dark, warm, made to make
-            people hungry.
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            These are the photos I shoot for their socials. Dark and warm,
+            and meant to make people hungry.
           </p>
         </div>
 
         {/* The influencers */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
-          <p className="so-micro">THE COLLAB — TACOMA FOOD INFLUENCERS</p>
-          <p style={{ marginTop: 12, lineHeight: 1.75 }}>
-            <strong>Tacoma Uncovered</strong> came through, and the whole
-            table got covered at once.{" "}
+          <p className="so-micro">THE COLLAB · TACOMA FOOD INFLUENCERS</p>
+          <p style={{ marginTop: 12, lineHeight: 1.55 }}>
+            <strong>Tacoma Uncovered</strong> came in, and we shot the whole
+            table together.{" "}
             <a className="so-link-jump" href="https://www.instagram.com/tacoma_uncovered/" target="_blank" rel="noreferrer">
               @TACOMA_UNCOVERED →
             </a>
@@ -86,7 +92,7 @@ function BarBistroPage() {
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES — 7 · BY HANA</p>
+          <p className="so-micro">THE PHOTOS · 7 · BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
               const L = LAYOUT[i];
@@ -106,7 +112,7 @@ function BarBistroPage() {
                     style={{ width: "100%", aspectRatio: L.a, objectFit: "cover", borderRadius: 14, display: "block" }}
                   />
                   <span className="so-photo-cap" style={{ fontSize: 12 }}>
-                    {String(i + 1).padStart(2, "0")} · {ph.cap}
+                    {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
                   </span>
                 </button>
               );

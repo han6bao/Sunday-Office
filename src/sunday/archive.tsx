@@ -77,7 +77,7 @@ export function DarkPage({
         <p className="so-micro" style={{ color: DARK.muted, marginTop: 14 }}>
           {no}
         </p>
-        <p style={{ marginTop: 26, maxWidth: "58ch", lineHeight: 1.78, color: DARK.soft }}>
+        <p style={{ marginTop: 26, maxWidth: "58ch", lineHeight: 1.55, color: DARK.soft }}>
           {intro}
         </p>
         <hr style={{ border: "none", borderTop: `1px solid ${DARK.line}`, margin: "34px 0 40px" }} />
@@ -219,7 +219,7 @@ export function WorkTile({
         {e.title.split(" · ").slice(1).join(" · ") || e.title}
       </p>
       {e.blurb ? (
-        <p style={{ marginTop: 3, lineHeight: 1.6, color: muted, fontSize: 13 }}>{e.blurb}</p>
+        <p style={{ marginTop: 3, lineHeight: 1.5, color: muted, fontSize: 13 }}>{e.blurb}</p>
       ) : null}
     </motion.div>
   );
@@ -265,7 +265,7 @@ export function PreviewPage({
           {title}
         </h1>
         <p className="so-micro mt-3">{no}</p>
-        <p style={{ marginTop: 22, maxWidth: "58ch", lineHeight: 1.78 }}>{intro}</p>
+        <p style={{ marginTop: 22, maxWidth: "58ch", lineHeight: 1.55 }}>{intro}</p>
         <hr className="so-rule mt-6" />
         <div style={{ marginTop: 28 }}>{children}</div>
         <div
