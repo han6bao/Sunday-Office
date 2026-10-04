@@ -92,7 +92,7 @@ function AboutPage() {
           </span>
         </div>
 
-        <p className="so-micro so-micro-red">FILE NO. 006 · ALL ABOUT HANA</p>
+        <p className="so-micro so-micro-red">FILE NO. 004 · ALL ABOUT HANA</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>
           Meet Hana.
         </h1>
