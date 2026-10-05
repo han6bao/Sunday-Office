@@ -70,6 +70,7 @@ function JazminsCase() {
 
       <div style={{ marginTop: 28 }}>
         <BnThenNow
+          plain
           thenUrl="nothing yet"
           thenLabel={
             <>

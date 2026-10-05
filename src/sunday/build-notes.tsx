@@ -238,7 +238,9 @@ export function BnThenNow({
   nowAlt,
   nowCap,
   nowHref,
+  plain,
 }: {
+  plain?: boolean;
   thenUrl: string;
   thenLabel: ReactNode;
   thenBody: ReactNode;
@@ -254,12 +256,14 @@ export function BnThenNow({
   return (
     <div className="bn-tn">
       <div className="bn-panel">
-        <div className="bn-chrome" aria-hidden>
-          <i />
-          <i />
-          <i />
-          <span>{thenUrl}</span>
-        </div>
+        {!plain && (
+          <div className="bn-chrome" aria-hidden>
+            <i />
+            <i />
+            <i />
+            <span>{thenUrl}</span>
+          </div>
+        )}
         <div className="bn-then">
           <p className="bn-note">{thenLabel}</p>
           <blockquote>{thenBody}</blockquote>
@@ -274,12 +278,14 @@ export function BnThenNow({
         <p className="bn-cap">{thenCap}</p>
       </div>
       <figure className="bn-panel bn-panel-now">
-        <div className="bn-chrome" aria-hidden>
-          <i />
-          <i />
-          <i />
-          <span>{nowUrl}</span>
-        </div>
+        {!plain && (
+          <div className="bn-chrome" aria-hidden>
+            <i />
+            <i />
+            <i />
+            <span>{nowUrl}</span>
+          </div>
+        )}
         {nowHref ? (
           <a href={nowHref} target="_blank" rel="noreferrer" className="bn-now-img">
             {img}
