@@ -204,23 +204,6 @@ function JazminsCase() {
 
         <BnDec
           no="03"
-          label="The marks"
-          title={
-            <>
-              A monogram <em>and a seal.</em>
-            </>
-          }
-          call="A JE monogram in forest, ivory and gold, and wax seals in green and gold for envelopes, packaging and the finishing touches."
-          why="Wedding clients notice the small things. A seal on an envelope says she pays attention before she's planned anything."
-        >
-          <div className="bn-two">
-            <BnShot src={`${A}/seal-green.png`} alt="Green wax seal with the JE monogram" cap="The green seal" />
-            <BnShot src={`${A}/seal-gold.png`} alt="Gold wax seal with the JE monogram" cap="The gold seal" />
-          </div>
-        </BnDec>
-
-        <BnDec
-          no="04"
           label="Instagram"
           title={
             <>
@@ -234,7 +217,7 @@ function JazminsCase() {
         </BnDec>
 
         <BnDec
-          no="05"
+          no="04"
           label="Website"
           title={
             <>
