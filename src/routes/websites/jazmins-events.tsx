@@ -252,7 +252,7 @@ function JazminsCase() {
       </BnDecisions>
 
       <BnNote
-        media={<img src={`${A}/je-monogram-black.svg`} alt="The JE monogram" className="bn-mark" />}
+        media={<img src={`${A}/featured-cover.png`} alt="The Jazmin's Events and Coordinating wordmark on textured paper" className="bn-paper-img" />}
         label="A note on the brand"
         title={
           <>
