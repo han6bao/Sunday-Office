@@ -10513,3 +10513,4 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 .so-start-section .so-quiz .so-quiz-why { color: #3a3234 !important; }
 .so-start-section .so-quiz .so-quiz-cap, .so-start-section .so-quiz .so-quiz-niche, .so-start-section .so-quiz .so-quiz-small, .so-start-section .so-quiz .so-quiz-opt-d { color: #6f6560 !important; }
 .so-start-section .so-quiz .so-quiz-pick-p { color: #8b779a !important; }
+.so-quiz-opts.is-five > :last-child { grid-column: 1 / -1; }

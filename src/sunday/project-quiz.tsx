@@ -4,7 +4,7 @@ import { bookHref } from "./service-kit";
 /* "Start a project with me": three quick questions, one clear place to start.
    The result links into the inquiry form with the service already picked. */
 
-type Stage = "scratch" | "site" | "content" | "photos";
+type Stage = "scratch" | "site" | "content" | "photos" | "unsure";
 type Budget = "low" | "mid" | "high" | "unsure";
 
 const Q1 = [
@@ -19,6 +19,7 @@ const Q2: { k: Stage; t: string; d: string }[] = [
   { k: "site", t: "Ready to level up", d: "I have something. It needs to look the part" },
   { k: "content", t: "Want to stay consistent", d: "Help showing up, month after month" },
   { k: "photos", t: "Need new photos", d: "For one thing, or for everything" },
+  { k: "unsure", t: "Not sure yet", d: "I just know something needs to change" },
 ];
 
 const Q3: { k: Budget; t: string }[] = [
@@ -30,7 +31,7 @@ const Q3: { k: Budget; t: string }[] = [
 
 type Pick = { t: string; p: string; why: string; need: string; more: string };
 
-const PICKS: Record<Stage, Record<"low" | "mid" | "high", Pick>> = {
+const PICKS: Record<Exclude<Stage, "unsure">, Record<"low" | "mid" | "high", Pick>> = {
   scratch: {
     low: { t: "Logo", p: "from $350", why: "A logo made from scratch, in every version you need. Everything else can grow from it.", need: "Branding", more: "/branding" },
     mid: { t: "Brand kit", p: "from $550", why: "Your colors, fonts and voice in one simple guide, so everything you make looks like you.", need: "Branding", more: "/branding" },
@@ -64,15 +65,16 @@ export function ProjectQuiz() {
   const [a1, setA1] = useState<string | null>(null);
   const [a2, setA2] = useState<Stage | null>(null);
   const [a3, setA3] = useState<Budget | null>(null);
-  const step = a1 === null ? 0 : a2 === null ? 1 : a3 === null ? 2 : 3;
+  const step = a1 === null ? 0 : a2 === null ? 1 : a2 === "unsure" || a3 !== null ? 3 : 2;
   const reset = () => {
     setA1(null);
     setA2(null);
     setA3(null);
   };
   const back = () => (a3 !== null ? setA3(null) : a2 !== null ? setA2(null) : setA1(null));
+  const unsure = a2 === "unsure";
 
-  const pick = a2 && a3 ? PICKS[a2][a3 === "unsure" ? "mid" : a3] : null;
+  const pick = a2 && a2 !== "unsure" && a3 ? PICKS[a2][a3 === "unsure" ? "mid" : a3] : null;
   const niche = Q1.find((x) => x.k === a1)?.t ?? "";
 
   return (
@@ -103,7 +105,7 @@ export function ProjectQuiz() {
       {step === 1 && (
         <fieldset className="so-quiz-q" key="q2">
           <legend className="so-quiz-h">Where are you right now?</legend>
-          <div className="so-quiz-opts">
+          <div className="so-quiz-opts is-five">
             {Q2.map((o) => (
               <button key={o.k} type="button" className="so-quiz-opt" onClick={() => setA2(o.k)}>
                 <span className="so-quiz-opt-t">{o.t}</span>
@@ -145,6 +147,28 @@ export function ProjectQuiz() {
             </a>
           </div>
           <p className="so-quiz-small">It's only a starting point. We'll figure out exactly what you need when we talk.</p>
+        </div>
+      )}
+
+      {step === 3 && unsure && (
+        <div className="so-quiz-result" key="u">
+          <p className="so-micro so-quiz-cap">MY SUGGESTION · LET'S TALK FIRST</p>
+          <div className="so-quiz-pick">
+            <p className="so-quiz-pick-t">Let's figure it out together.</p>
+          </div>
+          <p className="so-quiz-why">
+            You don't need to know what you need yet. Tell me a little about your business and what feels off, and I'll suggest where to
+            start, with a price, before anything is booked.
+          </p>
+          <div className="so-quiz-ctas">
+            <a className="so-quiz-go" href={bookHref("Not sure yet / Other", niche ? `Not sure yet, ${niche}` : "Not sure yet")}>
+              Tell me about it →
+            </a>
+            <a className="so-quiz-more" href="#build">
+              Browse what I do
+            </a>
+          </div>
+          <p className="so-quiz-small">I reply within 2 to 3 business days.</p>
         </div>
       )}
 
