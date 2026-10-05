@@ -32,8 +32,8 @@ export function LoopVideo({
       aria-label={label}
       aria-hidden={label ? undefined : true}
     >
-      <source src={`/assets/work/${name}.webm`} type="video/webm" />
       <source src={`/assets/work/${name}.mp4`} type="video/mp4" />
+      <source src={`/assets/work/${name}.webm`} type="video/webm" />
     </video>
   );
 }
@@ -61,8 +61,8 @@ export function InViewVideo({ base, poster, label }: { base: string; poster?: st
   }, []);
   return (
     <video ref={ref} poster={poster} muted loop playsInline preload="metadata" aria-label={label}>
-      <source src={`${base}.webm`} type="video/webm" />
       <source src={`${base}.mp4`} type="video/mp4" />
+      <source src={`${base}.webm`} type="video/webm" />
     </video>
   );
 }

@@ -10444,3 +10444,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-shot { width: fit-content; max-width: 100%; }
 .bn-shot img { width: auto; max-width: 100%; max-height: min(78vh, 720px); }
 .bn-shot video { max-height: min(78vh, 720px); }
+
+/* Website recordings: frame matches the clips (16:9), nothing cropped */
+.bn-tour-frame:not(.is-photos) .bn-tour-screen { aspect-ratio: 1266 / 720; background: var(--bn-paper-2); }
+.bn-tour-frame:not(.is-photos) .bn-tour-screen video { object-fit: contain; object-position: center; background: var(--bn-paper-2); }

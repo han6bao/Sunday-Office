@@ -164,8 +164,8 @@ export function BnTour({ url, href, items, note }: { url: string; href?: string;
         <div className="bn-tour-screen">
           {cur.video ? (
             <video key={cur.video} ref={vid} poster={cur.poster} muted playsInline autoPlay preload="auto" onEnded={next} aria-label={cur.t}>
-              <source src={`${cur.video}.webm`} type="video/webm" />
               <source src={`${cur.video}.mp4`} type="video/mp4" />
+              <source src={`${cur.video}.webm`} type="video/webm" />
             </video>
           ) : (
             <img key={cur.img} src={cur.img} alt={cur.t} />
