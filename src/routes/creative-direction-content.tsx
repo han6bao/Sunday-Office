@@ -141,6 +141,8 @@ function DirectionAndContentPage() {
           label="OTHER WAYS TO WORK WITH ME"
           title="More ways to work together."
           rows={[
+            { t: "Content day", d: "One-time content, no plan needed. About 2 hours on iPhone, 5 to 8 edited short videos for Reels and TikTok.", p: "$350" },
+            { t: "Photo + content day", d: "A brand photo shoot and short videos in one visit. Fills your feed and your website for weeks.", p: "from $900" },
             { t: "Audit + strategy", d: "Know what to post and why. Comes off your first month if you go monthly.", p: "from $400" },
             { t: "Canva brand kit", d: "15 post and story templates in your colors, yours to edit.", p: "from $250" },
             { t: "Shoot direction", d: "Concept, moodboard, shot list and styling, and I direct on set.", p: "from $450" },

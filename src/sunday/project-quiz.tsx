@@ -18,7 +18,7 @@ const Q2: { k: Stage; t: string; d: string }[] = [
   { k: "scratch", t: "Just getting started", d: "A new business, or a fresh start" },
   { k: "site", t: "Ready to level up", d: "I have something. It needs to look the part" },
   { k: "content", t: "Want to stay consistent", d: "Help showing up, month after month" },
-  { k: "photos", t: "Need one thing made", d: "Photos, a flyer, a menu, graphics or a site fix" },
+  { k: "photos", t: "Need one thing made", d: "Photos, a content day, a flyer, graphics or a site fix" },
   { k: "unsure", t: "Not sure yet", d: "I just know something needs to change" },
 ];
 
@@ -48,7 +48,7 @@ const PICKS: Record<Exclude<Stage, "unsure">, Record<"low" | "mid" | "high", Pic
     high: { t: "Growth plan", p: "$1,500/mo", why: "Photos, video, 16 posts and 8 reels a month, with research behind it. Where accounts start to grow.", need: "Monthly content", more: "/creative-direction-content#monthly" },
   },
   photos: {
-    low: { t: "One piece", p: "from $75", why: "A flyer, a menu, a sign, a headshot or a quick fix to your site. Tell me what it is and I'll quote it before anything starts.", need: "Not sure yet / Other", more: "/branding#pricing" },
+    low: { t: "One piece", p: "from $75", why: "A flyer, a menu, a headshot, a content day of short videos ($350) or a quick fix to your site. Tell me what it is and I'll quote it before anything starts.", need: "Not sure yet / Other", more: "/branding#pricing" },
     mid: { t: "Brand photography", p: "from $550", why: "A half-day shoot of your space, your team and what you make. 30+ edited photos, ready for your site, your feed and print.", need: "Photography", more: "/photography" },
     high: { t: "Photos + video", p: "from $900", why: "One shoot that covers photos and short videos, so a single day fills your website and your feed for weeks.", need: "Photography", more: "/photography" },
   },
