@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { BackHome, BookBar, CardRail, FaqList, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BackHome, BookBar, CardRail, FaqList, PriceList, PriceRows, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/creative-direction-content")({
   head: () => seoHead("/creative-direction-content"),
@@ -132,31 +132,23 @@ function DirectionAndContentPage() {
             { t: "Growth", p: "$1,500/mo", tag: "BEST VALUE", d: "Where accounts start to grow. About $62 a post.", list: ["Everything in Starter, plus:", "A photo + video shoot, about 30 edited photos", "16 posts + 8 reels", "A set of stories every week", "Instagram + TikTok, plus Facebook", "Monthly trend + competitor research", "10 post + 10 story templates, plus stickers", "Audit + strategy free in month one"] },
             { t: "Full", p: "$2,800/mo", d: "I run your content, start to finish.", list: ["Everything in Growth, plus:", "A second shoot, 50+ edited photos a month", "24 posts + 12 reels", "Stories posted for you every week", "Instagram, TikTok, Facebook + LinkedIn", "Ad-ready cuts of your best reels", "I post for you + a monthly report and check-in", "New Canva templates every month"] },
           ]}
-          foot={<>Need a styled campaign every month, with video and ad creative? <strong>Signature plans start at $4,000 a month</strong>, built around you. <a className="so-bw-inline" href="/?need=Monthly%20content&pkg=Signature#inquiry">Ask me →</a><br /><br />Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
+          foot={<>Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
         />
 
-        <PriceList
-          id="direction"
+        <PriceRows
+          id="more"
           need="Creative Direction"
-          label="CREATIVE DIRECTION"
-          title="Direction, without the monthly plan."
-          items={[
-            { t: "Shoot direction", p: "from $450", d: "For one shoot, with your photographer or with me.", list: ["The concept + a moodboard", "A shot list", "Styling notes", "I direct on set"] },
-            { t: "Campaign direction", p: "from $1,200", tag: "FOR LAUNCHES", d: "A launch, a drop or an event.", list: ["The big idea", "Moodboards + shot lists", "Casting, locations + styling", "A rollout plan", "One day of on-set direction"] },
-            { t: "Direction retainer", p: "from $550/mo", d: "For brands with their own team.", list: ["A monthly concept + plan", "I review everything before it posts", "No shooting"] },
+          label="OTHER WAYS TO WORK WITH ME"
+          title="More ways to work together."
+          rows={[
+            { t: "Audit + strategy", d: "Know what to post and why. Comes off your first month if you go monthly.", p: "from $400" },
+            { t: "Canva brand kit", d: "15 post and story templates in your colors, yours to edit.", p: "from $250" },
+            { t: "Shoot direction", d: "Concept, moodboard, shot list and styling, and I direct on set.", p: "from $450" },
+            { t: "Campaign direction", d: "A launch, drop or event: the idea, casting, locations, rollout and a day on set.", p: "from $1,200" },
+            { t: "Direction retainer", d: "For brands with their own team. A monthly plan, and I review everything before it posts.", p: "from $550/mo" },
+            { t: "Signature", d: "A styled campaign every month, with video and ad creative.", p: "from $4,000/mo" },
           ]}
-          foot={<>Booking a photo shoot with me? Add creative direction to any shoot for $200. See campaigns I've directed: <a className="so-bw-inline" href="/campaigns/exhibition">Exhibition</a> and <a className="so-bw-inline" href="/campaigns/chitos">Chitos International</a>.</>}
-        />
-
-        <PriceList
-          id="start-smaller"
-          need="Creative Direction"
-          label="OR START SMALLER"
-          title="One-time help."
-          items={[
-            { t: "Audit + strategy", p: "from $400", d: "Know exactly what to post and why.", list: ["Research into your accounts, audience + competitors", "A 90-minute meeting", "3 to 4 topics + how often to post", "3 quick fixes for this week", "Comes off your first month if you go monthly"] },
-            { t: "Canva brand kit", p: "from $250", d: "Templates you can edit yourself.", list: ["15 templates in your colors + fonts", "4:5 + 1:1 posts", "Stories + story stickers", "Highlight covers", "You approve every template"] },
-          ]}
+          foot={<>Booking a photo shoot with me? Add creative direction for $200. Campaigns I've directed: <a className="so-bw-inline" href="/campaigns/exhibition">Exhibition</a> and <a className="so-bw-inline" href="/campaigns/chitos">Chitos International</a>.</>}
         />
 
         <FaqList items={FAQ} />

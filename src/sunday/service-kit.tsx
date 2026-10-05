@@ -498,3 +498,24 @@ export function BookBar({ service, price, need }: { service: string; price?: str
     </div>
   );
 }
+
+/** A quiet list of extra options: one line each, no boxes. */
+export function PriceRows({ id, label, title, rows, need, foot }: { id?: string; label: string; title: string; rows: { t: string; d: string; p: string }[]; need: string; foot?: ReactNode }) {
+  return (
+    <section id={id} className="so-bw-sec so-rows-sec">
+      <p className="so-micro">{label}</p>
+      <h2 className="so-serif so-bw-h">{title}</h2>
+      <div className="so-rows">
+        {rows.map((r) => (
+          <a key={r.t} className="so-row" href={bookHref(need, `${r.t} (${r.p})`)}>
+            <span className="so-row-t">{r.t}</span>
+            <span className="so-row-d">{r.d}</span>
+            <span className="so-row-p">{r.p}</span>
+            <span className="so-row-go" aria-hidden>→</span>
+          </a>
+        ))}
+      </div>
+      {foot && <p className="so-bw-d so-rows-foot">{foot}</p>}
+    </section>
+  );
+}
