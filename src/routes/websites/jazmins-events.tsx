@@ -81,9 +81,9 @@ function JazminsCase() {
           thenMeta={["Starting from scratch", "First clients still to come"]}
           thenCap="Everything had to be made, and it had to feel ready on day one."
           nowUrl="Jazmin's Events · the brand in use"
-          nowImg={`${A}/kit-in-action.jpg`}
-          nowAlt="The identity on business cards, stationery, a social post and a story"
-          nowCap="Now · Cards, stationery, feed and stories in one look"
+          nowImg={`${A}/kit-guide.jpg`}
+          nowAlt="Jazmin's brand guide: logos, palette, type and texture"
+          nowCap="Now · A full brand guide, logo to palette"
         />
       </div>
 
@@ -111,9 +111,7 @@ function JazminsCase() {
         url="Jazmin's Events · the brand"
         href={SITE}
         items={[
-          { t: "The brand in use", d: "Cards, stationery, feed and stories.", img: `${A}/kit-in-action.jpg` },
           { t: "The brand guide", d: "Logos, palette, type and texture.", img: `${A}/kit-guide.jpg` },
-          { t: "The brand board", d: "Stationery, wax seals and stamps.", img: `${A}/kit-board.jpg` },
           { t: "Instagram templates", d: "Ten posts she fills in herself.", img: `${A}/kit-instagram.jpg` },
         ]}
       />
@@ -215,7 +213,10 @@ function JazminsCase() {
           call="A JE monogram in forest, ivory and gold, and wax seals in green and gold for envelopes, packaging and the finishing touches."
           why="Wedding clients notice the small things. A seal on an envelope says she pays attention before she's planned anything."
         >
-          <BnShot src={`${A}/kit-board.jpg`} alt="Brand board: stationery, wax seals, stamps and the palette" cap="The brand board · stationery, seals and stamps" />
+          <div className="bn-two">
+            <BnShot src={`${A}/seal-green.png`} alt="Green wax seal with the JE monogram" cap="The green seal" />
+            <BnShot src={`${A}/seal-gold.png`} alt="Gold wax seal with the JE monogram" cap="The gold seal" />
+          </div>
         </BnDec>
 
         <BnDec
