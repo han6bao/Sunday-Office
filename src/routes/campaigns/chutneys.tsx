@@ -12,8 +12,6 @@ import {
   BnRules,
   BnSec,
   BnShot,
-  BnStrip,
-  BnTour,
   BuildNotes,
 } from "../../sunday/build-notes";
 
@@ -69,18 +67,6 @@ function ChutneysPage() {
         ]}
       />
 
-      <BnTour
-        url="chutneysinbellevue.com"
-        href={SITE}
-        items={[
-          { t: "The cocktail", d: "A pink coupe over a smoking dish.", img: PHOTOS[0].src },
-          { t: "The starter", d: "Laid out on slate, on their wood tables.", img: PHOTOS[1].src },
-          { t: "The chicken", d: "Glazed, with tall crisps, against the dark room.", img: PHOTOS[2].src },
-          { t: "The skillet", d: "A fried egg, pickles and soft buns on a board.", img: PHOTOS[3].src },
-        ]}
-        note="Photos by Hana."
-      />
-
       <BnSec
         no="00"
         label="Where they started"
@@ -99,17 +85,6 @@ function ChutneysPage() {
           set of promo photos for their social media and website.
         </p>
       </BnSec>
-
-      <BnStrip
-        label={
-          <>
-            <b>The photos</b> · Photos by Hana
-          </>
-        }
-        photos={PHOTOS}
-        cols={2}
-        ratio="4 / 3"
-      />
 
       <BnSec
         no="Brief"

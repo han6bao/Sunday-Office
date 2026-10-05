@@ -46,25 +46,6 @@ function BigBabyGucciPage() {
         />
         <hr className="so-rule mt-6" />
 
-        {/* Hero */}
-        <button
-          className="so-photo-cell"
-          type="button"
-          onClick={() => setOpen(0)}
-          aria-label={PHOTOS[0].cap}
-          style={{ display: "block", width: "100%", marginTop: 26, borderRadius: 20, overflow: "hidden" }}
-        >
-          <img
-            src={PHOTOS[0].src}
-            alt={PHOTOS[0].cap}
-            loading="lazy"
-            style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover", display: "block" }}
-          />
-          <span className="so-photo-cap" style={{ fontSize: 12 }}>
-            THE HERO · {PHOTOS[0].cap.toUpperCase()} · CLICK TO EXPAND
-          </span>
-        </button>
-
         {/* The artist */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>
           <p className="so-micro">THE ARTIST</p>

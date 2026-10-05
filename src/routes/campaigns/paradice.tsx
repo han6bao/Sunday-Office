@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
@@ -76,7 +75,6 @@ function ParadicePage() {
             { k: "RESULT", v: "He used the photos for his socials and promo, and fans started using them as their profile pictures" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/paradice/pz05.jpg" alt="Itz Pz for Paradice Worldwide, Seattle streetwear campaign" pos="center 30%" />
 
         <CaseRead label="THE ARTIST" items={ARTIST.map((x) => ({ t: x.t, d: x.d }))} />
 

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
@@ -42,7 +41,6 @@ function StillDifferentPage() {
             { k: "WHAT I DID", v: "Artist photos at ETC, a Tacoma streetwear label" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/still-different/sd-05.jpg" alt="Still Different at ETC Tacoma, artist photography" pos="center 35%" />
 
         {/* The artist */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>

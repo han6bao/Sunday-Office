@@ -12,8 +12,6 @@ import {
   BnRules,
   BnSec,
   BnShot,
-  BnStrip,
-  BnTour,
   BuildNotes,
 } from "../../sunday/build-notes";
 
@@ -73,19 +71,6 @@ function SelarasHausPage() {
         ]}
       />
 
-      <BnTour
-        url="@selarashaus"
-        href={IG}
-        items={[
-          { t: "The lounge", d: "The first room people see.", img: PHOTOS[0].src },
-          { t: "The chairs", d: "Where clients settle in.", img: PHOTOS[1].src },
-          { t: "The treatment room", d: "Where the facials and head spa happen.", img: PHOTOS[2].src },
-          { t: "The station", d: "The gold-framed mirror where she does makeup.", img: PHOTOS[4].src },
-          { t: "The corner", d: "Hydrangeas, and a little softness.", img: PHOTOS[5].src },
-        ]}
-        note="Photos by Hana."
-      />
-
       <BnSec
         no="00"
         label="Where she started"
@@ -105,17 +90,6 @@ function SelarasHausPage() {
           clients could see what the space feels like before they book.
         </p>
       </BnSec>
-
-      <BnStrip
-        label={
-          <>
-            <b>The photos</b> · Photos by Hana
-          </>
-        }
-        photos={PHOTOS}
-        cols={3}
-        ratio="4 / 5"
-      />
 
       <BnSec
         no="Brief"
@@ -207,7 +181,7 @@ function SelarasHausPage() {
       </BnDecisions>
 
       <BnNote
-        media={<img src={PHOTOS[1].src} alt={PHOTOS[1].alt} loading="lazy" />}
+        media={null}
         label="A note on credit"
         title={
           <>

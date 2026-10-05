@@ -136,6 +136,19 @@ function DirectionAndContentPage() {
         />
 
         <PriceList
+          id="direction"
+          need="Creative Direction"
+          label="CREATIVE DIRECTION"
+          title="Direction, without the monthly plan."
+          items={[
+            { t: "Shoot direction", p: "from $450", d: "For one shoot, with your photographer or with me.", list: ["The concept + a moodboard", "A shot list", "Styling notes", "I direct on set"] },
+            { t: "Campaign direction", p: "from $1,200", tag: "FOR LAUNCHES", d: "A launch, a drop or an event.", list: ["The big idea", "Moodboards + shot lists", "Casting, locations + styling", "A rollout plan", "One day of on-set direction"] },
+            { t: "Direction retainer", p: "from $550/mo", d: "For brands with their own team.", list: ["A monthly concept + plan", "I review everything before it posts", "No shooting"] },
+          ]}
+          foot={<>Booking a photo shoot with me? Add creative direction to any shoot for $200. See campaigns I've directed: <a className="so-bw-inline" href="/campaigns/exhibition">Exhibition</a> and <a className="so-bw-inline" href="/campaigns/chitos">Chitos International</a>.</>}
+        />
+
+        <PriceList
           id="start-smaller"
           need="Creative Direction"
           label="OR START SMALLER"

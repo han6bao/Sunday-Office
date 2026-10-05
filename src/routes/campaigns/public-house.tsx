@@ -12,8 +12,6 @@ import {
   BnRules,
   BnSec,
   BnShot,
-  BnStrip,
-  BnTour,
   BuildNotes,
 } from "../../sunday/build-notes";
 
@@ -72,19 +70,6 @@ function PublicHousePage() {
         ]}
       />
 
-      <BnTour
-        url="@publichouseseattle"
-        href={IG}
-        items={[
-          { t: "The arch", d: "One lit arch with shelves up to the ceiling.", img: PHOTOS[0].src },
-          { t: "Behind the bar", d: "The back bar, lit from under the bottles.", img: PHOTOS[3].src },
-          { t: "The bottles", d: "Amber light under the shelves, neon over the glass.", img: PHOTOS[4].src },
-          { t: "The sign", d: "Their name, in their own light.", img: PHOTOS[2].src },
-          { t: "On screen", d: "Public House, as it shows up on a phone.", img: PHOTOS[1].src },
-        ]}
-        note="Photos by Hana."
-      />
-
       <BnSec
         no="00"
         label="Where they started"
@@ -102,17 +87,6 @@ function PublicHousePage() {
           They needed photos for their social media. I shot the space itself: the lit back bar, the neon, the bottles and the tile.
         </p>
       </BnSec>
-
-      <BnStrip
-        label={
-          <>
-            <b>The photos</b> · Photos by Hana · Vertical 9:16
-          </>
-        }
-        photos={PHOTOS}
-        cols={5}
-        ratio="9 / 16"
-      />
 
       <BnSec
         no="Brief"
@@ -207,7 +181,7 @@ function PublicHousePage() {
           call="I added grain to every photo in the edit. It's a taste choice, and it's meant to be there."
           why="A clean, sharp photo of a dark bar can feel flat, like a phone snapshot. Grain gives the photos a film feel that matches the room at night: warm, a little moody, and lived in."
         >
-          <BnShot src={PHOTOS[4].src} alt={PHOTOS[4].alt} cap="Grain added in the edit, on purpose" />
+          <BnShot src={PHOTOS[3].src} alt={PHOTOS[3].alt} cap="Grain added in the edit, on purpose" />
         </BnDec>
       </BnDecisions>
 

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
@@ -42,7 +41,6 @@ function KenshiKillzPage() {
             { k: "WHAT I DID", v: "Promo photos, plus location and on-set help for her ReelClip TV performance" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/kenshi-killz/kk-03.jpg" alt="Kenshi Killz, Seattle artist promo photography" pos="center 35%" />
 
         {/* The artist */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>

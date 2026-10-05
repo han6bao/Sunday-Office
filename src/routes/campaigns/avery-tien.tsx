@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
@@ -35,7 +34,6 @@ function AveryTienPage() {
             { k: "WHAT I DID", v: "Portraits" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/avery-tien/at01.jpg" alt="Avery Tien, Seattle fashion designer, portrait by Hana" pos="center 30%" />
 
         {/* The designer */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>

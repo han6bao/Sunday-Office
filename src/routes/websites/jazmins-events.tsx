@@ -17,7 +17,6 @@ import {
   BnShot,
   BnSwatches,
   BnThenNow,
-  BnTour,
   BuildNotes,
 } from "../../sunday/build-notes";
 
@@ -107,15 +106,6 @@ function JazminsCase() {
         </p>
       </BnSec>
 
-      <BnTour
-        url="Jazmin's Events · the brand"
-        href={SITE}
-        items={[
-          { t: "The brand guide", d: "Logos, palette, type and texture.", img: `${A}/kit-guide.jpg` },
-          { t: "Instagram templates", d: "Ten posts she fills in herself.", img: `${A}/kit-instagram.jpg` },
-        ]}
-      />
-
       <BnSec
         no="Brief"
         label="Rules I set myself"
@@ -199,7 +189,6 @@ function JazminsCase() {
           call="Timeless Romantic for headlines, Cormorant Garamond for everything you read, and Bakendy script only for small flourishes."
           why="Script feels like a wedding, but too much of it gets hard to read. Keeping it to accents lets the brand feel romantic while the words stay clear."
         >
-          <BnShot src={`${A}/kit-guide.jpg`} alt="Jazmin's Events brand guide: logos, palette, typography and texture" cap="The brand guide · edition 01" />
         </BnDec>
 
         <BnDec

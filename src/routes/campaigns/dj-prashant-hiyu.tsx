@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
@@ -88,7 +87,6 @@ function BoatPartyPage() {
             { k: "RESULT", v: "The Hiyu posted my photos; the post passed 12.5K views" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/dj-prashant-hiyu/djp-04.jpg" alt="Iconic 2000s Boat Party on the Hiyu, Seattle event photography" pos="center" />
 
         <div className="so-reel-row is-solo">
           <div> {/* text column */}

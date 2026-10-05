@@ -11,10 +11,8 @@ import {
   BnNote,
   BnRules,
   BnSec,
-  BnShot,
   BnStats,
   BnStrip,
-  BnTour,
   BuildNotes,
 } from "../../sunday/build-notes";
 
@@ -160,7 +158,6 @@ function GreenGrillzPage() {
           call="I photographed Nine Vicious wearing the grillz instead of shooting them on their own."
           why="Marcus makes grillz for artists. Seeing them on an artist shows people what they look like worn, and who they are made for."
         >
-          <BnShot src={MINE[1].src} alt={MINE[1].alt} cap="Nine Vicious in the green set · Photo by Hana" />
         </BnDec>
 
         <BnDec
@@ -174,7 +171,6 @@ function GreenGrillzPage() {
           call="The whole shoot centered on a single set of grillz."
           why="Keeping to one piece gave the posts one clear thing to look at and talk about."
         >
-          <BnShot src={PHOTOS[1].src} alt={PHOTOS[1].alt} cap="The green set · Photo by Marcus Adam" />
         </BnDec>
 
         <BnDec
@@ -232,7 +228,7 @@ function GreenGrillzPage() {
       </BnSec>
 
       <BnNote
-        media={<img src={MINE[0].src} alt={MINE[0].alt} loading="lazy" />}
+        media={<img src={PHOTOS[0].src} alt={PHOTOS[0].alt} loading="lazy" />}
         label="A note on credit"
         title={
           <>

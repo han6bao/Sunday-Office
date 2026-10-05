@@ -125,7 +125,6 @@ function ExhibitionPage() {
         <p style={{ marginTop: 22, maxWidth: "54ch", lineHeight: 1.55 }}>
           Campaign photos for a streetwear drop, with the owner and a cast of Seattle creatives wearing the clothes.
         </p>
-        <CaseCover src="/assets/campaigns/exhibition/exh1.jpg" alt="Exhibition streetwear campaign, Seattle" pos="center 25%" />
 
         {/* The frames — one full-width editorial grid */}
         <div style={{ marginTop: 40 }}>
@@ -158,19 +157,6 @@ function ExhibitionPage() {
         </div>
 
         <CaseRead label="THE PLAY" items={PLAY.map((x) => ({ t: x.t, d: x.d }))} />
-
-        {/* Frames 08–10 */}
-        <div style={{ marginTop: 44 }}>
-          <p className="so-micro">FRAMES 08 TO 10 · PHOTOS BY HANA</p>
-          <div className="so-photo-grid mt-3">
-            {PHOTOS.slice(7, 10).map((ph, i) => (
-              <button key={ph.src} className="so-photo-cell" type="button" onClick={() => setOpen(i + 7)} aria-label={ph.cap}>
-                <img src={ph.src} alt={ph.cap} loading="lazy" />
-                <span className="so-photo-cap">{String(i + 8).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span></span>
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* The partnership + cast — side by side */}
         <div className="so-case-cols" style={{ marginTop: 44, alignItems: "start" }}>

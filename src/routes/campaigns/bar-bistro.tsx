@@ -13,7 +13,6 @@ import {
   BnSec,
   BnShot,
   BnStrip,
-  BnTour,
   BuildNotes,
 } from "../../sunday/build-notes";
 
@@ -73,19 +72,6 @@ function BarBistroPage() {
         ]}
       />
 
-      <BnTour
-        url="barbistrotacoma.com"
-        href={SITE}
-        items={[
-          { t: "The candle round", d: "Three cocktails and a candle.", img: PHOTOS[0].src },
-          { t: "Shrimp and risotto", d: "From the kitchen, at the table.", img: PHOTOS[1].src },
-          { t: "The mojito", d: "Mint, lime and warm light behind it.", img: PHOTOS[4].src },
-          { t: "The trio", d: "Berries, citrus and three glasses.", img: PHOTOS[5].src },
-          { t: "Sunlight service", d: "Cake and a cocktail out on the patio.", img: PHOTOS[6].src },
-        ]}
-        note="Photos by Hana."
-      />
-
       <BnSec
         no="00"
         label="Where they started"
@@ -111,8 +97,8 @@ function BarBistroPage() {
             <b>The photos</b> · Photos by Hana
           </>
         }
-        photos={PHOTOS}
-        cols={4}
+        photos={[PHOTOS[1]]}
+        cols={2}
         ratio="4 / 5"
       />
 

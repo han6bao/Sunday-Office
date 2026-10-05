@@ -10453,5 +10453,8 @@ html.is-scrolling .so-workcard-hover { opacity: 0 !important; transition: none; 
 html.is-scrolling .so-workcard { pointer-events: none; }
 .bn-logo-media img.bn-paper-img { max-width: 340px; width: 100%; height: auto; background: none; box-shadow: 0 12px 30px rgba(0,0,0,.25); }
 
+/* Build your world: the three service photos in black and white */
+.so-path-room .so-room-media img { filter: grayscale(1) contrast(1.05); }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

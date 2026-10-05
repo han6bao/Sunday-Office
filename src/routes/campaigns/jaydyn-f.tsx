@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
@@ -62,7 +61,6 @@ function JaydynCase() {
             { k: "RESULT", v: "120K views on the reel I shot", h: "https://www.instagram.com/p/DORrPfiklMt/" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/jaydyn-f/jd-04.jpg" alt="Jaydyn F., Seattle artist photography" pos="center 35%" />
 
         {/* The artist — text left, the frame right */}
         <div className="so-case-cols" style={{ marginTop: 28, alignItems: "start" }}>

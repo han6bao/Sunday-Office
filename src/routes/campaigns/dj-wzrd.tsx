@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
@@ -43,7 +42,6 @@ function DjWzrdPage() {
             { k: "RESULT", v: "He reposted the shot" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/dj-wzrd/dj-03.jpg" alt="DJ WZRD at Cultura, Capitol Hill Seattle, nightlife photography" pos="center 40%" />
 
         {/* The DJ */}
         <div style={{ marginTop: 36, maxWidth: "58ch" }}>

@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
@@ -68,7 +67,6 @@ function ChitosPage() {
             { k: "RESULT", v: "The brand ran Count Boss as its advertisement" },
           ]}
         />
-        <CaseCover src="/assets/campaigns/highway-chitos/hc01.jpg" alt="Chitos International, Seattle art direction and photography" pos="center" />
 
         <CaseRead label="THE HOUSE OF CHITO" items={BRAND.map((x) => ({ t: x.t, d: x.d }))} />
 
