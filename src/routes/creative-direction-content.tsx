@@ -128,12 +128,11 @@ function DirectionAndContentPage() {
           label="MONTHLY CONTENT"
           title="Content every month."
           items={[
-            { t: "Starter", p: "$600/mo", d: "An easy, affordable start.", list: ["1 pro photo shoot (1 hour, about 15 photos) + iPhone content", "8 posts on 1 platform", "Captions + a 30-day plan", "3 Canva templates you approve"] },
-            { t: "Growth", p: "$1,500/mo", tag: "MOST POPULAR", d: "The best value per post.", list: ["Pro photo + video shoot + iPhone content", "20 posts + 6 reels on 2 platforms, plus Facebook", "Monthly trend + competitor research", "15 Canva templates you approve", "Audit + strategy free in month one"] },
-            { t: "Full", p: "$2,500/mo", d: "I run your content.", list: ["2 pro shoots + iPhone content", "24 posts + 10 reels", "Instagram, TikTok, Facebook + LinkedIn", "Posting for you + a monthly check-in", "New Canva templates every month"] },
-            { t: "Signature", p: "Ask me", d: "From $4,000 a month, built around you.", list: ["A styled campaign shoot every month", "Videographer-shot video + ad creative", "A custom template system", "Website updates + priority"] },
+            { t: "Starter", p: "$600/mo", d: "An easy, affordable start. About $75 a post.", list: ["1 pro photo shoot (1 hour, about 15 photos) + iPhone content", "8 posts on 1 platform", "Captions + a 30-day plan", "3 Canva templates you approve"] },
+            { t: "Growth", p: "$1,500/mo", tag: "BEST VALUE", d: "Where accounts start to grow. About $62 a post.", list: ["Everything in Starter, plus:", "A photo + video shoot", "16 posts + 8 reels", "Instagram + TikTok, plus Facebook", "Monthly trend + competitor research", "10 Canva templates you approve", "Audit + strategy free in month one"] },
+            { t: "Full", p: "$2,800/mo", d: "I run your content, start to finish.", list: ["Everything in Growth, plus:", "A second shoot every month", "24 posts + 12 reels", "Instagram, TikTok, Facebook + LinkedIn", "I post for you + a monthly check-in", "New Canva templates every month"] },
           ]}
-          foot={<>Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
+          foot={<>Need a styled campaign every month, with video and ad creative? <strong>Signature plans start at $4,000 a month</strong>, built around you. <a className="so-bw-inline" href="/?need=Monthly%20content&pkg=Signature#inquiry">Ask me →</a><br /><br />Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
         />
 
         <PriceList
