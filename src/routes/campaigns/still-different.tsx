@@ -14,7 +14,6 @@ const PHOTOS = [
   { src: "/assets/campaigns/still-different/sd-01.jpg", cap: "the light" },
   { src: "/assets/campaigns/still-different/sd-02.jpg", cap: "the couch" },
   { src: "/assets/campaigns/still-different/sd-03.jpg", cap: "the rack, the TV" },
-  { src: "/assets/campaigns/still-different/sd-04.jpg", cap: "shopping the rack" },
   { src: "/assets/campaigns/still-different/sd-05.jpg", cap: "ETC · TACOMA" },
   { src: "/assets/campaigns/still-different/sd-06.jpg", cap: "mic in hand" },
 ];
@@ -90,13 +89,13 @@ function StillDifferentPage() {
             The room was white, with bright ceiling lights, a rack of tees
             and a vintage mic on a stand. He pointed up at the light
             fixture and sat back on the orange couch. We didn't change
-            anything in the room. I took these six photos.
+            anything in the room. Here are five of the photos I took.
           </p>
         </div>
 
         {/* Frames */}
         <div style={{ marginTop: 56 }}>
-          <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA</p>
+          <p className="so-micro">THE FRAMES · 5 · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
             {PHOTOS.map((ph, i) => (
               <button

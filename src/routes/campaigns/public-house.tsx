@@ -186,7 +186,7 @@ function PublicHousePage() {
       </BnDecisions>
 
       <BnNote
-        media={<img src={`${A}/ss-04-bw.jpg`} alt="Behind the bar at Public House, Pioneer Square Seattle, black and white" loading="lazy" />}
+        media={null}
         label="A note on credit"
         title={
           <>
