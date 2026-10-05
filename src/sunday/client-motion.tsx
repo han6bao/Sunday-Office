@@ -78,8 +78,10 @@ export function DarkGallery({ items: all }: { items: Work[] }) {
     const el = trackRef.current;
     if (!el) return;
     const onMove = (e: PointerEvent) => {
-      if (!drag.current.moved) return;
+      if (!drag.current.moved || e.pointerType !== "mouse" || !(e.buttons & 1)) return;
       const dx = e.clientX - drag.current.startX;
+      if (Math.abs(dx) < 6) return;
+      setGrabbing(true);
       el.scrollLeft = drag.current.startLeft - dx;
     };
     const onEnd = () => {
@@ -104,6 +106,21 @@ export function DarkGallery({ items: all }: { items: Work[] }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [detail]);
+
+  useEffect(() => {
+    // While the page is scrolling, hold hover effects so cards don't flicker under the cursor.
+    let t = 0;
+    const on = () => {
+      document.documentElement.classList.add("is-scrolling");
+      window.clearTimeout(t);
+      t = window.setTimeout(() => document.documentElement.classList.remove("is-scrolling"), 160);
+    };
+    window.addEventListener("scroll", on, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", on);
+      window.clearTimeout(t);
+    };
+  }, []);
 
   const w = detail !== null ? items[detail] : undefined;
 
@@ -180,9 +197,12 @@ export function DarkGallery({ items: all }: { items: Work[] }) {
       className={"so-gallery-scroll" + (grabbing ? " grabbing" : "")}
       onPointerDown={(e) => {
         const el = trackRef.current;
-        if (!el) return;
+        if (!el || e.pointerType !== "mouse" || e.button !== 0) return;
         drag.current = { startX: e.clientX, startLeft: el.scrollLeft, moved: true };
-        setGrabbing(true);
+      }}
+      onPointerLeave={() => {
+        drag.current.moved = false;
+        setGrabbing(false);
       }}
       role="region"
       aria-label="Featured work. Drag to scroll"

@@ -10448,3 +10448,13 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 /* Website recordings: frame matches the clips (16:9), nothing cropped */
 .bn-tour-frame:not(.is-photos) .bn-tour-screen { aspect-ratio: 1266 / 720; background: var(--bn-paper-2); }
 .bn-tour-frame:not(.is-photos) .bn-tour-screen video { object-fit: contain; object-position: center; background: var(--bn-paper-2); }
+
+/* Featured work: smooth scrolling (no blur, no edge mask, gentle snap) */
+.so-gallery-scroll { -webkit-mask-image: none !important; mask-image: none !important; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
+.so-gallery-scroll.grabbing { scroll-snap-type: none; }
+.so-gallery-scroll.grabbing .so-workcard { pointer-events: none; }
+.so-workcard-hover { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; background: rgba(20, 20, 18, 0.55); }
+.so-workcard-media img { will-change: auto; backface-visibility: hidden; }
+@media (hover: none) { .so-workcard:hover .so-workcard-hover { opacity: 0; } .so-workcard:hover .so-workcard-media img { transform: none; } }
+html.is-scrolling .so-workcard-hover { opacity: 0 !important; transition: none; }
+html.is-scrolling .so-workcard { pointer-events: none; }
