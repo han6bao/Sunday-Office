@@ -195,6 +195,20 @@ function PublicHousePage() {
         >
           <BnShot src={PHOTOS[1].src} alt={PHOTOS[1].alt} cap="Public House, on screen" />
         </BnDec>
+
+        <BnDec
+          no="05"
+          label="Edit"
+          title={
+            <>
+              The grain is <em>on purpose.</em>
+            </>
+          }
+          call="I added grain to every photo in the edit. It's a taste choice, and it's meant to be there."
+          why="A clean, sharp photo of a dark bar can feel flat, like a phone snapshot. Grain gives the photos a film feel that matches the room at night: warm, a little moody, and lived in."
+        >
+          <BnShot src={PHOTOS[4].src} alt={PHOTOS[4].alt} cap="Grain added in the edit, on purpose" />
+        </BnDec>
       </BnDecisions>
 
       <BnNote

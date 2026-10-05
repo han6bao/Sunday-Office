@@ -10438,3 +10438,9 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn .bn-tour-frame.is-photos figcaption { border-top: 0; padding: 12px 0 0; text-align: center; }
 .bn a.bn-tour-link { display: inline-block; margin-top: 14px; font: 500 11.5px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--bn-ink); text-decoration: none; border-bottom: 1px solid var(--bn-accent); padding-bottom: 2px; }
 @media (max-width: 900px) { .bn-tour-frame.is-photos .bn-tour-screen { height: auto; max-height: 72vh; } .bn-tour-frame.is-photos .bn-tour-screen img { max-height: 72vh; } }
+
+/* Keep tall photos a sensible size */
+.bn-tour-frame.is-photos .bn-tour-screen img { max-height: min(74vh, 680px); }
+.bn-shot { width: fit-content; max-width: 100%; }
+.bn-shot img { width: auto; max-width: 100%; max-height: min(78vh, 720px); }
+.bn-shot video { max-height: min(78vh, 720px); }
