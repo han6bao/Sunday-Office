@@ -712,7 +712,7 @@ export function InquiryForm() {
   // Links from the service pages carry ?need=…&pkg=… so the form arrives filled in.
   const urlQ = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;
   const urlNeed = urlQ?.get("need") ?? "";
-  const urlPkg = urlQ?.get("pkg") ?? "";
+  const urlPkg = (urlQ?.get("pkg") ?? "").replace(/\.html$/, "");
   const needPrefill = (urlNeed && needOptions.includes(urlNeed) ? urlNeed : "") || (finder["need"] ?? "");
   // Arriving from the quiz or a "Book" button: land on the form once the page has settled.
   useEffect(() => {
