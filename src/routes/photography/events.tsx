@@ -12,11 +12,6 @@ const PHOTOS: RoomPhoto[] = [
   { src: "/assets/campaigns/dj-prashant-hiyu/djp-01.jpg", h: "/campaigns/dj-prashant-hiyu", cap: "The Hiyu boat party" },
   { src: "/assets/campaigns/big-baby-gucci/bbg-03.jpg", h: "/campaigns/big-baby-gucci", cap: "Big Baby Gucci" },
   { src: "/assets/campaigns/dj-wzrd/dj-05.jpg", h: "/campaigns/dj-wzrd", cap: "DJ Wzrd" },
-  { src: "/assets/campaigns/leon-thomas/lt-01.jpg", h: "/campaigns/leon-thomas", cap: "Leon Thomas at Vice" },
-  { src: "/assets/campaigns/dj-prashant-hiyu/djp-03.jpg", h: "/campaigns/dj-prashant-hiyu", cap: "The Hiyu boat party" },
-  { src: "/assets/campaigns/big-baby-gucci/bbg-07.jpg", h: "/campaigns/big-baby-gucci", cap: "Big Baby Gucci" },
-  { src: "/assets/campaigns/dj-wzrd/dj-01.jpg", h: "/campaigns/dj-wzrd", cap: "DJ Wzrd" },
-  { src: "/assets/campaigns/dj-prashant-hiyu/djp-08.jpg", h: "/campaigns/dj-prashant-hiyu", cap: "The Hiyu boat party" },
 ];
 
 function Page() {

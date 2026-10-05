@@ -12,10 +12,6 @@ const PHOTOS: RoomPhoto[] = [
   { src: "/assets/campaigns/chutneys/ch-01.jpg", h: "/campaigns/chutneys", cap: "Chutneys" },
   { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", h: "/campaigns/selaras-haus", cap: "Selaras Haus" },
   { src: "/assets/campaigns/soul-social/ss-01.jpg", h: "/campaigns/public-house", cap: "Public House" },
-  { src: "/assets/campaigns/bar-bistro/bb-03.jpg", h: "/campaigns/bar-bistro", cap: "Bar Bistro" },
-  { src: "/assets/campaigns/chutneys/ch-02.jpg", h: "/campaigns/chutneys", cap: "Chutneys" },
-  { src: "/assets/campaigns/angie-tiara-beauty/at-03.jpg", h: "/campaigns/selaras-haus", cap: "Selaras Haus" },
-  { src: "/assets/campaigns/soul-social/ss-03.jpg", h: "/campaigns/public-house", cap: "Public House" },
   { src: "/assets/campaigns/still-different/sd-04.jpg", h: "/campaigns/still-different", cap: "Still Different" },
 ];
 
