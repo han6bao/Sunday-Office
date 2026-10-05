@@ -11,7 +11,7 @@ export const Route = createFileRoute("/campaigns/avery-tien")({
 
 const PHOTOS = [
   { src: "/assets/campaigns/avery-tien/at01.jpg", cap: "Avery · portrait 01" },
-  { src: "/assets/campaigns/avery-tien/at02.jpg", cap: "Avery · portrait 02" },
+  { src: "/assets/photography/avery-02.jpg", cap: "Avery · full length, with the bike" },
 ];
 
 function AveryTienPage() {
