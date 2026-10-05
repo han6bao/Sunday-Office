@@ -764,13 +764,14 @@ export function InquiryForm() {
   if (sent) {
     return (
       <div className="so-finder-answer" data-screenshot-safe>
-        <p className="so-micro so-micro-red">received</p>
+        <p className="so-micro so-micro-red">sent</p>
         <h3 className="so-serif" style={{ fontSize: "clamp(22px,3vw,34px)", marginTop: 10 }}>
-          Thank you. We'll be in touch soon.
+          Thank you. Your message has been sent.
         </h3>
         <p style={{ maxWidth: "48ch", marginTop: 14 }}>
-          We read every message and reply within a few days. If it's
-          urgent, email hello@sundayoffice.agency.
+          I'll get back to you within 2 to 3 business days. A copy of your
+          message is on its way to your inbox. If it's urgent, email
+          hello@sundayoffice.agency.
         </p>
         <button className="so-btn so-btn-ghost mt-6" onClick={() => setSent(false)}>
           Send another

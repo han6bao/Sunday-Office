@@ -24,6 +24,7 @@ import {
   NavState,
 } from "../sunday/client-motion";
 import { Hero } from "../sunday/hero";
+import { ProjectQuiz } from "../sunday/project-quiz";
 
 export const Route = createFileRoute("/")({
   head: () => seoHead("/"),
@@ -645,7 +646,7 @@ function StartAProject() {
           </div>
         </div>
 
-        <StartPicker items={starts} />
+        <ProjectQuiz />
 
         <div className="so-office-card" id="inquiry">
           <p className="eyebrow-cap mt-4">The inquiry</p>
