@@ -55,11 +55,48 @@ const PICKS: Record<Exclude<Stage, "unsure">, Record<"low" | "mid" | "high", Pic
 
 };
 
-const NICHE: Record<string, string> = {
-  beauty: "For beauty businesses, this is where trust starts: people want to see your work before they book.",
-  food: "For food and drink, people decide with their eyes first. This gets them through the door.",
-  creative: "For artists and creatives, the look is part of the work. This keeps it consistent.",
-  other: "",
+/* "Need one thing made": the most useful single job for each kind of business. */
+const ONE_THING: Record<string, Record<"low" | "mid" | "high", Pick>> = {
+  beauty: {
+    low: { t: "Headshots", p: "from $150", why: "A clean, natural headshot for your booking page and your profile. Clients want to see who they're booking with.", need: "Headshots", more: "/headshots" },
+    mid: { t: "Brand photography", p: "from $550", why: "Your treatment room, your tools and you at work. 30+ edited photos for your site, your booking page and your feed.", need: "Photography", more: "/photography" },
+    high: { t: "Photos + video", p: "from $900", why: "Photos of your space and short videos of the experience, so one visit fills your site and your feed for weeks.", need: "Photography", more: "/photography" },
+  },
+  food: {
+    low: { t: "A menu or a flyer", p: "from $75", why: "A menu, a flyer or an A-frame sign in your brand, ready to print. Menus start at $150, flyers at $75.", need: "Branding", more: "/branding#pricing" },
+    mid: { t: "Food + drink photography", p: "from $550", why: "Your dishes, your drinks and your room, shot to make people hungry. 30+ edited photos for your menu, site and feed.", need: "Photography", more: "/photography" },
+    high: { t: "Photos + video", p: "from $900", why: "Plates, pours and the room, in photos and short videos from one visit. Enough to keep your feed going for weeks.", need: "Photography", more: "/photography" },
+  },
+  creative: {
+    low: { t: "Content day", p: "$350", why: "About 2 hours on iPhone and 5 to 8 short edited videos for a release, a show or a drop.", need: "Video / Moving Image", more: "/moving-image" },
+    mid: { t: "Creative shoot", p: "from $550", why: "A concept, a moodboard and a styled shoot, for a cover, a campaign or press photos that look like your work.", need: "Photography", more: "/photography" },
+    high: { t: "Photos + video", p: "from $900", why: "Stills and short videos from one shoot, so your release, your merch and your posts all come from the same world.", need: "Photography", more: "/photography" },
+  },
+  other: {
+    low: { t: "Something small", p: "from $75", why: "A flyer, a headshot, a content day of short videos or a quick fix to your site. Tell me what it is and I'll quote it first.", need: "Not sure yet / Other", more: "/#build" },
+    mid: { t: "Brand photography", p: "from $550", why: "A half-day shoot of your space, your team and what you do. 30+ edited photos, ready for everywhere.", need: "Photography", more: "/photography" },
+    high: { t: "Photos + video", p: "from $900", why: "One shoot that covers photos and short videos, so a single day fills your website and your feed.", need: "Photography", more: "/photography" },
+  },
+};
+
+/* One line that shows how the suggestion fits their kind of business. */
+const DETAIL: Record<string, Partial<Record<Stage, string>>> = {
+  beauty: {
+    scratch: "Clients choose who works on them based on trust. A clear, calm brand earns it before they ever book.",
+    site: "Your services, prices and booking in one place, so clients can book without messaging you first.",
+    content: "Think before-and-afters, treatment explainers and booking reminders, every month.",
+  },
+  food: {
+    scratch: "A brand that looks as good as the food, from your sign to your menu to your feed.",
+    site: "Your menu, hours, location and ordering, so people decide before they walk in.",
+    content: "Think new dishes, specials and the feel of the room, every month.",
+  },
+  creative: {
+    scratch: "One look that ties your music, merch and posts together, so people know it's you.",
+    site: "Your work, your links and a way to book you, all in one place.",
+    content: "Think releases, shows and behind the scenes, so you never go quiet between drops.",
+  },
+  other: {},
 };
 
 export function ProjectQuiz() {
@@ -75,7 +112,9 @@ export function ProjectQuiz() {
   const back = () => (a3 !== null ? setA3(null) : a2 !== null ? setA2(null) : setA1(null));
   const unsure = a2 === "unsure";
 
-  const pick = a2 && a2 !== "unsure" && a3 ? PICKS[a2][a3 === "unsure" ? "mid" : a3] : null;
+  const level = a3 === "unsure" || a3 === null ? "mid" : a3;
+  const pick = a2 && a2 !== "unsure" && a3 ? (a2 === "photos" ? ONE_THING[a1 ?? "other"][level] : PICKS[a2][level]) : null;
+  const detail = a1 && a2 ? DETAIL[a1]?.[a2] : undefined;
   const niche = ({ beauty: "for my beauty business", food: "for my food and drink business", creative: "for my creative work" } as Record<string, string>)[a1 ?? ""] ?? "";
 
   return (
@@ -138,7 +177,7 @@ export function ProjectQuiz() {
             <p className="so-quiz-pick-p">{pick.p}</p>
           </div>
           <p className="so-quiz-why">{pick.why}</p>
-          {a1 && NICHE[a1] && <p className="so-quiz-why so-quiz-niche">{NICHE[a1]}</p>}
+          {detail && <p className="so-quiz-why so-quiz-niche">{detail}</p>}
           <div className="so-quiz-ctas">
             <a className="so-quiz-go" href={bookHref(pick.need, `${pick.t} (${pick.p})${niche ? `, ${niche}` : ""}`)}>
               Start with this →
