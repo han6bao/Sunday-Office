@@ -29,18 +29,18 @@ export const Route = createFileRoute("/websites/jazmins-events")({
 const A = "/assets/campaigns/jazmins-events";
 const SITE = "https://jazmins-events.vercel.app/";
 
-/* Her world: ivory paper, forest green, a little gold. */
+/* Same cream, black and warm taupe as the Essential Brows notes. */
 const THEME = {
-  paper: "#f6f1e4",
-  paper2: "#ece6d6",
-  ink: "#1f2e25",
-  ink2: "rgba(31, 46, 37, 0.76)",
-  mute: "#76806f",
-  rule: "rgba(47, 70, 57, 0.18)",
-  accent: "#9a7f45",
-  deep: "#2f4639",
-  deepInk: "#f6f1e4",
-  deepMute: "#c9b17a",
+  paper: "#f2eee8",
+  paper2: "#e9e3da",
+  ink: "#151413",
+  ink2: "rgba(21, 20, 19, 0.74)",
+  mute: "#77706a",
+  rule: "rgba(21, 20, 19, 0.14)",
+  accent: "#8a7462",
+  deep: "#121110",
+  deepInk: "#f2eee8",
+  deepMute: "#9b938a",
 };
 
 function JazminsCase() {
