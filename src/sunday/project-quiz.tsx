@@ -15,10 +15,10 @@ const Q1 = [
 ];
 
 const Q2: { k: Stage; t: string; d: string }[] = [
-  { k: "scratch", t: "Starting from scratch", d: "No logo or brand yet, or it doesn't feel like me" },
-  { k: "site", t: "I need a website", d: "I have a look. I need a home for it" },
-  { k: "content", t: "I need content, every month", d: "My feed is quiet or all over the place" },
-  { k: "photos", t: "I just need photos", d: "Headshots, my space, my food or products" },
+  { k: "scratch", t: "Just getting started", d: "A new business, or a fresh start" },
+  { k: "site", t: "Ready to level up", d: "I have something. It needs to look the part" },
+  { k: "content", t: "Want to stay consistent", d: "Help showing up, month after month" },
+  { k: "photos", t: "Need new photos", d: "For one thing, or for everything" },
 ];
 
 const Q3: { k: Budget; t: string }[] = [
