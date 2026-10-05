@@ -75,7 +75,7 @@ export function ProjectQuiz() {
   const unsure = a2 === "unsure";
 
   const pick = a2 && a2 !== "unsure" && a3 ? PICKS[a2][a3 === "unsure" ? "mid" : a3] : null;
-  const niche = Q1.find((x) => x.k === a1)?.t ?? "";
+  const niche = ({ beauty: "for my beauty business", food: "for my food and drink business", creative: "for my creative work" } as Record<string, string>)[a1 ?? ""] ?? "";
 
   return (
     <div className="so-quiz">
@@ -161,7 +161,7 @@ export function ProjectQuiz() {
             start, with a price, before anything is booked.
           </p>
           <div className="so-quiz-ctas">
-            <a className="so-quiz-go" href={bookHref("Not sure yet / Other", niche ? `Not sure yet, ${niche}` : "Not sure yet")}>
+            <a className="so-quiz-go" href={bookHref("Not sure yet / Other", niche ? `figuring out where to start, ${niche}` : "figuring out where to start")}>
               Tell me about it →
             </a>
             <a className="so-quiz-more" href="#build">

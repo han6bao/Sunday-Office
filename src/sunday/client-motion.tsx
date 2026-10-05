@@ -714,6 +714,14 @@ export function InquiryForm() {
   const urlNeed = urlQ?.get("need") ?? "";
   const urlPkg = urlQ?.get("pkg") ?? "";
   const needPrefill = (urlNeed && needOptions.includes(urlNeed) ? urlNeed : "") || (finder["need"] ?? "");
+  // Arriving from the quiz or a "Book" button: land on the form once the page has settled.
+  useEffect(() => {
+    if (!(urlNeed || urlPkg) || window.location.hash !== "#inquiry") return;
+    const go = () => document.getElementById("inquiry")?.scrollIntoView({ block: "start" });
+    const ids = [60, 400, 1900].map((ms) => window.setTimeout(go, ms));
+    return () => ids.forEach((id) => window.clearTimeout(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const workingWith = finder["working-with"] ?? "";
   // "Not sure" gets a gentle prompt in the message area.
   const aboutPlaceholder =
