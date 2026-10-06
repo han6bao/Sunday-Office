@@ -10528,5 +10528,11 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 .so-quiz-opts.is-three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 @media (max-width: 760px) { .so-quiz-opts.is-three { grid-template-columns: 1fr; } }
 
+/* Form: a clear message when sending fails, right by the Send button */
+.so-form-error { grid-column: 1 / -1; margin: 0 0 16px; padding: 16px 18px; border: 1px solid rgba(156, 59, 79, 0.45); border-radius: 12px; background: rgba(156, 59, 79, 0.08); }
+.so-form-error p { margin: 0; line-height: 1.5; }
+.so-form-error-t { font-weight: 700; margin-bottom: 4px !important; }
+.so-form-error .so-btn { margin-top: 12px; display: inline-flex; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

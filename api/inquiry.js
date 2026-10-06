@@ -59,6 +59,7 @@ export default async function handler(req, res) {
   }
   // A short confirmation to the person who wrote in. Only sent once the domain is verified
   // (Resend's shared test address can only email the account owner). Never blocks the reply.
+  let confirmed = false;
   if (d.email && INQUIRY_FROM && !INQUIRY_FROM.includes("resend.dev")) {
     const first = esc(d.name.split(" ")[0]);
     const confirm = `<div style="background:#efe5f3;padding:36px 16px"><div style="max-width:520px;margin:0 auto;background:#fbf7fd;border-radius:10px;overflow:hidden;border:1px solid #e0d3e6"><div style="background:#151213;padding:24px 30px"><p style="margin:0;color:#f3ead9;font-family:Georgia,serif;font-size:13px;letter-spacing:0.32em;text-transform:uppercase">Sunday Office</p></div><div style="padding:28px 30px 30px;font-family:Helvetica,Arial,sans-serif;color:#151213;font-size:15px;line-height:1.6"><h1 style="margin:0 0 14px;font-family:Georgia,serif;font-size:24px;font-weight:400">Thank you, ${first}. I got your message.</h1><p style="margin:0 0 12px">I'll get back to you within 2 to 3 business days. If anything comes to mind before then, just reply to this email.</p><p style="margin:0;color:#6b5678">Hana<br/>Sunday Office · Seattle</p></div></div></div>`;
@@ -72,7 +73,9 @@ export default async function handler(req, res) {
         subject: "Got it. I'll be in touch soon.",
         html: confirm,
       }),
-    }).catch(() => {});
+    })
+      .then((c) => { confirmed = c.ok; })
+      .catch(() => {});
   }
-  res.status(200).json({ ok: true, id: body?.id });
+  res.status(200).json({ ok: true, id: body?.id, confirmed });
 }

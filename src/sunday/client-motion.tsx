@@ -685,6 +685,9 @@ export function InquiryForm() {
   const [sent, setSent] = useState(false);
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
+  const [sentEmail, setSentEmail] = useState(false);
+  const [mailBody, setMailBody] = useState("");
+  const errRef = useRef<HTMLDivElement>(null);
   // Mobile quick-form wizard — one field at a time, "Next" flow.
   const [mobile, setMobile] = useState(false);
   const [wizStep, setWizStep] = useState(0);
@@ -719,7 +722,14 @@ export function InquiryForm() {
     if (!(urlNeed || urlPkg) || window.location.hash !== "#inquiry") return;
     const go = () => document.getElementById("inquiry")?.scrollIntoView({ block: "start" });
     const ids = [60, 400, 1900].map((ms) => window.setTimeout(go, ms));
-    return () => ids.forEach((id) => window.clearTimeout(id));
+    const stop = () => ids.forEach((id) => window.clearTimeout(id));
+    window.addEventListener("pointerdown", stop, { once: true });
+    window.addEventListener("keydown", stop, { once: true });
+    return () => {
+      stop();
+      window.removeEventListener("pointerdown", stop);
+      window.removeEventListener("keydown", stop);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const workingWith = finder["working-with"] ?? "";
@@ -738,6 +748,28 @@ export function InquiryForm() {
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
     setSending(true);
     setSendError(null);
+    setMailBody(
+      [
+        data.name && `Name: ${data.name}`,
+        data.business && `Business: ${data.business}`,
+        data.website && `Website / Instagram: ${data.website}`,
+        data.need && `What I need: ${data.need}`,
+        data.budget && `Budget: ${data.budget}`,
+        data.timeline && `Timeline: ${data.timeline}`,
+        data.about && `\n${data.about}`,
+      ]
+        .filter(Boolean)
+        .join("\n"),
+    );
+    const fail = (msg: string) => {
+      setSendError(msg);
+      setTimeout(() => {
+        const el = errRef.current;
+        if (!el) return;
+        const r = el.getBoundingClientRect();
+        if (r.top < 80 || r.bottom > window.innerHeight - 20) window.scrollTo({ top: window.scrollY + r.top - window.innerHeight / 2 + r.height / 2, behavior: "smooth" });
+      }, 60);
+    };
     try {
       const result = await sendInquiry({
         data: {
@@ -754,16 +786,13 @@ export function InquiryForm() {
         },
       });
       if (result.ok) {
+        setSentEmail(!!data.email && !!(result as { confirmed?: boolean }).confirmed);
         setSent(true);
         return;
       }
-      setSendError(
-        result.notConfigured
-          ? "The form isn't connected yet. Please email hello@sundayoffice.agency directly."
-          : result.error ?? "Something went wrong. Please email us at hello@sundayoffice.agency.",
-      );
+      fail("Your message didn't go through. Nothing you wrote is lost. Try again, or email it to me instead.");
     } catch {
-      setSendError("The form can't send right now. Please email hello@sundayoffice.agency directly.");
+      fail("Your message didn't go through. Check your connection and try again, or email it to me instead.");
     } finally {
       setSending(false);
     }
@@ -777,9 +806,9 @@ export function InquiryForm() {
           Thank you. Your message has been sent.
         </h3>
         <p style={{ maxWidth: "48ch", marginTop: 14 }}>
-          I'll get back to you within 2 to 3 business days. A copy of your
-          message is on its way to your inbox. If it's urgent, email
-          hello@sundayoffice.agency.
+          I'll get back to you within 2 to 3 business days.
+          {sentEmail ? " A copy of your message is on its way to your inbox (check spam if you don't see it)." : ""} If
+          it's urgent, email hello@sundayoffice.agency.
         </p>
         <button className="so-btn so-btn-ghost mt-6" onClick={() => setSent(false)}>
           Send another
@@ -798,11 +827,6 @@ export function InquiryForm() {
         <p className="so-micro so-micro-red" style={{ gridColumn: "1 / -1" }}>
           YOU PICKED: {needPrefill}{urlPkg ? " · " + urlPkg : ""}
           {workingWith ? " · " + workingWith : ""}
-        </p>
-      )}
-      {sendError && (
-        <p className="so-micro so-micro-red" style={{ gridColumn: "1 / -1", marginBottom: 12 }}>
-          {sendError}
         </p>
       )}
       {wizard && !review && (
@@ -925,6 +949,18 @@ export function InquiryForm() {
         );
       })()}
       <div className="so-form-submit">
+        {sendError && (
+          <div className="so-form-error" role="alert" ref={errRef}>
+            <p className="so-form-error-t">Not sent yet</p>
+            <p>{sendError}</p>
+            <a
+              className="so-btn so-btn-ghost"
+              href={`mailto:hello@sundayoffice.agency?subject=${encodeURIComponent("New inquiry")}&body=${encodeURIComponent(mailBody)}`}
+            >
+              Email it instead →
+            </a>
+          </div>
+        )}
         {!wizard && (
           <button type="submit" className="so-btn" disabled={sending}>
             {sending ? "Sending…" : "Send"} <span aria-hidden>→</span>
