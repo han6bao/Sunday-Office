@@ -133,6 +133,7 @@ function PhotographyPage() {
         <PriceList
           need="Photography"
           title="Where shoots start."
+          feature
           items={[
             { t: "Headshots", p: "from $150", d: "Clean, natural and actually you.", list: ["Three session sizes", "Direction the whole time", "See all sessions on the headshots page"] },
             { t: "Brand photography", p: "from $550", tag: "FOR BUSINESSES", d: "Food, products, your space, your team.", list: ["A planning call + shot list", "Half-day shoot", "30+ edited photos", "Sized for web, social + print"] },

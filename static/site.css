@@ -10476,6 +10476,14 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 .so-row-body { padding: 0 2px 16px; }
 .so-row-d { font-size: 15px; opacity: .78; line-height: 1.5; margin: 0; max-width: 46ch; }
 .so-row-go { display: inline-block; margin-top: 10px; font-size: 13px; font-weight: 600; color: inherit; }
+.so-pf { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 28px 56px; margin-top: 26px; align-items: start; }
+@media (max-width: 760px) { .so-pf { grid-template-columns: 1fr; } }
+.so-pf .so-pk-card { grid-row: auto !important; min-height: 0; display: flex !important; grid-template-rows: none !important; }
+.so-pf .so-pk-price { align-self: auto; }
+.so-pf-h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; opacity: .75; margin: 6px 0 0; }
+.so-row-list { margin: 10px 0 0; padding: 0; display: grid; gap: 4px; font-size: 14px; opacity: .78; }
+.so-row-list li { padding-left: 14px; position: relative; }
+.so-row-list li::before { content: ""; position: absolute; left: 0; top: .65em; width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .6; }
 .so-rows-foot { margin-top: 16px !important; max-width: 62ch; }
 
 /* Start a project: the quiz (a white card on the black section) */

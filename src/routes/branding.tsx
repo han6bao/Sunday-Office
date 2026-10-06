@@ -174,6 +174,7 @@ function BrandingPage() {
         <PriceList
           need="Branding"
           title="Where branding starts."
+          feature
           items={[
             { t: "Logo", p: "from $350", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
             { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },

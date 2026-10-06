@@ -143,6 +143,7 @@ function WebsitesPage() {
         <ServiceSteps steps={STEPS} title="From first talk to live site." />
 
         <PriceList
+          feature
           need="Website"
           title="Where websites start."
           items={[

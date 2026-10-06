@@ -199,6 +199,38 @@ export type Price = { t: string; p: string; d: string; tag?: string; list?: stri
 
 /** Pricing in the same cards as the homepage packages: name, price, who it's
  *  for, what's in it, and one tap to ask about it. */
+function priceFoot(x: Price) {
+  return x.foot ?? (x.p === "Quoted" ? "QUOTED PER PROJECT" : x.p === "Ask me" ? "BUILT AROUND YOU" : x.p.includes("/mo") ? "PER MONTH" : x.p.includes("/hr") ? "PER HOUR" : x.p.startsWith("from") ? "STARTING PRICE" : "FLAT PRICE");
+}
+
+function PriceCard({ x, need }: { x: Price; need?: string }) {
+  return (
+    <a href={need ? bookHref(need, `${x.t} (${x.p})`) : "/#inquiry"} className={"so-pk-card" + (x.tag ? " is-feat" : "")}>
+      <span className="so-pk-top">
+        <span className="so-pk-name">{x.t}</span>
+        {x.tag && <span className="so-pk-tag">{x.tag}</span>}
+      </span>
+      <span className="so-pk-price">{x.p}</span>
+      <span className="so-pk-who">{x.d}</span>
+      {x.list && x.list.length > 0 && (
+        <ul className="so-pk-list">
+          {x.list.map((it) => (
+            <li key={it}>{it}</li>
+          ))}
+        </ul>
+      )}
+      <span className="so-pk-foot">
+        <span className="so-micro">{priceFoot(x)}</span>
+        <span className="so-pk-go">
+          Ask about it <span className="arr" aria-hidden>→</span>
+        </span>
+      </span>
+    </a>
+  );
+}
+
+/** Prices. With `feature`, the tagged pick is a full card and the rest are short
+ *  tap-to-open rows beside it, so the page shows one clear choice first. */
 export function PriceList({
   id = "pricing",
   label = "PRICING",
@@ -206,6 +238,8 @@ export function PriceList({
   items,
   foot,
   need,
+  feature,
+  otherLabel = "Other options",
 }: {
   id?: string;
   label?: string;
@@ -213,40 +247,53 @@ export function PriceList({
   items: Price[];
   foot?: ReactNode;
   need?: string;
+  feature?: boolean;
+  otherLabel?: string;
 }) {
+  const pick = feature ? items.find((x) => x.tag) ?? items[0] : null;
+  const rest = pick ? items.filter((x) => x !== pick) : [];
   return (
     <section id={id} className="so-bw-sec so-pricing">
       <p className="so-micro">{label}</p>
       <h2 className="so-serif so-bw-h">{title}</h2>
-      <div className="so-pk-grid" style={{ gridTemplateColumns: `repeat(${Math.min(items.length, 4)}, minmax(0, 1fr))` }}>
-        {items.map((x) => (
-          <a
-            key={x.t}
-            href={need ? bookHref(need, `${x.t} (${x.p})`) : "/#inquiry"}
-            className={"so-pk-card" + (x.tag ? " is-feat" : "")}
-          >
-            <span className="so-pk-top">
-              <span className="so-pk-name">{x.t}</span>
-              {x.tag && <span className="so-pk-tag">{x.tag}</span>}
-            </span>
-            <span className="so-pk-price">{x.p}</span>
-            <span className="so-pk-who">{x.d}</span>
-            {x.list && x.list.length > 0 && (
-              <ul className="so-pk-list">
-                {x.list.map((it) => (
-                  <li key={it}>{it}</li>
-                ))}
-              </ul>
-            )}
-            <span className="so-pk-foot">
-              <span className="so-micro">{x.foot ?? (x.p === "Quoted" ? "QUOTED PER PROJECT" : x.p === "Ask me" ? "BUILT AROUND YOU" : x.p.includes("/mo") ? "PER MONTH" : x.p.includes("/hr") ? "PER HOUR" : x.p.startsWith("from") ? "STARTING PRICE" : "FLAT PRICE")}</span>
-              <span className="so-pk-go">
-                Ask about it <span className="arr" aria-hidden>→</span>
-              </span>
-            </span>
-          </a>
-        ))}
-      </div>
+      {pick ? (
+        <div className="so-pf">
+          <PriceCard x={pick} need={need} />
+          <div className="so-pf-rest">
+            <p className="so-pf-h">{otherLabel}</p>
+            <div className="so-rows">
+              {rest.map((x) => (
+                <details key={x.t} className="so-row">
+                  <summary>
+                    <span className="so-row-t">{x.t}</span>
+                    <span className="so-row-p">{x.p}</span>
+                    <span className="so-row-plus" aria-hidden />
+                  </summary>
+                  <div className="so-row-body">
+                    <p className="so-row-d">{x.d}</p>
+                    {x.list && x.list.length > 0 && (
+                      <ul className="so-row-list">
+                        {x.list.map((it) => (
+                          <li key={it}>{it}</li>
+                        ))}
+                      </ul>
+                    )}
+                    <a className="so-row-go" href={need ? bookHref(need, `${x.t} (${x.p})`) : "/#inquiry"}>
+                      Ask about it →
+                    </a>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="so-pk-grid" style={{ gridTemplateColumns: `repeat(${Math.min(items.length, 4)}, minmax(0, 1fr))` }}>
+          {items.map((x) => (
+            <PriceCard key={x.t} x={x} need={need} />
+          ))}
+        </div>
+      )}
       {foot && <p className="so-bw-d so-price-foot">{foot}</p>}
     </section>
   );
