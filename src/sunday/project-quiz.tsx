@@ -77,7 +77,7 @@ const SITE: Record<Level, Pick> = {
 
 const CONTENT: Record<Level, Pick> = {
   low: { t: "Audit + strategy", p: "from $400", why: "Know exactly what to post and why. It comes off your first month if you go monthly later.", need: "Monthly content", more: "/creative-direction-content#more" },
-  mid: { t: "Starter plan", p: "$600/mo", why: "A shoot every month, 8 posts, captions and a plan. An easy way to stop going quiet.", need: "Monthly content", more: "/creative-direction-content#monthly" },
+  mid: { t: "Starter plan", p: "$600/mo", why: "A pro shoot to start, then 8 posts a month, captions and a plan. An easy way to stop going quiet.", need: "Monthly content", more: "/creative-direction-content#monthly" },
   high: { t: "Growth plan", p: "$1,500/mo", why: "Photos, video, 16 posts and 8 reels a month, with research behind it. Where accounts start to grow.", need: "Monthly content", more: "/creative-direction-content#monthly" },
 };
 
@@ -113,7 +113,7 @@ const PHOTOS: Record<Niche, Record<Level, Pick>> = {
 
 const VIDEO: Record<Level, Pick> = {
   low: { t: "Content day", p: "$350", why: "About 2 hours on iPhone and 5 to 8 short edited videos for Reels and TikTok. Quick, natural and ready to post.", need: "Video / Moving Image", more: "/moving-image" },
-  mid: { t: "Camera video", p: "from $700", why: "A polished video on pro cameras, up to 60 seconds, plus 2 to 3 vertical cuts for social.", need: "Video / Moving Image", more: "/moving-image" },
+  mid: { t: "Camera video", p: "from $1,000", why: "A polished, color graded video on pro cameras, 60 to 90 seconds, plus 3 vertical cuts for social.", need: "Video / Moving Image", more: "/moving-image" },
   high: { t: "Brand film", p: "from $1,500", why: "The big one: an idea, a script, a full-day shoot and a 1 to 2 minute film, with cuts for every platform.", need: "Video / Moving Image", more: "/moving-image" },
 };
 
@@ -141,9 +141,9 @@ const PRINT: Record<Niche, Record<Level, Pick>> = {
 };
 
 const GRAPHICS: Record<Level, Pick> = {
-  low: { t: "Canva brand kit", p: "from $250", why: "15 post and story templates in your colors and fonts, plus highlight covers. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  mid: { t: "Canva brand kit", p: "from $250", why: "15 post and story templates in your colors and fonts, plus highlight covers. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  high: { t: "Brand kit + Canva kit", p: "from $800", why: "Your colors, fonts and voice set first, then 15 templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
+  low: { t: "Canva template pack", p: "from $300", why: "Your colors, fonts and logo set up in Canva, plus 15 post and story templates and highlight covers. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
+  mid: { t: "Canva template pack", p: "from $300", why: "Your colors, fonts and logo set up in Canva, plus 15 post and story templates and highlight covers. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
+  high: { t: "Brand kit + template pack", p: "from $850", why: "Your colors, fonts and voice set first, then 15 templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
 };
 
 const WEBFIX: Record<Level, Pick> = {

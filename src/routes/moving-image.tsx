@@ -51,7 +51,7 @@ const STEPS = [
 ];
 
 const FAQ = [
-  { q: "How much does a video cost?", a: "A phone content day is $350. Camera video starts at $700, and brand films start at $1,500. Tell me where it will live and what it needs to do, and you'll get a clear price before anything is booked." },
+  { q: "How much does a video cost?", a: "A phone content day is $350. Camera video starts at $1,000, and brand films start at $1,500. Tell me where it will live and what it needs to do, and you'll get a clear price before anything is booked." },
   { q: "Do you come up with the idea?", a: "Yes. Every project starts with the idea and the feeling, and I plan the shots around that. If you already have an idea, we build from yours." },
   { q: "Will I get vertical versions for Reels and TikTok?", a: "Yes. One shoot gets cut for everywhere you need it: the main piece, vertical cuts, short teasers and loops." },
   { q: "Can I get photos from the same shoot?", a: <>Yes. I grab stills along the way, so one day of production covers more than one need. <a href="/photography">See photography →</a></> },
@@ -106,7 +106,7 @@ function MovingImagePage() {
           title="Where video starts."
           items={[
             { t: "Phone content day", p: "$350", d: "Quick, natural content for Reels and TikTok.", list: ["An idea + shot list first", "About 2 hours on iPhone", "5 to 8 short vertical videos", "Edited with captions"] },
-            { t: "Camera video", p: "from $700", d: "Polished video on pro cameras.", list: ["An idea + shot list first", "Half-day shoot with a videographer I direct", "1 edited video, up to 60 seconds", "2 to 3 vertical cuts for social"] },
+            { t: "Camera video", p: "from $1,000", d: "Polished video on pro cameras.", list: ["An idea + shot list first", "Half-day shoot with a videographer I direct", "1 hero video, 60 to 90 seconds, color graded with music", "3 vertical cuts for social"] },
             { t: "Brand film or commercial", p: "from $1,500", d: "The big one.", list: ["Idea, script + shot list", "Full-day shoot", "A 1 to 2 minute film", "Cuts for every platform"] },
           ]}
           foot="You'll know the final number before anything is booked."

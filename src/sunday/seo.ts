@@ -71,7 +71,7 @@ export const SEO: Record<string, Seo> = {
   "/creative-direction-content": {
     title: "Creative Direction + Social Media Content Seattle | Sunday Office",
     description:
-      "Seattle creative direction and social media content: audits, strategy, Canva brand kits and monthly content plans from $600 a month.",
+      "Seattle creative direction and social media content: audits, strategy, Canva template packs and monthly content plans from $600 a month.",
   },
 
   /* Case studies */

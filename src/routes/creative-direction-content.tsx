@@ -58,14 +58,15 @@ const STEPS = [
 ];
 
 const FAQ = [
-  { q: "Is this a one-time thing or monthly?", a: "Either. Some people start with the audit and strategy session and run with it. Others want content every month, which is what the monthly plans are for. Monthly plans start with a 3-month commitment." },
+  { q: "Is this a one-time thing or monthly?", a: "Either. Some people start with the audit and strategy session and run with it. Others want content every month, which is what the monthly plans are for. Monthly plans start with a 3-month commitment. After that, plans continue month to month, and you can cancel with 30 days notice." },
   { q: "Which platforms do you work with?", a: "Instagram, TikTok, Facebook and LinkedIn. Starter covers one platform, Growth covers two plus Facebook, and Full covers all four, including a LinkedIn plan." },
   { q: "Do I get to approve things first?", a: "Always. Every template and every piece of the plan is yours to approve before anything goes out." },
   { q: "What happens to the audit price if I sign up monthly?", a: "It comes off your first month. Growth and Full include the audit free in month one." },
-  { q: "Do you post for me?", a: "If you want. Posting and rollout can be part of it, or I hand everything over ready for you to post." },
+  { q: "Do you post for me?", a: "On Full, I post for you. On Starter and Growth, I hand everything over ready to post and you press publish." },
   { q: "What do you need from me?", a: "A conversation about your business and who you want to reach, and access to whatever you already have. We figure out the rest together." },
   { q: "How do we know it's working?", a: "We watch what lands: saves, shares, comments and who reaches out. The next round of content gets better because of it." },
   { q: "Can you shoot the content too?", a: <>Yes. Photos, video, graphics and the words on top can all come from me, so it looks like it belongs together. <a href="/photography">Photography →</a></> },
+  { q: "Can I switch plans later?", a: "You can upgrade anytime. Downgrades take effect at the end of a billing month once the first 3 months are done." },
 ];
 
 function DirectionAndContentPage() {
@@ -128,11 +129,11 @@ function DirectionAndContentPage() {
           label="MONTHLY CONTENT"
           title="Content every month."
           items={[
-            { t: "Starter", p: "$600/mo", d: "An easy, affordable start.", list: ["1 pro photo shoot (1 hour) + iPhone content", "About 15 edited photos you keep", "8 posts on 1 platform", "Captions, hashtags + a 30-day plan", "3 post + 3 story templates in Canva", "Highlight covers in your colors", "A profile + bio refresh in month one", "Your photos, videos + brand files organized in Google Drive or Dropbox"] },
+            { t: "Starter", p: "$600/mo", d: "An easy, affordable start.", list: ["A 1 hour pro photo shoot in month one, then every third month, plus iPhone content", "About 15 edited photos from each shoot, yours to keep", "8 posts on 1 platform", "Captions, hashtags + a 30-day plan", "3 post + 3 story templates in Canva", "Highlight covers in your colors", "A profile + bio refresh in month one", "Your photos, videos + brand files organized in Google Drive or Dropbox"] },
             { t: "Growth", p: "$1,500/mo", tag: "BEST VALUE", d: "Where accounts start to grow.", list: ["Everything in Starter, plus:", "A photo + video shoot, about 30 edited photos", "16 posts + 8 reels", "A set of stories every week", "Instagram + TikTok, plus Facebook", "Monthly trend + competitor research", "Hooks, trending audio + reel ideas", "10 post + 10 story templates, plus stickers", "A monthly calendar you approve", "A monthly results recap", "Audit + strategy free in month one"] },
             { t: "Full", p: "$2,800/mo", d: "I run your content, start to finish.", list: ["Everything in Growth, plus:", "A second shoot, 50+ edited photos a month", "24 posts + 12 reels", "Stories posted for you every week", "Instagram, TikTok, Facebook + LinkedIn", "Ad-ready cuts of your best reels", "Fresh photos for your Google Business Profile", "I post for you + a monthly report and check-in", "A strategy session every quarter", "New Canva templates every month", "Priority booking for shoots"] },
           ]}
-          foot={<>Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
+          foot={<>Monthly plans start with a 3-month commitment. Every template and post is yours to approve before it goes out. Monthly clients get 20% off one-time add-ons, like camera video. Booked separately, the Growth shoot, templates and audit come to about $1,600, before any posts or reels. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
         />
 
         <PriceRows
@@ -146,9 +147,9 @@ function DirectionAndContentPage() {
               sub: "No monthly plan needed.",
               rows: [
                 { t: "Content day", d: "About 2 hours on iPhone, 5 to 8 edited short videos for Reels and TikTok.", p: "$350" },
-                { t: "Photo + content day", d: "A brand photo shoot and short videos in one visit. Fills your feed and your website for weeks.", p: "from $900" },
-                { t: "Canva brand kit", d: "15 post and story templates in your colors, yours to edit.", p: "from $250" },
-                { t: "Audit + strategy", d: "Know what to post and why. Comes off your first month if you go monthly.", p: "from $400" },
+                { t: "Photo + content day", d: "A brand photo shoot and short videos in one visit, with a shot list up front and captions for every video included. Fills your feed and your website for weeks.", p: "from $900" },
+                { t: "Canva template pack", d: "Your colors, fonts and logo set up in Canva, plus 15 post and story templates and highlight covers. Yours to edit, with a 30 minute walkthrough.", p: "from $300" },
+                { t: "Audit + strategy", d: "Know what to post and why. Free when you go monthly: it comes off your first month.", p: "from $400" },
               ],
             },
             {
@@ -169,7 +170,7 @@ function DirectionAndContentPage() {
 
         <ServiceCta current="direction" title="Let's make something real." sub="SET THE DIRECTION, THEN KEEP IT GOING." />
       </div>
-      <BookBar service="Creative Direction + Social" price="from $250" need="Creative Direction" />
+      <BookBar service="Creative Direction + Social" price="from $300" need="Creative Direction" />
     </div>
   );
 }
