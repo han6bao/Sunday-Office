@@ -17,7 +17,7 @@ const NOTES = [
 
 const FIT = [
   { label: "I need one great photo for LinkedIn, work or a profile.", pick: "Standard", price: "$150", why: "Clean and simple: one look, one finished photo. Quick, easy and ready to use." },
-  { label: "I want options: a couple of outfits and a few different looks.", pick: "More looks", price: "$350", why: "Two outfits and five finished photos, so you have the right photo for every profile and platform." },
+  { label: "I want options: a couple of outfits and a few different looks.", pick: "More looks", price: "$350", why: "Two outfits and five finished photos, about $70 a photo, so you have the right photo for every profile and platform." },
   { label: "I'm building a brand and need photos for my website and socials.", pick: "Personal branding", price: "from $550", why: "A bigger gallery with more creative room, planned around where the photos will live." },
 ];
 
@@ -111,7 +111,7 @@ function HeadshotsPage() {
             title="Headshot sessions."
             items={[
               { t: "Standard", p: "$150", d: "One clean headshot, quick and easy.", list: ["A quick chat about what it's for", "One look", "1 finished photo", "Direction the whole time"] },
-              { t: "More looks", p: "$350", d: "Options for every profile.", list: ["Outfit guidance before the shoot", "2 outfits", "5 finished photos", "Direction the whole time"] },
+              { t: "More looks", p: "$350", d: "Best value: about $70 a photo.", list: ["Outfit guidance before the shoot", "2 outfits", "5 finished photos", "Direction the whole time"] },
               { t: "Personal branding", p: "from $550", tag: "MOST COMPLETE", d: "A bigger gallery with more creative room.", list: ["A planning call + moodboard", "More looks + setups", "A bigger gallery", "Photos for your website + socials"] },
             ]}
             need="Headshots"
