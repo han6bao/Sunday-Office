@@ -57,7 +57,7 @@ const FAQ = [
   { q: "I've never been photographed. Is that okay?", a: "Most people haven't. I direct you the whole time, so you look like yourself, not stiff." },
   { q: "Where do we shoot?", a: "Wherever suits the photos: your space, a location we pick together, or somewhere that fits the look. We decide when we plan." },
   { q: "Can you do video on the same day?", a: <>Yes. Photos and video can come from the same shoot, so one day covers more. <a href="/moving-image">See moving image →</a></> },
-  { q: "How do I get my photos?", a: "I pick the best frames, edit them by hand and deliver them sized for your website, your feed and print." },
+  { q: "How do I get my photos?", a: "I pick the best frames, edit them by hand and deliver them in an online gallery you can download from, sized for your website, your feed and print." },
 ];
 
 function PhotographyPage() {
