@@ -500,19 +500,33 @@ export function BookBar({ service, price, need }: { service: string; price?: str
 }
 
 /** A quiet list of extra options: one line each, no boxes. */
-export function PriceRows({ id, label, title, rows, need, foot }: { id?: string; label: string; title: string; rows: { t: string; d: string; p: string }[]; need: string; foot?: ReactNode }) {
+type Row = { t: string; d: string; p: string };
+export function PriceRows({ id, label, title, groups, need, foot }: { id?: string; label: string; title: string; groups: { h: string; sub: string; rows: Row[] }[]; need: string; foot?: ReactNode }) {
   return (
     <section id={id} className="so-bw-sec so-rows-sec">
       <p className="so-micro">{label}</p>
       <h2 className="so-serif so-bw-h">{title}</h2>
-      <div className="so-rows">
-        {rows.map((r) => (
-          <a key={r.t} className="so-row" href={bookHref(need, `${r.t} (${r.p})`)}>
-            <span className="so-row-t">{r.t}</span>
-            <span className="so-row-d">{r.d}</span>
-            <span className="so-row-p">{r.p}</span>
-            <span className="so-row-go" aria-hidden>→</span>
-          </a>
+      <div className="so-rgroups">
+        {groups.map((g) => (
+          <div key={g.h} className="so-rgroup">
+            <p className="so-rgroup-h">{g.h}</p>
+            <p className="so-rgroup-sub">{g.sub}</p>
+            <div className="so-rows">
+              {g.rows.map((r) => (
+                <details key={r.t} className="so-row">
+                  <summary>
+                    <span className="so-row-t">{r.t}</span>
+                    <span className="so-row-p">{r.p}</span>
+                    <span className="so-row-plus" aria-hidden />
+                  </summary>
+                  <div className="so-row-body">
+                    <p className="so-row-d">{r.d}</p>
+                    <a className="so-row-go" href={bookHref(need, `${r.t} (${r.p})`)}>Ask about it →</a>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
       {foot && <p className="so-bw-d so-rows-foot">{foot}</p>}
