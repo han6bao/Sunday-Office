@@ -561,12 +561,12 @@ const PACKAGES = [
   {
     n: "The Refresh",
     who: "A makeover for established businesses ready for a sharper look.",
-    items: ["Brand photo session (half day)", "4 short-form videos", "Website refresh or a new landing page", "Social media asset kit"],
+    items: ["Brand photo session (half day)", "4 short-form videos", "Website refresh or a new landing page", "Social media asset kit", "Your files organized in Google Drive or Dropbox"],
   },
   {
     n: "The Launch",
     who: "Everything you need to open, or reopen, like a premium brand.",
-    items: ["Full custom website", "Brand kit: logo suite, colors, type, guidelines", "Full-day photo + video shoot", "30 days of ready-to-post content", "Launch strategy session"],
+    items: ["Full custom website", "Brand kit: logo suite, colors, type, guidelines", "Full-day photo + video shoot", "30 days of ready-to-post content", "Launch strategy session", "Your files organized in Google Drive or Dropbox"],
     tag: "Full build",
   },
   {
@@ -577,7 +577,7 @@ const PACKAGES = [
   {
     n: "Monthly Content",
     who: "Ongoing content so your brand never goes quiet.",
-    items: ["A pro shoot every month", "Posts, reels + captions, ready to publish", "Research + a monthly plan", "Canva templates you approve", "Plans from $600 a month"],
+    items: ["A pro shoot every month", "Posts, reels + captions, ready to publish", "Research + a monthly plan", "Canva templates you approve", "Your files organized in Google Drive or Dropbox"],
     foot: "FROM $600 / MONTH",
     href: "/creative-direction-content#monthly",
     go: "See the plans",
