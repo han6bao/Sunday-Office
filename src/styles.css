@@ -10224,6 +10224,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 
 /* ---------- Build notes: each case study in its client's colors ---------- */
 .bn { background: var(--bn-paper); color: var(--bn-ink); min-height: 100dvh; font-family: var(--font-sans); font-size: 17px; line-height: 1.55; position: relative; padding-inline: clamp(16px, 4.5vw, 64px); }
+.bn a { overflow-wrap: anywhere; }
 .bn::after { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .04; mix-blend-mode: multiply; z-index: 0;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
 .bn .so-sitebar { margin-inline: calc(-1 * clamp(16px, 4.5vw, 64px)); }

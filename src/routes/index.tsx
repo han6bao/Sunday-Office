@@ -639,8 +639,7 @@ function StartAProject() {
           <div className="so-start-side">
             <p>
               It doesn't need to be figured out. Tell me what you're making,
-              what's not working, or what you wish it looked like. I reply
-              within a few days.
+              what's not working, or what you wish it looked like. I reply within 2 to 3 business days.
             </p>
             <p className="so-micro">BOOKING NEW PROJECTS · SEATTLE</p>
           </div>

@@ -119,7 +119,7 @@ const NEED_FOR: Record<string, string> = {
 
 const NEXT = [
   { t: "Send the form", d: "A few lines about what you need. It takes about two minutes, and rough ideas are welcome." },
-  { t: "I reply", d: "Within a few days, with questions or a time to talk it through." },
+  { t: "I reply", d: "Within 2 to 3 business days, with questions or a time to talk it through." },
   { t: "You get a plan", d: "What it includes, the timeline and the price. You'll know the number before anything starts." },
 ];
 
