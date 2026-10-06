@@ -154,8 +154,9 @@ function BrandingPage() {
           </p>
           <div>
             <p className="so-bw-d" style={{ marginTop: 0, maxWidth: "44ch" }}>
-              This is where most projects start. Build the world once, and
-              everything after it gets easier to make.
+              This is where most projects start, whether you're new or ready
+              for a brand makeover. Build the world once, and everything after
+              it gets easier to make.
             </p>
             <nav className="so-bw-jump" aria-label="On this page">
               <a href="#included">What's included</a>

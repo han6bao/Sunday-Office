@@ -107,7 +107,7 @@ function WebsitesPage() {
           lead="Your website is where people actually visit your world. I design and build sites that show the work, answer the questions and make booking easy, so you spend less time explaining yourself in DMs."
           aside={
             <>
-              Part of building your world. Starting from nothing? Begin with{" "}
+              Need a website makeover? I can refresh what you have or start over. Starting from nothing? Begin with{" "}
               <a className="so-bw-inline" href="/branding">Build a World →</a>
             </>
           }

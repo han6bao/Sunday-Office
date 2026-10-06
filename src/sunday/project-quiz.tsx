@@ -20,7 +20,7 @@ const Q1: { k: Niche; t: string; d: string }[] = [
 
 const Q2: { k: Stage; t: string; d: string }[] = [
   { k: "scratch", t: "Just getting started", d: "A new business, or a fresh start" },
-  { k: "site", t: "Ready to level up", d: "I have something. It needs to look the part" },
+  { k: "site", t: "Ready to level up", d: "I have something. It's ready for a makeover" },
   { k: "content", t: "Want to stay consistent", d: "Help showing up, month after month" },
   { k: "photos", t: "Need one thing made", d: "Photos, videos, print, graphics or a site fix" },
   { k: "unsure", t: "Not sure yet", d: "I just know something needs to change" },

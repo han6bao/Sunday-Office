@@ -9,7 +9,7 @@ export const SEO: Record<string, Seo> = {
   "/": {
     title: "Sunday Office | Seattle Creative Agency for Branding, Websites + Photography",
     description:
-      "Sunday Office is a Seattle creative agency for local businesses and artists: branding, website design, photography, video, creative direction and social content. Founded by Seattle photographer Hana.",
+      "Sunday Office is a Seattle creative agency for local businesses and artists: branding, brand makeovers, website design, photography, video, creative direction and social content. Founded by Seattle photographer Hana.",
   },
   "/about": {
     title: "About Hana | Seattle Photographer + Founder of Sunday Office",
@@ -21,7 +21,7 @@ export const SEO: Record<string, Seo> = {
   "/branding": {
     title: "Branding + World Building in Seattle | Sunday Office",
     description:
-      "Seattle branding agency for local businesses: brand identity, brand kits, voice and the whole world around your logo. Logos from $350, brand kits from $550.",
+      "Seattle branding agency for local businesses: brand identity, brand makeovers, brand kits, voice and the whole world around your logo. Logos from $350, brand kits from $550.",
   },
   "/logo-identity": {
     title: "Logo + Brand Identity Design in Seattle | Sunday Office",
@@ -31,7 +31,7 @@ export const SEO: Record<string, Seo> = {
   "/websites": {
     title: "Website Design in Seattle for Small Businesses | Sunday Office",
     description:
-      "Seattle website design for small businesses: custom, mobile-first sites that show the work, answer questions and get you booked. Websites from $850.",
+      "Seattle website design for small businesses: custom, mobile-first sites and website makeovers that show the work, answer questions and get you booked. Websites from $850.",
   },
   "/photography": {
     title: "Seattle Photographer for Brands, Portraits + Events | Sunday Office",

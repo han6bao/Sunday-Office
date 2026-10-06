@@ -361,7 +361,7 @@ function BuildYourWorld() {
               text="A brand is more than a logo. It's the feeling people get when they find you, and everything that follows."
             />
             <p className="so-about-copy so-bw2-p">
-              An independent creative agency in Seattle. I start with the brand, then bring it to life through websites, photography and creative direction, for local businesses and the artists who make this city feel like home.
+              An independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I start with the brand, then bring it to life through websites, photography and creative direction, for local businesses and the artists who make this city feel like home.
             </p>
           </div>
         </div>
@@ -560,7 +560,7 @@ function MeetHana() {
 const PACKAGES = [
   {
     n: "The Refresh",
-    who: "For established businesses ready for a sharper look.",
+    who: "A makeover for established businesses ready for a sharper look.",
     items: ["Brand photo session (half day)", "4 short-form videos", "Website refresh or a new landing page", "Social media asset kit"],
   },
   {
