@@ -10540,3 +10540,4 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 .so-form-error p { margin: 0; line-height: 1.5; }
 .so-form-error-t { font-weight: 700; margin-bottom: 4px !important; }
 .so-form-error .so-btn { margin-top: 12px; display: inline-flex; }
+.so-form-error-why { margin-top: 8px !important; font-size: 12px; opacity: .7; }

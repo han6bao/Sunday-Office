@@ -686,6 +686,7 @@ export function InquiryForm() {
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState<string | null>(null);
   const [sentEmail, setSentEmail] = useState(false);
+  const [sendReason, setSendReason] = useState("");
   const [mailBody, setMailBody] = useState("");
   const errRef = useRef<HTMLDivElement>(null);
   // Mobile quick-form wizard — one field at a time, "Next" flow.
@@ -748,6 +749,7 @@ export function InquiryForm() {
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
     setSending(true);
     setSendError(null);
+    setSendReason("");
     setMailBody(
       [
         data.name && `Name: ${data.name}`,
@@ -790,6 +792,8 @@ export function InquiryForm() {
         setSent(true);
         return;
       }
+      const r = result as { notConfigured?: boolean; error?: string };
+      setSendReason(r.notConfigured ? "The form isn't connected to email yet." : r.error ?? "");
       fail("Your message didn't go through. Nothing you wrote is lost. Try again, or email it to me instead.");
     } catch {
       fail("Your message didn't go through. Check your connection and try again, or email it to me instead.");
@@ -953,6 +957,7 @@ export function InquiryForm() {
           <div className="so-form-error" role="alert" ref={errRef}>
             <p className="so-form-error-t">Not sent yet</p>
             <p>{sendError}</p>
+            {sendReason && <p className="so-form-error-why">Reason: {sendReason}</p>}
             <a
               className="so-btn so-btn-ghost"
               href={`mailto:hello@sundayoffice.agency?subject=${encodeURIComponent("New inquiry")}&body=${encodeURIComponent(mailBody)}`}
