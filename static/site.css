@@ -10535,5 +10535,20 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 .so-form-error .so-btn { margin-top: 12px; display: inline-flex; }
 .so-form-error-why { margin-top: 8px !important; font-size: 12px; opacity: .7; }
 
+/* Feed look: one calligraphy line per section, single color, lots of air */
+h2.so-script, .so-script {
+  font-family: "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  line-height: 1.02 !important;
+  font-size: clamp(54px, 8.4vw, 116px) !important;
+  text-wrap: balance;
+  margin-top: 0 !important;
+}
+.so-script em { font-style: normal !important; font-family: inherit !important; color: inherit !important; }
+.so-script::after, .so-script::before { display: none !important; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

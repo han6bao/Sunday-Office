@@ -35,13 +35,9 @@ export const Route = createFileRoute("/")({
    Small editorial helpers (ours, not a shared generic system)
    ------------------------------------------------------------ */
 
-function SecFile({ children }: { children: string }) {
-  return (
-    <div className="so-lock">
-      <span className="so-micro">{children}</span>
-      <hr className="so-rule" />
-    </div>
-  );
+/* Section labels ("FILE NO. 001") are retired for the calmer, feed-like look. */
+function SecFile(_: { children: string }) {
+  return null;
 }
 
 function Section({
@@ -77,8 +73,8 @@ function BigTitle({
 }) {
   return (
     <h2
-      className="so-serif"
-      style={{ fontSize: `clamp(26px, 4vw, ${max}px)`, marginTop: 16, ...style }}
+      className="so-serif so-script"
+      style={{ marginTop: 16, ...style }}
     >
       {children}
     </h2>
@@ -355,7 +351,7 @@ function BuildYourWorld() {
         <SecFile>FILE NO. 001 · BUILD YOUR WORLD</SecFile>
         <div className="so-build-head so-bw2">
           <div className="so-bw2-left">
-            <h2 className="so-serif so-build-title">Build your <em>world.</em></h2>
+            <h2 className="so-serif so-build-title so-script">Build your <em>world.</em></h2>
             <LitText
               className="so-about-copy so-lit"
               text="A brand is more than a logo. It's the feeling people get when they find you, and everything that follows."
@@ -415,7 +411,7 @@ function TheProof() {
       <div className="so-shell">
         <SecFile>FILE NO. 003 · WHERE THE WORK WENT</SecFile>
         <div className="so-proof-head">
-          <h2 className="so-serif so-proof-title">Worlds people actually <em>see.</em></h2>
+          <h2 className="so-serif so-proof-title so-script">Worlds people actually <em>see.</em></h2>
           <p className="so-proof-intro">
             Sunday Office exists to make good ideas visible, give them a
             world to live in, and let the right people recognize them when
@@ -470,10 +466,9 @@ function CurrentWork() {
           <div className="so-darkframe-head">
             <div>
               <span className="so-df-tic" aria-hidden />
-              <h2 className="so-darkframe-title">Featured <em>work.</em></h2>
+              <h2 className="so-darkframe-title so-script">Featured <em>work.</em></h2>
             </div>
             <div className="so-darkframe-meta">
-              <span className="so-micro">FILE NO. 002 · SELECTED WORK · SEATTLE · 2023 TO 2026</span>
               <span className="so-lab so-df-hint">SWIPE → TAP TO OPEN</span>
             </div>
           </div>
