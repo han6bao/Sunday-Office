@@ -727,6 +727,117 @@ const REEL = [
   { src: "/assets/campaigns/soul-social/ss-04.jpg", t: "Public House", w: "VENUE · SOCIAL", h: "/campaigns/public-house" },
 ];
 
+
+/* ------------------------------------------------------------
+   The feed-style homepage: one idea per frame, like an Instagram post.
+   ------------------------------------------------------------ */
+const FEED_SERVICES = [
+  { n: "Branding", p: "from $350", h: "/branding" },
+  { n: "Websites", p: "from $850", h: "/websites" },
+  { n: "Photography", p: "from $150", h: "/photography" },
+  { n: "Video", p: "from $350", h: "/moving-image" },
+  { n: "Creative direction + social", p: "from $300", h: "/creative-direction-content" },
+];
+
+const FEED_WORK = [
+  { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", alt: "The lounge at Selaras Haus, a beauty studio in Tacoma", t: "Selaras Haus", w: "Interior photography", h: "/campaigns/selaras-haus" },
+  { src: "/assets/campaigns/green-grillz/nine-01.jpg", alt: "Nine Vicious in a red velvet jacket wearing green grillz", t: "Nine Vicious × Custom Grillz", w: "Photography + promotion", h: "/campaigns/green-grillz" },
+  { src: "/assets/campaigns/exhibition/exh1.jpg", alt: "A styled portrait from the Exhibition campaign", t: "Exhibition", w: "Campaign direction", h: "/campaigns/exhibition" },
+];
+
+function FeedHero() {
+  return (
+    <section className="fd-frame fd-hero" id="top-feed" aria-label="Intro">
+      <h1 className="fd-script">Build your world.</h1>
+      <div>
+        <p className="fd-small">
+          An independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I start with the brand, then bring it to life through websites, photography and creative direction.
+        </p>
+        <a className="fd-link" href="#office-hours">Start a project</a>
+      </div>
+    </section>
+  );
+}
+
+function FeedPhoto() {
+  return (
+    <div className="fd-bleed">
+      <img src="/assets/work/hero-night-desk.jpg" alt="Hana at her desk at night, working on a client's brand" />
+    </div>
+  );
+}
+
+function FeedServices() {
+  return (
+    <section className="fd-frame fd-black" id="build" aria-label="Services">
+      <p className="fd-script">Start with the brand.</p>
+      <p className="fd-small">
+        Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
+      </p>
+      <div className="fd-services">
+        {FEED_SERVICES.map((x) => (
+          <a key={x.n} href={x.h}>
+            <span className="fd-sn">{x.n}</span>
+            <span className="fd-sp">{x.p}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FeedWork() {
+  return (
+    <section className="fd-frame" id="work" aria-label="Selected work">
+      <div className="fd-work-head">
+        <h2>Selected work</h2>
+        <div className="fd-more">
+          <a href="/websites#work">Websites</a>
+          <a href="/photography">Photography</a>
+          <a href="/creative-direction-content">Campaigns</a>
+        </div>
+      </div>
+      <div className="fd-grid">
+        {FEED_WORK.map((w) => (
+          <a key={w.t} href={w.h} className="fd-card">
+            <img src={w.src} alt={w.alt} loading="lazy" />
+            <span className="fd-ct">{w.t}</span>
+            <span className="fd-cw">{w.w}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FeedProof() {
+  return (
+    <section className="fd-frame fd-lav" aria-label="Results">
+      <p className="fd-big">2M+</p>
+      <p className="fd-note">
+        Views on one video. Good ideas are only worth something when people see them, so every world I build is made to be seen.
+      </p>
+    </section>
+  );
+}
+
+function FeedStart() {
+  return (
+    <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
+      <p className="fd-script">Let's begin.</p>
+      <p className="fd-small">
+        Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
+        <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.
+      </p>
+      <ProjectQuiz />
+      <div className="so-office-card" id="inquiry">
+        <p className="eyebrow-cap mt-4">The inquiry</p>
+        <InquiryForm />
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   return (
     <div>
@@ -734,14 +845,13 @@ function Index() {
       <SiteIntro />
       <div className="page-paper" aria-hidden />
       <Header />
-<main>
-        <Hero />
-        <BuildYourWorld />
-        <CurrentWork />
-        <TheProof />
-        <MeetHana />
-        <Packages />
-        <StartAProject />
+      <main className="fd-page">
+        <FeedHero />
+        <FeedPhoto />
+        <FeedServices />
+        <FeedWork />
+        <FeedProof />
+        <FeedStart />
       </main>
       <Footer />
       <MobileStartBar />
