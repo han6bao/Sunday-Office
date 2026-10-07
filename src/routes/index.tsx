@@ -757,7 +757,6 @@ function FeedFile({ children }: { children: string }) {
 function FeedHero() {
   return (
     <section className="fd-frame fd-hero" id="top-feed" aria-label="Intro">
-      <FeedFile>FILE NO. 001 · BUILD YOUR WORLD</FeedFile>
       <h1 className="fd-script">Build your world.</h1>
       <div>
         <p className="fd-small">
@@ -772,6 +771,9 @@ function FeedHero() {
 function FeedPhoto() {
   return (
     <div className="fd-bleed">
+      <div className="fd-bleed-file">
+        <FeedFile>FILE NO. 001 · THE OFFICE</FeedFile>
+      </div>
       <img src="/assets/work/hero-night-desk.jpg" alt="Hana at her desk at night, working on a client's brand" />
     </div>
   );
@@ -822,14 +824,63 @@ function FeedWork() {
   );
 }
 
+const FEED_STATS = [
+  { n: "2M+", d: "Views on one video. The same video reached 8.5M impressions.", t: "", h: "" },
+  { n: "1M+", d: "Views on YouTube for a video idea I pitched to Cut, with the right people on camera.", t: "", h: "" },
+  { n: "120K", d: "Views on the reel I shot for Jaydyn F., with 6K likes and 760 shares.", t: "See Jaydyn F.", h: "/campaigns/jaydyn-f" },
+  { n: "35K", d: "Views on the Nine Vicious promo post, which made the discovery page.", t: "See Nine Vicious", h: "/campaigns/green-grillz" },
+  { n: "6K", d: "Likes on my photo of Nine Vicious, the most-liked post on jeweler Marcus Adam's page.", t: "See Nine Vicious", h: "/campaigns/green-grillz" },
+  { n: "12.5K", d: "Views on The Hiyu's post of my photos from DJ Prashant's night.", t: "See the night", h: "/campaigns/dj-prashant-hiyu" },
+];
+
 function FeedProof() {
+  const [i, setI] = useState(0);
+  const s = FEED_STATS[i];
+  const next = () => setI((v) => (v + 1) % FEED_STATS.length);
   return (
     <section className="fd-frame fd-lav" aria-label="Results">
       <FeedFile>FILE NO. 004 · WHERE THE WORK WENT</FeedFile>
-      <p className="fd-big">2M+</p>
-      <p className="fd-note">
-        Views on one video. Good ideas are only worth something when people see them, so every world I build is made to be seen.
-      </p>
+      <button type="button" className="fd-stat" onClick={next} aria-label={`${s.n}. ${s.d} Show the next number.`}>
+        <span className="fd-big" key={"n" + i}>{s.n}</span>
+      </button>
+      <div className="fd-stat-foot">
+        <p className="fd-note" key={"d" + i} aria-live="polite">
+          {s.d}
+          {s.h && (
+            <>
+              {" "}
+              <a href={s.h}>{s.t} →</a>
+            </>
+          )}
+        </p>
+        <button type="button" className="fd-next" onClick={next}>
+          {String(i + 1).padStart(2, "0")} / {String(FEED_STATS.length).padStart(2, "0")} · Tap for the next one
+        </button>
+      </div>
+    </section>
+  );
+}
+
+function FeedHana() {
+  return (
+    <section className="fd-frame fd-hana" id="about-hana" aria-label="Meet Hana">
+      <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
+      <div className="fd-hana-grid">
+        <img src="/assets/work/hero-hana-01.jpg" alt="Hana, founder of Sunday Office" loading="lazy" />
+        <div>
+          <p className="fd-script">Meet Hana.</p>
+          <p className="fd-small">
+            I started behind the camera. But somewhere along the way I realized the thing I loved wasn't only taking the photograph. It
+            was figuring out what the whole thing could be: the image, the campaign, the website it lives on, the little film somebody
+            remembers, the way a business introduces itself.
+          </p>
+          <p className="fd-small">
+            Sunday Office grew from that. Today I lead it as an independent creative agency rooted in photography, creative direction,
+            culture and story.
+          </p>
+          <a className="fd-link" href="/about">More about me</a>
+        </div>
+      </div>
     </section>
   );
 }
@@ -837,7 +888,7 @@ function FeedProof() {
 function FeedStart() {
   return (
     <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
-      <FeedFile>FILE NO. 005 · START A PROJECT</FeedFile>
+      <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
       <p className="fd-script">Let's begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
@@ -865,6 +916,7 @@ function Index() {
         <FeedServices />
         <FeedWork />
         <FeedProof />
+        <FeedHana />
         <FeedStart />
       </main>
       <Footer />

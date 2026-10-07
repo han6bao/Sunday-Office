@@ -10614,3 +10614,22 @@ body:has(.fd-page) .so-nav, body:has(.fd-page) .so-nav.is-scrolled { background:
 .fd-file hr { flex: 1; border: 0; border-top: 1px solid currentColor; opacity: .35; margin: 0; }
 .fd-hero .fd-file { margin-bottom: 0; }
 @media (max-width: 520px) { .fd-file span { white-space: normal; } }
+.fd-page .fd-hana { background: var(--fd-cream); }
+.fd-hana-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(28px, 6vw, 96px); align-items: center; }
+.fd-hana-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.fd-hana .fd-script { font-size: clamp(60px, 9vw, 128px); }
+@media (max-width: 760px) { .fd-hana-grid { grid-template-columns: 1fr; } }
+.fd-page .fd-bleed { background: var(--fd-cream); }
+.fd-bleed-file { padding-inline: var(--fd-gutter); }
+.fd-bleed-file .fd-file { margin-bottom: 20px; }
+.fd-stat { all: unset; display: block; cursor: pointer; width: 100%; }
+.fd-stat:focus-visible { outline: 1px solid var(--fd-on-lav); outline-offset: 8px; }
+.fd-big { display: block; }
+.fd-stat-foot { display: flex; justify-content: space-between; align-items: end; gap: 24px 48px; flex-wrap: wrap; }
+.fd-note a { color: inherit; white-space: nowrap; }
+.fd-next { all: unset; cursor: pointer; font-family: var(--font-mono, "IBM Plex Mono", monospace); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .75; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+.fd-next:hover, .fd-next:focus-visible { opacity: 1; border-bottom-color: currentColor; }
+@media (prefers-reduced-motion: no-preference) {
+  .fd-lav .fd-big, .fd-lav .fd-note { animation: fd-in .6s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes fd-in { from { opacity: .001; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+}
