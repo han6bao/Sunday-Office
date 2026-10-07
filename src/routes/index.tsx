@@ -745,9 +745,19 @@ const FEED_WORK = [
   { src: "/assets/campaigns/exhibition/exh1.jpg", alt: "A styled portrait from the Exhibition campaign", t: "Exhibition", w: "Campaign direction", h: "/campaigns/exhibition" },
 ];
 
+function FeedFile({ children }: { children: string }) {
+  return (
+    <div className="fd-file">
+      <span>{children}</span>
+      <hr />
+    </div>
+  );
+}
+
 function FeedHero() {
   return (
     <section className="fd-frame fd-hero" id="top-feed" aria-label="Intro">
+      <FeedFile>FILE NO. 001 · BUILD YOUR WORLD</FeedFile>
       <h1 className="fd-script">Build your world.</h1>
       <div>
         <p className="fd-small">
@@ -770,6 +780,7 @@ function FeedPhoto() {
 function FeedServices() {
   return (
     <section className="fd-frame fd-black" id="build" aria-label="Services">
+      <FeedFile>FILE NO. 002 · WHAT I DO</FeedFile>
       <p className="fd-script">Start with the brand.</p>
       <p className="fd-small">
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
@@ -789,6 +800,7 @@ function FeedServices() {
 function FeedWork() {
   return (
     <section className="fd-frame" id="work" aria-label="Selected work">
+      <FeedFile>FILE NO. 003 · SELECTED WORK</FeedFile>
       <div className="fd-work-head">
         <h2>Selected work</h2>
         <div className="fd-more">
@@ -813,6 +825,7 @@ function FeedWork() {
 function FeedProof() {
   return (
     <section className="fd-frame fd-lav" aria-label="Results">
+      <FeedFile>FILE NO. 004 · WHERE THE WORK WENT</FeedFile>
       <p className="fd-big">2M+</p>
       <p className="fd-note">
         Views on one video. Good ideas are only worth something when people see them, so every world I build is made to be seen.
@@ -824,6 +837,7 @@ function FeedProof() {
 function FeedStart() {
   return (
     <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
+      <FeedFile>FILE NO. 005 · START A PROJECT</FeedFile>
       <p className="fd-script">Let's begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}

@@ -10609,3 +10609,8 @@ body:has(.fd-page) .page-paper { display: none; }
 .fd-page .fd-start .fd-script { color: var(--fd-ink) !important; }
 .fd-page .fd-start .fd-small { color: var(--fd-soft) !important; }
 body:has(.fd-page) .so-nav, body:has(.fd-page) .so-nav.is-scrolled { background: rgba(239, 235, 227, .92) !important; }
+.fd-file { display: flex; align-items: center; gap: 16px; margin-bottom: clamp(36px, 6vw, 72px); font-family: var(--font-mono, "IBM Plex Mono", monospace); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; opacity: .7; }
+.fd-file span { white-space: nowrap; }
+.fd-file hr { flex: 1; border: 0; border-top: 1px solid currentColor; opacity: .35; margin: 0; }
+.fd-hero .fd-file { margin-bottom: 0; }
+@media (max-width: 520px) { .fd-file span { white-space: normal; } }
