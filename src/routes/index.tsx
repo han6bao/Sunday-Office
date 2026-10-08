@@ -785,6 +785,16 @@ function FeedPhoto() {
       ) : (
         <img src="/assets/work/hero-night-desk.jpg" alt="Hana at her desk at night, working on a client's brand" />
       )}
+      <div className="fd-media-over">
+        <h1 className="fd-hero-h">Build Your World.</h1>
+        <div className="fd-hero-sub">
+          <p>
+            <b>Sunday Office</b> is an independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I
+            start with the brand, then bring it to life through websites, photography and creative direction.
+          </p>
+          <a href="#office-hours">Start a project</a>
+        </div>
+      </div>
     </div>
   );
 }
@@ -1159,7 +1169,6 @@ function Index() {
       <Header />
       <main className="fd-page">
         <FeedPhoto />
-        <FeedHero />
         <FeedServices />
         <FeedWork />
         <FeedMakeover />
