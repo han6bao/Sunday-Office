@@ -1099,10 +1099,6 @@ function FeedLetter() {
     <section className="fd-frame fd-letter-frame" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <div className="fd-letter">
-        <figure className="fd-polaroid">
-          <img src="/assets/hana-portrait.jpg" alt="Hana, founder of Sunday Office" loading="lazy" />
-          <figcaption>Hana · Seattle</figcaption>
-        </figure>
         <p className="fd-script fd-letter-hi">Hi, I'm Hana.</p>
         <p className="fd-letter-p">
           I started behind the camera. But somewhere along the way I realized the thing I loved wasn't only taking the photograph. It was

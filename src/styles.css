@@ -10887,3 +10887,4 @@ body:has(.fd-about) .page-paper { display: none; }
 .fd-about-h em { font-style: normal !important; color: inherit !important; font-family: inherit !important; }
 .fd-about p { font-family: "Fraunces", Georgia, serif; }
 body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; }
+.fd-letter-hi { max-width: none !important; }
