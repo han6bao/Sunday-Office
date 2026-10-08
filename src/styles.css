@@ -10774,7 +10774,7 @@ body:has(.fd-page) .so-footer h5 { font-family: "IBM Plex Mono", monospace; font
 
 /* Paper v3: one soft, cloudy, seamless sheet (like cotton paper), no specks */
 .fd-page .fd-frame::before, .fd-page #about-hana::before, .fd-ei-back::after, .fd-ei-pocket::after, .fd-ei-top::after, .fd-ei-card::after, .fd-env-back::after, .fd-env-flap::after, .fd-ei-intro::before { background-image: none !important; }
-.fd-page .fd-frame:not(.fd-lav), .fd-page #about-hana, .fd-page .fd-bleed, html:has(.fd-page), body:has(.fd-page), .fd-env-intro { background-color: #f2eee6 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-size: 768px 768px !important; }
+.fd-page .fd-frame:not(.fd-lav):not(.fd-dark):not(.fd-start), .fd-page #about-hana, .fd-page .fd-bleed, html:has(.fd-page), body:has(.fd-page), .fd-env-intro { background-color: #f2eee6 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-size: 768px 768px !important; }
 .fd-page .fd-lav { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; }
 .fd-env-intro::before { display: none; }
 .fd-page .fd-quote { background-color: #f2eee6 !important; }
@@ -10801,3 +10801,89 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; co
 .fd-services a.is-big { padding-block: 26px 24px; }
 .fd-services a.is-big .fd-sn { font-family: "Pinyon Script", "Snell Roundhand", cursive; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; }
 .fd-sd { display: block; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-style: normal; font-size: 15px; color: var(--fd-soft); margin-top: 6px; }
+
+/* ===== Black paper sections: Selected work and Let's begin ===== */
+.fd-page .fd-dark, .fd-page .fd-start { background-color: #161413 !important; background-image: url(/assets/texture/paper-black.jpg) !important; background-size: 768px 768px !important; color: #efe9de !important; }
+.fd-page .fd-dark .fd-file, .fd-page .fd-start .fd-file { color: rgba(239,233,222,.7); }
+.fd-page .fd-start .fd-script { color: #efe9de !important; }
+.fd-page .fd-start .fd-small { color: rgba(239,233,222,.72) !important; }
+.fd-page .fd-start .fd-small a { color: #efe9de; }
+
+/* Selected work: a row you scroll, tiles open a box */
+.fd-dark .fd-work-head h2 { color: #efe9de; }
+.fd-more-hint { font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 300; font-size: 15px; color: rgba(239,233,222,.6); margin: 0; }
+.fd-row { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(220px, 24vw, 340px); gap: clamp(14px, 1.6vw, 22px); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 18px; margin-inline: calc(var(--fd-gutter) * -1); padding-inline: var(--fd-gutter); scrollbar-width: thin; scrollbar-color: rgba(239,233,222,.3) transparent; }
+.fd-tile { all: unset; cursor: pointer; scroll-snap-align: start; display: grid; color: #efe9de; }
+.fd-tile img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .3s; }
+.fd-tile:hover img, .fd-tile:focus-visible img { transform: scale(1.02); opacity: .92; }
+.fd-tile:focus-visible { outline: 1px solid #efe9de; outline-offset: 6px; }
+.fd-tile .fd-ct { margin-top: 12px; font-family: "Fraunces", Georgia, serif; font-size: 15px; }
+.fd-tile .fd-cw { font-family: "Fraunces", Georgia, serif; font-style: italic; font-size: 14px; color: rgba(239,233,222,.6); }
+
+/* More work, on black */
+.fd-dark .fd-mw-h { color: rgba(239,233,222,.7); }
+.fd-dark .fd-mw ul, .fd-dark .fd-mw li a { border-color: rgba(239,233,222,.16) !important; }
+.fd-dark .fd-mw-t { color: #efe9de; }
+.fd-dark .fd-mw-no { color: rgba(239,233,222,.55); }
+.fd-dark .fd-mw-w { color: rgba(239,233,222,.6); }
+
+/* The pop-up box */
+.fd-box-back { position: fixed; inset: 0; z-index: 200; background: rgba(12,11,10,.62); display: grid; place-items: center; padding: 20px; animation: fd-fade .25s ease both; }
+@keyframes fd-fade { from { opacity: 0; } }
+.fd-box { width: min(860px, 100%); max-height: calc(100svh - 40px); overflow: auto; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); background-color: #f2eee6; background-image: url(/assets/texture/paper-cream.jpg); background-size: 768px; color: #1b1918; box-shadow: 0 40px 80px -30px rgba(0,0,0,.6); animation: fd-up .35s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes fd-up { from { transform: translateY(14px); opacity: 0; } }
+.fd-box > img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block; }
+.fd-box-body { position: relative; padding: clamp(24px, 4vw, 44px); display: grid; align-content: start; gap: 10px; }
+.fd-box-x { all: unset; cursor: pointer; position: absolute; top: 12px; right: 16px; font-size: 28px; line-height: 1; color: #1b1918; padding: 4px 8px; }
+.fd-box-x:focus-visible { outline: 1px solid #1b1918; }
+.fd-box-w { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .65; margin: 0; }
+.fd-box-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; margin: 0; }
+.fd-box-d { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: #5d5853; margin: 4px 0 0; }
+.fd-box-q { font-family: "Pinyon Script", cursive; font-size: 34px; margin: 18px 0 0; }
+.fd-box-links { display: grid; gap: 10px; justify-items: start; }
+.fd-box-links a { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: #1b1918; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.fd-box-links a.fd-box-main { font-family: "Instrument Serif", Georgia, serif; font-size: 20px; background: #1b1918; color: #f2eee6; border: 0; padding: 12px 20px; }
+@media (max-width: 640px) { .fd-box { grid-template-columns: 1fr; } .fd-box > img { min-height: 0; aspect-ratio: 4 / 3; } }
+
+/* Makeover on its own cream frame */
+.fd-mk-frame .fd-mk { margin-top: 0; }
+
+/* Meet Hana: a letter on paper */
+.fd-letter { position: relative; max-width: 760px; margin-inline: auto; background-color: #f8f5ef; background-image: url(/assets/texture/paper-cream.jpg); background-blend-mode: soft-light; padding: clamp(36px, 6vw, 80px) clamp(28px, 6vw, 84px); box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 30px 60px -36px rgba(60,50,40,.45); rotate: -.4deg; }
+.fd-letter-hi { font-size: clamp(54px, 7vw, 96px) !important; margin-bottom: 18px !important; max-width: 60%; }
+.fd-letter-p { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 17px; line-height: 1.75; color: #3d3833; margin: 0 0 16px; max-width: 54ch; }
+.fd-letter-sign { margin: 26px 0 10px; }
+.fd-letter-sign .fd-sign-name { font-size: clamp(60px, 8vw, 104px); }
+.fd-polaroid { position: absolute; top: clamp(-40px, -3vw, -20px); right: clamp(-30px, -2vw, 10px); width: clamp(150px, 22vw, 230px); margin: 0; background: #fbfaf7; padding: 10px 10px 34px; box-shadow: 0 18px 34px -16px rgba(40,30,20,.45); rotate: 4deg; z-index: 2; }
+.fd-polaroid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+.fd-polaroid figcaption { position: absolute; bottom: 8px; left: 0; right: 0; text-align: center; font-family: "Pinyon Script", cursive; font-size: 20px; color: #3d3833; }
+.fd-polaroid::before { content: ""; position: absolute; top: -12px; left: 50%; translate: -50% 0; width: 84px; height: 24px; background: rgba(232, 222, 205, .82); rotate: -3deg; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+@media (max-width: 640px) { .fd-polaroid { position: relative; top: 0; right: 0; margin: -10px 0 24px auto; } .fd-letter-hi { max-width: none; } }
+
+/* Let's begin on black: quiz + form in cream */
+.fd-page .fd-start .so-quiz, .fd-page .fd-start .so-quiz * { color: #efe9de !important; }
+.fd-page .fd-start .so-quiz { border-top-color: rgba(239,233,222,.18) !important; }
+.fd-page .fd-start .so-quiz-opt-d, .fd-page .fd-start .so-quiz-cap, .fd-page .fd-start .so-quiz-why, .fd-page .fd-start .so-quiz-small { color: rgba(239,233,222,.62) !important; }
+.fd-page .fd-start .so-quiz-opt { border-color: rgba(239,233,222,.2) !important; }
+.fd-page .fd-start .so-quiz-opt:hover, .fd-page .fd-start .so-quiz-opt:focus-visible { background: rgba(239,233,222,.06) !important; border-color: rgba(239,233,222,.5) !important; }
+.fd-page .fd-start .so-quiz-dots span { background: rgba(239,233,222,.25) !important; }
+.fd-page .fd-start .so-quiz-dots span.is-done, .fd-page .fd-start .so-quiz-dots span.is-on { background: #efe9de !important; }
+.fd-page .fd-start .so-quiz-go { background: #efe9de !important; color: #161413 !important; }
+.fd-page .fd-start .so-office-card { border-top-color: rgba(239,233,222,.18) !important; }
+.fd-page .fd-start .so-office-card .eyebrow-cap { color: #efe9de !important; }
+.fd-page .fd-start .so-office-card, .fd-page .fd-start .so-field label, .fd-page .fd-start .so-micro { color: rgba(239,233,222,.78) !important; }
+.fd-page .fd-start .so-field input, .fd-page .fd-start .so-field textarea, .fd-page .fd-start .so-field select { color: #efe9de !important; border-color: rgba(239,233,222,.3) !important; }
+.fd-page .fd-start .so-field select option { color: #161413; }
+.fd-page .fd-start .so-field input::placeholder, .fd-page .fd-start .so-field textarea::placeholder { color: rgba(239,233,222,.42) !important; }
+.fd-page .fd-start .so-form .so-btn { background: #efe9de !important; color: #161413 !important; border: 0 !important; }
+.fd-page .fd-start .so-form a, .fd-page .fd-start .so-link-jump { color: #efe9de !important; }
+.fd-page .fd-start .so-form-error { background: rgba(239,233,222,.06); border-color: rgba(239,233,222,.3); }
+.fd-page .fd-start .so-finder-answer, .fd-page .fd-start .so-finder-answer * { color: #efe9de !important; }
+
+/* About page on the same cotton paper */
+html:has(.fd-about), body:has(.fd-about), .fd-about { background-color: #f2eee6 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-size: 768px 768px !important; }
+body:has(.fd-about) .page-paper { display: none; }
+.fd-about-h { font-family: "Pinyon Script", "Snell Roundhand", cursive !important; font-weight: 400 !important; font-size: clamp(64px, 11vw, 150px) !important; line-height: 1 !important; letter-spacing: 0 !important; }
+.fd-about-h em { font-style: normal !important; color: inherit !important; font-family: inherit !important; }
+.fd-about p { font-family: "Fraunces", Georgia, serif; }
+body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; }

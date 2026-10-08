@@ -646,7 +646,7 @@ function StartAProject() {
         <ProjectQuiz />
 
         <div className="so-office-card" id="inquiry">
-          <p className="eyebrow-cap mt-4">The inquiry</p>
+          <p className="eyebrow-cap mt-4">The Inquiry</p>
           <InquiryForm />
         </div>
       </div>
@@ -738,10 +738,16 @@ const FEED_SERVICES = [
   { n: "Video + social", d: "", p: "from $350", h: "/creative-direction-content", big: false },
 ];
 
-const FEED_WORK = [
-  { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", alt: "The lounge at Selaras Haus, a beauty studio in Tacoma", t: "Selaras Haus", w: "Interior photography", h: "/campaigns/selaras-haus" },
-  { src: "/assets/campaigns/green-grillz/nine-01.jpg", alt: "Nine Vicious in a red velvet jacket wearing green grillz", t: "Nine Vicious × Custom Grillz", w: "Photography + promotion", h: "/campaigns/green-grillz" },
-  { src: "/assets/campaigns/exhibition/exh1.jpg", alt: "A styled portrait from the Exhibition campaign", t: "Exhibition", w: "Campaign direction", h: "/campaigns/exhibition" },
+type Link = { t: string; h: string };
+const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; links: Link[]; study: string }[] = [
+  { src: "/assets/campaigns/essential-brows-studio/cover.jpg", alt: "The Essential Brows website on a pink desktop", t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home of its own.", links: [{ t: "Visit their website", h: "https://www.essentialbrows.studio/" }], study: "/websites/essential-brows-studio" },
+  { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", alt: "The lounge at Selaras Haus, a beauty studio in Tacoma", t: "Selaras Haus", w: "Interior photography", d: "A calm, warm studio in downtown Tacoma, photographed for its social media and branding.", links: [{ t: "See their Instagram", h: "https://www.instagram.com/selarashaus/" }], study: "/campaigns/selaras-haus" },
+  { src: "/assets/campaigns/green-grillz/nine-01.jpg", alt: "Nine Vicious in a red velvet jacket wearing green grillz", t: "Nine Vicious × Custom Grillz", w: "Photography + promotion", d: "My photos became the most-liked post on jeweler Marcus Adam's page.", links: [{ t: "See Marcus Adam's page", h: "https://www.instagram.com/maarcusadam/" }], study: "/campaigns/green-grillz" },
+  { src: "/assets/campaigns/exhibition/exh1.jpg", alt: "A styled portrait from the Exhibition campaign", t: "Exhibition", w: "Campaign direction", d: "A campaign I directed from the idea to the day on set.", links: [], study: "/campaigns/exhibition" },
+  { src: "/assets/campaigns/jaydyn-f/jd-07.jpg", alt: "Jaydyn F. in a portrait from his release content", t: "Jaydyn F.", w: "Release content", d: "Behind the scenes and short clips around his music. One reel passed 120K views.", links: [{ t: "See the reel", h: "https://www.instagram.com/p/DORrPfiklMt/" }], study: "/campaigns/jaydyn-f" },
+  { src: "/assets/campaigns/chutneys/ch-02.jpg", alt: "A dish at Chutneys Bellevue", t: "Chutneys Bellevue", w: "Commercial + photos", d: "A commercial and promo photos for a North Indian restaurant.", links: [{ t: "Visit their website", h: "https://chutneysinbellevue.com/" }], study: "/campaigns/chutneys" },
+  { src: "/assets/campaigns/leon-thomas/lt-01.jpg", alt: "Leon Thomas performing at Vice Seattle", t: "Leon Thomas × Vice", w: "Event photography", d: "His tour afterparty at Vice Seattle, photographed for the venue.", links: [{ t: "Visit Vice Seattle", h: "https://www.viceseattle.com/" }], study: "/campaigns/leon-thomas" },
+  { src: "/assets/campaigns/jazmins-events/featured-cover.png", alt: "The Jazmin's Events wordmark on cream paper", t: "Jazmin's Events", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch. Website in progress.", links: [{ t: "Visit their website", h: "https://jazmins-events.vercel.app/" }], study: "/websites/jazmins-events" },
 ];
 
 function FeedFile({ children }: { children: string }) {
@@ -882,13 +888,12 @@ function Makeover() {
 }
 
 const MORE_WORK = [
-  { t: "Chutneys Bellevue", w: "Commercial + photos", src: "/assets/campaigns/chutneys/ch-02.jpg", h: "/campaigns/chutneys" },
   { t: "Bar Bistro", w: "Food + drink photography", src: "/assets/campaigns/bar-bistro/bb-01.jpg", h: "/campaigns/bar-bistro" },
   { t: "Public House", w: "Venue photography", src: "/assets/campaigns/soul-social/ss-04.jpg", h: "/campaigns/public-house" },
-  { t: "Leon Thomas × Vice", w: "Event photography", src: "/assets/campaigns/leon-thomas/lt-01.jpg", h: "/campaigns/leon-thomas" },
   { t: "Kenshi Killz", w: "Artist promo", src: "/assets/campaigns/kenshi-killz/kk-01.jpg", h: "/campaigns/kenshi-killz" },
   { t: "Big Baby Gucci", w: "Artist photography", src: "/assets/campaigns/big-baby-gucci/bbg-01.jpg", h: "/campaigns/big-baby-gucci" },
-  { t: "Jaydyn F.", w: "Release content", src: "/assets/campaigns/jaydyn-f/jd-07.jpg", h: "/campaigns/jaydyn-f" },
+  { t: "Avery Tien", w: "Portraits", src: "/assets/campaigns/avery-tien/at01.jpg", h: "/campaigns/avery-tien" },
+  { t: "DJ Prashant × The Hiyu", w: "Event photography", src: "/assets/campaigns/dj-prashant-hiyu/djp-01.jpg", h: "/campaigns/dj-prashant-hiyu" },
 ];
 
 /* More work as a quiet list. On a computer, the photo floats up beside the cursor. */
@@ -944,28 +949,68 @@ function ScriptWriter() {
   return null;
 }
 
-function FeedWork() {
+function WorkBox({ w, onClose }: { w: (typeof FEED_WORK)[number]; onClose: () => void }) {
+  useEffect(() => {
+    const k = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", k);
+    document.getElementById("fd-box-close")?.focus();
+    return () => window.removeEventListener("keydown", k);
+  }, [onClose]);
   return (
-    <section className="fd-frame" id="work" aria-label="Selected work">
+    <div className="fd-box-back" onClick={onClose}>
+      <div className="fd-box" role="dialog" aria-modal="true" aria-label={w.t} onClick={(e) => e.stopPropagation()}>
+        <img src={w.src} alt={w.alt} />
+        <div className="fd-box-body">
+          <button type="button" id="fd-box-close" className="fd-box-x" onClick={onClose} aria-label="Close">
+            ×
+          </button>
+          <p className="fd-box-w">{w.w}</p>
+          <p className="fd-box-t">{w.t}</p>
+          <p className="fd-box-d">{w.d}</p>
+          <p className="fd-box-q">Want to see more?</p>
+          <div className="fd-box-links">
+            <a href={w.study} className="fd-box-main">
+              Read the case study →
+            </a>
+            {w.links.map((l) => (
+              <a key={l.h} href={l.h} target="_blank" rel="noreferrer">
+                {l.t} ↗
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FeedWork() {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <section className="fd-frame fd-dark" id="work" aria-label="Selected work">
       <FeedFile>FILE NO. 003 · SELECTED WORK</FeedFile>
       <div className="fd-work-head">
         <h2>Selected work</h2>
-        <div className="fd-more">
-          <a href="/websites#work">Websites</a>
-          <a href="/photography">Photography</a>
-          <a href="/creative-direction-content">Campaigns</a>
-        </div>
+        <p className="fd-more-hint">Scroll, then tap one to see more</p>
       </div>
-      <div className="fd-grid">
-        {FEED_WORK.map((w) => (
-          <a key={w.t} href={w.h} className="fd-card">
+      <div className="fd-row" role="list">
+        {FEED_WORK.map((w, i) => (
+          <button key={w.t} type="button" role="listitem" className="fd-tile" onClick={() => setOpen(i)}>
             <img src={w.src} alt={w.alt} loading="lazy" />
             <span className="fd-ct">{w.t}</span>
             <span className="fd-cw">{w.w}</span>
-          </a>
+          </button>
         ))}
       </div>
       <MoreWork />
+      {open !== null && <WorkBox w={FEED_WORK[open]} onClose={() => setOpen(null)} />}
+    </section>
+  );
+}
+
+function FeedMakeover() {
+  return (
+    <section className="fd-frame fd-mk-frame" aria-label="A makeover">
       <Makeover />
     </section>
   );
@@ -1048,6 +1093,36 @@ function FeedHana() {
   );
 }
 
+/* Meet Hana as a handwritten-style letter on paper, with an instant photo clipped on. */
+function FeedLetter() {
+  return (
+    <section className="fd-frame fd-letter-frame" id="about-hana" aria-label="Meet Hana">
+      <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
+      <div className="fd-letter">
+        <figure className="fd-polaroid">
+          <img src="/assets/hana-portrait.jpg" alt="Hana, founder of Sunday Office" loading="lazy" />
+          <figcaption>Hana · Seattle</figcaption>
+        </figure>
+        <p className="fd-script fd-letter-hi">Hi, I'm Hana.</p>
+        <p className="fd-letter-p">
+          I started behind the camera. But somewhere along the way I realized the thing I loved wasn't only taking the photograph. It was
+          figuring out what the whole thing could be: the image, the campaign, the website it lives on, the little film somebody
+          remembers, the way a business introduces itself.
+        </p>
+        <p className="fd-letter-p">
+          Sunday Office grew from that. Today I lead it as an independent creative agency rooted in photography, creative direction,
+          culture and story.
+        </p>
+        <div className="fd-letter-sign">
+          <p className="fd-sign-pre">With care,</p>
+          <p className="fd-sign-name">Hana</p>
+        </div>
+        <a className="fd-link" href="/about">More about me</a>
+      </div>
+    </section>
+  );
+}
+
 function FeedStart() {
   return (
     <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
@@ -1059,13 +1134,8 @@ function FeedStart() {
       </p>
       <ProjectQuiz />
       <div className="so-office-card" id="inquiry">
-        <p className="eyebrow-cap mt-4">The inquiry</p>
+        <p className="eyebrow-cap mt-4">The Inquiry</p>
         <InquiryForm />
-      </div>
-      <div className="fd-sign">
-        <p className="fd-sign-pre">With care,</p>
-        <p className="fd-sign-name">Hana</p>
-        <p className="fd-sign-post">Sunday Office · Seattle</p>
       </div>
     </section>
   );
@@ -1084,9 +1154,10 @@ function Index() {
         <FeedPhoto />
         <FeedServices />
         <FeedWork />
+        <FeedMakeover />
         <FeedQuote />
         <FeedProof />
-        <MeetHana />
+        <FeedLetter />
         <FeedStart />
       </main>
       <Footer />

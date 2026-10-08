@@ -78,7 +78,7 @@ function AboutPage() {
   const go = (i: number) => setCh(Math.min(Math.max(i, 0), CHAPTERS.length - 1));
   const c = CHAPTERS[ch];
   return (
-    <div className="block so-keep-light" style={{ minHeight: "100dvh" }}>
+    <div className="block so-keep-light fd-about" style={{ minHeight: "100dvh" }}>
       <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16, flexWrap: "wrap", marginBottom: 40 }}>
@@ -93,7 +93,7 @@ function AboutPage() {
         </div>
 
         <p className="so-micro so-micro-red">FILE NO. 004 · ALL ABOUT HANA</p>
-        <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>
+        <h1 className="so-serif fd-about-h" style={{ marginTop: 14 }}>
           Meet Hana.
         </h1>
         <p className="so-micro mt-3">FOUNDER / PHOTOGRAPHER / CREATIVE PRODUCER</p>
