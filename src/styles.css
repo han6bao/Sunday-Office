@@ -10899,3 +10899,14 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 /* on black paper the lettering stays cream */
 .fd-page .fd-start .fd-script, .fd-page .fd-dark .fd-script { background-image: none; color: #efe9de !important; -webkit-text-fill-color: #efe9de; }
 .fd-quote-img { position: relative; z-index: 1; width: min(560px, 70vw); height: auto; display: block; }
+
+/* Serve first: one medium cream, big lettering, tap to read */
+.fd-page .fd-quote { background-color: #f2efe7 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-blend-mode: luminosity; min-height: min(92vh, 900px); display: grid; place-items: center; align-content: center; gap: 28px; }
+.fd-quote .fd-envelope { display: none !important; }
+.fd-quote-btn { all: unset; cursor: pointer; display: grid; justify-items: center; gap: 18px; }
+.fd-quote-btn:focus-visible { outline: 1px solid #5c5955; outline-offset: 10px; }
+.fd-page .fd-quote-img { width: min(1100px, 88vw); transition: width .7s cubic-bezier(.2,.7,.2,1); }
+.fd-quote.is-open .fd-quote-img { width: min(640px, 70vw); }
+.fd-quote-hint { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: #5c5955; opacity: .75; }
+.fd-why { max-width: 56ch; text-align: center; animation: fd-up .6s cubic-bezier(.2,.7,.2,1) both; }
+.fd-why p { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 18px; line-height: 1.75; color: #4a4744; margin: 0 0 14px; }

@@ -1016,14 +1016,26 @@ function FeedMakeover() {
   );
 }
 
+/* Serve first. Sell later. Tap it to read why. */
 function FeedQuote() {
+  const [open, setOpen] = useState(false);
   return (
-    <section className="fd-frame fd-quote" aria-label="A note">
-      <div className="fd-envelope" aria-hidden>
-        <span className="fd-env-back" />
-        <span className="fd-env-flap" />
+    <section className={"fd-frame fd-quote" + (open ? " is-open" : "")} aria-label="Serve first. Sell later.">
+      <button type="button" className="fd-quote-btn" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="fd-why">
+        <img className="fd-quote-img" src="/assets/lettering/serve-first.png" alt="Serve first. Sell later." />
+        <span className="fd-quote-hint">{open ? "Close" : "Tap to read why"}</span>
+      </button>
+      <div className="fd-why" id="fd-why" hidden={!open}>
+        <p>
+          I'd rather earn trust than ask for it. So I give first: an honest opinion, a real plan, an idea you can use whether or not we
+          end up working together.
+        </p>
+        <p>
+          When people feel looked after, the work gets better and the right clients stay. That's how I run Sunday Office, and it's how
+          I'd want you to run your brand too. Show people who you are and take care of them before you ask for anything. The selling
+          gets easier after that.
+        </p>
       </div>
-      <img className="fd-quote-img" src="/assets/lettering/serve-first.png" alt="Serve first. Sell later." />
     </section>
   );
 }
