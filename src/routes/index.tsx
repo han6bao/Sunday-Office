@@ -768,13 +768,19 @@ function FeedHero() {
   );
 }
 
+/* The immersive hero spot. Drop a video in at /assets/work/hero.mp4 and set
+   HERO_VIDEO to its path: the photo then becomes the video's poster frame. */
+const HERO_VIDEO: string | null = null;
+
 function FeedPhoto() {
   return (
-    <div className="fd-bleed">
-      <div className="fd-bleed-file">
-        <FeedFile>FILE NO. 001 · THE OFFICE</FeedFile>
-      </div>
-      <img src="/assets/work/hero-night-desk.jpg" alt="Hana at her desk at night, working on a client's brand" />
+    <div className="fd-media">
+      {HERO_VIDEO ? (
+        <video src={HERO_VIDEO} poster="/assets/work/hero-night-desk.jpg" autoPlay muted loop playsInline aria-label="Hana at work in the studio" />
+      ) : (
+        <img src="/assets/work/hero-night-desk.jpg" alt="Hana at her desk at night, working on a client's brand" />
+      )}
+      <span className="fd-media-file">FILE NO. 001 · THE OFFICE</span>
     </div>
   );
 }
