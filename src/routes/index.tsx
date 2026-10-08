@@ -732,11 +732,10 @@ const REEL = [
    The feed-style homepage: one idea per frame, like an Instagram post.
    ------------------------------------------------------------ */
 const FEED_SERVICES = [
-  { n: "Branding", p: "from $350", h: "/branding" },
-  { n: "Websites", p: "from $850", h: "/websites" },
-  { n: "Photography", p: "from $150", h: "/photography" },
-  { n: "Video", p: "from $350", h: "/moving-image" },
-  { n: "Creative direction + social", p: "from $300", h: "/creative-direction-content" },
+  { n: "World building", d: "Branding + creative direction. Where every project starts.", p: "from $350", h: "/branding", big: true },
+  { n: "Websites", d: "", p: "from $850", h: "/websites", big: false },
+  { n: "Photography", d: "", p: "from $150", h: "/photography", big: false },
+  { n: "Video + social", d: "", p: "from $350", h: "/creative-direction-content", big: false },
 ];
 
 const FEED_WORK = [
@@ -795,8 +794,11 @@ function FeedServices() {
       </p>
       <div className="fd-services">
         {FEED_SERVICES.map((x) => (
-          <a key={x.n} href={x.h}>
-            <span className="fd-sn">{x.n}</span>
+          <a key={x.n} href={x.h} className={x.big ? "is-big" : ""}>
+            <span className="fd-sn">
+              {x.n}
+              {x.d && <span className="fd-sd">{x.d}</span>}
+            </span>
             <span className="fd-sp">{x.p}</span>
           </a>
         ))}

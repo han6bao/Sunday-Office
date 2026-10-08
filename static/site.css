@@ -10791,6 +10791,9 @@ body:has(.fd-page) .so-footer h5 { font-family: "IBM Plex Mono", monospace; font
 body:has(.fd-page) .so-nav-burger, body:has(.fd-page) .so-burger-lines, body:has(.fd-page) .so-burger-label { color: #1b1918 !important; }
 body:has(.fd-page) .so-burger-lines span { background: #1b1918 !important; }
 body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; color: #f2eee6 !important; }
+.fd-services a.is-big { padding-block: 26px 24px; }
+.fd-services a.is-big .fd-sn { font-family: "Pinyon Script", "Snell Roundhand", cursive; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; }
+.fd-sd { display: block; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-style: normal; font-size: 15px; color: var(--fd-soft); margin-top: 6px; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
