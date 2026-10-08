@@ -10934,6 +10934,9 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-page .fd-start .fd-sheet .so-form-error { background: rgba(156,59,79,.06); border-color: rgba(156,59,79,.35); }
 .fd-page .fd-start .fd-sheet .so-finder-answer, .fd-page .fd-start .fd-sheet .so-finder-answer * { color: #1b1918 !important; }
 .fd-quote-label { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: #5c5955; opacity: .8; margin: 0; }
+.fd-quote-file { align-self: start; justify-self: stretch; width: 100%; }
+.fd-quote-file .fd-file { margin-bottom: clamp(24px, 4vw, 48px); color: #5c5955; }
+.fd-page .fd-quote { align-content: start; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
