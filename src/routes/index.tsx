@@ -936,18 +936,6 @@ function ScriptWriter() {
   return null;
 }
 
-function Ticker() {
-  const line = "Branding · Websites · Photography · Video · Creative direction · Seattle · Build your world · ";
-  return (
-    <div className="fd-ticker" aria-hidden>
-      <div className="fd-ticker-track">
-        <span>{line}</span>
-        <span>{line}</span>
-      </div>
-    </div>
-  );
-}
-
 function FeedWork() {
   return (
     <section className="fd-frame" id="work" aria-label="Selected work">
@@ -1086,7 +1074,6 @@ function Index() {
       <main className="fd-page">
         <FeedHero />
         <FeedPhoto />
-        <Ticker />
         <FeedServices />
         <FeedWork />
         <FeedQuote />
