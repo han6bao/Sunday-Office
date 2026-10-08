@@ -631,7 +631,7 @@ function StartAProject() {
   return (
     <Section id="office-hours" className="so-start-section">
       <div className="so-shell">
-        <SecFile>FILE NO. 006 · START A PROJECT</SecFile>
+        <SecFile>FILE NO. 005 · START A PROJECT</SecFile>
         <div className="so-start-head">
           <BigTitle max={88}>Start <em>building.</em></BigTitle>
           <div className="so-start-side">
@@ -785,7 +785,6 @@ function FeedPhoto() {
       ) : (
         <img src="/assets/work/hero-night-desk.jpg" alt="Hana at her desk at night, working on a client's brand" />
       )}
-      <span className="fd-media-file">FILE NO. 001 · THE OFFICE</span>
     </div>
   );
 }
@@ -793,7 +792,7 @@ function FeedPhoto() {
 function FeedServices() {
   return (
     <section className="fd-frame fd-black" id="build" aria-label="Services">
-      <FeedFile>FILE NO. 002 · WHAT I DO</FeedFile>
+      <FeedFile>FILE NO. 001 · WHAT I DO</FeedFile>
       <p className="fd-script">Start with the brand.</p>
       <p className="fd-small">
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
@@ -988,7 +987,7 @@ function FeedWork() {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <section className="fd-frame fd-dark" id="work" aria-label="Selected work">
-      <FeedFile>FILE NO. 003 · SELECTED WORK</FeedFile>
+      <FeedFile>FILE NO. 002 · SELECTED WORK</FeedFile>
       <div className="fd-work-head">
         <h2>Selected work</h2>
         <p className="fd-more-hint">Scroll, then tap one to see more</p>
@@ -1054,7 +1053,7 @@ function FeedProof() {
   const next = () => setI((v) => (v + 1) % FEED_STATS.length);
   return (
     <section className="fd-frame fd-lav" aria-label="Results">
-      <FeedFile>FILE NO. 004 · WHERE THE WORK WENT</FeedFile>
+      <FeedFile>FILE NO. 003 · WHERE THE WORK WENT</FeedFile>
       <button type="button" className="fd-stat" onClick={next} aria-label={`${s.n}. ${s.d} Show the next number.`}>
         <span className="fd-big" key={"n" + i}>{s.n}</span>
       </button>
@@ -1104,8 +1103,10 @@ function FeedHana() {
 function FeedLetter() {
   return (
     <section className="fd-frame fd-letter-frame" id="about-hana" aria-label="Meet Hana">
-      <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
+      <FeedFile>FILE NO. 004 · MEET HANA</FeedFile>
       <div className="fd-letter">
+        <img className="fd-letter-photo" src="/assets/work/office-hero.jpg" alt="Hana at her desk, working on the computer" loading="lazy" />
+        <div className="fd-letter-text">
         <p className="fd-script fd-letter-hi">Hi, I'm Hana.</p>
         <p className="fd-letter-p">
           I started behind the camera. But somewhere along the way I realized the thing I loved wasn't only taking the photograph. It was
@@ -1121,6 +1122,7 @@ function FeedLetter() {
           <p className="fd-sign-name">Hana</p>
         </div>
         <a className="fd-link" href="/about">More about me</a>
+        </div>
       </div>
     </section>
   );
@@ -1129,16 +1131,18 @@ function FeedLetter() {
 function FeedStart() {
   return (
     <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
-      <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
+      <FeedFile>FILE NO. 005 · START A PROJECT</FeedFile>
       <p className="fd-script">Let's begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
         <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.
       </p>
-      <ProjectQuiz />
-      <div className="so-office-card" id="inquiry">
-        <p className="eyebrow-cap mt-4">The Inquiry</p>
-        <InquiryForm />
+      <div className="fd-sheet">
+        <ProjectQuiz />
+        <div className="so-office-card" id="inquiry">
+          <p className="eyebrow-cap mt-4">The Inquiry</p>
+          <InquiryForm />
+        </div>
       </div>
     </section>
   );

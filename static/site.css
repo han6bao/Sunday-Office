@@ -10907,6 +10907,32 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-page .fd-media { height: min(100svh, 1000px); }
 .fd-media-file { font-size: 9px !important; letter-spacing: .26em !important; color: rgba(242, 238, 230, .5) !important; bottom: 16px !important; }
 .fd-page .fd-hero { min-height: auto; padding-top: clamp(80px, 11vw, 150px); gap: 40px; }
+/* Letter: straight, with Hana's desk photo beside the words */
+.fd-letter { rotate: 0deg !important; max-width: 1120px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.fd-letter-photo { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 78% 40%; display: block; }
+.fd-letter-text { min-width: 0; }
+@media (max-width: 760px) { .fd-letter { grid-template-columns: 1fr; } }
+
+/* Let's begin: a cream paper sheet resting on the black paper */
+.fd-page .fd-start .fd-sheet { margin-top: clamp(48px, 7vw, 88px); background-color: #f4f1ea; background-image: url(/assets/texture/paper-cream.jpg); background-size: 768px; padding: clamp(28px, 5vw, 64px); box-shadow: 0 40px 80px -40px rgba(0,0,0,.7), 0 1px 0 rgba(255,255,255,.5) inset; }
+.fd-page .fd-start .fd-sheet .so-quiz { margin-top: 0 !important; border-top: 0 !important; padding-top: 0 !important; }
+.fd-page .fd-start .fd-sheet .so-quiz, .fd-page .fd-start .fd-sheet .so-quiz * { color: #1b1918 !important; }
+.fd-page .fd-start .fd-sheet .so-quiz-opt-d, .fd-page .fd-start .fd-sheet .so-quiz-cap, .fd-page .fd-start .fd-sheet .so-quiz-why, .fd-page .fd-start .fd-sheet .so-quiz-small { color: #6a645e !important; }
+.fd-page .fd-start .fd-sheet .so-quiz-opt { border-color: rgba(27,25,24,.16) !important; background: rgba(255,255,255,.35) !important; }
+.fd-page .fd-start .fd-sheet .so-quiz-opt:hover, .fd-page .fd-start .fd-sheet .so-quiz-opt:focus-visible { background: rgba(141,125,158,.14) !important; border-color: #8d7d9e !important; }
+.fd-page .fd-start .fd-sheet .so-quiz-dots span { background: rgba(27,25,24,.15) !important; }
+.fd-page .fd-start .fd-sheet .so-quiz-dots span.is-done, .fd-page .fd-start .fd-sheet .so-quiz-dots span.is-on { background: #8d7d9e !important; }
+.fd-page .fd-start .fd-sheet .so-quiz-go { background: #1b1918 !important; color: #f4f1ea !important; }
+.fd-page .fd-start .fd-sheet .so-office-card { border-top-color: rgba(27,25,24,.14) !important; margin-top: 40px !important; }
+.fd-page .fd-start .fd-sheet .so-office-card .eyebrow-cap { color: #1b1918 !important; }
+.fd-page .fd-start .fd-sheet .so-office-card, .fd-page .fd-start .fd-sheet .so-field label, .fd-page .fd-start .fd-sheet .so-micro { color: #5d5853 !important; }
+.fd-page .fd-start .fd-sheet .so-field input, .fd-page .fd-start .fd-sheet .so-field textarea, .fd-page .fd-start .fd-sheet .so-field select { color: #1b1918 !important; border-color: rgba(27,25,24,.22) !important; }
+.fd-page .fd-start .fd-sheet .so-field input:focus, .fd-page .fd-start .fd-sheet .so-field textarea:focus, .fd-page .fd-start .fd-sheet .so-field select:focus { border-color: #8d7d9e !important; outline: none; }
+.fd-page .fd-start .fd-sheet .so-field input::placeholder, .fd-page .fd-start .fd-sheet .so-field textarea::placeholder { color: rgba(27,25,24,.4) !important; }
+.fd-page .fd-start .fd-sheet .so-form .so-btn { background: #1b1918 !important; color: #f4f1ea !important; }
+.fd-page .fd-start .fd-sheet .so-form a, .fd-page .fd-start .fd-sheet .so-link-jump { color: #1b1918 !important; }
+.fd-page .fd-start .fd-sheet .so-form-error { background: rgba(156,59,79,.06); border-color: rgba(156,59,79,.35); }
+.fd-page .fd-start .fd-sheet .so-finder-answer, .fd-page .fd-start .fd-sheet .so-finder-answer * { color: #1b1918 !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
