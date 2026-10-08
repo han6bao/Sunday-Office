@@ -1027,13 +1027,12 @@ function FeedQuote() {
       </button>
       <div className="fd-why" id="fd-why" hidden={!open}>
         <p>
-          I'd rather earn trust than ask for it. So I give first: an honest opinion, a real plan, an idea you can use whether or not we
-          end up working together.
+          For me, this has never been about the sale. It's about showing up for people first: listening, being honest and sharing real
+          ideas, even before anything is booked.
         </p>
         <p>
-          When people feel looked after, the work gets better and the right clients stay. That's how I run Sunday Office, and it's how
-          I'd want you to run your brand too. Show people who you are and take care of them before you ask for anything. The selling
-          gets easier after that.
+          The best work I've made came from that kind of care. It's the same thing I hope you bring to the people you serve. Take care
+          of them first, and they'll remember how you made them feel.
         </p>
       </div>
     </section>
