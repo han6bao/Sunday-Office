@@ -873,6 +873,81 @@ function Makeover() {
   );
 }
 
+const MORE_WORK = [
+  { t: "Chutneys Bellevue", w: "Commercial + photos", src: "/assets/campaigns/chutneys/ch-02.jpg", h: "/campaigns/chutneys" },
+  { t: "Bar Bistro", w: "Food + drink photography", src: "/assets/campaigns/bar-bistro/bb-01.jpg", h: "/campaigns/bar-bistro" },
+  { t: "Public House", w: "Venue photography", src: "/assets/campaigns/soul-social/ss-04.jpg", h: "/campaigns/public-house" },
+  { t: "Leon Thomas × Vice", w: "Event photography", src: "/assets/campaigns/leon-thomas/lt-01.jpg", h: "/campaigns/leon-thomas" },
+  { t: "Kenshi Killz", w: "Artist promo", src: "/assets/campaigns/kenshi-killz/kk-01.jpg", h: "/campaigns/kenshi-killz" },
+  { t: "Big Baby Gucci", w: "Artist photography", src: "/assets/campaigns/big-baby-gucci/bbg-01.jpg", h: "/campaigns/big-baby-gucci" },
+  { t: "Jaydyn F.", w: "Release content", src: "/assets/campaigns/jaydyn-f/jd-07.jpg", h: "/campaigns/jaydyn-f" },
+];
+
+/* More work as a quiet list. On a computer, the photo floats up beside the cursor. */
+function MoreWork() {
+  const [on, setOn] = useState<number | null>(null);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  return (
+    <div className="fd-mw" onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })} onMouseLeave={() => setOn(null)}>
+      <p className="fd-mw-h">More work</p>
+      <ul>
+        {MORE_WORK.map((w, i) => (
+          <li key={w.t}>
+            <a href={w.h} onMouseEnter={() => setOn(i)} onFocus={() => setOn(i)} onBlur={() => setOn(null)} className={on === i ? "is-on" : ""}>
+              <span className="fd-mw-no">{String(i + 1).padStart(2, "0")}</span>
+              <span className="fd-mw-t">{w.t}</span>
+              <span className="fd-mw-w">{w.w}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div className={"fd-mw-float" + (on !== null ? " is-on" : "")} style={{ transform: `translate(${pos.x + 28}px, ${pos.y - 140}px)` }} aria-hidden>
+        {MORE_WORK.map((w, i) => (
+          <img key={w.src} src={w.src} alt="" loading="lazy" className={on === i ? "is-on" : ""} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* The calligraphy lines write themselves in, left to right, as they scroll into view. */
+function ScriptWriter() {
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+    const els = Array.from(document.querySelectorAll<HTMLElement>(".fd-page .fd-script, .fd-page .fd-mk-t, .fd-sign-name"));
+    const vh = window.innerHeight;
+    els.forEach((el) => {
+      if (el.getBoundingClientRect().top > vh * 0.9) el.classList.add("fd-write");
+    });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-written");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -12% 0px" },
+    );
+    els.forEach((el) => el.classList.contains("fd-write") && io.observe(el));
+    return () => io.disconnect();
+  }, []);
+  return null;
+}
+
+function Ticker() {
+  const line = "Branding · Websites · Photography · Video · Creative direction · Seattle · Build your world · ";
+  return (
+    <div className="fd-ticker" aria-hidden>
+      <div className="fd-ticker-track">
+        <span>{line}</span>
+        <span>{line}</span>
+      </div>
+    </div>
+  );
+}
+
 function FeedWork() {
   return (
     <section className="fd-frame" id="work" aria-label="Selected work">
@@ -894,6 +969,7 @@ function FeedWork() {
           </a>
         ))}
       </div>
+      <MoreWork />
       <Makeover />
     </section>
   );
@@ -990,6 +1066,11 @@ function FeedStart() {
         <p className="eyebrow-cap mt-4">The inquiry</p>
         <InquiryForm />
       </div>
+      <div className="fd-sign">
+        <p className="fd-sign-pre">With care,</p>
+        <p className="fd-sign-name">Hana</p>
+        <p className="fd-sign-post">Sunday Office · Seattle</p>
+      </div>
     </section>
   );
 }
@@ -999,11 +1080,13 @@ function Index() {
     <div>
       <ScrollProgress />
       <EnvelopeIntro />
+      <ScriptWriter />
       <div className="page-paper" aria-hidden />
       <Header />
       <main className="fd-page">
         <FeedHero />
         <FeedPhoto />
+        <Ticker />
         <FeedServices />
         <FeedWork />
         <FeedQuote />
