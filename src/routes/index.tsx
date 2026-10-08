@@ -824,6 +824,22 @@ function FeedWork() {
   );
 }
 
+function FeedQuote() {
+  return (
+    <section className="fd-frame fd-quote" aria-label="A note">
+      <div className="fd-envelope" aria-hidden>
+        <span className="fd-env-back" />
+        <span className="fd-env-flap" />
+      </div>
+      <p className="fd-script fd-quote-t">
+        Serve first.
+        <br />
+        Sell later.
+      </p>
+    </section>
+  );
+}
+
 const FEED_STATS = [
   { n: "2M+", d: "Views on one video. The same video reached 8.5M impressions.", t: "", h: "" },
   { n: "1M+", d: "Views on YouTube for a video idea I pitched to Cut, with the right people on camera.", t: "", h: "" },
@@ -915,6 +931,7 @@ function Index() {
         <FeedPhoto />
         <FeedServices />
         <FeedWork />
+        <FeedQuote />
         <FeedProof />
         <FeedHana />
         <FeedStart />

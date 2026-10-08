@@ -10633,3 +10633,18 @@ body:has(.fd-page) .so-nav, body:has(.fd-page) .so-nav.is-scrolled { background:
   .fd-lav .fd-big, .fd-lav .fd-note { animation: fd-in .6s cubic-bezier(.2,.7,.2,1) both; }
   @keyframes fd-in { from { opacity: .001; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 }
+
+/* Paper grain, like the feed: specks on light paper, soft light grain on dark */
+.fd-frame, .fd-bleed-file { isolation: isolate; }
+.fd-frame::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: url(/assets/texture/paper-light.png), url(/assets/texture/paper-glow.png); background-size: 384px 384px, 384px 384px; background-position: 0 0, 137px 211px; }
+.fd-black::before, .fd-lav::before { background-image: url(/assets/texture/paper-glow.png), url(/assets/texture/paper-light.png); background-size: 384px, 384px; opacity: 1; }
+.fd-frame > * { position: relative; }
+
+/* Layered paper, like the envelope post */
+.fd-quote { background: #e4ded3 !important; min-height: min(80vh, 760px); display: grid; place-items: center; overflow: hidden; }
+.fd-envelope { position: absolute; inset: 0; pointer-events: none; }
+.fd-env-back { position: absolute; left: 50%; top: 50%; width: min(78vw, 760px); aspect-ratio: 1.15; translate: -44% -50%; rotate: 45deg; background: #ebe6dc; box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 18px 40px -24px rgba(60, 50, 40, .35); border-radius: 0 0 0 48px; }
+.fd-env-flap { position: absolute; left: 50%; top: 50%; width: min(64vw, 600px); aspect-ratio: 1; translate: -62% -50%; rotate: 45deg; background: #f1ede5; border-radius: 0 0 64px 0; box-shadow: 10px 14px 34px -18px rgba(60, 50, 40, .35); }
+.fd-env-back::after, .fd-env-flap::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background-image: url(/assets/texture/paper-light.png); background-size: 384px; opacity: 1; }
+.fd-quote-t { font-size: clamp(56px, 8vw, 104px) !important; color: #3d3833; text-align: left; z-index: 1; }
