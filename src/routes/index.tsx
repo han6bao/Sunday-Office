@@ -1020,7 +1020,7 @@ function FeedQuote() {
   const [open, setOpen] = useState(false);
   return (
     <section className={"fd-frame fd-quote" + (open ? " is-open" : "")} aria-label="Serve first. Sell later.">
-      <p className="fd-quote-label">My philosophy</p>
+      <div className="fd-quote-file"><FeedFile>FILE NO. 003 · MY PHILOSOPHY</FeedFile></div>
       <button type="button" className="fd-quote-btn" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="fd-why">
         <img className="fd-quote-img" src="/assets/lettering/serve-first.png" alt="Serve first. Sell later." />
         <span className="fd-quote-hint">{open ? "Close" : "Tap to read my philosophy"}</span>
@@ -1054,7 +1054,7 @@ function FeedProof() {
   const next = () => setI((v) => (v + 1) % FEED_STATS.length);
   return (
     <section className="fd-frame fd-lav" aria-label="Results">
-      <FeedFile>FILE NO. 003 · WHERE THE WORK WENT</FeedFile>
+      <FeedFile>FILE NO. 004 · WHERE THE WORK WENT</FeedFile>
       <button type="button" className="fd-stat" onClick={next} aria-label={`${s.n}. ${s.d} Show the next number.`}>
         <span className="fd-big" key={"n" + i}>{s.n}</span>
       </button>
@@ -1104,7 +1104,7 @@ function FeedHana() {
 function FeedLetter() {
   return (
     <section className="fd-frame fd-letter-frame" id="about-hana" aria-label="Meet Hana">
-      <FeedFile>FILE NO. 004 · MEET HANA</FeedFile>
+      <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <div className="fd-letter">
         <img className="fd-letter-photo" src="/assets/work/office-hero.jpg" alt="Hana at her desk, working on the computer" loading="lazy" />
         <div className="fd-letter-text">
@@ -1132,7 +1132,7 @@ function FeedLetter() {
 function FeedStart() {
   return (
     <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
-      <FeedFile>FILE NO. 005 · START A PROJECT</FeedFile>
+      <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
       <p className="fd-script">Let's begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
