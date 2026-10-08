@@ -10966,6 +10966,10 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 /* Footer: same textured black as Let's Begin, so the two read as one */
 .so-footer { background-color: #161413 !important; background-image: url(/assets/texture/paper-black.jpg) !important; background-size: 768px 768px !important; border-top: 0 !important; box-shadow: none !important; }
 .so-footer-wordmark { padding: .12em .2em .12em .25em; margin-left: -.25em; overflow: visible; }
+/* Serve first: smaller, and blended into the paper so its edges don't show */
+.fd-page .fd-quote-img { width: min(640px, 76vw) !important; mix-blend-mode: multiply; }
+.fd-page .fd-quote.is-open .fd-quote-img { width: min(460px, 64vw) !important; }
+.fd-page .fd-quote { min-height: min(78vh, 760px) !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
