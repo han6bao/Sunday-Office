@@ -10977,3 +10977,9 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-page .fd-quote-img { width: min(640px, 76vw) !important; mix-blend-mode: multiply; }
 .fd-page .fd-quote.is-open .fd-quote-img { width: min(460px, 64vw) !important; }
 .fd-page .fd-quote { min-height: min(78vh, 760px) !important; }
+.fd-page .fd-media img { object-position: 62% 40%; }
+/* Bright hero photo: deepen the bottom so white lettering reads over her white top */
+.fd-page .fd-media::after { height: 70% !important; background: linear-gradient(to top, rgba(8,7,6,.78), rgba(8,7,6,.42) 38%, rgba(8,7,6,.1) 70%, transparent) !important; }
+.fd-hero-h { filter: drop-shadow(0 2px 14px rgba(0,0,0,.45)); }
+.fd-hero-sub p { text-shadow: 0 1px 10px rgba(0,0,0,.55); }
+@media (max-width: 720px) { .fd-page .fd-media img { object-position: 80% 40%; } }
