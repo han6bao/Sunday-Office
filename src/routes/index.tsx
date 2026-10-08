@@ -779,24 +779,16 @@ const HERO_VIDEO: string | null = null;
 
 function FeedPhoto() {
   return (
-    <div className="fd-media">
-      {HERO_VIDEO ? (
-        <video src={HERO_VIDEO} poster="/assets/work/hero-desk-light.jpg" autoPlay muted loop playsInline aria-label="Hana at work in the studio" />
-      ) : (
-        <img src="/assets/work/hero-desk-light.jpg" alt="Hana at her desk at night, working on a client's brand" />
-      )}
+    <div className={"fd-media" + (HERO_VIDEO ? "" : " fd-media-empty")}>
+      {HERO_VIDEO ? (<video src={HERO_VIDEO} autoPlay muted loop playsInline aria-label="Hana at work in the studio" />) : null}
       <div className="fd-media-over">
         <h1 className="fd-hero-h">Build Your World.</h1>
         <div className="fd-hero-sub">
-          <p>
-            <b>Sunday Office</b> is an independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I
-            start with the brand, then bring it to life through websites, photography and creative direction.
-          </p>
+          <p><b>Sunday Office</b> is an independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I start with the brand, then bring it to life through websites, photography and creative direction.</p>
           <a href="#office-hours">Start a project</a>
         </div>
       </div>
-    </div>
-  );
+    </div>);
 }
 
 function FeedServices() {
@@ -1116,7 +1108,7 @@ function FeedLetter() {
     <section className="fd-frame fd-letter-frame" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <div className="fd-letter">
-        <img className="fd-letter-photo" src="/assets/work/office-hero.jpg" alt="Hana at her desk, working on the computer" loading="lazy" />
+        <img className="fd-letter-photo" src="/assets/work/hana-desk-bio.jpg" alt="Hana at her desk in a white top, working on the computer" loading="lazy" />
         <div className="fd-letter-text">
         <p className="fd-script fd-letter-hi">Hi, I'm Hana.</p>
         <p className="fd-letter-p">
@@ -1143,7 +1135,7 @@ function FeedStart() {
   return (
     <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script" aria-label="Let's Begin.">Let<span className="fd-apos" aria-hidden="true">’</span>s Begin.</p>
+      <p className="fd-script" aria-label="Let's Begin."><span className="fd-lets">Lets</span> Begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
         <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.
