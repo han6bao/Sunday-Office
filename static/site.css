@@ -10956,6 +10956,16 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-hero-sub p b { font-weight: 400; color: #f4f0e9; }
 .fd-hero-sub a { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: #f4f0e9; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; white-space: nowrap; }
 @media (max-width: 640px) { .fd-hero-h { font-size: 13.4vw; } .fd-hero-sub p { font-size: 15px; } }
+/* Let's Begin: apostrophe floats above the t-s join so the letters stay connected */
+.fd-apos { display: inline-block; width: 0; position: relative; left: .03em; top: -.24em; -webkit-text-fill-color: currentColor; background: none; }
+/* One continuous sheet of paper: cream sections let the page paper show through, so no seams between them */
+.fd-page .fd-frame:not(.fd-lav):not(.fd-dark):not(.fd-start), .fd-page #about-hana, .fd-page .fd-bleed { background: transparent !important; }
+/* Philosophy: a slightly deeper cream that fades in softly from the makeover above */
+.fd-page .fd-quote { background: linear-gradient(to bottom, rgba(214,205,190,0) 0, rgba(214,205,190,.32) clamp(160px, 22vw, 320px), rgba(214,205,190,.32) calc(100% - clamp(160px, 22vw, 320px)), rgba(214,205,190,0) 100%) !important; }
+.fd-page .fd-media::after { background: linear-gradient(to top, rgba(8,7,6,.6), rgba(8,7,6,.14) 50%, transparent) !important; }
+/* Footer: same textured black as Let's Begin, so the two read as one */
+.so-footer { background-color: #161413 !important; background-image: url(/assets/texture/paper-black.jpg) !important; background-size: 768px 768px !important; border-top: 0 !important; box-shadow: none !important; }
+.so-footer-wordmark { padding: .12em .2em .12em .25em; margin-left: -.25em; overflow: visible; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

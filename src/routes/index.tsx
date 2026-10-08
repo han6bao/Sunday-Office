@@ -781,9 +781,9 @@ function FeedPhoto() {
   return (
     <div className="fd-media">
       {HERO_VIDEO ? (
-        <video src={HERO_VIDEO} poster="/assets/work/hero-night-desk.jpg" autoPlay muted loop playsInline aria-label="Hana at work in the studio" />
+        <video src={HERO_VIDEO} poster="/assets/work/hero-desk-light.jpg" autoPlay muted loop playsInline aria-label="Hana at work in the studio" />
       ) : (
-        <img src="/assets/work/hero-night-desk.jpg" alt="Hana at her desk at night, working on a client's brand" />
+        <img src="/assets/work/hero-desk-light.jpg" alt="Hana at her desk at night, working on a client's brand" />
       )}
       <div className="fd-media-over">
         <h1 className="fd-hero-h">Build Your World.</h1>
@@ -1143,7 +1143,7 @@ function FeedStart() {
   return (
     <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script">Let's begin.</p>
+      <p className="fd-script" aria-label="Let's Begin.">Let<span className="fd-apos" aria-hidden="true">’</span>s Begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
         <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.
@@ -1163,7 +1163,7 @@ function Index() {
   return (
     <div>
       <ScrollProgress />
-      <EnvelopeIntro />
+      
       <ScriptWriter />
       <div className="page-paper" aria-hidden />
       <Header />
