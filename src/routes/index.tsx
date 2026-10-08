@@ -1154,8 +1154,8 @@ function Index() {
       <div className="page-paper" aria-hidden />
       <Header />
       <main className="fd-page">
-        <FeedHero />
         <FeedPhoto />
+        <FeedHero />
         <FeedServices />
         <FeedWork />
         <FeedMakeover />

@@ -10910,3 +10910,7 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-quote-hint { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: #5c5955; opacity: .75; }
 .fd-why { max-width: 56ch; text-align: center; animation: fd-up .6s cubic-bezier(.2,.7,.2,1) both; }
 .fd-why p { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 18px; line-height: 1.75; color: #4a4744; margin: 0 0 14px; }
+/* Media first: full screen under the menu bar; File 001 barely there */
+.fd-page .fd-media { height: min(100svh, 1000px); }
+.fd-media-file { font-size: 9px !important; letter-spacing: .26em !important; color: rgba(242, 238, 230, .5) !important; bottom: 16px !important; }
+.fd-page .fd-hero { min-height: auto; padding-top: clamp(80px, 11vw, 150px); gap: 40px; }
