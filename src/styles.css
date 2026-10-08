@@ -10723,3 +10723,37 @@ body:has(.fd-page) .so-nav, body:has(.fd-page) .so-nav.is-scrolled { background:
 .fd-page .fd-sign-name { color: #1b1918 !important; }
 .fd-page .fd-sign-pre { color: #5d5853 !important; }
 .fd-page .fd-sign-post { color: #1b1918 !important; }
+
+/* ===== Tasteful pass: one type voice across the homepage ===== */
+html:has(.fd-page), body:has(.fd-page) { background: #efebe3; }
+
+/* menu bar */
+body:has(.fd-page) .so-brandlock span { font-family: "Instrument Serif", Georgia, serif; font-size: 21px; font-weight: 400; letter-spacing: .01em; }
+
+/* quiz: paper, not white boxes */
+.fd-page .fd-start .so-quiz { background: transparent !important; border: 0; border-top: 1px solid rgba(27,25,24,.16); border-radius: 0; padding-inline: 0; }
+.fd-page .so-quiz-h { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; font-size: clamp(28px, 3.4vw, 42px) !important; }
+.fd-page .so-quiz-opt { background: transparent !important; border: 1px solid rgba(27,25,24,.16) !important; border-radius: 0 !important; box-shadow: none !important; transition: background .2s, border-color .2s; }
+.fd-page .so-quiz-opt:hover, .fd-page .so-quiz-opt:focus-visible { background: rgba(255,255,255,.45) !important; border-color: rgba(27,25,24,.45) !important; }
+.fd-page .so-quiz-opt-t { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; font-size: 22px !important; }
+.fd-page .so-quiz-opt-d, .fd-page .so-quiz-why, .fd-page .so-quiz-small { font-family: "Fraunces", Georgia, serif !important; font-weight: 300 !important; }
+.fd-page .so-quiz-pick-t { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; }
+.fd-page .so-quiz-foot button { font-family: "Fraunces", Georgia, serif !important; }
+
+/* inquiry: lines on paper, not a white card */
+.fd-page .so-office-card { background: transparent !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; padding-inline: 0 !important; border-top: 1px solid rgba(27,25,24,.16) !important; padding-top: 36px !important; }
+.fd-page .so-office-card .eyebrow-cap { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic; font-size: clamp(28px, 3.4vw, 42px) !important; text-transform: none !important; letter-spacing: 0 !important; color: #1b1918 !important; }
+.fd-page .so-field input, .fd-page .so-field textarea, .fd-page .so-field select { font-family: "Fraunces", Georgia, serif !important; font-weight: 300 !important; font-size: 17px !important; background: transparent !important; }
+.fd-page .so-field textarea { border-radius: 0 !important; }
+.fd-page .so-field input::placeholder, .fd-page .so-field textarea::placeholder { font-style: italic; }
+.fd-page .so-form .so-btn { border-radius: 0 !important; font-family: "Instrument Serif", Georgia, serif !important; font-size: 20px !important; letter-spacing: .01em !important; text-transform: none !important; padding: 14px 28px !important; }
+
+/* work section: calmer sizes */
+.fd-mw-t { font-size: clamp(22px, 2.4vw, 32px); }
+.fd-mw li a { padding-block: 12px; }
+.fd-mk { max-width: 1040px; }
+.fd-mk-t { font-size: clamp(44px, 5vw, 68px); }
+
+/* footer in the same voice */
+body:has(.fd-page) .so-footer .foot-link { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 15px; }
+body:has(.fd-page) .so-footer h5 { font-family: "IBM Plex Mono", monospace; font-weight: 400; }

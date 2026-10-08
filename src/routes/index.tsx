@@ -1021,7 +1021,7 @@ function FeedHana() {
     <section className="fd-frame fd-hana" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <div className="fd-hana-grid">
-        <img src="/assets/work/hero-hana-01.jpg" alt="Hana, founder of Sunday Office" loading="lazy" />
+        <img src="/assets/hana-portrait.jpg" alt="Hana, founder of Sunday Office" loading="lazy" />
         <div>
           <p className="fd-script">Meet Hana.</p>
           <p className="fd-small">
