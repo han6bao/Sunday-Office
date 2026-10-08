@@ -1020,9 +1020,10 @@ function FeedQuote() {
   const [open, setOpen] = useState(false);
   return (
     <section className={"fd-frame fd-quote" + (open ? " is-open" : "")} aria-label="Serve first. Sell later.">
+      <p className="fd-quote-label">My philosophy</p>
       <button type="button" className="fd-quote-btn" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="fd-why">
         <img className="fd-quote-img" src="/assets/lettering/serve-first.png" alt="Serve first. Sell later." />
-        <span className="fd-quote-hint">{open ? "Close" : "Tap to read why"}</span>
+        <span className="fd-quote-hint">{open ? "Close" : "Tap to read my philosophy"}</span>
       </button>
       <div className="fd-why" id="fd-why" hidden={!open}>
         <p>
@@ -1030,8 +1031,8 @@ function FeedQuote() {
           ideas, even before anything is booked.
         </p>
         <p>
-          The best work I've made came from that kind of care. It's the same thing I hope you bring to the people you serve. Take care
-          of them first, and they'll remember how you made them feel.
+          The best work I've made came from that kind of care, and it's what I hope you bring to the people you serve too. People
+          forget what you sold them. They remember how you made them feel.
         </p>
       </div>
     </section>

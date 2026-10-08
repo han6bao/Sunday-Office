@@ -10940,3 +10940,4 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-page .fd-start .fd-sheet .so-form a, .fd-page .fd-start .fd-sheet .so-link-jump { color: #1b1918 !important; }
 .fd-page .fd-start .fd-sheet .so-form-error { background: rgba(156,59,79,.06); border-color: rgba(156,59,79,.35); }
 .fd-page .fd-start .fd-sheet .so-finder-answer, .fd-page .fd-start .fd-sheet .so-finder-answer * { color: #1b1918 !important; }
+.fd-quote-label { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: #5c5955; opacity: .8; margin: 0; }
