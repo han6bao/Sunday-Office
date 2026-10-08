@@ -483,7 +483,7 @@ function MeetHana() {
   return (
     <Section id="about-hana" className="so-keep-light">
       <div className="so-shell">
-        <SecFile>FILE NO. 004 · MEET HANA</SecFile>
+        <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
         <BigTitle max={72}>Meet <em>Hana.</em></BigTitle>
         <p className="so-micro mt-3">
           FOUNDER / PHOTOGRAPHER / CREATIVE PRODUCER
@@ -1078,7 +1078,7 @@ function Index() {
         <FeedWork />
         <FeedQuote />
         <FeedProof />
-        <FeedHana />
+        <MeetHana />
         <FeedStart />
       </main>
       <Footer />

@@ -10757,3 +10757,17 @@ body:has(.fd-page) .so-brandlock span { font-family: "Instrument Serif", Georgia
 /* footer in the same voice */
 body:has(.fd-page) .so-footer .foot-link { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 15px; }
 body:has(.fd-page) .so-footer h5 { font-family: "IBM Plex Mono", monospace; font-weight: 400; }
+
+/* One solid color: every frame on the same cream paper, only File 4 stays lavender */
+.fd-page .fd-black { background: var(--fd-cream); color: var(--fd-ink); }
+.fd-page .fd-black .fd-small { color: var(--fd-soft); }
+.fd-page .fd-black .fd-services { border-top-color: rgba(27,25,24,.16); }
+.fd-page .fd-black .fd-services a { border-bottom-color: rgba(27,25,24,.16); }
+.fd-page .fd-black .fd-sp { color: var(--fd-soft); }
+.fd-page .fd-black::before { background-image: url(/assets/texture/paper-light.png), url(/assets/texture/paper-glow.png); background-size: 384px, 384px; background-position: 0 0, 137px 211px; }
+.fd-page .fd-quote { background: var(--fd-cream) !important; }
+.fd-page #about-hana { background: var(--fd-cream) !important; position: relative; isolation: isolate; }
+.fd-page #about-hana::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: url(/assets/texture/paper-light.png), url(/assets/texture/paper-glow.png); background-size: 384px, 384px; background-position: 0 0, 137px 211px; }
+.fd-page #about-hana .fd-file { margin-bottom: clamp(36px, 6vw, 72px); }
+.fd-page #about-hana .so-profile-body p:not(.so-micro) { font-family: "Fraunces", Georgia, serif; font-weight: 300; }
+.fd-page #about-hana .lead { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic; font-weight: 400 !important; }
