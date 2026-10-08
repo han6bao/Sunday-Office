@@ -799,6 +799,80 @@ function FeedServices() {
   );
 }
 
+/* Opening: an envelope opens and the first line comes out, like opening mail.
+   Pure CSS timeline, so it always clears even if scripts are slow; skipped on
+   repeat visits in the same session, on tap, and for reduced motion. */
+function EnvelopeIntro() {
+  const [gone, setGone] = useState(false);
+  useEffect(() => {
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem("so-envelope") === "1";
+      sessionStorage.setItem("so-envelope", "1");
+    } catch {
+      /* storage blocked: just play it */
+    }
+    if (seen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) setGone(true);
+    const t = setTimeout(() => setGone(true), 3200);
+    return () => clearTimeout(t);
+  }, []);
+  if (gone) return null;
+  return (
+    <div className="fd-env-intro" onClick={() => setGone(true)} aria-hidden>
+      <div className="fd-ei">
+        <span className="fd-ei-back" />
+        <span className="fd-ei-card">
+          <span className="fd-ei-script">Build your world.</span>
+        </span>
+        <span className="fd-ei-pocket" />
+        <span className="fd-ei-top" />
+      </div>
+    </div>
+  );
+}
+
+/* A makeover, before and after. The range input does the dragging, so it
+   works with a finger, a mouse or the keyboard. */
+function Makeover() {
+  const [v, setV] = useState(50);
+  return (
+    <div className="fd-mk">
+      <div className="fd-mk-head">
+        <p className="fd-mk-t">A makeover</p>
+        <p className="fd-small">
+          Essential Brows. Before, people found Aliya through Instagram and a booking link. Now she has a home of her own. Drag to compare.
+        </p>
+      </div>
+      <div className="fd-mk-box">
+        <img src="/assets/campaigns/essential-brows-studio/makeover-after.jpg" alt="After: the Essential Brows website" loading="lazy" />
+        <img
+          className="fd-mk-before"
+          src="/assets/campaigns/essential-brows-studio/makeover-before.jpg"
+          alt="Before: the Essential Brows Instagram grid"
+          loading="lazy"
+          style={{ clipPath: `inset(0 ${100 - v}% 0 0)` }}
+        />
+        <span className="fd-mk-line" style={{ left: `${v}%` }} aria-hidden>
+          <span className="fd-mk-knob">↔</span>
+        </span>
+        <span className="fd-mk-lab fd-mk-l">Before</span>
+        <span className="fd-mk-lab fd-mk-r">After</span>
+        <input
+          type="range"
+          min={0}
+          max={100}
+          value={v}
+          onChange={(e) => setV(Number(e.currentTarget.value))}
+          aria-label="Compare before and after"
+        />
+      </div>
+      <a className="fd-link" href="/websites/essential-brows-studio">
+        How it was made
+      </a>
+    </div>
+  );
+}
+
 function FeedWork() {
   return (
     <section className="fd-frame" id="work" aria-label="Selected work">
@@ -820,6 +894,7 @@ function FeedWork() {
           </a>
         ))}
       </div>
+      <Makeover />
     </section>
   );
 }
@@ -923,7 +998,7 @@ function Index() {
   return (
     <div>
       <ScrollProgress />
-      <SiteIntro />
+      <EnvelopeIntro />
       <div className="page-paper" aria-hidden />
       <Header />
       <main className="fd-page">
