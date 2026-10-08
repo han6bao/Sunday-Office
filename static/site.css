@@ -8304,7 +8304,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
    ===================================================================== */
 :root {
   --font-display: "Fraunces", "Playfair Display", Georgia, serif;
-  --font-script: "Pinyon Script", "Fraunces", cursive;
+  --font-script: "Monsieur La Doulaise", "Pinyon Script", "Fraunces", cursive;
   --sx-violet: #6b5678;
   --sx-mauve: #8b779a;
   --sx-mauve-deep: #7a6689;
@@ -10537,7 +10537,7 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 
 /* Feed look: one calligraphy line per section, single color, lots of air */
 h2.so-script, .so-script {
-  font-family: "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive !important;
+  font-family: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive !important;
   font-weight: 400 !important;
   font-style: normal !important;
   letter-spacing: 0 !important;
@@ -10552,7 +10552,7 @@ h2.so-script, .so-script {
 
 /* ============ Feed-style homepage (fd-) ============ */
 .fd-page { --fd-cream: #f2eee6; --fd-ink: #1b1918; --fd-soft: #5d5853; --fd-black: #141312; --fd-on-black: #efe9de; --fd-lav: #8d7d9e; --fd-lav-deep: #74658a; --fd-on-lav: #f4eff7;
-  --fd-script: "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
+  --fd-script: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
   --fd-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --fd-body: "Fraunces", "Iowan Old Style", Georgia, serif;
   --fd-gutter: clamp(20px, 5vw, 72px);
@@ -10653,7 +10653,7 @@ body:has(.fd-page) .so-nav, body:has(.fd-page) .so-nav.is-scrolled { background:
 .fd-ei-back { inset: 0; background: #e3ddd1; border-radius: 4px; box-shadow: 0 30px 60px -30px rgba(50, 40, 30, .45); z-index: 1; }
 .fd-ei-card { left: 6%; right: 6%; top: 8%; bottom: 8%; background: #f7f4ee; border-radius: 3px; z-index: 2; display: grid; place-items: center; box-shadow: 0 2px 10px -4px rgba(50,40,30,.25);
   animation: fd-ei-card-up .9s cubic-bezier(.2,.7,.2,1) 1.05s forwards; }
-.fd-ei-script { font-family: "Pinyon Script", "Snell Roundhand", cursive; font-size: clamp(30px, 6vw, 48px); color: #2b2724; padding: 0 6%; text-align: center; line-height: 1; }
+.fd-ei-script { font-family: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", cursive; font-size: clamp(30px, 6vw, 48px); color: #2b2724; padding: 0 6%; text-align: center; line-height: 1; }
 @keyframes fd-ei-card-up { to { transform: translateY(-48%); } }
 .fd-ei-pocket { inset: 0; z-index: 3; background: #ece6dc; clip-path: polygon(0 0, 50% 52%, 100% 0, 100% 100%, 0 100%); border-radius: 4px;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.4); }
@@ -10792,7 +10792,7 @@ body:has(.fd-page) .so-nav-burger, body:has(.fd-page) .so-burger-lines, body:has
 body:has(.fd-page) .so-burger-lines span { background: #1b1918 !important; }
 body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; color: #f2eee6 !important; }
 .fd-services a.is-big { padding-block: 26px 24px; }
-.fd-services a.is-big .fd-sn { font-family: "Pinyon Script", "Snell Roundhand", cursive; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; }
+.fd-services a.is-big .fd-sn { font-family: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", cursive; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; }
 .fd-sd { display: block; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-style: normal; font-size: 15px; color: var(--fd-soft); margin-top: 6px; }
 
 /* ===== Black paper sections: Selected work and Let's begin ===== */
@@ -10832,7 +10832,7 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; co
 .fd-box-w { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .65; margin: 0; }
 .fd-box-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; margin: 0; }
 .fd-box-d { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: #5d5853; margin: 4px 0 0; }
-.fd-box-q { font-family: "Pinyon Script", cursive; font-size: 34px; margin: 18px 0 0; }
+.fd-box-q { font-family: "Monsieur La Doulaise", "Pinyon Script", cursive; font-size: 34px; margin: 18px 0 0; }
 .fd-box-links { display: grid; gap: 10px; justify-items: start; }
 .fd-box-links a { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: #1b1918; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .fd-box-links a.fd-box-main { font-family: "Instrument Serif", Georgia, serif; font-size: 20px; background: #1b1918; color: #f2eee6; border: 0; padding: 12px 20px; }
@@ -10849,7 +10849,7 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; co
 .fd-letter-sign .fd-sign-name { font-size: clamp(60px, 8vw, 104px); }
 .fd-polaroid { position: absolute; top: clamp(-40px, -3vw, -20px); right: clamp(-30px, -2vw, 10px); width: clamp(150px, 22vw, 230px); margin: 0; background: #fbfaf7; padding: 10px 10px 34px; box-shadow: 0 18px 34px -16px rgba(40,30,20,.45); rotate: 4deg; z-index: 2; }
 .fd-polaroid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
-.fd-polaroid figcaption { position: absolute; bottom: 8px; left: 0; right: 0; text-align: center; font-family: "Pinyon Script", cursive; font-size: 20px; color: #3d3833; }
+.fd-polaroid figcaption { position: absolute; bottom: 8px; left: 0; right: 0; text-align: center; font-family: "Monsieur La Doulaise", "Pinyon Script", cursive; font-size: 20px; color: #3d3833; }
 .fd-polaroid::before { content: ""; position: absolute; top: -12px; left: 50%; translate: -50% 0; width: 84px; height: 24px; background: rgba(232, 222, 205, .82); rotate: -3deg; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 @media (max-width: 640px) { .fd-polaroid { position: relative; top: 0; right: 0; margin: -10px 0 24px auto; } .fd-letter-hi { max-width: none; } }
 
@@ -10876,11 +10876,22 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; co
 /* About page on the same cotton paper */
 html:has(.fd-about), body:has(.fd-about), .fd-about { background-color: #f2eee6 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-size: 768px 768px !important; }
 body:has(.fd-about) .page-paper { display: none; }
-.fd-about-h { font-family: "Pinyon Script", "Snell Roundhand", cursive !important; font-weight: 400 !important; font-size: clamp(64px, 11vw, 150px) !important; line-height: 1 !important; letter-spacing: 0 !important; }
+.fd-about-h { font-family: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", cursive !important; font-weight: 400 !important; font-size: clamp(64px, 11vw, 150px) !important; line-height: 1 !important; letter-spacing: 0 !important; }
 .fd-about-h em { font-style: normal !important; color: inherit !important; font-family: inherit !important; }
 .fd-about p { font-family: "Fraunces", Georgia, serif; }
 body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; }
 .fd-letter-hi { max-width: none !important; }
+
+
+/* Lettering: Monsieur La Doulaise in the brown textured ink of the "Serve first" piece */
+@font-face { font-family: "Monsieur La Doulaise"; src: url(/assets/fonts/MonsieurLaDoulaise-Regular.ttf) format("truetype"); font-display: swap; }
+.fd-page .fd-script, .fd-page .fd-sign-name, .fd-page .fd-mk-t, .fd-box-q, .fd-about-h, .fd-page .fd-services a.is-big .fd-sn, .fd-ei-script, .fd-page h2.so-script {
+  background-image: url(/assets/texture/ink.png); background-size: 256px; -webkit-background-clip: text; background-clip: text; color: transparent !important; -webkit-text-fill-color: transparent;
+  padding-inline: .08em .2em; margin-inline-start: -.08em; line-height: 1.2 !important;
+}
+/* on black paper the lettering stays cream */
+.fd-page .fd-start .fd-script, .fd-page .fd-dark .fd-script { background-image: none; color: #efe9de !important; -webkit-text-fill-color: #efe9de; }
+.fd-quote-img { position: relative; z-index: 1; width: min(560px, 70vw); height: auto; display: block; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

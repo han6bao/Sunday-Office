@@ -1023,11 +1023,7 @@ function FeedQuote() {
         <span className="fd-env-back" />
         <span className="fd-env-flap" />
       </div>
-      <p className="fd-script fd-quote-t">
-        Serve first.
-        <br />
-        Sell later.
-      </p>
+      <img className="fd-quote-img" src="/assets/lettering/serve-first.png" alt="Serve first. Sell later." />
     </section>
   );
 }
