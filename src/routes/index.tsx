@@ -734,9 +734,9 @@ const REEL = [
    ------------------------------------------------------------ */
 const FEED_SERVICES = [
   { n: "World building", d: "Branding + creative direction. Where every project starts.", p: "from $350", h: "/branding", big: true },
-  { n: "Websites", d: "", p: "from $850", h: "/websites", big: false },
-  { n: "Photography", d: "", p: "from $150", h: "/photography", big: false },
-  { n: "Video + social", d: "", p: "from $350", h: "/creative-direction-content", big: false },
+  { n: "Websites", d: "A home for the brand that books clients while you sleep.", p: "from $850", h: "/websites", big: false },
+  { n: "Photography", d: "Portraits, products, spaces and events.", p: "from $150", h: "/photography", big: false },
+  { n: "Video + social", d: "Reels, content days and monthly posting.", p: "from $350", h: "/creative-direction-content", big: false },
 ];
 
 type Link = { t: string; h: string };
@@ -813,13 +813,14 @@ function FeedServices() {
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
       </p>
       <div className="fd-services">
+        <p className="fd-sv-note">Every package includes your files organized in Google Drive or Dropbox.</p>
         {FEED_SERVICES.map((x) => (
           <a key={x.n} href={x.h} className={x.big ? "is-big" : ""}>
             <span className="fd-sn">
               {x.n}
               {x.d && <span className="fd-sd">{x.d}</span>}
             </span>
-            <span className="fd-sp">{x.p}</span>
+            <span className="fd-sp">{x.p} <span className="fd-sv-arr" aria-hidden="true">→</span></span>
           </a>
         ))}
       </div>
@@ -1120,13 +1121,19 @@ function FeedHana() {
    Tap the right page to turn forward, the left page to turn back; a real leaf flips over the spine. */
 const BOOK_PHOTOS: number[] = [1, 2, 1, 2, 1, 2];
 
+/* lowercase, with the apostrophe pulled in tight so the script reads like one hand */
+function handTitle(t: string) {
+  const parts = t.toLowerCase().split(/['\u2019]/);
+  return parts.flatMap((x, j) => (j === 0 ? [x] : [<span key={j} className="bk-ap">\u2019</span>, x]));
+}
+
 function BookLeft({ k }: { k: number }) {
   const two = BOOK_PHOTOS[k] === 2;
   return (
     <div className={"bk-face-in bk-left-in" + (two ? " is-two" : "")}>
-      <div className="bk-ph bk-ph-a"><span>photo</span></div>
-      {two && <div className="bk-ph bk-ph-b"><span>photo</span></div>}
-      <p className="bk-cap">{CHAPTERS[k].t}</p>
+      <div className="bk-ph bk-ph-a"><i className="bk-tape" /><span>photo</span></div>
+      {two && <div className="bk-ph bk-ph-b"><i className="bk-tape" /><span>photo</span></div>}
+      <p className="bk-cap">{handTitle(CHAPTERS[k].t)}</p>
     </div>
   );
 }
@@ -1137,7 +1144,7 @@ function BookRight({ k }: { k: number }) {
     <div className="bk-face-in bk-right-in">
       <div className="bk-ph bk-ph-m"><span>photo</span></div>
       {k === 0 && <p className="bk-hello">Hi, I'm Hana.</p>}
-      <h3 className="bk-t">{c.t.toLowerCase()}</h3>
+      <h3 className="bk-t">{handTitle(c.t)}</h3>
       <div className="bk-p">
         {c.p.map((x) => (
           <p key={x.slice(0, 24)}>{x}</p>
@@ -1150,7 +1157,7 @@ function BookRight({ k }: { k: number }) {
 
 /* The turning page is cut into narrow strips hinged to each other, so it bends as it turns,
    the free edge leading, like real paper. Each strip shows its slice of the front and back pages. */
-const LEAF_STRIPS = 8;
+const LEAF_STRIPS = 12;
 function LeafStrip({ n, dir, from, to }: { n: number; dir: "next" | "prev"; from: number; to: number }) {
   const N = LEAF_STRIPS;
   const k = dir === "next" ? n : N - 1 - n;
@@ -1186,7 +1193,7 @@ function FeedLetter() {
     window.setTimeout(() => {
       setI(to);
       setFlip(null);
-    }, 1150);
+    }, 1300);
   };
   const leftK = flip?.dir === "prev" ? flip.to : i;
   const rightK = flip?.dir === "next" ? flip.to : i;
