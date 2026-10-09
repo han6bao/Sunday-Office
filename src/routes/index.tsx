@@ -813,7 +813,7 @@ function FeedServices() {
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
       </p>
       <div className="fd-services">
-        <p className="fd-sv-note">Every package includes your files organized in Google Drive or Dropbox.</p>
+        <p className="fd-sv-note">Start with one, or build the whole world.</p>
         {FEED_SERVICES.map((x) => (
           <a key={x.n} href={x.h} className={x.big ? "is-big" : ""}>
             <span className="fd-sn">
