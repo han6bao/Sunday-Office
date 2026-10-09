@@ -798,6 +798,7 @@ function FeedPhoto() {
           <p><b>Sunday Office</b> is an independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I start with the brand, then bring it to life through websites, photography and creative direction.</p>
           <a href="#office-hours">Start a project</a>
         </div>
+        <span className="fd-hero-line" aria-hidden="true" />
       </div>
     </div>);
 }
@@ -1204,8 +1205,12 @@ function FeedStart() {
     };
     fit();
     document.fonts?.ready.then(fit);
+    /* the footer continues the same sheet of lavender paper: offset its texture by this section's height */
+    const sec = document.getElementById("office-hours");
+    const ro = sec && "ResizeObserver" in window ? new ResizeObserver(() => document.documentElement.style.setProperty("--start-h", sec.offsetHeight + "px")) : null;
+    if (sec && ro) ro.observe(sec);
     window.addEventListener("resize", fit);
-    return () => window.removeEventListener("resize", fit);
+    return () => { window.removeEventListener("resize", fit); ro?.disconnect(); };
   }, []);
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">

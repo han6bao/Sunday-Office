@@ -11252,3 +11252,57 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 /* footer: same lavender paper as Let's Begin, no seam */
 .so-footer { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; border-top: 0 !important; box-shadow: none !important; }
 .so-footer::before, .so-footer::after { display: none !important; }
+/* world building: lowercase, in the Serve first lettering hand */
+.fd-page .fd-services a.is-big .fd-sn { font-family: "Monsieur La Doulaise", cursive !important; text-transform: lowercase; letter-spacing: 0 !important; word-spacing: .12em; font-size: clamp(50px, 5.4vw, 74px) !important; line-height: 1.2 !important; color: #585552 !important; -webkit-text-fill-color: #585552 !important; padding: .05em .1em 0 .06em !important; }
+/* thin vertical line under the hero text, drawing down to the edge: a quiet cue to scroll */
+.fd-hero-line { display: none; }
+.fd-media:not(.fd-media-empty) .fd-hero-line { display: block; position: absolute; left: 50%; bottom: 0; width: 1px; height: clamp(18px, 2.6vw, 30px); background: linear-gradient(to bottom, rgba(244,240,233,.85), rgba(244,240,233,.15)); transform-origin: top; }
+.fd-media:not(.fd-media-empty) .fd-hero-sub { bottom: clamp(44px, 5.5vw, 66px); }
+@media (prefers-reduced-motion: no-preference) { .fd-media:not(.fd-media-empty) .fd-hero-line { animation: fd-line 2.4s ease-in-out infinite; } }
+@keyframes fd-line { 0% { transform: scaleY(0); opacity: 1; } 60% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
+
+/* ===== Notebook, realistic: kraft board cover, stacked page edges, curved page shading ===== */
+.bk-book { padding: 2.2% 2.4% 2.6%; border-radius: .5cqw; background-color: #c4a77f !important; background-image: url(/assets/texture/kraft.jpg) !important; background-size: 360px !important;
+  box-shadow: inset 0 0 0 1px rgba(255,240,215,.25), inset 0 0 1.4cqw rgba(90,62,30,.22), 0 1px 1px rgba(70,50,25,.25), 0 2px 0 #a88c64, 0 3px 0 #b39770, 0 26px 40px -22px rgba(70,50,25,.45), 0 50px 80px -50px rgba(70,50,25,.35) !important; }
+/* gutter: the cover shows a little in the middle where the pages bend in */
+.bk-book::after { left: 50%; width: 2px; translate: -1px 0; top: 2.2%; bottom: 2.6%; background: linear-gradient(to bottom, rgba(80,58,30,.35), rgba(80,58,30,.5), rgba(80,58,30,.35)); }
+.bk-page { background-color: #f8f6f0; background-image: url(/assets/texture/paper-cream.jpg); background-size: 900px; }
+.bk-page:focus, .bk-page:focus-visible { outline: none; }
+.bk-page:focus-visible::after { content: ""; position: absolute; inset: 8px; border: 1px dashed rgba(90,80,65,.35); pointer-events: none; }
+/* curvature: shade deep into the spine, a soft highlight where the page rises, slight fall-off at the outer edge */
+.bk-left { border-radius: .45cqw 0 0 .45cqw; box-shadow: none; background-image:
+  linear-gradient(to right, rgba(90,75,55,.10) 0%, rgba(90,75,55,0) 6%, rgba(255,255,255,.18) 58%, rgba(255,255,255,0) 72%, rgba(90,75,55,.10) 90%, rgba(70,55,35,.32) 97%, rgba(60,45,30,.5) 100%),
+  url(/assets/texture/paper-cream.jpg); background-size: 100% 100%, 900px; }
+.bk-right { border-radius: 0 .45cqw .45cqw 0; box-shadow: none; background-image:
+  linear-gradient(to left, rgba(90,75,55,.10) 0%, rgba(90,75,55,0) 6%, rgba(255,255,255,.18) 58%, rgba(255,255,255,0) 72%, rgba(90,75,55,.10) 90%, rgba(70,55,35,.32) 97%, rgba(60,45,30,.5) 100%),
+  url(/assets/texture/paper-cream.jpg); background-size: 100% 100%, 900px; }
+/* stacked page edges on the outer sides and bottom */
+.bk-left::before, .bk-right::before { content: ""; position: absolute; top: .3cqw; bottom: -.55cqw; width: .7cqw; z-index: -1; pointer-events: none;
+  background: repeating-linear-gradient(to right, #efebe2 0 1px, #d9d1c1 1px 2px); border-radius: .4cqw; }
+.bk-left::before { left: -.55cqw; }
+.bk-right::before { right: -.55cqw; }
+.bk-page { overflow: visible; isolation: isolate; }
+.bk-page > .bk-face-in { overflow: hidden; }
+.bk-left, .bk-right { filter: drop-shadow(0 .25cqw .2cqw rgba(80,60,35,.22)); }
+/* the turning leaf gets the same paper and curvature */
+.bk-face { background-color: #f8f6f0; background-size: 900px; }
+.bk-leaf-next .bk-front, .bk-leaf-prev .bk-back { background-image: linear-gradient(to left, rgba(90,75,55,.08), rgba(90,75,55,0) 8%, rgba(255,255,255,.18) 60%, rgba(70,55,35,.3) 98%), url(/assets/texture/paper-cream.jpg); background-size: 100% 100%, 900px; }
+.bk-leaf-next .bk-back, .bk-leaf-prev .bk-front { background-image: linear-gradient(to right, rgba(90,75,55,.08), rgba(90,75,55,0) 8%, rgba(255,255,255,.18) 60%, rgba(70,55,35,.3) 98%), url(/assets/texture/paper-cream.jpg); background-size: 100% 100%, 900px; }
+.bk-curl { border-color: #e6e0d2 transparent transparent transparent; }
+/* handwriting in the Serve first lettering hand, all lowercase */
+.bk-t, .bk-cap { font-family: "Monsieur La Doulaise", cursive !important; text-transform: lowercase; letter-spacing: 0 !important; word-spacing: .14em; color: #585552 !important; }
+.bk-t { font-size: 4.4cqw; line-height: 1.25; padding: .1em .1em 0 .05em; margin-bottom: 1.2cqw; }
+.bk-cap { font-size: 2.5cqw; line-height: 1.3; }
+@media (max-width: 760px) {
+  .bk-book { padding: 10px 10px 12px 12px; border-radius: 6px; }
+  .bk-right { background-image: linear-gradient(to left, rgba(90,75,55,.08), rgba(90,75,55,0) 6%, rgba(255,255,255,.16) 60%, rgba(70,55,35,.22) 100%), url(/assets/texture/paper-cream.jpg); }
+  .bk-left::before, .bk-right::before { width: 5px; right: -4px; bottom: -4px; }
+  .bk-t { font-size: 46px; }
+}
+.so-footer { background-position: 0 calc(-1 * var(--start-h, 0px)) !important; }
+.fd-page #office-hours.fd-frame { background-position: 0 0 !important; }
+/* titles: soft light brown instead of black, and no write-in transitions */
+.fd-page .fd-script:not(.fd-start .fd-script), .fd-page .fd-mk-t { color: #8b7660 !important; -webkit-text-fill-color: #8b7660 !important; }
+.fd-page .fd-st-lav .fd-work-head h2 { color: #f4eff7 !important; -webkit-text-fill-color: #f4eff7 !important; }
+.fd-page .fd-services a:not(.is-big) .fd-sn { color: #8b7660 !important; -webkit-text-fill-color: #8b7660 !important; }
+.fd-write, .fd-write.is-written, .fd-page .fd-write { clip-path: none !important; -webkit-clip-path: none !important; animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
