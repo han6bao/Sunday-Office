@@ -11007,3 +11007,10 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-sign-name { margin-top: .35em !important; }
 .fd-lets::after { left: 1.56em !important; right: auto !important; top: .04em; }
 .fd-lets::after { left: 1.4em !important; top: .02em; }
+/* Hero video: solid cream lettering (no grain texture, so every join shows) */
+.fd-media:not(.fd-media-empty) .fd-hero-h { background-image: none !important; color: #f4f0e9 !important; -webkit-text-fill-color: #f4f0e9 !important; filter: drop-shadow(0 2px 16px rgba(0,0,0,.5)); }
+.fd-media video { animation: none !important; }
+.fd-page .fd-media:not(.fd-media-empty) { height: calc(100svh - 72px) !important; min-height: 520px; max-height: 980px; }
+.fd-media:not(.fd-media-empty) .fd-hero-sub { margin-top: .5em; }
+.fd-media:not(.fd-media-empty) .fd-hero-h { font-size: min(11vw, 220px); }
+@media (max-width: 720px) { .fd-page .fd-media:not(.fd-media-empty) { height: 82svh !important; min-height: 480px; } }

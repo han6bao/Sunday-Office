@@ -775,12 +775,12 @@ function FeedHero() {
 
 /* The immersive hero spot. Drop a video in at /assets/work/hero.mp4 and set
    HERO_VIDEO to its path: the photo then becomes the video's poster frame. */
-const HERO_VIDEO: string | null = null;
+const HERO_VIDEO: string | null = "/assets/work/hero-edit.mp4";
 
 function FeedPhoto() {
   return (
     <div className={"fd-media" + (HERO_VIDEO ? "" : " fd-media-empty")}>
-      {HERO_VIDEO ? (<video src={HERO_VIDEO} autoPlay muted loop playsInline aria-label="Hana at work in the studio" />) : null}
+      {HERO_VIDEO ? (<video src={HERO_VIDEO} poster="/assets/work/hero-edit-poster.jpg" autoPlay muted loop playsInline aria-label="A short reel of Sunday Office video work" />) : null}
       <div className="fd-media-over">
         <h1 className="fd-hero-h">Build Your World.</h1>
         <div className="fd-hero-sub">
