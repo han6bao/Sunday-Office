@@ -1264,7 +1264,7 @@ function FeedStart() {
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script fd-hand fd-hand-mld" aria-label="Let’s Begin."><span className="fd-lets"><span className="fd-cap">L</span>ets</span> <span className="fd-cap">B</span>egin.</p>
+      <p className="fd-script fd-hand fd-hand-mld" aria-label="Let’s Begin."><span className="fd-cap">L</span>et<span className="fd-ap">’</span>s <span className="fd-cap">B</span>egin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
         <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.

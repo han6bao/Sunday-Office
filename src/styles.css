@@ -11497,3 +11497,8 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page #build .fd-services a:hover *, .fd-page #build .fd-services a:focus-visible * { color: #4a443d !important; -webkit-text-fill-color: #4a443d !important; }
 .fd-page #build .fd-services a:hover .fd-sd, .fd-page #build .fd-services a:focus-visible .fd-sd { color: #6b6258 !important; -webkit-text-fill-color: #6b6258 !important; }
 .fd-page #build .fd-services a:hover, .fd-page #build .fd-services a:focus-visible { background-image: none !important; background-color: #e1dcd0 !important; }
+.fd-page #build .fd-services a.is-big .fd-sn { font-size: clamp(60px, 6vw, 92px) !important; color: #4f4944 !important; -webkit-text-fill-color: #4f4944 !important; -webkit-text-stroke: .022em #4f4944; paint-order: stroke fill; line-height: 1.15 !important; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { -webkit-text-stroke: 0; }
+.fd-hand-mld .fd-lets::after { left: calc(var(--ap-x, 2em) + .02em) !important; top: .26em !important; color: transparent !important; -webkit-text-fill-color: transparent !important; background-image: url(/assets/texture/ink-white.png) !important; background-size: 220px !important; -webkit-background-clip: text !important; background-clip: text !important; font-family: "Pinyon Script Local", "Pinyon Script", cursive; }
+.fd-hand-mld .fd-ap { font-family: "Pinyon Script Local", "Pinyon Script", cursive; display: inline-block; margin: 0 -.12em 0 -.06em; vertical-align: .05em; }
+.fd-hand-mld .fd-ap { vertical-align: -.16em; margin: 0 -.08em 0 -.02em; }
