@@ -11014,3 +11014,7 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-media:not(.fd-media-empty) .fd-hero-sub { margin-top: .5em; }
 .fd-media:not(.fd-media-empty) .fd-hero-h { font-size: min(11vw, 220px); }
 @media (max-width: 720px) { .fd-page .fd-media:not(.fd-media-empty) { height: 82svh !important; min-height: 480px; } }
+/* Hero heading in the wordmark's serif (Instrument Serif) instead of script */
+.fd-page .fd-hero-h { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400; font-style: normal; line-height: .95 !important; letter-spacing: -.015em; word-spacing: 0; padding-block: .06em .08em; margin-block: 0; white-space: nowrap; }
+.fd-page .fd-media:not(.fd-media-empty) .fd-hero-h, .fd-page .fd-media-empty .fd-hero-h { font-size: min(12.5vw, 230px); }
+@media (max-width: 640px) { .fd-page .fd-hero-h { font-size: 15vw !important; } }
