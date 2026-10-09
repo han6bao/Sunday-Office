@@ -11302,6 +11302,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 /* the thin line sits right under Build Your World. */
 .fd-media:not(.fd-media-empty) .fd-hero-line { position: static; left: auto; bottom: auto; width: 1px; height: clamp(36px, 5vw, 64px); margin-top: clamp(4px, 1vw, 12px); background: linear-gradient(to bottom, rgba(244,240,233,.85), rgba(244,240,233,0)); animation: none !important; transform: none; }
 .fd-media:not(.fd-media-empty) .fd-hero-sub { bottom: clamp(24px, 4vw, 44px); }
+.fd-media:not(.fd-media-empty) .fd-hero-line { height: clamp(90px, 14vh, 170px) !important; background: rgba(244,240,233,.9) !important; margin-top: clamp(10px, 1.6vw, 20px) !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
