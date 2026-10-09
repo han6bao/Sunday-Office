@@ -11555,3 +11555,24 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page #build .fd-services a:hover .fd-sd, .fd-page #build .fd-services a:focus-visible .fd-sd { color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; }
 .fd-page #build .fd-services a.is-big:hover .fd-sn, .fd-page #build .fd-services a.is-big:focus-visible .fd-sn { -webkit-text-fill-color: transparent !important; color: transparent !important; }
 .fd-page #build .fd-services a.is-big:hover .fd-sn .fd-cap { -webkit-text-fill-color: transparent !important; }
+
+/* ===== Inner pages: same cream + lavender paper as the homepage ===== */
+html:not(:has(.fd-page)):not(:has(.fd-about)), body:not(:has(.fd-page)):not(:has(.fd-about)) { background-color: #f2eee6 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-size: 768px 768px !important; }
+body:not(:has(.fd-page)):not(:has(.fd-about)) .so-serif { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; letter-spacing: -.01em; }
+body:not(:has(.fd-page)):not(:has(.fd-about)) h1.so-serif, body:not(:has(.fd-page)):not(:has(.fd-about)) h2.so-serif { color: #857b70 !important; }
+body:not(:has(.fd-page)) .so-pricing, body:not(:has(.fd-page)) .so-bw-sec[class*="pricing"] { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; }
+body:not(:has(.fd-page)) .so-pricing h2.so-serif, body:not(:has(.fd-page)) .so-pricing .so-serif { color: #f4eff7 !important; }
+body:not(:has(.fd-page)) .so-pk-card { background-color: #f6f3ec !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-size: 700px !important; border-color: rgba(120,105,85,.18) !important; }
+body:not(:has(.fd-page)) .so-pk-card .so-serif { color: #4a443d !important; }
+body:not(:has(.fd-page)) .so-bw-cta { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; color: #f4eff7 !important; }
+body:not(:has(.fd-page)) .so-bw-cta .so-serif, body:not(:has(.fd-page)) .so-bw-cta h2, body:not(:has(.fd-page)) .so-bw-cta p { color: #f4eff7 !important; }
+body:not(:has(.fd-page)) .so-micro-red, body:not(:has(.fd-page)) [class*="verm"] { color: #74658a !important; }
+body:not(:has(.fd-page)) .so-bw-card-img, body:not(:has(.fd-page)) .so-web-browser, body:not(:has(.fd-page)) .so-web-phone { background-color: #f6f3ec !important; }
+body:not(:has(.fd-page)):not(:has(.fd-about)) { --color-rice: #f2eee6; --color-cream: #f2eee6; --color-paper: #ebe6dc; --color-paper-dark: #e3ddd1; --sx-lilac: #ebe6dc; }
+body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { background-color: rgba(242,238,230,.94) !important; }
+.fd-cr { display: block; margin-top: 6px; font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #f4eff7; opacity: .85; }
+@media (max-width: 899px) {
+  .fd-page #build .fd-services a.is-big .fd-sn { white-space: normal !important; font-size: 46px !important; }
+  .fd-page #build .fd-services a { padding-left: 0 !important; padding-right: 0 !important; }
+  .fd-page #build .fd-sp { font-size: 16px !important; }
+}

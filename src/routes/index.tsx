@@ -740,12 +740,12 @@ const FEED_SERVICES = [
 ];
 
 type Link = { t: string; h: string };
-const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; links: Link[]; study: string }[] = [
+const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; links: Link[]; study: string; r?: string }[] = [
   { src: "/assets/campaigns/essential-brows-studio/cover.jpg", alt: "The Essential Brows website on a pink desktop", t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home of its own.", links: [{ t: "Visit their website", h: "https://www.essentialbrows.studio/" }], study: "/websites/essential-brows-studio" },
   { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", alt: "The lounge at Selaras Haus, a beauty studio in Tacoma", t: "Selaras Haus", w: "Interior photography", d: "A calm, warm studio in downtown Tacoma, photographed for its social media and branding.", links: [{ t: "See their Instagram", h: "https://www.instagram.com/selarashaus/" }], study: "/campaigns/selaras-haus" },
-  { src: "/assets/campaigns/green-grillz/nine-01.jpg", alt: "Nine Vicious in a red velvet jacket wearing green grillz", t: "Nine Vicious × Custom Grillz", w: "Photography + promotion", d: "My photos became the most-liked post on jeweler Marcus Adam's page.", links: [{ t: "See Marcus Adam's page", h: "https://www.instagram.com/maarcusadam/" }], study: "/campaigns/green-grillz" },
+  { src: "/assets/campaigns/green-grillz/nine-01.jpg", alt: "Nine Vicious in a red velvet jacket wearing green grillz", t: "Nine Vicious × Custom Grillz", w: "Photography + promotion", d: "My photos became the most-liked post on jeweler Marcus Adam's page.", links: [{ t: "See Marcus Adam's page", h: "https://www.instagram.com/maarcusadam/" }], study: "/campaigns/green-grillz", r: "35K views · made the discovery page" },
   { src: "/assets/campaigns/exhibition/exh1.jpg", alt: "A styled portrait from the Exhibition campaign", t: "Exhibition", w: "Campaign direction", d: "A campaign I directed from the idea to the day on set.", links: [], study: "/campaigns/exhibition" },
-  { src: "/assets/campaigns/jaydyn-f/jd-07.jpg", alt: "Jaydyn F. in a portrait from his release content", t: "Jaydyn F.", w: "Release content", d: "Behind the scenes and short clips around his music. One reel passed 120K views.", links: [{ t: "See the reel", h: "https://www.instagram.com/p/DORrPfiklMt/" }], study: "/campaigns/jaydyn-f" },
+  { src: "/assets/campaigns/jaydyn-f/jd-07.jpg", alt: "Jaydyn F. in a portrait from his release content", t: "Jaydyn F.", w: "Release content", d: "Behind the scenes and short clips around his music. One reel passed 120K views.", links: [{ t: "See the reel", h: "https://www.instagram.com/p/DORrPfiklMt/" }], study: "/campaigns/jaydyn-f", r: "120K views · 760 shares" },
   { src: "/assets/campaigns/chutneys/ch-02.jpg", alt: "A dish at Chutneys Bellevue", t: "Chutneys Bellevue", w: "Commercial + photos", d: "A commercial and promo photos for a North Indian restaurant.", links: [{ t: "Visit their website", h: "https://chutneysinbellevue.com/" }], study: "/campaigns/chutneys" },
   { src: "/assets/campaigns/leon-thomas/lt-01.jpg", alt: "Leon Thomas performing at Vice Seattle", t: "Leon Thomas × Vice", w: "Event photography", d: "His tour afterparty at Vice Seattle, photographed for the venue.", links: [{ t: "Visit Vice Seattle", h: "https://www.viceseattle.com/" }], study: "/campaigns/leon-thomas" },
   { src: "/assets/campaigns/jazmins-events/featured-cover.png", alt: "The Jazmin's Events wordmark on cream paper", t: "Jazmin's Events", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch. Website in progress.", links: [{ t: "Visit their website", h: "https://jazmins-events.vercel.app/" }], study: "/websites/jazmins-events" },
@@ -1015,6 +1015,7 @@ function FeedWork() {
             <img src={w.src} alt={w.alt} loading="lazy" />
             <span className="fd-ct">{w.t}</span>
             <span className="fd-cw">{w.w}</span>
+            {w.r && <span className="fd-cr">{w.r}</span>}
           </button>
         ))}
       </div>
@@ -1221,7 +1222,9 @@ function FeedStart() {
     const el = document.querySelector<HTMLElement>(".fd-start .fd-script");
     if (!el) return;
     const fit = () => {
-      const box = el.parentElement!.clientWidth;
+      const par = el.parentElement!;
+      const pcs = getComputedStyle(par);
+      const box = par.clientWidth - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight);
       el.style.setProperty("font-size", "100px", "important");
       const r = document.createRange();
       r.selectNodeContents(el);
