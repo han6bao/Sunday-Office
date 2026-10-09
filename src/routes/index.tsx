@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { useEffect, useState } from "react";
+import { CHAPTERS } from "../sunday/chapters";
 import { LitText, ScrollReel, WorldPicker } from "../sunday/scroll-moments";
 import type { CSSProperties, MouseEvent, ReactNode } from "react";
 import {
@@ -1114,40 +1115,84 @@ function FeedHana() {
   );
 }
 
-/* Meet Hana as a handwritten-style letter on paper, with an instant photo clipped on. */
+/* Meet Hana as an open notebook: her photo on the left page, one bio chapter per right page, flip through all six. */
 function FeedLetter() {
+  const [i, setI] = useState(0);
+  const [turn, setTurn] = useState<null | "next" | "prev">(null);
+  const last = CHAPTERS.length - 1;
+  const go = (d: number) => {
+    const n = i + d;
+    if (n < 0 || n > last || turn) return;
+    setTurn(d > 0 ? "next" : "prev");
+    setTimeout(() => setI(n), 280);
+    setTimeout(() => setTurn(null), 760);
+  };
+  const c = CHAPTERS[i];
   return (
     <section className="fd-frame fd-st fd-st-cream fd-letter-frame" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <p className="fd-ghost" aria-hidden="true">05</p>
-      <div className="fd-envl">
-      <div className="fd-envl-back" aria-hidden="true" />
-      <div className="fd-letter">
-        <img className="fd-letter-photo" src="/assets/work/hana-desk-bio.jpg" alt="Hana at her desk in a white top, working on the computer" loading="lazy" />
-        <div className="fd-letter-text">
-        <p className="fd-script fd-letter-hi">Hi, I'm Hana.</p>
-        <p className="fd-letter-p">
-          I started behind the camera. But somewhere along the way I realized the thing I loved wasn't only taking the photograph. It was
-          figuring out what the whole thing could be: the image, the campaign, the website it lives on, the little film somebody
-          remembers, the way a business introduces itself.
-        </p>
-        <p className="fd-letter-p">
-          Sunday Office grew from that. Today I lead it as an independent creative agency rooted in photography, creative direction,
-          culture and story.
-        </p>
-        <div className="fd-letter-sign">
-          <p className="fd-sign-pre">With care,</p>
-          <p className="fd-sign-name">Hana</p>
+      <div className="nb">
+        <div className="nb-book">
+          <img className="nb-img" src="/assets/texture/notebook.webp" alt="" aria-hidden="true" />
+          <div className="nb-left">
+            <figure className="nb-photo">
+              <img src="/assets/work/hana-desk-bio.jpg" alt="Hana at her desk in a white top, working on the computer" loading="lazy" />
+            </figure>
+            <p className="nb-hi">Hi, I'm Hana.</p>
+            <p className="nb-sub">Founder, photographer + creative producer · Seattle, WA</p>
+          </div>
+          <div className="nb-right" aria-live="polite">
+            <div className="nb-page" key={i}>
+              <p className="nb-no">{c.n} / 0{CHAPTERS.length}</p>
+              <h3 className="nb-t">{c.t}</h3>
+              <div className="nb-p">
+                {c.p.map((x) => (
+                  <p key={x.slice(0, 24)}>{x}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+          {turn && <div className={"nb-turn nb-turn-" + turn} aria-hidden="true" />}
+          <button type="button" className="nb-corner nb-corner-prev" onClick={() => go(-1)} disabled={i === 0} aria-label="Previous page" />
+          <button type="button" className="nb-corner nb-corner-next" onClick={() => go(1)} disabled={i === last} aria-label="Next page" />
         </div>
-        <a className="fd-link" href="/about">More about me</a>
+        <div className="nb-nav">
+          <button type="button" onClick={() => go(-1)} disabled={i === 0}>← Back</button>
+          <ol>
+            {CHAPTERS.map((x, k) => (
+              <li key={x.n}>
+                <button type="button" className={k === i ? "is-on" : ""} onClick={() => k !== i && go(k - i)} aria-label={x.t} aria-current={k === i}>
+                  {x.n}
+                </button>
+              </li>
+            ))}
+          </ol>
+          <button type="button" onClick={() => go(1)} disabled={i === last}>Turn the page →</button>
         </div>
-      </div>
       </div>
     </section>
   );
 }
 
 function FeedStart() {
+  /* Let's Begin. spans the card from edge to edge: size the lettering to the width. */
+  useEffect(() => {
+    const el = document.querySelector<HTMLElement>(".fd-start .fd-script");
+    if (!el) return;
+    const fit = () => {
+      const box = el.parentElement!.clientWidth;
+      el.style.setProperty("font-size", "100px", "important");
+      const r = document.createRange();
+      r.selectNodeContents(el);
+      const w = r.getBoundingClientRect().width;
+      if (w > 0) el.style.setProperty("font-size", Math.min(260, (100 * box * 0.94) / w) + "px", "important");
+    };
+    fit();
+    document.fonts?.ready.then(fit);
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
