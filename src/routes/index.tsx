@@ -1287,7 +1287,7 @@ function Index() {
         <FeedPhoto />
         <FeedServices />
         <FeedWork />
-        <FeedMakeover />
+        {/* makeover section removed */}
         <FeedQuote />
         <FeedProof />
         <FeedLetter />
