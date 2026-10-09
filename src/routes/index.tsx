@@ -1202,6 +1202,16 @@ function FeedStart() {
       r.selectNodeContents(el);
       const w = r.getBoundingClientRect().width;
       if (w > 0) el.style.setProperty("font-size", Math.min(260, (100 * box * 0.94) / w) + "px", "important");
+      /* tuck the apostrophe in above the join between t and s, so the letters stay connected */
+      const lets = el.querySelector<HTMLElement>(".fd-lets");
+      const tn = lets?.firstChild;
+      if (lets && tn && tn.nodeType === 3) {
+        const rr = document.createRange();
+        rr.setStart(tn, 3);
+        rr.setEnd(tn, 4);
+        const sx = rr.getBoundingClientRect().left - lets.getBoundingClientRect().left;
+        lets.style.setProperty("--ap-x", sx + "px");
+      }
     };
     fit();
     document.fonts?.ready.then(fit);
@@ -1215,7 +1225,7 @@ function FeedStart() {
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script fd-hand">let’s begin.</p>
+      <p className="fd-script fd-hand fd-hand-mld" aria-label="let’s begin."><span className="fd-lets">lets</span> begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
         <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.
