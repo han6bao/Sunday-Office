@@ -1148,6 +1148,31 @@ function BookRight({ k }: { k: number }) {
   );
 }
 
+/* The turning page is cut into narrow strips hinged to each other, so it bends as it turns,
+   the free edge leading, like real paper. Each strip shows its slice of the front and back pages. */
+const LEAF_STRIPS = 8;
+function LeafStrip({ n, dir, from, to }: { n: number; dir: "next" | "prev"; from: number; to: number }) {
+  const N = LEAF_STRIPS;
+  const k = dir === "next" ? n : N - 1 - n;
+  const frontOff = dir === "next" ? -n * 100 : -(N - 1 - n) * 100;
+  const backOff = dir === "next" ? -(N - 1 - n) * 100 : -n * 100;
+  return (
+    <div className={"bk-strip" + (n === 0 ? " is-hinge" : "")} style={{ ["--i" as string]: k }}>
+      <div className="bk-sf bk-sf-front">
+        <div className={"bk-sf-in " + (dir === "next" ? "is-right" : "is-left")} style={{ left: frontOff + "%", width: N * 100 + "%" }}>
+          {dir === "next" ? <BookRight k={from} /> : <BookLeft k={from} />}
+        </div>
+      </div>
+      <div className="bk-sf bk-sf-back">
+        <div className={"bk-sf-in " + (dir === "next" ? "is-left" : "is-right")} style={{ left: backOff + "%", width: N * 100 + "%" }}>
+          {dir === "next" ? <BookLeft k={to} /> : <BookRight k={to} />}
+        </div>
+      </div>
+      {n < N - 1 && <LeafStrip n={n + 1} dir={dir} from={from} to={to} />}
+    </div>
+  );
+}
+
 function FeedLetter() {
   const last = CHAPTERS.length - 1;
   const [i, setI] = useState(0);
@@ -1161,7 +1186,7 @@ function FeedLetter() {
     window.setTimeout(() => {
       setI(to);
       setFlip(null);
-    }, 900);
+    }, 1150);
   };
   const leftK = flip?.dir === "prev" ? flip.to : i;
   const rightK = flip?.dir === "next" ? flip.to : i;
@@ -1179,10 +1204,12 @@ function FeedLetter() {
             {i < last && !flip && <span className="bk-curl" aria-hidden="true" />}
           </button>
           {flip && (
-            <div className={"bk-leaf bk-leaf-" + flip.dir} aria-hidden="true">
-              <div className="bk-face bk-front">{flip.dir === "next" ? <BookRight k={i} /> : <BookLeft k={i} />}</div>
-              <div className="bk-face bk-back">{flip.dir === "next" ? <BookLeft k={flip.to} /> : <BookRight k={flip.to} />}</div>
-            </div>
+            <>
+              <div className={"bk-cast bk-cast-" + flip.dir} aria-hidden="true" />
+              <div className={"bk-leaf bk-leaf-" + flip.dir} aria-hidden="true">
+                <LeafStrip n={0} dir={flip.dir} from={i} to={flip.to} />
+              </div>
+            </>
           )}
         </div>
       </div>
