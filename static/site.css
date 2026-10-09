@@ -11043,5 +11043,60 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-media:not(.fd-media-empty) .fd-media-over::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 55% 30% at 50% 50%, rgba(8,7,6,.38), transparent 70%); pointer-events: none; }
 @media (max-width: 640px) { .fd-page .fd-media:not(.fd-media-empty) .fd-hero-h { font-size: 12.4vw !important; white-space: nowrap; } .fd-media:not(.fd-media-empty) .fd-hero-sub p { font-size: 14px; } }
 
+/* ===== Stationery: the rest of the site in the feel of the 9.30 card and the envelope =====
+   Cream envelope paper and lavender card paper, big tone-on-tone italic numerals, small quiet serif text.
+   Hero, Serve first (003) and the numbers card (004) are left as they are. */
+.fd-page .fd-st { position: relative; min-height: min(94vh, 960px); display: grid; align-content: start; overflow: hidden; }
+.fd-ghost { margin: clamp(8px, 2vw, 24px) 0 clamp(24px, 4vw, 56px); font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(150px, 27vw, 400px); line-height: .78; letter-spacing: -.03em; pointer-events: none; user-select: none; }
+.fd-st-cream .fd-ghost { color: #e2dccf; }
+.fd-st-lav .fd-ghost { color: #7d6d90; }
+.fd-page .fd-st .fd-small, .fd-page .fd-st .fd-letter-p { font-family: "Instrument Serif", Georgia, serif !important; font-size: clamp(18px, 1.5vw, 21px) !important; line-height: 1.45 !important; max-width: 46ch; }
+
+/* lavender card paper (same as the numbers card) */
+.fd-page .fd-frame.fd-st-lav, .fd-page .fd-frame.fd-start.fd-st-lav { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; color: #f4eff7 !important; }
+.fd-page .fd-st-lav, .fd-page .fd-st-lav .fd-small, .fd-page .fd-st-lav .fd-small a, .fd-page .fd-st-lav .fd-ct, .fd-page .fd-st-lav .fd-cw, .fd-page .fd-st-lav .fd-more-hint, .fd-page .fd-st-lav .fd-mw, .fd-page .fd-st-lav .fd-mw a, .fd-page .fd-st-lav .fd-mw-h { color: #f4eff7 !important; }
+.fd-page .fd-st-lav .fd-file, .fd-page .fd-st-lav .fd-file span { color: rgba(244,239,247,.72) !important; }
+.fd-page .fd-st-lav .fd-file hr { border-color: rgba(244,239,247,.3) !important; }
+.fd-page .fd-st-lav .fd-work-head h2 { color: #f4eff7 !important; -webkit-text-fill-color: #f4eff7 !important; }
+.fd-page .fd-st-lav .fd-mw li, .fd-page .fd-st-lav .fd-mw ul { border-color: rgba(244,239,247,.28) !important; }
+.fd-page .fd-st-lav .fd-tile img { box-shadow: 0 24px 40px -28px rgba(40,30,55,.6); }
+
+/* Selected work: the 02 sits behind the title like the 9.30 */
+#work .fd-ghost { margin-bottom: clamp(-90px, -6vw, -40px); }
+#work .fd-work-head { position: relative; }
+
+/* cream sections: envelope paper, ink text */
+.fd-page .fd-st-cream .fd-file, .fd-page .fd-st-cream .fd-file span { color: #6b655d !important; }
+#build .fd-ghost { margin-bottom: clamp(-80px, -5.5vw, -36px); }
+#build .fd-script { position: relative; }
+
+/* Meet Hana: the letter rests on an open envelope */
+.fd-envl { position: relative; max-width: 900px; margin: clamp(-60px, -4vw, -30px) auto 0; padding: 0 clamp(0px, 3vw, 40px) clamp(70px, 9vw, 120px); }
+.fd-envl-back { position: absolute; left: 0; right: 0; bottom: 0; height: 62%; background-color: #efede3; background-image: url(/assets/texture/envelope.svg), url(/assets/texture/paper-cream.jpg); background-size: 100% 100%, 768px 768px; box-shadow: 0 30px 60px -38px rgba(70,60,45,.45), 0 1px 0 rgba(255,255,255,.6) inset; }
+.fd-envl .fd-letter { position: relative; z-index: 1; rotate: 0deg !important; box-shadow: 0 2px 0 rgba(255,255,255,.6) inset, 0 26px 50px -34px rgba(70,60,45,.5) !important; }
+
+/* Let's Begin: lavender card, the script large and tone-on-tone like the 9.30 */
+.fd-page .fd-start.fd-st-lav .fd-script { color: #75668a !important; -webkit-text-fill-color: #75668a !important; font-size: clamp(96px, 15vw, 230px) !important; line-height: 1.05 !important; margin: clamp(10px, 2vw, 30px) 0 clamp(10px, 2vw, 24px) !important; }
+.fd-page .fd-start.fd-st-lav .fd-small { color: #f4eff7 !important; }
+.fd-page .fd-start.fd-st-lav .fd-small a { color: #f4eff7 !important; text-decoration-color: rgba(244,239,247,.6); }
+.fd-page .fd-start.fd-st-lav .fd-sheet { background-color: #f1efe6 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; box-shadow: 0 34px 70px -40px rgba(45,35,60,.6), 0 1px 0 rgba(255,255,255,.6) inset !important; }
+
+/* Footer continues the lavender card, deeper */
+.so-footer { background-color: #7d6d8f !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-blend-mode: multiply; }
+.so-footer, .so-footer a, .so-footer h5, .so-footer .so-micro, .so-footer p { color: #f4eff7 !important; }
+.so-footer .so-micro, .so-footer h5 { opacity: .75; }
+.so-footer-wordmark { color: #f4eff7 !important; -webkit-text-fill-color: #f4eff7 !important; }
+/* specificity fixes + tuning */
+.fd-page #work.fd-frame, .fd-page #office-hours.fd-frame { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; }
+.fd-page #build.fd-frame, .fd-page #about-hana.fd-frame { min-height: 0; padding-bottom: clamp(80px, 10vw, 140px); }
+.so-footer { background-color: #85759a !important; background-image: linear-gradient(rgba(70,55,90,.10), rgba(70,55,90,.10)), url(/assets/texture/paper-lav.jpg) !important; background-blend-mode: normal !important; background-size: auto, 768px 768px !important; }
+.fd-page .fd-letter-hi { font-size: clamp(40px, 4vw, 60px) !important; white-space: nowrap; }
+.fd-envl { max-width: 980px; padding-bottom: clamp(90px, 11vw, 150px); }
+.fd-envl .fd-letter { max-width: 780px; margin-inline: auto; }
+.fd-envl-back { left: 0; right: 0; height: 58%; background-color: #f5f3ea !important; box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 40px 70px -40px rgba(70,60,45,.5), 0 0 0 1px rgba(120,105,85,.06) !important; }
+
+.fd-page #build .fd-sp { color: #6b655d !important; -webkit-text-fill-color: #6b655d !important; }
+.fd-page .fd-letter-hi { font-size: clamp(36px, 3.4vw, 54px) !important; white-space: normal; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

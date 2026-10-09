@@ -803,8 +803,9 @@ function FeedPhoto() {
 
 function FeedServices() {
   return (
-    <section className="fd-frame fd-black" id="build" aria-label="Services">
+    <section className="fd-frame fd-st fd-st-cream" id="build" aria-label="Services">
       <FeedFile>FILE NO. 001 · WHAT I DO</FeedFile>
+      <p className="fd-ghost" aria-hidden="true">01</p>
       <p className="fd-script">Start with the brand.</p>
       <p className="fd-small">
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
@@ -998,8 +999,9 @@ function WorkBox({ w, onClose }: { w: (typeof FEED_WORK)[number]; onClose: () =>
 function FeedWork() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section className="fd-frame fd-dark" id="work" aria-label="Selected work">
+    <section className="fd-frame fd-st fd-st-lav" id="work" aria-label="Selected work">
       <FeedFile>FILE NO. 002 · SELECTED WORK</FeedFile>
+      <p className="fd-ghost" aria-hidden="true">02</p>
       <div className="fd-work-head">
         <h2>Selected work</h2>
         <p className="fd-more-hint">Scroll, then tap one to see more</p>
@@ -1115,8 +1117,11 @@ function FeedHana() {
 /* Meet Hana as a handwritten-style letter on paper, with an instant photo clipped on. */
 function FeedLetter() {
   return (
-    <section className="fd-frame fd-letter-frame" id="about-hana" aria-label="Meet Hana">
+    <section className="fd-frame fd-st fd-st-cream fd-letter-frame" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
+      <p className="fd-ghost" aria-hidden="true">05</p>
+      <div className="fd-envl">
+      <div className="fd-envl-back" aria-hidden="true" />
       <div className="fd-letter">
         <img className="fd-letter-photo" src="/assets/work/hana-desk-bio.jpg" alt="Hana at her desk in a white top, working on the computer" loading="lazy" />
         <div className="fd-letter-text">
@@ -1137,13 +1142,14 @@ function FeedLetter() {
         <a className="fd-link" href="/about">More about me</a>
         </div>
       </div>
+      </div>
     </section>
   );
 }
 
 function FeedStart() {
   return (
-    <section className="fd-frame fd-start so-start-section" id="office-hours" aria-label="Start a project">
+    <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
       <p className="fd-script" aria-label="Let's Begin."><span className="fd-lets">Lets</span> Begin.</p>
       <p className="fd-small">

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" preserveAspectRatio="none">
+  <defs>
+    <filter id="s" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="5"/></filter>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".10"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>
+  </defs>
+  <!-- soft shadows under each flap edge, like pressed paper -->
+  <g fill="none" stroke="#5a5040" stroke-opacity=".16" stroke-width="9" filter="url(#s)">
+    <path d="M0 0 L470 330 L0 640"/>
+    <path d="M1000 0 L530 330 L1000 640"/>
+    <path d="M0 640 L450 360 Q500 330 550 360 L1000 640"/>
+  </g>
+  <!-- crisp creases with a light edge -->
+  <g fill="none" stroke-width="1.6">
+    <path d="M0 0 L470 330 L0 640" stroke="#8a7f6a" stroke-opacity=".28"/>
+    <path d="M1000 0 L530 330 L1000 640" stroke="#8a7f6a" stroke-opacity=".28"/>
+    <path d="M0 640 L450 360 Q500 330 550 360 L1000 640" stroke="#8a7f6a" stroke-opacity=".3"/>
+    <path d="M0 643 L450 363 Q500 333 550 363 L1000 643" stroke="#fff" stroke-opacity=".6"/>
+  </g>
+</svg>
