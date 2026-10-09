@@ -11496,5 +11496,47 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-hand-mld .fd-ap { font-family: "Pinyon Script Local", "Pinyon Script", cursive; display: inline-block; margin: 0 -.12em 0 -.06em; vertical-align: .05em; }
 .fd-hand-mld .fd-ap { vertical-align: -.16em; margin: 0 -.08em 0 -.02em; }
 
+/* ===== Meet Hana: chapter cards ===== */
+.fd-bio .bio-head { margin-top: clamp(-90px, -6vw, -40px); position: relative; }
+.bio-row { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(240px, 24vw, 320px); gap: clamp(14px, 1.6vw, 22px); overflow-x: auto; scroll-snap-type: x mandatory; padding: clamp(26px, 3vw, 40px) 0 18px; margin-inline: calc(-1 * clamp(20px, 5vw, 72px)); padding-inline: clamp(20px, 5vw, 72px); scrollbar-width: thin; }
+.bio-card { all: unset; box-sizing: border-box; scroll-snap-align: start; cursor: pointer; display: flex; flex-direction: column; background-color: #f8f6f0; background-image: url(/assets/texture/paper-cream.jpg); background-size: 700px; padding: 14px 14px 20px; box-shadow: 0 1px 1px rgba(60,48,32,.12), 0 14px 28px -20px rgba(60,48,32,.4); transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease; }
+.bio-card:hover, .bio-card:focus-visible { transform: translateY(-4px); box-shadow: 0 1px 1px rgba(60,48,32,.12), 0 22px 36px -20px rgba(60,48,32,.45); }
+.bio-card:focus-visible { outline: 1px dashed rgba(90,80,65,.5); outline-offset: 4px; }
+.bio-ph { display: grid; place-items: center; aspect-ratio: 4 / 5; background: linear-gradient(160deg, #e6e1d7, #d9d3c7); }
+.bio-ph span { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: #a59d91; }
+.bio-cn { margin-top: 16px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .2em; color: #9a9086; }
+.bio-ct { margin-top: 4px; font-family: "Monsieur La Doulaise", cursive; font-size: 34px; line-height: 1.2; color: #585552; padding: .05em .05em 0 0; }
+.bio-cl { margin-top: 6px; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 14.5px; line-height: 1.55; color: #6b655d; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.bio-more { margin-top: auto; padding-top: 14px; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #4a443d; }
+.bio-back { position: fixed; inset: 0; z-index: 200; background: rgba(40,32,48,.45); display: grid; place-items: center; padding: 20px; animation: fd-up .3s ease both; }
+.bio-box { position: relative; width: min(680px, 100%); max-height: calc(100svh - 40px); overflow: auto; background-color: #f8f6f0; background-image: url(/assets/texture/paper-cream.jpg); background-size: 800px; padding: clamp(28px, 5vw, 56px); box-shadow: 0 40px 80px -30px rgba(30,20,40,.55); }
+.bio-x { all: unset; position: absolute; top: 14px; right: 18px; font-size: 28px; line-height: 1; cursor: pointer; color: #6b655d; }
+.bio-no { margin: 0; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .22em; color: #9a9086; }
+.bio-t { margin: 8px 0 18px; font-family: "Monsieur La Doulaise", cursive; font-weight: 400; font-size: clamp(46px, 6vw, 64px); line-height: 1.2; color: #585552; padding: .05em .1em 0 0; }
+.bio-p { display: grid; gap: 14px; }
+.bio-p p { margin: 0; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 17px; line-height: 1.7; color: #3f3a35; }
+.bio-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(120,105,85,.22); }
+.bio-nav button { all: unset; cursor: pointer; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #4a443d; }
+.bio-nav button:disabled { visibility: hidden; }
+.bio-ct .bk-ap, .bio-t .bk-ap { display: inline-block; margin: 0 -.32em 0 -.18em; }
+
+/* ===== Let's Begin: tighter, contact strip ===== */
+.fd-page #office-hours.fd-frame { min-height: 0 !important; padding-top: clamp(56px, 7vw, 96px) !important; padding-bottom: clamp(56px, 7vw, 96px) !important; }
+.fd-page .fd-start.fd-st-lav .fd-script.fd-hand-mld { margin: 0 auto !important; }
+.fd-contact-strip { list-style: none; margin: clamp(18px, 2.4vw, 28px) auto 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 26px; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,239,247,.82); }
+.fd-contact-strip li + li::before { content: "·"; margin-right: 26px; color: rgba(244,239,247,.5); }
+.fd-contact-strip a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(244,239,247,.4); }
+.fd-page .fd-start .fd-sheet { margin-top: clamp(30px, 4vw, 52px) !important; }
+@media (max-width: 640px) { .fd-contact-strip { flex-direction: column; gap: 10px; } .fd-contact-strip li + li::before { display: none; } }
+
+/* World Building: pencil texture, lighter weight */
+.fd-page #build .fd-services a.is-big .fd-sn { -webkit-text-stroke: .008em rgba(88,85,82,.55) !important; color: transparent !important; -webkit-text-fill-color: transparent !important; background-image: url(/assets/texture/ink.png) !important; background-size: 200px !important; -webkit-background-clip: text !important; background-clip: text !important; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-cap { color: transparent; -webkit-text-fill-color: transparent; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { -webkit-text-stroke: 0 !important; background: none !important; -webkit-text-fill-color: #857b70 !important; color: #857b70 !important; margin-top: 10px; }
+.bio-row { margin-inline: 0 !important; padding-inline: 2px !important; scroll-padding-inline: 2px; }
+.fd-page .fd-start .fd-sheet #inquiry, .fd-page .fd-start .fd-sheet .so-office-card { border-top: 0 !important; margin-top: 0 !important; padding-top: 0 !important; }
+.fd-page .fd-start .fd-sheet .so-office-card::before { display: none !important; }
+.fd-page .fd-start .fd-sheet { max-width: 880px; margin-inline: auto !important; padding-bottom: clamp(28px, 4vw, 48px) !important; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

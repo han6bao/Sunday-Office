@@ -1155,71 +1155,62 @@ function BookRight({ k }: { k: number }) {
   );
 }
 
-/* The turning page is cut into narrow strips hinged to each other, so it bends as it turns,
-   the free edge leading, like real paper. Each strip shows its slice of the front and back pages. */
-const LEAF_STRIPS = 12;
-function LeafStrip({ n, dir, from, to }: { n: number; dir: "next" | "prev"; from: number; to: number }) {
-  const N = LEAF_STRIPS;
-  const k = dir === "next" ? n : N - 1 - n;
-  const frontOff = dir === "next" ? -n * 100 : -(N - 1 - n) * 100;
-  const backOff = dir === "next" ? -(N - 1 - n) * 100 : -n * 100;
+/* Meet Hana: six chapters as cards in a row. Tap one to read the whole chapter. */
+function BioBox({ k, onClose, onGo }: { k: number; onClose: () => void; onGo: (d: number) => void }) {
+  const c = CHAPTERS[k];
+  useEffect(() => {
+    const key = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") onGo(1);
+      if (e.key === "ArrowLeft") onGo(-1);
+    };
+    window.addEventListener("keydown", key);
+    document.getElementById("bio-box-close")?.focus();
+    return () => window.removeEventListener("keydown", key);
+  }, [onClose, onGo]);
   return (
-    <div className={"bk-strip" + (n === 0 ? " is-hinge" : "")} style={{ ["--i" as string]: k }}>
-      <div className="bk-sf bk-sf-front">
-        <div className={"bk-sf-in " + (dir === "next" ? "is-right" : "is-left")} style={{ left: frontOff + "%", width: N * 100 + "%" }}>
-          {dir === "next" ? <BookRight k={from} /> : <BookLeft k={from} />}
+    <div className="bio-back" onClick={onClose}>
+      <div className="bio-box" role="dialog" aria-modal="true" aria-label={c.t} onClick={(e) => e.stopPropagation()}>
+        <button type="button" id="bio-box-close" className="bio-x" onClick={onClose} aria-label="Close">×</button>
+        <p className="bio-no">{c.n} / 0{CHAPTERS.length}</p>
+        <h3 className="bio-t">{handTitle(c.t)}</h3>
+        <div className="bio-p">
+          {c.p.map((x) => (
+            <p key={x.slice(0, 24)}>{x}</p>
+          ))}
+        </div>
+        <div className="bio-nav">
+          <button type="button" onClick={() => onGo(-1)} disabled={k === 0}>← {k > 0 ? CHAPTERS[k - 1].t : ""}</button>
+          <button type="button" onClick={() => onGo(1)} disabled={k === CHAPTERS.length - 1}>{k < CHAPTERS.length - 1 ? CHAPTERS[k + 1].t : ""} →</button>
         </div>
       </div>
-      <div className="bk-sf bk-sf-back">
-        <div className={"bk-sf-in " + (dir === "next" ? "is-left" : "is-right")} style={{ left: backOff + "%", width: N * 100 + "%" }}>
-          {dir === "next" ? <BookLeft k={to} /> : <BookRight k={to} />}
-        </div>
-      </div>
-      {n < N - 1 && <LeafStrip n={n + 1} dir={dir} from={from} to={to} />}
     </div>
   );
 }
 
 function FeedLetter() {
-  const last = CHAPTERS.length - 1;
-  const [i, setI] = useState(0);
-  const [flip, setFlip] = useState<null | { dir: "next" | "prev"; to: number }>(null);
-  const turn = (dir: "next" | "prev") => {
-    if (flip) return;
-    const to = dir === "next" ? i + 1 : i - 1;
-    if (to < 0 || to > last) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return setI(to);
-    setFlip({ dir, to });
-    window.setTimeout(() => {
-      setI(to);
-      setFlip(null);
-    }, 1300);
-  };
-  const leftK = flip?.dir === "prev" ? flip.to : i;
-  const rightK = flip?.dir === "next" ? flip.to : i;
+  const [open, setOpen] = useState<number | null>(null);
+  const go = (d: number) => setOpen((v) => (v === null ? v : Math.min(CHAPTERS.length - 1, Math.max(0, v + d))));
   return (
-    <section className="fd-frame fd-st fd-st-cream fd-letter-frame" id="about-hana" aria-label="Meet Hana">
+    <section className="fd-frame fd-st fd-st-cream fd-letter-frame fd-bio" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <p className="fd-ghost" aria-hidden="true">05</p>
-      <div className="bk">
-        <div className="bk-book">
-          <button type="button" className="bk-page bk-left" onClick={() => turn("prev")} disabled={i === 0} aria-label="Turn back a page">
-            <BookLeft k={leftK} />
-          </button>
-          <button type="button" className="bk-page bk-right" onClick={() => turn("next")} disabled={i === last} aria-label="Turn the page" aria-live="polite">
-            <BookRight k={rightK} />
-            {i < last && !flip && <span className="bk-curl" aria-hidden="true" />}
-          </button>
-          {flip && (
-            <>
-              <div className={"bk-cast bk-cast-" + flip.dir} aria-hidden="true" />
-              <div className={"bk-leaf bk-leaf-" + flip.dir} aria-hidden="true">
-                <LeafStrip n={0} dir={flip.dir} from={i} to={flip.to} />
-              </div>
-            </>
-          )}
-        </div>
+      <div className="bio-head">
+        <p className="fd-script">Hi, I'm Hana.</p>
+        <p className="fd-small">Six things about how I see, what I believe and what I'm building. Tap one to read it.</p>
       </div>
+      <div className="bio-row" role="list">
+        {CHAPTERS.map((c, k) => (
+          <button key={c.n} type="button" role="listitem" className="bio-card" onClick={() => setOpen(k)}>
+            <span className="bio-ph"><span>photo</span></span>
+            <span className="bio-cn">{c.n}</span>
+            <span className="bio-ct">{handTitle(c.t)}</span>
+            <span className="bio-cl">{c.p[0]}</span>
+            <span className="bio-more">Read →</span>
+          </button>
+        ))}
+      </div>
+      {open !== null && <BioBox k={open} onClose={() => setOpen(null)} onGo={go} />}
     </section>
   );
 }
@@ -1266,11 +1257,15 @@ function FeedStart() {
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
       <p className="fd-script fd-hand fd-hand-mld" aria-label="Let’s Begin."><span className="fd-cap">L</span>et<span className="fd-ap">’</span>s <span className="fd-cap">B</span>egin.</p>
       <p className="fd-small">
-        Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
-        <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.
+        Tell me what you're making and what feels off. A few lines is plenty.
       </p>
+      <ul className="fd-contact-strip">
+        <li><a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a></li>
+        <li><a href="https://www.instagram.com/sundayoffice.ag" target="_blank" rel="noreferrer">@sundayoffice.ag</a></li>
+        <li>Seattle, WA</li>
+        <li>Replies in 2 to 3 business days</li>
+      </ul>
       <div className="fd-sheet">
-        <ProjectQuiz />
         <div className="so-office-card" id="inquiry">
           <p className="eyebrow-cap mt-4">The Inquiry</p>
           <InquiryForm />

@@ -673,11 +673,8 @@ const inquiryFields: Array<{
 }> = [
   { id: "name", label: "Name", type: "input", placeholder: "Your name", col: "half" },
   { id: "email", label: "Email", type: "input", placeholder: "you@studio.com", col: "half" },
-  { id: "business", label: "Business / Project", type: "input", placeholder: "What are we calling it", col: "half" },
-  { id: "website", label: "Website / Instagram", type: "input", placeholder: "link", col: "half" },
-  { id: "need", label: "What do you think you need?", type: "select", col: "half" },
-  { id: "budget", label: "Investment range", type: "select", col: "half", options: ["Under $500", "$500 to $1,500", "$1,500 to $5,000", "$5,000 to $10,000", "$10,000+", "Not sure yet"] },
-  { id: "timeline", label: "Ideal timeline", type: "input", placeholder: "This month, next season, whenever it's right", col: "full" },
+  { id: "need", label: "What do you need?", type: "select", col: "half" },
+  { id: "website", label: "Website / Instagram", type: "input", placeholder: "link (optional)", col: "half" },
   { id: "about", label: "Tell me about it.", type: "textarea", col: "full" },
 ];
 
