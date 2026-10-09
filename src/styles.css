@@ -11544,3 +11544,14 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page .fd-start .fd-sheet #inquiry, .fd-page .fd-start .fd-sheet .so-office-card { border-top: 0 !important; margin-top: 0 !important; padding-top: 0 !important; }
 .fd-page .fd-start .fd-sheet .so-office-card::before { display: none !important; }
 .fd-page .fd-start .fd-sheet { max-width: 880px; margin-inline: auto !important; padding-bottom: clamp(28px, 4vw, 48px) !important; }
+/* service rows: quiet hover, nothing moves */
+.fd-page #build .fd-services a, .fd-page #build .fd-services a:hover, .fd-page #build .fd-services a:focus-visible { padding-left: 14px !important; padding-right: 14px !important; }
+.fd-page #build .fd-services a.is-big .fd-sn { white-space: nowrap; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { white-space: normal; }
+.fd-page #build .fd-services a:hover, .fd-page #build .fd-services a:focus-visible { background-color: rgba(225,220,208,.45) !important; background-image: none !important; border-bottom-color: rgba(120,105,85,.22) !important; }
+.fd-page #build .fd-services a:hover *, .fd-page #build .fd-services a:focus-visible * { color: inherit; -webkit-text-fill-color: inherit; }
+.fd-page #build .fd-services a:not(.is-big):hover .fd-sn, .fd-page #build .fd-services a:not(.is-big):focus-visible .fd-sn { color: #6b6258 !important; -webkit-text-fill-color: #6b6258 !important; font-style: normal !important; }
+.fd-page #build .fd-services a:hover .fd-sp, .fd-page #build .fd-services a:focus-visible .fd-sp { color: #6b6258 !important; -webkit-text-fill-color: #6b6258 !important; }
+.fd-page #build .fd-services a:hover .fd-sd, .fd-page #build .fd-services a:focus-visible .fd-sd { color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; }
+.fd-page #build .fd-services a.is-big:hover .fd-sn, .fd-page #build .fd-services a.is-big:focus-visible .fd-sn { -webkit-text-fill-color: transparent !important; color: transparent !important; }
+.fd-page #build .fd-services a.is-big:hover .fd-sn .fd-cap { -webkit-text-fill-color: transparent !important; }
