@@ -1115,60 +1115,74 @@ function FeedHana() {
   );
 }
 
-/* Meet Hana as an open notebook: her photo on the left page, one bio chapter per right page, flip through all six. */
+/* Meet Hana as a notebook. Each spread: photo spots on the left page, one bio chapter on the right.
+   Tap the right page to turn forward, the left page to turn back; a real leaf flips over the spine. */
+const BOOK_PHOTOS: number[] = [1, 2, 1, 2, 1, 2];
+
+function BookLeft({ k }: { k: number }) {
+  const two = BOOK_PHOTOS[k] === 2;
+  return (
+    <div className={"bk-face-in bk-left-in" + (two ? " is-two" : "")}>
+      <div className="bk-ph bk-ph-a"><span>photo</span></div>
+      {two && <div className="bk-ph bk-ph-b"><span>photo</span></div>}
+      <p className="bk-cap">{CHAPTERS[k].t}</p>
+    </div>
+  );
+}
+
+function BookRight({ k }: { k: number }) {
+  const c = CHAPTERS[k];
+  return (
+    <div className="bk-face-in bk-right-in">
+      <div className="bk-ph bk-ph-m"><span>photo</span></div>
+      {k === 0 && <p className="bk-hello">Hi, I'm Hana.</p>}
+      <h3 className="bk-t">{c.t.toLowerCase()}</h3>
+      <div className="bk-p">
+        {c.p.map((x) => (
+          <p key={x.slice(0, 24)}>{x}</p>
+        ))}
+      </div>
+      <p className="bk-no">{c.n} / 0{CHAPTERS.length}</p>
+    </div>
+  );
+}
+
 function FeedLetter() {
-  const [i, setI] = useState(0);
-  const [turn, setTurn] = useState<null | "next" | "prev">(null);
   const last = CHAPTERS.length - 1;
-  const go = (d: number) => {
-    const n = i + d;
-    if (n < 0 || n > last || turn) return;
-    setTurn(d > 0 ? "next" : "prev");
-    setTimeout(() => setI(n), 280);
-    setTimeout(() => setTurn(null), 760);
+  const [i, setI] = useState(0);
+  const [flip, setFlip] = useState<null | { dir: "next" | "prev"; to: number }>(null);
+  const turn = (dir: "next" | "prev") => {
+    if (flip) return;
+    const to = dir === "next" ? i + 1 : i - 1;
+    if (to < 0 || to > last) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return setI(to);
+    setFlip({ dir, to });
+    window.setTimeout(() => {
+      setI(to);
+      setFlip(null);
+    }, 900);
   };
-  const c = CHAPTERS[i];
+  const leftK = flip?.dir === "prev" ? flip.to : i;
+  const rightK = flip?.dir === "next" ? flip.to : i;
   return (
     <section className="fd-frame fd-st fd-st-cream fd-letter-frame" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <p className="fd-ghost" aria-hidden="true">05</p>
-      <div className="nb">
-        <div className="nb-book">
-          <img className="nb-img" src="/assets/texture/notebook.webp" alt="" aria-hidden="true" />
-          <div className="nb-left">
-            <figure className="nb-photo">
-              <img src="/assets/work/hana-desk-bio.jpg" alt="Hana at her desk in a white top, working on the computer" loading="lazy" />
-            </figure>
-            <p className="nb-hi">Hi, I'm Hana.</p>
-            <p className="nb-sub">Founder, photographer + creative producer · Seattle, WA</p>
-          </div>
-          <div className="nb-right" aria-live="polite">
-            <div className="nb-page" key={i}>
-              <p className="nb-no">{c.n} / 0{CHAPTERS.length}</p>
-              <h3 className="nb-t">{c.t}</h3>
-              <div className="nb-p">
-                {c.p.map((x) => (
-                  <p key={x.slice(0, 24)}>{x}</p>
-                ))}
-              </div>
+      <div className="bk">
+        <div className="bk-book">
+          <button type="button" className="bk-page bk-left" onClick={() => turn("prev")} disabled={i === 0} aria-label="Turn back a page">
+            <BookLeft k={leftK} />
+          </button>
+          <button type="button" className="bk-page bk-right" onClick={() => turn("next")} disabled={i === last} aria-label="Turn the page" aria-live="polite">
+            <BookRight k={rightK} />
+            {i < last && !flip && <span className="bk-curl" aria-hidden="true" />}
+          </button>
+          {flip && (
+            <div className={"bk-leaf bk-leaf-" + flip.dir} aria-hidden="true">
+              <div className="bk-face bk-front">{flip.dir === "next" ? <BookRight k={i} /> : <BookLeft k={i} />}</div>
+              <div className="bk-face bk-back">{flip.dir === "next" ? <BookLeft k={flip.to} /> : <BookRight k={flip.to} />}</div>
             </div>
-          </div>
-          {turn && <div className={"nb-turn nb-turn-" + turn} aria-hidden="true" />}
-          <button type="button" className="nb-corner nb-corner-prev" onClick={() => go(-1)} disabled={i === 0} aria-label="Previous page" />
-          <button type="button" className="nb-corner nb-corner-next" onClick={() => go(1)} disabled={i === last} aria-label="Next page" />
-        </div>
-        <div className="nb-nav">
-          <button type="button" onClick={() => go(-1)} disabled={i === 0}>← Back</button>
-          <ol>
-            {CHAPTERS.map((x, k) => (
-              <li key={x.n}>
-                <button type="button" className={k === i ? "is-on" : ""} onClick={() => k !== i && go(k - i)} aria-label={x.t} aria-current={k === i}>
-                  {x.n}
-                </button>
-              </li>
-            ))}
-          </ol>
-          <button type="button" onClick={() => go(1)} disabled={i === last}>Turn the page →</button>
+          )}
         </div>
       </div>
     </section>
@@ -1196,7 +1210,7 @@ function FeedStart() {
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script" aria-label="Let's Begin."><span className="fd-lets">Lets</span> Begin.</p>
+      <p className="fd-script fd-hand">let’s begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
         <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.

@@ -11167,5 +11167,84 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page .fd-services a.is-big .fd-sn { font-family: "Sacramento", cursive !important; font-style: normal !important; text-transform: lowercase; font-size: clamp(40px, 4.4vw, 60px) !important; line-height: 1.15 !important; color: #5d5955 !important; -webkit-text-fill-color: #5d5955 !important; opacity: .92; }
 .fd-page .fd-services a.is-big .fd-sn .fd-sd { text-transform: none; font-family: "Fraunces", Georgia, serif; }
 
+/* ===== Meet Hana: one clean cloth-bound notebook, built in CSS so the pages can really turn ===== */
+.bk { max-width: 1080px; width: 100%; margin: clamp(-70px, -5vw, -30px) auto 0; }
+.bk-book { position: relative; container-type: inline-size; aspect-ratio: 1.46; display: grid; grid-template-columns: 1fr 1fr; padding: 1.3% 1.4% 1.6%; perspective: 2600px;
+  background-color: #9a8bab; background-image: url(/assets/texture/paper-lav.jpg); background-size: 520px; border-radius: 1.4cqw;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.12), inset 0 -3px 6px rgba(40,30,55,.18), 0 2px 3px rgba(60,50,70,.12), 0 34px 60px -30px rgba(60,50,70,.38); }
+.bk-page { all: unset; box-sizing: border-box; position: relative; overflow: hidden; cursor: pointer; background-color: #f7f5ef; background-image: url(/assets/texture/paper-cream.jpg); background-size: 640px; }
+.bk-page:disabled { cursor: default; }
+.bk-page:focus-visible { outline: 1px solid #6b655d; outline-offset: -6px; }
+.bk-left { border-radius: .9cqw 0 0 .9cqw; box-shadow: inset -2.6cqw 0 2.6cqw -1.6cqw rgba(70,60,45,.22), -2px 0 0 #ece8de, -3px 0 0 #e2ddd1, -5px 0 0 #ebe7dc; }
+.bk-right { border-radius: 0 .9cqw .9cqw 0; box-shadow: inset 2.6cqw 0 2.6cqw -1.6cqw rgba(70,60,45,.22), 2px 0 0 #ece8de, 3px 0 0 #e2ddd1, 5px 0 0 #ebe7dc; }
+.bk-book::after { content: ""; position: absolute; top: 1.3%; bottom: 1.6%; left: 50%; width: 1px; background: rgba(70,60,45,.18); pointer-events: none; z-index: 1; }
+.bk-face-in { position: absolute; inset: 0; padding: 5.2cqw 4.4cqw 4.2cqw; }
+.bk-left-in { display: grid; align-content: center; justify-items: center; gap: 2.4cqw; }
+.bk-ph { position: relative; background: rgba(120,105,85,.07); border: 1px dashed rgba(120,105,85,.35); display: grid; place-items: center; }
+.bk-ph::before { content: ""; position: absolute; left: 50%; top: -1cqw; width: 6cqw; height: 1.8cqw; translate: -50% 0; background: rgba(229,222,205,.85); box-shadow: 0 1px 2px rgba(60,50,40,.08); }
+.bk-ph span { font-family: "IBM Plex Mono", monospace; font-size: .8cqw; letter-spacing: .24em; text-transform: uppercase; color: #a39c90; }
+.bk-ph-a { width: 64%; aspect-ratio: 4 / 5; }
+.is-two .bk-ph-a { width: 52%; aspect-ratio: 5 / 4; justify-self: start; margin-left: 4%; }
+.is-two .bk-ph-b { width: 46%; aspect-ratio: 4 / 5; justify-self: end; margin-right: 4%; margin-top: -4cqw; }
+.bk-cap { margin: 0; font-family: "Sacramento", cursive; font-size: 2.3cqw; color: #8a847b; text-transform: lowercase; }
+.bk-right-in { display: flex; flex-direction: column; }
+.bk-hello { margin: 0 0 .4cqw; font-family: "Instrument Serif", Georgia, serif; font-size: 1cqw; letter-spacing: .2em; text-transform: uppercase; color: #9a948a; }
+.bk-t { margin: 0 0 1.6cqw; font-family: "Sacramento", cursive; font-weight: 400; font-size: 4.2cqw; line-height: 1.05; color: #4f4b47; }
+.bk-p { display: grid; gap: .9cqw; }
+.bk-p p { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-size: 1.32cqw; line-height: 1.42; color: #4a4642; }
+.bk-no { margin: auto 0 0; align-self: flex-end; padding-top: 1.4cqw; font-family: "IBM Plex Mono", monospace; font-size: .85cqw; letter-spacing: .22em; color: #9a948a; }
+.bk-curl { position: absolute; right: 0; bottom: 0; width: 0; height: 0; border-style: solid; border-width: 2.2cqw 2.2cqw 0 0; border-color: #e9e4d8 transparent transparent transparent; box-shadow: -3px -3px 6px -2px rgba(60,50,40,.18); transition: border-width .25s ease; }
+.bk-right:hover .bk-curl { border-width: 3.4cqw 3.4cqw 0 0; }
+/* the leaf that turns */
+.bk-leaf { position: absolute; top: 1.3%; bottom: 1.6%; width: 48.6%; z-index: 3; transform-style: preserve-3d; pointer-events: none; }
+.bk-leaf-next { left: 50%; transform-origin: left center; animation: bk-next .9s cubic-bezier(.42,.08,.24,1) both; }
+.bk-leaf-prev { right: 50%; transform-origin: right center; animation: bk-prev .9s cubic-bezier(.42,.08,.24,1) both; }
+@keyframes bk-next { from { transform: rotateY(0deg); } to { transform: rotateY(-180deg); } }
+@keyframes bk-prev { from { transform: rotateY(0deg); } to { transform: rotateY(180deg); } }
+.bk-face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; background-color: #f7f5ef; background-image: url(/assets/texture/paper-cream.jpg); background-size: 640px; }
+.bk-face::after { content: ""; position: absolute; inset: 0; pointer-events: none; animation: bk-shade .9s ease both; }
+.bk-leaf-next .bk-front { border-radius: 0 .9cqw .9cqw 0; }
+.bk-leaf-next .bk-back { transform: rotateY(180deg); border-radius: .9cqw 0 0 .9cqw; }
+.bk-leaf-prev .bk-front { border-radius: .9cqw 0 0 .9cqw; }
+.bk-leaf-prev .bk-back { transform: rotateY(180deg); border-radius: 0 .9cqw .9cqw 0; }
+.bk-leaf-next .bk-front::after { background: linear-gradient(to right, rgba(70,60,45,.22), transparent 40%); }
+.bk-leaf-next .bk-back::after { background: linear-gradient(to left, rgba(70,60,45,.22), transparent 40%); }
+.bk-leaf-prev .bk-front::after { background: linear-gradient(to left, rgba(70,60,45,.22), transparent 40%); }
+.bk-leaf-prev .bk-back::after { background: linear-gradient(to right, rgba(70,60,45,.22), transparent 40%); }
+@keyframes bk-shade { 0% { opacity: .4; } 50% { opacity: 1; } 100% { opacity: .4; } }
+.bk-leaf::before { content: ""; position: absolute; inset: 0; transform: translateZ(-1px); box-shadow: 0 10px 40px rgba(50,40,30,.25); animation: bk-lift .9s ease both; }
+@keyframes bk-lift { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+/* phones: the notebook closes to one page; photo spots sit above the text and the page turns over to the left */
+@media (max-width: 760px) {
+  .bk-book { aspect-ratio: auto; grid-template-columns: 1fr; padding: 8px 8px 10px 14px; border-radius: 10px; perspective: 1800px; container-type: normal; }
+  .bk-book::after { display: none; }
+  .bk-left { display: none; }
+  .bk-right { border-radius: 2px 8px 8px 2px; min-height: 640px; box-shadow: inset 14px 0 16px -12px rgba(70,60,45,.25), 2px 0 0 #ece8de, 3px 0 0 #e2ddd1; }
+  .bk-face-in { position: relative; padding: 30px 22px 22px 26px; min-height: 640px; }
+  .bk-t { font-size: 44px; margin-bottom: 14px; }
+  .bk-hello { font-size: 11px; margin-bottom: 4px; }
+  .bk-p { gap: 11px; }
+  .bk-p p { font-size: 16.5px; }
+  .bk-no { font-size: 10px; padding-top: 18px; }
+  .bk-curl { border-width: 26px 26px 0 0; }
+  .bk-leaf-next { left: 14px; right: 8px; width: auto; top: 8px; bottom: 10px; }
+  .bk-leaf-next .bk-back { display: none; }
+  .bk-leaf-prev { display: none; }
+  .bk-face .bk-face-in { min-height: 0; height: 100%; }
+}
+/* Handwriting: Waterfall, a thin pencil-like cursive close to the notebook reference */
+@font-face { font-family: "Waterfall"; src: url(/assets/fonts/Waterfall-Regular.ttf) format("truetype"); font-display: swap; }
+.bk-t, .bk-cap, .fd-page .fd-services a.is-big .fd-sn { font-family: "Waterfall", "Sacramento", cursive !important; letter-spacing: .01em; }
+.bk-t { font-size: 4.6cqw; color: #55524e; }
+.bk-cap { font-size: 2.6cqw; }
+.fd-page .fd-services a.is-big .fd-sn { font-size: clamp(46px, 5vw, 68px) !important; color: #55524e !important; -webkit-text-fill-color: #55524e !important; }
+.fd-page .fd-start.fd-st-lav .fd-script.fd-hand { font-family: "Waterfall", cursive !important; letter-spacing: .01em !important; word-spacing: .08em !important; line-height: 1.2 !important; color: #76678b !important; -webkit-text-fill-color: #76678b !important; }
+.bk-ph-m { display: none; }
+.bk-p p { font-size: 1.42cqw; }
+@media (max-width: 760px) { .bk-ph-m { display: grid; width: 100%; aspect-ratio: 4 / 3; margin: 6px 0 22px; } .bk-ph-m::before { width: 70px; height: 18px; top: -9px; } .bk-ph-m span { font-size: 10px; } .bk-t { font-size: 46px; } }
+/* footer: same lavender paper as Let's Begin, no seam */
+.so-footer { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; border-top: 0 !important; box-shadow: none !important; }
+.so-footer::before, .so-footer::after { display: none !important; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
