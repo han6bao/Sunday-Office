@@ -11011,6 +11011,16 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-page .fd-hero-h { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400; font-style: normal; line-height: .95 !important; letter-spacing: -.015em; word-spacing: 0; padding-block: .06em .08em; margin-block: 0; white-space: nowrap; }
 .fd-page .fd-media:not(.fd-media-empty) .fd-hero-h, .fd-page .fd-media-empty .fd-hero-h { font-size: min(12.5vw, 230px); }
 @media (max-width: 640px) { .fd-page .fd-hero-h { font-size: 15vw !important; } }
+/* Major titles in the wordmark serif (Instrument Serif). Let's Begin and the signature stay handwritten. */
+.fd-page .fd-script:not(.fd-start .fd-script), .fd-page .fd-mk-t, .fd-page .fd-work-head h2 {
+  font-family: "Instrument Serif", Georgia, serif !important; font-style: normal !important; font-weight: 400 !important;
+  line-height: 1 !important; letter-spacing: -.012em !important; word-spacing: 0 !important; padding-inline: 0 !important; margin-inline-start: 0 !important;
+  background-image: none !important; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important;
+}
+.fd-page .fd-script:not(.fd-start .fd-script) { font-size: clamp(52px, 7.6vw, 112px) !important; }
+.fd-page .fd-mk-t, .fd-page .fd-work-head h2 { font-size: clamp(44px, 5.6vw, 84px) !important; }
+.fd-page .fd-letter-hi { font-size: clamp(44px, 5vw, 72px) !important; }
+.fd-page .fd-dark .fd-script, .fd-page .fd-dark .fd-mk-t, .fd-page .fd-work-head h2 { color: #efe9de !important; -webkit-text-fill-color: #efe9de !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
