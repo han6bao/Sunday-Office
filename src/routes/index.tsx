@@ -794,11 +794,11 @@ function FeedPhoto() {
       <div className="fd-media-over">
         <p className="fd-hero-k">Sunday Office · Seattle</p>
         <h1 className="fd-hero-h">Build Your World.</h1>
+        <span className="fd-hero-line" aria-hidden="true" />
         <div className="fd-hero-sub">
           <p><b>Sunday Office</b> is an independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I start with the brand, then bring it to life through websites, photography and creative direction.</p>
           <a href="#office-hours">Start a project</a>
         </div>
-        <span className="fd-hero-line" aria-hidden="true" />
       </div>
     </div>);
 }

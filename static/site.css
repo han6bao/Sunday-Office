@@ -11299,6 +11299,9 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page .fd-st-lav .fd-work-head h2 { color: #f4eff7 !important; -webkit-text-fill-color: #f4eff7 !important; }
 .fd-page .fd-services a:not(.is-big) .fd-sn { color: #8b7660 !important; -webkit-text-fill-color: #8b7660 !important; }
 .fd-write, .fd-write.is-written, .fd-page .fd-write { clip-path: none !important; -webkit-clip-path: none !important; animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; }
+/* the thin line sits right under Build Your World. */
+.fd-media:not(.fd-media-empty) .fd-hero-line { position: static; left: auto; bottom: auto; width: 1px; height: clamp(36px, 5vw, 64px); margin-top: clamp(4px, 1vw, 12px); background: linear-gradient(to bottom, rgba(244,240,233,.85), rgba(244,240,233,0)); animation: none !important; transform: none; }
+.fd-media:not(.fd-media-empty) .fd-hero-sub { bottom: clamp(24px, 4vw, 44px); }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
