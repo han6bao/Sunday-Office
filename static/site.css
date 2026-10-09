@@ -11032,6 +11032,16 @@ html.on-hero .so-nav .so-nav-burger { border-color: rgba(244,240,233,.45) !impor
 html.on-hero .so-nav .so-nav-link.cta { background: #f4f0e9 !important; color: #141312 !important; border-color: #f4f0e9 !important; }
 html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel * { --so-nav-ink: var(--color-ink); }
 .fd-page .fd-media:not(.fd-media-empty)::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 160px; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(8,7,6,.45), transparent); }
+/* Hero option 6: centered and quiet */
+.fd-hero-k { display: none; }
+.fd-media:not(.fd-media-empty) .fd-media-over { top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 18px; padding: 0 20px; }
+.fd-media:not(.fd-media-empty) .fd-hero-k { display: block; margin: 0; font: 500 11px/1 "IBM Plex Mono", monospace; letter-spacing: .26em; text-transform: uppercase; color: rgba(244,240,233,.78); }
+.fd-page .fd-media:not(.fd-media-empty) .fd-hero-h { font-size: min(7.2vw, 112px) !important; line-height: 1 !important; text-align: center; filter: drop-shadow(0 2px 18px rgba(0,0,0,.45)); }
+.fd-media:not(.fd-media-empty) .fd-hero-sub { position: absolute; left: 0; right: 0; bottom: clamp(24px, 4vw, 44px); margin: 0; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 0 20px; }
+.fd-media:not(.fd-media-empty) .fd-hero-sub p { max-width: 54ch; font-size: 15px; }
+.fd-page .fd-media:not(.fd-media-empty)::after { height: 45% !important; background: linear-gradient(to top, rgba(8,7,6,.7), transparent) !important; }
+.fd-media:not(.fd-media-empty) .fd-media-over::before { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 55% 30% at 50% 50%, rgba(8,7,6,.38), transparent 70%); pointer-events: none; }
+@media (max-width: 640px) { .fd-page .fd-media:not(.fd-media-empty) .fd-hero-h { font-size: 12.4vw !important; white-space: nowrap; } .fd-media:not(.fd-media-empty) .fd-hero-sub p { font-size: 14px; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

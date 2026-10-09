@@ -791,6 +791,7 @@ function FeedPhoto() {
     <div className={"fd-media" + (HERO_VIDEO ? "" : " fd-media-empty")}>
       {HERO_VIDEO ? (<video src={HERO_VIDEO} poster="/assets/work/hero-edit-poster.jpg" autoPlay muted loop playsInline aria-label="A short reel of Sunday Office video work" />) : null}
       <div className="fd-media-over">
+        <p className="fd-hero-k">Sunday Office · Seattle</p>
         <h1 className="fd-hero-h">Build Your World.</h1>
         <div className="fd-hero-sub">
           <p><b>Sunday Office</b> is an independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I start with the brand, then bring it to life through websites, photography and creative direction.</p>
