@@ -733,7 +733,7 @@ const REEL = [
    The feed-style homepage: one idea per frame, like an Instagram post.
    ------------------------------------------------------------ */
 const FEED_SERVICES = [
-  { n: "World building", d: "Branding + creative direction. Where every project starts.", p: "from $350", h: "/branding", big: true },
+  { n: "World Building", d: "Branding + creative direction. Where every project starts.", p: "from $350", h: "/branding", big: true },
   { n: "Websites", d: "A home for the brand that books clients while you sleep.", p: "from $850", h: "/websites", big: false },
   { n: "Photography", d: "Portraits, products, spaces and events.", p: "from $150", h: "/photography", big: false },
   { n: "Video + social", d: "Reels, content days and monthly posting.", p: "from $350", h: "/creative-direction-content", big: false },
@@ -1241,25 +1241,28 @@ function FeedStart() {
       const tn = lets?.firstChild;
       if (lets && tn && tn.nodeType === 3) {
         const rr = document.createRange();
-        rr.setStart(tn, 3);
-        rr.setEnd(tn, 4);
-        const sx = rr.getBoundingClientRect().left - lets.getBoundingClientRect().left;
+        rr.setStart(tn, 0);
+        rr.setEnd(tn, 3);
+        const sx = rr.getBoundingClientRect().right - lets.getBoundingClientRect().left;
         lets.style.setProperty("--ap-x", sx + "px");
       }
     };
     fit();
     document.fonts?.ready.then(fit);
+    document.fonts?.load('100px "Monsieur La Doulaise"').then(fit);
+    const t1 = window.setTimeout(fit, 700);
+    window.addEventListener("load", fit);
     /* the footer continues the same sheet of lavender paper: offset its texture by this section's height */
     const sec = document.getElementById("office-hours");
     const ro = sec && "ResizeObserver" in window ? new ResizeObserver(() => document.documentElement.style.setProperty("--start-h", sec.offsetHeight + "px")) : null;
     if (sec && ro) ro.observe(sec);
     window.addEventListener("resize", fit);
-    return () => { window.removeEventListener("resize", fit); ro?.disconnect(); };
+    return () => { window.removeEventListener("resize", fit); window.removeEventListener("load", fit); window.clearTimeout(t1); ro?.disconnect(); };
   }, []);
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script fd-hand fd-hand-mld" aria-label="let’s begin."><span className="fd-lets">lets</span> begin.</p>
+      <p className="fd-script fd-hand fd-hand-mld" aria-label="Let’s Begin."><span className="fd-lets">Lets</span> Begin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
         <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.

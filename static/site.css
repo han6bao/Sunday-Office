@@ -11465,6 +11465,21 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .bk-book::before { z-index: -2 !important; }
 @media (max-width: 760px) { .bk-book::after { display: none !important; } }
 .bk-no { margin-right: 3.2cqw; } @media (max-width:760px){ .bk-no { margin-right: 30px; } }
+/* Let's begin: centered, calmer intro text, apostrophe sitting on the t */
+.fd-page .fd-start.fd-st-lav { text-align: center; }
+.fd-page .fd-start.fd-st-lav > .fd-file { text-align: left; }
+.fd-page .fd-start.fd-st-lav .fd-small { font-family: "Fraunces", Georgia, serif !important; font-weight: 300 !important; font-size: 18px !important; line-height: 1.65 !important; max-width: 44ch; margin: clamp(6px, 1.2vw, 16px) auto 0 !important; color: #f4eff7 !important; }
+.fd-page .fd-start.fd-st-lav .fd-small a { white-space: nowrap; border-bottom: 1px solid rgba(244,239,247,.6); text-decoration: none; }
+.fd-page .fd-start.fd-st-lav .fd-sheet { text-align: left; }
+.fd-hand-mld .fd-lets::after { top: .42em !important; left: calc(var(--ap-x, 2em) - .06em) !important; }
+/* body text in the stationery sections: the readable serif, not the condensed one */
+.fd-page .fd-st .fd-small { font-family: "Fraunces", Georgia, serif !important; font-weight: 300 !important; font-size: 17px !important; line-height: 1.65 !important; }
+.fd-hand-mld .fd-lets::after { left: calc(var(--ap-x, 2em) - .2em) !important; top: .36em !important; }
+/* service rows: World Building capitalized; rows fill lavender with white text on hover */
+.fd-page #build .fd-services a.is-big .fd-sn { text-transform: none !important; }
+.fd-page #build .fd-services a { transition: background-color .3s ease, padding .3s ease; border-radius: 2px; }
+.fd-page #build .fd-services a:hover, .fd-page #build .fd-services a:focus-visible { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px !important; padding-left: 20px !important; padding-right: 20px !important; border-bottom-color: transparent !important; }
+.fd-page #build .fd-services a:hover *, .fd-page #build .fd-services a:focus-visible * { color: #fbf8fc !important; -webkit-text-fill-color: #fbf8fc !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
