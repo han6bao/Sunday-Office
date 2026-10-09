@@ -778,6 +778,15 @@ function FeedHero() {
 const HERO_VIDEO: string | null = "/assets/work/hero-edit.mp4";
 
 function FeedPhoto() {
+  /* While the hero video is on screen, the header turns see-through and sits on the video. */
+  useEffect(() => {
+    const el = document.querySelector(".fd-media:not(.fd-media-empty)");
+    const root = document.documentElement;
+    if (!el || !("IntersectionObserver" in window)) return;
+    const io = new IntersectionObserver(([e]) => root.classList.toggle("on-hero", e.isIntersecting), { rootMargin: "-80px 0px 0px 0px", threshold: 0 });
+    io.observe(el);
+    return () => { io.disconnect(); root.classList.remove("on-hero"); };
+  }, []);
   return (
     <div className={"fd-media" + (HERO_VIDEO ? "" : " fd-media-empty")}>
       {HERO_VIDEO ? (<video src={HERO_VIDEO} poster="/assets/work/hero-edit-poster.jpg" autoPlay muted loop playsInline aria-label="A short reel of Sunday Office video work" />) : null}

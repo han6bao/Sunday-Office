@@ -11021,6 +11021,17 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-page .fd-mk-t, .fd-page .fd-work-head h2 { font-size: clamp(44px, 5.6vw, 84px) !important; }
 .fd-page .fd-letter-hi { font-size: clamp(44px, 5vw, 72px) !important; }
 .fd-page .fd-dark .fd-script, .fd-page .fd-dark .fd-mk-t, .fd-page .fd-work-head h2 { color: #efe9de !important; -webkit-text-fill-color: #efe9de !important; }
+/* Header sits on the hero video, see-through, until the hero scrolls away */
+.so-nav { transition: background-color .45s ease, box-shadow .45s ease, border-color .45s ease, backdrop-filter .45s ease; }
+.fd-page .fd-media:not(.fd-media-empty) { margin-top: -73px; height: 100svh !important; max-height: 1060px; }
+html.on-hero .so-nav { background: transparent !important; background-image: none !important; box-shadow: none !important; border-color: transparent !important; -webkit-backdrop-filter: none !important; backdrop-filter: none !important; --so-nav-ink: #f4f0e9; }
+html.on-hero .so-nav::before, html.on-hero .so-nav::after { opacity: 0 !important; }
+html.on-hero .so-nav .so-brandlock, html.on-hero .so-nav .so-brandlock span, html.on-hero .so-nav .so-nav-link:not(.cta), html.on-hero .so-nav .so-nav-burger, html.on-hero .so-nav .so-burger-label { color: #f4f0e9 !important; }
+html.on-hero .so-nav .so-burger-lines span { background: #f4f0e9 !important; }
+html.on-hero .so-nav .so-nav-burger { border-color: rgba(244,240,233,.45) !important; background: transparent !important; }
+html.on-hero .so-nav .so-nav-link.cta { background: #f4f0e9 !important; color: #141312 !important; border-color: #f4f0e9 !important; }
+html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel * { --so-nav-ink: var(--color-ink); }
+.fd-page .fd-media:not(.fd-media-empty)::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 160px; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(8,7,6,.45), transparent); }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
