@@ -817,7 +817,7 @@ function FeedServices() {
         {FEED_SERVICES.map((x) => (
           <a key={x.n} href={x.h} className={x.big ? "is-big" : ""}>
             <span className="fd-sn">
-              {x.n}
+              {x.big ? x.n.split("").map((ch, j) => (/[A-Z]/.test(ch) ? <span key={j} className="fd-cap">{ch}</span> : ch)) : x.n}
               {x.d && <span className="fd-sd">{x.d}</span>}
             </span>
             <span className="fd-sp">{x.p} <span className="fd-sv-arr" aria-hidden="true">→</span></span>
@@ -1235,14 +1235,14 @@ function FeedStart() {
       const r = document.createRange();
       r.selectNodeContents(el);
       const w = r.getBoundingClientRect().width;
-      if (w > 0) el.style.setProperty("font-size", Math.min(260, (100 * box * 0.94) / w) + "px", "important");
+      if (w > 0) el.style.setProperty("font-size", Math.min(300, (100 * box * 0.94) / w) + "px", "important");
       /* tuck the apostrophe in above the join between t and s, so the letters stay connected */
       const lets = el.querySelector<HTMLElement>(".fd-lets");
-      const tn = lets?.firstChild;
-      if (lets && tn && tn.nodeType === 3) {
+      const tn = lets ? Array.from(lets.childNodes).find((c) => c.nodeType === 3) : null;
+      if (lets && tn) {
         const rr = document.createRange();
         rr.setStart(tn, 0);
-        rr.setEnd(tn, 3);
+        rr.setEnd(tn, 2);
         const sx = rr.getBoundingClientRect().right - lets.getBoundingClientRect().left;
         lets.style.setProperty("--ap-x", sx + "px");
       }
@@ -1250,6 +1250,8 @@ function FeedStart() {
     fit();
     document.fonts?.ready.then(fit);
     document.fonts?.load('100px "Monsieur La Doulaise"').then(fit);
+    document.fonts?.load('100px "Pinyon Script Local"').then(fit);
+    const t2 = window.setTimeout(fit, 1600);
     const t1 = window.setTimeout(fit, 700);
     window.addEventListener("load", fit);
     /* the footer continues the same sheet of lavender paper: offset its texture by this section's height */
@@ -1257,12 +1259,12 @@ function FeedStart() {
     const ro = sec && "ResizeObserver" in window ? new ResizeObserver(() => document.documentElement.style.setProperty("--start-h", sec.offsetHeight + "px")) : null;
     if (sec && ro) ro.observe(sec);
     window.addEventListener("resize", fit);
-    return () => { window.removeEventListener("resize", fit); window.removeEventListener("load", fit); window.clearTimeout(t1); ro?.disconnect(); };
+    return () => { window.removeEventListener("resize", fit); window.removeEventListener("load", fit); window.clearTimeout(t1); window.clearTimeout(t2); ro?.disconnect(); };
   }, []);
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script fd-hand fd-hand-mld" aria-label="Let’s Begin."><span className="fd-lets">Lets</span> Begin.</p>
+      <p className="fd-script fd-hand fd-hand-mld" aria-label="Let’s Begin."><span className="fd-lets"><span className="fd-cap">L</span>ets</span> <span className="fd-cap">B</span>egin.</p>
       <p className="fd-small">
         Tell me what you're making and what feels off. I reply within 2 to 3 business days. Or email{" "}
         <a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>.

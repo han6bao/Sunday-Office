@@ -11480,6 +11480,16 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page #build .fd-services a { transition: background-color .3s ease, padding .3s ease; border-radius: 2px; }
 .fd-page #build .fd-services a:hover, .fd-page #build .fd-services a:focus-visible { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px !important; padding-left: 20px !important; padding-right: 20px !important; border-bottom-color: transparent !important; }
 .fd-page #build .fd-services a:hover *, .fd-page #build .fd-services a:focus-visible * { color: #fbf8fc !important; -webkit-text-fill-color: #fbf8fc !important; }
+@font-face { font-family: "Pinyon Script Local"; src: url(/assets/fonts/PinyonScript-Regular.ttf) format("truetype"); font-display: swap; }
+/* calmer capitals for Let's Begin */
+.fd-hand-mld .fd-cap { font-family: "Pinyon Script Local", "Pinyon Script", cursive; font-size: .92em; margin-right: -.04em; }
+/* World Building: the same calm capitals as Let's Begin */
+.fd-page #build .fd-services a.is-big .fd-cap { font-family: "Pinyon Script Local", "Pinyon Script", cursive; font-size: .9em; }
+/* hover: a slightly deeper cream instead of lavender, text stays ink */
+.fd-page #build .fd-services a:hover, .fd-page #build .fd-services a:focus-visible { background-color: #e1dcd0 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-blend-mode: multiply; background-size: 768px !important; }
+.fd-page #build .fd-services a:hover *, .fd-page #build .fd-services a:focus-visible * { color: #4a443d !important; -webkit-text-fill-color: #4a443d !important; }
+.fd-page #build .fd-services a:hover .fd-sd, .fd-page #build .fd-services a:focus-visible .fd-sd { color: #6b6258 !important; -webkit-text-fill-color: #6b6258 !important; }
+.fd-page #build .fd-services a:hover, .fd-page #build .fd-services a:focus-visible { background-image: none !important; background-color: #e1dcd0 !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
