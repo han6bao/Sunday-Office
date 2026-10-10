@@ -888,36 +888,58 @@ function Makeover() {
 }
 
 const MORE_WORK = [
-  { t: "Bar Bistro", w: "Food + drink photography", src: "/assets/campaigns/bar-bistro/bb-01.jpg", h: "/campaigns/bar-bistro" },
-  { t: "Public House", w: "Venue photography", src: "/assets/campaigns/soul-social/ss-04.jpg", h: "/campaigns/public-house" },
-  { t: "Kenshi Killz", w: "Artist promo", src: "/assets/campaigns/kenshi-killz/kk-01.jpg", h: "/campaigns/kenshi-killz" },
-  { t: "Big Baby Gucci", w: "Artist photography", src: "/assets/campaigns/big-baby-gucci/bbg-01.jpg", h: "/campaigns/big-baby-gucci" },
-  { t: "Avery Tien", w: "Portraits", src: "/assets/campaigns/avery-tien/at01.jpg", h: "/campaigns/avery-tien" },
-  { t: "DJ Prashant × The Hiyu", w: "Event photography", src: "/assets/campaigns/dj-prashant-hiyu/djp-01.jpg", h: "/campaigns/dj-prashant-hiyu" },
+  { t: "Bar Bistro", w: "Food + drink photography", k: "Food + drink", src: "/assets/campaigns/bar-bistro/bb-01.jpg", h: "/campaigns/bar-bistro" },
+  { t: "Public House", w: "Venue photography", k: "Venues", src: "/assets/campaigns/soul-social/ss-04.jpg", h: "/campaigns/public-house" },
+  { t: "Kenshi Killz", w: "Artist promo", k: "Artists", src: "/assets/campaigns/kenshi-killz/kk-01.jpg", h: "/campaigns/kenshi-killz" },
+  { t: "Big Baby Gucci", w: "Artist photography", k: "Artists", src: "/assets/campaigns/big-baby-gucci/bbg-01.jpg", h: "/campaigns/big-baby-gucci" },
+  { t: "Paradice × Itz Pz", w: "Studio portraits", k: "Artists", src: "/assets/campaigns/paradice/pz01.jpg", h: "/campaigns/paradice" },
+  { t: "Still Different", w: "Artist photography", k: "Artists", src: "/assets/campaigns/still-different/sd-01.jpg", h: "/campaigns/still-different" },
+  { t: "Avery Tien", w: "Portraits", k: "Portraits", src: "/assets/campaigns/avery-tien/at01.jpg", h: "/campaigns/avery-tien" },
+  { t: "DJ Prashant × The Hiyu", w: "Event photography", k: "Events", src: "/assets/campaigns/dj-prashant-hiyu/djp-01.jpg", h: "/campaigns/dj-prashant-hiyu" },
+  { t: "DJ WZRD", w: "Nightlife photography", k: "Events", src: "/assets/campaigns/dj-wzrd/dj-01.jpg", h: "/campaigns/dj-wzrd" },
 ];
+const MW_TYPES = ["All", "Artists", "Events", "Food + drink", "Venues", "Portraits"];
 
-/* More work as a quiet list. On a computer, the photo floats up beside the cursor. */
+/* More work as a quiet list. Pick a type and those projects rise to the top. */
 function MoreWork() {
-  const [on, setOn] = useState(0);
+  const [type, setType] = useState("All");
+  const list = type === "All" ? MORE_WORK : [...MORE_WORK.filter((w) => w.k === type), ...MORE_WORK.filter((w) => w.k !== type)];
+  const [on, setOn] = useState(MORE_WORK[0].t);
+  const pick = (t: string) => {
+    setType(t);
+    const first = t === "All" ? MORE_WORK[0] : MORE_WORK.find((w) => w.k === t);
+    if (first) setOn(first.t);
+  };
   return (
     <div className="fd-mw fd-mw-index">
       <div className="fd-mw-list">
         <p className="fd-mw-h">More work</p>
-        <ul>
-          {MORE_WORK.map((w, i) => (
-            <li key={w.t}>
-              <a href={w.h} onMouseEnter={() => setOn(i)} onFocus={() => setOn(i)} className={on === i ? "is-on" : ""}>
-                <span className="fd-mw-no">{String(i + 1).padStart(2, "0")}</span>
-                <span className="fd-mw-t">{w.t}</span>
-                <span className="fd-mw-w">{/progress/i.test(w.w) && <span className="rec-dot" aria-hidden="true" />}{w.w}</span>
-              </a>
-            </li>
+        <div className="fd-mw-types" role="group" aria-label="Filter by type">
+          {MW_TYPES.map((t) => (
+            <button key={t} type="button" className={"fd-mw-type" + (type === t ? " is-on" : "")} aria-pressed={type === t} onClick={() => pick(t)}>
+              {t}
+              {t !== "All" && <span className="fd-mw-count">{MORE_WORK.filter((w) => w.k === t).length}</span>}
+            </button>
           ))}
+        </div>
+        <ul>
+          {list.map((w, i) => {
+            const match = type === "All" || w.k === type;
+            return (
+              <li key={w.t} className={match ? "" : "is-dim"}>
+                <a href={ph(w.h)} onMouseEnter={() => setOn(w.t)} onFocus={() => setOn(w.t)} className={on === w.t ? "is-on" : ""}>
+                  <span className="fd-mw-no">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="fd-mw-t">{w.t}</span>
+                  <span className="fd-mw-w">{/progress/i.test(w.w) && <span className="rec-dot" aria-hidden="true" />}{w.w}</span>
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
       <div className="fd-mw-peek" aria-hidden="true">
-        {MORE_WORK.map((w, i) => (
-          <img key={w.src} src={w.src} alt="" loading="lazy" className={on === i ? "is-on" : ""} />
+        {MORE_WORK.map((w) => (
+          <img key={w.src} src={w.src} alt="" loading="lazy" className={on === w.t ? "is-on" : ""} />
         ))}
       </div>
     </div>
