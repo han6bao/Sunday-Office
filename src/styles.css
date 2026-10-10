@@ -11579,7 +11579,7 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 .fd-line { display: block; }
 .fd-page .fd-start.fd-st-lav .fd-small { max-width: none !important; }
 /* pencil texture (graphite strokes) instead of the speckled one */
-.fd-page .fd-start.fd-st-lav .fd-script.fd-hand-mld, .fd-hand-mld .fd-lets, .fd-hand-mld .fd-cap, .fd-hand-mld .fd-ap { background-image: url(/assets/texture/pencil-white.png) !important; background-size: 260px !important; }
+.fd-page .fd-start.fd-st-lav .fd-script.fd-hand-mld, .fd-hand-mld .fd-lets, .fd-hand-mld .fd-cap, .fd-hand-mld .fd-ap { background-image: url(/assets/texture/chalk-white.png) !important; background-size: 260px !important; }
 .fd-page #build .fd-services a.is-big .fd-sn { background-image: url(/assets/texture/pencil-grey.png) !important; background-size: 220px !important; }
 
 /* ===== Meet Hana: cross-stitch cover + chapter list ===== */
@@ -11601,4 +11601,4 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 .fd-bio .bio-row, .fd-bio .bio-head { display: none; }
 @media (max-width: 860px) { .bio-grid { grid-template-columns: 1fr; margin-top: -20px; } .bio-cover { max-width: 420px; width: 100%; justify-self: center; } }
 .fd-hand-mld .fd-cap { background: none !important; }
-.fd-hand-mld .fd-ap { background-image: url(/assets/texture/pencil-white.png) !important; background-size: 260px !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+.fd-hand-mld .fd-ap { background-image: url(/assets/texture/chalk-white.png) !important; background-size: 260px !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
