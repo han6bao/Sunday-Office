@@ -1196,11 +1196,8 @@ function FeedLetter() {
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <p className="fd-ghost" aria-hidden="true">05</p>
       <div className="bio-grid">
-        <figure className="bio-cover" aria-label="Hana, in cross-stitch on kraft paper">
-          <span className="bio-cover-top">SUNDAY OFFICE · VOLUME 05</span>
-          <img src="/assets/bio/stitch-hana.png" alt="" />
-          <span className="bio-cover-side">founder · photographer · creative producer</span>
-          <span className="bio-cover-foot">Seattle, WA</span>
+        <figure className="bio-cover bio-cover-img">
+          <img src="/assets/bio/cover-hana.jpg" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026. Founder, creative producer. Seattle, WA. Building worlds." />
         </figure>
         <div className="bio-side">
           <p className="fd-script">Hi, I'm Hana.</p>
@@ -1211,7 +1208,7 @@ function FeedLetter() {
                 <button type="button" aria-expanded={open === k} aria-controls={"bio-p-" + k} onClick={() => setOpen((v) => (v === k ? null : k))}>
                   <span className="bio-ln">{c.n}</span>
                   <span className="bio-lt">{c.t}</span>
-                  <span className="bio-tap" aria-hidden="true"><span className="bio-tap-t">{open === k ? "Close" : "Read"}</span><span className="bio-la">+</span></span>
+                  <span className="bio-la bio-plus" aria-hidden="true">+</span>
                 </button>
                 <div className="bio-panel" id={"bio-p-" + k} role="region" aria-label={c.t}>
                   <div className="bio-panel-in">

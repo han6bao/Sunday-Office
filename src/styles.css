@@ -11644,3 +11644,17 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 .fd-bio .bio-list button:hover .bio-tap, .fd-bio .bio-list button:focus-visible .bio-tap { background: rgba(141,125,158,.12); border-color: rgba(141,125,158,.7); }
 .fd-bio .bio-list li.is-open .bio-tap { background: #8d7d9e; border-color: #8d7d9e; color: #f6f1ea; }
 @media (max-width: 520px) { .fd-bio .bio-tap { padding: 6px 9px 6px 11px; font-size: 9.5px; gap: 6px; } }
+/* Hana's own cross-stitch cover */
+.bio-cover.bio-cover-img { aspect-ratio: 2000 / 2939; background: #b89a6e; }
+.bio-cover.bio-cover-img img { position: static; inset: auto; width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Let's Begin: chalkier, tighter spacing */
+.fd-page .fd-start.fd-st-lav .fd-script.fd-start-h { background-image: url(/assets/texture/chalk-white-2.png) !important; background-size: 220px !important; line-height: 1 !important; margin: 0 auto 0 !important; padding: .04em .08em .2em !important; }
+.fd-page .fd-start .fd-small { margin-top: 6px !important; line-height: 1.6 !important; }
+.fd-page .fd-start .fd-contact-strip { margin-top: 26px !important; gap: 8px 18px; letter-spacing: .14em; font-size: 10.5px; }
+.fd-page .fd-start .fd-contact-strip li + li::before { margin-right: 18px; }
+/* World Building: larger and a little heavier */
+.fd-page #build .fd-services a.is-big .fd-sn { font-size: clamp(64px, 6vw, 92px) !important; -webkit-text-stroke: .02em rgba(98,93,88,.8) !important; paint-order: stroke fill; }
+@media (max-width: 899px) { .fd-page #build .fd-services a.is-big .fd-sn { font-size: 52px !important; } }
+/* Bio: plain plus, darker on hover (option 1) */
+.fd-bio .bio-list .bio-plus { font-family: Georgia, serif; font-size: 24px !important; line-height: 1; color: #b3a99e; opacity: 1 !important; transition: color .25s ease, transform .35s ease; }
+.fd-bio .bio-list button:hover .bio-plus, .fd-bio .bio-list button:focus-visible .bio-plus, .fd-bio .bio-list li.is-open .bio-plus { color: #6b6258; }
