@@ -684,7 +684,6 @@ function Footer() {
           <span className="foot-link">Seattle, WA</span>
         </div>
       </div>
-      <p className="ft2-small">© 2026 Sunday Office · Strategy in mind · Culture at heart · Story in everything</p>
       <div className="ft2-mark" aria-hidden="true"><span className="ft2-c">S</span>unday <span className="ft2-c">O</span>ffice</div>
     </footer>
   );
