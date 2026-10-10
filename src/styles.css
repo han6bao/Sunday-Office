@@ -11842,14 +11842,6 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 /* Philosophy open: lettering and words side by side, fits one screen, no box */
 .fd-page .fd-quote .fd-quote-btn { border: 0 !important; outline: none; box-shadow: none !important; background: none !important; }
 .fd-page .fd-quote .fd-quote-btn:focus-visible { outline: 1px dashed rgba(133,123,112,.5); outline-offset: 8px; }
-@media (min-width: 900px) {
-  .fd-page .fd-quote.is-open { display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: clamp(40px, 6vw, 96px); align-items: center; }
-  .fd-page .fd-quote.is-open > .fd-quote-file { grid-column: 1 / -1; }
-  .fd-page .fd-quote.is-open .fd-quote-btn { justify-self: end; }
-  .fd-page .fd-quote.is-open .fd-quote-img { max-height: 300px !important; }
-  .fd-page .fd-quote.is-open .fd-why { text-align: left !important; max-width: 48ch; margin: 0 !important; padding: 0 !important; }
-  .fd-page .fd-quote.is-open .fd-why p { text-align: left !important; font-size: 18px !important; line-height: 1.75 !important; }
-}
 /* Selected work: strip lines up with the page margin, arrows to browse */
 #work .fd-row { scroll-padding-left: 72px; scroll-padding-inline-start: 72px; }
 #work .fd-work-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
@@ -11858,3 +11850,8 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 #work .fd-arrow { all: unset; box-sizing: border-box; cursor: pointer; width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.4); display: grid; place-items: center; color: #fff; font-family: Georgia, serif; font-size: 17px; transition: background-color .25s ease; }
 #work .fd-arrow:hover, #work .fd-arrow:focus-visible { background: rgba(255,255,255,.14); }
 @media (max-width: 899px) { #work .fd-arrow { display: none; } #work .fd-row { scroll-padding-left: 20px; } }
+/* Philosophy open: text stays under the lettering, all within one screen */
+.fd-page .fd-quote.is-open .fd-quote-img { max-height: min(260px, 30vh) !important; }
+.fd-page .fd-quote.is-open .fd-quote-hint { margin-top: 6px; }
+.fd-page .fd-quote.is-open .fd-why { margin: 18px auto 0 !important; max-width: 62ch; text-align: center; }
+.fd-page .fd-quote.is-open .fd-why p { font-size: 17px !important; line-height: 1.7 !important; margin: 0 0 12px !important; }
