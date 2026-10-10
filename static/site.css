@@ -11628,6 +11628,8 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 .fd-bio .bio-panel-in { padding-left: 66px; }
 .fd-bio .bio-list .bio-la { opacity: .6; }
 .fd-bio .bio-list li.is-open .bio-la { opacity: 1; }
+/* Let's Begin: Instrument Serif italic, white chalk, like the other titles (option 8) */
+.fd-page .fd-start.fd-st-lav .fd-script.fd-start-h { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic !important; font-weight: 400 !important; letter-spacing: -.01em !important; line-height: 1.05 !important; text-transform: none !important; margin: 0 auto .18em !important; padding: .02em .08em .06em !important; white-space: nowrap; text-align: center; color: transparent !important; -webkit-text-fill-color: transparent !important; background-image: url(/assets/texture/chalk-white.png) !important; background-size: 260px !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-stroke: 0 !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

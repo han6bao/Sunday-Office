@@ -1240,7 +1240,7 @@ function FeedStart() {
       const r = document.createRange();
       r.selectNodeContents(el);
       const w = r.getBoundingClientRect().width;
-      if (w > 0) el.style.setProperty("font-size", Math.min(300, (100 * box * 0.94) / w) + "px", "important");
+      if (w > 0) el.style.setProperty("font-size", Math.min(190, (100 * box * 0.72) / w) + "px", "important");
       /* tuck the apostrophe in above the join between t and s, so the letters stay connected */
       const lets = el.querySelector<HTMLElement>(".fd-lets");
       const tn = lets ? Array.from(lets.childNodes).find((c) => c.nodeType === 3) : null;
@@ -1269,7 +1269,7 @@ function FeedStart() {
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script fd-hand fd-hand-mld" aria-label="Let’s Begin."><span className="fd-cap">L</span>et<span className="fd-ap">’</span>s <span className="fd-cap">B</span>egin.</p>
+      <p className="fd-script fd-start-h">Let’s Begin.</p>
       <p className="fd-small">
         <span className="fd-line">Tell me what you're making and what feels off.</span>
         <span className="fd-line">A few lines is plenty.</span>
