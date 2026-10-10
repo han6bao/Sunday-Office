@@ -11952,6 +11952,13 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .ft2-mark { -webkit-text-stroke: .006em #f4eff7; word-spacing: -.12em; margin-top: 0 !important; }
 .so-footer.ft2 .ft2-top { padding-bottom: 0; }
 .ft2-mark { word-spacing: -.05em !important; font-size: 23.2vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 22.6vw !important; } }
+/* Footer wordmark cropped by the page edge, with a small tail off the last e */
+.so-footer.ft2 { overflow: hidden !important; }
+.ft2-mark { margin-bottom: -.42em !important; }
+.ft2-tail { display: inline-block; width: .55em; height: .34em; margin-left: -.05em; vertical-align: .02em; overflow: visible; }
+.ft2-tail path { fill: none; stroke: #f4eff7; stroke-width: .022em; stroke-linecap: round; vector-effect: non-scaling-stroke; stroke-width: 3px; }
+.ft2-mark { font-size: 20.6vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 20vw !important; } } .ft2-tail { width: .42em !important; height: .3em !important; margin-left: -.09em !important; vertical-align: .16em !important; }
+.ft2-tail path { stroke-width: 5px !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
