@@ -11967,3 +11967,4 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .ft2-mark { font-size: 20.6vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 20vw !important; } } .ft2-tail { width: .42em !important; height: .3em !important; margin-left: -.09em !important; vertical-align: .16em !important; }
 .ft2-tail path { stroke-width: 5px !important; }
 .ft2-mark { margin-bottom: -.3em !important; font-size: 22.6vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 22vw !important; } }
+.ft2-mark { margin-bottom: -.4em !important; }
