@@ -11881,3 +11881,4 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page > section.fd-frame.fd-quote.is-open > .fd-why { margin-bottom: auto !important; }
 .fd-page .fd-quote .fd-quote-img { max-height: min(420px, 46vh) !important; }
 .fd-bio .bio-panel-in p { font-weight: 300 !important; font-variation-settings: "wght" 300, "SOFT" 50, "opsz" 14; color: #6e665e; }
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child { margin-right: -.11em !important; }
