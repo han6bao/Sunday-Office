@@ -11746,3 +11746,11 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page > section.fd-frame, .fd-page > .fd-frame { padding-top: clamp(52px, 6.5vw, 96px) !important; padding-bottom: clamp(52px, 6.5vw, 96px) !important; min-height: 0 !important; }
 .fd-page .fd-ghost { font-size: clamp(100px, 13vw, 200px) !important; line-height: .9 !important; margin-bottom: -.42em !important; margin-top: 0 !important; }
 .fd-page .fd-bio .fd-ghost { margin-bottom: -.3em !important; }
+/* World Building: weight 2, solid ink with a soft grain, W joined to the o, nudged left for the slant */
+.fd-page #build .fd-services a.is-big .fd-sn, .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap { color: #5f5a55 !important; -webkit-text-fill-color: #5f5a55 !important; -webkit-text-stroke: .02em #5f5a55 !important; }
+.fd-page #build .fd-services a.is-big .fd-sn { text-indent: -.14em; -webkit-mask-image: linear-gradient(transparent calc(100% - 32px), #000 calc(100% - 32px)), url(/assets/texture/grain-soft.png); mask-image: linear-gradient(transparent calc(100% - 32px), #000 calc(100% - 32px)), url(/assets/texture/grain-soft.png); }
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child { margin-right: -.1em; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { text-indent: 0; }
+@media (max-width: 899px) {
+  .fd-page #build .fd-services a.is-big .fd-sn { font-size: 40px !important; -webkit-mask-image: linear-gradient(transparent calc(100% - 62px), #000 calc(100% - 62px)), url(/assets/texture/grain-soft.png); mask-image: linear-gradient(transparent calc(100% - 62px), #000 calc(100% - 62px)), url(/assets/texture/grain-soft.png); }
+}
