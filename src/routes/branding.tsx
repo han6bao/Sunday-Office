@@ -194,7 +194,7 @@ function BrandingPage() {
                 <a key={b.c} href={b.h} className="so-bw-card" target={ext ? "_blank" : undefined} rel={ext ? "noreferrer" : undefined}>
                   <span className="so-bw-card-img">
                     <img src={b.img} alt={b.c} loading="lazy" />
-                    {"s" in b && b.s && <span className="so-status so-status-on-card">{b.s}</span>}
+                    {"s" in b && b.s && <span className={"so-status so-status-on-card" + (/progress/i.test(b.s) ? " is-rec" : "")}>{b.s}</span>}
                   </span>
                   <span className="so-micro so-bw-card-w">{b.w}</span>
                   <span className="so-bw-card-c">

@@ -55,7 +55,7 @@ function JazminsCase() {
           </>
         }
         lede="These are my notes on Jazmin's brand and website. She was starting a wedding planning business with nothing built yet. Every call came back to one question: would a couple trust her with their day?"
-        extra={<span className="bn-status">Branding done · website in progress</span>}
+        extra={<span className="bn-status is-rec">Branding done · website in progress</span>}
       />
 
       <BnFacts

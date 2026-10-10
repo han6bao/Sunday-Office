@@ -245,7 +245,7 @@ export function DarkGallery({ items: all }: { items: Work[] }) {
                 ) : (
                   <FramePlate motif={w.motif} ratio="tall" caption={w.file} />
                 )}
-                {w.status && <span className={"so-status so-status-on-card" + (w.status === "Launched" ? " is-live" : "")}>{w.status}</span>}
+                {w.status && <span className={"so-status so-status-on-card" + (w.status === "Launched" ? " is-live" : "") + (/progress/i.test(w.status) ? " is-rec" : "")}>{w.status}</span>}
                 <span className="so-workcard-hover" aria-hidden>
                   <span>View project</span>
                   <span className="caret" aria-hidden>

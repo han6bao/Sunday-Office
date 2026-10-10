@@ -729,7 +729,7 @@ const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; li
   { src: "/assets/campaigns/chutneys/ch-02.jpg", alt: "A dish at Chutneys Bellevue", t: "Chutneys Bellevue", w: "Commercial + photos", d: "A commercial and promo photos for a North Indian restaurant.", links: [{ t: "Visit their website", h: "https://chutneysinbellevue.com/" }], study: "/campaigns/chutneys" },
   { src: "/assets/campaigns/leon-thomas/lt-01.jpg", alt: "Leon Thomas performing at Vice Seattle", t: "Leon Thomas × Vice", w: "Event photography", d: "His tour afterparty at Vice Seattle, photographed for the venue.", links: [{ t: "Visit Vice Seattle", h: "https://www.viceseattle.com/" }], study: "/campaigns/leon-thomas" },
   { src: "/assets/campaigns/timber-and-tonic-cover.png", alt: "Timber & Tonic mobile bartending website", t: "Timber & Tonic", w: "Website · in progress", d: "A mobile bartending company in Buckley, WA. Website in progress.", links: [{ t: "See the site so far", h: "https://timber-and-tonic.vercel.app/" }], study: "" },
-  { src: "/assets/campaigns/jazmins-events/featured-cover.png", alt: "The Jazmin's Events wordmark on cream paper", t: "Jazmin's Events", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch. Website in progress.", links: [{ t: "Visit their website", h: "https://jazmins-events.vercel.app/" }], study: "/websites/jazmins-events" },
+  { src: "/assets/campaigns/jazmins-events/featured-cover.png", alt: "The Jazmin's Events wordmark on cream paper", t: "Jazmin's Events", w: "Brand + website · in progress", d: "A brand-new wedding planner, branded from scratch. Website in progress.", links: [{ t: "Visit their website", h: "https://jazmins-events.vercel.app/" }], study: "/websites/jazmins-events" },
 ];
 
 function FeedFile({ children }: { children: string }) {
@@ -905,7 +905,7 @@ function MoreWork() {
               <a href={w.h} onMouseEnter={() => setOn(i)} onFocus={() => setOn(i)} className={on === i ? "is-on" : ""}>
                 <span className="fd-mw-no">{String(i + 1).padStart(2, "0")}</span>
                 <span className="fd-mw-t">{w.t}</span>
-                <span className="fd-mw-w">{w.w}</span>
+                <span className="fd-mw-w">{/progress/i.test(w.w) && <span className="rec-dot" aria-hidden="true" />}{w.w}</span>
               </a>
             </li>
           ))}
@@ -961,7 +961,7 @@ function WorkBox({ w, onClose }: { w: (typeof FEED_WORK)[number]; onClose: () =>
           <button type="button" id="fd-box-close" className="fd-box-x" onClick={onClose} aria-label="Close">
             ×
           </button>
-          <p className="fd-box-w">{w.w}</p>
+          <p className="fd-box-w">{/progress/i.test(w.w) && <span className="rec-dot" aria-hidden="true" />}{w.w}</p>
           <p className="fd-box-t">{w.t}</p>
           <p className="fd-box-d">{w.d}</p>
           <p className="fd-box-q">Want to see more?</p>
@@ -1008,6 +1008,7 @@ function FeedWork() {
         {FEED_WORK.map((w, i) => (
           <button key={w.t} type="button" role="listitem" className="fd-tile" onClick={() => setOpen(i)}>
             <img src={w.src} alt={w.alt} loading="lazy" />
+            {/progress/i.test(w.w) && <span className="so-status so-status-on-card is-rec">In progress</span>}
             <span className="fd-ct">{w.t}</span>
             <span className="fd-cw">{w.w}</span>
             {w.r && <span className="fd-cr">{w.r}</span>}
