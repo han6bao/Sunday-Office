@@ -11945,6 +11945,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 #work .fd-mw-peek { aspect-ratio: auto; height: 312px; margin-top: 30px; }
 #work .fd-mw-index li a { padding-block: 9px !important; }
 #work .fd-row { grid-auto-columns: clamp(240px, 21vw, 310px) !important; } #work .fd-row .fd-tile { width: 100% !important; } @media (max-width: 899px) { #work .fd-row { grid-auto-columns: 66vw !important; } }
+.ft2-c { margin-right: -.1em; } .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:nth-of-type(2) { margin-right: -.09em !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
