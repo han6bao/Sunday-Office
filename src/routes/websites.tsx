@@ -155,9 +155,25 @@ function WebsitesPage() {
           foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each. You'll know the final number before anything starts."
         />
 
+        <PriceList
+          id="packages"
+          label="PACKAGES"
+          need="Website"
+          title="Website packages."
+          items={[
+            { t: "The Launch", p: "$1,400", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site", "Save $150 vs. booking separately"] },
+            { t: "The Launch + Motion", p: "$1,700", tag: "MOST COMPLETE", d: "The site, the photos and short videos to go with them.", list: ["Everything in The Launch", "A phone content day", "5 to 8 short videos for your site + Reels", "Save $200 vs. booking separately"] },
+            { t: "The Full World", p: "from $2,500", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $300 vs. booking separately"] },
+          ]}
+          foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on."
+        />
+
         <WorkCards
           label="SITES I'VE BUILT"
           items={[
+            { t: "Pilates Haus", s: "New", w: "Website + brand kit", d: "A new reformer Pilates studio in Seattle, with a site and brand kit built around their logo.", img: "/assets/campaigns/pilates-haus-cover.png", h: "https://pilates-haus-seattle.vercel.app/" },
+            { t: "Joe Lopez Photography", w: "Website · photographer", d: "A new site for a Michigan wedding and quinceañera photographer.", img: "/assets/campaigns/joe-lopez-cover.png", h: "https://joe-lopez-photography.vercel.app/" },
+            { t: "Timber & Tonic", s: "In progress", w: "Website · mobile bar", d: "A mobile bartending company in Buckley, WA.", img: "/assets/campaigns/timber-and-tonic-cover.png", h: "https://timber-and-tonic.vercel.app/" },
             { t: "GREAN", w: "Website · matcha café", d: "A website for a matcha and hojicha café in Seattle's U District.", img: "/assets/campaigns/grean/featured-cover.png", h: "https://grean-matcha.vercel.app/" },
             { t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home.", img: "/assets/campaigns/essential-brows-studio/featured-cover.png", h: "/websites/essential-brows-studio" },
             { t: "Jazmin's Events", s: "In progress", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch.", img: "/assets/campaigns/jazmins-events/featured-cover.png", h: "/websites/jazmins-events" },

@@ -12059,3 +12059,4 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
   .fd-page .fd-start .fd-sheet .so-field label { font-size: 9px !important; letter-spacing: .16em !important; }
   .fd-page .fd-start .fd-sheet .so-field input, .fd-page .fd-start .fd-sheet .so-field select { font-size: 15px !important; min-width: 0; }
 }
+#packages .so-pk-card, #packages .so-pk-card * { color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; } #packages .so-pk-card .so-pk-who, #packages .so-pk-card .so-micro { color: #6a645e !important; -webkit-text-fill-color: #6a645e !important; } #packages .so-pk-card .so-pk-tag { color: #fff !important; -webkit-text-fill-color: #fff !important; } #packages .so-pk-card { border-radius: 18px; }
