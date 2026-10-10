@@ -11569,6 +11569,32 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
   .fd-page #build .fd-services a { padding-left: 0 !important; padding-right: 0 !important; }
   .fd-page #build .fd-sp { font-size: 16px !important; }
 }
+.fd-line { display: block; }
+.fd-page .fd-start.fd-st-lav .fd-small { max-width: none !important; }
+/* pencil texture (graphite strokes) instead of the speckled one */
+.fd-page .fd-start.fd-st-lav .fd-script.fd-hand-mld, .fd-hand-mld .fd-lets, .fd-hand-mld .fd-cap, .fd-hand-mld .fd-ap { background-image: url(/assets/texture/pencil-white.png) !important; background-size: 260px !important; }
+.fd-page #build .fd-services a.is-big .fd-sn { background-image: url(/assets/texture/pencil-grey.png) !important; background-size: 220px !important; }
+
+/* ===== Meet Hana: cross-stitch cover + chapter list ===== */
+.bio-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(30px, 6vw, 96px); align-items: center; margin-top: clamp(-80px, -5vw, -30px); position: relative; }
+.bio-cover { position: relative; margin: 0; aspect-ratio: 2 / 3; background-color: #c4aa84; background-image: url(/assets/texture/kraft.jpg); background-size: 360px; box-shadow: 0 1px 1px rgba(70,50,25,.2), 0 30px 50px -30px rgba(70,50,25,.5); overflow: hidden; }
+.bio-cover img { position: absolute; inset: 4% 3% 4% 3%; width: 94%; height: 92%; object-fit: contain; }
+.bio-cover-top { position: absolute; top: 3.2%; right: 5%; font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-size: clamp(10px, 1.1vw, 13px); letter-spacing: .14em; color: #fbf6ec; z-index: 1; }
+.bio-cover-side { position: absolute; right: 2.4%; top: 50%; translate: 0 -50%; writing-mode: vertical-rl; font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-size: clamp(9px, .9vw, 11px); letter-spacing: .12em; color: #fbf6ec; opacity: .9; z-index: 1; }
+.bio-cover-foot { position: absolute; left: 5%; bottom: 3.2%; font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; font-size: clamp(9px, .9vw, 11px); letter-spacing: .14em; text-transform: uppercase; color: #fbf6ec; opacity: .9; z-index: 1; }
+.bio-side .fd-script { margin: 0 0 12px; }
+.bio-list { list-style: none; margin: clamp(22px, 3vw, 36px) 0 0; padding: 0; border-top: 1px solid rgba(120,105,85,.22); }
+.bio-list li { border-bottom: 1px solid rgba(120,105,85,.22); }
+.bio-list button { all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; gap: 12px; padding: 16px 10px; transition: background-color .25s ease; }
+.bio-list button:hover, .bio-list button:focus-visible { background-color: rgba(225,220,208,.45); }
+.bio-ln { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .2em; color: #9a9086; }
+.bio-lt { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; color: #6b6258; }
+.bio-la { font-size: 16px; color: #857b70; opacity: 0; transition: opacity .25s ease; }
+.bio-list button:hover .bio-la, .bio-list button:focus-visible .bio-la { opacity: 1; }
+.fd-bio .bio-row, .fd-bio .bio-head { display: none; }
+@media (max-width: 860px) { .bio-grid { grid-template-columns: 1fr; margin-top: -20px; } .bio-cover { max-width: 420px; width: 100%; justify-self: center; } }
+.fd-hand-mld .fd-cap { background: none !important; }
+.fd-hand-mld .fd-ap { background-image: url(/assets/texture/pencil-white.png) !important; background-size: 260px !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

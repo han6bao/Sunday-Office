@@ -1196,20 +1196,28 @@ function FeedLetter() {
     <section className="fd-frame fd-st fd-st-cream fd-letter-frame fd-bio" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <p className="fd-ghost" aria-hidden="true">05</p>
-      <div className="bio-head">
-        <p className="fd-script">Hi, I'm Hana.</p>
-        <p className="fd-small">Six things about how I see, what I believe and what I'm building. Tap one to read it.</p>
-      </div>
-      <div className="bio-row" role="list">
-        {CHAPTERS.map((c, k) => (
-          <button key={c.n} type="button" role="listitem" className="bio-card" onClick={() => setOpen(k)}>
-            <span className="bio-ph"><span>photo</span></span>
-            <span className="bio-cn">{c.n}</span>
-            <span className="bio-ct">{handTitle(c.t)}</span>
-            <span className="bio-cl">{c.p[0]}</span>
-            <span className="bio-more">Read →</span>
-          </button>
-        ))}
+      <div className="bio-grid">
+        <figure className="bio-cover" aria-label="Hana, in cross-stitch on kraft paper">
+          <span className="bio-cover-top">SUNDAY OFFICE · VOLUME 05</span>
+          <img src="/assets/bio/stitch-hana.png" alt="" />
+          <span className="bio-cover-side">founder · photographer · creative producer</span>
+          <span className="bio-cover-foot">Seattle, WA</span>
+        </figure>
+        <div className="bio-side">
+          <p className="fd-script">Hi, I'm Hana.</p>
+          <p className="fd-small">Six things about how I see, what I believe and what I'm building. Tap one to read it.</p>
+          <ol className="bio-list">
+            {CHAPTERS.map((c, k) => (
+              <li key={c.n}>
+                <button type="button" onClick={() => setOpen(k)}>
+                  <span className="bio-ln">{c.n}</span>
+                  <span className="bio-lt">{c.t}</span>
+                  <span className="bio-la" aria-hidden="true">→</span>
+                </button>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
       {open !== null && <BioBox k={open} onClose={() => setOpen(null)} onGo={go} />}
     </section>
@@ -1260,7 +1268,8 @@ function FeedStart() {
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
       <p className="fd-script fd-hand fd-hand-mld" aria-label="Let’s Begin."><span className="fd-cap">L</span>et<span className="fd-ap">’</span>s <span className="fd-cap">B</span>egin.</p>
       <p className="fd-small">
-        Tell me what you're making and what feels off. A few lines is plenty.
+        <span className="fd-line">Tell me what you're making and what feels off.</span>
+        <span className="fd-line">A few lines is plenty.</span>
       </p>
       <ul className="fd-contact-strip">
         <li><a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a></li>
