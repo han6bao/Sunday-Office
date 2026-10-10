@@ -11873,3 +11873,4 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .so-footer .so-footer-top h5 { margin-top: 0 !important; }
 .so-footer .so-footer-top .so-footer-wordmark { margin-top: -4px; }
 .so-footer .so-footer-top > div:first-child { padding-top: 30px; } .so-footer .so-footer-top .so-footer-wordmark { margin-top: 0 !important; }
+#work .fd-work-head h2 { font-size: clamp(52px, 7.6vw, 140px) !important; line-height: .95 !important; }
