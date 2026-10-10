@@ -795,13 +795,7 @@ function FeedServices() {
       </p>
       <div className="fd-mk">
         <p className="fd-mk-k">Already up and running?</p>
-        <p className="fd-mk-h">The Makeover</p>
-        <p className="fd-mk-d">Keep what works and refresh the rest. A new brand kit around your logo, a cleaner website or better photos.</p>
-        <p className="fd-mk-row">
-          <span>Brand kit <i>from $550</i></span>
-          <span>Site refresh <i>from $250</i></span>
-        </p>
-        <a className="fd-mk-a" href="#inquiry">Ask about a makeover <span aria-hidden="true">→</span></a>
+        <p className="fd-mk-d"><i>The Makeover.</i> Keep what works and refresh the rest, from a brand kit around your logo to a cleaner site. <a className="fd-mk-a" href="#inquiry">Ask about it →</a></p>
       </div>
       <div className="fd-services">
         <p className="fd-sv-note">Start with one, or build the whole world.</p>

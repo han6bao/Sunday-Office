@@ -12121,6 +12121,13 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
   .fd-page section#build { display: flex !important; flex-direction: column; }
   .fd-page #build > .fd-mk { order: 10; margin: 36px 0 8px !important; }
 }
+/* Makeover note, quieter */
+.fd-page .fd-mk { max-width: 380px; padding-top: 16px !important; border-top-color: rgba(120,105,85,.16) !important; }
+.fd-page .fd-mk-k { font-size: 10px !important; letter-spacing: .22em !important; color: #a89a8a !important; margin-bottom: 8px !important; }
+.fd-page .fd-mk-d { font-size: 15px !important; line-height: 1.55 !important; color: #9a8f83 !important; margin: 0 !important; }
+.fd-page .fd-mk-d i { color: #5d5853; font-style: italic; }
+.fd-page .fd-mk a.fd-mk-a { display: inline !important; font-size: inherit !important; color: #5d5853 !important; border: 0 !important; padding: 0 !important; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(93,88,83,.4); white-space: nowrap; }
+.fd-page .fd-mk a.fd-mk-a:hover { color: #9e2b2e !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
