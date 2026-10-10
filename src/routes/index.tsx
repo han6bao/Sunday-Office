@@ -150,7 +150,7 @@ function Header() {
           </a>
         </nav>
         <details className="so-mobile-menu">
-          <summary className="so-nav-burger" aria-label="Menu">
+          <summary className="so-nav-burger" aria-label="Menu" onClick={(e) => { e.preventDefault(); if (window.location.hash === "#links") window.dispatchEvent(new HashChangeEvent("hashchange")); else window.location.hash = "links"; }}>
             <span className="so-burger-lines" aria-hidden>
               <span />
               <span />
