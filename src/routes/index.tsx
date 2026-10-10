@@ -1223,7 +1223,7 @@ function FeedStart() {
       const r = document.createRange();
       r.selectNodeContents(el);
       const w = r.getBoundingClientRect().width;
-      if (w > 0) el.style.setProperty("font-size", (window.innerWidth < 900 ? 52 : Math.min(150, (100 * box * 0.8) / w)) + "px", "important");
+      if (w > 0) el.style.setProperty("font-size", (window.innerWidth < 900 ? Math.min(76, (100 * box * 0.62) / w) : Math.min(150, (100 * box * 0.8) / w)) + "px", "important");
       /* tuck the apostrophe in above the join between t and s, so the letters stay connected */
       const lets = el.querySelector<HTMLElement>(".fd-lets");
       const tn = lets ? Array.from(lets.childNodes).find((c) => c.nodeType === 3) : null;

@@ -12020,3 +12020,13 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-media .fd-hero-sub a.fd-hero-btn:hover, .fd-media .fd-hero-sub a.fd-hero-btn:focus-visible { background: #fff; }
 .fd-media .fd-hero-sub a.fd-hero-btn::after, .fd-media .fd-hero-sub a.fd-hero-btn::before { display: none !important; }
 @media (max-width: 640px) { .fd-media:not(.fd-media-empty) .fd-hero-sub { top: calc(50% + 128px) !important; } }
+/* Rounded corners: inquiry card, work tiles, project pop-up */
+.fd-page .fd-start .fd-sheet { border-radius: 22px !important; overflow: hidden; }
+#work .fd-row .fd-tile { border-radius: 18px !important; overflow: hidden; }
+#work .fd-row .fd-tile img { border-radius: 18px !important; }
+#work .fd-mw-peek { border-radius: 18px; }
+.fd-box { border-radius: 22px !important; overflow: hidden; }
+.fd-box img { border-radius: 0; }
+.fd-box-x { border-radius: 999px !important; }
+.fd-quiz-card { border-radius: 22px; }
+.fd-box a[class*="go"], .fd-box .fd-box-go, .fd-box-body a:first-of-type { border-radius: 999px !important; } .fd-page .fd-start .fd-sheet button[type="submit"], .fd-page .fd-start .fd-sheet .so-send { border-radius: 999px !important; } .fd-page .fd-start .fd-sheet textarea { border-radius: 12px !important; }
