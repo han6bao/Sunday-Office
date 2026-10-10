@@ -23,6 +23,19 @@ const LINKS: { n: string; t: string; d: string; href: string; ext?: boolean }[] 
   { n: "07", t: "Email", d: "hello@sundayoffice.agency", href: "mailto:hello@sundayoffice.agency", ext: true },
 ];
 
+const SERVICES: { t: string; href: string }[] = [
+  { t: "Branding + World Building", href: "/branding" },
+  { t: "Logos + Identity", href: "/logo-identity" },
+  { t: "Websites", href: "/websites" },
+  { t: "Photography", href: "/photography" },
+  { t: "Headshots", href: "/headshots" },
+  { t: "Moving Image", href: "/moving-image" },
+  { t: "Creative Direction + Social", href: "/creative-direction-content" },
+];
+
+/* The static preview serves pages as files (branding.html), the live site as routes (/branding). */
+const pageHref = (h: string) => (typeof window !== "undefined" && window.location.pathname.endsWith(".html") ? h.slice(1).replace(/\//g, "-") + ".html" : h);
+
 export function Guide() {
   const [room, setRoom] = useState<Room>(null);
 
@@ -87,6 +100,13 @@ export function Guide() {
                   <span className="gd-d">{l.d}</span>
                   <span className="gd-a" aria-hidden="true">→</span>
                 </a>
+                {l.n === "03" && (
+                  <div className="gd-svc">
+                    {SERVICES.map((sv) => (
+                      <a key={sv.href} href={pageHref(sv.href)} className="gd-pill">{sv.t}</a>
+                    ))}
+                  </div>
+                )}
               </li>
             ))}
           </ol>

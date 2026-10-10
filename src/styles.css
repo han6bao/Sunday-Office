@@ -11996,3 +11996,10 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page #build .fd-services a.is-big .fd-sn { text-indent: 0 !important; padding-left: 0 !important; margin-left: 0 !important; }
 .fd-wb-img { display: block; width: clamp(300px, 34vw, 560px); height: auto; margin: 2px 0 0 -6px; }
 @media (max-width: 899px) { .fd-wb-img { width: min(100%, 340px); } }
+/* Directory: service pages as pills under "What I do" */
+.gd-svc { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 12px 18px 70px; margin-top: -4px; }
+.gd-pill { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 14px; color: #fff; text-decoration: none; padding: 8px 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; transition: background-color .25s ease, border-color .25s ease; }
+.gd-pill:hover, .gd-pill:focus-visible { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.7); }
+@media (max-width: 640px) { .gd-svc { padding-left: 42px; } .gd-pill { font-size: 13px; padding: 7px 12px; } }
+.gd-list .gd-svc a.gd-pill { display: inline-block !important; grid-template-columns: none !important; grid-template-areas: none !important; padding: 8px 15px !important; white-space: nowrap; line-height: 1.2; } @media (max-width: 640px) { .gd-list .gd-svc a.gd-pill { padding: 7px 12px !important; } }
+@media (max-width: 640px) { .gd-svc { padding-left: 50px !important; } }
