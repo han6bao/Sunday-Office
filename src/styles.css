@@ -11613,3 +11613,25 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 @media (max-width: 520px) { .fd-page .fd-start .fd-small .fd-line { font-size: 4.1vw !important; white-space: nowrap; } }
 .fd-page #build .fd-services a.is-big { grid-template-rows: auto !important; }
 .fd-page #build .fd-services a.is-big .fd-sn { margin-top: 0 !important; margin-bottom: 0 !important; }
+/* World Building: featured soft lavender card (option 6) */
+.fd-page #build .fd-services a.is-big { background: rgba(141,125,158,.09) !important; border-radius: 14px; border-bottom-color: transparent !important; padding: 22px 24px 24px !important; margin-bottom: 8px; transition: background .3s ease; }
+.fd-page #build .fd-services a.is-big:hover { background: rgba(141,125,158,.13) !important; }
+.fd-page #build .fd-services a.is-big::before, .fd-page #build .fd-services a.is-big::after { display: none !important; }
+.fd-page #build .fd-services a.is-big .fd-sn { font-size: clamp(56px, 5vw, 76px) !important; -webkit-text-stroke: 0 !important; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { margin-top: 12px !important; font-size: 15px !important; }
+@media (min-width: 1100px) { .fd-page #build .fd-services a.is-big .fd-sn .fd-sd { white-space: nowrap; } }
+@media (max-width: 899px) { .fd-page #build .fd-services a.is-big { padding: 18px 16px 20px !important; } .fd-page #build .fd-services a.is-big .fd-sn { font-size: 46px !important; } }
+/* Bio chapters open in place, like a table of contents (no pop-up box) */
+.fd-bio .bio-list .bio-la { display: inline-block; font-family: "Fraunces", Georgia, serif; font-size: 22px; line-height: 1; transition: transform .35s ease; }
+.fd-bio .bio-list li.is-open .bio-la { transform: rotate(45deg); }
+.fd-bio .bio-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s ease; }
+.fd-bio .bio-list li.is-open .bio-panel { grid-template-rows: 1fr; }
+.fd-bio .bio-panel-in { overflow: hidden; min-height: 0; padding-left: 105px; padding-right: 40px; }
+.fd-bio .bio-panel-in p { font-family: "Fraunces", Georgia, serif; font-size: 16px; line-height: 1.7; color: #6e665e; margin: 0 0 14px; max-width: 58ch; }
+.fd-bio .bio-panel-in p:first-child { margin-top: 2px; }
+.fd-bio .bio-panel-in p:last-child { margin-bottom: 26px; }
+.fd-bio .bio-list li.is-open > button { background: transparent !important; }
+@media (max-width: 899px) { .fd-bio .bio-panel-in { padding-left: 14px; padding-right: 8px; } }
+.fd-bio .bio-panel-in { padding-left: 66px; }
+.fd-bio .bio-list .bio-la { opacity: .6; }
+.fd-bio .bio-list li.is-open .bio-la { opacity: 1; }

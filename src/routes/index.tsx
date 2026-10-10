@@ -1191,7 +1191,6 @@ function BioBox({ k, onClose, onGo }: { k: number; onClose: () => void; onGo: (d
 
 function FeedLetter() {
   const [open, setOpen] = useState<number | null>(null);
-  const go = (d: number) => setOpen((v) => (v === null ? v : Math.min(CHAPTERS.length - 1, Math.max(0, v + d))));
   return (
     <section className="fd-frame fd-st fd-st-cream fd-letter-frame fd-bio" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
@@ -1205,21 +1204,25 @@ function FeedLetter() {
         </figure>
         <div className="bio-side">
           <p className="fd-script">Hi, I'm Hana.</p>
-          <p className="fd-small">Six things about how I see, what I believe and what I'm building. Tap one to read it.</p>
+          <p className="fd-small">Six things about how I see, what I believe and what I'm building. Tap one to open it.</p>
           <ol className="bio-list">
             {CHAPTERS.map((c, k) => (
-              <li key={c.n}>
-                <button type="button" onClick={() => setOpen(k)}>
+              <li key={c.n} className={open === k ? "is-open" : undefined}>
+                <button type="button" aria-expanded={open === k} aria-controls={"bio-p-" + k} onClick={() => setOpen((v) => (v === k ? null : k))}>
                   <span className="bio-ln">{c.n}</span>
                   <span className="bio-lt">{c.t}</span>
-                  <span className="bio-la" aria-hidden="true">→</span>
+                  <span className="bio-la" aria-hidden="true">+</span>
                 </button>
+                <div className="bio-panel" id={"bio-p-" + k} role="region" aria-label={c.t}>
+                  <div className="bio-panel-in">
+                    {c.p.map((t, i) => <p key={i}>{t}</p>)}
+                  </div>
+                </div>
               </li>
             ))}
           </ol>
         </div>
       </div>
-      {open !== null && <BioBox k={open} onClose={() => setOpen(null)} onGo={go} />}
     </section>
   );
 }
