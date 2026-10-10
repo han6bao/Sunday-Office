@@ -12038,3 +12038,6 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page #build .fd-services a.is-big .fd-sv-arr { position: static !important; }
 .fd-page #build .fd-services a .fd-sv-arr, .fd-page #build .fd-services a.is-big .fd-sv-arr { display: inline-block !important; font-family: Georgia, serif; font-style: normal; font-size: 18px !important; margin-left: 10px !important; opacity: .5 !important; width: auto !important; height: auto !important; } .fd-page #build .fd-services a:hover .fd-sv-arr { opacity: 1 !important; }
 .fd-page #build .fd-services a .fd-sv-arr { position: static !important; transform: none; font-size: 18px !important; line-height: 1 !important; } .fd-page #build .fd-services a:hover .fd-sv-arr { transform: translateX(3px) !important; }
+/* Start a project: header button on desktop only; hero button on phones only */
+@media (max-width: 899px) { .so-nav .so-nav-link.cta { display: none !important; } }
+@media (min-width: 900px) { .fd-media .fd-hero-sub a.fd-hero-btn { display: none !important; } }
