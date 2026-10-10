@@ -11851,3 +11851,25 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page #build .fd-services a.is-big .fd-sn { -webkit-mask-image: none !important; mask-image: none !important; text-indent: 0 !important; padding-left: .14em !important; margin-left: -.2em !important; overflow: visible !important; }
 .fd-page #build .fd-services a.is-big { overflow: visible !important; }
 .fd-page #build .fd-services a.is-big .fd-sn .fd-sd { margin-left: 6px !important; }
+/* Let's Begin: centered frame, stacked heading fills the left column */
+.fd-page .fd-start .fd-start-grid { max-width: 1240px; margin-left: auto !important; margin-right: auto !important; }
+.fd-page .fd-start.fd-st-lav .fd-start-left .fd-script.fd-start-h { white-space: normal !important; line-height: .92 !important; padding-bottom: .12em !important; }
+.fd-page .fd-start .fd-start-left .fd-small { margin-top: 18px !important; font-size: 18px; }
+.fd-page .fd-start .fd-start-left .fd-contact-strip { margin-top: 22px !important; }
+.fd-page .fd-start .fd-start-left .fd-quiz-card { margin-top: 32px; }
+@media (min-width: 900px) { .fd-page .fd-start .fd-start-left .fd-quiz-card { margin-top: auto; } .fd-page .fd-start .fd-start-left .fd-contact-strip { margin-bottom: 32px !important; } }
+/* What I do: paragraph sits right under the heading; prices line up; nothing spills out of the card */
+.fd-page section#build { grid-template-rows: auto auto auto 1fr !important; }
+.fd-page #build > .fd-small { align-self: start !important; margin-top: 8px !important; }
+.fd-page #build .fd-services a { padding-left: 24px !important; padding-right: 24px !important; grid-template-columns: minmax(0, 1fr) auto !important; position: relative; }
+.fd-page #build .fd-services a .fd-sp { position: relative; justify-self: end; }
+.fd-page #build .fd-services a .fd-sv-arr { position: absolute; right: -18px; top: 0; }
+.fd-page #build .fd-services a.is-big .fd-sn { min-width: 0; }
+.fd-page #build .fd-sv-note { margin-bottom: 8px !important; padding-top: 10px !important; }
+
+/* Footer: same side margins as the page, a thin line above each heading */
+.so-footer .so-shell { max-width: none !important; padding-left: clamp(20px, 5vw, 72px) !important; padding-right: clamp(20px, 5vw, 72px) !important; }
+.so-footer .so-footer-top > div { border-top: 1px solid rgba(244,239,247,.3); padding-top: 18px; }
+.so-footer .so-footer-top h5 { margin-top: 0 !important; }
+.so-footer .so-footer-top .so-footer-wordmark { margin-top: -4px; }
+.so-footer .so-footer-top > div:first-child { padding-top: 30px; } .so-footer .so-footer-top .so-footer-wordmark { margin-top: 0 !important; }
