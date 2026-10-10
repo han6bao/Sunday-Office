@@ -769,7 +769,7 @@ function FeedPhoto() {
         <span className="fd-hero-line" aria-hidden="true" />
         <div className="fd-hero-sub">
           <p><b>Sunday Office</b> is an independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I start with the brand, then bring it to life through websites, photography and creative direction.</p>
-          <a href="#office-hours">Start a project</a>
+          <a className="fd-hero-btn" href="#office-hours">Start a project <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>);
@@ -1215,7 +1215,8 @@ function FeedStart() {
     const el = document.querySelector<HTMLElement>(".fd-start .fd-script");
     if (!el) return;
     const fit = () => {
-      const par = el.parentElement!;
+      let par = el.parentElement!;
+      if (getComputedStyle(par).display === "contents") par = par.parentElement!;
       const pcs = getComputedStyle(par);
       const box = par.clientWidth - parseFloat(pcs.paddingLeft) - parseFloat(pcs.paddingRight);
       el.style.setProperty("font-size", "100px", "important");

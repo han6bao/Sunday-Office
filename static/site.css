@@ -11998,6 +11998,21 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 640px) { .gd-svc { padding-left: 50px !important; } }
 .gd-svc-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.6); margin: 2px 0 10px 70px; text-align: left; }
 @media (max-width: 640px) { .gd-svc-k { margin-left: 50px; } }
+/* Phone: contact details move under the form */
+@media (max-width: 899px) {
+  .fd-page .fd-start .fd-start-grid { display: flex !important; flex-direction: column; align-items: stretch; gap: 0 !important; }
+  .fd-page .fd-start .fd-start-left { display: contents !important; }
+  .fd-page .fd-start .fd-start-left > .fd-start-h { order: 1; }
+  .fd-page .fd-start .fd-start-left > .fd-small { order: 2; }
+  .fd-page .fd-start .fd-start-grid > .fd-sheet { order: 3; margin-top: 26px !important; }
+  .fd-page .fd-start .fd-start-left > .fd-contact-strip { order: 4; margin-top: 26px !important; align-items: center; text-align: center; }
+}
+@media (max-width: 640px) { .fd-media:not(.fd-media-empty) .fd-hero-sub { bottom: auto !important; top: 560px; } .fd-page .fd-media:not(.fd-media-empty) .fd-hero-line { height: 90px !important; } }
+/* Hero: Start a project as a real button */
+.fd-media .fd-hero-sub a.fd-hero-btn { display: inline-flex; align-items: center; gap: 10px; background: #f4efe8; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; text-decoration: none !important; border: 0 !important; border-bottom: 0 !important; padding: 13px 26px; border-radius: 999px; font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 15px; letter-spacing: 0; box-shadow: 0 10px 30px -12px rgba(0,0,0,.5); transition: background-color .25s ease, transform .25s ease; }
+.fd-media .fd-hero-sub a.fd-hero-btn:hover, .fd-media .fd-hero-sub a.fd-hero-btn:focus-visible { background: #fff; }
+.fd-media .fd-hero-sub a.fd-hero-btn::after, .fd-media .fd-hero-sub a.fd-hero-btn::before { display: none !important; }
+@media (max-width: 640px) { .fd-media:not(.fd-media-empty) .fd-hero-sub { top: calc(50% + 128px) !important; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
