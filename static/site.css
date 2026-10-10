@@ -12023,6 +12023,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-box-x { border-radius: 999px !important; }
 .fd-quiz-card { border-radius: 22px; }
 .fd-box a[class*="go"], .fd-box .fd-box-go, .fd-box-body a:first-of-type { border-radius: 999px !important; } .fd-page .fd-start .fd-sheet button[type="submit"], .fd-page .fd-start .fd-sheet .so-send { border-radius: 999px !important; } .fd-page .fd-start .fd-sheet textarea { border-radius: 12px !important; }
+.fd-media .fd-hero-sub a.fd-hero-btn { font-family: "Instrument Serif", Georgia, serif !important; font-size: 20px !important; font-weight: 400 !important; padding: 12px 26px !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
