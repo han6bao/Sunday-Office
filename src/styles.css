@@ -11908,3 +11908,4 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 899px) { .ft2-mark { font-size: 25vw !important; } }
 .ft2-mark { font-size: 22.2vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 21.5vw !important; } } .ft2-line { max-width: none !important; padding-right: 10% !important; }
 @media (max-width: 899px) { .ft2-col:nth-child(3) h5 { display: block !important; visibility: hidden; } }
+.ft2-top > * { border-top: 0 !important; } .ft2-top { border-top: 1px solid rgba(244,239,247,.32); padding-top: 22px; } .ft2-top > * { padding-top: 0 !important; }
