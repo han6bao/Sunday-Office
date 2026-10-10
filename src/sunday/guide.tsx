@@ -98,7 +98,7 @@ export function Guide() {
   return (
     <div className="gd gd-quiz" role="dialog" aria-modal="true" aria-label="Where to start">
       <div className="gd-quiz-bar">
-        <span className="gd-quiz-file">File No. 007 · Where to start</span>
+        <span className="gd-quiz-file">File No. 006 · Where to start</span>
         <span className="gd-quiz-rule" aria-hidden="true" />
         <button type="button" className="gd-close gd-close-dark" onClick={close}>Close <span aria-hidden="true">×</span></button>
       </div>
