@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
+import { SiteFooter } from "../sunday/site-footer";
 import { BackHome, BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, TapStory, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/websites")({
@@ -185,6 +186,7 @@ function WebsitesPage() {
         <ServiceCta current="websites" title="Ready for a site that feels like you?" sub="ONE PAGE OR A WHOLE SITE. WE'LL FIGURE OUT WHAT YOU NEED." />
       </div>
       <BookBar service="Websites" price="from $850" need="Website" />
+      <SiteFooter />
     </div>
   );
 }

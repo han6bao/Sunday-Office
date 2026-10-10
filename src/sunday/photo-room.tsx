@@ -1,4 +1,5 @@
 import { SiteBar } from "./site-bar";
+import { SiteFooter } from "./site-footer";
 /* One layout for the four photography rooms (People, Brands, Events,
    Creative): a short intro, a grid of Hana's own photos that each open
    their case study, and a way to book. Only photos credited to Hana. */
@@ -61,6 +62,7 @@ export function PhotoRoom({
           </a>
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }

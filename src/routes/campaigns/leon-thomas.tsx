@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
+import { SiteFooter } from "../../sunday/site-footer";
 import { CaseBookingCta } from "../../sunday/services";
 import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
@@ -190,6 +191,7 @@ function LeonThomasPage() {
           </a>
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
+import { SiteFooter } from "../sunday/site-footer";
 import { useState } from "react";
 import { BookBar, FaqList, PriceList, ServiceCta } from "../sunday/service-kit";
 
@@ -510,6 +511,7 @@ function LogoIdentityPage() {
         <ServiceCta current="logo" title="You don't have to know what you need yet." sub="BRING THE IDEA, THE BUSINESS, OR THE HALF-FINISHED LOGO." />
       </div>
       <BookBar service="Logo + Identity" price="from $350" need="Logo / Identity" />
+      <SiteFooter />
     </div>
   );
 }
