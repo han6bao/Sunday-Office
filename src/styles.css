@@ -12090,3 +12090,9 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 /* 05 sits behind "Hi, I'm Hana." and just touches it, like the 01 */
 .fd-page .fd-bio .bio-side::before { left: -.04em !important; right: auto !important; top: -.34em !important; color: rgba(133,123,112,.17) !important; }
 @media (max-width: 860px) { .fd-page .fd-bio .bio-side::before { top: -.36em !important; } }
+/* 05 moved back to the right, tucked against "Hana." */
+.fd-page .fd-bio .bio-side::before { content: none !important; }
+.fd-page .fd-bio .bio-side .fd-script { display: inline-block; position: relative; z-index: 1; }
+.fd-page .fd-bio .bio-side .fd-script::after { content: "05"; position: absolute; left: calc(100% - .12em); bottom: .52em; z-index: -1; font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(110px, 12vw, 190px); line-height: 1; color: rgba(133,123,112,.17); pointer-events: none; white-space: nowrap; }
+@media (max-width: 860px) { .fd-page .fd-bio .bio-side .fd-script::after { font-size: 88px; left: calc(100% - .14em); } }
+.fd-page .fd-bio .bio-side .fd-script::after { -webkit-text-fill-color: rgba(133,123,112,.17) !important; background: none !important; text-shadow: none !important; opacity: 1; left: calc(100% - .22em); bottom: .42em; }
