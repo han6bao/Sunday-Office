@@ -12140,3 +12140,9 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .gd-mk .gd-d i { font-style: italic; color: rgba(255,255,255,.92); }
 .gd-mk-alt { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; font-size-adjust: .56; color: rgba(255,255,255,.8); margin: 30px 0 0; max-width: 52ch; animation: gd-up .8s .7s ease both; }
 .gd-mk-alt a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); }
+
+/* Pricing bands: one continuous paper texture edge to edge (no flat strips at the sides) */
+body .so-bw-sec.so-pricing { box-shadow: none !important; clip-path: none !important; background: transparent !important; isolation: isolate; }
+body .so-bw-sec.so-pricing::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); z-index: -1; background-color: #8d7d9e; background-image: url(/assets/texture/paper-lav.jpg); background-size: 768px 768px; pointer-events: none; }
+html, body { overflow-x: clip; }
+#packages .so-pk-card .so-pk-list li::before { background: #6b5d7c !important; }
