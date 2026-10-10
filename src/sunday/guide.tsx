@@ -17,7 +17,7 @@ const LINKS: { n: string; t: string; d: string; href: string; ext?: boolean }[] 
   { n: "01", t: "Start a project", d: "Tell me what you're making", href: "#inquiry" },
   { n: "02", t: "Not sure where to start?", d: "A few quick questions, one clear answer", href: "#quiz" },
   { n: "03", t: "What I do", d: "Branding, websites, photography, video", href: "#build" },
-  { n: "04", t: "The work", d: "Recent projects", href: "#work" },
+  { n: "04", t: "The work", d: "Every case study", href: "#work" },
   { n: "05", t: "Meet Hana", d: "How I see and what I'm building", href: "#about-hana" },
   { n: "06", t: "Instagram", d: "@sundayoffice.ag", href: "https://www.instagram.com/sundayoffice.ag", ext: true },
   { n: "07", t: "Email", d: "hello@sundayoffice.agency", href: "mailto:hello@sundayoffice.agency", ext: true },
@@ -33,7 +33,6 @@ const SERVICES: { t: string; href: string }[] = [
   { t: "Creative Direction + Social", href: "/creative-direction-content" },
 ];
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const CASES: { t: string; href: string }[] = [
   { t: "Essential Brows", href: "/websites/essential-brows-studio" },
   { t: "Jazmin's Events", href: "/websites/jazmins-events" },
@@ -56,6 +55,7 @@ const CASES: { t: string; href: string }[] = [
   { t: "Still Different", href: "/campaigns/still-different" },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const LIVE: { t: string; href: string }[] = [
   { t: "GREAN", href: "https://grean-iota.vercel.app/" },
   { t: "Essential Brows", href: "https://www.essentialbrows.studio/" },
@@ -131,10 +131,9 @@ export function Guide() {
                 </a>
                 {l.n === "04" && (
                   <>
-                    <p className="gd-svc-k">Live websites</p>
                     <div className="gd-svc">
-                      {LIVE.map((c) => (
-                        <a key={c.href} href={c.href} target="_blank" rel="noreferrer" className="gd-pill">{c.t} <span aria-hidden="true">↗</span></a>
+                      {CASES.map((c) => (
+                        <a key={c.href} href={pageHref(c.href)} className="gd-pill">{c.t}</a>
                       ))}
                     </div>
                   </>
