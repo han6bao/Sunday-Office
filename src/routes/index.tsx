@@ -1,7 +1,7 @@
 import { Guide } from "../sunday/guide";
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CHAPTERS } from "../sunday/chapters";
 import { LitText, ScrollReel, WorldPicker } from "../sunday/scroll-moments";
 import type { CSSProperties, MouseEvent, ReactNode } from "react";
@@ -666,9 +666,6 @@ function Footer() {
             <p className="so-micro" style={{ marginTop: 12 }}>
               WE BUILD WORLDS FOR PEOPLE WITH SOMETHING WORTH SEEING
             </p>
-            <div className="mt-4">
-              <SunMark size={34} color="#f4eff5" />
-            </div>
           </div>
           <div>
             <h5>What we do</h5>
@@ -710,12 +707,6 @@ function Footer() {
           <p className="so-micro">© 2026 SUNDAY OFFICE · ALL RIGHTS RESERVED</p>
           <div className="so-footer-seals">
             <SunMark size={26} color="#f4eff5" />
-            <span className="so-stamp-plain">
-              <BlessingStamp size={40} color="var(--color-emboss)" dark />
-            </span>
-            <span className="so-stamp-plain">
-              <CreationSeal size={26} color="var(--color-emboss)" />
-            </span>
           </div>
           <p className="so-micro">STRATEGY IN MIND · CULTURE AT HEART · STORY IN EVERYTHING</p>
         </div>
@@ -1008,15 +999,26 @@ function WorkBox({ w, onClose }: { w: (typeof FEED_WORK)[number]; onClose: () =>
 
 function FeedWork() {
   const [open, setOpen] = useState<number | null>(null);
+  const rowRef = useRef<HTMLDivElement | null>(null);
+  const slide = (d: number) => {
+    const el = rowRef.current;
+    if (!el) return;
+    const tile = el.querySelector<HTMLElement>(".fd-tile");
+    el.scrollBy({ left: d * ((tile?.offsetWidth ?? 300) + 32) * 2, behavior: "smooth" });
+  };
   return (
     <section className="fd-frame fd-st fd-st-lav" id="work" aria-label="Selected work">
       <FeedFile>FILE NO. 002 · SELECTED WORK</FeedFile>
       <p className="fd-ghost" aria-hidden="true">02</p>
       <div className="fd-work-head">
         <h2>Selected work</h2>
-        <p className="fd-more-hint">Scroll, then tap one to see more</p>
+        <div className="fd-work-nav">
+          <p className="fd-more-hint">Tap a project to see more</p>
+          <button type="button" className="fd-arrow" onClick={() => slide(-1)} aria-label="Previous projects">←</button>
+          <button type="button" className="fd-arrow" onClick={() => slide(1)} aria-label="More projects">→</button>
+        </div>
       </div>
-      <div className="fd-row" role="list">
+      <div className="fd-row" role="list" ref={rowRef}>
         {FEED_WORK.map((w, i) => (
           <button key={w.t} type="button" role="listitem" className="fd-tile" onClick={() => setOpen(i)}>
             <img src={w.src} alt={w.alt} loading="lazy" />
@@ -1244,7 +1246,7 @@ function FeedStart() {
       const r = document.createRange();
       r.selectNodeContents(el);
       const w = r.getBoundingClientRect().width;
-      if (w > 0) el.style.setProperty("font-size", Math.min(190, (100 * box * 0.72) / w) + "px", "important");
+      if (w > 0) el.style.setProperty("font-size", Math.min(150, (100 * box * 0.98) / w) + "px", "important");
       /* tuck the apostrophe in above the join between t and s, so the letters stay connected */
       const lets = el.querySelector<HTMLElement>(".fd-lets");
       const tn = lets ? Array.from(lets.childNodes).find((c) => c.nodeType === 3) : null;
@@ -1273,22 +1275,31 @@ function FeedStart() {
   return (
     <section className="fd-frame fd-start fd-st fd-st-lav so-start-section" id="office-hours" aria-label="Start a project">
       <FeedFile>FILE NO. 006 · START A PROJECT</FeedFile>
-      <p className="fd-script fd-start-h">Let’s Begin.</p>
-      <p className="fd-small">
-        <span className="fd-line">Tell me what you're making and what feels off.</span>
-        <span className="fd-line">A few lines is plenty.</span>
-      </p>
-      <p className="fd-guide-links"><a href="#quiz">Not sure where to start? <em>Take the quiz</em> <span aria-hidden="true">→</span></a></p>
-      <ul className="fd-contact-strip">
-        <li><a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a></li>
-        <li><a href="https://www.instagram.com/sundayoffice.ag" target="_blank" rel="noreferrer">@sundayoffice.ag</a></li>
-        <li>Seattle, WA</li>
-        <li>Replies in 2 to 3 business days</li>
-      </ul>
-      <div className="fd-sheet">
-        <div className="so-office-card" id="inquiry">
-          <p className="eyebrow-cap mt-4">The Inquiry</p>
-          <InquiryForm />
+      <div className="fd-start-grid">
+        <div className="fd-start-left">
+          <p className="fd-script fd-start-h">Let’s Begin.</p>
+          <p className="fd-small">
+            <span className="fd-line">Tell me what you're making and what feels off.</span>
+            <span className="fd-line">A few lines is plenty.</span>
+          </p>
+          <a className="fd-quiz-card" href="#quiz">
+            <span className="fd-quiz-k">Not sure where to start?</span>
+            <span className="fd-quiz-t">Take the one-minute quiz.</span>
+            <span className="fd-quiz-d">A few questions, one clear first step.</span>
+            <span className="fd-quiz-b">Start the quiz <span aria-hidden="true">→</span></span>
+          </a>
+          <ul className="fd-contact-strip">
+            <li><a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a></li>
+            <li><a href="https://www.instagram.com/sundayoffice.ag" target="_blank" rel="noreferrer">@sundayoffice.ag</a></li>
+            <li>Seattle, WA</li>
+            <li>Replies in 2 to 3 business days</li>
+          </ul>
+        </div>
+        <div className="fd-sheet">
+          <div className="so-office-card" id="inquiry">
+            <p className="eyebrow-cap mt-4">The Inquiry</p>
+            <InquiryForm />
+          </div>
         </div>
       </div>
     </section>
