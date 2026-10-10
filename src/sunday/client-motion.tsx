@@ -696,7 +696,7 @@ export function InquiryForm() {
     const update = () => {
       const on = mq.matches;
       setMobile(on);
-      if (on) setFullForm(false);
+      // Phones show the whole form too (no one-at-a-time steps).
     };
     update();
     mq.addEventListener?.("change", update);

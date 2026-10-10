@@ -789,7 +789,7 @@ function FeedServices() {
         {FEED_SERVICES.map((x) => (
           <a key={x.n} href={x.h} className={x.big ? "is-big" : ""}>
             <span className="fd-sn">
-              {x.big ? x.n.split("").map((ch, j) => (/[A-Z]/.test(ch) ? <span key={j} className="fd-cap">{ch}</span> : ch)) : x.n}
+              {x.big ? <img className="fd-wb-img" src="/assets/lettering/world-building.svg" alt={x.n} /> : x.n}
               {x.d && <span className="fd-sd">{x.d}</span>}
             </span>
             <span className="fd-sp">{x.p} <span className="fd-sv-arr" aria-hidden="true">→</span></span>
@@ -1209,6 +1209,7 @@ function FeedLetter() {
 }
 
 function FeedStart() {
+  const [tab, setTab] = useState<"write" | "quiz">("write");
   /* Let's Begin. spans the card from edge to edge: size the lettering to the width. */
   useEffect(() => {
     const el = document.querySelector<HTMLElement>(".fd-start .fd-script");
@@ -1270,10 +1271,15 @@ function FeedStart() {
             <li>Replies in 2 to 3 business days</li>
           </ul>
         </div>
-        <div className="fd-sheet">
+        <div className={"fd-sheet" + (tab === "quiz" ? " is-quiz" : "")}>
+          <div className="fd-tabs" role="tablist" aria-label="How would you like to start?">
+            <button type="button" role="tab" aria-selected={tab === "write"} className={tab === "write" ? "is-on" : ""} onClick={() => setTab("write")}>Write to me</button>
+            <button type="button" role="tab" aria-selected={tab === "quiz"} className={tab === "quiz" ? "is-on" : ""} onClick={() => setTab("quiz")}>Take the quiz</button>
+          </div>
           <div className="so-office-card" id="inquiry">
             <p className="eyebrow-cap mt-4">The Inquiry</p>
             <InquiryForm />
+            <div className="fd-sheet-quiz"><ProjectQuiz /></div>
           </div>
         </div>
       </div>

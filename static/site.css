@@ -11969,6 +11969,26 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child::after { left: .66em !important; top: .243em !important; width: .1em !important; height: .022em !important; border-radius: .011em !important; transform: rotate(-33deg) !important; }
 .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child::after { left: .69em !important; top: .262em !important; width: .085em !important; height: .026em !important; }
 .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child::after { left: .672em !important; top: .254em !important; width: .09em !important; height: .02em !important; }
+/* Let's Begin tabs (phone only): Write to me / Take the quiz */
+.fd-tabs { display: none; }
+.fd-sheet-quiz { display: none; }
+@media (max-width: 899px) {
+  .fd-page .fd-start .fd-start-left .fd-quiz-card { display: none !important; }
+  .fd-tabs { display: flex; gap: 4px; padding: 4px; margin: -4px 0 22px; background: rgba(27,25,24,.06); border-radius: 999px; }
+  .fd-tabs button { all: unset; box-sizing: border-box; flex: 1; text-align: center; cursor: pointer; padding: 11px 10px; border-radius: 999px; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 15px; color: #5f5850; transition: background-color .25s ease, color .25s ease; }
+  .fd-tabs button.is-on { background: #8d7d9e; color: #fff; }
+  .fd-sheet.is-quiz .so-office-card > :not(.fd-tabs):not(.fd-sheet-quiz) { display: none !important; }
+  .fd-sheet.is-quiz .fd-sheet-quiz { display: block; }
+  .fd-sheet .fd-sheet-quiz .so-quiz { background: transparent !important; padding: 0 !important; margin: 0 !important; }
+  /* lighter text throughout, no heavy serif */
+  .fd-page .fd-start, .fd-page .fd-start p, .fd-page .fd-start a, .fd-page .fd-start li, .fd-page .fd-start span, .fd-page .fd-start input, .fd-page .fd-start textarea, .fd-page .fd-start select, .fd-page .fd-start button { font-weight: 300 !important; font-variation-settings: "wght" 300; }
+  .fd-page .fd-start .fd-start-h { font-weight: 400 !important; font-variation-settings: normal; }
+}
+.so-wiz-full { display: none !important; }
+/* World Building: Hana's own lettering */
+.fd-page #build .fd-services a.is-big .fd-sn { text-indent: 0 !important; padding-left: 0 !important; margin-left: 0 !important; }
+.fd-wb-img { display: block; width: clamp(300px, 34vw, 560px); height: auto; margin: 2px 0 0 -6px; }
+@media (max-width: 899px) { .fd-wb-img { width: min(100%, 340px); } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
