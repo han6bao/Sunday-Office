@@ -55,6 +55,12 @@ const CASES: { t: string; href: string }[] = [
   { t: "Still Different", href: "/campaigns/still-different" },
 ];
 
+const LIVE: { t: string; href: string }[] = [
+  { t: "GREAN", href: "https://grean-iota.vercel.app/" },
+  { t: "Essential Brows", href: "https://www.essentialbrows.studio/" },
+  { t: "Jazmin's Events", href: "https://jazmins-events.vercel.app/" },
+];
+
 /* The static preview serves pages as files (branding.html), the live site as routes (/branding). */
 const pageHref = (h: string) => (typeof window !== "undefined" && window.location.pathname.endsWith(".html") ? h.slice(1).replace(/\//g, "-") + ".html" : h);
 
@@ -123,11 +129,20 @@ export function Guide() {
                   <span className="gd-a" aria-hidden="true">→</span>
                 </a>
                 {l.n === "04" && (
-                  <div className="gd-svc">
-                    {CASES.map((c) => (
-                      <a key={c.href} href={pageHref(c.href)} className="gd-pill">{c.t}</a>
-                    ))}
-                  </div>
+                  <>
+                    <p className="gd-svc-k">Case studies</p>
+                    <div className="gd-svc">
+                      {CASES.map((c) => (
+                        <a key={c.href} href={pageHref(c.href)} className="gd-pill">{c.t}</a>
+                      ))}
+                    </div>
+                    <p className="gd-svc-k">Live websites</p>
+                    <div className="gd-svc">
+                      {LIVE.map((c) => (
+                        <a key={c.href} href={c.href} target="_blank" rel="noreferrer" className="gd-pill">{c.t} <span aria-hidden="true">↗</span></a>
+                      ))}
+                    </div>
+                  </>
                 )}
                 {l.n === "03" && (
                   <div className="gd-svc">

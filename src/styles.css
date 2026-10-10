@@ -12003,3 +12003,5 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 640px) { .gd-svc { padding-left: 42px; } .gd-pill { font-size: 13px; padding: 7px 12px; } }
 .gd-list .gd-svc a.gd-pill { display: inline-block !important; grid-template-columns: none !important; grid-template-areas: none !important; padding: 8px 15px !important; white-space: nowrap; line-height: 1.2; } @media (max-width: 640px) { .gd-list .gd-svc a.gd-pill { padding: 7px 12px !important; } }
 @media (max-width: 640px) { .gd-svc { padding-left: 50px !important; } }
+.gd-svc-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.6); margin: 2px 0 10px 70px; text-align: left; }
+@media (max-width: 640px) { .gd-svc-k { margin-left: 50px; } }
