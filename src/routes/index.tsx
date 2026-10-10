@@ -130,6 +130,12 @@ function MobileStartBar() {
   );
 }
 
+/* The static preview serves pages as files (branding.html); the live site uses routes (/branding). */
+function ph(h: string) {
+  if (typeof window === "undefined" || !window.location.pathname.endsWith(".html") || !h.startsWith("/")) return h;
+  return h.slice(1).replace(/\//g, "-") + ".html";
+}
+
 function Header() {
   return (
     <header className="so-nav">
@@ -663,16 +669,16 @@ function Footer() {
         <p className="ft2-line">We build worlds for people with something worth seeing.</p>
         <div className="ft2-col">
           <h5>What we do</h5>
-          <a className="foot-link" href="/branding">Branding + World Building</a>
-          <a className="foot-link" href="/logo-identity">Logos + Identity</a>
-          <a className="foot-link" href="/websites">Websites + Digital</a>
-          <a className="foot-link" href="/photography">Photography</a>
+          <a className="foot-link" href={ph("/branding")}>Branding + World Building</a>
+          <a className="foot-link" href={ph("/logo-identity")}>Logos + Identity</a>
+          <a className="foot-link" href={ph("/websites")}>Websites + Digital</a>
+          <a className="foot-link" href={ph("/photography")}>Photography</a>
         </div>
         <div className="ft2-col">
           <h5 aria-hidden="true">&nbsp;</h5>
-          <a className="foot-link" href="/headshots">Headshots</a>
-          <a className="foot-link" href="/moving-image">Moving Image</a>
-          <a className="foot-link" href="/creative-direction-content">Creative Direction + Social</a>
+          <a className="foot-link" href={ph("/headshots")}>Headshots</a>
+          <a className="foot-link" href={ph("/moving-image")}>Moving Image</a>
+          <a className="foot-link" href={ph("/creative-direction-content")}>Creative Direction + Social</a>
         </div>
         <div className="ft2-col">
           <h5>Say hello</h5>
@@ -787,7 +793,7 @@ function FeedServices() {
       <div className="fd-services">
         <p className="fd-sv-note">Start with one, or build the whole world.</p>
         {FEED_SERVICES.map((x) => (
-          <a key={x.n} href={x.h} className={x.big ? "is-big" : ""}>
+          <a key={x.n} href={ph(x.h)} className={x.big ? "is-big" : ""}>
             <span className="fd-sn">
               {x.big ? <img className="fd-wb-img" src="/assets/lettering/world-building.svg" alt={x.n} /> : x.n}
               {x.d && <span className="fd-sd">{x.d}</span>}

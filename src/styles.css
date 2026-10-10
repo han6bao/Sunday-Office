@@ -12031,3 +12031,10 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-quiz-card { border-radius: 22px; }
 .fd-box a[class*="go"], .fd-box .fd-box-go, .fd-box-body a:first-of-type { border-radius: 999px !important; } .fd-page .fd-start .fd-sheet button[type="submit"], .fd-page .fd-start .fd-sheet .so-send { border-radius: 999px !important; } .fd-page .fd-start .fd-sheet textarea { border-radius: 12px !important; }
 .fd-media .fd-hero-sub a.fd-hero-btn { font-family: "Instrument Serif", Georgia, serif !important; font-size: 20px !important; font-weight: 400 !important; padding: 12px 26px !important; }
+/* What I do rows: clearly clickable */
+.fd-page #build .fd-services a { cursor: pointer; }
+.fd-page #build .fd-services a .fd-sv-arr { display: inline-block !important; opacity: .45; margin-left: 6px; transition: opacity .25s ease, transform .25s ease; }
+.fd-page #build .fd-services a:hover .fd-sv-arr, .fd-page #build .fd-services a:focus-visible .fd-sv-arr { opacity: 1; transform: translateX(3px); }
+.fd-page #build .fd-services a.is-big .fd-sv-arr { position: static !important; }
+.fd-page #build .fd-services a .fd-sv-arr, .fd-page #build .fd-services a.is-big .fd-sv-arr { display: inline-block !important; font-family: Georgia, serif; font-style: normal; font-size: 18px !important; margin-left: 10px !important; opacity: .5 !important; width: auto !important; height: auto !important; } .fd-page #build .fd-services a:hover .fd-sv-arr { opacity: 1 !important; }
+.fd-page #build .fd-services a .fd-sv-arr { position: static !important; transform: none; font-size: 18px !important; line-height: 1 !important; } .fd-page #build .fd-services a:hover .fd-sv-arr { transform: translateX(3px) !important; }
