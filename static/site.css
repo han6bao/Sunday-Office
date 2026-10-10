@@ -11557,7 +11557,7 @@ body:not(:has(.fd-page)) .so-pricing, body:not(:has(.fd-page)) .so-bw-sec[class*
 body:not(:has(.fd-page)) .so-pricing h2.so-serif, body:not(:has(.fd-page)) .so-pricing .so-serif { color: #f4eff7 !important; }
 body:not(:has(.fd-page)) .so-pk-card { background-color: #f6f3ec !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-size: 700px !important; border-color: rgba(120,105,85,.18) !important; }
 body:not(:has(.fd-page)) .so-pk-card .so-serif { color: #4a443d !important; }
-body:not(:has(.fd-page)) .so-bw-cta { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; color: #f4eff7 !important; }
+body:not(:has(.fd-page)) .so-bw-cta { background-color: #141213 !important; background-image: url(/assets/texture/paper-black.jpg) !important; background-size: 768px 768px !important; color: #f4efe8 !important; }
 body:not(:has(.fd-page)) .so-bw-cta .so-serif, body:not(:has(.fd-page)) .so-bw-cta h2, body:not(:has(.fd-page)) .so-bw-cta p { color: #f4eff7 !important; }
 body:not(:has(.fd-page)) .so-micro-red, body:not(:has(.fd-page)) [class*="verm"] { color: #74658a !important; }
 body:not(:has(.fd-page)) .so-bw-card-img, body:not(:has(.fd-page)) .so-web-browser, body:not(:has(.fd-page)) .so-web-phone { background-color: #f6f3ec !important; }
@@ -12053,6 +12053,14 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
   .fd-page .fd-start .fd-sheet .so-field input, .fd-page .fd-start .fd-sheet .so-field select { font-size: 15px !important; min-width: 0; }
 }
 #packages .so-pk-card, #packages .so-pk-card * { color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; } #packages .so-pk-card .so-pk-who, #packages .so-pk-card .so-micro { color: #6a645e !important; -webkit-text-fill-color: #6a645e !important; } #packages .so-pk-card .so-pk-tag { color: #fff !important; -webkit-text-fill-color: #fff !important; } #packages .so-pk-card { border-radius: 18px; }
+/* Small list numbers in the deep red (same as the status pills) on cream pages */
+.so-flow-no, .so-qa-no, .bio-ln, .bio-no, .bk-no, .bn-tour-no, .so-ofp-cap-no { color: #9e2b2e !important; -webkit-text-fill-color: #9e2b2e !important; opacity: 1 !important; }
+.so-menu-no { color: #9e2b2e !important; opacity: 1 !important; }
+/* Service page CTA boxes: textured black paper */
+.so-bw-cta, .so-bw-cta.so-bw-cta-full { background-color: #141213 !important; background-image: url(/assets/texture/paper-black.jpg) !important; background-size: 768px !important; color: #f4efe8 !important; border-radius: 22px !important; }
+.so-bw-cta .so-micro, .so-bw-cta .so-next-t, .so-bw-cta p { color: #f4efe8 !important; }
+.so-bw-cta .so-next .so-micro { color: #c9b9d8 !important; }
+.so-bw-cta .so-bw-cta-btn { border-radius: 999px !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

@@ -720,12 +720,15 @@ const FEED_SERVICES = [
 type Link = { t: string; h: string };
 const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; links: Link[]; study: string; r?: string }[] = [
   { src: "/assets/campaigns/essential-brows-studio/cover.jpg", alt: "The Essential Brows website on a pink desktop", t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home of its own.", links: [{ t: "Visit their website", h: "https://www.essentialbrows.studio/" }], study: "/websites/essential-brows-studio" },
+  { src: "/assets/campaigns/pilates-haus-cover.png", alt: "Pilates Haus, a reformer Pilates studio in Seattle", t: "Pilates Haus", w: "Website + brand kit", d: "A new reformer Pilates studio in Seattle, with a site and brand kit built around their logo.", links: [{ t: "Visit their website", h: "https://pilates-haus-seattle.vercel.app/" }], study: "" },
+  { src: "/assets/campaigns/joe-lopez-cover.png", alt: "Joe Lopez Photography website", t: "Joe Lopez Photography", w: "Website", d: "A new site for a Michigan wedding and quinceañera photographer.", links: [{ t: "Visit their website", h: "https://joe-lopez-photography.vercel.app/" }], study: "" },
   { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", alt: "The lounge at Selaras Haus, a beauty studio in Tacoma", t: "Selaras Haus", w: "Interior photography", d: "A calm, warm studio in downtown Tacoma, photographed for its social media and branding.", links: [{ t: "See their Instagram", h: "https://www.instagram.com/selarashaus/" }], study: "/campaigns/selaras-haus" },
   { src: "/assets/campaigns/green-grillz/nine-01.jpg", alt: "Nine Vicious in a red velvet jacket wearing green grillz", t: "Nine Vicious × Custom Grillz", w: "Photography + promotion", d: "My photos became the most-liked post on jeweler Marcus Adam's page.", links: [{ t: "See Marcus Adam's page", h: "https://www.instagram.com/maarcusadam/" }], study: "/campaigns/green-grillz", r: "35K views · made the discovery page" },
   { src: "/assets/campaigns/exhibition/exh1.jpg", alt: "A styled portrait from the Exhibition campaign", t: "Exhibition", w: "Campaign direction", d: "A campaign I directed from the idea to the day on set.", links: [], study: "/campaigns/exhibition" },
   { src: "/assets/campaigns/jaydyn-f/jd-07.jpg", alt: "Jaydyn F. in a portrait from his release content", t: "Jaydyn F.", w: "Release content", d: "Behind the scenes and short clips around his music. One reel passed 120K views.", links: [{ t: "See the reel", h: "https://www.instagram.com/p/DORrPfiklMt/" }], study: "/campaigns/jaydyn-f", r: "120K views · 760 shares" },
   { src: "/assets/campaigns/chutneys/ch-02.jpg", alt: "A dish at Chutneys Bellevue", t: "Chutneys Bellevue", w: "Commercial + photos", d: "A commercial and promo photos for a North Indian restaurant.", links: [{ t: "Visit their website", h: "https://chutneysinbellevue.com/" }], study: "/campaigns/chutneys" },
   { src: "/assets/campaigns/leon-thomas/lt-01.jpg", alt: "Leon Thomas performing at Vice Seattle", t: "Leon Thomas × Vice", w: "Event photography", d: "His tour afterparty at Vice Seattle, photographed for the venue.", links: [{ t: "Visit Vice Seattle", h: "https://www.viceseattle.com/" }], study: "/campaigns/leon-thomas" },
+  { src: "/assets/campaigns/timber-and-tonic-cover.png", alt: "Timber & Tonic mobile bartending website", t: "Timber & Tonic", w: "Website · in progress", d: "A mobile bartending company in Buckley, WA. Website in progress.", links: [{ t: "See the site so far", h: "https://timber-and-tonic.vercel.app/" }], study: "" },
   { src: "/assets/campaigns/jazmins-events/featured-cover.png", alt: "The Jazmin's Events wordmark on cream paper", t: "Jazmin's Events", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch. Website in progress.", links: [{ t: "Visit their website", h: "https://jazmins-events.vercel.app/" }], study: "/websites/jazmins-events" },
 ];
 
@@ -963,11 +966,13 @@ function WorkBox({ w, onClose }: { w: (typeof FEED_WORK)[number]; onClose: () =>
           <p className="fd-box-d">{w.d}</p>
           <p className="fd-box-q">Want to see more?</p>
           <div className="fd-box-links">
-            <a href={w.study} className="fd-box-main">
-              Read the case study →
-            </a>
-            {w.links.map((l) => (
-              <a key={l.h} href={l.h} target="_blank" rel="noreferrer">
+            {w.study ? (
+              <a href={ph(w.study)} className="fd-box-main">
+                Read the case study →
+              </a>
+            ) : null}
+            {w.links.map((l, i) => (
+              <a key={l.h} href={l.h} target="_blank" rel="noreferrer" className={!w.study && i === 0 ? "fd-box-main" : undefined}>
                 {l.t} ↗
               </a>
             ))}
