@@ -11885,3 +11885,4 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .so-footer .so-footer-top > div:first-child .so-micro { max-width: none !important; white-space: nowrap; } @media (max-width: 520px) { .so-footer .so-footer-top > div:first-child .so-micro { white-space: normal; } }
 /* World Building capitals: hairline tips stay tapered, weight matched by size */
 .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap, .fd-page #build .fd-services a.is-big:hover .fd-sn > .fd-cap { -webkit-text-stroke: .01em #5f5a55 !important; font-size: 1.06em; }
+#work .fd-work-head h2 { color: transparent !important; -webkit-text-fill-color: transparent !important; background-image: url(/assets/texture/chalk-white-2.png) !important; background-size: 220px !important; -webkit-background-clip: text !important; background-clip: text !important; padding-bottom: .08em; }
