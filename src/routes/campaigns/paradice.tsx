@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { SiteFooter } from "../../sunday/site-footer";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
 import { CaseFacts, CaseRead } from "../../sunday/case-kit";
@@ -238,7 +237,6 @@ function ParadicePage() {
           </a>
         </div>
       </div>
-      <SiteFooter />
     </div>
   );
 }

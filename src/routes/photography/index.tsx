@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { SiteFooter } from "../../sunday/site-footer";
 import { BackHome, BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../../sunday/service-kit";
 
 export const Route = createFileRoute("/photography/")({
@@ -149,7 +148,6 @@ function PhotographyPage() {
         <ServiceCta current="photography" title="Have something to shoot?" sub="CAMPAIGNS, CONTENT, HEADSHOTS AND EVERYTHING IN BETWEEN." />
       </div>
       <BookBar service="Photography" price="from $150" need="Photography" />
-      <SiteFooter />
     </div>
   );
 }

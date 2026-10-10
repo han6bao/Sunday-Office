@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { SiteFooter } from "../sunday/site-footer";
 import { BookBar, FaqList, FitPicker, PriceList, ServiceCta, ServiceSteps } from "../sunday/service-kit";
 import { useState } from "react";
 import { AESTHETICS } from "../sunday/aesthetics";
@@ -239,7 +238,6 @@ function BrandingPage() {
         <ServiceCta current="branding" title="One piece or the whole world." sub="IT DOESN'T NEED TO BE FIGURED OUT YET." />
       </div>
       <BookBar service="Branding" price="from $350" need="Branding" />
-      <SiteFooter />
     </div>
   );
 }

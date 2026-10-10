@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { SiteFooter } from "../../sunday/site-footer";
 import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 import { CaseBookingCta } from "../../sunday/services";
 
@@ -150,7 +149,6 @@ function HighwayPage() {
           </a>
         </div>
       </div>
-      <SiteFooter />
     </div>
   );
 }

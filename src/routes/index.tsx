@@ -26,7 +26,6 @@ import {
   NavState,
 } from "../sunday/client-motion";
 import { Hero } from "../sunday/hero";
-import { SiteFooter } from "../sunday/site-footer";
 import { ProjectQuiz } from "../sunday/project-quiz";
 
 export const Route = createFileRoute("/")({
@@ -663,6 +662,38 @@ function StartAProject() {
   );
 }
 
+function Footer() {
+  return (
+    <footer className="so-footer ft2" id="office">
+      <div className="ft2-top">
+        <p className="ft2-line">We build worlds for people with something worth seeing.</p>
+        <div className="ft2-col">
+          <h5>What we do</h5>
+          <a className="foot-link" href={ph("/branding")}>Branding + World Building</a>
+          <a className="foot-link" href={ph("/logo-identity")}>Logos + Identity</a>
+          <a className="foot-link" href={ph("/websites")}>Websites + Digital</a>
+          <a className="foot-link" href={ph("/photography")}>Photography</a>
+        </div>
+        <div className="ft2-col">
+          <h5 aria-hidden="true">&nbsp;</h5>
+          <a className="foot-link" href={ph("/headshots")}>Headshots</a>
+          <a className="foot-link" href={ph("/moving-image")}>Moving Image</a>
+          <a className="foot-link" href={ph("/creative-direction-content")}>Creative Direction + Social</a>
+        </div>
+        <div className="ft2-col">
+          <h5>Say hello</h5>
+          <a className="foot-link" href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>
+          <a className="foot-link" href="#office-hours">Start a project →</a>
+          <a className="foot-link" href="#quiz">Not sure where to start?</a>
+          <a className="foot-link" href="#links">Everything in one place</a>
+          <a className="foot-link" href="https://www.instagram.com/sundayoffice.ag">@sundayoffice.ag</a>
+          <span className="foot-link">Seattle, WA</span>
+        </div>
+      </div>
+      <div className="ft2-mark" aria-hidden="true"><span className="ft2-c">S</span>unday <span className="ft2-c">O</span>ffice</div>
+    </footer>
+  );
+}
 
 
 const REEL = [
@@ -1291,7 +1322,7 @@ function Index() {
         <FeedLetter />
         <FeedStart />
       </main>
-      <SiteFooter />
+      <Footer />
       <MobileStartBar />
       <Guide />
     </div>

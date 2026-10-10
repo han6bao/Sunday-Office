@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { CaseCover } from "../../sunday/case-cover";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { SiteFooter } from "../../sunday/site-footer";
 import { useState } from "react";
 import { CaseFacts, CaseRead } from "../../sunday/case-kit";
 
@@ -292,7 +291,6 @@ function ExhibitionPage() {
           </a>
         </div>
       </div>
-      <SiteFooter />
     </div>
   );
 }

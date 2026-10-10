@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { SiteFooter } from "../sunday/site-footer";
 import { useState } from "react";
 import { CHAPTERS } from "../sunday/chapters";
 
@@ -279,7 +278,6 @@ function AboutPage() {
           </div>
         </div>
       </div>
-      <SiteFooter />
     </div>
   );
 }

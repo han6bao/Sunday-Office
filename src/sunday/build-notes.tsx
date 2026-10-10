@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { SiteBar } from "./site-bar";
-import { SiteFooter } from "./site-footer";
 
 /* Build notes: a designer's notebook for each case study.
    Sunday Office type and structure, dressed in the client's own colors. */
@@ -95,7 +94,6 @@ export function BuildNotes({ theme, children }: { theme: BnTheme; children: Reac
           <span className="bn-note">Tap anywhere to close</span>
         </button>
       )}
-      <SiteFooter />
     </div>
   );
 }

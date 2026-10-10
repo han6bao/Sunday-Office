@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { SiteFooter } from "../sunday/site-footer";
 import { BackHome, BookBar, FaqList, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/moving-image")({
@@ -118,7 +117,6 @@ function MovingImagePage() {
         <ServiceCta current="moving" title="Have something that should move?" sub="ITS OWN PROJECT, OR PART OF A BIGGER CAMPAIGN." />
       </div>
       <BookBar service="Moving Image" price="from $350" need="Video / Moving Image" />
-      <SiteFooter />
     </div>
   );
 }

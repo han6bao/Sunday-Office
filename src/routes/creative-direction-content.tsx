@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { SiteFooter } from "../sunday/site-footer";
 import { BackHome, BookBar, CardRail, FaqList, PriceList, PriceRows, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/creative-direction-content")({
@@ -172,7 +171,6 @@ function DirectionAndContentPage() {
         <ServiceCta current="direction" title="Let's make something real." sub="SET THE DIRECTION, THEN KEEP IT GOING." />
       </div>
       <BookBar service="Creative Direction + Social" price="from $300" need="Creative Direction" />
-      <SiteFooter />
     </div>
   );
 }

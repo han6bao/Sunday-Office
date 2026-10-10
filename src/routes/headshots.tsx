@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { SiteFooter } from "../sunday/site-footer";
 import { BookBar, CardRail, FaqList, FitPicker, PriceList, bookHref } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/headshots")({
@@ -163,7 +162,6 @@ function HeadshotsPage() {
         </section>
       </div>
       <BookBar service="Headshots" price="from $150" need="Headshots" />
-      <SiteFooter />
     </div>
   );
 }

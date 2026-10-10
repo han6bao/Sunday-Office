@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
-import { SiteFooter } from "../../sunday/site-footer";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
 import { CaseFacts, CaseRead } from "../../sunday/case-kit";
@@ -146,7 +145,6 @@ function KenshiKillzPage() {
           </a>
         </div>
       </div>
-      <SiteFooter />
     </div>
   );
 }
