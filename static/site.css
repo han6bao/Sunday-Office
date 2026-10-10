@@ -8303,8 +8303,8 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
    a soft italic serif (Fraunces) and a calligraphy script (Pinyon).
    ===================================================================== */
 :root {
-  --font-display: "Fraunces", "Playfair Display", Georgia, serif;
-  --font-script: "Monsieur La Doulaise", "Pinyon Script", "Fraunces", cursive;
+  --font-display: "Instrument Serif", "Playfair Display", Georgia, serif;
+  --font-script: "Monsieur La Doulaise", "Pinyon Script", "Instrument Serif", cursive;
   --sx-violet: #6b5678;
   --sx-mauve: #8b779a;
   --sx-mauve-deep: #7a6689;
@@ -10164,7 +10164,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .so-pk-head .so-serif,
 .so-start-head .so-serif,
 .so-reel-title {
-  font-family: "Instrument Serif", "Fraunces", Georgia, serif !important;
+  font-family: "Instrument Serif", Georgia, serif !important;
   font-weight: 400 !important;
   letter-spacing: -0.02em !important;
   line-height: 0.98 !important;
@@ -10554,7 +10554,7 @@ h2.so-script, .so-script {
 .fd-page { --fd-cream: #f2eee6; --fd-ink: #1b1918; --fd-soft: #5d5853; --fd-black: #141312; --fd-on-black: #efe9de; --fd-lav: #8d7d9e; --fd-lav-deep: #74658a; --fd-on-lav: #f4eff7;
   --fd-script: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
   --fd-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
-  --fd-body: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --fd-body: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --fd-gutter: clamp(20px, 5vw, 72px);
   background: var(--fd-cream); color: var(--fd-ink); }
 .fd-frame { padding-inline: var(--fd-gutter); padding-block: clamp(72px, 12vw, 160px); position: relative; }
@@ -10729,14 +10729,14 @@ body:has(.fd-page) .so-brandlock span { font-family: "Instrument Serif", Georgia
 .fd-page .so-quiz-opt { background: transparent !important; border: 1px solid rgba(27,25,24,.16) !important; border-radius: 0 !important; box-shadow: none !important; transition: background .2s, border-color .2s; }
 .fd-page .so-quiz-opt:hover, .fd-page .so-quiz-opt:focus-visible { background: rgba(255,255,255,.45) !important; border-color: rgba(27,25,24,.45) !important; }
 .fd-page .so-quiz-opt-t { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; font-size: 22px !important; }
-.fd-page .so-quiz-opt-d, .fd-page .so-quiz-why, .fd-page .so-quiz-small { font-family: "Fraunces", Georgia, serif !important; font-weight: 300 !important; }
+.fd-page .so-quiz-opt-d, .fd-page .so-quiz-why, .fd-page .so-quiz-small { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 300 !important; }
 .fd-page .so-quiz-pick-t { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; }
-.fd-page .so-quiz-foot button { font-family: "Fraunces", Georgia, serif !important; }
+.fd-page .so-quiz-foot button { font-family: "Instrument Serif", Georgia, serif !important; }
 
 /* inquiry: lines on paper, not a white card */
 .fd-page .so-office-card { background: transparent !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; padding-inline: 0 !important; border-top: 1px solid rgba(27,25,24,.16) !important; padding-top: 36px !important; }
 .fd-page .so-office-card .eyebrow-cap { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic; font-size: clamp(28px, 3.4vw, 42px) !important; text-transform: none !important; letter-spacing: 0 !important; color: #1b1918 !important; }
-.fd-page .so-field input, .fd-page .so-field textarea, .fd-page .so-field select { font-family: "Fraunces", Georgia, serif !important; font-weight: 300 !important; font-size: 17px !important; background: transparent !important; }
+.fd-page .so-field input, .fd-page .so-field textarea, .fd-page .so-field select { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 300 !important; font-size: 17px !important; background: transparent !important; }
 .fd-page .so-field textarea { border-radius: 0 !important; }
 .fd-page .so-field input::placeholder, .fd-page .so-field textarea::placeholder { font-style: italic; }
 .fd-page .so-form .so-btn { border-radius: 0 !important; font-family: "Instrument Serif", Georgia, serif !important; font-size: 20px !important; letter-spacing: .01em !important; text-transform: none !important; padding: 14px 28px !important; }
@@ -10748,7 +10748,7 @@ body:has(.fd-page) .so-brandlock span { font-family: "Instrument Serif", Georgia
 .fd-mk-t { font-size: clamp(44px, 5vw, 68px); }
 
 /* footer in the same voice */
-body:has(.fd-page) .so-footer .foot-link { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 15px; }
+body:has(.fd-page) .so-footer .foot-link { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 15px; }
 body:has(.fd-page) .so-footer h5 { font-family: "IBM Plex Mono", monospace; font-weight: 400; }
 
 /* One solid color: every frame on the same cream paper, only File 4 stays lavender */
@@ -10762,7 +10762,7 @@ body:has(.fd-page) .so-footer h5 { font-family: "IBM Plex Mono", monospace; font
 .fd-page #about-hana { background: var(--fd-cream) !important; position: relative; isolation: isolate; }
 .fd-page #about-hana::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: url(/assets/texture/paper-light.png), url(/assets/texture/paper-glow.png); background-size: 512px, 512px; background-position: 0 0, 0 0; }
 .fd-page #about-hana .fd-file { margin-bottom: clamp(36px, 6vw, 72px); }
-.fd-page #about-hana .so-profile-body p:not(.so-micro) { font-family: "Fraunces", Georgia, serif; font-weight: 300; }
+.fd-page #about-hana .so-profile-body p:not(.so-micro) { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; }
 .fd-page #about-hana .lead { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic; font-weight: 400 !important; }
 
 /* Paper v3: one soft, cloudy, seamless sheet (like cotton paper), no specks */
@@ -10793,7 +10793,7 @@ body:has(.fd-page) .so-burger-lines span { background: #1b1918 !important; }
 body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; color: #f2eee6 !important; }
 .fd-services a.is-big { padding-block: 26px 24px; }
 .fd-services a.is-big .fd-sn { font-family: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", cursive; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; }
-.fd-sd { display: block; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-style: normal; font-size: 15px; color: var(--fd-soft); margin-top: 6px; }
+.fd-sd { display: block; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-style: normal; font-size: 15px; color: var(--fd-soft); margin-top: 6px; }
 
 /* ===== Black paper sections: Selected work and Let's begin ===== */
 .fd-page .fd-dark, .fd-page .fd-start { background-color: #161413 !important; background-image: url(/assets/texture/paper-black.jpg) !important; background-size: 768px 768px !important; color: #efe9de !important; }
@@ -10804,14 +10804,14 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; co
 
 /* Selected work: a row you scroll, tiles open a box */
 .fd-dark .fd-work-head h2 { color: #efe9de; }
-.fd-more-hint { font-family: "Fraunces", Georgia, serif; font-style: italic; font-weight: 300; font-size: 15px; color: rgba(239,233,222,.6); margin: 0; }
+.fd-more-hint { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 300; font-size: 15px; color: rgba(239,233,222,.6); margin: 0; }
 .fd-row { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(220px, 24vw, 340px); gap: clamp(14px, 1.6vw, 22px); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 18px; margin-inline: calc(var(--fd-gutter) * -1); padding-inline: var(--fd-gutter); scrollbar-width: thin; scrollbar-color: rgba(239,233,222,.3) transparent; }
 .fd-tile { all: unset; cursor: pointer; scroll-snap-align: start; display: grid; color: #efe9de; }
 .fd-tile img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .3s; }
 .fd-tile:hover img, .fd-tile:focus-visible img { transform: scale(1.02); opacity: .92; }
 .fd-tile:focus-visible { outline: 1px solid #efe9de; outline-offset: 6px; }
-.fd-tile .fd-ct { margin-top: 12px; font-family: "Fraunces", Georgia, serif; font-size: 15px; }
-.fd-tile .fd-cw { font-family: "Fraunces", Georgia, serif; font-style: italic; font-size: 14px; color: rgba(239,233,222,.6); }
+.fd-tile .fd-ct { margin-top: 12px; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; }
+.fd-tile .fd-cw { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 14px; color: rgba(239,233,222,.6); }
 
 /* More work, on black */
 .fd-dark .fd-mw-h { color: rgba(239,233,222,.7); }
@@ -10831,10 +10831,10 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; co
 .fd-box-x:focus-visible { outline: 1px solid #1b1918; }
 .fd-box-w { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .65; margin: 0; }
 .fd-box-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; margin: 0; }
-.fd-box-d { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: #5d5853; margin: 4px 0 0; }
+.fd-box-d { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: #5d5853; margin: 4px 0 0; }
 .fd-box-q { font-family: "Monsieur La Doulaise", "Pinyon Script", cursive; font-size: 34px; margin: 18px 0 0; }
 .fd-box-links { display: grid; gap: 10px; justify-items: start; }
-.fd-box-links a { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: #1b1918; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.fd-box-links a { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: #1b1918; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .fd-box-links a.fd-box-main { font-family: "Instrument Serif", Georgia, serif; font-size: 20px; background: #1b1918; color: #f2eee6; border: 0; padding: 12px 20px; }
 @media (max-width: 640px) { .fd-box { grid-template-columns: 1fr; } .fd-box > img { min-height: 0; aspect-ratio: 4 / 3; } }
 
@@ -10844,7 +10844,7 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #1b1918 !important; co
 /* Meet Hana: a letter on paper */
 .fd-letter { position: relative; max-width: 760px; margin-inline: auto; background-color: #f8f5ef; background-image: url(/assets/texture/paper-cream.jpg); background-blend-mode: soft-light; padding: clamp(36px, 6vw, 80px) clamp(28px, 6vw, 84px); box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 30px 60px -36px rgba(60,50,40,.45); rotate: -.4deg; }
 .fd-letter-hi { font-size: clamp(54px, 7vw, 96px) !important; margin-bottom: 18px !important; max-width: 60%; }
-.fd-letter-p { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 17px; line-height: 1.75; color: #3d3833; margin: 0 0 16px; max-width: 54ch; }
+.fd-letter-p { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 17px; line-height: 1.75; color: #3d3833; margin: 0 0 16px; max-width: 54ch; }
 .fd-letter-sign { margin: 26px 0 10px; }
 .fd-letter-sign .fd-sign-name { font-size: clamp(60px, 8vw, 104px); }
 .fd-polaroid { position: absolute; top: clamp(-40px, -3vw, -20px); right: clamp(-30px, -2vw, 10px); width: clamp(150px, 22vw, 230px); margin: 0; background: #fbfaf7; padding: 10px 10px 34px; box-shadow: 0 18px 34px -16px rgba(40,30,20,.45); rotate: 4deg; z-index: 2; }
@@ -10878,7 +10878,7 @@ html:has(.fd-about), body:has(.fd-about), .fd-about { background-color: #f2eee6 
 body:has(.fd-about) .page-paper { display: none; }
 .fd-about-h { font-family: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", cursive !important; font-weight: 400 !important; font-size: clamp(64px, 11vw, 150px) !important; line-height: 1 !important; letter-spacing: 0 !important; }
 .fd-about-h em { font-style: normal !important; color: inherit !important; font-family: inherit !important; }
-.fd-about p { font-family: "Fraunces", Georgia, serif; }
+.fd-about p { font-family: "Instrument Serif", Georgia, serif; }
 body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; }
 .fd-letter-hi { max-width: none !important; }
 
@@ -10902,7 +10902,7 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-quote.is-open .fd-quote-img { width: min(640px, 70vw); }
 .fd-quote-hint { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: #5c5955; opacity: .75; }
 .fd-why { max-width: 56ch; text-align: center; animation: fd-up .6s cubic-bezier(.2,.7,.2,1) both; }
-.fd-why p { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 18px; line-height: 1.75; color: #4a4744; margin: 0 0 14px; }
+.fd-why p { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 18px; line-height: 1.75; color: #4a4744; margin: 0 0 14px; }
 /* Media first: full screen under the menu bar; File 001 barely there */
 .fd-page .fd-media { height: min(100svh, 1000px); }
 .fd-media-file { font-size: 9px !important; letter-spacing: .26em !important; color: rgba(242, 238, 230, .5) !important; bottom: 16px !important; }
@@ -10952,9 +10952,9 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-hero-h { margin: 0; font-family: "Monsieur La Doulaise", "Pinyon Script", cursive; font-weight: 400; white-space: nowrap; line-height: 1.15; font-size: min(12.4vw, 260px); padding-block: .2em .3em; margin-block: -.2em -.3em; padding-inline: .05em .15em;
   background-image: url(/assets/texture/ink-white.png); background-size: 256px; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; text-shadow: none; filter: drop-shadow(0 2px 18px rgba(0,0,0,.25)); }
 .fd-hero-sub { display: flex; justify-content: space-between; align-items: end; gap: 16px 40px; flex-wrap: wrap; }
-.fd-hero-sub p { margin: 0; max-width: 52ch; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: rgba(244,240,233,.9); }
+.fd-hero-sub p { margin: 0; max-width: 52ch; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: rgba(244,240,233,.9); }
 .fd-hero-sub p b { font-weight: 400; color: #f4f0e9; }
-.fd-hero-sub a { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: #f4f0e9; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; white-space: nowrap; }
+.fd-hero-sub a { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: #f4f0e9; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; white-space: nowrap; }
 @media (max-width: 640px) { .fd-hero-h { font-size: 13.4vw; } .fd-hero-sub p { font-size: 15px; } }
 /* Let's Begin: apostrophe floats above the t-s join so the letters stay connected */
 .fd-apos { display: inline-block; width: 0; position: relative; left: .03em; top: -.24em; -webkit-text-fill-color: currentColor; background: none; }
@@ -11165,7 +11165,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page .fd-start.fd-st-lav .fd-script { display: block; text-align: center; white-space: nowrap; line-height: 1.12 !important; margin: clamp(4px, 1vw, 14px) auto clamp(4px, 1vw, 16px) !important; padding-inline: .08em !important; }
 /* world building: lowercase pencil handwriting */
 .fd-page .fd-services a.is-big .fd-sn { font-family: "Sacramento", cursive !important; font-style: normal !important; text-transform: lowercase; font-size: clamp(40px, 4.4vw, 60px) !important; line-height: 1.15 !important; color: #5d5955 !important; -webkit-text-fill-color: #5d5955 !important; opacity: .92; }
-.fd-page .fd-services a.is-big .fd-sn .fd-sd { text-transform: none; font-family: "Fraunces", Georgia, serif; }
+.fd-page .fd-services a.is-big .fd-sn .fd-sd { text-transform: none; font-family: "Instrument Serif", Georgia, serif; }
 
 /* ===== Meet Hana: one clean cloth-bound notebook, built in CSS so the pages can really turn ===== */
 .bk { max-width: 1080px; width: 100%; margin: clamp(-70px, -5vw, -30px) auto 0; }
@@ -11388,7 +11388,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
   .bk-sf-back { display: none; }
   .bk-face-in { min-height: 0; }
 }
-.fd-page .fd-services a.is-big .fd-sn .fd-sd { display: block; word-spacing: normal !important; letter-spacing: 0 !important; text-transform: none !important; font-family: "Fraunces", Georgia, serif !important; font-size: 15px !important; line-height: 1.5 !important; margin-top: 4px; padding: 0 !important; }
+.fd-page .fd-services a.is-big .fd-sn .fd-sd { display: block; word-spacing: normal !important; letter-spacing: 0 !important; text-transform: none !important; font-family: "Instrument Serif", Georgia, serif !important; font-size: 15px !important; line-height: 1.5 !important; margin-top: 4px; padding: 0 !important; }
 .fd-page .fd-services a.is-big { padding-bottom: 22px !important; }
 .bk-book { perspective: 3800px !important; perspective-origin: 50% 45%; }
 .fd-page .fd-services a.is-big { margin-bottom: 14px; }
@@ -11421,7 +11421,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page #build .fd-services { border-top: 1px solid rgba(120,105,85,.22) !important; }
 .fd-page #build .fd-services a { display: grid !important; grid-template-columns: 1fr auto; align-items: baseline; gap: 6px 24px; padding: 22px 0 !important; border-bottom: 1px solid rgba(120,105,85,.22) !important; margin: 0 !important; text-decoration: none; }
 .fd-page #build .fd-services a .fd-sn { font-size: clamp(30px, 2.8vw, 40px) !important; line-height: 1.1 !important; }
-.fd-page #build .fd-services a .fd-sd { display: block; font-family: "Fraunces", Georgia, serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; margin-top: 6px; letter-spacing: 0 !important; word-spacing: normal !important; font-style: normal !important; text-transform: none !important; }
+.fd-page #build .fd-services a .fd-sd { display: block; font-family: "Instrument Serif", Georgia, serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; margin-top: 6px; letter-spacing: 0 !important; word-spacing: normal !important; font-style: normal !important; text-transform: none !important; }
 .fd-page #build .fd-services a.is-big .fd-sn { font-size: clamp(46px, 4.4vw, 64px) !important; }
 .fd-page #build .fd-sp { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic; font-size: 19px !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; white-space: nowrap; }
 .fd-sv-arr { display: inline-block; margin-left: 6px; opacity: 0; transform: translateX(-6px); transition: opacity .25s ease, transform .25s ease; }
@@ -11468,12 +11468,12 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 /* Let's begin: centered, calmer intro text, apostrophe sitting on the t */
 .fd-page .fd-start.fd-st-lav { text-align: center; }
 .fd-page .fd-start.fd-st-lav > .fd-file { text-align: left; }
-.fd-page .fd-start.fd-st-lav .fd-small { font-family: "Fraunces", Georgia, serif !important; font-weight: 300 !important; font-size: 18px !important; line-height: 1.65 !important; max-width: 44ch; margin: clamp(6px, 1.2vw, 16px) auto 0 !important; color: #f4eff7 !important; }
+.fd-page .fd-start.fd-st-lav .fd-small { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 300 !important; font-size: 18px !important; line-height: 1.65 !important; max-width: 44ch; margin: clamp(6px, 1.2vw, 16px) auto 0 !important; color: #f4eff7 !important; }
 .fd-page .fd-start.fd-st-lav .fd-small a { white-space: nowrap; border-bottom: 1px solid rgba(244,239,247,.6); text-decoration: none; }
 .fd-page .fd-start.fd-st-lav .fd-sheet { text-align: left; }
 .fd-hand-mld .fd-lets::after { top: .42em !important; left: calc(var(--ap-x, 2em) - .06em) !important; }
 /* body text in the stationery sections: the readable serif, not the condensed one */
-.fd-page .fd-st .fd-small { font-family: "Fraunces", Georgia, serif !important; font-weight: 300 !important; font-size: 17px !important; line-height: 1.65 !important; }
+.fd-page .fd-st .fd-small { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 300 !important; font-size: 17px !important; line-height: 1.65 !important; }
 .fd-hand-mld .fd-lets::after { left: calc(var(--ap-x, 2em) - .2em) !important; top: .36em !important; }
 /* service rows: World Building capitalized; rows fill lavender with white text on hover */
 .fd-page #build .fd-services a.is-big .fd-sn { text-transform: none !important; }
@@ -11506,7 +11506,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .bio-ph span { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: #a59d91; }
 .bio-cn { margin-top: 16px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .2em; color: #9a9086; }
 .bio-ct { margin-top: 4px; font-family: "Monsieur La Doulaise", cursive; font-size: 34px; line-height: 1.2; color: #585552; padding: .05em .05em 0 0; }
-.bio-cl { margin-top: 6px; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 14.5px; line-height: 1.55; color: #6b655d; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.bio-cl { margin-top: 6px; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 14.5px; line-height: 1.55; color: #6b655d; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .bio-more { margin-top: auto; padding-top: 14px; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #4a443d; }
 .bio-back { position: fixed; inset: 0; z-index: 200; background: rgba(40,32,48,.45); display: grid; place-items: center; padding: 20px; animation: fd-up .3s ease both; }
 .bio-box { position: relative; width: min(680px, 100%); max-height: calc(100svh - 40px); overflow: auto; background-color: #f8f6f0; background-image: url(/assets/texture/paper-cream.jpg); background-size: 800px; padding: clamp(28px, 5vw, 56px); box-shadow: 0 40px 80px -30px rgba(30,20,40,.55); }
@@ -11514,7 +11514,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .bio-no { margin: 0; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .22em; color: #9a9086; }
 .bio-t { margin: 8px 0 18px; font-family: "Monsieur La Doulaise", cursive; font-weight: 400; font-size: clamp(46px, 6vw, 64px); line-height: 1.2; color: #585552; padding: .05em .1em 0 0; }
 .bio-p { display: grid; gap: 14px; }
-.bio-p p { margin: 0; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 17px; line-height: 1.7; color: #3f3a35; }
+.bio-p p { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 17px; line-height: 1.7; color: #3f3a35; }
 .bio-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(120,105,85,.22); }
 .bio-nav button { all: unset; cursor: pointer; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #4a443d; }
 .bio-nav button:disabled { visibility: hidden; }
@@ -11615,12 +11615,12 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 @media (min-width: 1100px) { .fd-page #build .fd-services a.is-big .fd-sn .fd-sd { white-space: nowrap; } }
 @media (max-width: 899px) { .fd-page #build .fd-services a.is-big { padding: 18px 16px 20px !important; } .fd-page #build .fd-services a.is-big .fd-sn { font-size: 46px !important; } }
 /* Bio chapters open in place, like a table of contents (no pop-up box) */
-.fd-bio .bio-list .bio-la { display: inline-block; font-family: "Fraunces", Georgia, serif; font-size: 22px; line-height: 1; transition: transform .35s ease; }
+.fd-bio .bio-list .bio-la { display: inline-block; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1; transition: transform .35s ease; }
 .fd-bio .bio-list li.is-open .bio-la { transform: rotate(45deg); }
 .fd-bio .bio-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s ease; }
 .fd-bio .bio-list li.is-open .bio-panel { grid-template-rows: 1fr; }
 .fd-bio .bio-panel-in { overflow: hidden; min-height: 0; padding-left: 105px; padding-right: 40px; }
-.fd-bio .bio-panel-in p { font-family: "Fraunces", Georgia, serif; font-size: 16px; line-height: 1.7; color: #6e665e; margin: 0 0 14px; max-width: 58ch; }
+.fd-bio .bio-panel-in p { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; line-height: 1.7; color: #6e665e; margin: 0 0 14px; max-width: 58ch; }
 .fd-bio .bio-panel-in p:first-child { margin-top: 2px; }
 .fd-bio .bio-panel-in p:last-child { margin-bottom: 26px; }
 .fd-bio .bio-list li.is-open > button { background: transparent !important; }
@@ -11659,7 +11659,7 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 .fd-page #build .fd-services a.is-big .fd-sn { -webkit-mask-image: linear-gradient(transparent calc(100% - 32px), #000 calc(100% - 32px)), url(/assets/texture/chalk-white-2.png); mask-image: linear-gradient(transparent calc(100% - 32px), #000 calc(100% - 32px)), url(/assets/texture/chalk-white-2.png); -webkit-mask-size: 100% 100%, 220px; mask-size: 100% 100%, 220px; -webkit-mask-repeat: no-repeat, repeat; mask-repeat: no-repeat, repeat; }
 /* ===== Let's Begin: quiz link ===== */
 .fd-page .fd-start .fd-guide-links { margin: 18px auto 0; text-align: center; }
-.fd-page .fd-start .fd-guide-links a { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: rgba(250,246,240,.92); text-decoration: none; border-bottom: 1px solid rgba(250,246,240,.35); padding-bottom: 3px; transition: border-color .25s ease, color .25s ease; }
+.fd-page .fd-start .fd-guide-links a { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: rgba(250,246,240,.92); text-decoration: none; border-bottom: 1px solid rgba(250,246,240,.35); padding-bottom: 3px; transition: border-color .25s ease, color .25s ease; }
 .fd-page .fd-start .fd-guide-links a em { font-family: "Instrument Serif", Georgia, serif; font-size: 1.25em; font-style: italic; }
 .fd-page .fd-start .fd-guide-links a:hover { color: #fff; border-color: rgba(255,255,255,.85); }
 
@@ -11682,14 +11682,14 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .gd-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: rgba(255,255,255,.75); margin: 0 0 14px; animation: gd-up .7s ease both; }
 .gd-h { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(54px, 9vw, 110px); line-height: 1; margin: 0; color: transparent; background: url(/assets/texture/chalk-white-2.png); background-size: 220px; -webkit-background-clip: text; background-clip: text; padding: 0 .06em .12em; animation: gd-up .8s .05s ease both; }
 .gd-line { display: block; width: 1px; height: 64px; margin: 10px auto 14px; background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,0)); animation: gd-up .8s .1s ease both; }
-.gd-sub { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: rgba(255,255,255,.88); margin: 0 0 34px; animation: gd-up .8s .12s ease both; }
+.gd-sub { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: rgba(255,255,255,.88); margin: 0 0 34px; animation: gd-up .8s .12s ease both; }
 .gd-list { list-style: none; margin: 0; padding: 0; text-align: left; border-top: 1px solid rgba(255,255,255,.25); }
 .gd-list li { border-bottom: 1px solid rgba(255,255,255,.25); animation: gd-up .7s ease both; }
 .gd-list a { display: grid; grid-template-columns: 44px 1fr auto; grid-template-areas: "n t a" "n d a"; column-gap: 14px; align-items: center; padding: 18px 12px; color: #fff; text-decoration: none; transition: background-color .3s ease; }
 .gd-list a:hover, .gd-list a:focus-visible { background: rgba(255,255,255,.08); }
 .gd-n { grid-area: n; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .2em; color: rgba(255,255,255,.6); align-self: start; padding-top: 12px; }
 .gd-t { grid-area: t; font-family: "Instrument Serif", Georgia, serif; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.05; }
-.gd-d { grid-area: d; font-family: "Fraunces", Georgia, serif; font-size: 14px; color: rgba(255,255,255,.72); margin-top: 4px; }
+.gd-d { grid-area: d; font-family: "Instrument Serif", Georgia, serif; font-size: 14px; color: rgba(255,255,255,.72); margin-top: 4px; }
 .gd-a { grid-area: a; font-family: Georgia, serif; font-size: 20px; color: rgba(255,255,255,.55); transition: color .3s ease; }
 .gd-list a:hover .gd-a { color: #fff; }
 .gd-foot { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.6); margin: 30px 0 0; }
@@ -11701,25 +11701,25 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .gd-quiz-rule { flex: 1; height: 1px; background: rgba(133,123,112,.3); }
 .gd-quiz-inner { max-width: 880px; margin: 0 auto; padding: clamp(20px, 5vh, 56px) 24px 80px; animation: gd-up .7s ease both; }
 .gd-quiz-h { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(44px, 7vw, 86px); line-height: 1; color: #857b70; margin: 0; text-align: center; }
-.gd-quiz-sub { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: #857b70; text-align: center; margin: 14px auto 8px; max-width: 46ch; }
+.gd-quiz-sub { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: #857b70; text-align: center; margin: 14px auto 8px; max-width: 46ch; }
 .gd-quiz .so-quiz { background: transparent; color: #5f5850; padding: 0; margin-top: 30px; border-radius: 0; }
 .gd-quiz .so-quiz-cap, .gd-quiz .so-micro { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .26em; color: #8d7d9e; }
 .gd-quiz .so-quiz-h { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; color: #6b6258; margin-bottom: 20px; padding: 0; }
 .gd-quiz .so-quiz-opt { background: rgba(255,255,255,.45); border: 1px solid rgba(133,123,112,.25); border-radius: 14px; color: #5f5850; transition: background-color .25s ease, border-color .25s ease; }
 .gd-quiz .so-quiz-opt:hover, .gd-quiz .so-quiz-opt:focus-visible { background: rgba(141,125,158,.1); border-color: rgba(141,125,158,.55); transform: none; }
 .gd-quiz .so-quiz-opt-t { font-family: "Instrument Serif", Georgia, serif; font-size: 24px; color: #5f5850; }
-.gd-quiz .so-quiz-opt-d { font-family: "Fraunces", Georgia, serif; color: #8f857a; }
+.gd-quiz .so-quiz-opt-d { font-family: "Instrument Serif", Georgia, serif; color: #8f857a; }
 .gd-quiz .so-quiz-dots span { background: rgba(133,123,112,.25); }
 .gd-quiz .so-quiz-dots span.is-done, .gd-quiz .so-quiz-dots span.is-on { background: #8d7d9e; }
 .gd-quiz .so-quiz-result { background: #8d7d9e url(/assets/texture/paper-lav.jpg); background-size: cover; color: #fff; border-radius: 18px; padding: clamp(24px, 4vw, 44px); }
 .gd-quiz .so-quiz-result .so-quiz-cap { color: rgba(255,255,255,.75); }
 .gd-quiz .so-quiz-pick-t { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(40px, 5vw, 60px); color: #fff; }
 .gd-quiz .so-quiz-pick-p { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 24px; color: rgba(255,255,255,.85); }
-.gd-quiz .so-quiz-why, .gd-quiz .so-quiz-small { font-family: "Fraunces", Georgia, serif; color: rgba(255,255,255,.9); }
+.gd-quiz .so-quiz-why, .gd-quiz .so-quiz-small { font-family: "Instrument Serif", Georgia, serif; color: rgba(255,255,255,.9); }
 .gd-quiz .so-quiz-go { background: #fff; color: #5d4f6e; border-radius: 999px; }
 .gd-quiz .so-quiz-more { color: #fff; }
 .gd-quiz .so-quiz-foot button { color: #8f857a; }
-.gd-quiz-alt { font-family: "Fraunces", Georgia, serif; font-size: 15px; color: #857b70; text-align: center; margin-top: 40px; }
+.gd-quiz-alt { font-family: "Instrument Serif", Georgia, serif; font-size: 15px; color: #857b70; text-align: center; margin-top: 40px; }
 .gd-quiz-alt a { color: #6b5d7c; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 640px) {
   .gd-list a { grid-template-columns: 30px 1fr auto; padding: 15px 6px; }
@@ -11729,9 +11729,9 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (prefers-reduced-motion: reduce) { .gd, .gd * { animation: none !important; } .gd-reel { display: none; } }
 .gd-quiz .so-quiz-top .so-quiz-cap { visibility: hidden; }
 .gd-quiz .so-quiz-result .so-quiz-cap { color: rgba(255,255,255,.8) !important; }
-.gd-quiz a.so-quiz-go, .gd-quiz a.so-quiz-go:visited { background: #fff !important; color: #5d4f6e !important; -webkit-text-fill-color: #5d4f6e !important; font-family: "Fraunces", Georgia, serif; font-size: 15px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+.gd-quiz a.so-quiz-go, .gd-quiz a.so-quiz-go:visited { background: #fff !important; color: #5d4f6e !important; -webkit-text-fill-color: #5d4f6e !important; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
 .gd-quiz a.so-quiz-go:hover { background: #f3eef8 !important; }
-.gd-quiz a.so-quiz-more { color: #fff !important; font-family: "Fraunces", Georgia, serif; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); }
+.gd-quiz a.so-quiz-more { color: #fff !important; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); }
 .gd-quiz .so-quiz-foot button { font-family: "IBM Plex Mono", ui-monospace, monospace !important; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #8f857a !important; }
 .gd-quiz .so-quiz-pick-p { font-family: "Instrument Serif", Georgia, serif !important; letter-spacing: 0 !important; }
 .gd-close { white-space: nowrap; } @media (max-width: 640px) { .gd-quiz-rule { min-width: 12px; } .gd-quiz-bar .gd-close { padding: 8px 12px; } }
@@ -11797,8 +11797,8 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-quiz-card:hover, .fd-quiz-card:focus-visible { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.5); }
 .fd-quiz-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.75); }
 .fd-quiz-t { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.1; margin: 10px 0 6px; }
-.fd-quiz-d { font-family: "Fraunces", Georgia, serif; font-size: 15px; color: rgba(255,255,255,.85); margin-bottom: 18px; }
-.fd-quiz-b { display: inline-flex; gap: 8px; align-items: center; background: #fff; color: #5d4f6e; font-family: "Fraunces", Georgia, serif; font-size: 15px; padding: 12px 22px; border-radius: 999px; transition: background-color .25s ease; }
+.fd-quiz-d { font-family: "Instrument Serif", Georgia, serif; font-size: 15px; color: rgba(255,255,255,.85); margin-bottom: 18px; }
+.fd-quiz-b { display: inline-flex; gap: 8px; align-items: center; background: #fff; color: #5d4f6e; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; padding: 12px 22px; border-radius: 999px; transition: background-color .25s ease; }
 .fd-quiz-card:hover .fd-quiz-b { background: #f3eef8; }
 @media (max-width: 899px) {
   .fd-page .fd-start .fd-start-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -11975,7 +11975,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 899px) {
   .fd-page .fd-start .fd-start-left .fd-quiz-card { display: none !important; }
   .fd-tabs { display: flex; gap: 4px; padding: 4px; margin: -4px 0 22px; background: rgba(27,25,24,.06); border-radius: 999px; }
-  .fd-tabs button { all: unset; box-sizing: border-box; flex: 1; text-align: center; cursor: pointer; padding: 11px 10px; border-radius: 999px; font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 15px; color: #5f5850; transition: background-color .25s ease, color .25s ease; }
+  .fd-tabs button { all: unset; box-sizing: border-box; flex: 1; text-align: center; cursor: pointer; padding: 11px 10px; border-radius: 999px; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 15px; color: #5f5850; transition: background-color .25s ease, color .25s ease; }
   .fd-tabs button.is-on { background: #8d7d9e; color: #fff; }
   .fd-sheet.is-quiz .so-office-card > :not(.fd-tabs):not(.fd-sheet-quiz) { display: none !important; }
   .fd-sheet.is-quiz .fd-sheet-quiz { display: block; }
@@ -11991,7 +11991,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 899px) { .fd-wb-img { width: min(100%, 340px); } }
 /* Directory: service pages as pills under "What I do" */
 .gd-svc { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 12px 18px 70px; margin-top: -4px; }
-.gd-pill { font-family: "Fraunces", Georgia, serif; font-weight: 300; font-size: 14px; color: #fff; text-decoration: none; padding: 8px 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; transition: background-color .25s ease, border-color .25s ease; }
+.gd-pill { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 14px; color: #fff; text-decoration: none; padding: 8px 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; transition: background-color .25s ease, border-color .25s ease; }
 .gd-pill:hover, .gd-pill:focus-visible { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.7); }
 @media (max-width: 640px) { .gd-svc { padding-left: 42px; } .gd-pill { font-size: 13px; padding: 7px 12px; } }
 .gd-list .gd-svc a.gd-pill { display: inline-block !important; grid-template-columns: none !important; grid-template-areas: none !important; padding: 8px 15px !important; white-space: nowrap; line-height: 1.2; } @media (max-width: 640px) { .gd-list .gd-svc a.gd-pill { padding: 7px 12px !important; } }
@@ -12009,7 +12009,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 }
 @media (max-width: 640px) { .fd-media:not(.fd-media-empty) .fd-hero-sub { bottom: auto !important; top: 560px; } .fd-page .fd-media:not(.fd-media-empty) .fd-hero-line { height: 90px !important; } }
 /* Hero: Start a project as a real button */
-.fd-media .fd-hero-sub a.fd-hero-btn { display: inline-flex; align-items: center; gap: 10px; background: #f4efe8; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; text-decoration: none !important; border: 0 !important; border-bottom: 0 !important; padding: 13px 26px; border-radius: 999px; font-family: "Fraunces", Georgia, serif; font-weight: 400; font-size: 15px; letter-spacing: 0; box-shadow: 0 10px 30px -12px rgba(0,0,0,.5); transition: background-color .25s ease, transform .25s ease; }
+.fd-media .fd-hero-sub a.fd-hero-btn { display: inline-flex; align-items: center; gap: 10px; background: #f4efe8; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; text-decoration: none !important; border: 0 !important; border-bottom: 0 !important; padding: 13px 26px; border-radius: 999px; font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 15px; letter-spacing: 0; box-shadow: 0 10px 30px -12px rgba(0,0,0,.5); transition: background-color .25s ease, transform .25s ease; }
 .fd-media .fd-hero-sub a.fd-hero-btn:hover, .fd-media .fd-hero-sub a.fd-hero-btn:focus-visible { background: #fff; }
 .fd-media .fd-hero-sub a.fd-hero-btn::after, .fd-media .fd-hero-sub a.fd-hero-btn::before { display: none !important; }
 @media (max-width: 640px) { .fd-media:not(.fd-media-empty) .fd-hero-sub { top: calc(50% + 128px) !important; } }
@@ -12068,6 +12068,9 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (hover: none) { #work .fd-row .fd-tile img { filter: sepia(.42) saturate(.8) contrast(.96) brightness(.98) !important; } }
 #work .fd-mw-peek img { filter: sepia(.42) saturate(.8) contrast(.96) brightness(.98); }
 #work .fd-row .fd-tile, #work .fd-row .fd-tile img, #work .fd-row .fd-tile::after, #work .fd-mw-peek { border-radius: 0 !important; }
+
+/* Fraunces removed site-wide. Instrument Serif runs small, so body text gets a little lift. */
+.gd-quiz-sub, .gd-quiz-alt, .so-quiz-opt-d, .so-quiz-why, .so-quiz-small, .fd-small, .bio-p p, .bio-cl, .fd-letter-p, .fd-box-d, .fd-box-links a, .fd-sd, .fd-hero-sub p, .fd-hero-sub a, .bio-panel-in p, .gd-d, .gd-sub, .fd-quiz-d, .fd-quiz-b, .fd-why p, .fd-about p, .fd-more-hint, .fd-tile .fd-ct, .fd-tile .fd-cw, .gd-pill, .fd-guide-links a, .so-field input, .so-field textarea, .so-field select, .foot-link, .so-profile-body p { font-size-adjust: .56; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
