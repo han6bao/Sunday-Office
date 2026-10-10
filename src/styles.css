@@ -12074,3 +12074,4 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 #work .fd-row .fd-tile::after { background: linear-gradient(transparent, rgba(46,30,20,.62)) !important; border-radius: 0 0 18px 18px; }
 @media (hover: none) { #work .fd-row .fd-tile img { filter: sepia(.42) saturate(.8) contrast(.96) brightness(.98) !important; } }
 #work .fd-mw-peek img { filter: sepia(.42) saturate(.8) contrast(.96) brightness(.98); }
+#work .fd-row .fd-tile, #work .fd-row .fd-tile img, #work .fd-row .fd-tile::after, #work .fd-mw-peek { border-radius: 0 !important; }
