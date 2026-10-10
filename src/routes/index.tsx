@@ -886,23 +886,24 @@ const MORE_WORK = [
 
 /* More work as a quiet list. On a computer, the photo floats up beside the cursor. */
 function MoreWork() {
-  const [on, setOn] = useState<number | null>(null);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [on, setOn] = useState(0);
   return (
-    <div className="fd-mw" onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })} onMouseLeave={() => setOn(null)}>
-      <p className="fd-mw-h">More work</p>
-      <ul>
-        {MORE_WORK.map((w, i) => (
-          <li key={w.t}>
-            <a href={w.h} onMouseEnter={() => setOn(i)} onFocus={() => setOn(i)} onBlur={() => setOn(null)} className={on === i ? "is-on" : ""}>
-              <span className="fd-mw-no">{String(i + 1).padStart(2, "0")}</span>
-              <span className="fd-mw-t">{w.t}</span>
-              <span className="fd-mw-w">{w.w}</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-      <div className={"fd-mw-float" + (on !== null ? " is-on" : "")} style={{ transform: `translate(${pos.x + 28}px, ${pos.y - 140}px)` }} aria-hidden>
+    <div className="fd-mw fd-mw-index">
+      <div className="fd-mw-list">
+        <p className="fd-mw-h">More work</p>
+        <ul>
+          {MORE_WORK.map((w, i) => (
+            <li key={w.t}>
+              <a href={w.h} onMouseEnter={() => setOn(i)} onFocus={() => setOn(i)} className={on === i ? "is-on" : ""}>
+                <span className="fd-mw-no">{String(i + 1).padStart(2, "0")}</span>
+                <span className="fd-mw-t">{w.t}</span>
+                <span className="fd-mw-w">{w.w}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="fd-mw-peek" aria-hidden="true">
         {MORE_WORK.map((w, i) => (
           <img key={w.src} src={w.src} alt="" loading="lazy" className={on === i ? "is-on" : ""} />
         ))}
