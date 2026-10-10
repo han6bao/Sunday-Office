@@ -1,3 +1,4 @@
+import { Guide } from "../sunday/guide";
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { useEffect, useState } from "react";
@@ -687,6 +688,12 @@ function Footer() {
             <a className="foot-link" href="#office-hours">
               Start a project →
             </a>
+            <a className="foot-link" href="#quiz">
+              Not sure where to start?
+            </a>
+            <a className="foot-link" href="#links">
+              Everything in one place
+            </a>
             <a className="foot-link" href="#top">
               Back to top
             </a>
@@ -1197,7 +1204,7 @@ function FeedLetter() {
       <p className="fd-ghost" aria-hidden="true">05</p>
       <div className="bio-grid">
         <figure className="bio-cover bio-cover-img">
-          <img src="/assets/bio/cover-hana.jpg?v=2" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026. Founder, creative producer. Seattle, WA. Building worlds." />
+          <img src="/assets/bio/cover-hana.jpg?v=3" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026. Founder, creative producer. Seattle, WA. Building worlds." />
         </figure>
         <div className="bio-side">
           <p className="fd-script">Hi, I'm Hana.</p>
@@ -1271,6 +1278,7 @@ function FeedStart() {
         <span className="fd-line">Tell me what you're making and what feels off.</span>
         <span className="fd-line">A few lines is plenty.</span>
       </p>
+      <p className="fd-guide-links"><a href="#quiz">Not sure where to start? <em>Take the quiz</em> <span aria-hidden="true">→</span></a></p>
       <ul className="fd-contact-strip">
         <li><a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a></li>
         <li><a href="https://www.instagram.com/sundayoffice.ag" target="_blank" rel="noreferrer">@sundayoffice.ag</a></li>
@@ -1307,6 +1315,7 @@ function Index() {
       </main>
       <Footer />
       <MobileStartBar />
+      <Guide />
     </div>
   );
 }

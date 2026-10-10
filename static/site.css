@@ -11651,6 +11651,90 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 /* Bio: plain plus, darker on hover (option 1) */
 .fd-bio .bio-list .bio-plus { font-family: Georgia, serif; font-size: 24px !important; line-height: 1; color: #b3a99e; opacity: 1 !important; transition: color .25s ease, transform .35s ease; }
 .fd-bio .bio-list button:hover .bio-plus, .fd-bio .bio-list button:focus-visible .bio-plus, .fd-bio .bio-list li.is-open .bio-plus { color: #6b6258; }
+/* World Building: solid thick grey ink, chalk grain via mask (no outline look); no arrow poking out of the card */
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap, .fd-page #build .fd-services a.is-big .fd-sn { background: none !important; color: #5f5a55 !important; -webkit-text-fill-color: #5f5a55 !important; -webkit-text-stroke: .014em #5f5a55 !important; }
+.fd-page #build .fd-services a.is-big .fd-sn { -webkit-mask-image: url(/assets/texture/chalk-white-2.png); mask-image: url(/assets/texture/chalk-white-2.png); -webkit-mask-size: 220px; mask-size: 220px; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { -webkit-text-stroke: 0 !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; }
+.fd-page #build .fd-services a.is-big .fd-sv-arr { display: none !important; }
+.fd-page #build .fd-services a.is-big .fd-sn { -webkit-mask-image: linear-gradient(transparent calc(100% - 32px), #000 calc(100% - 32px)), url(/assets/texture/chalk-white-2.png); mask-image: linear-gradient(transparent calc(100% - 32px), #000 calc(100% - 32px)), url(/assets/texture/chalk-white-2.png); -webkit-mask-size: 100% 100%, 220px; mask-size: 100% 100%, 220px; -webkit-mask-repeat: no-repeat, repeat; mask-repeat: no-repeat, repeat; }
+/* ===== Let's Begin: quiz link ===== */
+.fd-page .fd-start .fd-guide-links { margin: 18px auto 0; text-align: center; }
+.fd-page .fd-start .fd-guide-links a { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: rgba(250,246,240,.92); text-decoration: none; border-bottom: 1px solid rgba(250,246,240,.35); padding-bottom: 3px; transition: border-color .25s ease, color .25s ease; }
+.fd-page .fd-start .fd-guide-links a em { font-family: "Instrument Serif", Georgia, serif; font-size: 1.25em; font-style: italic; }
+.fd-page .fd-start .fd-guide-links a:hover { color: #fff; border-color: rgba(255,255,255,.85); }
+
+/* ===== Guide rooms (#links, #quiz) ===== */
+html.gd-lock, html.gd-lock body { overflow: hidden !important; }
+.gd { position: fixed; inset: 0; z-index: 9999; overflow-y: auto; -webkit-overflow-scrolling: touch; animation: gd-in .5s ease both; }
+@keyframes gd-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes gd-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.gd-close { position: fixed; top: 22px; right: 24px; z-index: 3; all: unset; position: fixed; top: 22px; right: 24px; z-index: 3; cursor: pointer; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.85); padding: 10px 14px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; transition: background-color .25s ease; }
+.gd-close span { font-family: Georgia, serif; font-size: 15px; letter-spacing: 0; margin-left: 6px; }
+.gd-close:hover, .gd-close:focus-visible { background: rgba(255,255,255,.12); }
+.gd-close-dark { position: static; color: #6b6258; border-color: rgba(107,98,88,.35); }
+.gd-close-dark:hover { background: rgba(141,125,158,.1); }
+
+/* directory */
+.gd-links { background: #8d7d9e url(/assets/texture/paper-lav.jpg); background-size: cover; color: #fff; }
+.gd-reel { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .2; filter: grayscale(.3) blur(1.5px); mix-blend-mode: luminosity; pointer-events: none; }
+.gd-wash { position: fixed; inset: 0; background: radial-gradient(ellipse at 50% 35%, rgba(141,125,158,.25), rgba(110,96,128,.7) 75%); pointer-events: none; }
+.gd-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; padding: clamp(80px, 12vh, 130px) 24px 70px; text-align: center; }
+.gd-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: rgba(255,255,255,.75); margin: 0 0 14px; animation: gd-up .7s ease both; }
+.gd-h { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(54px, 9vw, 110px); line-height: 1; margin: 0; color: transparent; background: url(/assets/texture/chalk-white-2.png); background-size: 220px; -webkit-background-clip: text; background-clip: text; padding: 0 .06em .12em; animation: gd-up .8s .05s ease both; }
+.gd-line { display: block; width: 1px; height: 64px; margin: 10px auto 14px; background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,0)); animation: gd-up .8s .1s ease both; }
+.gd-sub { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: rgba(255,255,255,.88); margin: 0 0 34px; animation: gd-up .8s .12s ease both; }
+.gd-list { list-style: none; margin: 0; padding: 0; text-align: left; border-top: 1px solid rgba(255,255,255,.25); }
+.gd-list li { border-bottom: 1px solid rgba(255,255,255,.25); animation: gd-up .7s ease both; }
+.gd-list a { display: grid; grid-template-columns: 44px 1fr auto; grid-template-areas: "n t a" "n d a"; column-gap: 14px; align-items: center; padding: 18px 12px; color: #fff; text-decoration: none; transition: background-color .3s ease; }
+.gd-list a:hover, .gd-list a:focus-visible { background: rgba(255,255,255,.08); }
+.gd-n { grid-area: n; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .2em; color: rgba(255,255,255,.6); align-self: start; padding-top: 12px; }
+.gd-t { grid-area: t; font-family: "Instrument Serif", Georgia, serif; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.05; }
+.gd-d { grid-area: d; font-family: "Fraunces", Georgia, serif; font-size: 14px; color: rgba(255,255,255,.72); margin-top: 4px; }
+.gd-a { grid-area: a; font-family: Georgia, serif; font-size: 20px; color: rgba(255,255,255,.55); transition: color .3s ease; }
+.gd-list a:hover .gd-a { color: #fff; }
+.gd-foot { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.6); margin: 30px 0 0; }
+
+/* quiz room */
+.gd-quiz { background: #f2ece3 url(/assets/texture/paper-cream.jpg); background-size: cover; color: #5f5850; }
+.gd-quiz-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 20px; padding: 20px clamp(20px, 5vw, 72px); background: linear-gradient(#f2ece3 70%, rgba(242,236,227,0)); }
+.gd-quiz-file { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: #8f857a; white-space: nowrap; }
+.gd-quiz-rule { flex: 1; height: 1px; background: rgba(133,123,112,.3); }
+.gd-quiz-inner { max-width: 880px; margin: 0 auto; padding: clamp(20px, 5vh, 56px) 24px 80px; animation: gd-up .7s ease both; }
+.gd-quiz-h { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(44px, 7vw, 86px); line-height: 1; color: #857b70; margin: 0; text-align: center; }
+.gd-quiz-sub { font-family: "Fraunces", Georgia, serif; font-size: 16px; color: #857b70; text-align: center; margin: 14px auto 8px; max-width: 46ch; }
+.gd-quiz .so-quiz { background: transparent; color: #5f5850; padding: 0; margin-top: 30px; border-radius: 0; }
+.gd-quiz .so-quiz-cap, .gd-quiz .so-micro { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .26em; color: #8d7d9e; }
+.gd-quiz .so-quiz-h { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; color: #6b6258; margin-bottom: 20px; padding: 0; }
+.gd-quiz .so-quiz-opt { background: rgba(255,255,255,.45); border: 1px solid rgba(133,123,112,.25); border-radius: 14px; color: #5f5850; transition: background-color .25s ease, border-color .25s ease; }
+.gd-quiz .so-quiz-opt:hover, .gd-quiz .so-quiz-opt:focus-visible { background: rgba(141,125,158,.1); border-color: rgba(141,125,158,.55); transform: none; }
+.gd-quiz .so-quiz-opt-t { font-family: "Instrument Serif", Georgia, serif; font-size: 24px; color: #5f5850; }
+.gd-quiz .so-quiz-opt-d { font-family: "Fraunces", Georgia, serif; color: #8f857a; }
+.gd-quiz .so-quiz-dots span { background: rgba(133,123,112,.25); }
+.gd-quiz .so-quiz-dots span.is-done, .gd-quiz .so-quiz-dots span.is-on { background: #8d7d9e; }
+.gd-quiz .so-quiz-result { background: #8d7d9e url(/assets/texture/paper-lav.jpg); background-size: cover; color: #fff; border-radius: 18px; padding: clamp(24px, 4vw, 44px); }
+.gd-quiz .so-quiz-result .so-quiz-cap { color: rgba(255,255,255,.75); }
+.gd-quiz .so-quiz-pick-t { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(40px, 5vw, 60px); color: #fff; }
+.gd-quiz .so-quiz-pick-p { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 24px; color: rgba(255,255,255,.85); }
+.gd-quiz .so-quiz-why, .gd-quiz .so-quiz-small { font-family: "Fraunces", Georgia, serif; color: rgba(255,255,255,.9); }
+.gd-quiz .so-quiz-go { background: #fff; color: #5d4f6e; border-radius: 999px; }
+.gd-quiz .so-quiz-more { color: #fff; }
+.gd-quiz .so-quiz-foot button { color: #8f857a; }
+.gd-quiz-alt { font-family: "Fraunces", Georgia, serif; font-size: 15px; color: #857b70; text-align: center; margin-top: 40px; }
+.gd-quiz-alt a { color: #6b5d7c; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .gd-list a { grid-template-columns: 30px 1fr auto; padding: 15px 6px; }
+  .gd-close { top: 14px; right: 14px; }
+  .gd-quiz-bar { padding: 14px 16px; } .gd-quiz-file { font-size: 9.5px; letter-spacing: .2em; }
+}
+@media (prefers-reduced-motion: reduce) { .gd, .gd * { animation: none !important; } .gd-reel { display: none; } }
+.gd-quiz .so-quiz-top .so-quiz-cap { visibility: hidden; }
+.gd-quiz .so-quiz-result .so-quiz-cap { color: rgba(255,255,255,.8) !important; }
+.gd-quiz a.so-quiz-go, .gd-quiz a.so-quiz-go:visited { background: #fff !important; color: #5d4f6e !important; -webkit-text-fill-color: #5d4f6e !important; font-family: "Fraunces", Georgia, serif; font-size: 15px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+.gd-quiz a.so-quiz-go:hover { background: #f3eef8 !important; }
+.gd-quiz a.so-quiz-more { color: #fff !important; font-family: "Fraunces", Georgia, serif; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); }
+.gd-quiz .so-quiz-foot button { font-family: "IBM Plex Mono", ui-monospace, monospace !important; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #8f857a !important; }
+.gd-quiz .so-quiz-pick-p { font-family: "Instrument Serif", Georgia, serif !important; letter-spacing: 0 !important; }
+.gd-close { white-space: nowrap; } @media (max-width: 640px) { .gd-quiz-rule { min-width: 12px; } .gd-quiz-bar .gd-close { padding: 8px 12px; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

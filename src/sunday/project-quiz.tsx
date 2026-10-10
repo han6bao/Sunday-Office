@@ -190,6 +190,15 @@ const NICHE_NOTE: Record<Niche, string> = {
   other: "",
 };
 
+/* The static preview serves pages as files (branding.html), the live site as routes (/branding). */
+function fixHref(h: string) {
+  if (typeof window === "undefined" || !window.location.pathname.endsWith(".html")) return h;
+  if (h.startsWith("/?") || h.startsWith("/#")) return "index.html" + h.slice(1);
+  const [path, frag] = h.split("#");
+  if (!path.startsWith("/")) return h;
+  return path.slice(1).replace(/\//g, "-") + ".html" + (frag ? "#" + frag : "");
+}
+
 function Options({ opts, onPick, cols }: { opts: Opt[]; onPick: (k: string) => void; cols?: string }) {
   return (
     <div className={"so-quiz-opts" + (cols ? " " + cols : "")}>
@@ -287,10 +296,10 @@ export function ProjectQuiz() {
           <p className="so-quiz-why">{pick.why}</p>
           {detail && <p className="so-quiz-why so-quiz-niche">{detail}</p>}
           <div className="so-quiz-ctas">
-            <a className="so-quiz-go" href={bookHref(pick.need, `${pick.t} (${pick.p})${note ? `, ${note}` : ""}`)}>
+            <a className="so-quiz-go" href={fixHref(bookHref(pick.need, `${pick.t} (${pick.p})${note ? `, ${note}` : ""}`))}>
               Start with this →
             </a>
-            <a className="so-quiz-more" href={pick.more}>
+            <a className="so-quiz-more" href={fixHref(pick.more)}>
               See the details
             </a>
           </div>
@@ -309,7 +318,7 @@ export function ProjectQuiz() {
             start, with a price, before anything is booked.
           </p>
           <div className="so-quiz-ctas">
-            <a className="so-quiz-go" href={bookHref("Not sure yet / Other", note ? `figuring out where to start, ${note}` : "figuring out where to start")}>
+            <a className="so-quiz-go" href={fixHref(bookHref("Not sure yet / Other", note ? `figuring out where to start, ${note}` : "figuring out where to start"))}>
               Tell me about it →
             </a>
             <a className="so-quiz-more" href="#build">
