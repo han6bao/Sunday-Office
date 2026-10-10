@@ -793,6 +793,16 @@ function FeedServices() {
       <p className="fd-small">
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
       </p>
+      <div className="fd-mk">
+        <p className="fd-mk-k">Already up and running?</p>
+        <p className="fd-mk-h">The Makeover</p>
+        <p className="fd-mk-d">Keep what works and refresh the rest. A new brand kit around your logo, a cleaner website or better photos.</p>
+        <p className="fd-mk-row">
+          <span>Brand kit <i>from $550</i></span>
+          <span>Site refresh <i>from $250</i></span>
+        </p>
+        <a className="fd-mk-a" href="#inquiry">Ask about a makeover <span aria-hidden="true">→</span></a>
+      </div>
       <div className="fd-services">
         <p className="fd-sv-note">Start with one, or build the whole world.</p>
         {FEED_SERVICES.map((x) => (
