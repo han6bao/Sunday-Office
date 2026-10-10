@@ -12041,3 +12041,4 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 /* Start a project: header button on desktop only; hero button on phones only */
 @media (max-width: 899px) { .so-nav .so-nav-link.cta { display: none !important; } }
 @media (min-width: 900px) { .fd-media .fd-hero-sub a.fd-hero-btn { display: none !important; } }
+@media (max-width: 899px) { .fd-media .fd-hero-sub a.fd-hero-btn { margin-top: 22px; } }
