@@ -17,7 +17,7 @@ const LINKS: { n: string; t: string; d: string; href: string; ext?: boolean }[] 
   { n: "01", t: "Start a project", d: "Tell me what you're making", href: "#inquiry" },
   { n: "02", t: "Not sure where to start?", d: "A few quick questions, one clear answer", href: "#quiz" },
   { n: "03", t: "What I do", d: "Branding, websites, photography, video", href: "#build" },
-  { n: "04", t: "The work", d: "Recent projects", href: "#work" },
+  { n: "04", t: "The work", d: "Every case study", href: "#work" },
   { n: "05", t: "Meet Hana", d: "How I see and what I'm building", href: "#about-hana" },
   { n: "06", t: "Instagram", d: "@sundayoffice.ag", href: "https://www.instagram.com/sundayoffice.ag", ext: true },
   { n: "07", t: "Email", d: "hello@sundayoffice.agency", href: "mailto:hello@sundayoffice.agency", ext: true },
@@ -31,6 +31,28 @@ const SERVICES: { t: string; href: string }[] = [
   { t: "Headshots", href: "/headshots" },
   { t: "Moving Image", href: "/moving-image" },
   { t: "Creative Direction + Social", href: "/creative-direction-content" },
+];
+
+const CASES: { t: string; href: string }[] = [
+  { t: "Essential Brows", href: "/websites/essential-brows-studio" },
+  { t: "Jazmin's Events", href: "/websites/jazmins-events" },
+  { t: "Selaras Haus", href: "/campaigns/selaras-haus" },
+  { t: "Nine Vicious × Custom Grillz", href: "/campaigns/green-grillz" },
+  { t: "Exhibition", href: "/campaigns/exhibition" },
+  { t: "Jaydyn F.", href: "/campaigns/jaydyn-f" },
+  { t: "Chutneys Bellevue", href: "/campaigns/chutneys" },
+  { t: "Leon Thomas × Vice", href: "/campaigns/leon-thomas" },
+  { t: "Paradice × Itz Pz", href: "/campaigns/paradice" },
+  { t: "Bar Bistro", href: "/campaigns/bar-bistro" },
+  { t: "Public House", href: "/campaigns/public-house" },
+  { t: "Kenshi Killz", href: "/campaigns/kenshi-killz" },
+  { t: "Big Baby Gucci", href: "/campaigns/big-baby-gucci" },
+  { t: "Avery Tien", href: "/campaigns/avery-tien" },
+  { t: "DJ Prashant × The Hiyu", href: "/campaigns/dj-prashant-hiyu" },
+  { t: "DJ WZRD", href: "/campaigns/dj-wzrd" },
+  { t: "Chitos International", href: "/campaigns/chitos" },
+  { t: "Highway", href: "/campaigns/highway" },
+  { t: "Still Different", href: "/campaigns/still-different" },
 ];
 
 /* The static preview serves pages as files (branding.html), the live site as routes (/branding). */
@@ -100,6 +122,13 @@ export function Guide() {
                   <span className="gd-d">{l.d}</span>
                   <span className="gd-a" aria-hidden="true">→</span>
                 </a>
+                {l.n === "04" && (
+                  <div className="gd-svc">
+                    {CASES.map((c) => (
+                      <a key={c.href} href={pageHref(c.href)} className="gd-pill">{c.t}</a>
+                    ))}
+                  </div>
+                )}
                 {l.n === "03" && (
                   <div className="gd-svc">
                     {SERVICES.map((sv) => (
