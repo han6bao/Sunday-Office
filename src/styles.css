@@ -12135,3 +12135,8 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page .fd-mk-d i { color: #5d5853; font-style: italic; }
 .fd-page .fd-mk a.fd-mk-a { display: inline !important; font-size: inherit !important; color: #5d5853 !important; border: 0 !important; padding: 0 !important; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(93,88,83,.4); white-space: nowrap; }
 .fd-page .fd-mk a.fd-mk-a:hover { color: #9e2b2e !important; }
+
+/* Makeover room (same look as the directory) */
+.gd-mk .gd-d i { font-style: italic; color: rgba(255,255,255,.92); }
+.gd-mk-alt { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; font-size-adjust: .56; color: rgba(255,255,255,.8); margin: 30px 0 0; max-width: 52ch; animation: gd-up .8s .7s ease both; }
+.gd-mk-alt a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); }

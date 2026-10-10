@@ -5,22 +5,32 @@ import { ProjectQuiz } from "./project-quiz";
    #links  a directory that guides people around (also works as the Instagram link)
    #quiz   "not sure where to start?" questions with one clear suggestion */
 
-type Room = "links" | "quiz" | null;
+type Room = "links" | "quiz" | "makeover" | null;
 
 const roomFromHash = (): Room => {
   if (typeof window === "undefined") return null;
   const h = window.location.hash.replace("#", "");
-  return h === "links" ? "links" : h === "quiz" ? "quiz" : null;
+  return h === "links" ? "links" : h === "quiz" ? "quiz" : h === "makeover" ? "makeover" : null;
 };
 
 const LINKS: { n: string; t: string; d: string; href: string; ext?: boolean }[] = [
   { n: "01", t: "Start a project", d: "Tell me what you're making", href: "#inquiry" },
   { n: "02", t: "Not sure where to start?", d: "A few quick questions, one clear answer", href: "#quiz" },
-  { n: "03", t: "What I do", d: "Branding, websites, photography, video", href: "#build" },
-  { n: "04", t: "The work", d: "Recent projects", href: "#work" },
-  { n: "05", t: "Meet Hana", d: "How I see and what I'm building", href: "#about-hana" },
-  { n: "06", t: "Instagram", d: "@sundayoffice.ag", href: "https://www.instagram.com/sundayoffice.ag", ext: true },
-  { n: "07", t: "Email", d: "hello@sundayoffice.agency", href: "mailto:hello@sundayoffice.agency", ext: true },
+  { n: "03", t: "Need a makeover?", d: "Refresh the brand, site or photos you already have", href: "#makeover" },
+  { n: "04", t: "What I do", d: "Branding, websites, photography, video", href: "#build" },
+  { n: "05", t: "The work", d: "Recent projects", href: "#work" },
+  { n: "06", t: "Meet Hana", d: "How I see and what I'm building", href: "#about-hana" },
+  { n: "07", t: "Instagram", d: "@sundayoffice.ag", href: "https://www.instagram.com/sundayoffice.ag", ext: true },
+  { n: "08", t: "Email", d: "hello@sundayoffice.agency", href: "mailto:hello@sundayoffice.agency", ext: true },
+];
+
+const MAKEOVER: { n: string; t: string; d: string; p: string; href: string }[] = [
+  { n: "01", t: "Brand refresh", d: "Keep your logo. New colors, type and a kit that pulls it together", p: "from $550", href: "/branding" },
+  { n: "02", t: "A cleaner logo", d: "Redrawn, simplified or made to work everywhere", p: "from $350", href: "/logo-identity" },
+  { n: "03", t: "Website makeover", d: "Fix and refresh what you have, or start over", p: "from $250", href: "/websites" },
+  { n: "04", t: "Better photos", d: "A brand shoot so your site and feed finally match", p: "from $550", href: "/photography" },
+  { n: "05", t: "New headshots", d: "For your site, LinkedIn and press", p: "from $150", href: "/headshots" },
+  { n: "06", t: "Social refresh", d: "Canva templates in your brand, or content made for you", p: "from $300", href: "/creative-direction-content" },
 ];
 
 const SERVICES: { t: string; href: string }[] = [
@@ -98,9 +108,9 @@ export function Guide() {
   const go = (href: string) => (e: React.MouseEvent) => {
     if (!href.startsWith("#")) return;
     e.preventDefault();
-    if (href === "#quiz") {
-      history.replaceState(null, "", "#quiz");
-      setRoom("quiz");
+    if (href === "#quiz" || href === "#makeover") {
+      history.replaceState(null, "", href);
+      setRoom(href === "#quiz" ? "quiz" : "makeover");
       return;
     }
     history.replaceState(null, "", window.location.pathname + window.location.search);
@@ -109,6 +119,44 @@ export function Guide() {
   };
 
   if (!room) return null;
+
+  if (room === "makeover")
+    return (
+      <div className="gd gd-links gd-mk" role="dialog" aria-modal="true" aria-label="The Makeover">
+        <video className="gd-reel" src="/assets/work/hero-edit.mp4" autoPlay muted loop playsInline aria-hidden="true" />
+        <div className="gd-wash" aria-hidden="true" />
+        <button type="button" className="gd-close" onClick={close}>Close <span aria-hidden="true">×</span></button>
+        <div className="gd-inner">
+          <p className="gd-k">Sunday Office · The Makeover</p>
+          <h2 className="gd-h">Keep what works.</h2>
+          <span className="gd-line" aria-hidden="true" />
+          <p className="gd-sub">Already up and running? Pick what needs a refresh.</p>
+          <ol className="gd-list">
+            {MAKEOVER.map((l, i) => (
+              <li key={l.n} style={{ animationDelay: 120 + i * 70 + "ms" }}>
+                <a href={pageHref(l.href)}>
+                  <span className="gd-n">{l.n}</span>
+                  <span className="gd-t">{l.t}</span>
+                  <span className="gd-d">{l.d} · <i>{l.p}</i></span>
+                  <span className="gd-a" aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))}
+            <li style={{ animationDelay: 120 + MAKEOVER.length * 70 + "ms" }}>
+              <a href="#inquiry" onClick={go("#inquiry")}>
+                <span className="gd-n">07</span>
+                <span className="gd-t">All of it: The Refresh</span>
+                <span className="gd-d">Photos, short videos, a site refresh and a social kit together · <i>from $1,200</i></span>
+                <span className="gd-a" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ol>
+          <p className="gd-mk-alt">
+            Not sure what needs the most work? <a href="#inquiry" onClick={go("#inquiry")}>Send me your links</a> and I'll tell you where I'd start, or <a href="#quiz" onClick={go("#quiz")}>take the quiz</a>.
+          </p>
+        </div>
+      </div>
+    );
 
   if (room === "links")
     return (
@@ -130,7 +178,7 @@ export function Guide() {
                   <span className="gd-d">{l.d}</span>
                   <span className="gd-a" aria-hidden="true">→</span>
                 </a>
-                {l.n === "03" && (
+                {l.n === "04" && (
                   <div className="gd-svc">
                     {SERVICES.map((sv) => (
                       <a key={sv.href} href={pageHref(sv.href)} className="gd-pill">{sv.t}</a>

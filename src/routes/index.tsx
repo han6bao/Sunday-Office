@@ -795,7 +795,7 @@ function FeedServices() {
       </p>
       <div className="fd-mk">
         <p className="fd-mk-k">Already up and running?</p>
-        <p className="fd-mk-d"><i>The Makeover.</i> Keep what works and refresh the rest, from a brand kit around your logo to a cleaner site. <a className="fd-mk-a" href="#inquiry">Ask about it →</a></p>
+        <p className="fd-mk-d"><i>The Makeover.</i> Keep what works and refresh the rest, from a brand kit around your logo to a cleaner site. <a className="fd-mk-a" href="#makeover">See makeover options →</a></p>
       </div>
       <div className="fd-services">
         <p className="fd-sv-note">Start with one, or build the whole world.</p>
