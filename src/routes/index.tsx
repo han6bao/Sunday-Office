@@ -684,7 +684,7 @@ function Footer() {
           <span className="foot-link">Seattle, WA</span>
         </div>
       </div>
-      <div className="ft2-mark" aria-hidden="true"><span className="ft2-c">S</span>unday <span className="ft2-c">O</span>ffice<svg className="ft2-tail" viewBox="0 0 100 60" preserveAspectRatio="none"><path d="M0 52 C 22 46, 44 30, 62 20 S 92 6, 98 14 C 102 20, 92 26, 84 22" /></svg></div>
+      <div className="ft2-mark" aria-hidden="true"><span className="ft2-c">S</span>unday <span className="ft2-c">O</span>ffice</div>
     </footer>
   );
 }
