@@ -11867,6 +11867,13 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .so-footer .so-footer-top .so-footer-wordmark { margin-top: -4px; }
 .so-footer .so-footer-top > div:first-child { padding-top: 30px; } .so-footer .so-footer-top .so-footer-wordmark { margin-top: 0 !important; }
 #work .fd-work-head h2 { font-size: clamp(52px, 7.6vw, 140px) !important; line-height: .95 !important; }
+/* Philosophy: takes over the whole screen, lettering centered */
+.fd-page > section.fd-frame.fd-quote { min-height: 100vh !important; min-height: 100svh !important; display: flex !important; flex-direction: column !important; box-sizing: border-box; }
+.fd-page > section.fd-frame.fd-quote > .fd-quote-btn { margin-top: auto !important; }
+.fd-page > section.fd-frame.fd-quote:not(.is-open) > .fd-quote-btn { margin-bottom: auto !important; }
+.fd-page > section.fd-frame.fd-quote.is-open > .fd-why { margin-bottom: auto !important; }
+.fd-page .fd-quote .fd-quote-img { max-height: min(420px, 46vh) !important; }
+.fd-bio .bio-panel-in p { font-weight: 300 !important; font-variation-settings: "wght" 300, "SOFT" 50, "opsz" 14; color: #6e665e; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
