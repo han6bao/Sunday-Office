@@ -12042,3 +12042,20 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 899px) { .so-nav .so-nav-link.cta { display: none !important; } }
 @media (min-width: 900px) { .fd-media .fd-hero-sub a.fd-hero-btn { display: none !important; } }
 @media (max-width: 899px) { .fd-media .fd-hero-sub a.fd-hero-btn { margin-top: 22px; } }
+/* Phone inquiry: wider card, shorter form */
+@media (max-width: 899px) {
+  .fd-page .fd-start .fd-start-grid > .fd-sheet { margin-left: -8px !important; margin-right: -8px !important; padding: 18px 16px 22px !important; }
+  .fd-page .fd-start .fd-sheet .fd-tabs { margin: 0 0 16px !important; }
+  .fd-page .fd-start .fd-sheet .eyebrow-cap { margin-top: 0 !important; font-size: 26px !important; }
+  .fd-page .fd-start .fd-sheet form > * { margin-top: 0 !important; }
+  .fd-page .fd-start .fd-sheet label { margin-bottom: 2px !important; }
+  .fd-page .fd-start .fd-sheet input, .fd-page .fd-start .fd-sheet select { padding-top: 8px !important; padding-bottom: 8px !important; }
+  .fd-page .fd-start .fd-sheet textarea { min-height: 96px !important; height: 96px; }
+}
+@media (max-width: 899px) {
+  .fd-page .fd-start .fd-start-grid > .fd-sheet { width: calc(100% + 16px) !important; max-width: none !important; align-self: center; box-sizing: border-box; }
+  .fd-page .fd-start .fd-sheet form { display: grid !important; grid-template-columns: 1fr 1fr; column-gap: 14px; }
+  .fd-page .fd-start .fd-sheet form > :not(.so-field), .fd-page .fd-start .fd-sheet .so-field.full { grid-column: 1 / -1; }
+  .fd-page .fd-start .fd-sheet .so-field label { font-size: 9px !important; letter-spacing: .16em !important; }
+  .fd-page .fd-start .fd-sheet .so-field input, .fd-page .fd-start .fd-sheet .so-field select { font-size: 15px !important; min-width: 0; }
+}
