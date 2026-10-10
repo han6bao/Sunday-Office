@@ -1197,7 +1197,7 @@ function FeedLetter() {
       <p className="fd-ghost" aria-hidden="true">05</p>
       <div className="bio-grid">
         <figure className="bio-cover bio-cover-img">
-          <img src="/assets/bio/cover-hana.jpg" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026. Founder, creative producer. Seattle, WA. Building worlds." />
+          <img src="/assets/bio/cover-hana.jpg?v=2" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026. Founder, creative producer. Seattle, WA. Building worlds." />
         </figure>
         <div className="bio-side">
           <p className="fd-script">Hi, I'm Hana.</p>
