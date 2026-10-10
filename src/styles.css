@@ -11602,3 +11602,14 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 @media (max-width: 860px) { .bio-grid { grid-template-columns: 1fr; margin-top: -20px; } .bio-cover { max-width: 420px; width: 100%; justify-self: center; } }
 .fd-hand-mld .fd-cap { background: none !important; }
 .fd-hand-mld .fd-ap { background-image: url(/assets/texture/chalk-white.png) !important; background-size: 260px !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; -webkit-text-fill-color: transparent !important; }
+/* Let's: apostrophe floats above the t/s join so the letters stay connected */
+.fd-hand-mld .fd-ap { position: absolute !important; display: inline !important; margin: 0 !important; vertical-align: baseline !important; padding: .4em !important; transform: translate(-.26em, -.07em); line-height: 1; pointer-events: none; }
+/* World Building: same chalk grain as Let's Begin, in grey, a little larger */
+.fd-page #build .fd-services a.is-big .fd-sn { background-image: url(/assets/texture/chalk-grey.png) !important; background-size: 260px !important; font-size: clamp(66px, 6.8vw, 104px) !important; }
+@media (max-width: 899px) { .fd-page #build .fd-services a.is-big .fd-sn { font-size: 52px !important; } }
+@media (max-width: 520px) { .fd-start .fd-small .fd-line { font-size: min(1em, 4.3vw); } }
+.fd-page #build .fd-services a.is-big { height: auto !important; min-height: 0 !important; padding-bottom: 24px !important; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { margin-top: 18px !important; }
+@media (max-width: 520px) { .fd-page .fd-start .fd-small .fd-line { font-size: 4.1vw !important; white-space: nowrap; } }
+.fd-page #build .fd-services a.is-big { grid-template-rows: auto !important; }
+.fd-page #build .fd-services a.is-big .fd-sn { margin-top: 0 !important; margin-bottom: 0 !important; }
