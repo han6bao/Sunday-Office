@@ -887,27 +887,32 @@ function Makeover() {
   );
 }
 
-const MORE_WORK = [
-  { t: "Bar Bistro", w: "Food + drink photography", k: "Food + drink", src: "/assets/campaigns/bar-bistro/bb-01.jpg", h: "/campaigns/bar-bistro" },
-  { t: "Public House", w: "Venue photography", k: "Venues", src: "/assets/campaigns/soul-social/ss-04.jpg", h: "/campaigns/public-house" },
-  { t: "Kenshi Killz", w: "Artist promo", k: "Artists", src: "/assets/campaigns/kenshi-killz/kk-01.jpg", h: "/campaigns/kenshi-killz" },
-  { t: "Big Baby Gucci", w: "Artist photography", k: "Artists", src: "/assets/campaigns/big-baby-gucci/bbg-01.jpg", h: "/campaigns/big-baby-gucci" },
-  { t: "Paradice × Itz Pz", w: "Studio portraits", k: "Artists", src: "/assets/campaigns/paradice/pz01.jpg", h: "/campaigns/paradice" },
-  { t: "Still Different", w: "Artist photography", k: "Artists", src: "/assets/campaigns/still-different/sd-01.jpg", h: "/campaigns/still-different" },
-  { t: "Avery Tien", w: "Portraits", k: "Portraits", src: "/assets/campaigns/avery-tien/at01.jpg", h: "/campaigns/avery-tien" },
-  { t: "DJ Prashant × The Hiyu", w: "Event photography", k: "Events", src: "/assets/campaigns/dj-prashant-hiyu/djp-01.jpg", h: "/campaigns/dj-prashant-hiyu" },
-  { t: "DJ WZRD", w: "Nightlife photography", k: "Events", src: "/assets/campaigns/dj-wzrd/dj-01.jpg", h: "/campaigns/dj-wzrd" },
+const MORE_WORK: { t: string; w: string; k: string[]; src: string; h: string }[] = [
+  { t: "Essential Brows", w: "Website + brand kit", k: ["Websites", "Branding"], src: "/assets/campaigns/essential-brows-studio/site-phones.jpg", h: "/websites/essential-brows-studio" },
+  { t: "Jazmin's Events", w: "Brand + website · in progress", k: ["Branding", "Websites"], src: "/assets/campaigns/jazmins-events/kit-guide.jpg", h: "/websites/jazmins-events" },
+  { t: "GREAN", w: "Website", k: ["Websites"], src: "/assets/campaigns/grean/featured-cover.png", h: "https://grean-iota.vercel.app/" },
+  { t: "Chutneys Bellevue", w: "Commercial + photos", k: ["Video", "Photography"], src: "/assets/campaigns/chutneys/commercial-poster.jpg", h: "/campaigns/chutneys" },
+  { t: "Studio headshots", w: "Headshots", k: ["Headshots"], src: "/assets/headshots/standard-01.jpg", h: "/headshots" },
+  { t: "Bar Bistro", w: "Food + drink photography", k: ["Photography"], src: "/assets/campaigns/bar-bistro/bb-01.jpg", h: "/campaigns/bar-bistro" },
+  { t: "Public House", w: "Venue photography", k: ["Photography"], src: "/assets/campaigns/soul-social/ss-04.jpg", h: "/campaigns/public-house" },
+  { t: "Kenshi Killz", w: "Artist promo", k: ["Photography"], src: "/assets/campaigns/kenshi-killz/kk-01.jpg", h: "/campaigns/kenshi-killz" },
+  { t: "Big Baby Gucci", w: "Artist photography", k: ["Photography"], src: "/assets/campaigns/big-baby-gucci/bbg-01.jpg", h: "/campaigns/big-baby-gucci" },
+  { t: "Paradice × Itz Pz", w: "Studio portraits", k: ["Photography"], src: "/assets/campaigns/paradice/pz01.jpg", h: "/campaigns/paradice" },
+  { t: "Still Different", w: "Artist photography", k: ["Photography"], src: "/assets/campaigns/still-different/sd-01.jpg", h: "/campaigns/still-different" },
+  { t: "Avery Tien", w: "Portraits", k: ["Photography"], src: "/assets/campaigns/avery-tien/at01.jpg", h: "/campaigns/avery-tien" },
+  { t: "DJ Prashant × The Hiyu", w: "Event photography", k: ["Photography"], src: "/assets/campaigns/dj-prashant-hiyu/djp-01.jpg", h: "/campaigns/dj-prashant-hiyu" },
+  { t: "DJ WZRD", w: "Nightlife photography", k: ["Photography"], src: "/assets/campaigns/dj-wzrd/dj-01.jpg", h: "/campaigns/dj-wzrd" },
 ];
-const MW_TYPES = ["All", "Artists", "Events", "Food + drink", "Venues", "Portraits"];
+const MW_TYPES = ["All", "Branding", "Websites", "Photography", "Headshots", "Video"];
 
 /* More work as a quiet list. Pick a type and those projects rise to the top. */
 function MoreWork() {
   const [type, setType] = useState("All");
-  const list = type === "All" ? MORE_WORK : [...MORE_WORK.filter((w) => w.k === type), ...MORE_WORK.filter((w) => w.k !== type)];
+  const list = type === "All" ? MORE_WORK : [...MORE_WORK.filter((w) => w.k.includes(type)), ...MORE_WORK.filter((w) => !w.k.includes(type))];
   const [on, setOn] = useState(MORE_WORK[0].t);
   const pick = (t: string) => {
     setType(t);
-    const first = t === "All" ? MORE_WORK[0] : MORE_WORK.find((w) => w.k === t);
+    const first = t === "All" ? MORE_WORK[0] : MORE_WORK.find((w) => w.k.includes(t));
     if (first) setOn(first.t);
   };
   return (
@@ -918,16 +923,16 @@ function MoreWork() {
           {MW_TYPES.map((t) => (
             <button key={t} type="button" className={"fd-mw-type" + (type === t ? " is-on" : "")} aria-pressed={type === t} onClick={() => pick(t)}>
               {t}
-              {t !== "All" && <span className="fd-mw-count">{MORE_WORK.filter((w) => w.k === t).length}</span>}
+              {t !== "All" && <span className="fd-mw-count">{MORE_WORK.filter((w) => w.k.includes(t)).length}</span>}
             </button>
           ))}
         </div>
         <ul>
           {list.map((w, i) => {
-            const match = type === "All" || w.k === type;
+            const match = type === "All" || w.k.includes(type);
             return (
               <li key={w.t} className={match ? "" : "is-dim"}>
-                <a href={ph(w.h)} onMouseEnter={() => setOn(w.t)} onFocus={() => setOn(w.t)} className={on === w.t ? "is-on" : ""}>
+                <a href={ph(w.h)} {...(w.h.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})} onMouseEnter={() => setOn(w.t)} onFocus={() => setOn(w.t)} className={on === w.t ? "is-on" : ""}>
                   <span className="fd-mw-no">{String(i + 1).padStart(2, "0")}</span>
                   <span className="fd-mw-t">{w.t}</span>
                   <span className="fd-mw-w">{/progress/i.test(w.w) && <span className="rec-dot" aria-hidden="true" />}{w.w}</span>
