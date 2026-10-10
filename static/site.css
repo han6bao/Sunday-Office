@@ -11891,6 +11891,16 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .ft2-c { font-family: "Pinyon Script Local", "Pinyon Script", cursive; }
 @media (max-width: 899px) { .ft2-top { grid-template-columns: 1fr 1fr; gap: 28px; } .ft2-line { grid-column: 1 / -1; } .ft2-col:nth-child(3) h5 { display: none; } .ft2-mark { font-size: 24vw; } }
 .ft2-mark { line-height: 1.1 !important; margin-bottom: -.14em !important; } .ft2-line { max-width: 20ch !important; } .ft2-col .foot-link { margin: 7px 0 !important; }
+/* Footer 2: thin line above each column, tops aligned, wordmark centered edge to edge */
+.ft2-top > * { border-top: 1px solid rgba(244,239,247,.32) !important; padding-top: 18px !important; align-self: stretch; }
+.ft2-line { margin-top: 0 !important; line-height: 1.12 !important; }
+.ft2-col h5 { line-height: 1 !important; margin: 4px 0 10px !important; }
+.ft2-col .foot-link:first-of-type { margin-top: 0 !important; }
+.ft2-small { border-top: 1px solid rgba(244,239,247,.22); padding-top: 16px; }
+.ft2-mark { text-align: center; font-size: clamp(110px, 24vw, 520px) !important; margin-left: 0 !important; letter-spacing: -.01em; }
+@media (max-width: 899px) { .ft2-mark { font-size: 25vw !important; } }
+.ft2-mark { font-size: 22.2vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 21.5vw !important; } } .ft2-line { max-width: none !important; padding-right: 10% !important; }
+@media (max-width: 899px) { .ft2-col:nth-child(3) h5 { display: block !important; visibility: hidden; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
