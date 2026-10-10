@@ -11747,6 +11747,20 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 899px) {
   .fd-page #build .fd-services a.is-big .fd-sn { font-size: 40px !important; -webkit-mask-image: linear-gradient(transparent calc(100% - 62px), #000 calc(100% - 62px)), url(/assets/texture/grain-soft.png); mask-image: linear-gradient(transparent calc(100% - 62px), #000 calc(100% - 62px)), url(/assets/texture/grain-soft.png); }
 }
+/* Bio: shorter section. No ghost numeral peeking behind the cover; smaller cover. */
+.fd-page .fd-bio .fd-ghost { display: none !important; }
+.fd-page .fd-bio .bio-grid { grid-template-columns: minmax(0, 400px) minmax(0, 1fr) !important; gap: clamp(32px, 5vw, 80px) !important; align-items: center !important; margin-top: clamp(24px, 3vw, 40px) !important; }
+.fd-page .fd-bio .bio-cover { width: 100%; max-width: 400px; }
+.fd-page .fd-bio .bio-side .fd-script { margin-top: 0 !important; }
+@media (max-width: 860px) { .fd-page .fd-bio .bio-grid { grid-template-columns: 1fr !important; margin-top: 20px !important; } .fd-page .fd-bio .bio-cover { max-width: 300px; justify-self: center; } }
+/* Philosophy + proof: no longer full-screen */
+.fd-page > .fd-quote, .fd-page > .fd-frame.fd-lav { padding-top: clamp(44px, 5vw, 72px) !important; padding-bottom: clamp(44px, 5vw, 72px) !important; }
+.fd-page .fd-quote .fd-quote-img { max-height: 330px !important; width: auto !important; max-width: 100% !important; margin: 0 auto; display: block; }
+.fd-page .fd-quote .fd-file { margin-bottom: 24px !important; }
+.fd-page .fd-frame.fd-lav > .fd-file { margin-bottom: 28px !important; }
+.fd-page .fd-frame.fd-lav .fd-big { font-size: clamp(130px, 17vw, 260px) !important; line-height: .85 !important; }
+@media (max-width: 640px) { .fd-page .fd-quote .fd-quote-img { max-height: 220px !important; } }
+.fd-page > section.fd-frame.fd-quote, .fd-page > section.fd-frame.fd-lav { padding-top: clamp(44px, 5vw, 72px) !important; padding-bottom: clamp(44px, 5vw, 72px) !important; } .fd-page .fd-bio .bio-grid { align-items: start !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
