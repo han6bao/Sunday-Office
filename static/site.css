@@ -11951,8 +11951,6 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 /* Footer wordmark: smooth joins, sits closer to the links, words closer together */
 .ft2-mark { -webkit-text-stroke: .006em #f4eff7; word-spacing: -.12em; margin-top: 0 !important; }
 .so-footer.ft2 .ft2-top { padding-bottom: 0; }
-/* World Building capitals: no outline, so the W's starting stroke keeps its fine tip */
-.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap, .fd-page #build .fd-services a.is-big:hover .fd-sn > .fd-cap { -webkit-text-stroke: 0 !important; font-size: 1.08em; }
 .ft2-mark { word-spacing: -.05em !important; font-size: 23.2vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 22.6vw !important; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
