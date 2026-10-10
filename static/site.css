@@ -11902,6 +11902,16 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .ft2-mark { font-size: 22.2vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 21.5vw !important; } } .ft2-line { max-width: none !important; padding-right: 10% !important; }
 @media (max-width: 899px) { .ft2-col:nth-child(3) h5 { display: block !important; visibility: hidden; } }
 .ft2-top > * { border-top: 0 !important; } .ft2-top { border-top: 1px solid rgba(244,239,247,.32); padding-top: 22px; } .ft2-top > * { padding-top: 0 !important; }
+/* Let's Begin on tablets and small laptops: stack, and keep every field inside the card */
+.fd-page .fd-start .fd-sheet * { min-width: 0; }
+.fd-page .fd-start .fd-sheet input, .fd-page .fd-start .fd-sheet textarea, .fd-page .fd-start .fd-sheet select { max-width: 100%; box-sizing: border-box; }
+@media (max-width: 1179px) {
+  .fd-page .fd-start .fd-start-grid { grid-template-columns: 1fr !important; max-width: 760px; gap: 32px; }
+  .fd-page .fd-start .fd-start-left { align-items: center; text-align: center; }
+  .fd-page .fd-start.fd-st-lav .fd-start-left .fd-script.fd-start-h, .fd-page .fd-start .fd-start-left .fd-small { text-align: center !important; margin-left: auto !important; margin-right: auto !important; }
+  .fd-page .fd-start .fd-start-left .fd-contact-strip { align-items: center; margin-bottom: 0 !important; }
+  .fd-page .fd-start .fd-start-left .fd-quiz-card { margin-top: 26px !important; text-align: left; }
+}
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
