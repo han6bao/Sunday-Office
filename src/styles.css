@@ -11742,3 +11742,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .gd-quiz .so-quiz-foot button { font-family: "IBM Plex Mono", ui-monospace, monospace !important; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #8f857a !important; }
 .gd-quiz .so-quiz-pick-p { font-family: "Instrument Serif", Georgia, serif !important; letter-spacing: 0 !important; }
 .gd-close { white-space: nowrap; } @media (max-width: 640px) { .gd-quiz-rule { min-width: 12px; } .gd-quiz-bar .gd-close { padding: 8px 12px; } }
+/* Shorter sections overall */
+.fd-page > section.fd-frame, .fd-page > .fd-frame { padding-top: clamp(52px, 6.5vw, 96px) !important; padding-bottom: clamp(52px, 6.5vw, 96px) !important; min-height: 0 !important; }
+.fd-page .fd-ghost { font-size: clamp(100px, 13vw, 200px) !important; line-height: .9 !important; margin-bottom: -.42em !important; margin-top: 0 !important; }
+.fd-page .fd-bio .fd-ghost { margin-bottom: -.3em !important; }
