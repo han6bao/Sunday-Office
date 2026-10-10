@@ -12061,6 +12061,12 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .so-bw-cta .so-micro, .so-bw-cta .so-next-t, .so-bw-cta p { color: #f4efe8 !important; }
 .so-bw-cta .so-next .so-micro { color: #c9b9d8 !important; }
 .so-bw-cta .so-bw-cta-btn { border-radius: 999px !important; }
+/* Selected work: warm sepia edit on the photos, full colour on hover */
+#work .fd-row .fd-tile img { filter: sepia(.42) saturate(.8) contrast(.96) brightness(.98); transition: filter .5s ease, transform .6s ease !important; }
+#work .fd-row .fd-tile:hover img, #work .fd-row .fd-tile:focus-visible img { filter: none; }
+#work .fd-row .fd-tile::after { background: linear-gradient(transparent, rgba(46,30,20,.62)) !important; border-radius: 0 0 18px 18px; }
+@media (hover: none) { #work .fd-row .fd-tile img { filter: sepia(.42) saturate(.8) contrast(.96) brightness(.98) !important; } }
+#work .fd-mw-peek img { filter: sepia(.42) saturate(.8) contrast(.96) brightness(.98); }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
