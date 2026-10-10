@@ -1211,7 +1211,7 @@ function FeedLetter() {
                 <button type="button" aria-expanded={open === k} aria-controls={"bio-p-" + k} onClick={() => setOpen((v) => (v === k ? null : k))}>
                   <span className="bio-ln">{c.n}</span>
                   <span className="bio-lt">{c.t}</span>
-                  <span className="bio-la" aria-hidden="true">+</span>
+                  <span className="bio-tap" aria-hidden="true"><span className="bio-tap-t">{open === k ? "Close" : "Read"}</span><span className="bio-la">+</span></span>
                 </button>
                 <div className="bio-panel" id={"bio-p-" + k} role="region" aria-label={c.t}>
                   <div className="bio-panel-in">
