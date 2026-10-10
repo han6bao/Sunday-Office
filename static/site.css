@@ -11848,6 +11848,10 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page .fd-quote.is-open .fd-quote-hint { margin-top: 6px; }
 .fd-page .fd-quote.is-open .fd-why { margin: 18px auto 0 !important; max-width: 62ch; text-align: center; }
 .fd-page .fd-quote.is-open .fd-why p { font-size: 17px !important; line-height: 1.7 !important; margin: 0 0 12px !important; }
+/* World Building: solid ink, no texture; full W swash visible */
+.fd-page #build .fd-services a.is-big .fd-sn { -webkit-mask-image: none !important; mask-image: none !important; text-indent: 0 !important; padding-left: .14em !important; margin-left: -.2em !important; overflow: visible !important; }
+.fd-page #build .fd-services a.is-big { overflow: visible !important; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { margin-left: 6px !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
