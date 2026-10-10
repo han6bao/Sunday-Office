@@ -11832,9 +11832,6 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child { margin-right: -.17em !important; }
 .fd-page #build .fd-services a.is-big:hover .fd-sn, .fd-page #build .fd-services a.is-big:hover .fd-sn > .fd-cap, .fd-page #build .fd-services a.is-big:focus-visible .fd-sn, .fd-page #build .fd-services a.is-big:focus-visible .fd-sn > .fd-cap { color: #5f5a55 !important; -webkit-text-fill-color: #5f5a55 !important; -webkit-text-stroke: .02em #5f5a55 !important; background: none !important; transform: none !important; letter-spacing: normal !important; }
 .fd-page #build .fd-services a.is-big:hover .fd-sn .fd-sd { -webkit-text-stroke: 0 !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; }
-/* Philosophy open: lettering and words side by side, fits one screen, no box */
-.fd-page .fd-quote .fd-quote-btn { border: 0 !important; outline: none; box-shadow: none !important; background: none !important; }
-.fd-page .fd-quote .fd-quote-btn:focus-visible { outline: 1px dashed rgba(133,123,112,.5); outline-offset: 8px; }
 /* Selected work: strip lines up with the page margin, arrows to browse */
 #work .fd-row { scroll-padding-left: 72px; scroll-padding-inline-start: 72px; }
 #work .fd-work-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
@@ -11843,11 +11840,6 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 #work .fd-arrow { all: unset; box-sizing: border-box; cursor: pointer; width: 42px; height: 42px; border-radius: 50%; border: 1px solid rgba(255,255,255,.4); display: grid; place-items: center; color: #fff; font-family: Georgia, serif; font-size: 17px; transition: background-color .25s ease; }
 #work .fd-arrow:hover, #work .fd-arrow:focus-visible { background: rgba(255,255,255,.14); }
 @media (max-width: 899px) { #work .fd-arrow { display: none; } #work .fd-row { scroll-padding-left: 20px; } }
-/* Philosophy open: text stays under the lettering, all within one screen */
-.fd-page .fd-quote.is-open .fd-quote-img { max-height: min(260px, 30vh) !important; }
-.fd-page .fd-quote.is-open .fd-quote-hint { margin-top: 6px; }
-.fd-page .fd-quote.is-open .fd-why { margin: 18px auto 0 !important; max-width: 62ch; text-align: center; }
-.fd-page .fd-quote.is-open .fd-why p { font-size: 17px !important; line-height: 1.7 !important; margin: 0 0 12px !important; }
 /* World Building: solid ink, no texture; full W swash visible */
 .fd-page #build .fd-services a.is-big .fd-sn { -webkit-mask-image: none !important; mask-image: none !important; text-indent: 0 !important; padding-left: .14em !important; margin-left: -.2em !important; overflow: visible !important; }
 .fd-page #build .fd-services a.is-big { overflow: visible !important; }
