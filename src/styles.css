@@ -11955,3 +11955,9 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .ft2-c { margin-right: -.1em; } .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:nth-of-type(2) { margin-right: -.09em !important; }
 .ft2-small { border-top: 0 !important; padding-top: 0 !important; }
 .ft2-mark { margin-top: clamp(28px, 4vw, 56px) !important; }
+/* Footer wordmark: smooth joins, sits closer to the links, words closer together */
+.ft2-mark { -webkit-text-stroke: .006em #f4eff7; word-spacing: -.12em; margin-top: 0 !important; }
+.so-footer.ft2 .ft2-top { padding-bottom: 0; }
+/* World Building capitals: no outline, so the W's starting stroke keeps its fine tip */
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap, .fd-page #build .fd-services a.is-big:hover .fd-sn > .fd-cap { -webkit-text-stroke: 0 !important; font-size: 1.08em; }
+.ft2-mark { word-spacing: -.05em !important; font-size: 23.2vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 22.6vw !important; } }
