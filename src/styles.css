@@ -11886,3 +11886,15 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 /* World Building capitals: hairline tips stay tapered, weight matched by size */
 .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap, .fd-page #build .fd-services a.is-big:hover .fd-sn > .fd-cap { -webkit-text-stroke: .01em #5f5a55 !important; font-size: 1.06em; }
 #work .fd-work-head h2 { color: transparent !important; -webkit-text-fill-color: transparent !important; background-image: url(/assets/texture/chalk-white-2.png) !important; background-size: 220px !important; -webkit-background-clip: text !important; background-clip: text !important; padding-bottom: .08em; }
+/* ===== Footer option 2: giant wordmark across the bottom ===== */
+.so-footer.ft2 { padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 72px) 0 !important; overflow: hidden; position: relative; }
+.ft2-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; align-items: start; }
+.ft2-line { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(26px, 2.4vw, 36px); line-height: 1.15; color: #f4eff7; margin: 0; max-width: 16ch; }
+.ft2-col h5 { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase; color: rgba(244,239,247,.75); margin: 0 0 6px; font-weight: 400; border: 0 !important; padding: 0 !important; }
+.ft2-col { border: 0 !important; padding: 0 !important; }
+.ft2-col .foot-link { display: block; margin: 9px 0; }
+.ft2-small { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: rgba(244,239,247,.6); margin: clamp(32px, 4vw, 52px) 0 0; }
+.ft2-mark { font-family: "Monsieur La Doulaise", cursive; color: #f4eff7; font-size: clamp(110px, 20.5vw, 340px); line-height: .9; white-space: nowrap; margin: clamp(4px, 1vw, 16px) 0 -0.22em -.04em; pointer-events: none; user-select: none; }
+.ft2-c { font-family: "Pinyon Script Local", "Pinyon Script", cursive; }
+@media (max-width: 899px) { .ft2-top { grid-template-columns: 1fr 1fr; gap: 28px; } .ft2-line { grid-column: 1 / -1; } .ft2-col:nth-child(3) h5 { display: none; } .ft2-mark { font-size: 24vw; } }
+.ft2-mark { line-height: 1.1 !important; margin-bottom: -.14em !important; } .ft2-line { max-width: 20ch !important; } .ft2-col .foot-link { margin: 7px 0 !important; }

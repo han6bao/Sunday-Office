@@ -658,59 +658,34 @@ function StartAProject() {
 
 function Footer() {
   return (
-    <footer className="so-footer" id="office">
-      <div className="so-shell">
-        <div className="so-footer-top">
-          <div>
-            <div className="so-footer-wordmark so-emboss-dark">Sunday Office</div>
-            <p className="so-micro" style={{ marginTop: 12 }}>
-              WE BUILD WORLDS FOR PEOPLE WITH SOMETHING WORTH SEEING
-            </p>
-          </div>
-          <div>
-            <h5>What we do</h5>
-            <a className="foot-link" href="/branding">Branding + World Building</a>
-            <a className="foot-link" href="/logo-identity">Logos + Identity</a>
-            <a className="foot-link" href="/websites">Websites + Digital</a>
-            <a className="foot-link" href="/photography">Photography</a>
-            <a className="foot-link" href="/headshots">Headshots</a>
-            <a className="foot-link" href="/moving-image">Moving Image</a>
-            <a className="foot-link" href="/creative-direction-content">Creative Direction + Social</a>
-          </div>
-          <div>
-            <h5>Contact</h5>
-            <a className="foot-link" href="mailto:hello@sundayoffice.agency">
-              hello@sundayoffice.agency
-            </a>
-            <a className="foot-link" href="#office-hours">
-              Start a project →
-            </a>
-            <a className="foot-link" href="#quiz">
-              Not sure where to start?
-            </a>
-            <a className="foot-link" href="#links">
-              Everything in one place
-            </a>
-            <a className="foot-link" href="#top">
-              Back to top
-            </a>
-          </div>
-          <div>
-            <h5>Find us</h5>
-            <span className="foot-link">Seattle, WA</span>
-            <a className="foot-link" href="https://www.instagram.com/sundayoffice.ag">
-              @sundayoffice.ag
-            </a>
-          </div>
+    <footer className="so-footer ft2" id="office">
+      <div className="ft2-top">
+        <p className="ft2-line">We build worlds for people with something worth seeing.</p>
+        <div className="ft2-col">
+          <h5>What we do</h5>
+          <a className="foot-link" href="/branding">Branding + World Building</a>
+          <a className="foot-link" href="/logo-identity">Logos + Identity</a>
+          <a className="foot-link" href="/websites">Websites + Digital</a>
+          <a className="foot-link" href="/photography">Photography</a>
         </div>
-        <div className="so-footer-bottom">
-          <p className="so-micro">© 2026 SUNDAY OFFICE · ALL RIGHTS RESERVED</p>
-          <div className="so-footer-seals">
-            <SunMark size={26} color="#f4eff5" />
-          </div>
-          <p className="so-micro">STRATEGY IN MIND · CULTURE AT HEART · STORY IN EVERYTHING</p>
+        <div className="ft2-col">
+          <h5 aria-hidden="true">&nbsp;</h5>
+          <a className="foot-link" href="/headshots">Headshots</a>
+          <a className="foot-link" href="/moving-image">Moving Image</a>
+          <a className="foot-link" href="/creative-direction-content">Creative Direction + Social</a>
+        </div>
+        <div className="ft2-col">
+          <h5>Say hello</h5>
+          <a className="foot-link" href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>
+          <a className="foot-link" href="#office-hours">Start a project →</a>
+          <a className="foot-link" href="#quiz">Not sure where to start?</a>
+          <a className="foot-link" href="#links">Everything in one place</a>
+          <a className="foot-link" href="https://www.instagram.com/sundayoffice.ag">@sundayoffice.ag</a>
+          <span className="foot-link">Seattle, WA</span>
         </div>
       </div>
+      <p className="ft2-small">© 2026 Sunday Office · Strategy in mind · Culture at heart · Story in everything</p>
+      <div className="ft2-mark" aria-hidden="true"><span className="ft2-c">S</span>unday <span className="ft2-c">O</span>ffice</div>
     </footer>
   );
 }
