@@ -11961,6 +11961,14 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .ft2-tail path { stroke-width: 5px !important; }
 .ft2-mark { margin-bottom: -.3em !important; font-size: 22.6vw !important; } @media (max-width: 899px) { .ft2-mark { font-size: 22vw !important; } }
 .ft2-mark { margin-bottom: -.4em !important; }
+@media (min-width: 1180px) { .fd-page .fd-start .fd-start-grid { max-width: none !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) !important; gap: clamp(48px, 7vw, 140px) !important; } }
+@media (min-width: 1180px) { .fd-page .fd-start .fd-start-grid { grid-column: 1 / -1 !important; justify-self: stretch !important; width: 100% !important; } }
+/* W: bridge the hairline gap where the opening swash meets the first downstroke */
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child { position: relative; }
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child::after { content: ""; position: absolute; left: .728em; top: .186em; width: .05em; height: .026em; background: #5f5a55; border-radius: .02em; transform: rotate(-32deg); transform-origin: left center; pointer-events: none; }
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child::after { left: .66em !important; top: .243em !important; width: .1em !important; height: .022em !important; border-radius: .011em !important; transform: rotate(-33deg) !important; }
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child::after { left: .69em !important; top: .262em !important; width: .085em !important; height: .026em !important; }
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child::after { left: .672em !important; top: .254em !important; width: .09em !important; height: .02em !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
