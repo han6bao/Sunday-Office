@@ -11876,7 +11876,8 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-bio .bio-panel-in p { font-weight: 300 !important; font-variation-settings: "wght" 300, "SOFT" 50, "opsz" 14; color: #6e665e; }
 .fd-page #build .fd-services a.is-big .fd-sn > .fd-cap:first-child { margin-right: -.11em !important; }
 .so-footer .so-footer-top > div:first-child .so-micro { max-width: none !important; white-space: nowrap; } @media (max-width: 520px) { .so-footer .so-footer-top > div:first-child .so-micro { white-space: normal; } }
-.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap, .fd-page #build .fd-services a.is-big:hover .fd-sn > .fd-cap { -webkit-text-stroke: .006em #5f5a55 !important; }
+/* World Building capitals: hairline tips stay tapered, weight matched by size */
+.fd-page #build .fd-services a.is-big .fd-sn > .fd-cap, .fd-page #build .fd-services a.is-big:hover .fd-sn > .fd-cap { -webkit-text-stroke: .01em #5f5a55 !important; font-size: 1.06em; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
