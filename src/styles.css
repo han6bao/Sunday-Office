@@ -12086,3 +12086,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .so-status.is-rec::after, .bn-status.is-rec::after { content: ""; order: -1; width: 8px; height: 8px; border-radius: 50%; background: #e3342b; box-shadow: 0 0 8px rgba(227,52,43,.8); margin-right: 7px; animation: rec-blink 1.2s steps(1) infinite; }
 .rec-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #e3342b; box-shadow: 0 0 7px rgba(227,52,43,.75); margin-right: 8px; vertical-align: .12em; animation: rec-blink 1.2s steps(1) infinite; }
 @media (prefers-reduced-motion: reduce) { .rec-dot, .so-status.is-rec::after, .bn-status.is-rec::after { animation: none; } }
+
+/* 05 sits behind "Hi, I'm Hana." and just touches it, like the 01 */
+.fd-page .fd-bio .bio-side::before { left: -.04em !important; right: auto !important; top: -.34em !important; color: rgba(133,123,112,.17) !important; }
+@media (max-width: 860px) { .fd-page .fd-bio .bio-side::before { top: -.36em !important; } }
