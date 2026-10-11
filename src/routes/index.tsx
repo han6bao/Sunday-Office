@@ -906,6 +906,7 @@ const MORE_WORK: { t: string; w: string; k: string[]; src: string; h: string }[]
 const MW_TYPES = ["All", "Branding", "Websites", "Photography", "Headshots", "Video"];
 
 /* More work as a quiet list. Pick a type and those projects rise to the top. */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function MoreWork() {
   const [type, setType] = useState("All");
   const list = type === "All" ? MORE_WORK : [...MORE_WORK.filter((w) => w.k.includes(type)), ...MORE_WORK.filter((w) => !w.k.includes(type))];
@@ -1077,7 +1078,6 @@ function FeedWork() {
           </button>
         ))}
       </div>
-      <MoreWork />
       {open !== null && <WorkBox w={FEED_WORK[open]} onClose={() => setOpen(null)} />}
     </section>
   );
