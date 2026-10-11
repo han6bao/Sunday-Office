@@ -744,6 +744,8 @@ export function InquiryForm() {
     if (sending) return;
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+    // Whatever they picked on a service page always reaches the email, even if they cleared the box.
+    if (urlPkg && !(data.about ?? "").includes(urlPkg)) data.about = `Picked on the site: ${urlPkg}\n\n${data.about ?? ""}`.trim();
     setSending(true);
     setSendError(null);
     setSendReason("");

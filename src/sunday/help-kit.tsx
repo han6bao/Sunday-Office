@@ -81,6 +81,10 @@ export function Estimate({ label, title, base, extras, packages, need }: { label
   const plus = bo.plus || extras.some((e) => x.includes(e.id) && e.plus);
   const key = [b, ...x].sort().join("+");
   const pk = packages.find((p) => [...p.when].sort().join("+") === key);
+  const money = (o: Opt, add = false) => `${add ? "+" : ""}${o.plus ? "from " : ""}$${o.p.toLocaleString()}`;
+  const chosen = extras.filter((e) => x.includes(e.id));
+  const items = [`${bo.t} (${money(bo)})`, ...chosen.map((e) => `${e.t} (${money(e, true)})`)].join(" + ");
+  const pickText = pk ? `${pk.name} (${pk.price}): ${items}` : `${items}. Starting number: ${plus ? "from " : ""}$${total.toLocaleString()}`;
   const toggle = (id: string) => setX((s) => (s.includes(id) ? s.filter((y) => y !== id) : [...s, id]));
   return (
     <section className="so-bw-sec hk-est" id="estimate">
@@ -120,7 +124,7 @@ export function Estimate({ label, title, base, extras, packages, need }: { label
               That's <b>{pk.name}</b>. Booked together it's <b>{pk.price}</b>, so you save {pk.save}.
             </p>
           )}
-          <a className="hk-est-go" href={bookHref(need, pk ? pk.name : bo.t)}>Send me this →</a>
+          <a className="hk-est-go" href={bookHref(need, pickText)}>Send me this →</a>
           <p className="hk-est-fine">You'll get the real number after a quick talk, before anything starts.</p>
         </div>
       </div>
