@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { BackHome, BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, TapStory, WorkCards } from "../sunday/service-kit";
+import { BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/websites")({
   head: () => seoHead("/websites"),
@@ -16,6 +16,45 @@ const INCLUDED = [
   { t: "The setup", d: "Your domain, the email your form sends to, and your booking link, all plugged in." },
   { t: "After launch", d: "Edits, updates and hosting, so the site keeps up with your business." },
 ];
+
+const FOR_WHO = [
+  { t: "No website yet", d: "People find you on Instagram or a booking link, then have nowhere to land." },
+  { t: "A site you don't send people to", d: "It's outdated, slow or doesn't look like the business you run now." },
+  { t: "A site that doesn't book anyone", d: "People visit, then message you the same questions or leave." },
+];
+
+function ForWho() {
+  return (
+    <section id="for" className="so-bw-sec so-for">
+      <p className="so-micro">WHO THIS IS FOR</p>
+      <h2 className="so-serif so-bw-h">Sound like you?</h2>
+      <ol className="so-for-list">
+        {FOR_WHO.map((x, i) => (
+          <li key={x.t}>
+            <span className="so-for-no">{String(i + 1).padStart(2, "0")}</span>
+            <span className="so-for-t">{x.t}</span>
+            <span className="so-for-d">{x.d}</span>
+          </li>
+        ))}
+      </ol>
+      <a className="so-for-go" href="/#office-hours">Start a project →</a>
+    </section>
+  );
+}
+
+function MadeBy() {
+  return (
+    <section className="so-bw-sec so-madeby">
+      <img src="/assets/work/hana-desk-bio.jpg" alt="Hana at her desk, working on a website" loading="lazy" />
+      <div>
+        <p className="so-micro">WHO YOU WORK WITH</p>
+        <h2 className="so-serif so-bw-h">One person, start to finish.</h2>
+        <p className="so-madeby-p">You talk to me from the first call to launch day. I write the words with you, set up the tech and can shoot the photos too, so nothing gets lost between people.</p>
+        <a className="so-for-go" href="/#office-hours">Start a project →</a>
+      </div>
+    </section>
+  );
+}
 
 const STEPS = [
   {
@@ -63,6 +102,7 @@ const FAQ = [
   { q: "What if I need changes after launch?", a: "Every site comes with one round of small changes after launch, free. After that, updates are $70 each. Bigger changes get their own quote." },
 ];
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const REAL_TALK = [
   {
     tab: "Where you are",
@@ -112,11 +152,12 @@ function WebsitesPage() {
             </>
           }
           jumps={[
+            { t: "Who it's for", h: "#for" },
             { t: "What you get", h: "#get" },
+            { t: "Work", h: "#work" },
             { t: "How it works", h: "#how" },
             { t: "Which one fits", h: "#fit" },
             { t: "Pricing", h: "#pricing" },
-            { t: "Work", h: "#work" },
             { t: "Questions", h: "#faq" },
           ]}
         />
@@ -140,7 +181,27 @@ function WebsitesPage() {
           <a className="so-micro" href="/websites/essential-brows-studio">HOW IT WAS MADE →</a>
         </div>
 
+        <ForWho />
+
+        <ListBlock id="get" label="WHAT YOU GET" title="Everything a site needs to work." rows={INCLUDED} />
+
+        <WorkCards
+          label="SITES I'VE BUILT"
+          items={[
+            { t: "Pilates Haus", s: "New", w: "Website + brand kit", d: "A new reformer Pilates studio in Seattle, with a site and brand kit built around their logo.", img: "/assets/campaigns/pilates-haus-cover.png", h: "https://pilates-haus-seattle.vercel.app/" },
+            { t: "Joe Lopez Photography", w: "Website · photographer", d: "A new site for a Michigan wedding and quinceañera photographer.", img: "/assets/campaigns/joe-lopez-cover.png", h: "https://joe-lopez-photography.vercel.app/" },
+            { t: "Timber & Tonic", s: "In progress", w: "Website · mobile bar", d: "A mobile bartending company in Buckley, WA.", img: "/assets/campaigns/timber-and-tonic-cover.png", h: "https://timber-and-tonic.vercel.app/" },
+            { t: "GREAN", w: "Website · matcha café", d: "A website for a matcha and hojicha café in Seattle's U District.", img: "/assets/campaigns/grean/featured-cover.png", h: "https://grean-matcha.vercel.app/" },
+            { t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home.", img: "/assets/campaigns/essential-brows-studio/featured-cover.png", h: "/websites/essential-brows-studio" },
+            { t: "Jazmin's Events", s: "In progress", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch.", img: "/assets/campaigns/jazmins-events/featured-cover.png", h: "/websites/jazmins-events" },
+          ]}
+        />
+
+        <MadeBy />
+
         <ServiceSteps steps={STEPS} title="From first talk to live site." />
+
+        <FitPicker need="Website" question="Which one sounds like you?" options={FIT} />
 
         <PriceList
           feature
@@ -168,17 +229,6 @@ function WebsitesPage() {
           foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on."
         />
 
-        <WorkCards
-          label="SITES I'VE BUILT"
-          items={[
-            { t: "Pilates Haus", s: "New", w: "Website + brand kit", d: "A new reformer Pilates studio in Seattle, with a site and brand kit built around their logo.", img: "/assets/campaigns/pilates-haus-cover.png", h: "https://pilates-haus-seattle.vercel.app/" },
-            { t: "Joe Lopez Photography", w: "Website · photographer", d: "A new site for a Michigan wedding and quinceañera photographer.", img: "/assets/campaigns/joe-lopez-cover.png", h: "https://joe-lopez-photography.vercel.app/" },
-            { t: "Timber & Tonic", s: "In progress", w: "Website · mobile bar", d: "A mobile bartending company in Buckley, WA.", img: "/assets/campaigns/timber-and-tonic-cover.png", h: "https://timber-and-tonic.vercel.app/" },
-            { t: "GREAN", w: "Website · matcha café", d: "A website for a matcha and hojicha café in Seattle's U District.", img: "/assets/campaigns/grean/featured-cover.png", h: "https://grean-matcha.vercel.app/" },
-            { t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home.", img: "/assets/campaigns/essential-brows-studio/featured-cover.png", h: "/websites/essential-brows-studio" },
-            { t: "Jazmin's Events", s: "In progress", w: "Brand + website", d: "A brand-new wedding planner, branded from scratch.", img: "/assets/campaigns/jazmins-events/featured-cover.png", h: "/websites/jazmins-events" },
-          ]}
-        />
 
         <FaqList items={FAQ} />
 

@@ -12182,3 +12182,17 @@ html, body { overflow-x: clip; }
 #work .fd-row .fd-tile img { display: block; }
 #work .fd-row .fd-tile .so-status-on-card { z-index: 3; }
 @media (max-width: 899px) { #work .fd-work-nav { order: 4; flex: 1 1 100%; display: flex; justify-content: space-between; align-items: center; margin: 0; } }
+
+/* Service pages: who it's for + who you work with */
+.so-for-list { list-style: none; margin: 24px 0 28px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.so-for-list li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid rgba(120,105,85,.22); border-radius: 18px; background: rgba(255,255,255,.35); }
+.so-for-no { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; color: #9e2b2e; }
+.so-for-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; color: #2b2622; }
+.so-for-d { font-size: 15px; line-height: 1.55; color: #6e665e; }
+.so-for-go { display: inline-flex; align-items: center; gap: 8px; background: #1b1918; color: #f4efe8 !important; padding: 13px 22px; border-radius: 999px; text-decoration: none !important; font-size: 15px; font-weight: 500; }
+.so-for-go:hover { background: #9e2b2e; }
+.so-madeby { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.so-madeby img { width: 100%; aspect-ratio: 4 / 5; max-height: 520px; object-fit: cover; display: block; }
+.so-madeby-p { font-size: 17px; line-height: 1.65; color: #5d5853; margin: 14px 0 24px; max-width: 46ch; }
+@media (max-width: 760px) { .so-for-list { grid-template-columns: 1fr; } .so-madeby { grid-template-columns: 1fr; } .so-madeby img { aspect-ratio: 4 / 3; } }
+.so-web-bar { display: none !important; }
