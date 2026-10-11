@@ -728,6 +728,7 @@ const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; li
   { src: "/assets/campaigns/jaydyn-f/jd-07.jpg", alt: "Jaydyn F. in a portrait from his release content", t: "Jaydyn F.", w: "Release content", d: "Behind the scenes and short clips around his music. One reel passed 120K views.", links: [{ t: "See the reel", h: "https://www.instagram.com/p/DORrPfiklMt/" }], study: "/campaigns/jaydyn-f", r: "120K views · 760 shares" },
   { src: "/assets/campaigns/chutneys/ch-02.jpg", alt: "A dish at Chutneys Bellevue", t: "Chutneys Bellevue", w: "Commercial + photos", d: "A commercial and promo photos for a North Indian restaurant.", links: [{ t: "Visit their website", h: "https://chutneysinbellevue.com/" }], study: "/campaigns/chutneys" },
   { src: "/assets/campaigns/leon-thomas/lt-01.jpg", alt: "Leon Thomas performing at Vice Seattle", t: "Leon Thomas × Vice", w: "Event photography", d: "His tour afterparty at Vice Seattle, photographed for the venue.", links: [{ t: "Visit Vice Seattle", h: "https://www.viceseattle.com/" }], study: "/campaigns/leon-thomas" },
+  { src: "/assets/headshots/standard-01.jpg", alt: "A studio headshot by Sunday Office", t: "Studio headshots", w: "Headshots", d: "Clean, natural headshots for websites, LinkedIn and press. Booked in one short session.", links: [{ t: "See headshots", h: "/headshots" }], study: "" },
   { src: "/assets/campaigns/timber-and-tonic-cover.png", alt: "Timber & Tonic mobile bartending website", t: "Timber & Tonic", w: "Website · in progress", d: "A mobile bartending company in Buckley, WA. Website in progress.", links: [{ t: "See the site so far", h: "https://timber-and-tonic.vercel.app/" }], study: "" },
   { src: "/assets/campaigns/jazmins-events/featured-cover.png", alt: "The Jazmin's Events wordmark on cream paper", t: "Jazmin's Events", w: "Brand + website · in progress", d: "A brand-new wedding planner, branded from scratch. Website in progress.", links: [{ t: "Visit their website", h: "https://jazmins-events.vercel.app/" }], study: "/websites/jazmins-events" },
 ];
@@ -1004,8 +1005,8 @@ function WorkBox({ w, onClose }: { w: (typeof FEED_WORK)[number]; onClose: () =>
               </a>
             ) : null}
             {w.links.map((l, i) => (
-              <a key={l.h} href={l.h} target="_blank" rel="noreferrer" className={!w.study && i === 0 ? "fd-box-main" : undefined}>
-                {l.t} ↗
+              <a key={l.h} href={ph(l.h)} {...(l.h.startsWith("/") ? {} : { target: "_blank", rel: "noreferrer" })} className={!w.study && i === 0 ? "fd-box-main" : undefined}>
+                {l.t} {l.h.startsWith("/") ? "→" : "↗"}
               </a>
             ))}
           </div>
@@ -1017,26 +1018,33 @@ function WorkBox({ w, onClose }: { w: (typeof FEED_WORK)[number]; onClose: () =>
 
 /* What I made for each project. Drives the filter and the tags under each tile. */
 const WORK_TAGS: Record<string, string[]> = {
-  "Essential Brows": ["Websites", "Branding"],
-  "Pilates Haus": ["Websites", "Branding"],
-  "Joe Lopez Photography": ["Websites"],
-  "Selaras Haus": ["Photography"],
-  "Nine Vicious × Custom Grillz": ["Photography"],
-  Exhibition: ["Direction", "Photography"],
-  "Jaydyn F.": ["Video", "Photography"],
-  "Chutneys Bellevue": ["Video", "Photography"],
-  "Leon Thomas × Vice": ["Photography"],
-  "Timber & Tonic": ["Websites"],
   "Jazmin's Events": ["Branding", "Websites"],
+  "Essential Brows": ["Branding", "Websites"],
+  "Pilates Haus": ["Branding", "Websites"],
+  "Joe Lopez Photography": ["Websites"],
+  "Timber & Tonic": ["Websites"],
+  "Selaras Haus": ["Photography", "Content"],
+  "Leon Thomas × Vice": ["Photography"],
+  Exhibition: ["Photography", "Direction"],
+  "Studio headshots": ["Headshots"],
+  "Nine Vicious × Custom Grillz": ["Content", "Photography"],
+  "Jaydyn F.": ["Content", "Video"],
+  "Chutneys Bellevue": ["Video", "Photography"],
 };
-const WORK_FILTERS = ["All", "Websites", "Branding", "Photography", "Video"];
+const WORK_FILTERS = ["All", "Branding", "Websites", "Photography", "Headshots", "Content", "Video"];
+const workRank = (t: string) => {
+  const k = WORK_FILTERS.indexOf((WORK_TAGS[t] ?? [])[0] ?? "");
+  return k < 0 ? 99 : k;
+};
 
 function FeedWork() {
   const [open, setOpen] = useState<number | null>(null);
   const [f, setF] = useState("All");
   const rowRef = useRef<HTMLDivElement | null>(null);
   const tags = (t: string) => WORK_TAGS[t] ?? [];
-  const shown = FEED_WORK.map((w, i) => ({ w, i })).filter(({ w }) => f === "All" || tags(w.t).includes(f));
+  const shown = FEED_WORK.map((w, i) => ({ w, i }))
+    .filter(({ w }) => f === "All" || tags(w.t).includes(f))
+    .sort((a, b) => workRank(a.w.t) - workRank(b.w.t) || a.i - b.i);
   const pick = (x: string) => {
     setF(x);
     rowRef.current?.scrollTo({ left: 0, behavior: "smooth" });
