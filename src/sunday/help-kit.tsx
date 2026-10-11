@@ -221,6 +221,9 @@ export function Watch({ label, title, videos }: { label: string; title: string; 
 type EstOpt = { id: string; t: string; d: string; p: number; plus?: boolean };
 export type HelpCfg = {
   need: string;
+  reel?: string;
+  get?: { t: string; d: string }[];
+  work?: { t: string; w: string; img: string; h: string }[];
   noun: string;
   videos: { t: string; d: string }[];
   forWho: { t: string; d: string }[];
@@ -244,6 +247,13 @@ export type HelpCfg = {
 export function HelpTop({ c }: { c: HelpCfg }) {
   return (
     <>
+      <section className="so-bw-sec hk-reel">
+        <Slot kind="video" label={c.reel ?? `A 30 second reel of ${c.noun.toLowerCase()} work`} note="Plays on its own, no sound needed" ratio="21 / 9" />
+        <div className="hk-reel-cta">
+          <a className="so-for-go" href={bookHref(c.need)}>Start a project →</a>
+          <a className="hk-reel-alt" href="#estimate">See what it would cost ↓</a>
+        </div>
+      </section>
       <Watch label="WATCH FIRST" title="Three short videos before you decide." videos={c.videos} />
       <section id="for" className="so-bw-sec so-for">
         <p className="so-micro">WHO THIS IS FOR</p>
@@ -259,6 +269,38 @@ export function HelpTop({ c }: { c: HelpCfg }) {
         </ol>
         <a className="so-for-go" href={bookHref(c.need)}>Start a project →</a>
       </section>
+      {c.get && (
+        <section className="so-bw-sec hk-get">
+          <p className="so-micro">WHAT YOU GET</p>
+          <h2 className="so-serif so-bw-h">Exactly what you walk away with.</h2>
+          <ul className="hk-get-list">
+            {c.get.map((g) => (
+              <li key={g.t}>
+                <span className="hk-get-ck" aria-hidden="true">✓</span>
+                <span className="hk-get-t">{g.t}</span>
+                <span className="hk-get-d">{g.d}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {c.work && (
+        <section className="so-bw-sec hk-work">
+          <p className="so-micro">RECENT {c.noun.toUpperCase()} WORK</p>
+          <div className="hk-work-grid">
+            {c.work.map((w) => {
+              const ext = w.h.startsWith("http");
+              return (
+                <a key={w.t} href={w.h} className="hk-work-card" {...(ext ? { target: "_blank", rel: "noreferrer" } : {})}>
+                  <img src={w.img} alt={w.t} loading="lazy" />
+                  <span className="so-micro">{w.w}</span>
+                  <span className="hk-work-t">{w.t} {ext ? "↗" : "→"}</span>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )}
       <section className="so-bw-sec hk-gal">
         <p className="so-micro">MORE {c.noun.toUpperCase()} WORK</p>
         <h2 className="so-serif so-bw-h">See it before you book it.</h2>

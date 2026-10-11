@@ -12293,6 +12293,21 @@ html, body { overflow-x: clip; }
 .hk-gal-grid .hk-gal-0 { grid-row: span 2; height: 100%; aspect-ratio: auto !important; }
 .hk-gal-grid .hk-gal-3 { grid-column: 2 / span 2; }
 @media (max-width: 760px) { .hk-gal-grid { grid-template-columns: 1fr 1fr; } .hk-gal-grid .hk-gal-0 { grid-row: auto; grid-column: 1 / -1; aspect-ratio: 4 / 3 !important; } .hk-gal-grid .hk-gal-3 { grid-column: 1 / -1; } }
+.hk-reel-cta { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; margin-top: 16px; }
+.hk-reel-alt { font-family: "Instrument Serif", Georgia, serif; font-size: 17px; font-size-adjust: .56; color: #1b1918; text-decoration: underline; text-underline-offset: 4px; }
+.hk-reel .hk-slot { max-height: 560px; }
+.hk-get-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
+.hk-get-list li { display: grid; grid-template-columns: 28px minmax(0, 1fr); grid-template-areas: "c t" "c d"; gap: 2px 10px; padding: 16px 0; border-top: 1px solid rgba(120,105,85,.22); }
+.hk-get-ck { grid-area: c; width: 22px; height: 22px; border-radius: 50%; background: #1b1918; color: #f4efe8; display: grid; place-items: center; font-size: 12px; margin-top: 3px; }
+.hk-get-t { grid-area: t; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; color: #2b2622; }
+.hk-get-d { grid-area: d; font-size: 14px; color: #6e665e; line-height: 1.5; }
+.hk-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+.hk-work-card { display: flex; flex-direction: column; gap: 8px; text-decoration: none !important; color: #2b2622 !important; }
+.hk-work-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #ece6dd; display: block; }
+.hk-work-card img[src$=".svg"], .hk-work-card img[src$="logo.png"] { object-fit: contain; padding: 14%; }
+.hk-work-t { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; }
+.hk-work-card:hover .hk-work-t { color: #9e2b2e; }
+@media (max-width: 760px) { .hk-get-list, .hk-work-grid { grid-template-columns: 1fr; } .hk-reel .hk-slot { aspect-ratio: 4 / 3 !important; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

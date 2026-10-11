@@ -4,6 +4,20 @@ const CALL = { when: "Day 1", t: "Free call", d: "15 to 30 minutes. You tell me 
 const PLAN = { when: "Right after", t: "Plan + price", d: "You get a plan, a timeline and one clear price. Nothing starts until you say yes." };
 
 export const BRANDING: HelpCfg = {
+  reel: "A 30 second reel of brands I've built",
+  get: [
+    { t: "Logo + every version", d: "Main logo, small mark, light and dark." },
+    { t: "Colors + fonts", d: "A short palette and type you can use anywhere." },
+    { t: "Your voice", d: "How the brand talks, from bio to captions." },
+    { t: "A brand guide", d: "One simple guide so everything stays consistent." },
+    { t: "Files, organized", d: "All of it in Google Drive or Dropbox, labeled." },
+    { t: "Help using it", d: "A walkthrough so you know where everything goes." },
+  ],
+  work: [
+    { t: "Jazmin's Events", w: "Brand guide · in progress", img: "/assets/campaigns/jazmins-events/kit-guide.jpg", h: "/websites/jazmins-events" },
+    { t: "Essential Brows", w: "Brand kit", img: "/assets/campaigns/essential-brows-studio/brand-kit.jpg", h: "/websites/essential-brows-studio" },
+    { t: "Pilates Haus", w: "Brand kit + website", img: "/assets/campaigns/pilates-haus-cover.png", h: "https://pilates-haus-seattle.vercel.app/" },
+  ],
   need: "Branding",
   noun: "Branding",
   videos: [
@@ -70,6 +84,18 @@ export const BRANDING: HelpCfg = {
 
 export const LOGO: HelpCfg = {
   ...BRANDING,
+  reel: "A 30 second reel of logos, sketch to final",
+  get: [
+    { t: "Main logo", d: "The full version, for signs and your site." },
+    { t: "Small mark", d: "For profile pictures, stamps and favicons." },
+    { t: "Light + dark", d: "Versions that work on any background." },
+    { t: "Every file type", d: "PNG, SVG and PDF, labeled so you can find them." },
+  ],
+  work: [
+    { t: "Jazmin's Events", w: "Monogram + wordmark", img: "/assets/campaigns/jazmins-events/je-monogram-black.svg", h: "/websites/jazmins-events" },
+    { t: "Essential Brows", w: "Wordmark", img: "/assets/work/essential-logo.png", h: "/websites/essential-brows-studio" },
+    { t: "Pilates Haus", w: "Brand kit around their logo", img: "/assets/campaigns/pilates-haus-cover.png", h: "https://pilates-haus-seattle.vercel.app/" },
+  ],
   need: "Logo / Identity",
   noun: "Logo",
   videos: [
@@ -113,6 +139,7 @@ export const LOGO: HelpCfg = {
 };
 
 export const PHOTO: HelpCfg = {
+  reel: "A 30 second reel of shoots",
   need: "Photography",
   noun: "Photography",
   videos: [
@@ -179,6 +206,14 @@ export const PHOTO: HelpCfg = {
 
 export const HEADSHOTS: HelpCfg = {
   ...PHOTO,
+  reel: "A 30 second reel of headshot sessions",
+  get: [
+    { t: "A directed session", d: "I guide every pose, so you don't have to think." },
+    { t: "See them as we go", d: "We check the photos together on camera." },
+    { t: "Finished, edited photos", d: "Color and light done, ready to post." },
+    { t: "Sized for where they go", d: "Square for profiles, wider for your site." },
+    { t: "An online gallery", d: "View, pick and download from anywhere." },
+  ],
   need: "Headshots",
   noun: "Headshot",
   videos: [
@@ -230,6 +265,7 @@ export const HEADSHOTS: HelpCfg = {
 };
 
 export const VIDEO: HelpCfg = {
+  reel: "A 30 second reel of videos I've made",
   need: "Video / Moving Image",
   noun: "Video",
   videos: [
@@ -292,6 +328,15 @@ export const VIDEO: HelpCfg = {
 };
 
 export const DIRECTION: HelpCfg = {
+  reel: "A 30 second reel of shoots and content",
+  get: [
+    { t: "Research + a plan", d: "What to post, when and why." },
+    { t: "Templates you approve", d: "Your brand, set up so every post matches." },
+    { t: "Photos + short videos", d: "Shot on content days, made for your feed." },
+    { t: "Captions", d: "Written in your voice, ready to go." },
+    { t: "Files, organized", d: "Everything in Google Drive or Dropbox." },
+    { t: "Posted for you", d: "On the Full plan, I handle posting too." },
+  ],
   need: "Creative Direction",
   noun: "Content",
   videos: [
