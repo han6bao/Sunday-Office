@@ -52,6 +52,7 @@ export const BRANDING: HelpCfg = {
     { id: "canva", t: "Canva template pack", d: "Your brand set up in Canva + 15 templates", p: 300, plus: true },
     { id: "shoot", t: "Brand photos", d: "Half day, 30+ edited photos", p: 550, plus: true },
     { id: "site", t: "A website for it", d: "4 to 5 pages, booking or inquiries", p: 850 },
+    { id: "print", t: "Print kit", d: "A menu, an A-frame and two signs", p: 400, plus: true },
   ],
   prep: [
     { t: "Your business name", d: "And how you want it written." },
@@ -171,6 +172,7 @@ export const PHOTO: HelpCfg = {
     { id: "event", t: "Event coverage", d: "2 hours, $150 an hour after that", p: 300, plus: true },
   ],
   extras: [
+    { id: "dir", t: "Creative direction", d: "Concept, moodboard and styling for your shoot", p: 200 },
     { id: "phone", t: "Phone content day", d: "Short videos for Reels and TikTok", p: 350 },
     { id: "canva", t: "Canva template pack", d: "Templates to post your photos in", p: 300, plus: true },
     { id: "site", t: "A website to put them on", d: "4 to 5 pages, booking or inquiries", p: 850 },

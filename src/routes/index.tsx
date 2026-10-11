@@ -568,7 +568,7 @@ const PACKAGES = [
     foot: "FROM $1,200 · SAVE $250",
   },
   {
-    n: "The Launch",
+    n: "The Opening",
     who: "Everything you need to open, or reopen, like a premium brand.",
     items: ["Full custom website", "Brand kit: logo suite, colors, type, guidelines", "Full-day photo + video shoot", "30 days of ready-to-post content", "Launch strategy session", "Your files organized in Google Drive or Dropbox"],
     tag: "Full build",
@@ -577,7 +577,7 @@ const PACKAGES = [
   {
     n: "The Signature",
     who: "A complete brand build or rebrand, with campaign-level content.",
-    items: ["Everything in The Launch", "Brand campaign shoot (photo + video)", "Brand film", "Rollout plan and content calendar", "Priority scheduling"],
+    items: ["Everything in The Opening", "Brand campaign shoot (photo + video)", "Brand film", "Rollout plan and content calendar", "Priority scheduling"],
     foot: "FROM $6,000 · SAVE $1,350",
   },
   {
