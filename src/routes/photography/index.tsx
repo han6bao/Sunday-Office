@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
+import { HelpBottom, HelpTop } from "../../sunday/help-kit";
+import { PHOTO } from "../../sunday/help-content";
 import { BackHome, BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../../sunday/service-kit";
 
 export const Route = createFileRoute("/photography/")({
@@ -102,6 +104,8 @@ function PhotographyPage() {
           </div>
         </section>
 
+        <HelpTop c={PHOTO} />
+
         <ServiceSteps steps={STEPS} title="How a shoot comes together." />
 
         <WorkCards
@@ -142,6 +146,8 @@ function PhotographyPage() {
           ]}
           foot="You'll know the final number before anything is booked."
         />
+
+        <HelpBottom c={PHOTO} />
 
         <FaqList items={FAQ} />
 

@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
+import { HelpBottom, HelpTop } from "../sunday/help-kit";
+import { LOGO } from "../sunday/help-content";
 import { useState } from "react";
 import { BookBar, FaqList, PriceList, ServiceCta } from "../sunday/service-kit";
 
@@ -269,6 +271,8 @@ function LogoIdentityPage() {
           </span>
         </a>
 
+        <HelpTop c={LOGO} />
+
         {/* FIND YOUR DIRECTION */}
         <div
           id="direction"
@@ -496,6 +500,8 @@ function LogoIdentityPage() {
           ]}
           foot="You'll know the final number before anything starts."
         />
+
+        <HelpBottom c={LOGO} />
 
         <FaqList
           items={[

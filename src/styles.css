@@ -12296,3 +12296,7 @@ html, body { overflow-x: clip; }
   .hk-ba-frame { aspect-ratio: 4 / 3; }
 }
 @media (max-width: 480px) { .hk-gloss-grid { grid-template-columns: 1fr; } }
+.hk-gal-grid { display: grid; grid-template-columns: 1.1fr 1fr 1fr; grid-template-rows: auto auto; gap: 14px; margin-top: 22px; }
+.hk-gal-grid .hk-gal-0 { grid-row: span 2; height: 100%; aspect-ratio: auto !important; }
+.hk-gal-grid .hk-gal-3 { grid-column: 2 / span 2; }
+@media (max-width: 760px) { .hk-gal-grid { grid-template-columns: 1fr 1fr; } .hk-gal-grid .hk-gal-0 { grid-row: auto; grid-column: 1 / -1; aspect-ratio: 4 / 3 !important; } .hk-gal-grid .hk-gal-3 { grid-column: 1 / -1; } }

@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
+import { HelpBottom, HelpTop } from "../sunday/help-kit";
+import { BRANDING } from "../sunday/help-content";
 import { BookBar, FaqList, FitPicker, PriceList, ServiceCta, ServiceSteps } from "../sunday/service-kit";
 import { useState } from "react";
 import { AESTHETICS } from "../sunday/aesthetics";
@@ -169,6 +171,8 @@ function BrandingPage() {
           </div>
         </div>
 
+        <HelpTop c={BRANDING} />
+
         <ServiceSteps steps={STEPS} title="How a world gets built." />
 
         <PriceList
@@ -231,6 +235,8 @@ function BrandingPage() {
           </div>
           <AestheticGen />
         </section>
+
+        <HelpBottom c={BRANDING} />
 
         <FaqList items={FAQ} />
 

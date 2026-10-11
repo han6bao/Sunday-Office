@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
+import { HelpBottom, HelpTop } from "../sunday/help-kit";
+import { HEADSHOTS } from "../sunday/help-content";
 import { BookBar, CardRail, FaqList, FitPicker, PriceList, bookHref } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/headshots")({
@@ -118,6 +120,8 @@ function HeadshotsPage() {
           />
         </div>
 
+        <HelpTop c={HEADSHOTS} />
+
         {/* Three kinds */}
         <section className="so-bw-sec">
           <p className="so-micro">THREE KINDS OF HEADSHOT</p>
@@ -147,6 +151,8 @@ function HeadshotsPage() {
             ))}
           </div>
         </section>
+
+        <HelpBottom c={HEADSHOTS} />
 
         <FaqList items={FAQ} />
 

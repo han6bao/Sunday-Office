@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
+import { HelpBottom, HelpTop } from "../sunday/help-kit";
+import { VIDEO } from "../sunday/help-content";
 import { BackHome, BookBar, FaqList, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/moving-image")({
@@ -91,6 +93,8 @@ function MovingImagePage() {
           </figcaption>
         </figure>
 
+        <HelpTop c={VIDEO} />
+
         <ServiceSteps steps={STEPS} title="From idea to every cut." />
 
         <WorkCards
@@ -111,6 +115,8 @@ function MovingImagePage() {
           ]}
           foot="You'll know the final number before anything is booked."
         />
+
+        <HelpBottom c={VIDEO} />
 
         <FaqList items={FAQ} />
 

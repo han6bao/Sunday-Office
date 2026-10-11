@@ -216,3 +216,85 @@ export function Watch({ label, title, videos }: { label: string; title: string; 
     </section>
   );
 }
+
+/* ---------- One config per service page ---------- */
+type EstOpt = { id: string; t: string; d: string; p: number; plus?: boolean };
+export type HelpCfg = {
+  need: string;
+  noun: string;
+  videos: { t: string; d: string }[];
+  forWho: { t: string; d: string }[];
+  gallery: { label: string; kind?: "photo" | "video" }[];
+  quoteWho: string;
+  madeImg: string;
+  madeTitle: string;
+  madeP: string;
+  bts: string[];
+  timeline: { when: string; t: string; d: string }[];
+  estTitle: string;
+  base: EstOpt[];
+  extras: EstOpt[];
+  packages?: { when: string[]; name: string; price: string; save: string }[];
+  prep: { t: string; d: string }[];
+  guideTitle: string;
+  guide: { t: string; d: string; slot: string }[];
+  words: { w: string; d: string }[];
+};
+
+export function HelpTop({ c }: { c: HelpCfg }) {
+  return (
+    <>
+      <Watch label="WATCH FIRST" title="Three short videos before you decide." videos={c.videos} />
+      <section id="for" className="so-bw-sec so-for">
+        <p className="so-micro">WHO THIS IS FOR</p>
+        <h2 className="so-serif so-bw-h">Sound like you?</h2>
+        <ol className="so-for-list">
+          {c.forWho.map((x, i) => (
+            <li key={x.t}>
+              <span className="so-for-no">{String(i + 1).padStart(2, "0")}</span>
+              <span className="so-for-t">{x.t}</span>
+              <span className="so-for-d">{x.d}</span>
+            </li>
+          ))}
+        </ol>
+        <a className="so-for-go" href={bookHref(c.need)}>Start a project →</a>
+      </section>
+      <section className="so-bw-sec hk-gal">
+        <p className="so-micro">MORE {c.noun.toUpperCase()} WORK</p>
+        <h2 className="so-serif so-bw-h">See it before you book it.</h2>
+        <div className="hk-gal-grid">
+          {c.gallery.map((g, i) => (
+            <Slot key={g.label} kind={g.kind} label={g.label} ratio={i === 0 ? "4 / 5" : i === 3 ? "16 / 10" : "1 / 1"} className={"hk-gal-" + i} />
+          ))}
+        </div>
+      </section>
+      <QuoteSlot who={c.quoteWho} ask="Client words coming soon. Until then, the work on this page is real, so you can see it for yourself." />
+      <section className="so-bw-sec so-madeby">
+        <img src={c.madeImg} alt="Hana at work" loading="lazy" />
+        <div>
+          <p className="so-micro">WHO YOU WORK WITH</p>
+          <h2 className="so-serif so-bw-h">{c.madeTitle}</h2>
+          <p className="so-madeby-p">{c.madeP}</p>
+          <a className="so-for-go" href={bookHref(c.need)}>Start a project →</a>
+        </div>
+        <div className="so-madeby-strip">
+          {c.bts.map((b) => (
+            <Slot key={b} label={b} ratio="4 / 3" />
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
+export function HelpBottom({ c }: { c: HelpCfg }) {
+  return (
+    <>
+      <Timeline label="WHAT HAPPENS WHEN" title="From hello to done, step by step." steps={c.timeline} note="Your exact timeline comes with your price, before anything starts. The more you have ready (see the checklist below), the faster it goes." />
+      <Estimate label="BUILD YOUR ESTIMATE" title={c.estTitle} need={c.need} base={c.base} extras={c.extras} packages={c.packages ?? []} />
+      <Checklist label="BEFORE WE START" title="What to have ready." note="None of this is required to book. It just makes everything faster. Tap each one as you get it together." items={c.prep} />
+      <GoodGuide label="FREE GUIDE" title={c.guideTitle} intro={`Whether you hire me or not, here's what makes it work. Tap through the ${c.guide.length}.`} items={c.guide} />
+      <Glossary label="THE WORDS, IN PLAIN ENGLISH" title="No jargon needed." words={c.words} />
+    </>
+  );
+}

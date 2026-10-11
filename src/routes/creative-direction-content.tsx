@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
+import { HelpBottom, HelpTop } from "../sunday/help-kit";
+import { DIRECTION as DIRECTION_HELP } from "../sunday/help-content";
 import { BackHome, BookBar, CardRail, FaqList, PriceList, PriceRows, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/creative-direction-content")({
@@ -112,6 +114,8 @@ function DirectionAndContentPage() {
           </div>
         </section>
 
+        <HelpTop c={DIRECTION_HELP} />
+
         <ServiceSteps steps={STEPS} title="How it keeps going." />
 
         <WorkCards
@@ -165,6 +169,8 @@ function DirectionAndContentPage() {
           ]}
           foot={<>Everything I make for you is delivered organized in a shared Google Drive or Dropbox folder, so you can always find it. Booking a photo shoot with me? Add creative direction for $200. Campaigns I've directed: <a className="so-bw-inline" href="/campaigns/exhibition">Exhibition</a> and <a className="so-bw-inline" href="/campaigns/chitos">Chitos International</a>.</>}
         />
+
+        <HelpBottom c={DIRECTION_HELP} />
 
         <FaqList items={FAQ} />
 
