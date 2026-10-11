@@ -1014,9 +1014,32 @@ function WorkBox({ w, onClose }: { w: (typeof FEED_WORK)[number]; onClose: () =>
   );
 }
 
+/* What I made for each project. Drives the filter and the tags under each tile. */
+const WORK_TAGS: Record<string, string[]> = {
+  "Essential Brows": ["Websites", "Branding"],
+  "Pilates Haus": ["Websites", "Branding"],
+  "Joe Lopez Photography": ["Websites"],
+  "Selaras Haus": ["Photography"],
+  "Nine Vicious × Custom Grillz": ["Photography"],
+  Exhibition: ["Direction", "Photography"],
+  "Jaydyn F.": ["Video", "Photography"],
+  "Chutneys Bellevue": ["Video", "Photography"],
+  "Leon Thomas × Vice": ["Photography"],
+  "Timber & Tonic": ["Websites"],
+  "Jazmin's Events": ["Branding", "Websites"],
+};
+const WORK_FILTERS = ["All", "Websites", "Branding", "Photography", "Video"];
+
 function FeedWork() {
   const [open, setOpen] = useState<number | null>(null);
+  const [f, setF] = useState("All");
   const rowRef = useRef<HTMLDivElement | null>(null);
+  const tags = (t: string) => WORK_TAGS[t] ?? [];
+  const shown = FEED_WORK.map((w, i) => ({ w, i })).filter(({ w }) => f === "All" || tags(w.t).includes(f));
+  const pick = (x: string) => {
+    setF(x);
+    rowRef.current?.scrollTo({ left: 0, behavior: "smooth" });
+  };
   const slide = (d: number) => {
     const el = rowRef.current;
     if (!el) return;
@@ -1029,6 +1052,13 @@ function FeedWork() {
       <p className="fd-ghost" aria-hidden="true">02</p>
       <div className="fd-work-head">
         <h2>Selected work</h2>
+        <div className="fd-work-filters" role="group" aria-label="Filter by service">
+          {WORK_FILTERS.map((x) => (
+            <button key={x} type="button" className={"fd-wf" + (f === x ? " is-on" : "")} aria-pressed={f === x} onClick={() => pick(x)}>
+              {x} <span>{x === "All" ? FEED_WORK.length : FEED_WORK.filter((w) => tags(w.t).includes(x)).length}</span>
+            </button>
+          ))}
+        </div>
         <div className="fd-work-nav">
           <p className="fd-more-hint">Tap a project to see more</p>
           <button type="button" className="fd-arrow" onClick={() => slide(-1)} aria-label="Previous projects">←</button>
@@ -1036,13 +1066,14 @@ function FeedWork() {
         </div>
       </div>
       <div className="fd-row" role="list" ref={rowRef}>
-        {FEED_WORK.map((w, i) => (
+        {shown.map(({ w, i }) => (
           <button key={w.t} type="button" role="listitem" className="fd-tile" onClick={() => setOpen(i)}>
             <img src={w.src} alt={w.alt} loading="lazy" />
             {/progress/i.test(w.w) && <span className="so-status so-status-on-card is-rec">In progress</span>}
             <span className="fd-ct">{w.t}</span>
             <span className="fd-cw">{w.w}</span>
             {w.r && <span className="fd-cr">{w.r}</span>}
+            <span className="fd-tags">{tags(w.t).map((x) => <span key={x}>{x}</span>)}</span>
           </button>
         ))}
       </div>
