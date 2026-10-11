@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
+import { BeforeAfter, Checklist, Estimate, Glossary, GoodGuide, QuoteSlot, Slot, Timeline, Watch } from "../sunday/help-kit";
 import { BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/websites")({
@@ -21,6 +22,51 @@ const FOR_WHO = [
   { t: "No website yet", d: "People find you on Instagram or a booking link, then have nowhere to land." },
   { t: "A site you don't send people to", d: "It's outdated, slow or doesn't look like the business you run now." },
   { t: "A site that doesn't book anyone", d: "People visit, then message you the same questions or leave." },
+];
+
+const TIMELINE = [
+  { when: "Day 1", t: "Free call", d: "15 to 30 minutes. You tell me about the business, I ask the questions." },
+  { when: "Right after", t: "Plan + price", d: "You get a page plan, a timeline and one clear price. Nothing starts until you say yes." },
+  { when: "Next", t: "Words + design", d: "We write the pages together and you see the design before it gets built." },
+  { when: "Then", t: "Build + connect", d: "Booking, forms, domain and email all plugged in. You test it on your phone." },
+  { when: "Launch day", t: "Live", d: "One link to send everywhere. Then one round of small changes is on me." },
+];
+
+const PREP = [
+  { t: "Your logo", d: "Any file works. No logo yet? We can make one first." },
+  { t: "A list of what you sell", d: "Services, menu or products, with prices if you share them." },
+  { t: "Photos you already have", d: "Phone photos are fine. I'll tell you which ones work, or we shoot new ones." },
+  { t: "2 or 3 sites you like", d: "Any business, any industry. Just what you like about them." },
+  { t: "How people book or buy", d: "Square, Vagaro, Calendly, DMs, a form. Whatever you use now." },
+  { t: "Your domain login", d: "If you already own yourname.com. If not, I'll walk you through getting one." },
+  { t: "The questions people always ask", d: "The ones you answer in DMs every week. They become the FAQ." },
+];
+
+const GOOD = [
+  { t: "Say what you do in one line", d: "Someone should know what you sell and where you are within 5 seconds of landing on your site.", slot: "The first screen of a real site, with the one-line headline" },
+  { t: "Show real photos", d: "Real photos of your space, your work and your face build trust faster than stock photos ever will.", slot: "Side by side: a stock photo vs. a real brand photo" },
+  { t: "Put your prices up", d: "Even a starting price. People who can see a number are more likely to reach out, not less.", slot: "A clean price section on a phone screen" },
+  { t: "One clear button", d: "Book now, get a quote or order. One main action, repeated, so nobody has to hunt for it.", slot: "The booking button showing on every screen of a site" },
+  { t: "Built for phones first", d: "Most of your visitors are on their phone, often on Instagram. It has to work there first.", slot: "A site scrolled on a phone, start to finish" },
+  { t: "Answer the questions before they ask", d: "Parking, prep, timing, policies. An FAQ saves you hours of DMs every week.", slot: "An FAQ section opening and closing" },
+  { t: "Show up on Google", d: "Page titles, descriptions and your business on Google Maps, so people searching nearby can find you.", slot: "A Google search result for a local business" },
+];
+
+const WORDS = [
+  { w: "Domain", d: "Your address online, like yourname.com. You own it and renew it once a year for a small fee." },
+  { w: "Hosting", d: "Where your site lives so it loads for people. Think of it as rent for the site." },
+  { w: "SEO", d: "The setup that helps Google understand what you do and where, so people searching can find you." },
+  { w: "Booking link", d: "The tool people use to book you, like Square or Vagaro. Your site sends people straight to it." },
+  { w: "Landing page", d: "One focused page, usually for one offer or one event, with one button." },
+  { w: "Mobile-first", d: "Designed for phones before computers, because that's where most people will see it." },
+  { w: "Form", d: "The boxes people fill in to reach you. Their message lands in your email." },
+  { w: "Analytics", d: "A simple count of who visits, from where, and what they click." },
+];
+
+const WATCH = [
+  { t: "60 seconds: what a website does for a small business", d: "The short version, for anyone on the fence." },
+  { t: "A walk through a site I built", d: "Scroll along with me and see why each part is there." },
+  { t: "What our first call is like", d: "So you know exactly what to expect before you book." },
 ];
 
 function ForWho() {
@@ -51,6 +97,11 @@ function MadeBy() {
         <h2 className="so-serif so-bw-h">One person, start to finish.</h2>
         <p className="so-madeby-p">You talk to me from the first call to launch day. I write the words with you, set up the tech and can shoot the photos too, so nothing gets lost between people.</p>
         <a className="so-for-go" href="/#office-hours">Start a project →</a>
+      </div>
+      <div className="so-madeby-strip">
+        <Slot label="On a call with a client" ratio="4 / 3" />
+        <Slot label="Planning the pages on paper" ratio="4 / 3" />
+        <Slot label="Testing a site on a phone" ratio="4 / 3" />
       </div>
     </section>
   );
@@ -181,7 +232,17 @@ function WebsitesPage() {
           <a className="so-micro" href="/websites/essential-brows-studio">HOW IT WAS MADE →</a>
         </div>
 
+        <Watch label="WATCH FIRST" title="Three short videos before you decide." videos={WATCH} />
+
         <ForWho />
+
+        <BeforeAfter
+          label="A MAKEOVER"
+          title="Same business. New home."
+          before="/assets/campaigns/essential-brows-studio/makeover-before.jpg"
+          after="/assets/campaigns/essential-brows-studio/makeover-after.jpg"
+          note={<>Essential Brows went from a booking link and an Instagram feed to a site of her own. Drag to compare. <a className="so-bw-inline" href="/websites/essential-brows-studio">How it was made →</a></>}
+        />
 
         <ListBlock id="get" label="WHAT YOU GET" title="Everything a site needs to work." rows={INCLUDED} />
 
@@ -197,11 +258,35 @@ function WebsitesPage() {
           ]}
         />
 
+        <QuoteSlot who="Aliya, Essential Brows" ask="Client words coming soon. Until then, the sites above are live, so you can click through and see them for yourself." />
+
         <MadeBy />
 
         <ServiceSteps steps={STEPS} title="From first talk to live site." />
 
+        <Timeline label="HOW LONG IT TAKES" title="From hello to live, step by step." steps={TIMELINE} note="Your exact timeline comes with your price, before anything starts. The more you have ready (see the checklist below), the faster it goes." />
+
         <FitPicker need="Website" question="Which one sounds like you?" options={FIT} />
+
+        <Estimate
+          label="BUILD YOUR ESTIMATE"
+          title="What would my site cost?"
+          need="Website"
+          base={[
+            { id: "one", t: "One page", d: "A landing page or link-in-bio", p: 250, plus: true },
+            { id: "simple", t: "Simple site", d: "4 to 5 pages, booking or inquiries", p: 850 },
+            { id: "full", t: "Full site", d: "Galleries, menus, lots of services", p: 1250, plus: true },
+          ]}
+          extras={[
+            { id: "seo", t: "Google setup (SEO)", d: "Titles, descriptions, local search", p: 150 },
+            { id: "shoot", t: "Brand photos for the site", d: "Half day, 30+ edited photos", p: 550 },
+            { id: "video", t: "Short videos", d: "A phone content day, 5 to 8 clips", p: 350 },
+          ]}
+          packages={[
+            { when: ["simple", "seo", "shoot"], name: "The Launch", price: "$1,400", save: "$150" },
+            { when: ["simple", "seo", "shoot", "video"], name: "The Launch + Motion", price: "$1,700", save: "$200" },
+          ]}
+        />
 
         <PriceList
           feature
@@ -229,6 +314,12 @@ function WebsitesPage() {
           foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on."
         />
 
+
+        <Checklist label="BEFORE WE START" title="What to have ready." note="None of this is required to book. It just makes everything faster. Tap each one as you get it together." items={PREP} />
+
+        <GoodGuide label="FREE GUIDE" title="What every small business site needs." intro="Whether you hire me or not, here's what makes a website actually work. Tap through the seven." items={GOOD} />
+
+        <Glossary label="WEBSITE WORDS, IN PLAIN ENGLISH" title="No tech talk needed." words={WORDS} />
 
         <FaqList items={FAQ} />
 
