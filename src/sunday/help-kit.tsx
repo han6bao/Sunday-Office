@@ -338,9 +338,24 @@ export function HelpBottom({ c }: { c: HelpCfg }) {
     <>
       <Timeline label="WHAT HAPPENS WHEN" title="From hello to done, step by step." steps={c.timeline} note="Your exact timeline comes with your price, before anything starts. The more you have ready (see the checklist below), the faster it goes." />
       <Estimate label="BUILD YOUR ESTIMATE" title={c.estTitle} need={c.need} base={c.base} extras={c.extras} packages={c.packages ?? []} />
-      <Checklist label="BEFORE WE START" title="What to have ready." note="None of this is required to book. It just makes everything faster. Tap each one as you get it together." items={c.prep} />
-      <GoodGuide label="FREE GUIDE" title={c.guideTitle} intro={`Whether you hire me or not, here's what makes it work. Tap through the ${c.guide.length}.`} items={c.guide} />
-      <Glossary label="THE WORDS, IN PLAIN ENGLISH" title="No jargon needed." words={c.words} />
+      <LearnMore>
+        <Checklist label="BEFORE WE START" title="What to have ready." note="None of this is required to book. It just makes everything faster. Tap each one as you get it together." items={c.prep} />
+        <GoodGuide label="FREE GUIDE" title={c.guideTitle} intro={`Whether you hire me or not, here's what makes it work. Tap through the ${c.guide.length}.`} items={c.guide} />
+        <Glossary label="THE WORDS, IN PLAIN ENGLISH" title="No jargon needed." words={c.words} />
+      </LearnMore>
     </>
+  );
+}
+
+export function LearnMore({ children }: { children: ReactNode }) {
+  return (
+    <details className="so-bw-sec hk-more">
+      <summary>
+        <span className="so-micro">LEARN MORE</span>
+        <span className="hk-more-t">What to have ready, a free guide, and the words in plain English</span>
+        <span className="hk-more-plus" aria-hidden="true">+</span>
+      </summary>
+      <div className="hk-more-body">{children}</div>
+    </details>
   );
 }

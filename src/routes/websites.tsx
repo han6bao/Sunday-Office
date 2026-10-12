@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { BeforeAfter, Checklist, Estimate, Glossary, GoodGuide, QuoteSlot, Slot, Timeline, Watch } from "../sunday/help-kit";
+import { BeforeAfter, Checklist, Estimate, Glossary, GoodGuide, LearnMore, QuoteSlot, Slot, Timeline, Watch } from "../sunday/help-kit";
 import { BookBar, bookHref, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/websites")({
@@ -407,11 +407,13 @@ function WebsitesPage() {
         />
 
 
+        <LearnMore>
         <Checklist label="BEFORE WE START" title="What to have ready." note="None of this is required to book. It just makes everything faster. Tap each one as you get it together." items={PREP} />
 
         <GoodGuide label="FREE GUIDE" title="What every small business site needs." intro="Whether you hire me or not, here's what makes a website actually work. Tap through the seven." items={GOOD} />
 
         <Glossary label="WEBSITE WORDS, IN PLAIN ENGLISH" title="No tech talk needed." words={WORDS} />
+        </LearnMore>
 
         <FaqList items={FAQ} />
 
