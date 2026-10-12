@@ -363,15 +363,25 @@ export const DIRECTION: HelpCfg = {
   madeP: "Research, a monthly plan, the shoot and posts ready to go. You approve the templates once, then you just get to post, or I post for you.",
   bts: ["Planning a month on a calendar", "Styling a set before a shoot", "Reviewing posts before they go out"],
   timeline: [CALL, { when: "Week 1", t: "Audit + plan", d: "What's working, what isn't, and a plan for the month." }, { when: "Next", t: "Templates", d: "You approve the look once, so every post matches." }, { when: "Shoot", t: "Content day", d: "Photos and videos for the month, in one go." }, { when: "Monthly", t: "Ready to post", d: "Posts, Reels and captions, handed over or posted for you." }],
-  estTitle: "What would my content cost?",
+  estTitle: "What would my campaign or content cost?",
   base: [
     { id: "dir", t: "Shoot direction", d: "Concept, moodboard, shot list and on-set direction", p: 450, plus: true },
     { id: "day", t: "Photo + content day", d: "Shot list, photos, short videos and captions", p: 900, plus: true },
     { id: "camp", t: "Campaign direction", d: "A full campaign, planned and directed", p: 1200, plus: true },
   ],
   extras: [
-    { id: "audit", t: "Audit + strategy", d: "Free if you go monthly", p: 400, plus: true },
+    { id: "shoot", t: "Half-day photo shoot", d: "30+ edited photos", p: 550, plus: true },
+    { id: "fullday", t: "Full-day photo shoot", d: "Two half days, more looks and locations", p: 1100, plus: true },
+    { id: "phone", t: "Phone content day", d: "5 to 8 short videos for Reels and TikTok", p: 350 },
+    { id: "camvid", t: "Camera video", d: "60 to 90 seconds + 3 vertical cuts", p: 1000, plus: true },
+    { id: "film", t: "Brand film", d: "1 to 2 minutes, cuts for every platform", p: 1500, plus: true },
     { id: "canva", t: "Canva template pack", d: "Your brand in Canva + 15 templates", p: 300, plus: true },
+    { id: "audit", t: "Audit + strategy", d: "Free if you go monthly", p: 400, plus: true },
+  ],
+  packages: [
+    { when: ["dir", "shoot", "phone"], name: "The Drop", price: "$1,200", save: "$150" },
+    { when: ["camp", "shoot", "camvid", "phone"], name: "The Campaign", price: "$2,750", save: "$350" },
+    { when: ["camp", "fullday", "film", "phone", "canva"], name: "The Premiere", price: "from $3,900", save: "$550" },
   ],
   prep: [
     { t: "Your logins", d: "Or a plan for who posts. We'll set it up safely." },

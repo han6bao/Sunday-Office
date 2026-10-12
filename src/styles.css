@@ -12315,3 +12315,5 @@ html, body { overflow-x: clip; }
 .hk-work-t { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; }
 .hk-work-card:hover .hk-work-t { color: #9e2b2e; }
 @media (max-width: 760px) { .hk-get-list, .hk-work-grid { grid-template-columns: 1fr; } .hk-reel .hk-slot { aspect-ratio: 4 / 3 !important; } }
+#campaigns .so-pk-card, #campaigns .so-pk-card * { color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; } #campaigns .so-pk-card .so-pk-who, #campaigns .so-pk-card .so-micro { color: #6a645e !important; -webkit-text-fill-color: #6a645e !important; } #campaigns .so-pk-card .so-pk-tag { color: #fff !important; -webkit-text-fill-color: #fff !important; } #campaigns .so-pk-card { border-radius: 18px; }
+#campaigns .so-pk-card .so-pk-list li::before { background: #6b5d7c !important; }

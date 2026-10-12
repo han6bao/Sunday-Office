@@ -128,6 +128,19 @@ function DirectionAndContentPage() {
         />
 
         <PriceList
+          id="campaigns"
+          need="Campaign"
+          label="CAMPAIGN PACKAGES"
+          title="Photo + video, planned as one."
+          items={[
+            { t: "The Drop", p: "$1,200", d: "For a launch, a promo, a new menu or a release.", list: ["Shoot direction: concept, moodboard + shot list", "A half-day photo shoot, 30+ edited photos", "A phone content day, 5 to 8 short videos", "Save $150 vs. booking separately"] },
+            { t: "The Campaign", p: "$2,750", tag: "MOST BOOKED", d: "Look like a real brand campaign, in photos and video.", list: ["Campaign direction: the plan, casting, styling + on-set direction", "A half-day photo shoot, 30+ edited photos", "A camera video, 60 to 90 seconds + 3 vertical cuts", "A phone content day for behind the scenes + Reels", "Save $350 vs. booking separately"] },
+            { t: "The Premiere", p: "from $3,900", d: "The big one: an opening, a rebrand reveal or a release.", list: ["Campaign direction from start to finish", "A full-day photo shoot", "A brand film, 1 to 2 minutes, cut for every platform", "A phone content day", "A Canva template pack to keep posting in the same look", "Save $550 vs. booking separately"] },
+          ]}
+          foot="Campaign packages are for brands that already have a look. Starting from scratch? The Signature adds the full brand. Every campaign is planned as one project, so the photos and video feel like the same world."
+        />
+
+        <PriceList
           id="monthly"
           need="Monthly content"
           label="MONTHLY CONTENT"
