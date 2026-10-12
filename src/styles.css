@@ -50,7 +50,7 @@
   --color-sepia: #dccde3;
   --color-red: #9e2b2e;
 
-  --font-sans: "Manrope Variable", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Manrope", "Manrope Variable", "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-display: "Playfair Display", "Times New Roman", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
   --font-cjk: "Zhi Mang Xing", "KaiTi", "STKaiti", serif;
@@ -12406,3 +12406,13 @@ body:not(:has(.fd-page)) .so-micro { letter-spacing: .26em; font-size: 10.5px; }
 #work .fd-work-head h2, .gd-h, .fd-hero-h, .fd-dark .fd-script {
   color: #f4eff7 !important; -webkit-text-fill-color: #f4eff7 !important;
 }
+
+/* Premium pass 2: hide unfilled placeholders until real photos/videos exist */
+.hk-watch, .hk-gal, .hk-quote, .so-madeby-strip, .hk-reel .hk-slot, .hk-guide-show .hk-slot { display: none !important; }
+.hk-reel { padding-block: 8px 0 !important; }
+.hk-reel-cta { margin-top: 0; }
+/* one button shape everywhere: rounded, like the rest of the site */
+.so-for-go, .hk-est-go { border-radius: 999px; letter-spacing: 0; }
+.hk-est-sum, .wb-mk-card.is-rec { border-radius: 20px; }
+/* body text: lighter, calmer */
+body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { font-weight: 300; }
