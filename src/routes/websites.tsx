@@ -142,6 +142,31 @@ function Platforms() {
   );
 }
 
+const TOOLS = [
+  { h: "Booking", items: ["Square", "Vagaro", "GlossGenius", "Acuity", "Calendly", "Booksy", "Fresha", "Mindbody"] },
+  { h: "Food + ordering", items: ["Toast", "Square Online", "DoorDash", "Uber Eats", "OpenTable", "Resy"] },
+  { h: "Payments + shop", items: ["Stripe", "PayPal", "Venmo", "Square Checkout", "Shopify"] },
+  { h: "Email, socials + maps", items: ["Google Workspace email", "Instagram", "TikTok", "Google Maps", "Yelp", "Mailchimp"] },
+];
+
+function Connects() {
+  return (
+    <section id="connect" className="so-bw-sec wb-tools">
+      <p className="so-micro">WORKS WITH WHAT YOU ALREADY USE</p>
+      <h2 className="so-serif so-bw-h">Send me your links. I'll connect them.</h2>
+      <p className="hk-p">Whatever you use to book, sell or get paid, it goes on your site so people can say yes in one tap. Your domain and a business email (like hello@yourname.com) get set up too. Don't see yours? If it has a link, it can be connected.</p>
+      <div className="wb-tools-grid">
+        {TOOLS.map((g) => (
+          <div key={g.h}>
+            <p className="wb-tools-h">{g.h}</p>
+            <ul>{g.items.map((x) => <li key={x}>{x}</li>)}</ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Makeovers() {
   return (
     <section id="makeover" className="so-bw-sec wb-mk">
@@ -308,6 +333,8 @@ function WebsitesPage() {
         <Makeovers />
 
         <Platforms />
+
+        <Connects />
 
         <ListBlock id="get" label="WHAT YOU GET" title="Everything a site needs to work." rows={INCLUDED} />
 

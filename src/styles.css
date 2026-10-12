@@ -12342,3 +12342,10 @@ html, body { overflow-x: clip; }
 .wb-plat-row.is-head > span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #857b70; }
 .wb-plat-row.is-head i { font-style: normal; background: #1b1918; color: #f4efe8; padding: 3px 8px; border-radius: 999px; margin-left: 8px; font-size: 9px; }
 @media (max-width: 760px) { .wb-mk-grid { grid-template-columns: 1fr; } .wb-plat-row { grid-template-columns: 1fr 1fr; gap: 6px 14px; } .wb-plat-row > span:first-child { grid-column: 1 / -1; } .wb-plat-row.is-head > span:first-child { display: none; } }
+.wb-tools-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.wb-tools-grid > div { padding: 20px; border: 1px solid rgba(120,105,85,.22); border-radius: 16px; background: rgba(255,255,255,.35); }
+.wb-tools-h { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #9e2b2e; margin: 0 0 12px; }
+.wb-tools-grid ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.wb-tools-grid li { font-size: 13px; padding: 6px 11px; border-radius: 999px; background: #fff; border: 1px solid rgba(120,105,85,.22); color: #2b2622; }
+@media (max-width: 900px) { .wb-tools-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .wb-tools-grid { grid-template-columns: 1fr; } }
