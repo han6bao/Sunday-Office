@@ -227,7 +227,7 @@ const FIT = [
 const FAQ = [
   { q: "Can you connect my domain, email and links?", a: "Yes, on every site, and as a quick fix on its own. I connect your domain, set up a business email like hello@yourname.com, and link your booking tool, Instagram, Google Maps and payment pages, then test them all on a phone. You just approve the logins." },
   { q: "Why do you recommend custom code?", a: "It's faster, it looks like you instead of a template, and there's usually no monthly platform fee. You just renew your domain once a year. If you'd rather edit everything yourself, I also build in Showit, Squarespace and Wix." },
-  { q: "What's the care plan?", a: "An optional $150 a month after launch. Up to 3 small updates every month (worth $210 on their own), plus hosting and security checks, backups, a monthly speed and Google check, priority replies and a fresh seasonal refresh every quarter. Cancel anytime." },
+  { q: "What's the care plan?", a: "An optional $150 a month after launch. Up to 3 small updates every month (worth $210 on their own), plus hosting and security checks, backups, a monthly report on visitors and booking clicks, a quarterly review of what's working, priority replies and a seasonal refresh every quarter. Cancel anytime." },
   { q: "Do I need my words and photos ready?", a: "No. Writing the words with you is part of every site, and we choose the photos together. If you need new photos, I can shoot those too." },
   { q: "How long does it take?", a: "It depends on how many pages you need and how quickly we gather your words and photos. You'll get a timeline with your price before anything starts." },
   { q: "I'm not techy. Is that a problem?", a: "Not at all. I handle the tech and walk you through anything you need to do on your end, in plain words." },
@@ -414,7 +414,7 @@ function WebsitesPage() {
           need="Website"
           title="The care plan."
           items={[
-            { t: "Care plan", p: "$150/mo", tag: "BEST VALUE", d: "Your site, looked after every month, so you never have to think about it.", list: ["Up to 3 small updates a month (worth $210 at $70 each)", "Hosting + security checks", "Backups, so nothing is ever lost", "A monthly speed + Google check", "A seasonal refresh every quarter: new photos, banners or offers", "Priority replies, within 1 business day", "Cancel anytime"] },
+            { t: "Care plan", p: "$150/mo", tag: "BEST VALUE", d: "Your site, looked after every month, so you never have to think about it.", list: ["Up to 3 small updates a month (worth $210 at $70 each)", "Hosting + security checks", "Backups, so nothing is ever lost", "A monthly report: visitors, booking clicks, speed + what changed", "A quarterly review: what's working, what to change next, and the numbers over 3 months", "A seasonal refresh every quarter: new photos, banners or offers", "Priority replies, within 1 business day", "Cancel anytime"] },
           ]}
           foot="Unused updates don't roll over. Bigger changes, like new pages, are quoted separately, and care plan clients get 20% off."
         />
