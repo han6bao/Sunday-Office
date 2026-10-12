@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { BeforeAfter, Checklist, Estimate, Glossary, GoodGuide, QuoteSlot, Slot, Timeline, Watch } from "../sunday/help-kit";
-import { BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BookBar, bookHref, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/websites")({
   head: () => seoHead("/websites"),
@@ -107,6 +107,63 @@ function MadeBy() {
   );
 }
 
+const MAKEOVERS = [
+  { n: "01", t: "Quick fix", p: "from $250", where: "On the platform you have", d: "Broken links, a new page, better photos, cleaner words. For a site that mostly works.", list: ["Squarespace, Wix, Showit or custom", "No starting over", "Done in days, not weeks"] },
+  { n: "02", t: "Full refresh", p: "quoted per site", where: "On the platform you have", d: "A new look and new words on the site you already pay for. For when you love your platform but not your site.", list: ["Redesign page by page", "New layout, fonts + photos", "Keep your logins and domain"] },
+  { n: "03", t: "Rebuild in custom code", p: "$850 / $1,000 with SEO", where: "Recommended", d: "A fresh, custom site that's faster, fully yours and not boxed in by a template. Most makeovers end up here.", list: ["Built around your business", "Fast on phones", "Nothing to cancel later"], rec: true },
+];
+
+const PLATFORM = [
+  { k: "Looks", code: "Designed from scratch, so it looks like you, not a template", tmpl: "Starts from a template, so it can look like other sites" },
+  { k: "Speed", code: "Very fast, especially on phones", tmpl: "Slower, with more built-in extras loading" },
+  { k: "Monthly cost", code: "Usually just your domain, once a year", tmpl: "A monthly subscription to the platform" },
+  { k: "Changes", code: "Send them to me ($70 each) or add the care plan", tmpl: "You can edit text yourself in their editor" },
+  { k: "Flexibility", code: "Anything you can picture can be built: quizzes, menus, custom booking flows", tmpl: "Limited to what the platform allows" },
+  { k: "Best for", code: "Businesses that want to stand out and grow", tmpl: "People who really want to edit everything themselves" },
+];
+
+function Platforms() {
+  return (
+    <section id="platform" className="so-bw-sec wb-plat">
+      <p className="so-micro">CUSTOM CODE OR A PLATFORM?</p>
+      <h2 className="so-serif so-bw-h">I recommend custom code. Here's why.</h2>
+      <p className="hk-p">I build most sites in custom code, and I also work in Showit, Squarespace and Wix. If you already have one of those, we can keep it. Here's the honest difference.</p>
+      <div className="wb-plat-table" role="table">
+        <div className="wb-plat-row is-head" role="row"><span role="columnheader" /><span role="columnheader">Custom code <i>Recommended</i></span><span role="columnheader">Squarespace, Wix, Showit</span></div>
+        {PLATFORM.map((r) => (
+          <div key={r.k} className="wb-plat-row" role="row">
+            <span role="rowheader">{r.k}</span>
+            <span role="cell">{r.code}</span>
+            <span role="cell">{r.tmpl}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Makeovers() {
+  return (
+    <section id="makeover" className="so-bw-sec wb-mk">
+      <p className="so-micro">ALREADY HAVE A SITE?</p>
+      <h2 className="so-serif so-bw-h">Three ways to make it over.</h2>
+      <p className="hk-p">You don't have to start over. Pick how far you want to go, and I'll tell you honestly which one your site needs.</p>
+      <div className="wb-mk-grid">
+        {MAKEOVERS.map((m) => (
+          <a key={m.n} href={bookHref("Website", `Website makeover: ${m.t} (${m.p})`)} className={"wb-mk-card" + (m.rec ? " is-rec" : "")}>
+            <span className="wb-mk-top"><span className="so-for-no">{m.n}</span><span className="wb-mk-where">{m.where}</span></span>
+            <span className="wb-mk-t">{m.t}</span>
+            <span className="wb-mk-p">{m.p}</span>
+            <span className="wb-mk-d">{m.d}</span>
+            <ul>{m.list.map((x) => <li key={x}>{x}</li>)}</ul>
+            <span className="wb-mk-go">Ask about this →</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 const STEPS = [
   {
     t: "Talk",
@@ -143,11 +200,13 @@ const FIT = [
 ];
 
 const FAQ = [
+  { q: "Why do you recommend custom code?", a: "It's faster, it looks like you instead of a template, and there's usually no monthly platform fee. You just renew your domain once a year. If you'd rather edit everything yourself, I also build in Showit, Squarespace and Wix." },
+  { q: "What's the care plan?", a: "An optional $100 a month for after launch: I keep an eye on hosting, keep backups and handle small updates for you, so you never have to think about it." },
   { q: "Do I need my words and photos ready?", a: "No. Writing the words with you is part of every site, and we choose the photos together. If you need new photos, I can shoot those too." },
   { q: "How long does it take?", a: "It depends on how many pages you need and how quickly we gather your words and photos. You'll get a timeline with your price before anything starts." },
   { q: "I'm not techy. Is that a problem?", a: "Not at all. I handle the tech and walk you through anything you need to do on your end, in plain words." },
   { q: "Do I need a logo first?", a: <>No. If you don't have one yet, we can start with the brand. <a href="/branding">Build a World →</a></> },
-  { q: "I already have a site. Do we have to start over?", a: "Not unless it makes sense. We can fix what's broken, refresh the look, swap in better photos or tighten your portfolio. That's quoted separately from a full build." },
+  { q: "I already have a site. Do we have to start over?", a: "Not unless it makes sense. We can fix what's broken, refresh the look, swap in better photos or tighten your portfolio. You can also stay on Squarespace, Wix or Showit if you love it. See the three makeover options above." },
   { q: "What's the difference between the simple site and the SEO one?", a: "It's the same site. The SEO version adds the setup that helps Google understand you: page titles, descriptions, local Seattle search and a sitemap." },
   { q: "Will there be other costs?", a: "Some things you own, like your domain name, have their own small costs. I'll walk you through each one before we start, so nothing comes as a surprise." },
   { q: "What if I need changes after launch?", a: "Every site comes with one round of small changes after launch, free. After that, updates are $70 each. Bigger changes get their own quote." },
@@ -204,6 +263,7 @@ function WebsitesPage() {
           }
           jumps={[
             { t: "Who it's for", h: "#for" },
+            { t: "Makeovers", h: "#makeover" },
             { t: "What you get", h: "#get" },
             { t: "Work", h: "#work" },
             { t: "How it works", h: "#how" },
@@ -243,6 +303,10 @@ function WebsitesPage() {
           after="/assets/campaigns/essential-brows-studio/makeover-after.jpg"
           note={<>Essential Brows went from a booking link and an Instagram feed to a site of her own. Drag to compare. <a className="so-bw-inline" href="/websites/essential-brows-studio">How it was made →</a></>}
         />
+
+        <Makeovers />
+
+        <Platforms />
 
         <ListBlock id="get" label="WHAT YOU GET" title="Everything a site needs to work." rows={INCLUDED} />
 
@@ -298,7 +362,7 @@ function WebsitesPage() {
             { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Research + a full page plan", "Galleries or menus", "Lots of services or case studies", "A more custom build"] },
             { t: "Landing pages + fixes", p: "from $250", d: "One page, or help for the site you have.", list: ["A single page", "A link-in-bio", "Fixes + a refresh", "Better photos or copy"] },
           ]}
-          foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each. You'll know the final number before anything starts."
+          foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each, or add the care plan for $100 a month: hosting checks, backups and small updates handled for you. You'll know the final number before anything starts."
         />
 
         <PriceList
