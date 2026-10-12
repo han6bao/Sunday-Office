@@ -226,6 +226,8 @@ type EstOpt = { id: string; t: string; d: string; p: number; plus?: boolean };
 export type HelpCfg = {
   need: string;
   reel?: string;
+  hero?: string;
+  heroCap?: string;
   get?: { t: string; d: string }[];
   work?: { t: string; w: string; img: string; h: string }[];
   noun: string;
@@ -251,6 +253,12 @@ export type HelpCfg = {
 export function HelpTop({ c }: { c: HelpCfg }) {
   return (
     <>
+      {c.hero && (
+        <figure className="hk-hero">
+          <img src={c.hero} alt={c.heroCap ?? ""} />
+          {c.heroCap && <figcaption className="so-micro">{c.heroCap}</figcaption>}
+        </figure>
+      )}
       <section className="so-bw-sec hk-reel">
         <Slot kind="video" label={c.reel ?? `A 30 second reel of ${c.noun.toLowerCase()} work`} note="Plays on its own, no sound needed" ratio="21 / 9" />
         <div className="hk-reel-cta">

@@ -4,6 +4,8 @@ const CALL = { when: "Day 1", t: "Free call", d: "15 to 30 minutes. You tell me 
 const PLAN = { when: "Right after", t: "Plan + price", d: "You get a plan, a timeline and one clear price. Nothing starts until you say yes." };
 
 export const BRANDING: HelpCfg = {
+  hero: "/assets/work/build-a-world-2.jpg",
+  heroCap: "BUILD A WORLD · SUNDAY OFFICE",
   reel: "A 30 second reel of brands I've built",
   get: [
     { t: "Logo + every version", d: "Main logo, small mark, light and dark." },
@@ -85,6 +87,8 @@ export const BRANDING: HelpCfg = {
 
 export const LOGO: HelpCfg = {
   ...BRANDING,
+  hero: "/assets/campaigns/jazmins-events/kit-instagram.jpg",
+  heroCap: "JAZMIN'S EVENTS · IDENTITY IN USE",
   reel: "A 30 second reel of logos, sketch to final",
   get: [
     { t: "Main logo", d: "The full version, for signs and your site." },
@@ -140,6 +144,8 @@ export const LOGO: HelpCfg = {
 };
 
 export const PHOTO: HelpCfg = {
+  hero: "/assets/campaigns/exhibition/exh3.jpg",
+  heroCap: "EXHIBITION · CAMPAIGN PHOTOGRAPHY",
   reel: "A 30 second reel of shoots",
   need: "Photography",
   noun: "Photography",
@@ -267,6 +273,8 @@ export const HEADSHOTS: HelpCfg = {
 };
 
 export const VIDEO: HelpCfg = {
+  hero: "/assets/campaigns/jaydyn-f/jd-04.jpg",
+  heroCap: "JAYDYN F. · RELEASE CONTENT",
   reel: "A 30 second reel of videos I've made",
   need: "Video / Moving Image",
   noun: "Video",
@@ -330,6 +338,8 @@ export const VIDEO: HelpCfg = {
 };
 
 export const DIRECTION: HelpCfg = {
+  hero: "/assets/campaigns/kenshi-killz/kk-03.jpg",
+  heroCap: "KENSHI KILLZ · DIRECTED SHOOT",
   reel: "A 30 second reel of shoots and content",
   get: [
     { t: "Research + a plan", d: "What to post, when and why." },

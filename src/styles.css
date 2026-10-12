@@ -12416,3 +12416,11 @@ body:not(:has(.fd-page)) .so-micro { letter-spacing: .26em; font-size: 10.5px; }
 .hk-est-sum, .wb-mk-card.is-rec { border-radius: 20px; }
 /* body text: lighter, calmer */
 body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { font-weight: 300; }
+
+/* Premium: one big real photo near the top of each service page */
+.hk-hero { margin: clamp(32px, 5vw, 64px) 0 0; }
+.hk-hero img { display: block; width: 100%; height: min(78vh, 760px); object-fit: cover; }
+.hk-hero figcaption { margin-top: 12px; color: #857b70; }
+/* the second step list repeats "how it works": keep one */
+.hk-tl { display: none !important; }
+.hk-hero img { object-position: center 18%; }
