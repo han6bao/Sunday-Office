@@ -156,6 +156,10 @@ export const SEO: Record<string, Seo> = {
     title: "Itz Pz × Paradice Worldwide Streetwear Campaign Seattle | Sunday Office",
     description: "Artist and streetwear campaign for Itz Pz and Paradice Worldwide in Seattle, by Sunday Office.",
   },
+  "/campaigns/ellis-digitals": {
+    title: "Model Digitals in Tacoma: Ellis at LOFT Tacoma | Sunday Office",
+    description: "Model digitals and a styled look for Ellis at LOFT Tacoma: location, styling, lighting, posing and selects by Hana of Sunday Office. Digitals for agencies, scouting and casting in Seattle and Tacoma.",
+  },
   "/campaigns/still-different": {
     title: "Still Different Artist + Gear Photography Seattle | Sunday Office",
     description: "Artist and gear photography for Still Different by Seattle photographer Hana of Sunday Office.",

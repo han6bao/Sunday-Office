@@ -34,6 +34,7 @@ import { Route as CampaignsSoniqreignRouteImport } from './routes/campaigns/soni
 import { Route as CampaignsRockstarFlacoRouteImport } from './routes/campaigns/rockstar-flaco'
 import { Route as CampaignsReelclipRouteImport } from './routes/campaigns/reelclip'
 import { Route as CampaignsParadiceRouteImport } from './routes/campaigns/paradice'
+import { Route as CampaignsEllisDigitalsRouteImport } from './routes/campaigns/ellis-digitals'
 import { Route as CampaignsLeonThomasRouteImport } from './routes/campaigns/leon-thomas'
 import { Route as CampaignsKenshiKillzRouteImport } from './routes/campaigns/kenshi-killz'
 import { Route as CampaignsJazminsEventsRouteImport } from './routes/campaigns/jazmins-events'
@@ -178,6 +179,11 @@ const CampaignsParadiceRoute = CampaignsParadiceRouteImport.update({
   path: '/campaigns/paradice',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CampaignsEllisDigitalsRoute = CampaignsEllisDigitalsRouteImport.update({
+  id: '/campaigns/ellis-digitals',
+  path: '/campaigns/ellis-digitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CampaignsLeonThomasRoute = CampaignsLeonThomasRouteImport.update({
   id: '/campaigns/leon-thomas',
   path: '/campaigns/leon-thomas',
@@ -298,6 +304,7 @@ export interface FileRoutesByFullPath {
   '/campaigns/kenshi-killz': typeof CampaignsKenshiKillzRoute
   '/campaigns/leon-thomas': typeof CampaignsLeonThomasRoute
   '/campaigns/paradice': typeof CampaignsParadiceRoute
+  '/campaigns/ellis-digitals': typeof CampaignsEllisDigitalsRoute
   '/campaigns/reelclip': typeof CampaignsReelclipRoute
   '/campaigns/rockstar-flaco': typeof CampaignsRockstarFlacoRoute
   '/campaigns/soniqreign': typeof CampaignsSoniqreignRoute
@@ -342,6 +349,7 @@ export interface FileRoutesByTo {
   '/campaigns/kenshi-killz': typeof CampaignsKenshiKillzRoute
   '/campaigns/leon-thomas': typeof CampaignsLeonThomasRoute
   '/campaigns/paradice': typeof CampaignsParadiceRoute
+  '/campaigns/ellis-digitals': typeof CampaignsEllisDigitalsRoute
   '/campaigns/reelclip': typeof CampaignsReelclipRoute
   '/campaigns/rockstar-flaco': typeof CampaignsRockstarFlacoRoute
   '/campaigns/soniqreign': typeof CampaignsSoniqreignRoute
@@ -387,6 +395,7 @@ export interface FileRoutesById {
   '/campaigns/kenshi-killz': typeof CampaignsKenshiKillzRoute
   '/campaigns/leon-thomas': typeof CampaignsLeonThomasRoute
   '/campaigns/paradice': typeof CampaignsParadiceRoute
+  '/campaigns/ellis-digitals': typeof CampaignsEllisDigitalsRoute
   '/campaigns/reelclip': typeof CampaignsReelclipRoute
   '/campaigns/rockstar-flaco': typeof CampaignsRockstarFlacoRoute
   '/campaigns/soniqreign': typeof CampaignsSoniqreignRoute
@@ -433,6 +442,7 @@ export interface FileRouteTypes {
     | '/campaigns/kenshi-killz'
     | '/campaigns/leon-thomas'
     | '/campaigns/paradice'
+    | '/campaigns/ellis-digitals'
     | '/campaigns/reelclip'
     | '/campaigns/rockstar-flaco'
     | '/campaigns/soniqreign'
@@ -477,6 +487,7 @@ export interface FileRouteTypes {
     | '/campaigns/kenshi-killz'
     | '/campaigns/leon-thomas'
     | '/campaigns/paradice'
+    | '/campaigns/ellis-digitals'
     | '/campaigns/reelclip'
     | '/campaigns/rockstar-flaco'
     | '/campaigns/soniqreign'
@@ -521,6 +532,7 @@ export interface FileRouteTypes {
     | '/campaigns/kenshi-killz'
     | '/campaigns/leon-thomas'
     | '/campaigns/paradice'
+    | '/campaigns/ellis-digitals'
     | '/campaigns/reelclip'
     | '/campaigns/rockstar-flaco'
     | '/campaigns/soniqreign'
@@ -565,6 +577,7 @@ export interface RootRouteChildren {
   CampaignsKenshiKillzRoute: typeof CampaignsKenshiKillzRoute
   CampaignsLeonThomasRoute: typeof CampaignsLeonThomasRoute
   CampaignsParadiceRoute: typeof CampaignsParadiceRoute
+  CampaignsEllisDigitalsRoute: typeof CampaignsEllisDigitalsRoute
   CampaignsReelclipRoute: typeof CampaignsReelclipRoute
   CampaignsRockstarFlacoRoute: typeof CampaignsRockstarFlacoRoute
   CampaignsSoniqreignRoute: typeof CampaignsSoniqreignRoute
@@ -755,6 +768,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CampaignsParadiceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/campaigns/ellis-digitals': {
+      id: '/campaigns/ellis-digitals'
+      path: '/campaigns/ellis-digitals'
+      fullPath: '/campaigns/ellis-digitals'
+      preLoaderRoute: typeof CampaignsEllisDigitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/campaigns/leon-thomas': {
       id: '/campaigns/leon-thomas'
       path: '/campaigns/leon-thomas'
@@ -919,6 +939,7 @@ const rootRouteChildren: RootRouteChildren = {
   CampaignsKenshiKillzRoute: CampaignsKenshiKillzRoute,
   CampaignsLeonThomasRoute: CampaignsLeonThomasRoute,
   CampaignsParadiceRoute: CampaignsParadiceRoute,
+  CampaignsEllisDigitalsRoute: CampaignsEllisDigitalsRoute,
   CampaignsReelclipRoute: CampaignsReelclipRoute,
   CampaignsRockstarFlacoRoute: CampaignsRockstarFlacoRoute,
   CampaignsSoniqreignRoute: CampaignsSoniqreignRoute,
