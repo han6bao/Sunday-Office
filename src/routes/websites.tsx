@@ -227,7 +227,7 @@ const FIT = [
 const FAQ = [
   { q: "Can you connect my domain, email and links?", a: "Yes, on every site, and as a quick fix on its own. I connect your domain, set up a business email like hello@yourname.com, and link your booking tool, Instagram, Google Maps and payment pages, then test them all on a phone. You just approve the logins." },
   { q: "Why do you recommend custom code?", a: "It's faster, it looks like you instead of a template, and there's usually no monthly platform fee. You just renew your domain once a year. If you'd rather edit everything yourself, I also build in Showit, Squarespace and Wix." },
-  { q: "What's the care plan?", a: "An optional $100 a month for after launch: I keep an eye on hosting, keep backups and handle small updates for you, so you never have to think about it." },
+  { q: "What's the care plan?", a: "An optional $150 a month after launch. Up to 3 small updates every month (worth $210 on their own), plus hosting and security checks, backups, a monthly speed and Google check, priority replies and a fresh seasonal refresh every quarter. Cancel anytime." },
   { q: "Do I need my words and photos ready?", a: "No. Writing the words with you is part of every site, and we choose the photos together. If you need new photos, I can shoot those too." },
   { q: "How long does it take?", a: "It depends on how many pages you need and how quickly we gather your words and photos. You'll get a timeline with your price before anything starts." },
   { q: "I'm not techy. Is that a problem?", a: "Not at all. I handle the tech and walk you through anything you need to do on your end, in plain words." },
@@ -392,7 +392,7 @@ function WebsitesPage() {
             { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Research + a full page plan", "Galleries or menus", "Lots of services or case studies", "A more custom build"] },
             { t: "Landing pages + fixes", p: "from $250", d: "One page, or help for the site you have.", list: ["A single page", "A link-in-bio", "Fixes + a refresh", "Better photos or copy"] },
           ]}
-          foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each, or add the care plan for $100 a month: hosting checks, backups and small updates handled for you. You'll know the final number before anything starts."
+          foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each, or add the care plan for $150 a month and get up to 3 updates every month, plus hosting, backups and a seasonal refresh. You'll know the final number before anything starts."
         />
 
         <PriceList
@@ -406,6 +406,17 @@ function WebsitesPage() {
             { t: "The Full World", p: "from $2,500", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $300 vs. booking separately"] },
           ]}
           foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on."
+        />
+
+        <PriceList
+          id="care"
+          label="AFTER LAUNCH"
+          need="Website"
+          title="The care plan."
+          items={[
+            { t: "Care plan", p: "$150/mo", tag: "BEST VALUE", d: "Your site, looked after every month, so you never have to think about it.", list: ["Up to 3 small updates a month (worth $210 at $70 each)", "Hosting + security checks", "Backups, so nothing is ever lost", "A monthly speed + Google check", "A seasonal refresh every quarter: new photos, banners or offers", "Priority replies, within 1 business day", "Cancel anytime"] },
+          ]}
+          foot="Unused updates don't roll over. Bigger changes, like new pages, are quoted separately, and care plan clients get 20% off."
         />
 
 
