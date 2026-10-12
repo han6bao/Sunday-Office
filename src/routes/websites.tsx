@@ -14,7 +14,7 @@ const INCLUDED = [
   { t: "Booking + inquiries", d: "Booking links, inquiry forms and ordering, connected so people can say yes without messaging you first." },
   { t: "Phone first", d: "Most people will find you on their phone, so that's where it's designed first." },
   { t: "Words + photos", d: "Help writing what goes on each page, and choosing the photos that show you best." },
-  { t: "The setup", d: "Your domain, the email your form sends to, and your booking link, all plugged in." },
+  { t: "Domain, email + links, connected", d: "I connect your domain, set up your business email (like hello@yourname.com), and link your booking, socials, Google Maps and payment pages. No tech on your end." },
   { t: "After launch", d: "Edits, updates and hosting, so the site keeps up with your business." },
 ];
 
@@ -108,7 +108,7 @@ function MadeBy() {
 }
 
 const MAKEOVERS = [
-  { n: "01", t: "Quick fix", p: "from $250", where: "On the platform you have", d: "Broken links, a new page, better photos, cleaner words. For a site that mostly works.", list: ["Squarespace, Wix, Showit or custom", "No starting over", "Done in days, not weeks"] },
+  { n: "01", t: "Quick fix", p: "from $250", where: "On the platform you have", d: "Broken links, a new page, better photos, cleaner words. For a site that mostly works.", list: ["Squarespace, Wix, Showit or custom", "Domain, email + links connected", "No starting over"] },
   { n: "02", t: "Full refresh", p: "quoted per site", where: "On the platform you have", d: "A new look and new words on the site you already pay for. For when you love your platform but not your site.", list: ["Redesign page by page", "New layout, fonts + photos", "Keep your logins and domain"] },
   { n: "03", t: "Rebuild in custom code", p: "$850 / $1,000 with SEO", where: "Recommended", d: "A fresh, custom site that's faster, fully yours and not boxed in by a template. Most makeovers end up here.", list: ["Built around your business", "Fast on phones", "Nothing to cancel later"], rec: true },
 ];
@@ -200,6 +200,7 @@ const FIT = [
 ];
 
 const FAQ = [
+  { q: "Can you connect my domain, email and links?", a: "Yes, on every site, and as a quick fix on its own. I connect your domain, set up a business email like hello@yourname.com, and link your booking tool, Instagram, Google Maps and payment pages, then test them all on a phone. You just approve the logins." },
   { q: "Why do you recommend custom code?", a: "It's faster, it looks like you instead of a template, and there's usually no monthly platform fee. You just renew your domain once a year. If you'd rather edit everything yourself, I also build in Showit, Squarespace and Wix." },
   { q: "What's the care plan?", a: "An optional $100 a month for after launch: I keep an eye on hosting, keep backups and handle small updates for you, so you never have to think about it." },
   { q: "Do I need my words and photos ready?", a: "No. Writing the words with you is part of every site, and we choose the photos together. If you need new photos, I can shoot those too." },
