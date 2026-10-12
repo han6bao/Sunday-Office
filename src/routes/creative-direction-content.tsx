@@ -69,6 +69,11 @@ const FAQ = [
   { q: "How do we know it's working?", a: "We watch what lands: saves, shares, comments and who reaches out. The next round of content gets better because of it." },
   { q: "Can you shoot the content too?", a: <>Yes. Photos, video, graphics and the words on top can all come from me, so it looks like it belongs together. <a href="/photography">Photography →</a></> },
   { q: "Can I switch plans later?", a: "You can upgrade anytime. Downgrades take effect at the end of a billing month once the first 3 months are done." },
+  { q: "How fast do you reply?", a: "Within 2 business days, including approvals on posts and templates." },
+  { q: "What if we skip a month's shoot?", a: "It rolls over one month. After that, it's gone." },
+  { q: "Can I change a package?", a: "Packages are set as they are. If you need something different, we'll build it from the single services instead." },
+  { q: "What if I need to reschedule?", a: "Free with at least 48 hours notice. With less than 48 hours, the deposit is kept." },
+  { q: "Will you share my project?", a: "Usually yes, on my site and Instagram, because the work is what helps the next client trust me. If you'd rather keep it private, just tell me." },
 ];
 
 function DirectionAndContentPage() {

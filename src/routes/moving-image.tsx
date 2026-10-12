@@ -58,6 +58,11 @@ const FAQ = [
   { q: "Will I get vertical versions for Reels and TikTok?", a: "Yes. One shoot gets cut for everywhere you need it: the main piece, vertical cuts, short teasers and loops." },
   { q: "Can I get photos from the same shoot?", a: <>Yes. I grab stills along the way, so one day of production covers more than one need. <a href="/photography">See photography →</a></> },
   { q: "Will it work with the sound off?", a: "It's made to. Captions and pacing are planned so it works muted in the feed and with the sound up." },
+  { q: "How many rounds of edits?", a: "Two rounds of edits are included on camera videos and brand films." },
+  { q: "What about music?", a: "Royalty-free music is included. You can also send your own, and licensed tracks are quoted separately." },
+  { q: "What if I need to reschedule?", a: "Free with at least 48 hours notice. With less than 48 hours, the deposit is kept." },
+  { q: "How do I pay?", a: "Half upfront to book your spot, and the other half when the work is done." },
+  { q: "Will you share my project?", a: "Usually yes, on my site and Instagram, because the work is what helps the next client trust me. If you'd rather keep it private, just tell me." },
 ];
 
 function MovingImagePage() {

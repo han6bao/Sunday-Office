@@ -508,7 +508,10 @@ function LogoIdentityPage() {
             { q: "How much does a logo cost?", a: "A new logo starts at $350. A brand kit built around a logo you already have starts at $550, and a full brand world from scratch starts at $1,500." },
             { q: "Can you fix or clean up the logo I have?", a: "Yes. Sometimes a logo just needs redrawing, better spacing or versions that work small. We don't start over unless it makes sense." },
             { q: "What files do I get?", a: "Your logo in the formats you'll actually use: for print, for the web, light and dark versions, and sizes for your profile picture." },
-            { q: "How many options will I see?", a: "We agree on a direction first, so the designs are already pointed the right way. Then we refine together until it feels like you." },
+            { q: "How many options will I see?", a: "A new logo comes with 2 concepts. Then we refine the one you love together." },
+            { q: "How many rounds of changes?", a: "Two rounds are included. After that, extra rounds are $75 each." },
+            { q: "Who owns the files?", a: "You do. Every version and file type, labeled and organized." },
+            { q: "How do I pay?", a: "Half upfront to book your spot, and the other half when the work is done." },
             { q: "Do I need the full brand too?", a: <>Not always. If you want everything to match, the logo can grow into a full brand world. <a href="/branding">See branding →</a></> },
           ]}
         />

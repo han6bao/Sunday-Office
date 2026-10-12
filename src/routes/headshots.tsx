@@ -29,6 +29,10 @@ const FAQ = [
   { q: "What should I wear?", a: "Solid colors, softer necklines and clothes you already feel good in. Not sure? Bring a few options and we'll choose together on the day." },
   { q: "I've never had headshots taken. Will I be awkward?", a: "Most people feel that way at first. I direct you the whole time, from where to stand to how to tilt your chin, so all you have to do is show up." },
   { q: "How do I book?", a: <>Send the form with Headshots picked and tell me what the photos are for. I'll reply with times. <a href={bookHref("Headshots")}>Start here →</a></> },
+  { q: "When do I get my photos?", a: "A sneak peek within 48 hours, and your finished photos within 2 weeks." },
+  { q: "Can I get more photos?", a: "Yes. 10 extra edited photos are $150." },
+  { q: "What if I need to reschedule?", a: "Free with at least 48 hours notice. With less than 48 hours, the deposit is kept." },
+  { q: "Will you share my project?", a: "Usually yes, on my site and Instagram, because the work is what helps the next client trust me. If you'd rather keep it private, just tell me." },
 ];
 
 const ADVICE = [

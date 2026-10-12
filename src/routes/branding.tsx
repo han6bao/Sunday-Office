@@ -56,6 +56,11 @@ const FAQ = [
   { q: "Do I need a website too?", a: <>Not right away. A brand works on its own, and many people add a website once the world is set. <a href="/websites">See websites →</a></> },
   { q: "Do you design menus, signs and flyers?", a: "Yes. Flyers start at $75, menus at $150, A-frame signs at $125 and window or wall signs at $150. The print kit covers a menu, an A-frame and two signs for $400, all in your brand and ready to print." },
   { q: "What do I get at the end?", a: "The files for everything we made, ready to use, plus a simple guide that shows how it all fits together, so anyone you work with later can keep it consistent." },
+  { q: "How many logo ideas will I see?", a: "A logo comes with 2 concepts. A full brand world comes with 3. A brand kit is built on the logo you already have, so we go straight to one direction." },
+  { q: "How many rounds of changes?", a: "Two rounds of changes are included. After that, extra rounds are $75 each." },
+  { q: "Who owns the files?", a: "You do. Your logo and brand files are yours, organized and labeled in Google Drive or Dropbox." },
+  { q: "How do I pay?", a: "Half upfront to book your spot, and the other half when the work is done." },
+  { q: "Will you share my project?", a: "Usually yes, on my site and Instagram, because the work is what helps the next client trust me. If you'd rather keep it private, just tell me." },
 ];
 
 const BUILT = [

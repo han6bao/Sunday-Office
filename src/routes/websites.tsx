@@ -236,6 +236,8 @@ const FAQ = [
   { q: "What's the difference between the simple site and the SEO one?", a: "It's the same site. The SEO version adds the setup that helps Google understand you: page titles, descriptions, local Seattle search and a sitemap." },
   { q: "Will there be other costs?", a: "Some things you own, like your domain name, have their own small costs. I'll walk you through each one before we start, so nothing comes as a surprise." },
   { q: "What if I need changes after launch?", a: "Every site comes with one round of small changes after launch, free. After that, updates are $70 each. Bigger changes get their own quote." },
+  { q: "How do I pay?", a: "Half upfront to book your spot, and the other half when the work is done." },
+  { q: "Will you share my project?", a: "Usually yes, on my site and Instagram, because the work is what helps the next client trust me. If you'd rather keep it private, just tell me." },
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
