@@ -304,8 +304,8 @@ export const VIDEO: HelpCfg = {
   estTitle: "What would my video cost?",
   base: [
     { id: "phone", t: "Phone content day", d: "Short videos for Reels and TikTok", p: 350 },
-    { id: "cam", t: "Camera video", d: "60 to 90 seconds + vertical cuts", p: 1000, plus: true },
-    { id: "film", t: "Brand film or commercial", d: "Planned, shot and edited", p: 1500, plus: true },
+    { id: "cam", t: "Camera video", d: "60 to 90 seconds + vertical cuts", p: 1500, plus: true },
+    { id: "film", t: "Brand film or commercial", d: "Planned, shot and edited", p: 2500, plus: true },
   ],
   extras: [
     { id: "shoot", t: "Brand photos", d: "Half day, 30+ edited photos", p: 550, plus: true },
@@ -384,15 +384,15 @@ export const DIRECTION: HelpCfg = {
     { id: "shoot", t: "Half-day photo shoot", d: "30+ edited photos", p: 550, plus: true },
     { id: "fullday", t: "Full-day photo shoot", d: "Two half days, more looks and locations", p: 1100, plus: true },
     { id: "phone", t: "Phone content day", d: "5 to 8 short videos for Reels and TikTok", p: 350 },
-    { id: "camvid", t: "Camera video", d: "60 to 90 seconds + 3 vertical cuts", p: 1000, plus: true },
-    { id: "film", t: "Brand film", d: "1 to 2 minutes, cuts for every platform", p: 1500, plus: true },
+    { id: "camvid", t: "Camera video", d: "60 to 90 seconds + 3 vertical cuts", p: 1500, plus: true },
+    { id: "film", t: "Brand film", d: "1 to 2 minutes, cuts for every platform", p: 2500, plus: true },
     { id: "canva", t: "Canva template pack", d: "40+ editable templates, stickers + a caption guide", p: 350, plus: true },
     { id: "audit", t: "Audit + strategy", d: "Free if you go monthly", p: 400, plus: true },
   ],
   packages: [
     { when: ["dir", "shoot", "phone"], name: "The Drop", price: "$1,200", save: "$150" },
-    { when: ["camp", "shoot", "camvid", "phone"], name: "The Campaign", price: "$2,750", save: "$350" },
-    { when: ["camp", "fullday", "film", "phone", "canva"], name: "The Premiere", price: "from $3,900", save: "$600" },
+    { when: ["camp", "shoot", "camvid", "phone"], name: "The Campaign", price: "$3,200", save: "$400" },
+    { when: ["camp", "fullday", "film", "phone", "canva"], name: "The Premiere", price: "from $4,900", save: "$600" },
   ],
   prep: [
     { t: "Your logins", d: "Or a plan for who posts. We'll set it up safely." },

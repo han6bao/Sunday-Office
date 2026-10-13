@@ -113,8 +113,8 @@ const PHOTOS: Record<Niche, Record<Level, Pick>> = {
 
 const VIDEO: Record<Level, Pick> = {
   low: { t: "Content day", p: "$350", why: "About 2 hours on iPhone and 5 to 8 short edited videos for Reels and TikTok. Quick, natural and ready to post.", need: "Video / Moving Image", more: "/moving-image" },
-  mid: { t: "Camera video", p: "from $1,000", why: "A polished, color graded video on pro cameras, 60 to 90 seconds, plus 3 vertical cuts for social.", need: "Video / Moving Image", more: "/moving-image" },
-  high: { t: "Brand film", p: "from $1,500", why: "The big one: an idea, a script, a full-day shoot and a 1 to 2 minute film, with cuts for every platform.", need: "Video / Moving Image", more: "/moving-image" },
+  mid: { t: "Camera video", p: "from $1,500", why: "A polished, color graded video on pro cameras, 60 to 90 seconds, plus 3 vertical cuts for social.", need: "Video / Moving Image", more: "/moving-image" },
+  high: { t: "Brand film", p: "from $2,500", why: "The big one: an idea, a script, a full-day shoot and a 1 to 2 minute film, with cuts for every platform.", need: "Video / Moving Image", more: "/moving-image" },
 };
 
 const PRINT: Record<Niche, Record<Level, Pick>> = {

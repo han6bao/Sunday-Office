@@ -403,7 +403,7 @@ function WebsitesPage() {
           items={[
             { t: "The Launch", p: "$1,400", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site", "Save $150 vs. booking separately"] },
             { t: "The Launch + Motion", p: "$1,700", tag: "MOST COMPLETE", d: "The site, the photos and short videos to go with them.", list: ["Everything in The Launch", "A phone content day", "5 to 8 short videos for your site + Reels", "Save $200 vs. booking separately"] },
-            { t: "The Full World", p: "from $2,500", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $300 vs. booking separately"] },
+            { t: "The Full World", p: "from $2,900", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $400 vs. booking separately"] },
           ]}
           foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on. Every package can add the care plan with the first month free."
         />
