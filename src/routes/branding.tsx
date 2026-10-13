@@ -187,7 +187,8 @@ function BrandingPage() {
           items={[
             { t: "Logo", p: "from $350", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
             { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
-            { t: "Full brand world", p: "from $1,500", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
+            { t: "Brand kit + Canva", p: "from $750", tag: "MOST POPULAR", d: "Your brand kit, plus templates you can edit yourself.", list: ["Everything in the brand kit", "Your logo, colors + fonts loaded into Canva", "15 editable templates: posts, stories, highlight covers, a flyer + a price menu", "A 30 minute walkthrough so you can use them on your own", "Save $100 vs. booking separately"] },
+            { t: "Full brand world", p: "from $1,500", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
             { t: "Print + signage", p: "from $75", d: "Your brand, off the screen.", list: ["Flyers from $75", "Menus from $150", "A-frame signs from $125", "Window + wall signs from $150", "Print kit from $400: a menu, an A-frame + 2 signs"] },
           ]}
           foot="You'll know the number before anything starts."

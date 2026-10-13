@@ -12470,6 +12470,7 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
   .ed-did li { grid-template-columns: 1fr; gap: 2px; }
   .ed-story { text-align: left; }
 }
+.hk-hero img[src$="brand-guide.png"] { object-position: center top; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

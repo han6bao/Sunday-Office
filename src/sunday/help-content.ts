@@ -4,8 +4,8 @@ const CALL = { when: "Day 1", t: "Free call", d: "15 to 30 minutes. You tell me 
 const PLAN = { when: "Right after", t: "Plan + price", d: "You get a plan, a timeline and one clear price. Nothing starts until you say yes." };
 
 export const BRANDING: HelpCfg = {
-  hero: "/assets/work/build-a-world-2.jpg",
-  heroCap: "BUILD A WORLD · SUNDAY OFFICE",
+  hero: "/assets/campaigns/jazmins-events/brand-guide.png",
+  heroCap: "JAZMIN'S EVENTS · BRAND GUIDE",
   reel: "A 30 second reel of brands I've built",
   get: [
     { t: "Logo + every version", d: "Main logo, small mark, light and dark." },
@@ -56,6 +56,7 @@ export const BRANDING: HelpCfg = {
     { id: "site", t: "A website for it", d: "4 to 5 pages, booking or inquiries", p: 850 },
     { id: "print", t: "Print kit", d: "A menu, an A-frame and two signs", p: 400, plus: true },
   ],
+  packages: [{ when: ["kit", "canva"], name: "Brand kit + Canva", price: "from $750", save: "$100" }],
   prep: [
     { t: "Your business name", d: "And how you want it written." },
     { t: "Who your customers are", d: "A few words is enough. We'll dig in together." },

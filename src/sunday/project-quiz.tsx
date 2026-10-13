@@ -143,7 +143,7 @@ const PRINT: Record<Niche, Record<Level, Pick>> = {
 const GRAPHICS: Record<Level, Pick> = {
   low: { t: "Canva template pack", p: "from $300", why: "Your colors, fonts and logo set up in Canva, plus 15 post and story templates and highlight covers. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
   mid: { t: "Canva template pack", p: "from $300", why: "Your colors, fonts and logo set up in Canva, plus 15 post and story templates and highlight covers. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  high: { t: "Brand kit + template pack", p: "from $850", why: "Your colors, fonts and voice set first, then 15 templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
+  high: { t: "Brand kit + Canva", p: "from $750", why: "Your colors, fonts and voice set first, then 15 templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
 };
 
 const WEBFIX: Record<Level, Pick> = {
