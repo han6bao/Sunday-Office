@@ -30,7 +30,7 @@ const MAKEOVER: { n: string; t: string; d: string; p: string; href: string }[] =
   { n: "03", t: "Website makeover", d: "Fix and refresh what you have, or start over", p: "from $250", href: "/websites" },
   { n: "04", t: "Better photos", d: "A brand shoot so your site and feed finally match", p: "from $550", href: "/photography" },
   { n: "05", t: "New headshots", d: "For your site, LinkedIn and press", p: "from $150", href: "/headshots" },
-  { n: "06", t: "Social refresh", d: "Canva templates in your brand, or content made for you", p: "from $300", href: "/creative-direction-content" },
+  { n: "06", t: "Social refresh", d: "Canva templates in your brand, or content made for you", p: "from $350", href: "/creative-direction-content" },
 ];
 
 const SERVICES: { t: string; href: string }[] = [

@@ -48,15 +48,15 @@ export const BRANDING: HelpCfg = {
   base: [
     { id: "logo", t: "Logo", d: "A mark that works everywhere", p: 350, plus: true },
     { id: "kit", t: "Brand kit", d: "Keep your logo, get colors, type and a guide", p: 550, plus: true },
+    { id: "kitc", t: "Brand kit + Canva", d: "The brand kit + 15 starter templates in Canva", p: 750, plus: true },
     { id: "world", t: "Full brand world", d: "Strategy, identity, voice and a full guide", p: 1500, plus: true },
   ],
   extras: [
-    { id: "canva", t: "Canva template pack", d: "Your brand set up in Canva + 15 templates", p: 300, plus: true },
+    { id: "canva", t: "Canva template pack", d: "40+ editable templates, stickers + a caption guide", p: 350, plus: true },
     { id: "shoot", t: "Brand photos", d: "Half day, 30+ edited photos", p: 550, plus: true },
     { id: "site", t: "A website for it", d: "4 to 5 pages, booking or inquiries", p: 850 },
     { id: "print", t: "Print kit", d: "A menu, an A-frame and two signs", p: 400, plus: true },
   ],
-  packages: [{ when: ["kit", "canva"], name: "Brand kit + Canva", price: "from $750", save: "$100" }],
   prep: [
     { t: "Your business name", d: "And how you want it written." },
     { t: "Who your customers are", d: "A few words is enough. We'll dig in together." },
@@ -131,7 +131,7 @@ export const LOGO: HelpCfg = {
     { id: "kit", t: "Logo + brand kit", d: "Colors, type and a short guide too", p: 550, plus: true },
   ],
   extras: [
-    { id: "canva", t: "Canva template pack", d: "Your brand set up in Canva + 15 templates", p: 300, plus: true },
+    { id: "canva", t: "Canva template pack", d: "40+ editable templates, stickers + a caption guide", p: 350, plus: true },
     { id: "site", t: "A website for it", d: "4 to 5 pages, booking or inquiries", p: 850 },
   ],
   guideTitle: "What makes a logo work.",
@@ -181,7 +181,7 @@ export const PHOTO: HelpCfg = {
   extras: [
     { id: "dir", t: "Creative direction", d: "Concept, moodboard and styling for your shoot", p: 200 },
     { id: "phone", t: "Phone content day", d: "Short videos for Reels and TikTok", p: 350 },
-    { id: "canva", t: "Canva template pack", d: "Templates to post your photos in", p: 300, plus: true },
+    { id: "canva", t: "Canva template pack", d: "40+ editable templates, stickers + a caption guide", p: 350, plus: true },
     { id: "site", t: "A website to put them on", d: "4 to 5 pages, booking or inquiries", p: 850 },
   ],
   prep: [
@@ -309,7 +309,7 @@ export const VIDEO: HelpCfg = {
   ],
   extras: [
     { id: "shoot", t: "Brand photos", d: "Half day, 30+ edited photos", p: 550, plus: true },
-    { id: "canva", t: "Canva template pack", d: "Templates for covers and stories", p: 300, plus: true },
+    { id: "canva", t: "Canva template pack", d: "40+ editable templates, stickers + a caption guide", p: 350, plus: true },
   ],
   prep: [
     { t: "Where the videos will live", d: "Instagram, TikTok, your website, ads." },
@@ -386,13 +386,13 @@ export const DIRECTION: HelpCfg = {
     { id: "phone", t: "Phone content day", d: "5 to 8 short videos for Reels and TikTok", p: 350 },
     { id: "camvid", t: "Camera video", d: "60 to 90 seconds + 3 vertical cuts", p: 1000, plus: true },
     { id: "film", t: "Brand film", d: "1 to 2 minutes, cuts for every platform", p: 1500, plus: true },
-    { id: "canva", t: "Canva template pack", d: "Your brand in Canva + 15 templates", p: 300, plus: true },
+    { id: "canva", t: "Canva template pack", d: "40+ editable templates, stickers + a caption guide", p: 350, plus: true },
     { id: "audit", t: "Audit + strategy", d: "Free if you go monthly", p: 400, plus: true },
   ],
   packages: [
     { when: ["dir", "shoot", "phone"], name: "The Drop", price: "$1,200", save: "$150" },
     { when: ["camp", "shoot", "camvid", "phone"], name: "The Campaign", price: "$2,750", save: "$350" },
-    { when: ["camp", "fullday", "film", "phone", "canva"], name: "The Premiere", price: "from $3,900", save: "$550" },
+    { when: ["camp", "fullday", "film", "phone", "canva"], name: "The Premiere", price: "from $3,900", save: "$600" },
   ],
   prep: [
     { t: "Your logins", d: "Or a plan for who posts. We'll set it up safely." },
