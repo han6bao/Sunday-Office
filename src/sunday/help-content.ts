@@ -49,7 +49,7 @@ export const BRANDING: HelpCfg = {
     { id: "logo", t: "Logo", d: "A mark that works everywhere", p: 350, plus: true },
     { id: "kit", t: "Brand kit", d: "Keep your logo, get colors, type and a guide", p: 550, plus: true },
     { id: "kitc", t: "Brand kit + Canva", d: "The brand kit + 15 starter templates in Canva", p: 750, plus: true },
-    { id: "world", t: "Full brand world", d: "Strategy, identity, voice and a full guide", p: 1500, plus: true },
+    { id: "world", t: "Full brand world", d: "Strategy, identity, voice and a full guide", p: 2000, plus: true },
   ],
   extras: [
     { id: "canva", t: "Canva template pack", d: "40+ editable templates, stickers + a caption guide", p: 350, plus: true },

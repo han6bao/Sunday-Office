@@ -66,7 +66,7 @@ const Q3: { k: Budget; t: string }[] = [
 const BRAND: Record<Level, Pick> = {
   low: { t: "Logo", p: "from $350", why: "A logo made from scratch, in every version you need. Everything else can grow from it.", need: "Branding", more: "/branding" },
   mid: { t: "Brand kit", p: "from $550", why: "Your colors, fonts and voice in one simple guide, so everything you make looks like you.", need: "Branding", more: "/branding" },
-  high: { t: "Full brand world", p: "from $1,500", why: "The whole brand built properly: research, logo, identity, voice and templates.", need: "Branding", more: "/branding" },
+  high: { t: "Full brand world", p: "from $2,000", why: "The whole brand built properly: research, logo, identity, voice and templates.", need: "Branding", more: "/branding" },
 };
 
 const SITE: Record<Level, Pick> = {
