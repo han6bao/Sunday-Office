@@ -64,7 +64,7 @@ const FAQ = [
   { q: "Which platforms do you work with?", a: "Instagram, TikTok, Facebook and LinkedIn. Starter covers one platform, Growth covers two plus Facebook, and Full covers all four, including a LinkedIn plan." },
   { q: "Do I get to approve things first?", a: "Always. Every template and every piece of the plan is yours to approve before anything goes out." },
   { q: "What happens to the audit price if I sign up monthly?", a: "It comes off your first month. Growth and Full include the audit free in month one." },
-  { q: "Do you post for me?", a: "On Full, I post for you. On Starter and Growth, I hand everything over ready to post and you press publish." },
+  { q: "Do you post for me?", a: "On Full, I schedule and post for you. On Starter and Growth, I hand everything over ready to post, captions included, and you press publish. I don't reply to DMs or comments or run paid ads." },
   { q: "What do you need from me?", a: "A conversation about your business and who you want to reach, and access to whatever you already have. We figure out the rest together." },
   { q: "How do we know it's working?", a: "We watch what lands: saves, shares, comments and who reaches out. The next round of content gets better because of it." },
   { q: "Can you shoot the content too?", a: <>Yes. Photos, video, graphics and the words on top can all come from me, so it looks like it belongs together. <a href="/photography">Photography →</a></> },
@@ -145,6 +145,23 @@ function DirectionAndContentPage() {
           foot="Campaign packages are for brands that already have a look. Starting from scratch? The Signature adds the full brand. Every campaign is planned as one project, so the photos and video feel like the same world."
         />
 
+        <section className="so-bw-sec mw-ways" aria-label="How monthly content works">
+          <p className="so-micro">HOW MONTHLY WORKS</p>
+          <div className="mw-ways-grid">
+            <div>
+              <p className="mw-ways-k">Starter + Growth</p>
+              <p className="mw-ways-t">Made for you.</p>
+              <p className="mw-ways-d">I shoot it, edit it and write the captions. You press post.</p>
+            </div>
+            <div>
+              <p className="mw-ways-k">Full</p>
+              <p className="mw-ways-t">Made and posted for you.</p>
+              <p className="mw-ways-d">Everything above, and I schedule and post it too.</p>
+            </div>
+          </div>
+          <p className="mw-ways-not"><b>What I don't do:</b> reply to DMs or comments, run paid ads or promise follower counts. I make the content that brings people in.</p>
+        </section>
+
         <PriceList
           id="monthly"
           need="Monthly content"
@@ -153,7 +170,7 @@ function DirectionAndContentPage() {
           items={[
             { t: "Starter", p: "$600/mo", d: "An easy, affordable start.", list: ["A 1 hour pro photo shoot in month one, then every third month, plus iPhone content", "About 15 edited photos from each shoot, yours to keep", "8 posts on 1 platform", "Captions, hashtags + a 30-day plan", "3 post + 3 story templates in Canva", "Highlight covers in your colors", "A profile + bio refresh in month one", "Your photos, videos + brand files organized in Google Drive or Dropbox"] },
             { t: "Growth", p: "$1,500/mo", tag: "BEST VALUE", d: "Where accounts start to grow.", list: ["Everything in Starter, plus:", "A photo + video shoot, about 30 edited photos", "16 posts + 8 reels", "A set of stories every week", "Instagram + TikTok, plus Facebook", "Monthly trend + competitor research", "Hooks, trending audio + reel ideas", "10 post + 10 story templates, plus stickers", "A monthly calendar you approve", "A monthly results recap", "Audit + strategy free in month one"] },
-            { t: "Full", p: "$2,800/mo", d: "I run your content, start to finish.", list: ["Everything in Growth, plus:", "A second shoot, 50+ edited photos a month", "24 posts + 12 reels", "Stories posted for you every week", "Instagram, TikTok, Facebook + LinkedIn", "Ad-ready cuts of your best reels", "Fresh photos for your Google Business Profile", "I post for you + a monthly report and check-in", "A strategy session every quarter", "New Canva templates every month", "Priority booking for shoots"] },
+            { t: "Full", p: "$2,800/mo", d: "Made and posted for you, start to finish.", list: ["Everything in Growth, plus:", "A second shoot, 50+ edited photos a month", "24 posts + 12 reels", "Stories posted for you every week", "Instagram, TikTok, Facebook + LinkedIn", "Ad-ready cuts of your best reels", "Fresh photos for your Google Business Profile", "I post for you + a monthly report and check-in", "A strategy session every quarter", "New Canva templates every month", "Priority booking for shoots"] },
           ]}
           foot={<>Monthly plans start with a 3-month commitment, and paying all 3 months upfront saves you 10%. Every template and post is yours to approve before it goes out. Monthly clients get 20% off single one-time add-ons, like camera video (not packages, which already include their savings), and the website care plan for $100 a month instead of $150. Booked separately, the Growth shoot, templates and audit come to about $1,600, before any posts or reels. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
         />
