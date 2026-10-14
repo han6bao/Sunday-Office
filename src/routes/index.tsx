@@ -564,13 +564,13 @@ const PACKAGES = [
   {
     n: "The Refresh",
     who: "A makeover for a business that's open and ready to look sharper.",
-    items: ["A half-day brand photo shoot", "A phone content day, 5 to 8 short videos", "A website refresh or a new landing page", "A Canva template pack in your look", "Your files organized in Google Drive or Dropbox"],
+    items: ["A half-day brand photo shoot", "A phone content day, 5 to 8 short videos", "A website refresh or a new landing page", "A social pack in your look, editable in Canva", "Your files organized in Google Drive or Dropbox"],
     foot: "FROM $1,300 · SAVE $200",
   },
   {
     n: "The Opening",
     who: "Everything you need to open, or reopen, like a premium brand.",
-    items: ["A full custom website", "Brand kit + Canva templates", "A half-day brand photo shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Your first month of ready-to-post content", "A launch strategy session", "Your files organized in Google Drive or Dropbox"],
+    items: ["A full custom website", "Brand kit + a starter social pack", "A half-day brand photo shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Your first month of ready-to-post content", "A launch strategy session", "Your files organized in Google Drive or Dropbox"],
     tag: "Full build",
     foot: "FROM $4,200 · SAVE $850",
   },
@@ -583,7 +583,7 @@ const PACKAGES = [
   {
     n: "Monthly Content",
     who: "Ongoing content so your brand never goes quiet.",
-    items: ["A pro shoot every month on Growth and Full", "Posts, reels + captions, ready to publish", "Research + a monthly plan", "Canva templates you approve", "Your files organized in Google Drive or Dropbox"],
+    items: ["A pro shoot every month on Growth and Full", "Posts, reels + captions, ready to publish", "Research + a monthly plan", "Social pack designs you approve", "Your files organized in Google Drive or Dropbox"],
     foot: "FROM $600 / MONTH",
     href: "/creative-direction-content#monthly",
     go: "See the plans",

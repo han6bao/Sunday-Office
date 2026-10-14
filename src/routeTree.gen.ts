@@ -16,6 +16,7 @@ import { Route as PrivateRouteImport } from './routes/private'
 import { Route as MovingImageRouteImport } from './routes/moving-image'
 import { Route as LogoIdentityRouteImport } from './routes/logo-identity'
 import { Route as HeadshotsRouteImport } from './routes/headshots'
+import { Route as SocialPacksRouteImport } from './routes/social-packs'
 import { Route as CreativeDirectionContentRouteImport } from './routes/creative-direction-content'
 import { Route as CreativeDirectionRouteImport } from './routes/creative-direction'
 import { Route as BrandingRouteImport } from './routes/branding'
@@ -86,6 +87,11 @@ const LogoIdentityRoute = LogoIdentityRouteImport.update({
 const HeadshotsRoute = HeadshotsRouteImport.update({
   id: '/headshots',
   path: '/headshots',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SocialPacksRoute = SocialPacksRouteImport.update({
+  id: '/social-packs',
+  path: '/social-packs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreativeDirectionContentRoute =
@@ -280,6 +286,7 @@ export interface FileRoutesByFullPath {
   '/creative-direction': typeof CreativeDirectionRoute
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
+  '/social-packs': typeof SocialPacksRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -325,6 +332,7 @@ export interface FileRoutesByTo {
   '/creative-direction': typeof CreativeDirectionRoute
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
+  '/social-packs': typeof SocialPacksRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -371,6 +379,7 @@ export interface FileRoutesById {
   '/creative-direction': typeof CreativeDirectionRoute
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
+  '/social-packs': typeof SocialPacksRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -418,6 +427,7 @@ export interface FileRouteTypes {
     | '/creative-direction'
     | '/creative-direction-content'
     | '/headshots'
+    | '/social-packs'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -463,6 +473,7 @@ export interface FileRouteTypes {
     | '/creative-direction'
     | '/creative-direction-content'
     | '/headshots'
+    | '/social-packs'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -508,6 +519,7 @@ export interface FileRouteTypes {
     | '/creative-direction'
     | '/creative-direction-content'
     | '/headshots'
+    | '/social-packs'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -554,6 +566,7 @@ export interface RootRouteChildren {
   CreativeDirectionRoute: typeof CreativeDirectionRoute
   CreativeDirectionContentRoute: typeof CreativeDirectionContentRoute
   HeadshotsRoute: typeof HeadshotsRoute
+  SocialPacksRoute: typeof SocialPacksRoute
   LogoIdentityRoute: typeof LogoIdentityRoute
   MovingImageRoute: typeof MovingImageRoute
   PrivateRoute: typeof PrivateRoute
@@ -640,6 +653,13 @@ declare module '@tanstack/react-router' {
       path: '/headshots'
       fullPath: '/headshots'
       preLoaderRoute: typeof HeadshotsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/social-packs': {
+      id: '/social-packs'
+      path: '/social-packs'
+      fullPath: '/social-packs'
+      preLoaderRoute: typeof SocialPacksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/creative-direction-content': {
@@ -916,6 +936,7 @@ const rootRouteChildren: RootRouteChildren = {
   CreativeDirectionRoute: CreativeDirectionRoute,
   CreativeDirectionContentRoute: CreativeDirectionContentRoute,
   HeadshotsRoute: HeadshotsRoute,
+  SocialPacksRoute: SocialPacksRoute,
   LogoIdentityRoute: LogoIdentityRoute,
   MovingImageRoute: MovingImageRoute,
   PrivateRoute: PrivateRoute,

@@ -58,6 +58,11 @@ export const SEO: Record<string, Seo> = {
     description:
       "Editorial, fashion and conceptual photography in Seattle for artists, streetwear brands and creative campaigns.",
   },
+  "/social-packs": {
+    title: "Social Packs: Canva Templates in Your Brand + How to Use Them | Sunday Office",
+    description:
+      "Social packs from Sunday Office: 40+ posts, stories and covers in your brand, editable in Canva. Plus a simple step-by-step guide to using Canva.",
+  },
   "/headshots": {
     title: "Seattle Headshot Photographer | Headshots from $150 | Sunday Office",
     description:
@@ -71,7 +76,7 @@ export const SEO: Record<string, Seo> = {
   "/creative-direction-content": {
     title: "Creative Direction + Social Media Content Seattle | Sunday Office",
     description:
-      "Seattle creative direction and social media content: audits, strategy, Canva template packs and monthly content plans from $600 a month.",
+      "Seattle creative direction and social media content: audits, strategy, social packs editable in Canva and monthly content plans from $600 a month.",
   },
 
   /* Case studies */

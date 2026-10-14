@@ -30,7 +30,7 @@ const MAKEOVER: { n: string; t: string; d: string; p: string; href: string }[] =
   { n: "03", t: "Website makeover", d: "Fix and refresh what you have, or start over", p: "from $250", href: "/websites" },
   { n: "04", t: "Better photos", d: "A brand shoot so your site and feed finally match", p: "from $550", href: "/photography" },
   { n: "05", t: "New headshots", d: "For your site, LinkedIn and press", p: "from $150", href: "/headshots" },
-  { n: "06", t: "Social refresh", d: "Canva templates in your brand, or content made for you", p: "from $350", href: "/creative-direction-content" },
+  { n: "06", t: "Social refresh", d: "A social pack in your brand, editable in Canva", p: "from $350", href: "/social-packs" },
 ];
 
 const SERVICES: { t: string; href: string }[] = [
@@ -146,7 +146,7 @@ export function Guide() {
               <a href="#inquiry" onClick={go("#inquiry")}>
                 <span className="gd-n">07</span>
                 <span className="gd-t">All of it: The Refresh</span>
-                <span className="gd-d">Photos, short videos, a site refresh and Canva templates together · <i>from $1,300</i></span>
+                <span className="gd-d">Photos, short videos, a site refresh and a social pack together · <i>from $1,300</i></span>
                 <span className="gd-a" aria-hidden="true">→</span>
               </a>
             </li>

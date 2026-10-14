@@ -141,9 +141,9 @@ const PRINT: Record<Niche, Record<Level, Pick>> = {
 };
 
 const GRAPHICS: Record<Level, Pick> = {
-  low: { t: "Canva template pack", p: "from $350", why: "Your brand set up in Canva with 40+ templates: posts, carousels, stories, Reel and highlight covers, a flyer and a price menu. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  mid: { t: "Canva template pack", p: "from $350", why: "Your brand set up in Canva with 40+ templates, stickers and a caption guide. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  high: { t: "Brand kit + Canva", p: "from $750", why: "Your colors, fonts and voice set first, then 15 starter templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
+  low: { t: "Social pack", p: "from $350", why: "Your brand set up in Canva with 40+ templates: posts, carousels, stories, Reel and highlight covers, a flyer and a price menu. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
+  mid: { t: "Social pack", p: "from $350", why: "Your brand set up in Canva with 40+ templates, stickers and a caption guide. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
+  high: { t: "Brand kit + Social starter", p: "from $750", why: "Your colors, fonts and voice set first, then 15 starter templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
 };
 
 const WEBFIX: Record<Level, Pick> = {
