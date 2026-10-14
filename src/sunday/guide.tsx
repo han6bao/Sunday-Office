@@ -146,7 +146,7 @@ export function Guide() {
               <a href="#inquiry" onClick={go("#inquiry")}>
                 <span className="gd-n">07</span>
                 <span className="gd-t">All of it: The Refresh</span>
-                <span className="gd-d">Photos, short videos, a site refresh and a social kit together · <i>from $1,200</i></span>
+                <span className="gd-d">Photos, short videos, a site refresh and Canva templates together · <i>from $1,300</i></span>
                 <span className="gd-a" aria-hidden="true">→</span>
               </a>
             </li>

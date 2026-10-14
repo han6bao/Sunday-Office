@@ -563,22 +563,22 @@ function MeetHana() {
 const PACKAGES = [
   {
     n: "The Refresh",
-    who: "A makeover for established businesses ready for a sharper look.",
-    items: ["Brand photo session (half day)", "5 to 8 short-form videos", "Website refresh or a new landing page", "Social media asset kit", "Your files organized in Google Drive or Dropbox"],
-    foot: "FROM $1,200 · SAVE $250",
+    who: "A makeover for a business that's open and ready to look sharper.",
+    items: ["A half-day brand photo shoot", "A phone content day, 5 to 8 short videos", "A website refresh or a new landing page", "A Canva template pack in your look", "Your files organized in Google Drive or Dropbox"],
+    foot: "FROM $1,300 · SAVE $200",
   },
   {
     n: "The Opening",
     who: "Everything you need to open, or reopen, like a premium brand.",
-    items: ["Full custom website", "Brand kit: logo suite, colors, type, guidelines", "Full-day photo + video shoot", "30 days of ready-to-post content", "Launch strategy session", "Your files organized in Google Drive or Dropbox"],
+    items: ["A full custom website", "Brand kit + Canva templates", "A half-day brand photo shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Your first month of ready-to-post content", "A launch strategy session", "Your files organized in Google Drive or Dropbox"],
     tag: "Full build",
-    foot: "FROM $3,800 · SAVE $850",
+    foot: "FROM $4,200 · SAVE $850",
   },
   {
     n: "The Signature",
     who: "A complete brand build or rebrand, with campaign-level content.",
-    items: ["Everything in The Opening", "Brand campaign shoot (photo + video)", "Brand film", "Rollout plan and content calendar", "Priority scheduling"],
-    foot: "FROM $6,000 · SAVE $1,350",
+    items: ["Everything in The Opening, upgraded:", "The full brand world instead of the brand kit", "Campaign direction + a styled campaign shoot", "A brand film instead of the camera video, cut for every platform", "A phone content day for behind the scenes", "A rollout plan + content calendar", "Priority scheduling"],
+    foot: "FROM $7,800 · SAVE $1,400",
   },
   {
     n: "Monthly Content",
