@@ -4,7 +4,7 @@ import { SiteBar } from "../sunday/site-bar";
 import { HelpBottom, HelpTop } from "../sunday/help-kit";
 import { LOGO } from "../sunday/help-content";
 import { useState } from "react";
-import { BookBar, FaqList, PriceList, ServiceCta } from "../sunday/service-kit";
+import { BookBar, FaqList, PriceList, ServiceCta, bookHref } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/logo-identity")({
   head: () => seoHead("/logo-identity"),
@@ -274,200 +274,11 @@ function LogoIdentityPage() {
         <HelpTop c={LOGO} />
 
         {/* FIND YOUR DIRECTION */}
-        <div
-          id="direction"
-          className="so-bw-sec"
-          style={{
-            border: "1px solid var(--color-sepia)",
-            borderRadius: 22,
-            background: "color-mix(in srgb, var(--color-paper) 92%, #fffaf2)",
-            padding: "28px 30px",
-          }}
-        >
-          <p className="so-micro so-micro-red">FIND YOUR DIRECTION</p>
-          <p style={{ marginTop: 10, lineHeight: 1.55, maxWidth: "56ch" }}>
-            You don't need to know design terms. Tell me what you do and
-            how you want it to feel, and I'll give you somewhere to start.
-          </p>
-
-          <p className="so-micro" style={{ marginTop: 24, color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-            01 · WHAT INDUSTRY ARE YOU IN?
-          </p>
-          <div style={{ display: "flex", gap: 9, flexWrap: "wrap", marginTop: 12 }}>
-            {INDUSTRIES.map((x) => (
-              <button
-                key={x.k}
-                type="button"
-                onClick={() => {
-                  setInd(x.k);
-                  setBrief(null);
-                }}
-                className="so-micro"
-                style={{
-                  border: ind === x.k ? "1px solid #131210" : "1px solid var(--color-sepia)",
-                  borderRadius: 999,
-                  padding: "8px 15px",
-                  background: ind === x.k ? "#131210" : "transparent",
-                  color: ind === x.k ? "#f5f2ea" : "var(--color-print)",
-                  cursor: "pointer",
-                  letterSpacing: "0.1em",
-                }}
-              >
-                {x.k}
-              </button>
-            ))}
-          </div>
-
-          <p className="so-micro" style={{ marginTop: 24, color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-            02 · WHAT FEELING SHOULD THE LOOK GIVE?
-          </p>
-          <div style={{ display: "flex", gap: 9, flexWrap: "wrap", marginTop: 12 }}>
-            {FEELINGS.map((x) => (
-              <button
-                key={x.k}
-                type="button"
-                onClick={() => {
-                  setFeel(x.k);
-                  setBrief(null);
-                }}
-                className="so-micro"
-                style={{
-                  border: feel === x.k ? "1px solid #131210" : "1px solid var(--color-sepia)",
-                  borderRadius: 999,
-                  padding: "8px 15px",
-                  background: feel === x.k ? "#131210" : "transparent",
-                  color: feel === x.k ? "#f5f2ea" : "var(--color-print)",
-                  cursor: "pointer",
-                  letterSpacing: "0.12em",
-                }}
-              >
-                {x.k}
-              </button>
-            ))}
-          </div>
-
-          <p className="so-micro" style={{ marginTop: 24, color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-            ANYTHING ELSE? · OPTIONAL
-          </p>
-          <div style={{ display: "flex", gap: 9, flexWrap: "wrap", marginTop: 12 }}>
-            {EXTRAS.map((c) => (
-              <button
-                key={c}
-                type="button"
-                onClick={() => {
-                  setPicked(c);
-                  setExtra("");
-                  setBrief(null);
-                }}
-                className="so-micro"
-                style={{
-                  border: picked === c ? "1px solid #131210" : "1px solid var(--color-sepia)",
-                  borderRadius: 999,
-                  padding: "8px 15px",
-                  background: picked === c ? "#131210" : "transparent",
-                  color: picked === c ? "#f5f2ea" : "var(--color-print)",
-                  cursor: "pointer",
-                  letterSpacing: "0.1em",
-                }}
-              >
-                {c}
-              </button>
-            ))}
-            <input
-              type="text"
-              value={extra}
-              onChange={(e) => {
-                setExtra(e.target.value);
-                setPicked(null);
-                setBrief(null);
-              }}
-              placeholder="or type your own…"
-              style={{
-                border: "1px dashed var(--color-sepia)",
-                borderRadius: 999,
-                padding: "8px 15px",
-                background: "transparent",
-                font: "inherit",
-                fontSize: 12,
-                letterSpacing: "0.08em",
-                color: "inherit",
-                outline: "none",
-                maxWidth: 220,
-              }}
-            />
-          </div>
-
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 24 }}>
-            <button
-              type="button"
-              onClick={compute}
-              style={{ background: "#131210", color: "#f5f2ea", border: 0, borderRadius: 999, padding: "11px 20px", fontWeight: 700, letterSpacing: "0.12em", fontSize: 12, cursor: "pointer" }}
-            >
-              GET A DIRECTION →
-            </button>
-            {(ind || feel || extra) && (
-              <button
-                type="button"
-                onClick={resetQuiz}
-                className="so-micro"
-                style={{ background: "none", border: 0, padding: "0 4px", cursor: "pointer", color: "var(--color-stone)", letterSpacing: "0.14em" }}
-              >
-                START OVER →
-              </button>
-            )}
-          </div>
-
-          {brief && (
-            <div key={brief.head + brief.fore} className="so-chapter-fade" style={{ marginTop: 28, borderTop: "1px solid var(--color-sepia)", paddingTop: 24 }}>
-              <p className="so-micro" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700 }}>
-                YOUR DIRECTION
-              </p>
-              <p className="so-serif" style={{ fontSize: "clamp(22px, 3vw, 32px)", margin: 0, lineHeight: 1.2 }}>
-                    {brief.head}
-                  </p>
-                  <p className="so-micro" style={{ marginTop: 12, color: "var(--color-verm)", letterSpacing: "0.14em", fontWeight: 700 }}>
-                    FOR {brief.fore.toUpperCase()}
-                  </p>
-                  <p style={{ marginTop: 10, lineHeight: 1.55, maxWidth: "56ch" }}>
-                    {brief.para}
-                  </p>
-                  <div style={{ marginTop: 18, display: "grid", gap: 12, maxWidth: "58ch" }}>
-                    <div>
-                      <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-                        THE WORLD
-                      </p>
-                      <p style={{ marginTop: 6, marginBottom: 0 }}>{brief.world.join(" · ")}</p>
-                    </div>
-                    <div>
-                      <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-                        VISUAL LANGUAGE
-                      </p>
-                      <p style={{ marginTop: 6, marginBottom: 0 }}>{brief.visual.join(" · ")}</p>
-                    </div>
-                    <div>
-                      <p className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
-                        START WITH
-                      </p>
-                      <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 6 }}>
-                        {brief.start.filter((s) => s.h !== "/logo-identity").map((s) => (
-                          <a key={s.t} className="so-link-jump" href={s.h}>
-                            {s.t} →
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ display: "flex", gap: 18, flexWrap: "wrap", alignItems: "baseline", marginTop: 20 }}>
-                    <a className="so-micro" href="/#inquiry" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700, textDecoration: "none" }}>
-                      START WITH THIS →
-                    </a>
-                    <a className="so-micro" href="/branding" style={{ color: "var(--color-verm)", letterSpacing: "0.16em", fontWeight: 700, textDecoration: "none" }}>
-                      SEE THE WHOLE WORLD →
-                    </a>
-                  </div>
-            </div>
-          )}
-        </div>
+        <DirectionQuiz
+          ind={ind} setInd={setInd} feel={feel} setFeel={setFeel}
+          extra={extra} setExtra={setExtra} picked={picked} setPicked={setPicked}
+          brief={brief} compute={compute} reset={resetQuiz}
+        />
 
         {/* Work */}
         <section id="work" className="so-bw-sec">
@@ -520,5 +331,92 @@ function LogoIdentityPage() {
       </div>
       <BookBar service="Logo + Identity" price="from $350" need="Logo / Identity" />
     </div>
+  );
+}
+
+
+type Brief = { head: string; fore: string; para: string; world: string[]; visual: string[]; start: { t: string; h: string }[] };
+
+function DirectionQuiz(p: {
+  ind: string | null; setInd: (v: string | null) => void;
+  feel: string | null; setFeel: (v: string | null) => void;
+  extra: string; setExtra: (v: string) => void;
+  picked: string | null; setPicked: (v: string | null) => void;
+  brief: Brief | null; compute: () => void; reset: () => void;
+}) {
+  const [step, setStep] = useState(0); // 0 intro, 1-3 questions, 4 result
+  const go = (n: number) => setStep(n);
+  const finish = () => { p.compute(); go(4); };
+  const restart = () => { p.reset(); go(1); };
+
+  const QS = [
+    { n: 1, q: "What do you do?", opts: INDUSTRIES.map((x) => x.k), val: p.ind, set: (v: string) => { p.setInd(v); go(2); } },
+    { n: 2, q: "How should it feel?", opts: FEELINGS.map((x) => x.k), val: p.feel, set: (v: string) => { p.setFeel(v); go(3); } },
+  ];
+
+  return (
+    <section id="direction" className="dq so-bw-sec" aria-label="Find your direction">
+      {step === 0 && (
+        <button type="button" className="dq-intro" onClick={() => go(1)}>
+          <span className="fd-quiz-k">Not sure what you want it to look like?</span>
+          <span className="fd-quiz-t">Find your direction.</span>
+          <span className="fd-quiz-d">Three quick questions, no design words needed.</span>
+          <span className="fd-quiz-b">Start the quiz <span aria-hidden="true">→</span></span>
+        </button>
+      )}
+
+      {step >= 1 && step <= 3 && (
+        <div className="dq-card so-chapter-fade" key={step}>
+          <div className="dq-top">
+            <span className="fd-quiz-k">Question {step} of 3</span>
+            <span className="dq-bar"><i style={{ width: `${(step / 3) * 100}%` }} /></span>
+          </div>
+          {step < 3 ? (
+            <>
+              <p className="fd-quiz-t">{QS[step - 1].q}</p>
+              <div className="dq-opts">
+                {QS[step - 1].opts.map((o) => (
+                  <button key={o} type="button" className={"dq-opt" + (QS[step - 1].val === o ? " is-on" : "")} onClick={() => QS[step - 1].set(o)}>
+                    {o.toLowerCase()}
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="fd-quiz-t">Anything else?</p>
+              <p className="fd-quiz-d">Optional. Pick one or type your own.</p>
+              <div className="dq-opts">
+                {EXTRAS.map((c) => (
+                  <button key={c} type="button" className={"dq-opt" + (p.picked === c ? " is-on" : "")} onClick={() => { p.setPicked(p.picked === c ? null : c); p.setExtra(""); }}>
+                    {c}
+                  </button>
+                ))}
+                <input className="dq-input" type="text" value={p.extra} placeholder="or type your own" onChange={(e) => { p.setExtra(e.target.value); p.setPicked(null); }} />
+              </div>
+              <button type="button" className="fd-quiz-b dq-go" onClick={finish}>See my direction <span aria-hidden="true">→</span></button>
+            </>
+          )}
+          <button type="button" className="dq-back" onClick={() => go(step - 1)}>← Back</button>
+        </div>
+      )}
+
+      {step === 4 && p.brief && (
+        <div className="dq-card so-chapter-fade">
+          <span className="fd-quiz-k">Your direction · for {p.brief.fore.toLowerCase()}</span>
+          <p className="fd-quiz-t dq-head">{p.brief.head}</p>
+          <p className="dq-para">{p.brief.para}</p>
+          <dl className="dq-res">
+            <div><dt>The world</dt><dd>{p.brief.world.join(" · ")}</dd></div>
+            <div><dt>Visual language</dt><dd>{p.brief.visual.join(" · ")}</dd></div>
+            <div><dt>Pairs well with</dt><dd>{p.brief.start.filter((s) => s.h !== "/logo-identity").map((s) => <a key={s.t} href={s.h}>{s.t} →</a>)}</dd></div>
+          </dl>
+          <div className="dq-end">
+            <a className="fd-quiz-b" href={bookHref("Branding", "Direction: " + p.brief.head)}>Start with this <span aria-hidden="true">→</span></a>
+            <button type="button" className="dq-back" onClick={restart}>Retake the quiz</button>
+          </div>
+        </div>
+      )}
+    </section>
   );
 }
