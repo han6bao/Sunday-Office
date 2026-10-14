@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { BeforeAfter, Checklist, Estimate, Glossary, GoodGuide, LearnMore, QuoteSlot, Slot, Timeline, Watch } from "../sunday/help-kit";
-import { BookBar, bookHref, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BookBar, bookHref, FaqList, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/websites")({
   head: () => seoHead("/websites"),
@@ -360,7 +360,6 @@ function WebsitesPage() {
 
         <Timeline label="HOW LONG IT TAKES" title="From hello to live, step by step." steps={TIMELINE} note="Your exact timeline comes with your price, before anything starts. The more you have ready (see the checklist below), the faster it goes." />
 
-        <FitPicker need="Website" question="Which one sounds like you?" options={FIT} />
 
         <Estimate
           label="BUILD YOUR ESTIMATE"
@@ -378,7 +377,6 @@ function WebsitesPage() {
           ]}
           packages={[
             { when: ["simple", "seo", "shoot"], name: "The Launch", price: "$1,400", save: "$150" },
-            { when: ["simple", "seo", "shoot", "video"], name: "The Launch + Motion", price: "$1,700", save: "$200" },
           ]}
         />
 
@@ -401,8 +399,7 @@ function WebsitesPage() {
           need="Website"
           title="Website packages."
           items={[
-            { t: "The Launch", p: "$1,400", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site", "Save $150 vs. booking separately"] },
-            { t: "The Launch + Motion", p: "$1,700", tag: "MOST COMPLETE", d: "The site, the photos and short videos to go with them.", list: ["Everything in The Launch", "A phone content day", "5 to 8 short videos for your site + Reels", "Save $200 vs. booking separately"] },
+            { t: "The Launch", p: "$1,400", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site", "Want short videos too? Add a phone content day for $300", "Save $150 vs. booking separately"] },
             { t: "The Full World", p: "from $2,900", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $400 vs. booking separately"] },
           ]}
           foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on. Every package can add the care plan with the first month free."
