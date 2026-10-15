@@ -12556,5 +12556,11 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 .sp-dodont > div { border-top: 1px solid var(--color-print); padding-top: 16px; }
 .sp-dodont ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; line-height: 1.55; }
 
+/* Websites: one pricing band with tabs */
+.wb-ptabs { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; margin-bottom: 28px; border-radius: 999px; border: 1px solid rgba(255,255,255,.35); background: rgba(255,255,255,.08); }
+.wb-ptabs button { border: 0; background: transparent; color: #f4eff7; font: inherit; font-size: 14px; padding: 9px 18px; border-radius: 999px; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.wb-ptabs button:hover { background: rgba(255,255,255,.12); }
+.wb-ptabs button.is-on { background: #fff; color: #5d4f6e; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

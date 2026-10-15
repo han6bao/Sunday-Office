@@ -240,6 +240,7 @@ export function PriceList({
   need,
   feature,
   otherLabel = "Other options",
+  top,
 }: {
   id?: string;
   label?: string;
@@ -249,11 +250,13 @@ export function PriceList({
   need?: string;
   feature?: boolean;
   otherLabel?: string;
+  top?: ReactNode;
 }) {
   const pick = feature ? items.find((x) => x.tag) ?? items[0] : null;
   const rest = pick ? items.filter((x) => x !== pick) : [];
   return (
     <section id={id} className="so-bw-sec so-pricing">
+      {top}
       <p className="so-micro">{label}</p>
       <h2 className="so-serif so-bw-h">{title}</h2>
       {pick ? (

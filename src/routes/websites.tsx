@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
-import { BeforeAfter, Checklist, Estimate, Glossary, GoodGuide, LearnMore, QuoteSlot, Slot, Timeline, Watch } from "../sunday/help-kit";
+import { BeforeAfter, Checklist, Glossary, GoodGuide, LearnMore, QuoteSlot, Slot, Timeline, Watch } from "../sunday/help-kit";
 import { BookBar, bookHref, FaqList, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 
 export const Route = createFileRoute("/websites")({
@@ -178,7 +179,6 @@ function Makeovers() {
           <a key={m.n} href={bookHref("Website", `Website makeover: ${m.t} (${m.p})`)} className={"wb-mk-card" + (m.rec ? " is-rec" : "")}>
             <span className="wb-mk-top"><span className="so-for-no">{m.n}</span><span className="wb-mk-where">{m.where}</span></span>
             <span className="wb-mk-t">{m.t}</span>
-            <span className="wb-mk-p">{m.p}</span>
             <span className="wb-mk-d">{m.d}</span>
             <ul>{m.list.map((x) => <li key={x}>{x}</li>)}</ul>
             <span className="wb-mk-go">Ask about this →</span>
@@ -186,6 +186,74 @@ function Makeovers() {
         ))}
       </div>
     </section>
+  );
+}
+
+const PRICE_TABS = [
+  { id: "pricing", t: "Websites" },
+  { id: "packages", t: "Site + photos" },
+  { id: "care", t: "After launch" },
+];
+
+function WebPricing() {
+  const [tab, setTab] = useState("pricing");
+  useEffect(() => {
+    const h = window.location.hash.replace("#", "");
+    if (PRICE_TABS.some((x) => x.id === h)) setTab(h);
+  }, []);
+  const bar = (
+    <div className="wb-ptabs" role="tablist" aria-label="Website prices">
+      {PRICE_TABS.map((x) => (
+        <button key={x.id} type="button" role="tab" aria-selected={tab === x.id} className={tab === x.id ? "is-on" : ""} onClick={() => setTab(x.id)}>{x.t}</button>
+      ))}
+    </div>
+  );
+  return (
+    <>
+      {tab === "pricing" && (
+        <PriceList
+          top={bar}
+          feature
+          need="Website"
+          title="Where websites start."
+          items={[
+            { t: "Simple site", p: "$850", d: "For businesses that need the basics done beautifully.", list: ["Research on your business + customers", "4 to 5 pages, designed + built", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
+            { t: "Simple site + SEO", p: "$1,000", tag: "RECOMMENDED", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Research into what people search in Seattle", "Page titles + descriptions", "Local search + a sitemap for Google"] },
+            { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Research + a full page plan", "Galleries or menus", "Lots of services or case studies", "A more custom build"] },
+            { t: "Landing page", p: "$450", d: "One designed page for your business, an offer or an event.", list: ["Who you are + what you offer", "Your services or prices", "A booking or inquiry button", "Built for phones, with your domain connected", "Just need a link-in-bio page? $200"] },
+            { t: "Fixes + a refresh", p: "from $250", d: "Help for the site you already have.", list: ["Broken links + new sections", "A refresh on Squarespace, Wix or Showit", "Better photos or words", "Domain, email + links connected"] },
+          ]}
+          foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each, or add the care plan for $150 a month and get up to 3 updates every month, plus hosting, backups and a seasonal refresh. You'll know the final number before anything starts."
+        />
+      )}
+      {tab === "packages" && (
+        <PriceList
+          top={bar}
+          id="packages"
+          label="PACKAGES"
+          need="Website"
+          title="Website packages."
+          items={[
+            { t: "The Launch", p: "$1,400", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site", "Want short videos too? Add a phone content day for $300", "Save $150 vs. booking separately"] },
+            { t: "The Full World", p: "from $2,900", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $400 vs. booking separately"] },
+          ]}
+          foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on. Every package can add the care plan with the first month free."
+        />
+      )}
+      {tab === "care" && (
+        <PriceList
+          top={bar}
+          id="care"
+          label="AFTER LAUNCH"
+          need="Website"
+          title="The care plan."
+          items={[
+            { t: "Care plan", p: "$150/mo", tag: "BEST VALUE", d: "Your site, looked after every month, so you never have to think about it.", list: ["Up to 3 small updates a month (worth $210 at $70 each)", "Hosting + security checks", "Backups, so nothing is ever lost", "A monthly report: visitors, booking clicks, speed + what changed", "A quarterly review: what's working, what to change next, and the numbers over 3 months", "A seasonal refresh every quarter: new photos, banners or offers", "Priority replies, within 1 business day", "Cancel anytime"] },
+          ]}
+          foot="Bundle it: add the care plan when your site launches and your first month is free. Already on monthly content? The care plan is $100 a month for you. Unused updates don't roll over, and bigger changes, like new pages, get 20% off."
+        />
+      )}
+    </>
   );
 }
 
@@ -361,61 +429,8 @@ function WebsitesPage() {
         <Timeline label="HOW LONG IT TAKES" title="From hello to live, step by step." steps={TIMELINE} note="Your exact timeline comes with your price, before anything starts. The more you have ready (see the checklist below), the faster it goes." />
 
 
-        <Estimate
-          label="BUILD YOUR ESTIMATE"
-          title="What would my site cost?"
-          need="Website"
-          base={[
-            { id: "one", t: "Landing page", d: "One designed page with a booking button", p: 450 },
-            { id: "simple", t: "Simple site", d: "4 to 5 pages, booking or inquiries", p: 850 },
-            { id: "full", t: "Full site", d: "Galleries, menus, lots of services", p: 1250, plus: true },
-          ]}
-          extras={[
-            { id: "seo", t: "Google setup (SEO)", d: "Titles, descriptions, local search", p: 150 },
-            { id: "shoot", t: "Brand photos for the site", d: "Half day, 30+ edited photos", p: 550 },
-            { id: "video", t: "Short videos", d: "A phone content day, 5 to 8 clips", p: 350 },
-          ]}
-          packages={[
-            { when: ["simple", "seo", "shoot"], name: "The Launch", price: "$1,400", save: "$150" },
-          ]}
-        />
 
-        <PriceList
-          feature
-          need="Website"
-          title="Where websites start."
-          items={[
-            { t: "Simple site", p: "$850", d: "For businesses that need the basics done beautifully.", list: ["Research on your business + customers", "4 to 5 pages, designed + built", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
-            { t: "Simple site + SEO", p: "$1,000", tag: "RECOMMENDED", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Research into what people search in Seattle", "Page titles + descriptions", "Local search + a sitemap for Google"] },
-            { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Research + a full page plan", "Galleries or menus", "Lots of services or case studies", "A more custom build"] },
-            { t: "Landing page", p: "$450", d: "One designed page for your business, an offer or an event.", list: ["Who you are + what you offer", "Your services or prices", "A booking or inquiry button", "Built for phones, with your domain connected", "Just need a link-in-bio page? $200"] },
-            { t: "Fixes + a refresh", p: "from $250", d: "Help for the site you already have.", list: ["Broken links + new sections", "A refresh on Squarespace, Wix or Showit", "Better photos or words", "Domain, email + links connected"] },
-          ]}
-          foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each, or add the care plan for $150 a month and get up to 3 updates every month, plus hosting, backups and a seasonal refresh. You'll know the final number before anything starts."
-        />
-
-        <PriceList
-          id="packages"
-          label="PACKAGES"
-          need="Website"
-          title="Website packages."
-          items={[
-            { t: "The Launch", p: "$1,400", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site", "Want short videos too? Add a phone content day for $300", "Save $150 vs. booking separately"] },
-            { t: "The Full World", p: "from $2,900", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $400 vs. booking separately"] },
-          ]}
-          foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on. Every package can add the care plan with the first month free."
-        />
-
-        <PriceList
-          id="care"
-          label="AFTER LAUNCH"
-          need="Website"
-          title="The care plan."
-          items={[
-            { t: "Care plan", p: "$150/mo", tag: "BEST VALUE", d: "Your site, looked after every month, so you never have to think about it.", list: ["Up to 3 small updates a month (worth $210 at $70 each)", "Hosting + security checks", "Backups, so nothing is ever lost", "A monthly report: visitors, booking clicks, speed + what changed", "A quarterly review: what's working, what to change next, and the numbers over 3 months", "A seasonal refresh every quarter: new photos, banners or offers", "Priority replies, within 1 business day", "Cancel anytime"] },
-          ]}
-          foot="Bundle it: add the care plan when your site launches and your first month is free. Already on monthly content? The care plan is $100 a month for you. Unused updates don't roll over, and bigger changes, like new pages, get 20% off."
-        />
+        <WebPricing />
 
 
         <LearnMore>
