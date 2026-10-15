@@ -17,6 +17,8 @@ const ROOMS = [
   { t: "Brands", tags: "Campaigns · product · food · hospitality", img: "/assets/campaigns/bar-bistro/bb-01.jpg", h: "/photography/brands" },
   { t: "Events", tags: "Nightlife · performances · live coverage", img: "/assets/campaigns/leon-thomas/night-02.jpg", h: "/photography/events" },
   { t: "Creative", tags: "Editorial · conceptual · fashion · experimental", img: "/assets/campaigns/exhibition/exh2.jpg", h: "/photography/creative" },
+  { t: "Headshots", tags: "Work · LinkedIn · actors · teams", img: "/assets/headshots/creative-01.jpg", h: "/headshots" },
+  { t: "Model digitals", tags: "For new + working models · agency-ready", img: "/assets/campaigns/ellis-digitals/ed-07.jpg", h: "/digitals" },
 ];
 
 const INCLUDED = [
@@ -84,6 +86,7 @@ function PhotographyPage() {
             <>
               Looking for a headshot? Sessions start at $150.{" "}
               <a className="so-bw-inline" href="/headshots#pricing">See headshots →</a>
+              <br />Modeling? <a className="so-bw-inline" href="/digitals">Model digitals →</a>
             </>
           }
           jumps={[
@@ -97,7 +100,7 @@ function PhotographyPage() {
 
         {/* The four rooms — the directory */}
         <section id="rooms" className="so-bw-sec" style={{ marginTop: "clamp(40px, 6vw, 64px)" }}>
-          <p className="so-micro">FOUR ROOMS · PICK ONE</p>
+          <p className="so-micro">SIX ROOMS · PICK ONE</p>
           <div className="so-ph-rooms">
             {ROOMS.map((r) => (
               <a key={r.t} href={r.h} className="so-ph-room">

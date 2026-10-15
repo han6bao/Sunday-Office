@@ -115,7 +115,7 @@ function EllisPage() {
           <p className="ed-p">I plan the shots, direct your posing and expression, keep the edit natural and help you pick the selects to send. Want a styled look too? We add it in the same session.</p>
           <div className="ed-cta">
             <a className="ed-btn" href={bookHref("Headshots", "Model digitals")}>Book your digitals →</a>
-            <a className="ed-link" href="/headshots">See headshot sessions</a>
+            <a className="ed-link" href="/digitals">How digitals work</a>
           </div>
         </section>
 

@@ -63,6 +63,11 @@ export const SEO: Record<string, Seo> = {
     description:
       "Social packs from Sunday Office: 20 posts, stories and covers in your brand, editable in Canva. Plus a simple step-by-step guide to using Canva.",
   },
+  "/digitals": {
+    title: "Model Digitals Seattle + Tacoma | Agency Digitals $350 | Sunday Office",
+    description:
+      "Model digitals for new and working models in Seattle and Tacoma: front, three-quarter, profile and full length in natural light, with direction the whole time. $350.",
+  },
   "/headshots": {
     title: "Seattle Headshot Photographer | Headshots from $150 | Sunday Office",
     description:

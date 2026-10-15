@@ -17,6 +17,7 @@ import { Route as MovingImageRouteImport } from './routes/moving-image'
 import { Route as LogoIdentityRouteImport } from './routes/logo-identity'
 import { Route as HeadshotsRouteImport } from './routes/headshots'
 import { Route as SocialPacksRouteImport } from './routes/social-packs'
+import { Route as DigitalsRouteImport } from './routes/digitals'
 import { Route as CreativeDirectionContentRouteImport } from './routes/creative-direction-content'
 import { Route as CreativeDirectionRouteImport } from './routes/creative-direction'
 import { Route as BrandingRouteImport } from './routes/branding'
@@ -92,6 +93,11 @@ const HeadshotsRoute = HeadshotsRouteImport.update({
 const SocialPacksRoute = SocialPacksRouteImport.update({
   id: '/social-packs',
   path: '/social-packs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalsRoute = DigitalsRouteImport.update({
+  id: '/digitals',
+  path: '/digitals',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreativeDirectionContentRoute =
@@ -287,6 +293,7 @@ export interface FileRoutesByFullPath {
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
   '/social-packs': typeof SocialPacksRoute
+  '/digitals': typeof DigitalsRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -333,6 +340,7 @@ export interface FileRoutesByTo {
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
   '/social-packs': typeof SocialPacksRoute
+  '/digitals': typeof DigitalsRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -380,6 +388,7 @@ export interface FileRoutesById {
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
   '/social-packs': typeof SocialPacksRoute
+  '/digitals': typeof DigitalsRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -428,6 +437,7 @@ export interface FileRouteTypes {
     | '/creative-direction-content'
     | '/headshots'
     | '/social-packs'
+    | '/digitals'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -474,6 +484,7 @@ export interface FileRouteTypes {
     | '/creative-direction-content'
     | '/headshots'
     | '/social-packs'
+    | '/digitals'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -520,6 +531,7 @@ export interface FileRouteTypes {
     | '/creative-direction-content'
     | '/headshots'
     | '/social-packs'
+    | '/digitals'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -567,6 +579,7 @@ export interface RootRouteChildren {
   CreativeDirectionContentRoute: typeof CreativeDirectionContentRoute
   HeadshotsRoute: typeof HeadshotsRoute
   SocialPacksRoute: typeof SocialPacksRoute
+  DigitalsRoute: typeof DigitalsRoute
   LogoIdentityRoute: typeof LogoIdentityRoute
   MovingImageRoute: typeof MovingImageRoute
   PrivateRoute: typeof PrivateRoute
@@ -660,6 +673,13 @@ declare module '@tanstack/react-router' {
       path: '/social-packs'
       fullPath: '/social-packs'
       preLoaderRoute: typeof SocialPacksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digitals': {
+      id: '/digitals'
+      path: '/digitals'
+      fullPath: '/digitals'
+      preLoaderRoute: typeof DigitalsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/creative-direction-content': {
@@ -937,6 +957,7 @@ const rootRouteChildren: RootRouteChildren = {
   CreativeDirectionContentRoute: CreativeDirectionContentRoute,
   HeadshotsRoute: HeadshotsRoute,
   SocialPacksRoute: SocialPacksRoute,
+  DigitalsRoute: DigitalsRoute,
   LogoIdentityRoute: LogoIdentityRoute,
   MovingImageRoute: MovingImageRoute,
   PrivateRoute: PrivateRoute,

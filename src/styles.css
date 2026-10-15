@@ -12576,3 +12576,15 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 .sq-dd { font-family: inherit !important; font-size: 15px !important; line-height: 1.6; display: block !important; color: rgba(255,255,255,.92); }
 .sq-dd a { color: #fff; border-bottom: 1px solid rgba(255,255,255,.45); text-decoration: none; }
 .sq-more { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45); font-family: "Instrument Serif", Georgia, serif; font-size: 17px; }
+
+/* Model digitals page */
+.dg-hero { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 12px; margin-top: 40px; }
+.dg-hero img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center 25%; border-radius: 6px; display: block; }
+@media (max-width: 700px) { .dg-hero { grid-template-columns: 1fr 1fr; } .dg-hero img:first-child { grid-column: 1 / -1; aspect-ratio: 4 / 5; } }
+.dg-want { margin: 12px 0 0; padding-left: 18px; display: grid; gap: 8px; line-height: 1.6; max-width: 62ch; }
+.dg-case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.dg-case img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; display: block; }
+.dg-case .so-link-jump { display: inline-block; margin-top: 16px; }
+@media (max-width: 760px) { .dg-case { grid-template-columns: 1fr; } }
+#rooms .so-ph-rooms { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+@media (max-width: 760px) { #rooms .so-ph-rooms { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
