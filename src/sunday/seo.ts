@@ -61,7 +61,7 @@ export const SEO: Record<string, Seo> = {
   "/social-packs": {
     title: "Social Packs: Canva Templates in Your Brand + How to Use Them | Sunday Office",
     description:
-      "Social packs from Sunday Office: 40+ posts, stories and covers in your brand, editable in Canva. Plus a simple step-by-step guide to using Canva.",
+      "Social packs from Sunday Office: 20 posts, stories and covers in your brand, editable in Canva. Plus a simple step-by-step guide to using Canva.",
   },
   "/headshots": {
     title: "Seattle Headshot Photographer | Headshots from $150 | Sunday Office",

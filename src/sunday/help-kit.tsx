@@ -95,7 +95,7 @@ export function Estimate({ label, title, base, extras, packages, need }: { label
       </div>
       <div className="hk-est-grid">
         <div>
-          <p className="hk-est-h">1. The site</p>
+          <p className="hk-est-h">1. Start with</p>
           {base.map((o) => (
             <button key={o.id} type="button" className={"hk-est-opt" + (b === o.id ? " is-on" : "")} onClick={() => setB(o.id)} aria-pressed={b === o.id}>
               <span className="hk-est-t">{o.t}</span>

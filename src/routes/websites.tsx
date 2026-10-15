@@ -221,7 +221,7 @@ const FIT = [
   { label: "I don't have a website yet. I need the basics: what I do, my prices and a way to book.", pick: "Simple site", price: "$850", why: "Four to five clean pages, words written with you, and booking or inquiries plugged in. Everything most service businesses need to look ready." },
   { label: "Same, and I want people searching in Seattle to find me on Google.", pick: "Simple site + SEO", price: "$1,000", why: "The same site, set up so Google understands it: page titles, descriptions, local search and a sitemap." },
   { label: "I need more: galleries, a menu, lots of services or a custom feature.", pick: "Full site", price: "from $1,250", why: "More pages and more going on. We'll map out exactly what you need first, so the price matches the site." },
-  { label: "I already have a site that needs fixing, or I only need one page.", pick: "Landing pages + fixes", price: "from $250", why: "A refresh, a repair or a single page, priced to what it actually needs. No starting over unless it makes sense." },
+  { label: "I already have a site that needs fixing, or I only need one page.", pick: "Landing page or a fix", price: "$450 / from $250", why: "A refresh, a repair or a single page, priced to what it actually needs. No starting over unless it makes sense." },
 ];
 
 const FAQ = [
@@ -366,7 +366,7 @@ function WebsitesPage() {
           title="What would my site cost?"
           need="Website"
           base={[
-            { id: "one", t: "One page", d: "A landing page or link-in-bio", p: 250, plus: true },
+            { id: "one", t: "Landing page", d: "One designed page with a booking button", p: 450 },
             { id: "simple", t: "Simple site", d: "4 to 5 pages, booking or inquiries", p: 850 },
             { id: "full", t: "Full site", d: "Galleries, menus, lots of services", p: 1250, plus: true },
           ]}
@@ -388,7 +388,8 @@ function WebsitesPage() {
             { t: "Simple site", p: "$850", d: "For businesses that need the basics done beautifully.", list: ["Research on your business + customers", "4 to 5 pages, designed + built", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
             { t: "Simple site + SEO", p: "$1,000", tag: "RECOMMENDED", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Research into what people search in Seattle", "Page titles + descriptions", "Local search + a sitemap for Google"] },
             { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Research + a full page plan", "Galleries or menus", "Lots of services or case studies", "A more custom build"] },
-            { t: "Landing pages + fixes", p: "from $250", d: "One page, or help for the site you have.", list: ["A single page", "A link-in-bio", "Fixes + a refresh", "Better photos or copy"] },
+            { t: "Landing page", p: "$450", d: "One designed page for your business, an offer or an event.", list: ["Who you are + what you offer", "Your services or prices", "A booking or inquiry button", "Built for phones, with your domain connected", "Just need a link-in-bio page? $200"] },
+            { t: "Fixes + a refresh", p: "from $250", d: "Help for the site you already have.", list: ["Broken links + new sections", "A refresh on Squarespace, Wix or Showit", "Better photos or words", "Domain, email + links connected"] },
           ]}
           foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each, or add the care plan for $150 a month and get up to 3 updates every month, plus hosting, backups and a seasonal refresh. You'll know the final number before anything starts."
         />

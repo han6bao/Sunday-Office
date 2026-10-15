@@ -64,7 +64,7 @@ const FAQ = [
   { q: "Which platforms do you work with?", a: "Instagram, TikTok, Facebook and LinkedIn. Starter covers one platform, Growth covers two plus Facebook, and Full covers all four, including a LinkedIn plan." },
   { q: "Do I get to approve things first?", a: "Always. Every template and every piece of the plan is yours to approve before anything goes out." },
   { q: "What happens to the audit price if I sign up monthly?", a: "It comes off your first month. Growth and Full include the audit free in month one." },
-  { q: "What's a social pack, and how do I use it?", a: <>It's 40+ posts, stories and covers in your brand, set up in Canva so you can post on your own. If we shoot together, your photos are already in. <a className="so-bw-inline" href="/social-packs">See how social packs work →</a></> },
+  { q: "What's a social pack, and how do I use it?", a: <>It's 20 posts, stories and covers in your brand, set up in Canva so you can post on your own. If we shoot together, your photos are already in. <a className="so-bw-inline" href="/social-packs">See how social packs work →</a></> },
   { q: "Do you post for me?", a: "On Full, I schedule and post for you. On Starter and Growth, I hand everything over ready to post, captions included, and you press publish. I don't reply to DMs or comments or run paid ads." },
   { q: "What do you need from me?", a: "A conversation about your business and who you want to reach, and access to whatever you already have. We figure out the rest together." },
   { q: "How do we know it's working?", a: "We watch what lands: saves, shares, comments and who reaches out. The next round of content gets better because of it." },
@@ -188,7 +188,7 @@ function DirectionAndContentPage() {
               rows: [
                 { t: "Content day", d: "About 2 hours on iPhone, 5 to 8 edited short videos for Reels and TikTok.", p: "$350" },
                 { t: "Photo + content day", d: "A brand photo shoot and short videos in one visit, with a shot list up front and captions for every video included. Fills your feed and your website for weeks.", p: "from $900" },
-                { t: "Social pack", d: "Everything to keep posting on your own: your brand set up in Canva, 40+ designs you edit yourself (posts, carousels, stories, Reel covers, highlight covers, a flyer, a price menu, a promo + an email header), story stickers, a caption guide and a 30 minute walkthrough. Every template approved by you first.", p: "from $350" },
+                { t: "Social pack", d: "Everything to keep posting on your own: your brand set up in Canva, 20 designs you edit yourself (posts, carousels, stories, Reel covers, highlight covers, a flyer, a price menu, a promo + an email header), story stickers, a caption guide and a 30 minute walkthrough. Every template approved by you first.", p: "from $350" },
                 { t: "Audit + strategy", d: "Know what to post and why. Free when you go monthly: it comes off your first month.", p: "from $400" },
               ],
             },

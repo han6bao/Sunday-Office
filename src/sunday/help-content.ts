@@ -48,11 +48,11 @@ export const BRANDING: HelpCfg = {
   base: [
     { id: "logo", t: "Logo", d: "A mark that works everywhere", p: 350, plus: true },
     { id: "kit", t: "Brand kit", d: "Keep your logo, get colors, type and a guide", p: 550, plus: true },
-    { id: "kitc", t: "Brand kit + Social starter", d: "The brand kit + a 15-design starter social pack in Canva", p: 750, plus: true },
+    { id: "kitc", t: "Brand kit + Social starter", d: "The brand kit + a 10-design starter social pack in Canva", p: 750, plus: true },
     { id: "world", t: "Full brand world", d: "Strategy, identity, voice and a full guide", p: 2000, plus: true },
   ],
   extras: [
-    { id: "canva", t: "Social pack", d: "40+ designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
+    { id: "canva", t: "Social pack", d: "20 designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
     { id: "shoot", t: "Brand photos", d: "Half day, 30+ edited photos", p: 550, plus: true },
     { id: "site", t: "A website for it", d: "4 to 5 pages, booking or inquiries", p: 850 },
     { id: "print", t: "Print kit", d: "A menu, an A-frame and two signs", p: 400, plus: true },
@@ -131,7 +131,7 @@ export const LOGO: HelpCfg = {
     { id: "kit", t: "Logo + brand kit", d: "Colors, type and a short guide too", p: 550, plus: true },
   ],
   extras: [
-    { id: "canva", t: "Social pack", d: "40+ designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
+    { id: "canva", t: "Social pack", d: "20 designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
     { id: "site", t: "A website for it", d: "4 to 5 pages, booking or inquiries", p: 850 },
   ],
   guideTitle: "What makes a logo work.",
@@ -181,7 +181,7 @@ export const PHOTO: HelpCfg = {
   extras: [
     { id: "dir", t: "Creative direction", d: "Concept, moodboard and styling for your shoot", p: 200 },
     { id: "phone", t: "Phone content day", d: "Short videos for Reels and TikTok", p: 350 },
-    { id: "canva", t: "Social pack", d: "40+ designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
+    { id: "canva", t: "Social pack", d: "20 designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
     { id: "site", t: "A website to put them on", d: "4 to 5 pages, booking or inquiries", p: 850 },
   ],
   prep: [
@@ -309,7 +309,7 @@ export const VIDEO: HelpCfg = {
   ],
   extras: [
     { id: "shoot", t: "Brand photos", d: "Half day, 30+ edited photos", p: 550, plus: true },
-    { id: "canva", t: "Social pack", d: "40+ designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
+    { id: "canva", t: "Social pack", d: "20 designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
   ],
   prep: [
     { t: "Where the videos will live", d: "Instagram, TikTok, your website, ads." },
@@ -386,7 +386,7 @@ export const DIRECTION: HelpCfg = {
     { id: "phone", t: "Phone content day", d: "5 to 8 short videos for Reels and TikTok", p: 350 },
     { id: "camvid", t: "Camera video", d: "60 to 90 seconds + 3 vertical cuts", p: 1500, plus: true },
     { id: "film", t: "Brand film", d: "1 to 2 minutes, cuts for every platform", p: 2500, plus: true },
-    { id: "canva", t: "Social pack", d: "40+ designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
+    { id: "canva", t: "Social pack", d: "20 designs you edit in Canva, stickers + a caption guide", p: 350, plus: true },
     { id: "audit", t: "Audit + strategy", d: "Free if you go monthly", p: 400, plus: true },
   ],
   packages: [

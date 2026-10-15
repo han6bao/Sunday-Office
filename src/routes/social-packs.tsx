@@ -171,12 +171,12 @@ function SocialPacksPage() {
           <div className="sp-sizes">
             <div>
               <p className="sp-k">Starter social pack</p>
-              <p className="sp-big">15 designs</p>
+              <p className="sp-big">10 designs</p>
               <p className="sp-d">Posts, stories + highlight covers. Comes with the brand kit + social starter and the full brand world.</p>
             </div>
             <div>
               <p className="sp-k">Full social pack</p>
-              <p className="sp-big">40+ designs · from $350</p>
+              <p className="sp-big">20 designs · from $350</p>
               <p className="sp-d">Everything above, plus stickers, a flyer, a price menu and a caption guide. You approve every design first.</p>
             </div>
           </div>

@@ -70,7 +70,7 @@ const BRAND: Record<Level, Pick> = {
 };
 
 const SITE: Record<Level, Pick> = {
-  low: { t: "Landing page", p: "from $250", why: "One clean page with your work, your prices and a way to book. A strong start you can grow.", need: "Website", more: "/websites" },
+  low: { t: "Landing page", p: "$450", why: "One clean page with your work, your prices and a way to book. A strong start you can grow.", need: "Website", more: "/websites" },
   mid: { t: "Simple site + SEO", p: "$1,000", why: "Four to five pages, words written with you, booking plugged in, and set up so people nearby can find you on Google.", need: "Website", more: "/websites" },
   high: { t: "Full site", p: "from $1,250", why: "More pages and more going on: galleries, menus, lots of services. Planned around exactly what you need.", need: "Website", more: "/websites" },
 };
@@ -141,9 +141,9 @@ const PRINT: Record<Niche, Record<Level, Pick>> = {
 };
 
 const GRAPHICS: Record<Level, Pick> = {
-  low: { t: "Social pack", p: "from $350", why: "Your brand set up in Canva with 40+ templates: posts, carousels, stories, Reel and highlight covers, a flyer and a price menu. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  mid: { t: "Social pack", p: "from $350", why: "Your brand set up in Canva with 40+ templates, stickers and a caption guide. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  high: { t: "Brand kit + Social starter", p: "from $750", why: "Your colors, fonts and voice set first, then 15 starter templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
+  low: { t: "Social pack", p: "from $350", why: "Your brand set up in Canva with 20 templates: posts, carousels, stories, Reel and highlight covers, a flyer and a price menu. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
+  mid: { t: "Social pack", p: "from $350", why: "Your brand set up in Canva with 20 templates, stickers and a caption guide. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
+  high: { t: "Brand kit + Social starter", p: "from $750", why: "Your colors, fonts and voice set first, then 10 starter templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
 };
 
 const WEBFIX: Record<Level, Pick> = {
