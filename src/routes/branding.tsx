@@ -190,10 +190,20 @@ function BrandingPage() {
             { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
             { t: "Brand kit + Social starter", p: "from $750", tag: "MOST POPULAR", d: "Your brand kit, plus a starter social pack you can edit yourself.", list: ["Everything in the brand kit", "Your logo, colors + fonts loaded into Canva", "A starter social pack: 15 designs for posts, stories + highlight covers", "A 30 minute walkthrough, plus a step-by-step Canva guide", "Want more? Upgrade to the full social pack"] },
             { t: "Full brand world", p: "from $2,000", d: "The whole world, from scratch. For a new business or a full rebrand.", list: ["A strategy call + a questionnaire about your business, customers and goals", "Audience + competitor research, so you stand apart", "A direction + moodboard you approve before any design", "3 logo concepts, refined into a full logo suite: main logo, small mark + wordmark", "Color palette, fonts and textures", "Your voice: tagline, bio, how you talk + words to avoid", "A full brand guide (PDF) so anyone can use it right", "A starter social pack (15 designs in Canva) + business card and email signature", "2 rounds of changes on every step", "Every file organized in Google Drive or Dropbox", "Add on: brand photos, the full social pack, print kit or a website"] },
-            { t: "Print + signage", p: "from $75", d: "Your brand, off the screen. Print-ready files, or I can handle the printing.", list: ["Flyers from $75", "Menus from $150", "A-frame signs from $125", "Window + wall signs from $150", "Print kit from $400: a menu, an A-frame + 2 signs, all matching (worth $575 on their own)", "Sized for your printer, with bleed + a proof you approve", "Printing quoted on request, or I'll recommend a local printer"] },
-            { t: "Social pack", p: "from $350", d: "40+ designs in your brand, ready for you to post every week.", list: ["Your brand set up in Canva", "40+ designs you edit in Canva: posts, carousels, stories, Reel + highlight covers", "Shooting with me? Your photos go right in. If not, drop in your own and the design does the rest", "A flyer, a price menu, a promo post + an email header", "Story stickers in your colors", "A caption guide in your voice", "A 30 minute walkthrough", "Every template approved by you first"] },
           ]}
-          foot={<>You'll know the number before anything starts. New to Canva? <a className="so-bw-inline" href="/social-packs">Here's how social packs work →</a></>}
+          foot="You'll know the number before anything starts. Every brand comes with its files organized and ready to use."
+        />
+
+        <PriceList
+          id="addons"
+          need="Branding"
+          label="ADD-ONS"
+          title="Take your brand further."
+          items={[
+            { t: "Social pack", p: "from $350", tag: "POST ON YOUR OWN", d: "40+ designs in your brand, ready for you to post every week.", list: ["Your brand set up in Canva", "40+ designs you edit in Canva: posts, carousels, stories, Reel + highlight covers", "Shooting with me? Your photos go right in. If not, drop in your own and the design does the rest", "A flyer, a price menu, a promo post + an email header", "Story stickers in your colors", "A caption guide in your voice", "A 30 minute walkthrough", "Every template approved by you first"] },
+            { t: "Print + signage", p: "from $75 a piece", d: "Your brand, off the screen. Print-ready files, or I can handle the printing.", list: ["Flyers from $75", "Menus from $150", "A-frame signs from $125", "Window + wall signs from $150", "Print kit from $400: a menu, an A-frame + 2 signs, all matching (worth $575 on their own)", "Sized for your printer, with bleed + a proof you approve", "Printing quoted on request, or I'll recommend a local printer"] },
+          ]}
+          foot={<>Add these to any brand, or book them on their own. New to Canva? <a className="so-bw-inline" href="/social-packs">Here's how social packs work →</a></>}
         />
 
         {/* Proof */}
