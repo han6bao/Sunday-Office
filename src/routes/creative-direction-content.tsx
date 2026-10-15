@@ -3,7 +3,9 @@ import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { HelpBottom, HelpTop } from "../sunday/help-kit";
 import { DIRECTION as DIRECTION_HELP } from "../sunday/help-content";
-import { BackHome, BookBar, CardRail, FaqList, PriceList, PriceRows, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BackHome, BookBar, CardRail, FaqList, PriceList, PriceTabs, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { ServiceQuiz } from "../sunday/service-quiz";
+import { QUIZ_CONTENT } from "../sunday/quiz-content";
 
 export const Route = createFileRoute("/creative-direction-content")({
   head: () => seoHead("/creative-direction-content"),
@@ -120,6 +122,8 @@ function DirectionAndContentPage() {
           </div>
         </section>
 
+        <ServiceQuiz c={QUIZ_CONTENT} />
+
         <HelpTop c={DIRECTION_HELP} />
 
         <ServiceSteps steps={STEPS} title="How it keeps going." />
@@ -133,18 +137,6 @@ function DirectionAndContentPage() {
           ]}
         />
 
-        <PriceList
-          id="campaigns"
-          need="Campaign"
-          label="CAMPAIGN PACKAGES"
-          title="Photo + video, planned as one."
-          items={[
-            { t: "The Drop", p: "$1,200", d: "For a launch, a promo, a new menu or a release.", list: ["Shoot direction: concept, moodboard + shot list", "A half-day photo shoot, 30+ edited photos", "A phone content day, 5 to 8 short videos", "Save $150 vs. booking separately"] },
-            { t: "The Campaign", p: "$3,200", tag: "MOST BOOKED", d: "Look like a real brand campaign, in photos and video.", list: ["Campaign direction: the plan, casting, styling + on-set direction", "A half-day photo shoot, 30+ edited photos", "A camera video, 60 to 90 seconds + 3 vertical cuts", "A phone content day for behind the scenes + Reels", "Save $400 vs. booking separately"] },
-            { t: "The Premiere", p: "from $4,900", d: "The big one: an opening, a rebrand reveal or a release.", list: ["Campaign direction from start to finish", "A full-day photo shoot", "A brand film, 1 to 2 minutes, cut for every platform", "A phone content day", "The full social pack to keep posting in the same look", "Save $600 vs. booking separately"] },
-          ]}
-          foot="Campaign packages are for brands that already have a look. Starting from scratch? The Signature adds the full brand. Every campaign is planned as one project, so the photos and video feel like the same world."
-        />
 
         <section className="so-bw-sec mw-ways" aria-label="How monthly content works">
           <p className="so-micro">HOW MONTHLY WORKS</p>
@@ -160,11 +152,17 @@ function DirectionAndContentPage() {
               <p className="mw-ways-d">Everything above, and I schedule and post it too.</p>
             </div>
           </div>
-          <p className="mw-ways-not"><b>What I don't do:</b> reply to DMs or comments, run paid ads or promise follower counts. I make the content that brings people in.</p>
+          <p className="mw-ways-not"><b>I make the assets, you stay in control.</b> Everything is made in your brand, and you decide what goes out and when. I'll guide you the whole way and teach you Canva if you've never used it. <a className="so-bw-inline" href="/social-packs">See the Canva guide →</a></p>
+          <p className="mw-ways-not"><b>What I don't do:</b> social media management. No replying to DMs or comments, no running paid ads and no promising follower counts. I make the content that brings people in.</p>
         </section>
 
+        <PriceTabs
+          label="Content prices"
+          tabs={[
+            { id: "monthly", t: "Monthly", node: (
         <PriceList
           id="monthly"
+          feature
           need="Monthly content"
           label="MONTHLY CONTENT"
           title="Content every month."
@@ -172,39 +170,61 @@ function DirectionAndContentPage() {
             { t: "Starter", p: "$600/mo", d: "An easy, affordable start.", list: ["A 1 hour pro photo shoot in month one, then every third month, plus iPhone content", "About 15 edited photos from each shoot, yours to keep", "8 posts on 1 platform", "Captions, hashtags + a 30-day plan", "3 post + 3 story templates in Canva", "Highlight covers in your colors", "A profile + bio refresh in month one", "Your photos, videos + brand files organized in Google Drive or Dropbox"] },
             { t: "Growth", p: "$1,500/mo", tag: "BEST VALUE", d: "Where accounts start to grow.", list: ["Everything in Starter, plus:", "A photo + video shoot, about 30 edited photos", "16 posts + 8 reels", "A set of stories every week", "Instagram + TikTok, plus Facebook", "Monthly trend + competitor research", "Hooks, trending audio + reel ideas", "10 post + 10 story templates, plus stickers", "A monthly calendar you approve", "A monthly results recap", "Audit + strategy free in month one"] },
             { t: "Full", p: "$2,800/mo", d: "Made and posted for you, start to finish.", list: ["Everything in Growth, plus:", "A second shoot, 50+ edited photos a month", "24 posts + 12 reels", "Stories posted for you every week", "Instagram, TikTok, Facebook + LinkedIn", "Ad-ready cuts of your best reels", "Fresh photos for your Google Business Profile", "I post for you + a monthly report and check-in", "A strategy session every quarter", "New social pack designs every month", "Priority booking for shoots"] },
+            { t: "Signature", p: "from $4,000/mo", d: "A styled campaign every month, with video and ad creative.", list: ["Everything in Full", "A styled campaign shoot every month", "Video + ad creative", "For brands that want something truly beautiful"] },
           ]}
           foot={<>Monthly plans start with a 3-month commitment, and paying all 3 months upfront saves you 10%. Every template and post is yours to approve before it goes out. Monthly clients get 20% off single one-time add-ons, like camera video (not packages, which already include their savings), and the website care plan for $100 a month instead of $150. Booked separately, the Growth shoot, templates and audit come to about $1,600, before any posts or reels. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
         />
-
-        <PriceRows
-          id="more"
-          need="Creative Direction"
-          label="OTHER WAYS TO WORK WITH ME"
-          title="More ways to work together."
-          groups={[
-            {
-              h: "Content, one time",
-              sub: "No monthly plan needed.",
-              rows: [
-                { t: "Content day", d: "About 2 hours on iPhone, 5 to 8 edited short videos for Reels and TikTok.", p: "$350" },
-                { t: "Photo + content day", d: "A brand photo shoot and short videos in one visit, with a shot list up front and captions for every video included. Fills your feed and your website for weeks.", p: "from $900" },
-                { t: "Social pack", d: "Everything to keep posting on your own: your brand set up in Canva, 20 designs you edit yourself (posts, carousels, stories, Reel covers, highlight covers, a flyer, a price menu, a promo + an email header), story stickers, a caption guide and a 30 minute walkthrough. Every template approved by you first.", p: "from $350" },
-                { t: "Audit + strategy", d: "Know what to post and why. Free when you go monthly: it comes off your first month.", p: "from $400" },
-              ],
-            },
-            {
-              h: "Creative direction",
-              sub: "The idea and the plan, for shoots, launches and teams.",
-              rows: [
-                { t: "Shoot direction", d: "Concept, moodboard, shot list and styling, and I direct on set.", p: "from $450" },
-                { t: "Campaign direction", d: "A launch, drop or event: the idea, casting, locations, rollout and a day on set.", p: "from $1,200" },
-                { t: "Direction retainer", d: "For brands with their own team. A monthly plan, and I review everything before it posts.", p: "from $550/mo" },
-                { t: "Signature", d: "A styled campaign every month, with video and ad creative.", p: "from $4,000/mo" },
-              ],
-            },
+            ) },
+            { id: "campaigns", t: "Campaigns", node: (
+        <PriceList
+          id="campaigns"
+          feature
+          need="Campaign"
+          label="CAMPAIGN PACKAGES"
+          title="Photo + video, planned as one."
+          items={[
+            { t: "The Drop", p: "$1,200", d: "For a launch, a promo, a new menu or a release.", list: ["Shoot direction: concept, moodboard + shot list", "A half-day photo shoot, 30+ edited photos", "A phone content day, 5 to 8 short videos", "Save $150 vs. booking separately"] },
+            { t: "The Campaign", p: "$3,200", tag: "MOST BOOKED", d: "Look like a real brand campaign, in photos and video.", list: ["Campaign direction: the plan, casting, styling + on-set direction", "A half-day photo shoot, 30+ edited photos", "A camera video, 60 to 90 seconds + 3 vertical cuts", "A phone content day for behind the scenes + Reels", "Save $400 vs. booking separately"] },
+            { t: "The Premiere", p: "from $4,900", d: "The big one: an opening, a rebrand reveal or a release.", list: ["Campaign direction from start to finish", "A full-day photo shoot", "A brand film, 1 to 2 minutes, cut for every platform", "A phone content day", "The full social pack to keep posting in the same look", "Save $600 vs. booking separately"] },
           ]}
-          foot={<>Everything I make for you is delivered organized in a shared Google Drive or Dropbox folder, so you can always find it. Booking a photo shoot with me? Add creative direction for $200. Campaigns I've directed: <a className="so-bw-inline" href="/campaigns/exhibition">Exhibition</a> and <a className="so-bw-inline" href="/campaigns/chitos">Chitos International</a>.</>}
+          foot="Campaign packages are for brands that already have a look. Starting from scratch? The Signature adds the full brand. Every campaign is planned as one project, so the photos and video feel like the same world."
         />
+            ) },
+            { id: "one-time", t: "One time", node: (
+        <PriceList
+          id="one-time"
+          feature
+          need="Creative Direction"
+          label="ONE TIME"
+          title="No monthly plan needed."
+          items={[
+            { t: "Content day", p: "$350", d: "About 2 hours on iPhone, 5 to 8 edited short videos for Reels and TikTok.", list: [] },
+            { t: "Photo + content day", p: "from $900", tag: "MOST COMPLETE", d: "A brand photo shoot and short videos in one visit, with a shot list up front and captions for every video included. Fills your feed and your website for weeks.", list: ["A brand photo shoot + short videos in one visit", "A shot list planned up front", "Edited photos + 5 to 8 short videos", "Captions written for every video", "Enough to post for weeks"] },
+            { t: "Social pack", p: "from $350", d: "Everything to keep posting on your own: your brand set up in Canva, 20 designs you edit yourself (posts, carousels, stories, Reel covers, highlight covers, a flyer, a price menu, a promo + an email header), story stickers, a caption guide and a 30 minute walkthrough. Every template approved by you first.", list: [] },
+            { t: "Audit + strategy", p: "from $400", d: "Know what to post and why. Free when you go monthly: it comes off your first month.", list: [] },
+          ]}
+          foot=<>Everything I make for you is delivered organized in a shared Google Drive or Dropbox folder, so you can always find it. Booking a photo shoot with me? Add creative direction for $200. Campaigns I've directed: <a className="so-bw-inline" href="/campaigns/exhibition">Exhibition</a> and <a className="so-bw-inline" href="/campaigns/chitos">Chitos International</a>.</>
+        />
+            ) },
+            { id: "direction", t: "Direction", node: (
+        <PriceList
+          id="direction"
+          feature
+          need="Creative Direction"
+          label="CREATIVE DIRECTION"
+          title="The idea and the plan."
+          items={[
+            { t: "Shoot direction", p: "from $450", d: "Concept, moodboard, shot list and styling, and I direct on set.", list: [] },
+            { t: "Campaign direction", p: "from $1,200", tag: "MOST BOOKED", d: "A launch, drop or event: the idea, casting, locations, rollout and a day on set.", list: ["The idea + the rollout plan", "Casting, locations + styling", "A shot list for photo + video", "A day on set, directing", "Works with your team or mine"] },
+            { t: "Direction retainer", p: "from $550/mo", d: "For brands with their own team. A monthly plan, and I review everything before it posts.", list: [] },
+          ]}
+          foot="For shoots, launches and teams. Booking a photo shoot with me? Add creative direction for $200."
+        />
+            ) },
+          ]}
+        />
+
+
 
         <HelpBottom c={DIRECTION_HELP} />
 

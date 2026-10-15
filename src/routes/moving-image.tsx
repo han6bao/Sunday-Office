@@ -4,6 +4,8 @@ import { SiteBar } from "../sunday/site-bar";
 import { HelpBottom, HelpTop } from "../sunday/help-kit";
 import { VIDEO } from "../sunday/help-content";
 import { BackHome, BookBar, FaqList, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { ServiceQuiz } from "../sunday/service-quiz";
+import { QUIZ_VIDEO } from "../sunday/quiz-content";
 
 export const Route = createFileRoute("/moving-image")({
   head: () => seoHead("/moving-image"),
@@ -97,6 +99,8 @@ function MovingImagePage() {
             <a className="so-micro" href="/campaigns/chutneys">SEE THE PROJECT →</a>
           </figcaption>
         </figure>
+
+        <ServiceQuiz c={QUIZ_VIDEO} />
 
         <HelpTop c={VIDEO} />
 

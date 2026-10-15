@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { cloneElement, useEffect, useRef, useState, type ReactElement, type ReactNode } from "react";
 
 /* Shared building blocks for the service pages, so every page reads the
    same way: intro, what you get, how it works, the work, one next step. */
@@ -582,4 +582,28 @@ export function PriceRows({ id, label, title, groups, need, foot }: { id?: strin
       {foot && <p className="so-bw-d so-rows-foot">{foot}</p>}
     </section>
   );
+}
+
+
+/* One pricing band with tabs, so a page shows one set of prices at a time. */
+export function PriceTabs({ tabs, label = "Prices" }: { tabs: { id: string; t: string; node: ReactElement<{ top?: ReactNode }> }[]; label?: string }) {
+  const [tab, setTab] = useState(tabs[0].id);
+  useEffect(() => {
+    const sync = () => {
+      const h = window.location.hash.replace("#", "");
+      if (tabs.some((x) => x.id === h)) setTab(h);
+    };
+    sync();
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
+  const bar = (
+    <div className="wb-ptabs" role="tablist" aria-label={label}>
+      {tabs.map((x) => (
+        <button key={x.id} type="button" role="tab" aria-selected={tab === x.id} className={tab === x.id ? "is-on" : ""} onClick={() => setTab(x.id)}>{x.t}</button>
+      ))}
+    </div>
+  );
+  const cur = tabs.find((x) => x.id === tab) ?? tabs[0];
+  return <div className="so-ptabs">{cloneElement(cur.node, { top: bar, key: cur.id } as never)}</div>;
 }

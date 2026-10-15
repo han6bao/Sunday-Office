@@ -6,6 +6,8 @@ import { BRANDING } from "../sunday/help-content";
 import { BookBar, FaqList, FitPicker, PriceList, ServiceCta, ServiceSteps } from "../sunday/service-kit";
 import { useState } from "react";
 import { AESTHETICS } from "../sunday/aesthetics";
+import { ServiceQuiz } from "../sunday/service-quiz";
+import { QUIZ_BRANDING } from "../sunday/quiz-content";
 
 export const Route = createFileRoute("/branding")({
   head: () => seoHead("/branding"),
@@ -176,6 +178,8 @@ function BrandingPage() {
             </nav>
           </div>
         </div>
+
+        <ServiceQuiz c={QUIZ_BRANDING} />
 
         <HelpTop c={BRANDING} />
 

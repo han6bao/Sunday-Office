@@ -4,6 +4,8 @@ import { SiteBar } from "../sunday/site-bar";
 import { HelpBottom, HelpTop } from "../sunday/help-kit";
 import { HEADSHOTS } from "../sunday/help-content";
 import { BookBar, CardRail, FaqList, FitPicker, PriceList, bookHref } from "../sunday/service-kit";
+import { ServiceQuiz } from "../sunday/service-quiz";
+import { QUIZ_HEADSHOTS } from "../sunday/quiz-content";
 
 export const Route = createFileRoute("/headshots")({
   head: () => seoHead("/headshots"),
@@ -110,6 +112,8 @@ function HeadshotsPage() {
             ))}
           </div>
         </div>
+
+        <ServiceQuiz c={QUIZ_HEADSHOTS} />
 
         <div style={{ scrollMarginTop: 80 }}>
           <PriceList

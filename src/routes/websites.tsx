@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { BeforeAfter, Checklist, Glossary, GoodGuide, LearnMore, QuoteSlot, Slot, Timeline, Watch } from "../sunday/help-kit";
-import { BookBar, bookHref, FaqList, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BookBar, bookHref, FaqList, ListBlock, PriceList, PriceTabs, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { ServiceQuiz } from "../sunday/service-quiz";
+import { QUIZ_WEBSITES } from "../sunday/quiz-content";
 
 export const Route = createFileRoute("/websites")({
   head: () => seoHead("/websites"),
@@ -189,30 +190,13 @@ function Makeovers() {
   );
 }
 
-const PRICE_TABS = [
-  { id: "pricing", t: "Websites" },
-  { id: "packages", t: "Site + photos" },
-  { id: "care", t: "After launch" },
-];
-
 function WebPricing() {
-  const [tab, setTab] = useState("pricing");
-  useEffect(() => {
-    const h = window.location.hash.replace("#", "");
-    if (PRICE_TABS.some((x) => x.id === h)) setTab(h);
-  }, []);
-  const bar = (
-    <div className="wb-ptabs" role="tablist" aria-label="Website prices">
-      {PRICE_TABS.map((x) => (
-        <button key={x.id} type="button" role="tab" aria-selected={tab === x.id} className={tab === x.id ? "is-on" : ""} onClick={() => setTab(x.id)}>{x.t}</button>
-      ))}
-    </div>
-  );
   return (
-    <>
-      {tab === "pricing" && (
+    <PriceTabs
+      label="Website prices"
+      tabs={[
+        { id: "pricing", t: "Websites", node: (
         <PriceList
-          top={bar}
           feature
           need="Website"
           title="Where websites start."
@@ -225,11 +209,11 @@ function WebPricing() {
           ]}
           foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each, or add the care plan for $150 a month and get up to 3 updates every month, plus hosting, backups and a seasonal refresh. You'll know the final number before anything starts."
         />
-      )}
-      {tab === "packages" && (
+        ) },
+        { id: "packages", t: "Site + photos", node: (
         <PriceList
-          top={bar}
           id="packages"
+          feature
           label="PACKAGES"
           need="Website"
           title="Website packages."
@@ -239,10 +223,9 @@ function WebPricing() {
           ]}
           foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on. Every package can add the care plan with the first month free."
         />
-      )}
-      {tab === "care" && (
+        ) },
+        { id: "care", t: "After launch", node: (
         <PriceList
-          top={bar}
           id="care"
           label="AFTER LAUNCH"
           need="Website"
@@ -252,8 +235,9 @@ function WebPricing() {
           ]}
           foot="Bundle it: add the care plan when your site launches and your first month is free. Already on monthly content? The care plan is $100 a month for you. Unused updates don't roll over, and bigger changes, like new pages, get 20% off."
         />
-      )}
-    </>
+        ) },
+      ]}
+    />
   );
 }
 
@@ -387,6 +371,8 @@ function WebsitesPage() {
           <span className="so-micro">A SITE I BUILT · ESSENTIAL BROWS STUDIO · DESKTOP + PHONE</span>
           <a className="so-micro" href="/websites/essential-brows-studio">HOW IT WAS MADE →</a>
         </div>
+
+        <ServiceQuiz c={QUIZ_WEBSITES} />
 
         <Watch label="WATCH FIRST" title="Three short videos before you decide." videos={WATCH} />
 

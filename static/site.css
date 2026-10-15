@@ -12562,5 +12562,13 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 .wb-ptabs button:hover { background: rgba(255,255,255,.12); }
 .wb-ptabs button.is-on { background: #fff; color: #5d4f6e; }
 
+/* Service quizzes */
+.sq .dq-opts { gap: 10px; }
+.sq-opt { text-transform: none !important; font-size: 17px; text-align: left; }
+.sq-price { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(22px, 2.4vw, 28px); margin: 0 0 6px; color: #fff; }
+.sq-dd { font-family: inherit !important; font-size: 15px !important; line-height: 1.6; display: block !important; color: rgba(255,255,255,.92); }
+.sq-dd a { color: #fff; border-bottom: 1px solid rgba(255,255,255,.45); text-decoration: none; }
+.sq-more { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45); font-family: "Instrument Serif", Georgia, serif; font-size: 17px; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

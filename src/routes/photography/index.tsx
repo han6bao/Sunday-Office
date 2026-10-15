@@ -4,6 +4,8 @@ import { SiteBar } from "../../sunday/site-bar";
 import { HelpBottom, HelpTop } from "../../sunday/help-kit";
 import { PHOTO } from "../../sunday/help-content";
 import { BackHome, BookBar, FaqList, FitPicker, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../../sunday/service-kit";
+import { ServiceQuiz } from "../../sunday/service-quiz";
+import { QUIZ_PHOTO } from "../../sunday/quiz-content";
 
 export const Route = createFileRoute("/photography/")({
   head: () => seoHead("/photography"),
@@ -110,6 +112,8 @@ function PhotographyPage() {
             ))}
           </div>
         </section>
+
+        <ServiceQuiz c={QUIZ_PHOTO} />
 
         <HelpTop c={PHOTO} />
 
