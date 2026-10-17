@@ -677,8 +677,8 @@ function Footer() {
         <div className="ft2-col">
           <h5 aria-hidden="true">&nbsp;</h5>
           <a className="foot-link" href={ph("/headshots")}>Headshots</a>
-          <a className="foot-link" href={ph("/moving-image")}>Moving Image</a>
-          <a className="foot-link" href={ph("/creative-direction-content")}>Creative Direction + Social</a>
+          <a className="foot-link" href={ph("/moving-image")}>Film + Commercials</a>
+          <a className="foot-link" href={ph("/creative-direction-content")}>Social + Content</a>
         </div>
         <div className="ft2-col">
           <h5>Say hello</h5>
@@ -711,10 +711,11 @@ const REEL = [
    The feed-style homepage: one idea per frame, like an Instagram post.
    ------------------------------------------------------------ */
 const FEED_SERVICES = [
-  { n: "World Building", d: "Branding + creative direction. Where every project starts.", p: "from $350", h: "/branding", big: true },
+  { n: "World Building", d: "Your brand, and the whole world around it. Where every project starts.", p: "from $350", h: "/branding", big: true },
   { n: "Websites", d: "A home for the brand that books clients while you sleep.", p: "from $850", h: "/websites", big: false },
   { n: "Photography", d: "Portraits, products, spaces and events.", p: "from $150", h: "/photography", big: false },
-  { n: "Video + social", d: "Reels, content days and monthly posting.", p: "from $350", h: "/creative-direction-content", big: false },
+  { n: "Film + Commercials", d: "Brand films, commercials and campaign video.", p: "from $1,500", h: "/moving-image", big: false },
+  { n: "Social + Content", d: "Content days, social packs and monthly content.", p: "from $350", h: "/creative-direction-content", big: false },
 ];
 
 type Link = { t: string; h: string };

@@ -221,7 +221,7 @@ function WebPricing() {
             { t: "The Launch", p: "$1,400", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site", "Want short videos too? Add a phone content day for $300", "Save $150 vs. booking separately"] },
             { t: "The Full World", p: "from $2,900", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $400 vs. booking separately"] },
           ]}
-          foot="Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on. Every package can add the care plan with the first month free."
+          foot={<>Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on. Every package can add the care plan with the first month free. Want your feed to match? <a className="so-bw-inline" href="/social-packs">Add a social pack →</a></>}
         />
         ) },
         { id: "care", t: "After launch", node: (

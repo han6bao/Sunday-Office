@@ -74,14 +74,14 @@ export const SEO: Record<string, Seo> = {
       "Professional and creative headshots in Seattle by Hana. Sessions from $150, with direction the whole time so you look like yourself.",
   },
   "/moving-image": {
-    title: "Seattle Video Production: Brand Films, Commercials + Reels | Sunday Office",
+    title: "Seattle Commercials + Brand Films | Film + Commercials | Sunday Office",
     description:
-      "Seattle video for brands and artists: commercials, brand films, music content, reels and event recaps from Sunday Office.",
+      "Seattle commercials, brand films and campaign video for local businesses and artists. Camera video from $1,500, brand films from $2,500.",
   },
   "/creative-direction-content": {
-    title: "Creative Direction + Social Media Content Seattle | Sunday Office",
+    title: "Social Media Content Seattle | Social + Content | Sunday Office",
     description:
-      "Seattle creative direction and social media content: audits, strategy, social packs editable in Canva and monthly content plans from $600 a month.",
+      "Seattle social media content: content days, short videos, social packs editable in Canva and monthly content plans from $600 a month. I make the assets, you stay in control.",
   },
 
   /* Case studies */

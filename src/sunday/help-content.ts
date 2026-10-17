@@ -267,7 +267,7 @@ export const VIDEO: HelpCfg = {
   hero: "/assets/campaigns/jaydyn-f/jd-04.jpg",
   heroCap: "JAYDYN F. · RELEASE CONTENT",
   reel: "A 30 second reel of videos I've made",
-  need: "Video / Moving Image",
+  need: "Film + Commercials",
   noun: "Video",
   videos: [
     { t: "60 seconds: why video works", d: "People stop scrolling for movement." },

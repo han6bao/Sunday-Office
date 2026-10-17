@@ -3,7 +3,7 @@ import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { HelpBottom, HelpTop } from "../sunday/help-kit";
 import { VIDEO } from "../sunday/help-content";
-import { BackHome, BookBar, FaqList, ListBlock, PriceList, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
+import { BackHome, BookBar, FaqList, ListBlock, PriceList, PriceTabs, ServiceCta, ServiceIntro, ServiceSteps, WorkCards } from "../sunday/service-kit";
 import { ServiceQuiz } from "../sunday/service-quiz";
 import { QUIZ_VIDEO } from "../sunday/quiz-content";
 
@@ -73,13 +73,12 @@ function MovingImagePage() {
       <SiteBar />
       <div className="so-shell" style={{ paddingTop: 96, paddingBottom: 96 }}>
         <ServiceIntro
-          label="SERVICES · MOVING IMAGE · SEATTLE"
-          title="Moving Image."
-          lead="Commercials, music content, brand films and event recaps. Video for when the idea needs to move, made to keep working long after it's posted."
+          label="SERVICES · FILM + COMMERCIALS · SEATTLE"
+          title="Film + Commercials."
+          lead="Commercials, brand films and campaign video. Polished pieces for your website, ads and launches, made to keep working long after they're posted."
           aside={
             <>
-              Often paired with <a className="so-bw-inline" href="/photography">Photography →</a> and{" "}
-              <a className="so-bw-inline" href="/creative-direction-content">Creative Direction →</a>
+              Need Reels and short videos for your feed? <a className="so-bw-inline" href="/creative-direction-content">Social + Content →</a>
             </>
           }
           jumps={[
@@ -114,15 +113,39 @@ function MovingImagePage() {
 
         <ServiceQuiz c={QUIZ_VIDEO} />
 
+        <PriceTabs
+          label="Film prices"
+          tabs={[
+            { id: "pricing", t: "Film", node: (
         <PriceList
-          need="Video / Moving Image"
-          title="Where video starts."
+          id="pricing"
+          feature
+          need="Film + Commercials"
+          title="Where film starts."
           items={[
-            { t: "Phone content day", p: "$350", d: "Quick, natural content for Reels and TikTok.", list: ["An idea + shot list first", "About 2 hours on iPhone", "5 to 8 short vertical videos", "Edited with captions"] },
             { t: "Camera video", p: "from $1,500", d: "Polished video on pro cameras.", list: ["An idea + shot list first", "Half-day shoot with a videographer I direct", "1 hero video, 60 to 90 seconds, color graded with music", "3 vertical cuts for social"] },
-            { t: "Brand film or commercial", p: "from $2,500", d: "The big one.", list: ["Idea, script + shot list", "Full-day shoot", "A 1 to 2 minute film", "Cuts for every platform"] },
+            { t: "Brand film or commercial", p: "from $2,500", tag: "THE BIG ONE", d: "For your website, an ad or a launch.", list: ["Idea, script + shot list", "Casting, location + styling planned with you", "Full-day shoot, directed on set", "A 1 to 2 minute film", "Cuts for every platform"] },
+            { t: "Campaign direction", p: "from $1,200", d: "Already have a crew? I'll direct it.", list: ["The idea + the rollout plan", "Casting, locations + styling", "A shot list for photo + video", "A day on set, directing"] },
           ]}
-          foot="You'll know the final number before anything is booked."
+          foot={<>You'll know the final number before anything is booked. Just need Reels and short videos? That's a phone content day, on <a className="so-bw-inline" href="/creative-direction-content">Social + Content →</a></>}
+        />
+            ) },
+            { id: "campaigns", t: "Campaigns", node: (
+        <PriceList
+          id="campaigns"
+          feature
+          need="Campaign"
+          label="CAMPAIGN PACKAGES"
+          title="Photo + video, planned as one."
+          items={[
+            { t: "The Drop", p: "$1,200", d: "For a launch, a promo, a new menu or a release.", list: ["Shoot direction: concept, moodboard + shot list", "A half-day photo shoot, 30+ edited photos", "A phone content day, 5 to 8 short videos", "Save $150 vs. booking separately"] },
+            { t: "The Campaign", p: "$3,200", tag: "MOST BOOKED", d: "Look like a real brand campaign, in photos and video.", list: ["Campaign direction: the plan, casting, styling + on-set direction", "A half-day photo shoot, 30+ edited photos", "A camera video, 60 to 90 seconds + 3 vertical cuts", "A phone content day for behind the scenes + Reels", "Save $400 vs. booking separately"] },
+            { t: "The Premiere", p: "from $4,900", d: "The big one: an opening, a rebrand reveal or a release.", list: ["Campaign direction from start to finish", "A full-day photo shoot", "A brand film, 1 to 2 minutes, cut for every platform", "A phone content day", "The full social pack to keep posting in the same look", "Save $600 vs. booking separately"] },
+          ]}
+          foot="Campaign packages are for brands that already have a look. Starting from scratch? The Signature adds the full brand. Every campaign is planned as one project, so the photos and video feel like the same world."
+        />
+            ) },
+          ]}
         />
 
         <HelpBottom c={VIDEO} />
@@ -131,7 +154,7 @@ function MovingImagePage() {
 
         <ServiceCta current="moving" title="Have something that should move?" sub="ITS OWN PROJECT, OR PART OF A BIGGER CAMPAIGN." />
       </div>
-      <BookBar service="Moving Image" price="from $350" need="Video / Moving Image" />
+      <BookBar service="Film + Commercials" price="from $1,500" need="Film + Commercials" />
     </div>
   );
 }

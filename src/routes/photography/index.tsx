@@ -158,7 +158,7 @@ function PhotographyPage() {
             { t: "Event coverage", p: "$150/hr", d: "Two-hour minimum.", list: ["A quick call before the event", "The moments that matter", "Edited + ready to post"] },
             { t: "Creative or editorial", p: "from $550", d: "For campaigns, artists and ideas.", list: ["Concept + moodboard included", "Styling + art direction", "Edited by hand"] },
           ]}
-          foot="You'll know the final number before anything is booked."
+          foot={<>You'll know the final number before anything is booked. Want the shoot planned for you? Add creative direction for $200: concept, styling, props and posing. Need short videos for your feed too? <a className="so-bw-inline" href="/creative-direction-content">Social + Content →</a></>}
         />
 
         <HelpBottom c={PHOTO} />

@@ -3,7 +3,7 @@ import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { HelpBottom, HelpTop } from "../sunday/help-kit";
 import { BRANDING } from "../sunday/help-content";
-import { BookBar, FaqList, FitPicker, PriceList, ServiceCta, ServiceSteps } from "../sunday/service-kit";
+import { BookBar, FaqList, FitPicker, PriceList, PriceTabs, ServiceCta, ServiceSteps } from "../sunday/service-kit";
 import { useState } from "react";
 import { AESTHETICS } from "../sunday/aesthetics";
 import { ServiceQuiz } from "../sunday/service-quiz";
@@ -166,14 +166,14 @@ function BrandingPage() {
             <p className="so-bw-d" style={{ marginTop: 0, maxWidth: "44ch" }}>
               This is where most projects start, whether you're new or ready
               for a brand makeover. Build the world once, and everything after
-              it gets easier to make.
+              it gets easier to make. Just need a logo?{" "}
+              <a className="so-bw-inline" href="/logo-identity">Logo + Identity →</a>
             </p>
             <nav className="so-bw-jump" aria-label="On this page">
-              <a href="#included">What's included</a>
-              <a href="#how">How it works</a>
-              <a href="#fit">Which one fits</a>
-              <a href="#pricing">Pricing + print</a>
               <a href="#built">Work</a>
+              <a href="#how">How it works</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#world">The whole world</a>
               <a href="#faq">Questions</a>
             </nav>
           </div>
@@ -209,7 +209,12 @@ function BrandingPage() {
 
         <ServiceQuiz c={QUIZ_BRANDING} />
 
+        <PriceTabs
+          label="Branding prices"
+          tabs={[
+            { id: "pricing", t: "Brand", node: (
         <PriceList
+          id="pricing"
           need="Branding"
           title="Where branding starts."
           feature
@@ -221,7 +226,8 @@ function BrandingPage() {
           ]}
           foot="You'll know the number before anything starts. Every brand comes with its files organized and ready to use."
         />
-
+            ) },
+            { id: "addons", t: "Add-ons", node: (
         <PriceList
           id="addons"
           need="Branding"
@@ -232,6 +238,24 @@ function BrandingPage() {
             { t: "Print + signage", p: "from $75 a piece", d: "Your brand, off the screen. Print-ready files, or I can handle the printing.", list: ["Flyers from $75", "Menus from $150", "A-frame signs from $125", "Window + wall signs from $150", "Print kit from $400: a menu, an A-frame + 2 signs, all matching (worth $575 on their own)", "Sized for your printer, with bleed + a proof you approve", "Printing quoted on request, or I'll recommend a local printer"] },
           ]}
           foot={<>Add these to any brand, or book them on their own. New to Canva? <a className="so-bw-inline" href="/social-packs">Here's how social packs work →</a></>}
+        />
+            ) },
+            { id: "world", t: "The whole world", node: (
+        <PriceList
+          id="world"
+          feature
+          need="Branding"
+          label="THE WHOLE WORLD"
+          title="Brand, site and content, built as one."
+          items={[
+            { t: "The Refresh", p: "from $1,300", d: "A makeover for a business that's open and ready to look sharper.", list: ["A half-day brand photo shoot", "A phone content day, 5 to 8 short videos", "A website refresh or a new landing page", "A social pack in your look, editable in Canva", "Save $200 vs. booking separately"] },
+            { t: "The Opening", p: "from $4,200", tag: "FULL BUILD", d: "Everything you need to open, or reopen, like a premium brand.", list: ["A full custom website", "Brand kit + a starter social pack", "A half-day brand photo shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Your first month of ready-to-post content", "A launch strategy session", "Save $850 vs. booking separately"] },
+            { t: "The Signature", p: "from $7,800", d: "A complete brand build or rebrand, with campaign-level content.", list: ["Everything in The Opening, upgraded:", "The full brand world instead of the brand kit", "Campaign direction + a styled campaign shoot", "A brand film, cut for every platform", "A phone content day + a rollout plan", "Save $1,400 vs. booking separately"] },
+          ]}
+          foot="Every piece is planned together, so the brand, the site, the photos and the posts all feel like the same world."
+        />
+            ) },
+          ]}
         />
 
         {/* Why it matters — short, with the optional personal note + the generator */}

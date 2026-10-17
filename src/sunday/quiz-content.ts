@@ -62,7 +62,7 @@ export const QUIZ_PHOTO: QuizCfg = {
     { t: "Headshots", rec: { t: "Headshots", p: "from $150", why: "One clean headshot, more looks to rotate, or a whole personal brand set. Direction the whole time, so you look like yourself.", more: { t: "Headshot sessions", h: "/headshots" } } },
     { t: "Model digitals for agencies", rec: { t: "Model digitals", p: "$375", why: "The full agency set in natural light: front, three-quarter, profile and full length, with a natural edit and help picking your selects.", more: { t: "Model digitals", h: "/digitals" } } },
     { t: "An event", rec: { t: "Event coverage", p: "$150/hour", why: "Candids, details and the room, with a 2-hour minimum. Sneak peeks in 48 hours.", more: { t: "Events", h: "/photography/events" } } },
-    { t: "Photos and video together", rec: { t: "The Drop", p: "$1,200", why: "Shoot direction, a half-day photo shoot and a phone content day, planned as one so everything matches.", more: { t: "Campaign packages", h: "/creative-direction-content#campaigns" } } },
+    { t: "Photos and video together", rec: { t: "The Drop", p: "$1,200", why: "Shoot direction, a half-day photo shoot and a phone content day, planned as one so everything matches.", more: { t: "Campaign packages", h: "/moving-image#campaigns" } } },
   ],
   howQ: "Do you know the look you want?",
   how: [
@@ -102,17 +102,17 @@ export const QUIZ_HEADSHOTS: QuizCfg = {
 };
 
 export const QUIZ_VIDEO: QuizCfg = {
-  need: "Video / Moving Image",
+  need: "Film + Commercials",
   kicker: "Not sure what kind of video?",
   title: "Find the right video.",
   sub: "Three quick questions, one clear starting point.",
   who: WHO_BIZ,
   whatQ: "What do you need video for?",
   what: [
-    { t: "Short videos for Reels and TikTok", rec: { t: "Phone content day", p: "$350", why: "About 2 hours on iPhone, 5 to 8 short vertical videos, edited with captions.", more: { t: "See prices", h: "/moving-image#pricing" } } },
+    { t: "Short videos for Reels and TikTok", rec: { t: "Phone content day", p: "$350", why: "About 2 hours on iPhone, 5 to 8 short vertical videos, edited with captions.", more: { t: "Social + Content", h: "/creative-direction-content" } } },
     { t: "A polished video for my site or an ad", rec: { t: "Camera video", p: "from $1,500", why: "A half-day shoot with a videographer I direct: one hero video of 60 to 90 seconds plus 3 vertical cuts.", more: { t: "See prices", h: "/moving-image#pricing" } } },
     { t: "A brand film or commercial", rec: { t: "Brand film", p: "from $2,500", why: "Idea, script and shot list, a full-day shoot and a 1 to 2 minute film cut for every platform.", more: { t: "See prices", h: "/moving-image#pricing" } } },
-    { t: "Photos and video for a launch", rec: { t: "The Campaign", p: "$3,200", why: "Campaign direction, a photo shoot, a camera video and a phone content day, planned as one. Saves $400.", more: { t: "Campaign packages", h: "/creative-direction-content#campaigns" } } },
+    { t: "Photos and video for a launch", rec: { t: "The Campaign", p: "$3,200", why: "Campaign direction, a photo shoot, a camera video and a phone content day, planned as one. Saves $400.", more: { t: "Campaign packages", h: "/moving-image#campaigns" } } },
     { t: "Fresh video every month", rec: { t: "Growth plan", p: "$1,500/mo", why: "A photo + video shoot each month, 16 posts and 8 Reels, captions written and handed over ready to post.", more: { t: "Monthly content", h: "/creative-direction-content#monthly" } } },
   ],
   howQ: "Who posts it?",
@@ -125,7 +125,7 @@ export const QUIZ_VIDEO: QuizCfg = {
 };
 
 export const QUIZ_CONTENT: QuizCfg = {
-  need: "Creative Direction",
+  need: "Social Media / Content",
   kicker: "Not sure what you need for social?",
   title: "Find your content fit.",
   sub: "Three quick questions. Then you'll know exactly where to start.",

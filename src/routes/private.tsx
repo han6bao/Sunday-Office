@@ -37,8 +37,8 @@ const ROOMS: { t: string; h: string }[] = [
   { t: "Photography", h: "/photography" },
   { t: "Websites", h: "/websites" },
   { t: "Build a World", h: "/branding" },
-  { t: "Creative Direction + Social", h: "/creative-direction-content" },
-  { t: "Moving Image", h: "/moving-image" },
+  { t: "Social + Content", h: "/creative-direction-content" },
+  { t: "Film + Commercials", h: "/moving-image" },
   { t: "Logo + Identity", h: "/logo-identity" },
   { t: "Headshots", h: "/headshots" },
 ];

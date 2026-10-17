@@ -39,8 +39,8 @@ const SERVICES: { t: string; href: string }[] = [
   { t: "Websites", href: "/websites" },
   { t: "Photography", href: "/photography" },
   { t: "Headshots", href: "/headshots" },
-  { t: "Moving Image", href: "/moving-image" },
-  { t: "Creative Direction + Social", href: "/creative-direction-content" },
+  { t: "Film + Commercials", href: "/moving-image" },
+  { t: "Social + Content", href: "/creative-direction-content" },
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

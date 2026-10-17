@@ -8,8 +8,8 @@ export const SERVICES_NAV = [
   { k: "logo", t: "Logo + Identity", h: "/logo-identity" },
   { k: "websites", t: "Websites + Digital", h: "/websites" },
   { k: "photography", t: "Photography", h: "/photography" },
-  { k: "moving", t: "Moving Image", h: "/moving-image" },
-  { k: "direction", t: "Creative Direction + Social", h: "/creative-direction-content" },
+  { k: "moving", t: "Film + Commercials", h: "/moving-image" },
+  { k: "direction", t: "Social + Content", h: "/creative-direction-content" },
 ];
 
 export type Step = { t: string; d: string; more?: string };
@@ -113,8 +113,8 @@ const NEED_FOR: Record<string, string> = {
   websites: "Website",
   photography: "Photography",
   headshots: "Headshots",
-  moving: "Video / Moving Image",
-  direction: "Creative Direction",
+  moving: "Film + Commercials",
+  direction: "Social Media / Content",
 };
 
 const NEXT = [
