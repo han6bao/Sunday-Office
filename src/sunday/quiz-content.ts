@@ -60,7 +60,7 @@ export const QUIZ_PHOTO: QuizCfg = {
     { t: "My brand: website, socials, menus", rec: { t: "Brand photography", p: "from $550", why: "A half-day shoot with 30+ edited photos of your space, your work, your product and your people. Planned with a shot list so nothing gets missed.", more: { t: "Brand photography", h: "/photography/brands" } } },
     { t: "A styled, creative shoot", rec: { t: "Creative + editorial shoot", p: "from $550", why: "A concept and moodboard first, then a styled shoot with direction the whole time. For artists, releases and anything that should look like a campaign.", more: { t: "Creative work", h: "/photography/creative" } } },
     { t: "Headshots", rec: { t: "Headshots", p: "from $150", why: "One clean headshot, more looks to rotate, or a whole personal brand set. Direction the whole time, so you look like yourself.", more: { t: "Headshot sessions", h: "/headshots" } } },
-    { t: "Model digitals for agencies", rec: { t: "Model digitals", p: "$350", why: "The full agency set in natural light: front, three-quarter, profile and full length, with a natural edit and help picking your selects.", more: { t: "Model digitals", h: "/digitals" } } },
+    { t: "Model digitals for agencies", rec: { t: "Model digitals", p: "$375", why: "The full agency set in natural light: front, three-quarter, profile and full length, with a natural edit and help picking your selects.", more: { t: "Model digitals", h: "/digitals" } } },
     { t: "An event", rec: { t: "Event coverage", p: "$150/hour", why: "Candids, details and the room, with a 2-hour minimum. Sneak peeks in 48 hours.", more: { t: "Events", h: "/photography/events" } } },
     { t: "Photos and video together", rec: { t: "The Drop", p: "$1,200", why: "Shoot direction, a half-day photo shoot and a phone content day, planned as one so everything matches.", more: { t: "Campaign packages", h: "/creative-direction-content#campaigns" } } },
   ],
@@ -89,7 +89,7 @@ export const QUIZ_HEADSHOTS: QuizCfg = {
   what: [
     { t: "One great photo", rec: { t: "Standard", p: "$150", why: "One look and one finished photo, with direction the whole time. Quick and easy.", more: { t: "See sessions", h: "/headshots#pricing" } } },
     { t: "A few looks to rotate", rec: { t: "More looks", p: "$350", why: "Two outfits and five finished photos, about $70 a photo. The best value.", more: { t: "See sessions", h: "/headshots#pricing" } } },
-    { t: "Digitals for agencies", rec: { t: "Model digitals", p: "$350", why: "Front, three-quarter, profile and full length in natural light, plus a styled look if you want range.", more: { t: "Model digitals", h: "/digitals" } } },
+    { t: "Digitals for agencies", rec: { t: "Model digitals", p: "$375", why: "Front, three-quarter, profile and full length in natural light, plus a styled look if you want range.", more: { t: "Model digitals", h: "/digitals" } } },
     { t: "A whole personal brand set", rec: { t: "Personal branding", p: "from $550", why: "A planning call and moodboard, more looks and setups, and a bigger gallery for your site and socials.", more: { t: "See sessions", h: "/headshots#pricing" } } },
     { t: "Headshots for my team", rec: { t: "Team headshots", p: "Quoted per team", why: "Same light and background for everyone, shot at your office or the studio. Tell me how many people.", more: { t: "See sessions", h: "/headshots#pricing" } } },
   ],
