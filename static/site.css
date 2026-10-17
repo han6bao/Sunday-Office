@@ -12621,5 +12621,17 @@ body:not(:has(.fd-page)) .so-bw-sec:not(.so-pricing):not(.dq) > .so-micro:first-
 body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; }
 .so-hs-kind-copy .so-link-jump { display: inline-block; margin-top: 14px; }
 
+/* Quizzes: black cards everywhere */
+.dq-intro, .dq-card { background: #161413 !important; border-color: rgba(255,255,255,.12) !important; box-shadow: 0 18px 50px rgba(21,18,19,.18); }
+.dq-intro:hover, .dq-intro:focus-visible { filter: none; background: #1d1a18 !important; }
+.dq-intro .fd-quiz-b, .dq-card .fd-quiz-b { background: #f4efe8; color: #161413; }
+.dq-intro:hover .fd-quiz-b { background: #fff; }
+.dq-opt.is-on { background: #f4efe8; color: #161413; border-color: #f4efe8; }
+.dq-opt { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.28); }
+.dq-opt:hover { background: rgba(255,255,255,.1); }
+.fd-quiz-card { background: #161413 !important; border-color: rgba(255,255,255,.12) !important; }
+.fd-quiz-card:hover, .fd-quiz-card:focus-visible { background: #1d1a18 !important; }
+.fd-quiz-card .fd-quiz-b { background: #f4efe8; color: #161413; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
