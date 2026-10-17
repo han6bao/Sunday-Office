@@ -1080,11 +1080,15 @@ function FeedWork() {
       <div className="fd-row" role="list" ref={rowRef}>
         {shown.map(({ w, i }) => (
           <button key={w.t} type="button" role="listitem" className="fd-tile" onClick={() => setOpen(i)}>
-            <img src={w.src} alt={w.alt} loading="lazy" />
-            {/progress/i.test(w.w) && <span className="so-status so-status-on-card is-rec">In progress</span>}
-            <span className="fd-ct">{w.t}</span>
-            <span className="fd-cw">{w.w}</span>
-            {w.r && <span className="fd-cr">{w.r}</span>}
+            <span className="fd-wmedia">
+              <img src={w.src} alt={w.alt} loading="lazy" />
+              {/progress/i.test(w.w) && <span className="so-status so-status-on-card is-rec">In progress</span>}
+              <span className="fd-wcap">
+                <span className="fd-ct">{w.t}</span>
+                <span className="fd-cw">{w.w}</span>
+                {w.r && <span className="fd-cr">{w.r}</span>}
+              </span>
+            </span>
             <span className="fd-tags">{tags(w.t).map((x) => <span key={x}>{x}</span>)}</span>
           </button>
         ))}

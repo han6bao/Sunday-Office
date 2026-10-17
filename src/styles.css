@@ -12661,3 +12661,16 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 #work .fd-row .fd-tile .fd-tags { height: auto !important; overflow: visible !important; padding: 1px; flex-wrap: nowrap; }
 #work .fd-row .fd-tile .fd-tags span { line-height: 1.2; white-space: nowrap; }
 #work .fd-row { padding-bottom: 6px; }
+
+/* Selected work tiles: caption sits inside the photo, tags below, nothing overlaps */
+#work .fd-row .fd-tile { display: flex !important; flex-direction: column; align-items: stretch; height: auto !important; }
+#work .fd-row .fd-tile::after { display: none !important; }
+#work .fd-row .fd-tile .fd-wmedia { position: relative; display: block; overflow: hidden; width: 100%; }
+#work .fd-row .fd-tile .fd-wmedia img { position: static !important; width: 100%; object-fit: cover; inset: auto !important; }
+#work .fd-row .fd-tile .fd-wcap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; flex-direction: column; gap: 4px; padding: 56px 18px 16px; text-align: left;
+  background: linear-gradient(to bottom, transparent, rgba(46,30,20,.72)); pointer-events: none; }
+#work .fd-row .fd-tile .fd-wcap .fd-ct, #work .fd-row .fd-tile .fd-wcap .fd-cw, #work .fd-row .fd-tile .fd-wcap .fd-cr { position: static !important; inset: auto !important; transform: none !important; margin: 0 !important; max-width: none !important; }
+#work .fd-row .fd-tile .fd-wcap .fd-cr { margin-top: 4px !important; line-height: 1.5; }
+#work .fd-row .fd-tile .fd-tags { margin-top: 12px !important; }
+#work .fd-row { scrollbar-width: none; }
+#work .fd-row::-webkit-scrollbar { display: none; }
