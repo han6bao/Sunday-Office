@@ -129,8 +129,8 @@ function DirectionAndContentPage() {
         <WorkCards
           label="CONTENT I'VE MADE"
           items={[
-            { t: "Exhibition", w: "Creative direction + social", d: "A campaign built from the idea outward.", img: "/assets/campaigns/exhibition/exh12.jpg", h: "/campaigns/exhibition" },
             { t: "Leon Thomas × Vice", w: "Event content", d: "His tour afterparty at Vice Seattle, shot for the venue to post.", img: "/assets/campaigns/leon-thomas/lt-03.jpg", h: "/campaigns/leon-thomas" },
+            { t: "Exhibition", w: "Creative direction + social", d: "A campaign built from the idea outward.", img: "/assets/campaigns/exhibition/exh12.jpg", h: "/campaigns/exhibition" },
             { t: "Jaydyn F.", w: "Artist social", d: "BTS, clips and stills that kept him visible between drops.", img: "/assets/campaigns/jaydyn-f/jd-thumb.jpg", h: "/campaigns/jaydyn-f" },
           ]}
         />
