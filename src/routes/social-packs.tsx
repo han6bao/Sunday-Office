@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { seoHead } from "../sunday/seo";
 import { SiteBar } from "../sunday/site-bar";
 import { BookBar, FaqList, bookHref } from "../sunday/service-kit";
@@ -121,6 +121,25 @@ const FAQ = [
   { q: "Will you show me how?", a: "Yes. Every pack comes with a 30 minute walkthrough, plus this page whenever you need it." },
 ];
 
+/* A photo spot. Drop a file with this name into /public/assets/social-packs/
+   and it shows up here; until then a quiet placeholder holds the space. */
+function Pic({ name, label, ratio = "4 / 5", className = "" }: { name: string; label: string; ratio?: string; className?: string }) {
+  const src = `/assets/social-packs/${name}`;
+  const [ok, setOk] = useState(false);
+  useEffect(() => {
+    const im = new Image();
+    im.onload = () => setOk(true);
+    im.src = src;
+  }, [src]);
+  return (
+    <figure className={"sp-pic " + className} style={{ aspectRatio: ratio }}>
+      {ok ? <img src={src} alt={label} loading="lazy" /> : (
+        <span className="sp-pic-empty"><span>{label}</span><code>{name}</code></span>
+      )}
+    </figure>
+  );
+}
+
 function SocialPacksPage() {
   const [dev, setDev] = useState<"desk" | "phone">("desk");
   const [done, setDone] = useState<number[]>([]);
@@ -156,6 +175,8 @@ function SocialPacksPage() {
           </div>
         </div>
 
+        <Pic name="hero.jpg" label="Your social pack, all together" ratio="16 / 8" className="sp-pic-hero" />
+
         {/* What's inside */}
         <section id="in-pack" className="so-bw-sec">
           <p className="so-micro">WHAT'S INSIDE</p>
@@ -167,6 +188,11 @@ function SocialPacksPage() {
                 <p className="sp-d">{x.d}</p>
               </div>
             ))}
+          </div>
+          <div className="sp-pics3">
+            <Pic name="posts.jpg" label="Posts" />
+            <Pic name="stories.jpg" label="Stories" ratio="9 / 16" />
+            <Pic name="covers.jpg" label="Reel + highlight covers" />
           </div>
           <div className="sp-sizes">
             <div>
@@ -191,11 +217,13 @@ function SocialPacksPage() {
               <p className="mw-ways-k">Shooting with me</p>
               <p className="mw-ways-t">Your photos, already in.</p>
               <p className="mw-ways-d">I place the best shots from your shoot right into the designs, so many of them are ready to post the day you get them.</p>
+              <Pic name="with-shoot.jpg" label="A design with photos from our shoot" />
             </div>
             <div>
               <p className="mw-ways-k">Using your own</p>
               <p className="mw-ways-t">Drop them in.</p>
               <p className="mw-ways-d">Some designs have photo spots for your own pictures. I build the graphics around them, and you drop your photo in. It takes seconds.</p>
+              <Pic name="your-own.jpg" label="A design with an empty photo spot" />
             </div>
           </div>
           <p className="so-micro" style={{ marginTop: 34 }}>WHAT MAKES A GOOD PHOTO</p>
@@ -211,6 +239,7 @@ function SocialPacksPage() {
           <p className="so-micro">WHAT CANVA IS</p>
           <h2 className="so-serif so-bw-h">A free design app, made for everyone.</h2>
           <p className="sp-lead">Canva is where your social pack lives. Think of it like a photo editor where everything is already designed for you. You just change the picture and the words.</p>
+          <Pic name="canva.jpg" label="What Canva looks like when you open it" ratio="16 / 9" className="sp-pic-wide" />
           <div className="sp-three">
             {WHAT.map((x) => (
               <div key={x.t}>
@@ -245,6 +274,9 @@ function SocialPacksPage() {
                   <p className="sp-d">{dev === "desk" ? s.desk : s.phone}</p>
                   {s.tip && <p className="sp-tip">{s.tip}</p>}
                 </div>
+                {dev === "desk"
+                  ? <Pic key={`d${i}`} name={`step-${String(i + 1).padStart(2, "0")}-computer.png`} label={`Step ${i + 1} on a computer`} ratio="16 / 10" className="sp-pic-step" />
+                  : <Pic key={`p${i}`} name={`step-${String(i + 1).padStart(2, "0")}-phone.png`} label={`Step ${i + 1} on a phone`} ratio="9 / 16" className="sp-pic-step is-phone" />}
               </li>
             ))}
           </ol>
