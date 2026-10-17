@@ -127,11 +127,11 @@ function DirectionAndContentPage() {
         <ServiceSteps steps={STEPS} title="How it keeps going." />
 
         <WorkCards
-          label="DIRECTION + CONTENT I'VE DONE"
+          label="CONTENT I'VE MADE"
           items={[
             { t: "Exhibition", w: "Creative direction + social", d: "A campaign built from the idea outward.", img: "/assets/campaigns/exhibition/exh12.jpg", h: "/campaigns/exhibition" },
+            { t: "Leon Thomas × Vice", w: "Event content", d: "His tour afterparty at Vice Seattle, shot for the venue to post.", img: "/assets/campaigns/leon-thomas/lt-03.jpg", h: "/campaigns/leon-thomas" },
             { t: "Jaydyn F.", w: "Artist social", d: "BTS, clips and stills that kept him visible between drops.", img: "/assets/campaigns/jaydyn-f/jd-thumb.jpg", h: "/campaigns/jaydyn-f" },
-            { t: "Selaras Haus", w: "Interior photography", d: "Angie Tiara's skin, scalp and makeup boutique.", img: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", h: "/campaigns/selaras-haus" },
           ]}
         />
 

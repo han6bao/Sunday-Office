@@ -1027,7 +1027,7 @@ const WORK_TAGS: Record<string, string[]> = {
   "Timber & Tonic": ["Websites"],
   "Selaras Haus": ["Photography", "Content"],
   Ellis: ["Photography", "Headshots"],
-  "Leon Thomas × Vice": ["Photography"],
+  "Leon Thomas × Vice": ["Photography", "Content"],
   Exhibition: ["Photography", "Direction"],
   "Studio headshots": ["Headshots"],
   "Nine Vicious × Custom Grillz": ["Content", "Photography"],
