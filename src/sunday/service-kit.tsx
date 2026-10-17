@@ -526,7 +526,12 @@ export function BookBar({ service, price, need }: { service: string; price?: str
     const on = () => {
       const end = document.querySelector(".so-bw-cta, .so-hs-close");
       const endTop = end ? end.getBoundingClientRect().top : Infinity;
-      setShow(window.scrollY > 640 && endTop > window.innerHeight * 0.9);
+      // stay out of the way wherever a section already has its own button
+      const busy = [...document.querySelectorAll(".so-pricing, .sq, .hk-est, .so-madeby")].some((el) => {
+        const r = el.getBoundingClientRect();
+        return r.top < window.innerHeight * 0.85 && r.bottom > window.innerHeight * 0.15;
+      });
+      setShow(window.scrollY > window.innerHeight * 0.9 && endTop > window.innerHeight * 0.9 && !busy);
     };
     on();
     window.addEventListener("scroll", on, { passive: true });

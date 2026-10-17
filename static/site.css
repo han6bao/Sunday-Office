@@ -12582,5 +12582,44 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 #rooms .so-ph-rooms { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
 @media (max-width: 760px) { #rooms .so-ph-rooms { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
 
+/* ===== Premium pass 3: calmer rhythm, ink headings, one quiet booking button ===== */
+/* rhythm: one even gap between sections instead of margin + double padding */
+body:not(:has(.fd-page)) .so-shell > .so-bw-sec:not(.so-pricing),
+body:not(:has(.fd-page)) .so-shell > div > .so-bw-sec:not(.so-pricing),
+body:not(:has(.fd-page)) .hk-more-body > .so-bw-sec { padding-block: 0 !important; }
+body:not(:has(.fd-page)) .so-shell > .so-bw-sec,
+body:not(:has(.fd-page)) .so-shell > div > .so-bw-sec:not(.so-pricing),
+body:not(:has(.fd-page)) .so-shell > figure,
+body:not(:has(.fd-page)) .so-shell > .so-ptabs,
+body:not(:has(.fd-page)) .so-shell > .so-bw-cta { margin-top: clamp(96px, 10vw, 152px) !important; }
+body:not(:has(.fd-page)) .so-shell > .so-bw-sec.so-pricing { padding-block: clamp(80px, 8vw, 120px) !important; }
+body:not(:has(.fd-page)) .so-shell > .so-bw-sec.so-pricing + .so-bw-sec.so-pricing { margin-top: calc(-1 * clamp(40px, 6vw, 80px)) !important; padding-top: 0 !important; }
+body:not(:has(.fd-page)) .so-ptabs > .so-bw-sec.so-pricing { margin-top: 0 !important; padding-block: clamp(80px, 8vw, 120px) !important; }
+body:not(:has(.fd-page)) .so-shell > .hk-hero { margin-top: clamp(56px, 6vw, 88px) !important; }
+
+/* type: ink headings, readable body */
+body:not(:has(.fd-page)) .so-shell > h1.so-serif,
+body:not(:has(.fd-page)) .so-bw-sec:not(.so-pricing):not(.dq) .so-bw-h,
+body:not(:has(.fd-page)) .so-bw-sec:not(.so-pricing):not(.dq) h2.so-serif { color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; }
+body:not(:has(.fd-page)) .so-shell > h1.so-serif { font-size: clamp(52px, 8.4vw, 120px) !important; letter-spacing: -.02em; line-height: .95; }
+body:not(:has(.fd-page)) .so-bw-h { max-width: 18ch; }
+body:not(:has(.fd-page)) .so-bw-sec:not(.so-pricing):not(.dq) > .so-micro:first-child { color: #8a7f74; margin-bottom: 4px; }
+.hk-p, .so-madeby-p, .so-for-d, .hk-get-d, .hk-watch-d, .so-bw-d, .sp-d, .wb-mk-d, .so-row-d { color: #5a524b; }
+.so-bw-intro-lead { color: #1f1b19 !important; font-weight: 300; font-size: clamp(18px, 1.6vw, 22px) !important; line-height: 1.55 !important; }
+
+/* images: one soft, consistent finish */
+.hk-hero img, .so-li-shot img, .so-bw-card-img img, .hk-work-card img, .dg-hero img, .dg-case img, .so-madeby > img { border-radius: 4px; }
+.hk-hero figcaption { margin-top: 14px; color: #8a7f74; }
+
+/* booking bar: small, bottom right, only when nothing else is asking */
+.so-bookbar { left: auto; right: clamp(16px, 3vw, 32px); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateY(140%); padding: 6px 6px 6px 18px; gap: 14px;
+  background: rgba(27, 25, 24, .88); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(21, 18, 19, .22); }
+.so-bookbar.is-on { transform: translateY(0); }
+.so-bookbar-t { font-size: 13px; }
+.so-bookbar a { padding: 9px 16px; font-size: 13px; font-weight: 500; }
+@media (max-width: 640px) { .so-bookbar { left: 16px; right: 16px; justify-content: space-between; } }
+body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; }
+.so-hs-kind-copy .so-link-jump { display: inline-block; margin-top: 14px; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

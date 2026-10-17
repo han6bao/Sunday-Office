@@ -79,6 +79,7 @@ const KINDS = [
     d: "Clean full-length and close-up shots from the front and sides, in natural light. For agencies, casting and booking.",
     feel: "Nothing extra, so agencies see exactly what you look like.",
     imgs: [],
+    href: "/digitals",
   },
 ];
 
@@ -141,6 +142,7 @@ function HeadshotsPage() {
                   <p className="so-hs-kind-lead">{k.lead}</p>
                   <p className="so-bw-d">{k.d}</p>
                   <p className="so-hs-feel">{k.feel}</p>
+                  {"href" in k && k.href && <a className="so-link-jump" href={k.href}>See model digitals →</a>}
                 </div>
                 {k.imgs.length > 0 && (
                   <div className={"so-hs-kind-imgs n" + k.imgs.length}>

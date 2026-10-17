@@ -122,8 +122,6 @@ function DirectionAndContentPage() {
           </div>
         </section>
 
-        <ServiceQuiz c={QUIZ_CONTENT} />
-
         <HelpTop c={DIRECTION_HELP} />
 
         <ServiceSteps steps={STEPS} title="How it keeps going." />
@@ -137,6 +135,8 @@ function DirectionAndContentPage() {
           ]}
         />
 
+
+        <ServiceQuiz c={QUIZ_CONTENT} />
 
         <section className="so-bw-sec mw-ways" aria-label="How monthly content works">
           <p className="so-micro">HOW MONTHLY WORKS</p>

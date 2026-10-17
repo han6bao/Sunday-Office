@@ -179,11 +179,35 @@ function BrandingPage() {
           </div>
         </div>
 
-        <ServiceQuiz c={QUIZ_BRANDING} />
+        <HelpTop c={BRANDING} afterHero={<>
+        {/* Proof */}
+        <section id="built" className="so-bw-sec">
+          <p className="so-micro">WORLDS WE'VE BUILT</p>
+          <div className="so-bw-work" style={{ gridTemplateColumns: `repeat(${BUILT.length}, minmax(0, 1fr))` }}>
+            {BUILT.map((b) => {
+              const ext = b.h.startsWith("http");
+              return (
+                <a key={b.c} href={b.h} className="so-bw-card" target={ext ? "_blank" : undefined} rel={ext ? "noreferrer" : undefined}>
+                  <span className="so-bw-card-img">
+                    <img src={b.img} alt={b.c} loading="lazy" />
+                    {"s" in b && b.s && <span className={"so-status so-status-on-card" + (/progress/i.test(b.s) ? " is-rec" : "")}>{b.s}</span>}
+                  </span>
+                  <span className="so-micro so-bw-card-w">{b.w}</span>
+                  <span className="so-bw-card-c">
+                    {b.c} <span className="arr" aria-hidden>↗</span>
+                  </span>
+                  <span className="so-bw-d">{b.note}</span>
+                </a>
+              );
+            })}
+          </div>
+        </section>
 
-        <HelpTop c={BRANDING} />
+        </>} />
 
         <ServiceSteps steps={STEPS} title="How a world gets built." />
+
+        <ServiceQuiz c={QUIZ_BRANDING} />
 
         <PriceList
           need="Branding"
@@ -209,29 +233,6 @@ function BrandingPage() {
           ]}
           foot={<>Add these to any brand, or book them on their own. New to Canva? <a className="so-bw-inline" href="/social-packs">Here's how social packs work →</a></>}
         />
-
-        {/* Proof */}
-        <section id="built" className="so-bw-sec">
-          <p className="so-micro">WORLDS WE'VE BUILT</p>
-          <div className="so-bw-work" style={{ gridTemplateColumns: `repeat(${BUILT.length}, minmax(0, 1fr))` }}>
-            {BUILT.map((b) => {
-              const ext = b.h.startsWith("http");
-              return (
-                <a key={b.c} href={b.h} className="so-bw-card" target={ext ? "_blank" : undefined} rel={ext ? "noreferrer" : undefined}>
-                  <span className="so-bw-card-img">
-                    <img src={b.img} alt={b.c} loading="lazy" />
-                    {"s" in b && b.s && <span className={"so-status so-status-on-card" + (/progress/i.test(b.s) ? " is-rec" : "")}>{b.s}</span>}
-                  </span>
-                  <span className="so-micro so-bw-card-w">{b.w}</span>
-                  <span className="so-bw-card-c">
-                    {b.c} <span className="arr" aria-hidden>↗</span>
-                  </span>
-                  <span className="so-bw-d">{b.note}</span>
-                </a>
-              );
-            })}
-          </div>
-        </section>
 
         {/* Why it matters — short, with the optional personal note + the generator */}
         <section className="so-bw-sec so-bw-why">

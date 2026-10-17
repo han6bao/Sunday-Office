@@ -100,8 +100,6 @@ function MovingImagePage() {
           </figcaption>
         </figure>
 
-        <ServiceQuiz c={QUIZ_VIDEO} />
-
         <HelpTop c={VIDEO} />
 
         <ServiceSteps steps={STEPS} title="From idea to every cut." />
@@ -113,6 +111,8 @@ function MovingImagePage() {
             { t: "Jaydyn F.", w: "Release content", d: "Behind the scenes and short clips around his music.", img: "/assets/campaigns/jaydyn-f/jd-07.jpg", h: "/campaigns/jaydyn-f" },
           ]}
         />
+
+        <ServiceQuiz c={QUIZ_VIDEO} />
 
         <PriceList
           need="Video / Moving Image"

@@ -15,11 +15,6 @@ export const BRANDING: HelpCfg = {
     { t: "Files, organized", d: "All of it in Google Drive or Dropbox, labeled." },
     { t: "Help using it", d: "A walkthrough so you know where everything goes." },
   ],
-  work: [
-    { t: "Jazmin's Events", w: "Brand guide · in progress", img: "/assets/campaigns/jazmins-events/kit-guide.jpg", h: "/websites/jazmins-events" },
-    { t: "Essential Brows", w: "Brand kit", img: "/assets/campaigns/essential-brows-studio/brand-kit.jpg", h: "/websites/essential-brows-studio" },
-    { t: "Pilates Haus", w: "Brand kit + website", img: "/assets/campaigns/pilates-haus-cover.png", h: "https://pilates-haus-seattle.vercel.app/" },
-  ],
   need: "Branding",
   noun: "Branding",
   videos: [
@@ -96,11 +91,6 @@ export const LOGO: HelpCfg = {
     { t: "Small mark", d: "For profile pictures, stamps and favicons." },
     { t: "Light + dark", d: "Versions that work on any background." },
     { t: "Every file type", d: "PNG, SVG and PDF, labeled so you can find them." },
-  ],
-  work: [
-    { t: "Jazmin's Events", w: "Monogram + wordmark", img: "/assets/campaigns/jazmins-events/je-monogram-black.svg", h: "/websites/jazmins-events" },
-    { t: "Essential Brows", w: "Wordmark", img: "/assets/work/essential-logo.png", h: "/websites/essential-brows-studio" },
-    { t: "Pilates Haus", w: "Brand kit around their logo", img: "/assets/campaigns/pilates-haus-cover.png", h: "https://pilates-haus-seattle.vercel.app/" },
   ],
   need: "Logo / Identity",
   noun: "Logo",

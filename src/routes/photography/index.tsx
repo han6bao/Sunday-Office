@@ -116,8 +116,6 @@ function PhotographyPage() {
           </div>
         </section>
 
-        <ServiceQuiz c={QUIZ_PHOTO} />
-
         <HelpTop c={PHOTO} />
 
         <ServiceSteps steps={STEPS} title="How a shoot comes together." />
@@ -147,6 +145,8 @@ function PhotographyPage() {
             ))}
           </div>
         </section>
+
+        <ServiceQuiz c={QUIZ_PHOTO} />
 
         <PriceList
           need="Photography"

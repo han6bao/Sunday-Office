@@ -250,7 +250,7 @@ export type HelpCfg = {
   words: { w: string; d: string }[];
 };
 
-export function HelpTop({ c }: { c: HelpCfg }) {
+export function HelpTop({ c, afterHero }: { c: HelpCfg; afterHero?: ReactNode }) {
   return (
     <>
       {c.hero && (
@@ -259,13 +259,7 @@ export function HelpTop({ c }: { c: HelpCfg }) {
           {c.heroCap && <figcaption className="so-micro">{c.heroCap}</figcaption>}
         </figure>
       )}
-      <section className="so-bw-sec hk-reel">
-        <Slot kind="video" label={c.reel ?? `A 30 second reel of ${c.noun.toLowerCase()} work`} note="Plays on its own, no sound needed" ratio="21 / 9" />
-        <div className="hk-reel-cta">
-          <a className="so-for-go" href={bookHref(c.need)}>Start a project →</a>
-          <a className="hk-reel-alt" href="#estimate">See what it would cost ↓</a>
-        </div>
-      </section>
+      {afterHero}
       <Watch label="WATCH FIRST" title="Three short videos before you decide." videos={c.videos} />
       <section id="for" className="so-bw-sec so-for">
         <p className="so-micro">WHO THIS IS FOR</p>
@@ -279,7 +273,6 @@ export function HelpTop({ c }: { c: HelpCfg }) {
             </li>
           ))}
         </ol>
-        <a className="so-for-go" href={bookHref(c.need)}>Start a project →</a>
       </section>
       {c.get && (
         <section className="so-bw-sec hk-get">

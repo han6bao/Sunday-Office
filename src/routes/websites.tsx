@@ -372,8 +372,6 @@ function WebsitesPage() {
           <a className="so-micro" href="/websites/essential-brows-studio">HOW IT WAS MADE →</a>
         </div>
 
-        <ServiceQuiz c={QUIZ_WEBSITES} />
-
         <Watch label="WATCH FIRST" title="Three short videos before you decide." videos={WATCH} />
 
         <ForWho />
@@ -415,6 +413,8 @@ function WebsitesPage() {
         <Timeline label="HOW LONG IT TAKES" title="From hello to live, step by step." steps={TIMELINE} note="Your exact timeline comes with your price, before anything starts. The more you have ready (see the checklist below), the faster it goes." />
 
 
+
+        <ServiceQuiz c={QUIZ_WEBSITES} />
 
         <WebPricing />
 
