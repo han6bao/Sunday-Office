@@ -12681,3 +12681,30 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
   .bn-strip::-webkit-scrollbar { display: none; }
   .bn-strip figure { flex: 0 0 78%; scroll-snap-align: start; }
 }
+
+/* Mobile footer: tagline, five services, then how to reach me */
+@media (max-width: 640px) {
+  .ft2-top { grid-template-columns: 1fr !important; gap: 22px !important; }
+  .ft2-top > * { border-top: 0 !important; padding-top: 0 !important; }
+  .ft2-line { font-size: 26px !important; padding-bottom: 6px; }
+  .ft2-hm { display: none !important; }
+  .ft2-col h5 { display: none !important; }
+  .ft2-col:nth-child(2), .ft2-col:nth-child(3) { display: contents; }
+  .ft2-top { display: flex !important; flex-direction: column; }
+  .ft2-col .foot-link { margin: 0 !important; }
+  .ft2-col:nth-child(2) .foot-link, .ft2-col:nth-child(3) .foot-link { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1.5; }
+  .ft2-col:nth-child(4) { border-top: 1px solid rgba(244,239,247,.32) !important; padding-top: 18px !important; margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+  .ft2-col:nth-child(4) .foot-link { font-size: 15px; }
+}
+
+/* Meet Hana on phones: cover centered, number tucked behind the name */
+@media (max-width: 860px) {
+  .fd-page .fd-bio .bio-cover { justify-self: stretch !important; margin-inline: auto !important; width: min(300px, 100%) !important; max-width: none !important; }
+  .fd-page .fd-bio .bio-side .fd-script::after { font-size: 96px !important; bottom: .3em !important; }
+}
+@media (max-width: 640px) {
+  .ft2-top { gap: 0 !important; }
+  .ft2-line { margin-bottom: 18px !important; }
+  .ft2-col:nth-child(4) { margin-top: 22px !important; }
+}
+@media (max-width: 640px) { footer .ft2-top .ft2-col h5 { display: none !important; } }
