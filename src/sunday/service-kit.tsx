@@ -84,7 +84,7 @@ export function WorkCards({ id = "work", label, items }: { id?: string; label: s
   return (
     <section id={id} className="so-bw-sec">
       <p className="so-micro">{label}</p>
-      <div className="so-bw-work" style={{ gridTemplateColumns: `repeat(${Math.min(items.length, 3)}, minmax(0, 1fr))` }}>
+      <div className="so-bw-work" style={{ gridTemplateColumns: `repeat(${items.length === 4 ? 2 : Math.min(items.length, 3)}, minmax(0, 1fr))` }}>
         {items.map((b) => {
           const ext = b.h.startsWith("http");
           return (

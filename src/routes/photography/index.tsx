@@ -123,7 +123,8 @@ function PhotographyPage() {
         <WorkCards
           label="SHOOTS I'VE DONE"
           items={[
-            { t: "Leon Thomas × Vice", w: "Event coverage", d: "The Mutts Don't Heel afterparty in Seattle.", img: "/assets/campaigns/leon-thomas/night-02.jpg", h: "/campaigns/leon-thomas" },
+            { t: "Leon Thomas × Vice", w: "Event coverage", d: "The Mutts Don't Heel afterparty in Seattle.", img: "/assets/campaigns/leon-thomas/lt-01.jpg", h: "/campaigns/leon-thomas" },
+            { t: "Nine Vicious × Custom Grillz", w: "Artist portraits", d: "Featured by Our Generation Music, and fans made it their profile picture.", img: "/assets/campaigns/green-grillz/nine-01.jpg", h: "/campaigns/green-grillz" },
             { t: "Chutneys Bellevue", w: "Food + promo photos", d: "The plates, the room and the color of the food.", img: "/assets/campaigns/chutneys/ch-02.jpg", h: "/campaigns/chutneys" },
             { t: "Avery Tien", w: "Portraits", d: "Portraits that look like the person in them.", img: "/assets/photography/avery-02.jpg", h: "/campaigns/avery-tien" },
           ]}

@@ -130,6 +130,7 @@ function DirectionAndContentPage() {
           label="CONTENT I'VE MADE"
           items={[
             { t: "Leon Thomas × Vice", w: "Event content", d: "His tour afterparty at Vice Seattle, shot for the venue to post.", img: "/assets/campaigns/leon-thomas/lt-03.jpg", h: "/campaigns/leon-thomas" },
+            { t: "Nine Vicious × Custom Grillz", w: "Photography + promotion", d: "35K views, the Discovery page and a feature by Our Generation Music.", img: "/assets/campaigns/green-grillz/nine-01.jpg", h: "/campaigns/green-grillz" },
             { t: "Exhibition", w: "Creative direction + social", d: "A campaign built from the idea outward.", img: "/assets/campaigns/exhibition/exh12.jpg", h: "/campaigns/exhibition" },
             { t: "Jaydyn F.", w: "Artist social", d: "BTS, clips and stills that kept him visible between drops.", img: "/assets/campaigns/jaydyn-f/jd-thumb.jpg", h: "/campaigns/jaydyn-f" },
           ]}
