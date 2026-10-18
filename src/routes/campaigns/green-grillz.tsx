@@ -228,6 +228,21 @@ function GreenGrillzPage() {
       </BnSec>
 
       <BnNote
+        media={<img src={`${A}/press-ogm.jpg`} alt="Our Generation Music's post about Nine Vicious, using my photo of him in green grillz" loading="lazy" />}
+        label="Picked up by the culture"
+        title={
+          <>
+            A music news page used <em>my photo.</em>
+          </>
+        }
+      >
+        When Our Generation Music, a verified hip-hop news page, ran a story on Nine Vicious, they used my photo of him in the
+        red velvet jacket and green grillz. The post reached 3.9K likes, 208 comments and 97 reposts. When the culture
+        reaches for a photo to tell the story, that's the one doing the work.{" "}
+        <a className="so-bw-inline" href="https://www.instagram.com/p/DekxqKWGSKY/" target="_blank" rel="noreferrer">See the post ↗</a>
+      </BnNote>
+
+      <BnNote
         media={<img src={PHOTOS[0].src} alt={PHOTOS[0].alt} loading="lazy" />}
         label="A note on credit"
         title={
