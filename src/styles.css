@@ -12674,3 +12674,10 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 #work .fd-row .fd-tile .fd-tags { margin-top: 12px !important; }
 #work .fd-row { scrollbar-width: none; }
 #work .fd-row::-webkit-scrollbar { display: none; }
+
+/* Project photo strips on phones: one swipeable row, no leftover photo */
+@media (max-width: 900px) {
+  .bn-strip { display: flex !important; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; margin-inline: 0; padding-inline: 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .bn-strip::-webkit-scrollbar { display: none; }
+  .bn-strip figure { flex: 0 0 78%; scroll-snap-align: start; }
+}
