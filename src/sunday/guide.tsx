@@ -15,7 +15,7 @@ const roomFromHash = (): Room => {
 
 const LINKS: { n: string; t: string; d: string; href: string; ext?: boolean }[] = [
   { n: "01", t: "Start a project", d: "Tell me what you're making", href: "#inquiry" },
-  { n: "02", t: "Not sure where to start?", d: "A few quick questions, one clear answer", href: "#quiz" },
+  { n: "02", t: "What do you need help with?", d: "Free guides for new and growing businesses", href: "/help" },
   { n: "03", t: "Need a makeover?", d: "Refresh the brand, site or photos you already have", href: "#makeover" },
   { n: "04", t: "What I do", d: "Branding, websites, photography, video", href: "#build" },
   { n: "05", t: "The work", d: "Recent projects", href: "#work" },
@@ -172,7 +172,7 @@ export function Guide() {
           <ol className="gd-list">
             {LINKS.map((l, i) => (
               <li key={l.n} style={{ animationDelay: 120 + i * 70 + "ms" }}>
-                <a href={l.href} onClick={go(l.href)} {...(l.ext && l.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>
+                <a href={l.href.startsWith("/") ? pageHref(l.href) : l.href} onClick={go(l.href)} {...(l.ext && l.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>
                   <span className="gd-n">{l.n}</span>
                   <span className="gd-t">{l.t}</span>
                   <span className="gd-d">{l.d}</span>

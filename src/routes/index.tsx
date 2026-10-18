@@ -680,6 +680,7 @@ function Footer() {
           <h5>Say hello</h5>
           <a className="foot-link" href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a>
           <a className="foot-link ft2-hm" href="#office-hours">Start a project →</a>
+          <a className="foot-link" href={ph("/help")}>What do you need help with?</a>
           <a className="foot-link ft2-hm" href="#quiz">Not sure where to start?</a>
           <a className="foot-link ft2-hm" href="#links">Everything in one place</a>
           <a className="foot-link" href="https://www.instagram.com/sundayoffice.ag">@sundayoffice.ag</a>
@@ -793,8 +794,18 @@ function FeedServices() {
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
       </p>
       <div className="fd-mk">
-        <p className="fd-mk-k">Already up and running?</p>
-        <p className="fd-mk-d"><i>The Makeover.</i> Keep what works and refresh the rest, from a brand kit around your logo to a cleaner site. <a className="fd-mk-a" href="#makeover">See makeover options →</a></p>
+        <div className="fd-mk-item">
+          <p className="fd-mk-k">Just started a business?</p>
+          <p className="fd-mk-d"><i>The free guide.</i> Everything you need, in order, from your license to your first post. <a className="fd-mk-a" href={ph("/just-started")}>Open the guide →</a></p>
+        </div>
+        <div className="fd-mk-item">
+          <p className="fd-mk-k">Already up and running?</p>
+          <p className="fd-mk-d"><i>The Makeover.</i> Keep what works and refresh the rest. <a className="fd-mk-a" href={ph("/revamp-your-business")}>The revamp guide →</a> <a className="fd-mk-a" href="#makeover">Makeover options →</a></p>
+        </div>
+        <div className="fd-mk-item">
+          <p className="fd-mk-k">Know what you need?</p>
+          <p className="fd-mk-d"><i>Start there.</i> More customers, a new website, standing out, showing up on Google. <a className="fd-mk-a" href={ph("/help")}>What do you need help with? →</a></p>
+        </div>
       </div>
       <div className="fd-services">
         <p className="fd-sv-note">Start with one, or build the whole world.</p>

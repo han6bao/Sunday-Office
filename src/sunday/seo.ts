@@ -68,6 +68,96 @@ export const SEO: Record<string, Seo> = {
     description:
       "Model digitals for new and working models in Seattle and Tacoma: front, three-quarter, profile and full length in natural light, with direction the whole time.",
   },
+  "/launch-your-business": {
+    title: "Launching a Business in Seattle: Brand, Website + Photos | Sunday Office",
+    description:
+      "Starting a business in Seattle or Washington? The order to do it in: your brand, a simple website, real photos and a plan to get found. Help from Sunday Office.",
+  },
+  "/launch-a-product": {
+    title: "Product Launch Photos, Video + Content in Seattle | Sunday Office",
+    description:
+      "Launching a product, a drop or a new menu in Seattle? Plan the photos, video and posts as one campaign so it gets noticed. Creative direction by Sunday Office.",
+  },
+  "/launch-a-website": {
+    title: "Small Business Website Design in Seattle | Sunday Office",
+    description:
+      "Need your first website in Seattle? A custom, phone-first site with booking, words written with you and setup to get found on Google. Sunday Office.",
+  },
+  "/website-makeover": {
+    title: "Website Redesign + Makeover for Small Businesses in Seattle | Sunday Office",
+    description:
+      "Website looks dated or doesn't get bookings? Quick fixes, a full refresh or a rebuild in custom code for Seattle small businesses. Sunday Office.",
+  },
+  "/get-more-customers": {
+    title: "How to Get More Customers for a Small Business in Seattle | Sunday Office",
+    description:
+      "Need more leads and bookings? Get found on Google, look trustworthy at first glance and post content that brings people in. Help for Seattle small businesses.",
+  },
+  "/stand-out": {
+    title: "Stand Out From Competitors: Creative Branding in Seattle | Sunday Office",
+    description:
+      "Look like everyone else in your industry? Creative branding, photos and content that make your business recognizable. Seattle creative agency Sunday Office.",
+  },
+  "/promote-your-business": {
+    title: "Promote Your Small Business: Content + Campaigns in Seattle | Sunday Office",
+    description:
+      "Want more people to know about your business? Photos, short videos and campaigns made to be shared, plus a simple plan for where they go. Sunday Office, Seattle.",
+  },
+  "/creative-branding": {
+    title: "Creative Branding + Logo Design in Seattle | Sunday Office",
+    description:
+      "Creative branding in Seattle: logo, colors, fonts, voice and a guide, built around your business and ready to use in Canva. World building by Sunday Office.",
+  },
+  "/social-media-content": {
+    title: "Social Media Content Creation in Seattle | Sunday Office",
+    description:
+      "Creative, strategic social media content for Seattle businesses: content days, short videos, social packs and monthly content. I make the assets, you stay in control.",
+  },
+  "/photo-and-video-content": {
+    title: "Brand Photography + Video for Businesses in Seattle | Sunday Office",
+    description:
+      "Engaging brand photos, short videos and commercials for Seattle businesses, planned around where they'll be used. Photography and film by Sunday Office.",
+  },
+  "/show-up-on-google": {
+    title: "How to Show Up on Google: Local SEO for Seattle Businesses | Sunday Office",
+    description:
+      "Want your business to show up on Google in Seattle? Google Business Profile, reviews, photos and a website set up for local search. A simple guide from Sunday Office.",
+  },
+  "/for-restaurants": {
+    title: "Restaurant Photography, Menus + Websites in Seattle | Sunday Office",
+    description:
+      "Food photography, commercials, menus and websites for Seattle restaurants, caf\u00e9s and bars. Make people hungry before they walk in. Sunday Office.",
+  },
+  "/for-beauty-and-wellness": {
+    title: "Branding, Websites + Photos for Salons and Med Spas in Seattle | Sunday Office",
+    description:
+      "Websites, branding, interior photos and content for Seattle salons, spas, estheticians and med spas. Look as good as the results you deliver. Sunday Office.",
+  },
+  "/for-event-planners": {
+    title: "Branding, Websites + Event Content for Planners in Seattle | Sunday Office",
+    description:
+      "Branding, websites and event content for Seattle wedding planners, event coordinators and venues. Show the work so the next couple books. Sunday Office.",
+  },
+  "/just-started": {
+    title: "I Just Started a Business: A Step-by-Step Guide for Washington | Sunday Office",
+    description:
+      "Just started a business in Seattle or Washington? A free checklist of everything you need: licenses, brand, website, photos, Google and social, in the right order.",
+  },
+  "/revamp-your-business": {
+    title: "How to Revamp Your Business: A Rebrand + Website Makeover Guide | Sunday Office",
+    description:
+      "Business feels outdated? A free step-by-step guide to revamping your brand, website, photos and social media, and what to fix first. From Sunday Office in Seattle.",
+  },
+  "/help": {
+    title: "What Do You Need Help With? A Free Small Business Directory | Sunday Office",
+    description:
+      "Starting or growing a business in Seattle or Washington? Pick what you need: launching, a website, more customers, branding, social media, photos or Google. Free guides from Sunday Office.",
+  },
+  "/washington-business-resources": {
+    title: "Washington Small Business Resources: Licenses, Free Help + Funding | Sunday Office",
+    description:
+      "Starting a business in Washington? Where to register, get a business license, find free advising (SBDC, SCORE), funding, certification and local business groups.",
+  },
   "/headshots": {
     title: "Seattle Headshot Photographer | Sunday Office",
     description:

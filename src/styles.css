@@ -12708,3 +12708,41 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
   .ft2-col:nth-child(4) { margin-top: 22px !important; }
 }
 @media (max-width: 640px) { footer .ft2-top .ft2-col h5 { display: none !important; } }
+
+/* Need pages, free guides + help hub */
+.nd-signs { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 0 40px; }
+.nd-signs li { border-top: 1px solid var(--color-sepia); padding: 16px 0; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1.25; color: #1b1918; }
+.nd-steps { list-style: none; padding: 0; margin: 18px 0 0; }
+.nd-steps li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-top: 1px solid var(--color-sepia); }
+.nd-no { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .14em; color: #9e2b2e; padding-top: 6px; }
+.nd-note { margin: 22px 0 0; color: #5a524b; line-height: 1.6; }
+.nd-svcs { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 0 40px; margin-top: 18px; }
+.nd-svc { display: flex; flex-direction: column; gap: 4px; padding: 18px 0; border-top: 1px solid #1b1918; text-decoration: none; color: inherit; }
+.nd-svc:hover .sp-t { color: #9e2b2e; }
+.nd-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.nd-chip { font-family: "Instrument Serif", Georgia, serif; font-size: 18px; color: #1b1918; text-decoration: none; border: 1px solid var(--color-sepia); border-radius: 999px; padding: 8px 16px; transition: background-color .2s ease, color .2s ease; }
+.nd-chip:hover { background: #1b1918; color: #f4efe8; }
+.gd2-progress { display: flex; align-items: center; gap: 14px; margin-top: 30px; max-width: 520px; }
+.gd2-bar { flex: 1; height: 3px; background: rgba(43,38,34,.14); border-radius: 3px; overflow: hidden; }
+.gd2-bar i { display: block; height: 100%; background: #1b1918; transition: width .4s ease; }
+.gd2-list li { grid-template-columns: 52px minmax(0, 1fr) !important; }
+.gd2-list .sp-check { font-size: 16px; }
+.gd2-link { display: inline-block; color: #9e2b2e !important; text-decoration: none; border-bottom: 1px solid rgba(158,43,46,.35); }
+.hb-doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 18px; }
+.hb-door { display: flex; flex-direction: column; align-items: flex-start; padding: 30px 32px 32px; border-radius: 22px; background: #161413; color: #fff; text-decoration: none; transition: background-color .25s ease; }
+.hb-door:hover { background: #1d1a18; }
+.hb-door .fd-quiz-b { background: #f4efe8; color: #161413; }
+.hb-list { margin-top: 10px; }
+.hb-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--color-sepia); text-decoration: none; color: #1b1918; }
+.hb-row:last-child { border-bottom: 1px solid var(--color-sepia); }
+.hb-i { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #8a7f74; }
+.hb-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.15; }
+.hb-a { color: #9e2b2e; transition: transform .25s ease; }
+.hb-row:hover .hb-a { transform: translateX(4px); }
+.hb-row:hover .hb-t { color: #9e2b2e; }
+.hb-wa { grid-template-columns: minmax(0, 1fr) auto; }
+.wa-list { margin-top: 16px; }
+.wa-row { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; border-top: 1px solid var(--color-sepia); text-decoration: none; color: inherit; }
+.wa-row:hover .sp-t { color: #9e2b2e; }
+@media (max-width: 640px) { .hb-row { grid-template-columns: minmax(0, 1fr) auto; } .hb-i { grid-column: 1 / -1; } }
+.fd-mk-item + .fd-mk-item { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(43,38,34,.14); }

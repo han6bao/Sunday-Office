@@ -17,6 +17,24 @@ import { Route as MovingImageRouteImport } from './routes/moving-image'
 import { Route as LogoIdentityRouteImport } from './routes/logo-identity'
 import { Route as HeadshotsRouteImport } from './routes/headshots'
 import { Route as SocialPacksRouteImport } from './routes/social-packs'
+import { Route as WashingtonBusinessResourcesRouteImport } from './routes/washington-business-resources'
+import { Route as HelpRouteImport } from './routes/help'
+import { Route as RevampYourBusinessRouteImport } from './routes/revamp-your-business'
+import { Route as JustStartedRouteImport } from './routes/just-started'
+import { Route as ForEventPlannersRouteImport } from './routes/for-event-planners'
+import { Route as ForBeautyAndWellnessRouteImport } from './routes/for-beauty-and-wellness'
+import { Route as ForRestaurantsRouteImport } from './routes/for-restaurants'
+import { Route as ShowUpOnGoogleRouteImport } from './routes/show-up-on-google'
+import { Route as PhotoAndVideoContentRouteImport } from './routes/photo-and-video-content'
+import { Route as SocialMediaContentRouteImport } from './routes/social-media-content'
+import { Route as CreativeBrandingRouteImport } from './routes/creative-branding'
+import { Route as PromoteYourBusinessRouteImport } from './routes/promote-your-business'
+import { Route as StandOutRouteImport } from './routes/stand-out'
+import { Route as GetMoreCustomersRouteImport } from './routes/get-more-customers'
+import { Route as WebsiteMakeoverRouteImport } from './routes/website-makeover'
+import { Route as LaunchAWebsiteRouteImport } from './routes/launch-a-website'
+import { Route as LaunchAProductRouteImport } from './routes/launch-a-product'
+import { Route as LaunchYourBusinessRouteImport } from './routes/launch-your-business'
 import { Route as DigitalsRouteImport } from './routes/digitals'
 import { Route as CreativeDirectionContentRouteImport } from './routes/creative-direction-content'
 import { Route as CreativeDirectionRouteImport } from './routes/creative-direction'
@@ -93,6 +111,96 @@ const HeadshotsRoute = HeadshotsRouteImport.update({
 const SocialPacksRoute = SocialPacksRouteImport.update({
   id: '/social-packs',
   path: '/social-packs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WashingtonBusinessResourcesRoute = WashingtonBusinessResourcesRouteImport.update({
+  id: '/washington-business-resources',
+  path: '/washington-business-resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RevampYourBusinessRoute = RevampYourBusinessRouteImport.update({
+  id: '/revamp-your-business',
+  path: '/revamp-your-business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JustStartedRoute = JustStartedRouteImport.update({
+  id: '/just-started',
+  path: '/just-started',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForEventPlannersRoute = ForEventPlannersRouteImport.update({
+  id: '/for-event-planners',
+  path: '/for-event-planners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForBeautyAndWellnessRoute = ForBeautyAndWellnessRouteImport.update({
+  id: '/for-beauty-and-wellness',
+  path: '/for-beauty-and-wellness',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForRestaurantsRoute = ForRestaurantsRouteImport.update({
+  id: '/for-restaurants',
+  path: '/for-restaurants',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShowUpOnGoogleRoute = ShowUpOnGoogleRouteImport.update({
+  id: '/show-up-on-google',
+  path: '/show-up-on-google',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhotoAndVideoContentRoute = PhotoAndVideoContentRouteImport.update({
+  id: '/photo-and-video-content',
+  path: '/photo-and-video-content',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SocialMediaContentRoute = SocialMediaContentRouteImport.update({
+  id: '/social-media-content',
+  path: '/social-media-content',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreativeBrandingRoute = CreativeBrandingRouteImport.update({
+  id: '/creative-branding',
+  path: '/creative-branding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PromoteYourBusinessRoute = PromoteYourBusinessRouteImport.update({
+  id: '/promote-your-business',
+  path: '/promote-your-business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StandOutRoute = StandOutRouteImport.update({
+  id: '/stand-out',
+  path: '/stand-out',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetMoreCustomersRoute = GetMoreCustomersRouteImport.update({
+  id: '/get-more-customers',
+  path: '/get-more-customers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteMakeoverRoute = WebsiteMakeoverRouteImport.update({
+  id: '/website-makeover',
+  path: '/website-makeover',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaunchAWebsiteRoute = LaunchAWebsiteRouteImport.update({
+  id: '/launch-a-website',
+  path: '/launch-a-website',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaunchAProductRoute = LaunchAProductRouteImport.update({
+  id: '/launch-a-product',
+  path: '/launch-a-product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaunchYourBusinessRoute = LaunchYourBusinessRouteImport.update({
+  id: '/launch-your-business',
+  path: '/launch-your-business',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DigitalsRoute = DigitalsRouteImport.update({
@@ -293,6 +401,24 @@ export interface FileRoutesByFullPath {
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
   '/social-packs': typeof SocialPacksRoute
+  '/washington-business-resources': typeof WashingtonBusinessResourcesRoute
+  '/help': typeof HelpRoute
+  '/revamp-your-business': typeof RevampYourBusinessRoute
+  '/just-started': typeof JustStartedRoute
+  '/for-event-planners': typeof ForEventPlannersRoute
+  '/for-beauty-and-wellness': typeof ForBeautyAndWellnessRoute
+  '/for-restaurants': typeof ForRestaurantsRoute
+  '/show-up-on-google': typeof ShowUpOnGoogleRoute
+  '/photo-and-video-content': typeof PhotoAndVideoContentRoute
+  '/social-media-content': typeof SocialMediaContentRoute
+  '/creative-branding': typeof CreativeBrandingRoute
+  '/promote-your-business': typeof PromoteYourBusinessRoute
+  '/stand-out': typeof StandOutRoute
+  '/get-more-customers': typeof GetMoreCustomersRoute
+  '/website-makeover': typeof WebsiteMakeoverRoute
+  '/launch-a-website': typeof LaunchAWebsiteRoute
+  '/launch-a-product': typeof LaunchAProductRoute
+  '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
@@ -340,6 +466,24 @@ export interface FileRoutesByTo {
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
   '/social-packs': typeof SocialPacksRoute
+  '/washington-business-resources': typeof WashingtonBusinessResourcesRoute
+  '/help': typeof HelpRoute
+  '/revamp-your-business': typeof RevampYourBusinessRoute
+  '/just-started': typeof JustStartedRoute
+  '/for-event-planners': typeof ForEventPlannersRoute
+  '/for-beauty-and-wellness': typeof ForBeautyAndWellnessRoute
+  '/for-restaurants': typeof ForRestaurantsRoute
+  '/show-up-on-google': typeof ShowUpOnGoogleRoute
+  '/photo-and-video-content': typeof PhotoAndVideoContentRoute
+  '/social-media-content': typeof SocialMediaContentRoute
+  '/creative-branding': typeof CreativeBrandingRoute
+  '/promote-your-business': typeof PromoteYourBusinessRoute
+  '/stand-out': typeof StandOutRoute
+  '/get-more-customers': typeof GetMoreCustomersRoute
+  '/website-makeover': typeof WebsiteMakeoverRoute
+  '/launch-a-website': typeof LaunchAWebsiteRoute
+  '/launch-a-product': typeof LaunchAProductRoute
+  '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
@@ -388,6 +532,24 @@ export interface FileRoutesById {
   '/creative-direction-content': typeof CreativeDirectionContentRoute
   '/headshots': typeof HeadshotsRoute
   '/social-packs': typeof SocialPacksRoute
+  '/washington-business-resources': typeof WashingtonBusinessResourcesRoute
+  '/help': typeof HelpRoute
+  '/revamp-your-business': typeof RevampYourBusinessRoute
+  '/just-started': typeof JustStartedRoute
+  '/for-event-planners': typeof ForEventPlannersRoute
+  '/for-beauty-and-wellness': typeof ForBeautyAndWellnessRoute
+  '/for-restaurants': typeof ForRestaurantsRoute
+  '/show-up-on-google': typeof ShowUpOnGoogleRoute
+  '/photo-and-video-content': typeof PhotoAndVideoContentRoute
+  '/social-media-content': typeof SocialMediaContentRoute
+  '/creative-branding': typeof CreativeBrandingRoute
+  '/promote-your-business': typeof PromoteYourBusinessRoute
+  '/stand-out': typeof StandOutRoute
+  '/get-more-customers': typeof GetMoreCustomersRoute
+  '/website-makeover': typeof WebsiteMakeoverRoute
+  '/launch-a-website': typeof LaunchAWebsiteRoute
+  '/launch-a-product': typeof LaunchAProductRoute
+  '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
@@ -437,6 +599,24 @@ export interface FileRouteTypes {
     | '/creative-direction-content'
     | '/headshots'
     | '/social-packs'
+    | '/washington-business-resources'
+    | '/help'
+    | '/revamp-your-business'
+    | '/just-started'
+    | '/for-event-planners'
+    | '/for-beauty-and-wellness'
+    | '/for-restaurants'
+    | '/show-up-on-google'
+    | '/photo-and-video-content'
+    | '/social-media-content'
+    | '/creative-branding'
+    | '/promote-your-business'
+    | '/stand-out'
+    | '/get-more-customers'
+    | '/website-makeover'
+    | '/launch-a-website'
+    | '/launch-a-product'
+    | '/launch-your-business'
     | '/digitals'
     | '/logo-identity'
     | '/moving-image'
@@ -484,6 +664,24 @@ export interface FileRouteTypes {
     | '/creative-direction-content'
     | '/headshots'
     | '/social-packs'
+    | '/washington-business-resources'
+    | '/help'
+    | '/revamp-your-business'
+    | '/just-started'
+    | '/for-event-planners'
+    | '/for-beauty-and-wellness'
+    | '/for-restaurants'
+    | '/show-up-on-google'
+    | '/photo-and-video-content'
+    | '/social-media-content'
+    | '/creative-branding'
+    | '/promote-your-business'
+    | '/stand-out'
+    | '/get-more-customers'
+    | '/website-makeover'
+    | '/launch-a-website'
+    | '/launch-a-product'
+    | '/launch-your-business'
     | '/digitals'
     | '/logo-identity'
     | '/moving-image'
@@ -531,6 +729,24 @@ export interface FileRouteTypes {
     | '/creative-direction-content'
     | '/headshots'
     | '/social-packs'
+    | '/washington-business-resources'
+    | '/help'
+    | '/revamp-your-business'
+    | '/just-started'
+    | '/for-event-planners'
+    | '/for-beauty-and-wellness'
+    | '/for-restaurants'
+    | '/show-up-on-google'
+    | '/photo-and-video-content'
+    | '/social-media-content'
+    | '/creative-branding'
+    | '/promote-your-business'
+    | '/stand-out'
+    | '/get-more-customers'
+    | '/website-makeover'
+    | '/launch-a-website'
+    | '/launch-a-product'
+    | '/launch-your-business'
     | '/digitals'
     | '/logo-identity'
     | '/moving-image'
@@ -579,6 +795,24 @@ export interface RootRouteChildren {
   CreativeDirectionContentRoute: typeof CreativeDirectionContentRoute
   HeadshotsRoute: typeof HeadshotsRoute
   SocialPacksRoute: typeof SocialPacksRoute
+  WashingtonBusinessResourcesRoute: typeof WashingtonBusinessResourcesRoute
+  HelpRoute: typeof HelpRoute
+  RevampYourBusinessRoute: typeof RevampYourBusinessRoute
+  JustStartedRoute: typeof JustStartedRoute
+  ForEventPlannersRoute: typeof ForEventPlannersRoute
+  ForBeautyAndWellnessRoute: typeof ForBeautyAndWellnessRoute
+  ForRestaurantsRoute: typeof ForRestaurantsRoute
+  ShowUpOnGoogleRoute: typeof ShowUpOnGoogleRoute
+  PhotoAndVideoContentRoute: typeof PhotoAndVideoContentRoute
+  SocialMediaContentRoute: typeof SocialMediaContentRoute
+  CreativeBrandingRoute: typeof CreativeBrandingRoute
+  PromoteYourBusinessRoute: typeof PromoteYourBusinessRoute
+  StandOutRoute: typeof StandOutRoute
+  GetMoreCustomersRoute: typeof GetMoreCustomersRoute
+  WebsiteMakeoverRoute: typeof WebsiteMakeoverRoute
+  LaunchAWebsiteRoute: typeof LaunchAWebsiteRoute
+  LaunchAProductRoute: typeof LaunchAProductRoute
+  LaunchYourBusinessRoute: typeof LaunchYourBusinessRoute
   DigitalsRoute: typeof DigitalsRoute
   LogoIdentityRoute: typeof LogoIdentityRoute
   MovingImageRoute: typeof MovingImageRoute
@@ -673,6 +907,132 @@ declare module '@tanstack/react-router' {
       path: '/social-packs'
       fullPath: '/social-packs'
       preLoaderRoute: typeof SocialPacksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/washington-business-resources': {
+      id: '/washington-business-resources'
+      path: '/washington-business-resources'
+      fullPath: '/washington-business-resources'
+      preLoaderRoute: typeof WashingtonBusinessResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/revamp-your-business': {
+      id: '/revamp-your-business'
+      path: '/revamp-your-business'
+      fullPath: '/revamp-your-business'
+      preLoaderRoute: typeof RevampYourBusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/just-started': {
+      id: '/just-started'
+      path: '/just-started'
+      fullPath: '/just-started'
+      preLoaderRoute: typeof JustStartedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-event-planners': {
+      id: '/for-event-planners'
+      path: '/for-event-planners'
+      fullPath: '/for-event-planners'
+      preLoaderRoute: typeof ForEventPlannersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-beauty-and-wellness': {
+      id: '/for-beauty-and-wellness'
+      path: '/for-beauty-and-wellness'
+      fullPath: '/for-beauty-and-wellness'
+      preLoaderRoute: typeof ForBeautyAndWellnessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/for-restaurants': {
+      id: '/for-restaurants'
+      path: '/for-restaurants'
+      fullPath: '/for-restaurants'
+      preLoaderRoute: typeof ForRestaurantsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/show-up-on-google': {
+      id: '/show-up-on-google'
+      path: '/show-up-on-google'
+      fullPath: '/show-up-on-google'
+      preLoaderRoute: typeof ShowUpOnGoogleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/photo-and-video-content': {
+      id: '/photo-and-video-content'
+      path: '/photo-and-video-content'
+      fullPath: '/photo-and-video-content'
+      preLoaderRoute: typeof PhotoAndVideoContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/social-media-content': {
+      id: '/social-media-content'
+      path: '/social-media-content'
+      fullPath: '/social-media-content'
+      preLoaderRoute: typeof SocialMediaContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creative-branding': {
+      id: '/creative-branding'
+      path: '/creative-branding'
+      fullPath: '/creative-branding'
+      preLoaderRoute: typeof CreativeBrandingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/promote-your-business': {
+      id: '/promote-your-business'
+      path: '/promote-your-business'
+      fullPath: '/promote-your-business'
+      preLoaderRoute: typeof PromoteYourBusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stand-out': {
+      id: '/stand-out'
+      path: '/stand-out'
+      fullPath: '/stand-out'
+      preLoaderRoute: typeof StandOutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-more-customers': {
+      id: '/get-more-customers'
+      path: '/get-more-customers'
+      fullPath: '/get-more-customers'
+      preLoaderRoute: typeof GetMoreCustomersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-makeover': {
+      id: '/website-makeover'
+      path: '/website-makeover'
+      fullPath: '/website-makeover'
+      preLoaderRoute: typeof WebsiteMakeoverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/launch-a-website': {
+      id: '/launch-a-website'
+      path: '/launch-a-website'
+      fullPath: '/launch-a-website'
+      preLoaderRoute: typeof LaunchAWebsiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/launch-a-product': {
+      id: '/launch-a-product'
+      path: '/launch-a-product'
+      fullPath: '/launch-a-product'
+      preLoaderRoute: typeof LaunchAProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/launch-your-business': {
+      id: '/launch-your-business'
+      path: '/launch-your-business'
+      fullPath: '/launch-your-business'
+      preLoaderRoute: typeof LaunchYourBusinessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/digitals': {
@@ -957,6 +1317,24 @@ const rootRouteChildren: RootRouteChildren = {
   CreativeDirectionContentRoute: CreativeDirectionContentRoute,
   HeadshotsRoute: HeadshotsRoute,
   SocialPacksRoute: SocialPacksRoute,
+  WashingtonBusinessResourcesRoute: WashingtonBusinessResourcesRoute,
+  HelpRoute: HelpRoute,
+  RevampYourBusinessRoute: RevampYourBusinessRoute,
+  JustStartedRoute: JustStartedRoute,
+  ForEventPlannersRoute: ForEventPlannersRoute,
+  ForBeautyAndWellnessRoute: ForBeautyAndWellnessRoute,
+  ForRestaurantsRoute: ForRestaurantsRoute,
+  ShowUpOnGoogleRoute: ShowUpOnGoogleRoute,
+  PhotoAndVideoContentRoute: PhotoAndVideoContentRoute,
+  SocialMediaContentRoute: SocialMediaContentRoute,
+  CreativeBrandingRoute: CreativeBrandingRoute,
+  PromoteYourBusinessRoute: PromoteYourBusinessRoute,
+  StandOutRoute: StandOutRoute,
+  GetMoreCustomersRoute: GetMoreCustomersRoute,
+  WebsiteMakeoverRoute: WebsiteMakeoverRoute,
+  LaunchAWebsiteRoute: LaunchAWebsiteRoute,
+  LaunchAProductRoute: LaunchAProductRoute,
+  LaunchYourBusinessRoute: LaunchYourBusinessRoute,
   DigitalsRoute: DigitalsRoute,
   LogoIdentityRoute: LogoIdentityRoute,
   MovingImageRoute: MovingImageRoute,
