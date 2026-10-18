@@ -46,9 +46,9 @@ const STEPS = [
 ]
 
 const FIT = [
-  { label: "I have a logo I like, but nothing else matches yet.", pick: "Brand kit", price: "from $550", why: "We keep your logo and build the world around it: palette, type, the way you talk, and a one-page guide so everything finally matches." },
-  { label: "I'm starting from scratch, or my brand doesn't feel like me anymore.", pick: "Full brand world", price: "from $2,000", why: "Logo, identity, voice and guide made from the ground up, often with photos or a website. Priced once we know the scope." },
-  { label: "I mostly just need a logo.", pick: "Logo", price: "from $350", why: "A new logo with an icon and a wordmark, in every file you need, so it works everywhere from your sign to your profile picture." },
+  { label: "I have a logo I like, but nothing else matches yet.", pick: "Brand kit", price: "", why: "We keep your logo and build the world around it: palette, type, the way you talk, and a one-page guide so everything finally matches." },
+  { label: "I'm starting from scratch, or my brand doesn't feel like me anymore.", pick: "Full brand world", price: "", why: "Logo, identity, voice and guide made from the ground up, often with photos or a website. Priced once we know the scope." },
+  { label: "I mostly just need a logo.", pick: "Logo", price: "", why: "A new logo with an icon and a wordmark, in every file you need, so it works everywhere from your sign to your profile picture." },
 ];
 
 const FAQ = [
@@ -57,10 +57,10 @@ const FAQ = [
   { q: "I already have a logo. Do I need a new one?", a: "Usually not. If people already know it, the brand kit keeps it and builds everything else around it." },
   { q: "How long does it take?", a: "It depends on how much we're building. You'll get a timeline with your price before anything starts." },
   { q: "Do I need a website too?", a: <>Not right away. A brand works on its own, and many people add a website once the world is set. <a href="/websites">See websites →</a></> },
-  { q: "Do you design menus, signs and flyers?", a: "Yes. Flyers start at $75, menus at $150, A-frame signs at $125 and window or wall signs at $150. The print kit covers a menu, an A-frame and two signs for $400, all in your brand and ready to print." },
+  { q: "Do you design menus, signs and flyers?", a: "Yes. Flyers, menus, A-frame signs and window or wall signs, all in your brand and print-ready. The print kit bundles a menu, an A-frame and two matching signs. Ask for pricing." },
   { q: "What do I get at the end?", a: "The files for everything we made, ready to use, plus a simple guide that shows how it all fits together, so anyone you work with later can keep it consistent." },
   { q: "How many logo ideas will I see?", a: "A logo comes with 2 concepts. A full brand world comes with 3. A brand kit is built on the logo you already have, so we go straight to one direction." },
-  { q: "How many rounds of changes?", a: "Two rounds of changes are included. After that, extra rounds are $75 each." },
+  { q: "How many rounds of changes?", a: "Two rounds of changes are included. Extra rounds are available if you need them." },
   { q: "Who owns the files?", a: "You do. Your logo and brand files are yours, organized and labeled in Google Drive or Dropbox." },
   { q: "How do I pay?", a: "Half upfront to book your spot, and the other half when the work is done." },
   { q: "Will you share my project?", a: "Usually yes, on my site and Instagram, because the work is what helps the next client trust me. If you'd rather keep it private, just tell me." },
@@ -172,7 +172,7 @@ function BrandingPage() {
             <nav className="so-bw-jump" aria-label="On this page">
               <a href="#built">Work</a>
               <a href="#how">How it works</a>
-              <a href="#pricing">Pricing</a>
+              <a href="#pricing">Options</a>
               <a href="#world">The whole world</a>
               <a href="#faq">Questions</a>
             </nav>
@@ -219,10 +219,10 @@ function BrandingPage() {
           title="Where branding starts."
           feature
           items={[
-            { t: "Logo", p: "from $350", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
-            { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
-            { t: "Brand kit + Social starter", p: "from $750", tag: "MOST POPULAR", d: "Your brand kit, plus a starter social pack you can edit yourself.", list: ["Everything in the brand kit", "Your logo, colors + fonts loaded into Canva", "A starter social pack: 10 designs for posts, stories + highlight covers", "A 30 minute walkthrough, plus a step-by-step Canva guide", "Want more? Upgrade to the full social pack"] },
-            { t: "Full brand world", p: "from $2,000", d: "The whole world, from scratch. For a new business or a full rebrand.", list: ["A strategy call + a questionnaire about your business, customers and goals", "Audience + competitor research, so you stand apart", "A direction + moodboard you approve before any design", "3 logo concepts, refined into a full logo suite: main logo, small mark + wordmark", "Color palette, fonts and textures", "Your voice: tagline, bio, how you talk + words to avoid", "A full brand guide (PDF) so anyone can use it right", "A starter social pack (10 designs in Canva) + business card and email signature", "2 rounds of changes on every step", "Every file organized in Google Drive or Dropbox", "Add on: brand photos, the full social pack, print kit or a website"] },
+            { t: "Logo", p: "", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
+            { t: "Brand kit", p: "", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
+            { t: "Brand kit + Social starter", p: "", tag: "MOST POPULAR", d: "Your brand kit, plus a starter social pack you can edit yourself.", list: ["Everything in the brand kit", "Your logo, colors + fonts loaded into Canva", "A starter social pack: 10 designs for posts, stories + highlight covers", "A 30 minute walkthrough, plus a step-by-step Canva guide", "Want more? Upgrade to the full social pack"] },
+            { t: "Full brand world", p: "", d: "The whole world, from scratch. For a new business or a full rebrand.", list: ["A strategy call + a questionnaire about your business, customers and goals", "Audience + competitor research, so you stand apart", "A direction + moodboard you approve before any design", "3 logo concepts, refined into a full logo suite: main logo, small mark + wordmark", "Color palette, fonts and textures", "Your voice: tagline, bio, how you talk + words to avoid", "A full brand guide (PDF) so anyone can use it right", "A starter social pack (10 designs in Canva) + business card and email signature", "2 rounds of changes on every step", "Every file organized in Google Drive or Dropbox", "Add on: brand photos, the full social pack, print kit or a website"] },
           ]}
           foot="You'll know the number before anything starts. Every brand comes with its files organized and ready to use."
         />
@@ -234,8 +234,8 @@ function BrandingPage() {
           label="ADD-ONS"
           title="Take your brand further."
           items={[
-            { t: "Social pack", p: "from $350", tag: "POST ON YOUR OWN", d: "20 designs in your brand, ready for you to post every week.", list: ["Your brand set up in Canva", "20 designs you edit in Canva: posts, carousels, stories, Reel + highlight covers", "Shooting with me? Your photos go right in. If not, drop in your own and the design does the rest", "A flyer, a price menu, a promo post + an email header", "Story stickers in your colors", "A caption guide in your voice", "A 30 minute walkthrough", "Every template approved by you first"] },
-            { t: "Print + signage", p: "from $75 a piece", d: "Your brand, off the screen. Print-ready files, or I can handle the printing.", list: ["Flyers from $75", "Menus from $150", "A-frame signs from $125", "Window + wall signs from $150", "Print kit from $400: a menu, an A-frame + 2 signs, all matching (worth $575 on their own)", "Sized for your printer, with bleed + a proof you approve", "Printing quoted on request, or I'll recommend a local printer"] },
+            { t: "Social pack", p: "", tag: "POST ON YOUR OWN", d: "20 designs in your brand, ready for you to post every week.", list: ["Your brand set up in Canva", "20 designs you edit in Canva: posts, carousels, stories, Reel + highlight covers", "Shooting with me? Your photos go right in. If not, drop in your own and the design does the rest", "A flyer, a price menu, a promo post + an email header", "Story stickers in your colors", "A caption guide in your voice", "A 30 minute walkthrough", "Every template approved by you first"] },
+            { t: "Print + signage", p: "", d: "Your brand, off the screen. Print-ready files, or I can handle the printing.", list: ["Sized for your printer, with bleed + a proof you approve", "Printing quoted on request, or I'll recommend a local printer"] },
           ]}
           foot={<>Add these to any brand, or book them on their own. New to Canva? <a className="so-bw-inline" href="/social-packs">Here's how social packs work →</a></>}
         />
@@ -248,9 +248,9 @@ function BrandingPage() {
           label="THE WHOLE WORLD"
           title="Brand, site and content, built as one."
           items={[
-            { t: "The Refresh", p: "from $1,300", d: "A makeover for a business that's open and ready to look sharper.", list: ["A half-day brand photo shoot", "A phone content day, 5 to 8 short videos", "A website refresh or a new landing page", "A social pack in your look, editable in Canva", "Save $200 vs. booking separately"] },
-            { t: "The Opening", p: "from $4,200", tag: "FULL BUILD", d: "Everything you need to open, or reopen, like a premium brand.", list: ["A full custom website", "Brand kit + a starter social pack", "A half-day brand photo shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Your first month of ready-to-post content", "A launch strategy session", "Save $850 vs. booking separately"] },
-            { t: "The Signature", p: "from $7,800", d: "A complete brand build or rebrand, with campaign-level content.", list: ["Everything in The Opening, upgraded:", "The full brand world instead of the brand kit", "Campaign direction + a styled campaign shoot", "A brand film, cut for every platform", "A phone content day + a rollout plan", "Save $1,400 vs. booking separately"] },
+            { t: "The Refresh", p: "", d: "A makeover for a business that's open and ready to look sharper.", list: ["A half-day brand photo shoot", "A phone content day, 5 to 8 short videos", "A website refresh or a new landing page", "A social pack in your look, editable in Canva"] },
+            { t: "The Opening", p: "", tag: "FULL BUILD", d: "Everything you need to open, or reopen, like a premium brand.", list: ["A full custom website", "Brand kit + a starter social pack", "A half-day brand photo shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Your first month of ready-to-post content", "A launch strategy session"] },
+            { t: "The Signature", p: "", d: "A complete brand build or rebrand, with campaign-level content.", list: ["Everything in The Opening, upgraded:", "The full brand world instead of the brand kit", "Campaign direction + a styled campaign shoot", "A brand film, cut for every platform", "A phone content day + a rollout plan"] },
           ]}
           foot="Every piece is planned together, so the brand, the site, the photos and the posts all feel like the same world."
         />
@@ -290,7 +290,7 @@ function BrandingPage() {
         {/* CTA */}
         <ServiceCta current="branding" title="One piece or the whole world." sub="IT DOESN'T NEED TO BE FIGURED OUT YET." />
       </div>
-      <BookBar service="Branding" price="from $350" need="Branding" />
+      <BookBar service="Branding" need="Branding" />
     </div>
   );
 }

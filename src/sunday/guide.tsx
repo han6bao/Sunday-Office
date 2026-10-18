@@ -25,12 +25,12 @@ const LINKS: { n: string; t: string; d: string; href: string; ext?: boolean }[] 
 ];
 
 const MAKEOVER: { n: string; t: string; d: string; p: string; href: string }[] = [
-  { n: "01", t: "Brand refresh", d: "Keep your logo. New colors, type and a kit that pulls it together", p: "from $550", href: "/branding" },
-  { n: "02", t: "A cleaner logo", d: "Redrawn, simplified or made to work everywhere", p: "from $350", href: "/logo-identity" },
-  { n: "03", t: "Website makeover", d: "Fix and refresh what you have, or start over", p: "from $250", href: "/websites" },
-  { n: "04", t: "Better photos", d: "A brand shoot so your site and feed finally match", p: "from $550", href: "/photography" },
-  { n: "05", t: "New headshots", d: "For your site, LinkedIn and press", p: "from $150", href: "/headshots" },
-  { n: "06", t: "Social refresh", d: "A social pack in your brand, editable in Canva", p: "from $350", href: "/social-packs" },
+  { n: "01", t: "Brand refresh", d: "Keep your logo. New colors, type and a kit that pulls it together", p: "", href: "/branding" },
+  { n: "02", t: "A cleaner logo", d: "Redrawn, simplified or made to work everywhere", p: "", href: "/logo-identity" },
+  { n: "03", t: "Website makeover", d: "Fix and refresh what you have, or start over", p: "", href: "/websites" },
+  { n: "04", t: "Better photos", d: "A brand shoot so your site and feed finally match", p: "", href: "/photography" },
+  { n: "05", t: "New headshots", d: "For your site, LinkedIn and press", p: "", href: "/headshots" },
+  { n: "06", t: "Social refresh", d: "A social pack in your brand, editable in Canva", p: "", href: "/social-packs" },
 ];
 
 const SERVICES: { t: string; href: string }[] = [
@@ -137,7 +137,7 @@ export function Guide() {
                 <a href={pageHref(l.href)}>
                   <span className="gd-n">{l.n}</span>
                   <span className="gd-t">{l.t}</span>
-                  <span className="gd-d">{l.d} · <i>{l.p}</i></span>
+                  <span className="gd-d">{l.d}{l.p ? <> · <i>{l.p}</i></> : null}</span>
                   <span className="gd-a" aria-hidden="true">→</span>
                 </a>
               </li>
@@ -146,7 +146,7 @@ export function Guide() {
               <a href="#inquiry" onClick={go("#inquiry")}>
                 <span className="gd-n">07</span>
                 <span className="gd-t">All of it: The Refresh</span>
-                <span className="gd-d">Photos, short videos, a site refresh and a social pack together · <i>from $1,300</i></span>
+                <span className="gd-d">Photos, short videos, a site refresh and a social pack together</span>
                 <span className="gd-a" aria-hidden="true">→</span>
               </a>
             </li>

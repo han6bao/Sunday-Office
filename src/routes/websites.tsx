@@ -110,16 +110,16 @@ function MadeBy() {
 }
 
 const MAKEOVERS = [
-  { n: "01", t: "Quick fix", p: "from $250", where: "On the platform you have", d: "Broken links, a new page, better photos, cleaner words. For a site that mostly works.", list: ["Squarespace, Wix, Showit or custom", "Domain, email + links connected", "No starting over"] },
+  { n: "01", t: "Quick fix", p: "", where: "On the platform you have", d: "Broken links, a new page, better photos, cleaner words. For a site that mostly works.", list: ["Squarespace, Wix, Showit or custom", "Domain, email + links connected", "No starting over"] },
   { n: "02", t: "Full refresh", p: "quoted per site", where: "On the platform you have", d: "A new look and new words on the site you already pay for. For when you love your platform but not your site.", list: ["Redesign page by page", "New layout, fonts + photos", "Keep your logins and domain"] },
-  { n: "03", t: "Rebuild in custom code", p: "$850 / $1,000 with SEO", where: "Recommended", d: "A fresh, custom site that's faster, fully yours and not boxed in by a template. Most makeovers end up here.", list: ["Built around your business", "Fast on phones", "Nothing to cancel later"], rec: true },
+  { n: "03", t: "Rebuild in custom code", p: "", where: "Recommended", d: "A fresh, custom site that's faster, fully yours and not boxed in by a template. Most makeovers end up here.", list: ["Built around your business", "Fast on phones", "Nothing to cancel later"], rec: true },
 ];
 
 const PLATFORM = [
   { k: "Looks", code: "Designed from scratch, so it looks like you, not a template", tmpl: "Starts from a template, so it can look like other sites" },
   { k: "Speed", code: "Very fast, especially on phones", tmpl: "Slower, with more built-in extras loading" },
   { k: "Monthly cost", code: "Usually just your domain, once a year", tmpl: "A monthly subscription to the platform" },
-  { k: "Changes", code: "Send them to me ($70 each) or add the care plan", tmpl: "You can edit text yourself in their editor" },
+  { k: "Changes", code: "Send them to me, or add the care plan", tmpl: "You can edit text yourself in their editor" },
   { k: "Flexibility", code: "Anything you can picture can be built: quizzes, menus, custom booking flows", tmpl: "Limited to what the platform allows" },
   { k: "Best for", code: "Businesses that want to stand out and grow", tmpl: "People who really want to edit everything themselves" },
 ];
@@ -201,13 +201,13 @@ function WebPricing() {
           need="Website"
           title="Where websites start."
           items={[
-            { t: "Simple site", p: "$850", d: "For businesses that need the basics done beautifully.", list: ["Research on your business + customers", "4 to 5 pages, designed + built", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
-            { t: "Simple site + SEO", p: "$1,000", tag: "RECOMMENDED", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Research into what people search in Seattle", "Page titles + descriptions", "Local search + a sitemap for Google"] },
-            { t: "Full site", p: "from $1,250", d: "More pages and more going on.", list: ["Research + a full page plan", "Galleries or menus", "Lots of services or case studies", "A more custom build"] },
-            { t: "Landing page", p: "$450", d: "One designed page for your business, an offer or an event.", list: ["Who you are + what you offer", "Your services or prices", "A booking or inquiry button", "Built for phones, with your domain connected", "Just need a link-in-bio page? $200"] },
-            { t: "Fixes + a refresh", p: "from $250", d: "Help for the site you already have.", list: ["Broken links + new sections", "A refresh on Squarespace, Wix or Showit", "Better photos or words", "Domain, email + links connected"] },
+            { t: "Simple site", p: "", d: "For businesses that need the basics done beautifully.", list: ["Research on your business + customers", "4 to 5 pages, designed + built", "Words written with you", "Booking or inquiries", "Setup to get it live"] },
+            { t: "Simple site + SEO", p: "", tag: "RECOMMENDED", d: "The simple site, set up so people searching can find you.", list: ["Everything in the simple site", "Research into what people search in Seattle", "Page titles + descriptions", "Local search + a sitemap for Google"] },
+            { t: "Full site", p: "", d: "More pages and more going on.", list: ["Research + a full page plan", "Galleries or menus", "Lots of services or case studies", "A more custom build"] },
+            { t: "Landing page", p: "", d: "One designed page for your business, an offer or an event.", list: ["Who you are + what you offer", "Your services or prices", "A booking or inquiry button", "Built for phones, with your domain connected"] },
+            { t: "Fixes + a refresh", p: "", d: "Help for the site you already have.", list: ["Broken links + new sections", "A refresh on Squarespace, Wix or Showit", "Better photos or words", "Domain, email + links connected"] },
           ]}
-          foot="Every site includes one round of small changes after launch, free. After that, updates are $70 each, or add the care plan for $150 a month and get up to 3 updates every month, plus hosting, backups and a seasonal refresh. You'll know the final number before anything starts."
+          foot="Every site includes one round of small changes after launch, free. After that, send updates as you need them, or add the care plan and they're covered every month. Ask for pricing."
         />
         ) },
         { id: "packages", t: "Site + photos", node: (
@@ -218,8 +218,8 @@ function WebPricing() {
           need="Website"
           title="Website packages."
           items={[
-            { t: "The Launch", p: "$1,400", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site", "Want short videos too? Add a phone content day for $300", "Save $150 vs. booking separately"] },
-            { t: "The Full World", p: "from $2,900", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Save $400 vs. booking separately"] },
+            { t: "The Launch", p: "", d: "A new site with photos made for it.", list: ["Simple site + SEO", "A half-day brand shoot", "30+ edited photos, placed on your site"] },
+            { t: "The Full World", p: "", d: "A bigger site with a proper camera video.", list: ["Full site", "A half-day brand shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts"] },
           ]}
           foot={<>Packages are booked together and planned as one project, so your photos and videos are made for the pages they'll live on. Every package can add the care plan with the first month free. Want your feed to match? <a className="so-bw-inline" href="/social-packs">Add a social pack →</a></>}
         />
@@ -231,9 +231,9 @@ function WebPricing() {
           need="Website"
           title="The care plan."
           items={[
-            { t: "Care plan", p: "$150/mo", tag: "BEST VALUE", d: "Your site, looked after every month, so you never have to think about it.", list: ["Up to 3 small updates a month (worth $210 at $70 each)", "Hosting + security checks", "Backups, so nothing is ever lost", "A monthly report: visitors, booking clicks, speed + what changed", "A quarterly review: what's working, what to change next, and the numbers over 3 months", "A seasonal refresh every quarter: new photos, banners or offers", "Priority replies, within 1 business day", "Cancel anytime"] },
+            { t: "Care plan", p: "", tag: "BEST VALUE", d: "Your site, looked after every month, so you never have to think about it.", list: ["Hosting + security checks", "Backups, so nothing is ever lost", "A monthly report: visitors, booking clicks, speed + what changed", "A quarterly review: what's working, what to change next, and the numbers over 3 months", "A seasonal refresh every quarter: new photos, banners or offers", "Priority replies, within 1 business day", "Cancel anytime"] },
           ]}
-          foot="Bundle it: add the care plan when your site launches and your first month is free. Already on monthly content? The care plan is $100 a month for you. Unused updates don't roll over, and bigger changes, like new pages, get 20% off."
+          foot="Bundle it: add the care plan when your site launches and your first month is free. Already on monthly content? You get it at a lower rate. Unused updates don't roll over, and bigger changes are discounted."
         />
         ) },
       ]}
@@ -270,16 +270,16 @@ const STEPS = [
 ];
 
 const FIT = [
-  { label: "I don't have a website yet. I need the basics: what I do, my prices and a way to book.", pick: "Simple site", price: "$850", why: "Four to five clean pages, words written with you, and booking or inquiries plugged in. Everything most service businesses need to look ready." },
-  { label: "Same, and I want people searching in Seattle to find me on Google.", pick: "Simple site + SEO", price: "$1,000", why: "The same site, set up so Google understands it: page titles, descriptions, local search and a sitemap." },
-  { label: "I need more: galleries, a menu, lots of services or a custom feature.", pick: "Full site", price: "from $1,250", why: "More pages and more going on. We'll map out exactly what you need first, so the price matches the site." },
-  { label: "I already have a site that needs fixing, or I only need one page.", pick: "Landing page or a fix", price: "$450 / from $250", why: "A refresh, a repair or a single page, priced to what it actually needs. No starting over unless it makes sense." },
+  { label: "I don't have a website yet. I need the basics: what I do, my prices and a way to book.", pick: "Simple site", price: "", why: "Four to five clean pages, words written with you, and booking or inquiries plugged in. Everything most service businesses need to look ready." },
+  { label: "Same, and I want people searching in Seattle to find me on Google.", pick: "Simple site + SEO", price: "", why: "The same site, set up so Google understands it: page titles, descriptions, local search and a sitemap." },
+  { label: "I need more: galleries, a menu, lots of services or a custom feature.", pick: "Full site", price: "", why: "More pages and more going on. We'll map out exactly what you need first, so the price matches the site." },
+  { label: "I already have a site that needs fixing, or I only need one page.", pick: "Landing page or a fix", price: "", why: "A refresh, a repair or a single page, priced to what it actually needs. No starting over unless it makes sense." },
 ];
 
 const FAQ = [
   { q: "Can you connect my domain, email and links?", a: "Yes, on every site, and as a quick fix on its own. I connect your domain, set up a business email like hello@yourname.com, and link your booking tool, Instagram, Google Maps and payment pages, then test them all on a phone. You just approve the logins." },
   { q: "Why do you recommend custom code?", a: "It's faster, it looks like you instead of a template, and there's usually no monthly platform fee. You just renew your domain once a year. If you'd rather edit everything yourself, I also build in Showit, Squarespace and Wix." },
-  { q: "What's the care plan?", a: "An optional $150 a month after launch. Up to 3 small updates every month (worth $210 on their own), plus hosting and security checks, backups, a monthly report on visitors and booking clicks, a quarterly review of what's working, priority replies and a seasonal refresh every quarter. Add it at launch and the first month is free, or get it for $100 a month with monthly content. Cancel anytime." },
+  { q: "What's the care plan?", a: "An optional monthly plan after launch. Up to 3 small updates every month, plus hosting and security checks, backups, a monthly report on visitors and booking clicks, a quarterly review of what's working, priority replies and a seasonal refresh every quarter. Add it at launch and the first month is free, and monthly content clients get a lower rate. Cancel anytime." },
   { q: "Do I need my words and photos ready?", a: "No. Writing the words with you is part of every site, and we choose the photos together. If you need new photos, I can shoot those too." },
   { q: "How long does it take?", a: "It depends on how many pages you need and how quickly we gather your words and photos. You'll get a timeline with your price before anything starts." },
   { q: "I'm not techy. Is that a problem?", a: "Not at all. I handle the tech and walk you through anything you need to do on your end, in plain words." },
@@ -287,7 +287,7 @@ const FAQ = [
   { q: "I already have a site. Do we have to start over?", a: "Not unless it makes sense. We can fix what's broken, refresh the look, swap in better photos or tighten your portfolio. You can also stay on Squarespace, Wix or Showit if you love it. See the three makeover options above." },
   { q: "What's the difference between the simple site and the SEO one?", a: "It's the same site. The SEO version adds the setup that helps Google understand you: page titles, descriptions, local Seattle search and a sitemap." },
   { q: "Will there be other costs?", a: "Some things you own, like your domain name, have their own small costs. I'll walk you through each one before we start, so nothing comes as a surprise." },
-  { q: "What if I need changes after launch?", a: "Every site comes with one round of small changes after launch, free. After that, updates are $70 each. Bigger changes get their own quote." },
+  { q: "What if I need changes after launch?", a: "Every site comes with one round of small changes after launch, free. After that, updates are billed per change, or covered by the care plan. Bigger changes get their own quote." },
   { q: "How do I pay?", a: "Half upfront to book your spot, and the other half when the work is done." },
   { q: "Will you share my project?", a: "Usually yes, on my site and Instagram, because the work is what helps the next client trust me. If you'd rather keep it private, just tell me." },
 ];
@@ -348,7 +348,7 @@ function WebsitesPage() {
             { t: "Work", h: "#work" },
             { t: "How it works", h: "#how" },
             { t: "Which one fits", h: "#fit" },
-            { t: "Pricing", h: "#pricing" },
+            { t: "Options", h: "#pricing" },
             { t: "Questions", h: "#faq" },
           ]}
         />
@@ -431,7 +431,7 @@ function WebsitesPage() {
 
         <ServiceCta current="websites" title="Ready for a site that feels like you?" sub="ONE PAGE OR A WHOLE SITE. WE'LL FIGURE OUT WHAT YOU NEED." />
       </div>
-      <BookBar service="Websites" price="from $850" need="Website" />
+      <BookBar service="Websites" need="Website" />
     </div>
   );
 }

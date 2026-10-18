@@ -59,10 +59,10 @@ const QUIZ: QuizCfg = {
   ],
   whatQ: "What do you need?",
   what: [
-    { t: "Digitals for agencies", rec: { t: "Model digitals", p: "$375", why: "The full agency set in natural light: front, three-quarter, profile and full length, with a natural edit and help picking your selects.", more: { t: "See what's included", h: "/digitals#pricing" } } },
-    { t: "Digitals plus a styled look for range", rec: { t: "Model digitals + a styled look", p: "from $375", why: "Your digitals first, then one styled look in the same session, so agencies see who you are and what you can do. I'll quote the styled look before we book.", more: { t: "See Ellis's shoot", h: "/campaigns/ellis-digitals" } } },
-    { t: "Headshots for acting or my profile", rec: { t: "More looks", p: "$350", why: "Two outfits and five finished headshots, directed the whole time.", more: { t: "Headshot sessions", h: "/headshots" } } },
-    { t: "A creative portfolio shoot", rec: { t: "Creative + editorial shoot", p: "from $550", why: "A concept and moodboard first, then a styled shoot with direction the whole time. For your book once the digitals are done.", more: { t: "Creative work", h: "/photography/creative" } } },
+    { t: "Digitals for agencies", rec: { t: "Model digitals", p: "", why: "The full agency set in natural light: front, three-quarter, profile and full length, with a natural edit and help picking your selects.", more: { t: "See what's included", h: "/digitals#pricing" } } },
+    { t: "Digitals plus a styled look for range", rec: { t: "Model digitals + a styled look", p: "", why: "Your digitals first, then one styled look in the same session, so agencies see who you are and what you can do. I'll quote the styled look before we book.", more: { t: "See Ellis's shoot", h: "/campaigns/ellis-digitals" } } },
+    { t: "Headshots for acting or my profile", rec: { t: "More looks", p: "", why: "Two outfits and five finished headshots, directed the whole time.", more: { t: "Headshot sessions", h: "/headshots" } } },
+    { t: "A creative portfolio shoot", rec: { t: "Creative + editorial shoot", p: "", why: "A concept and moodboard first, then a styled shoot with direction the whole time. For your book once the digitals are done.", more: { t: "Creative work", h: "/photography/creative" } } },
   ],
   howQ: "How do you feel in front of the camera?",
   how: [
@@ -100,7 +100,7 @@ function DigitalsPage() {
           </p>
           <div>
             <p className="so-bw-d" style={{ marginTop: 0, maxWidth: "44ch" }}>
-              $375 for the full agency set, with direction the whole time.
+              The full agency set, with direction the whole time. Ask for pricing.
             </p>
             <nav className="so-bw-jump" aria-label="On this page">
               <a href="#shots">The shots</a>
@@ -156,7 +156,7 @@ function DigitalsPage() {
           need="Headshots"
           title="The session."
           items={[
-            { t: "Model digitals", p: "$375", tag: "FOR MODELS", d: "The full agency set, in natural light, with a natural edit.", list: ["Front, three-quarter, profile + full length", "Direction on every angle and expression", "Natural light that shows your real skin tone", "A light, honest edit", "Help picking the selects you send", "Sneak peek in 48 hours"] },
+            { t: "Model digitals", p: "", tag: "FOR MODELS", d: "The full agency set, in natural light, with a natural edit.", list: ["Front, three-quarter, profile + full length", "Direction on every angle and expression", "Natural light that shows your real skin tone", "A light, honest edit", "Help picking the selects you send", "Sneak peek in 48 hours"] },
           ]}
           foot="Want a styled look for range too? We can add it in the same session. I'll quote it before we book."
         />
@@ -183,7 +183,7 @@ function DigitalsPage() {
           </div>
         </section>
       </div>
-      <BookBar service="Model digitals" price="$375" need="Headshots" />
+      <BookBar service="Model digitals" need="Headshots" />
     </div>
   );
 }

@@ -304,9 +304,9 @@ function LogoIdentityPage() {
           title="Where logos start."
           feature
           items={[
-            { t: "Logo", p: "from $350", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
-            { t: "Brand kit", p: "from $550", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
-            { t: "Full brand world", p: "from $2,000", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
+            { t: "Logo", p: "", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
+            { t: "Brand kit", p: "", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
+            { t: "Full brand world", p: "", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
           ]}
           foot={<>You'll know the final number before anything starts. Want print or a social pack too? <a className="so-bw-inline" href="/branding#addons">See add-ons →</a></>}
         />
@@ -315,11 +315,11 @@ function LogoIdentityPage() {
 
         <FaqList
           items={[
-            { q: "How much does a logo cost?", a: "A new logo starts at $350. A brand kit built around a logo you already have starts at $550, and a full brand world from scratch starts at $2,000." },
+            { q: "How much does a logo cost?", a: "It depends on how much we're building: a logo, a brand kit around the logo you have, or a full brand world. Ask and I'll send pricing for each." },
             { q: "Can you fix or clean up the logo I have?", a: "Yes. Sometimes a logo just needs redrawing, better spacing or versions that work small. We don't start over unless it makes sense." },
             { q: "What files do I get?", a: "Your logo in the formats you'll actually use: for print, for the web, light and dark versions, and sizes for your profile picture." },
             { q: "How many options will I see?", a: "A new logo comes with 2 concepts. Then we refine the one you love together." },
-            { q: "How many rounds of changes?", a: "Two rounds are included. After that, extra rounds are $75 each." },
+            { q: "How many rounds of changes?", a: "Two rounds are included. Extra rounds are available if you need them." },
             { q: "Who owns the files?", a: "You do. Every version and file type, labeled and organized." },
             { q: "How do I pay?", a: "Half upfront to book your spot, and the other half when the work is done." },
             { q: "Do I need the full brand too?", a: <>Not always. If you want everything to match, the logo can grow into a full brand world. <a href="/branding">See branding →</a></> },
@@ -328,7 +328,7 @@ function LogoIdentityPage() {
 
         <ServiceCta current="logo" title="You don't have to know what you need yet." sub="BRING THE IDEA, THE BUSINESS, OR THE HALF-FINISHED LOGO." />
       </div>
-      <BookBar service="Logo + Identity" price="from $350" need="Logo / Identity" />
+      <BookBar service="Logo + Identity" need="Logo / Identity" />
     </div>
   );
 }

@@ -565,26 +565,22 @@ const PACKAGES = [
     n: "The Refresh",
     who: "A makeover for a business that's open and ready to look sharper.",
     items: ["A half-day brand photo shoot", "A phone content day, 5 to 8 short videos", "A website refresh or a new landing page", "A social pack in your look, editable in Canva", "Your files organized in Google Drive or Dropbox"],
-    foot: "FROM $1,300 · SAVE $200",
   },
   {
     n: "The Opening",
     who: "Everything you need to open, or reopen, like a premium brand.",
     items: ["A full custom website", "Brand kit + a starter social pack", "A half-day brand photo shoot", "A camera video, 60 to 90 seconds + 3 vertical cuts", "Your first month of ready-to-post content", "A launch strategy session", "Your files organized in Google Drive or Dropbox"],
     tag: "Full build",
-    foot: "FROM $4,200 · SAVE $850",
   },
   {
     n: "The Signature",
     who: "A complete brand build or rebrand, with campaign-level content.",
     items: ["Everything in The Opening, upgraded:", "The full brand world instead of the brand kit", "Campaign direction + a styled campaign shoot", "A brand film instead of the camera video, cut for every platform", "A phone content day for behind the scenes", "A rollout plan + content calendar", "Priority scheduling"],
-    foot: "FROM $7,800 · SAVE $1,400",
   },
   {
     n: "Monthly Content",
     who: "Ongoing content so your brand never goes quiet.",
     items: ["A pro shoot every month on Growth and Full", "Posts, reels + captions, ready to publish", "Research + a monthly plan", "Social pack designs you approve", "Your files organized in Google Drive or Dropbox"],
-    foot: "FROM $600 / MONTH",
     href: "/creative-direction-content#monthly",
     go: "See the plans",
   },
@@ -711,11 +707,11 @@ const REEL = [
    The feed-style homepage: one idea per frame, like an Instagram post.
    ------------------------------------------------------------ */
 const FEED_SERVICES = [
-  { n: "World Building", d: "Your brand, and the whole world around it. Where every project starts.", p: "from $350", h: "/branding", big: true },
-  { n: "Websites", d: "A home for the brand that books clients while you sleep.", p: "from $850", h: "/websites", big: false },
-  { n: "Photography", d: "Portraits, products, spaces and events.", p: "from $150", h: "/photography", big: false },
-  { n: "Film + Commercials", d: "Brand films, commercials and campaign video.", p: "from $1,500", h: "/moving-image", big: false },
-  { n: "Social + Content", d: "Content days, social packs and monthly content.", p: "from $350", h: "/creative-direction-content", big: false },
+  { n: "World Building", d: "Your brand, and the whole world around it. Where every project starts.", p: "", h: "/branding", big: true },
+  { n: "Websites", d: "A home for the brand that books clients while you sleep.", p: "", h: "/websites", big: false },
+  { n: "Photography", d: "Portraits, products, spaces and events.", p: "", h: "/photography", big: false },
+  { n: "Film + Commercials", d: "Brand films, commercials and campaign video.", p: "", h: "/moving-image", big: false },
+  { n: "Social + Content", d: "Content days, social packs and monthly content.", p: "", h: "/creative-direction-content", big: false },
 ];
 
 type Link = { t: string; h: string };
@@ -808,7 +804,7 @@ function FeedServices() {
               {x.big ? <img className="fd-wb-img" src="/assets/lettering/world-building.svg" alt={x.n} /> : x.n}
               {x.d && <span className="fd-sd">{x.d}</span>}
             </span>
-            <span className="fd-sp">{x.p} <span className="fd-sv-arr" aria-hidden="true">→</span></span>
+            <span className="fd-sp">{x.p ? x.p + " " : ""}<span className="fd-sv-arr" aria-hidden="true">→</span></span>
           </a>
         ))}
       </div>

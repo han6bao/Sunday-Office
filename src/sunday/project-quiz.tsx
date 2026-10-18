@@ -64,92 +64,92 @@ const Q3: { k: Budget; t: string }[] = [
 ];
 
 const BRAND: Record<Level, Pick> = {
-  low: { t: "Logo", p: "from $350", why: "A logo made from scratch, in every version you need. Everything else can grow from it.", need: "Branding", more: "/branding" },
-  mid: { t: "Brand kit", p: "from $550", why: "Your colors, fonts and voice in one simple guide, so everything you make looks like you.", need: "Branding", more: "/branding" },
-  high: { t: "Full brand world", p: "from $2,000", why: "The whole brand built properly: research, logo, identity, voice and templates.", need: "Branding", more: "/branding" },
+  low: { t: "Logo", p: "", why: "A logo made from scratch, in every version you need. Everything else can grow from it.", need: "Branding", more: "/branding" },
+  mid: { t: "Brand kit", p: "", why: "Your colors, fonts and voice in one simple guide, so everything you make looks like you.", need: "Branding", more: "/branding" },
+  high: { t: "Full brand world", p: "", why: "The whole brand built properly: research, logo, identity, voice and templates.", need: "Branding", more: "/branding" },
 };
 
 const SITE: Record<Level, Pick> = {
-  low: { t: "Landing page", p: "$450", why: "One clean page with your work, your prices and a way to book. A strong start you can grow.", need: "Website", more: "/websites" },
-  mid: { t: "Simple site + SEO", p: "$1,000", why: "Four to five pages, words written with you, booking plugged in, and set up so people nearby can find you on Google.", need: "Website", more: "/websites" },
-  high: { t: "Full site", p: "from $1,250", why: "More pages and more going on: galleries, menus, lots of services. Planned around exactly what you need.", need: "Website", more: "/websites" },
+  low: { t: "Landing page", p: "", why: "One clean page with your work, your prices and a way to book. A strong start you can grow.", need: "Website", more: "/websites" },
+  mid: { t: "Simple site + SEO", p: "", why: "Four to five pages, words written with you, booking plugged in, and set up so people nearby can find you on Google.", need: "Website", more: "/websites" },
+  high: { t: "Full site", p: "", why: "More pages and more going on: galleries, menus, lots of services. Planned around exactly what you need.", need: "Website", more: "/websites" },
 };
 
 const CONTENT: Record<Level, Pick> = {
-  low: { t: "Audit + strategy", p: "from $400", why: "Know exactly what to post and why. It comes off your first month if you go monthly later.", need: "Monthly content", more: "/creative-direction-content#more" },
-  mid: { t: "Starter plan", p: "$600/mo", why: "A pro shoot to start, then 8 posts a month, captions and a plan. An easy way to stop going quiet.", need: "Monthly content", more: "/creative-direction-content#monthly" },
-  high: { t: "Growth plan", p: "$1,500/mo", why: "Photos, video, 16 posts and 8 reels a month, with research behind it. Where accounts start to grow.", need: "Monthly content", more: "/creative-direction-content#monthly" },
+  low: { t: "Audit + strategy", p: "", why: "Know exactly what to post and why. It comes off your first month if you go monthly later.", need: "Monthly content", more: "/creative-direction-content#more" },
+  mid: { t: "Starter plan", p: "", why: "A pro shoot to start, then 8 posts a month, captions and a plan. An easy way to stop going quiet.", need: "Monthly content", more: "/creative-direction-content#monthly" },
+  high: { t: "Growth plan", p: "", why: "Photos, video, 16 posts and 8 reels a month, with research behind it. Where accounts start to grow.", need: "Monthly content", more: "/creative-direction-content#monthly" },
 };
 
 const DIRECTION: Record<Level, Pick> = {
-  low: { t: "Audit + strategy", p: "from $400", why: "A clear plan your team can follow: what to post, how often and why, with three quick fixes for this week.", need: "Creative Direction", more: "/creative-direction-content#more" },
-  mid: { t: "Direction retainer", p: "from $550/mo", why: "A monthly concept and plan for your team, and I review everything before it posts. No shooting.", need: "Creative Direction", more: "/creative-direction-content#more" },
-  high: { t: "Direction retainer", p: "from $550/mo", why: "A monthly concept and plan for your team, and I review everything before it posts. Add a campaign whenever you need one.", need: "Creative Direction", more: "/creative-direction-content#more" },
+  low: { t: "Audit + strategy", p: "", why: "A clear plan your team can follow: what to post, how often and why, with three quick fixes for this week.", need: "Creative Direction", more: "/creative-direction-content#more" },
+  mid: { t: "Direction retainer", p: "", why: "A monthly concept and plan for your team, and I review everything before it posts. No shooting.", need: "Creative Direction", more: "/creative-direction-content#more" },
+  high: { t: "Direction retainer", p: "", why: "A monthly concept and plan for your team, and I review everything before it posts. Add a campaign whenever you need one.", need: "Creative Direction", more: "/creative-direction-content#more" },
 };
 
 /* Photos depend on the kind of business. */
 const PHOTOS: Record<Niche, Record<Level, Pick>> = {
   beauty: {
-    low: { t: "Headshots", p: "from $150", why: "A clean, natural headshot for your booking page and your profile. Clients want to see who they're booking with.", need: "Headshots", more: "/headshots" },
-    mid: { t: "Brand photography", p: "from $550", why: "Your treatment room, your tools and you at work. 30+ edited photos for your site, your booking page and your feed.", need: "Photography", more: "/photography" },
-    high: { t: "Photos + video", p: "from $900", why: "Photos of your space and short videos of the experience, so one visit fills your site and your feed for weeks.", need: "Photography", more: "/photography" },
+    low: { t: "Headshots", p: "", why: "A clean, natural headshot for your booking page and your profile. Clients want to see who they're booking with.", need: "Headshots", more: "/headshots" },
+    mid: { t: "Brand photography", p: "", why: "Your treatment room, your tools and you at work. 30+ edited photos for your site, your booking page and your feed.", need: "Photography", more: "/photography" },
+    high: { t: "Photos + video", p: "", why: "Photos of your space and short videos of the experience, so one visit fills your site and your feed for weeks.", need: "Photography", more: "/photography" },
   },
   food: {
-    low: { t: "Food + drink photography", p: "from $550", why: "Your dishes, drinks and room, shot to make people hungry. This is where food shoots start, and we can shape it to your budget.", need: "Photography", more: "/photography" },
-    mid: { t: "Food + drink photography", p: "from $550", why: "Your dishes, your drinks and your room, shot to make people hungry. 30+ edited photos for your menu, site and feed.", need: "Photography", more: "/photography" },
-    high: { t: "Photos + video", p: "from $900", why: "Plates, pours and the room, in photos and short videos from one visit. Enough to keep your feed going for weeks.", need: "Photography", more: "/photography" },
+    low: { t: "Food + drink photography", p: "", why: "Your dishes, drinks and room, shot to make people hungry. This is where food shoots start, and we can shape it to your budget.", need: "Photography", more: "/photography" },
+    mid: { t: "Food + drink photography", p: "", why: "Your dishes, your drinks and your room, shot to make people hungry. 30+ edited photos for your menu, site and feed.", need: "Photography", more: "/photography" },
+    high: { t: "Photos + video", p: "", why: "Plates, pours and the room, in photos and short videos from one visit. Enough to keep your feed going for weeks.", need: "Photography", more: "/photography" },
   },
   creative: {
-    low: { t: "Creative headshots", p: "from $150", why: "Styled portraits with color, mood and personality, for your profiles, press and promo.", need: "Headshots", more: "/headshots" },
-    mid: { t: "Creative shoot", p: "from $550", why: "A concept, a moodboard and a styled shoot, for a cover, a campaign or press photos that look like your work.", need: "Photography", more: "/photography" },
-    high: { t: "Photos + video", p: "from $900", why: "Stills and short videos from one shoot, so your release, your merch and your posts all come from the same world.", need: "Photography", more: "/photography" },
+    low: { t: "Creative headshots", p: "", why: "Styled portraits with color, mood and personality, for your profiles, press and promo.", need: "Headshots", more: "/headshots" },
+    mid: { t: "Creative shoot", p: "", why: "A concept, a moodboard and a styled shoot, for a cover, a campaign or press photos that look like your work.", need: "Photography", more: "/photography" },
+    high: { t: "Photos + video", p: "", why: "Stills and short videos from one shoot, so your release, your merch and your posts all come from the same world.", need: "Photography", more: "/photography" },
   },
   other: {
-    low: { t: "Headshots", p: "from $150", why: "A clean, natural headshot with direction the whole time, for your site and your profiles.", need: "Headshots", more: "/headshots" },
-    mid: { t: "Brand photography", p: "from $550", why: "A half-day shoot of your space, your team and what you do. 30+ edited photos, ready for everywhere.", need: "Photography", more: "/photography" },
-    high: { t: "Photos + video", p: "from $900", why: "One shoot that covers photos and short videos, so a single day fills your website and your feed.", need: "Photography", more: "/photography" },
+    low: { t: "Headshots", p: "", why: "A clean, natural headshot with direction the whole time, for your site and your profiles.", need: "Headshots", more: "/headshots" },
+    mid: { t: "Brand photography", p: "", why: "A half-day shoot of your space, your team and what you do. 30+ edited photos, ready for everywhere.", need: "Photography", more: "/photography" },
+    high: { t: "Photos + video", p: "", why: "One shoot that covers photos and short videos, so a single day fills your website and your feed.", need: "Photography", more: "/photography" },
   },
 };
 
 const VIDEO: Record<Level, Pick> = {
-  low: { t: "Content day", p: "$350", why: "About 2 hours on iPhone and 5 to 8 short edited videos for Reels and TikTok. Quick, natural and ready to post.", need: "Film + Commercials", more: "/moving-image" },
-  mid: { t: "Camera video", p: "from $1,500", why: "A polished, color graded video on pro cameras, 60 to 90 seconds, plus 3 vertical cuts for social.", need: "Film + Commercials", more: "/moving-image" },
-  high: { t: "Brand film", p: "from $2,500", why: "The big one: an idea, a script, a full-day shoot and a 1 to 2 minute film, with cuts for every platform.", need: "Film + Commercials", more: "/moving-image" },
+  low: { t: "Content day", p: "", why: "About 2 hours on iPhone and 5 to 8 short edited videos for Reels and TikTok. Quick, natural and ready to post.", need: "Film + Commercials", more: "/moving-image" },
+  mid: { t: "Camera video", p: "", why: "A polished, color graded video on pro cameras, 60 to 90 seconds, plus 3 vertical cuts for social.", need: "Film + Commercials", more: "/moving-image" },
+  high: { t: "Brand film", p: "", why: "The big one: an idea, a script, a full-day shoot and a 1 to 2 minute film, with cuts for every platform.", need: "Film + Commercials", more: "/moving-image" },
 };
 
 const PRINT: Record<Niche, Record<Level, Pick>> = {
   food: {
-    low: { t: "A menu", p: "from $150", why: "A menu in your brand, ready to print. Flyers start at $75 and A-frame signs at $125 if you need those too.", need: "Branding", more: "/branding#pricing" },
-    mid: { t: "Print kit", p: "from $400", why: "A menu, an A-frame and two signs, all in your brand and ready to print.", need: "Branding", more: "/branding#pricing" },
-    high: { t: "Print kit + brand kit", p: "from $950", why: "Your colors, fonts and voice set first, then a menu, an A-frame and two signs that all match.", need: "Branding", more: "/branding#pricing" },
+    low: { t: "A menu", p: "", why: "A menu in your brand, ready to print. Flyers and A-frame signs too, if you need them.", need: "Branding", more: "/branding#pricing" },
+    mid: { t: "Print kit", p: "", why: "A menu, an A-frame and two signs, all in your brand and ready to print.", need: "Branding", more: "/branding#pricing" },
+    high: { t: "Print kit + brand kit", p: "", why: "Your colors, fonts and voice set first, then a menu, an A-frame and two signs that all match.", need: "Branding", more: "/branding#pricing" },
   },
   beauty: {
-    low: { t: "A flyer or a sign", p: "from $75", why: "A flyer for a promo or a window sign for your studio, in your brand and ready to print.", need: "Branding", more: "/branding#pricing" },
-    mid: { t: "Print kit", p: "from $400", why: "A price menu, a sign for your door and a flyer, all matching your brand.", need: "Branding", more: "/branding#pricing" },
-    high: { t: "Print kit + brand kit", p: "from $950", why: "Your look set first, then printed pieces that all match it, from your price menu to your window.", need: "Branding", more: "/branding#pricing" },
+    low: { t: "A flyer or a sign", p: "", why: "A flyer for a promo or a window sign for your studio, in your brand and ready to print.", need: "Branding", more: "/branding#pricing" },
+    mid: { t: "Print kit", p: "", why: "A price menu, a sign for your door and a flyer, all matching your brand.", need: "Branding", more: "/branding#pricing" },
+    high: { t: "Print kit + brand kit", p: "", why: "Your look set first, then printed pieces that all match it, from your price menu to your window.", need: "Branding", more: "/branding#pricing" },
   },
   creative: {
-    low: { t: "A flyer", p: "from $75", why: "A flyer or poster for a show, a release or an event, in your style and ready to post or print.", need: "Branding", more: "/branding#pricing" },
-    mid: { t: "Print kit", p: "from $400", why: "A set of matching pieces for a show or a launch: flyers, a poster and signs.", need: "Branding", more: "/branding#pricing" },
-    high: { t: "Print kit + brand kit", p: "from $950", why: "Your look set first, then posters, flyers and merch graphics that all match.", need: "Branding", more: "/branding#pricing" },
+    low: { t: "A flyer", p: "", why: "A flyer or poster for a show, a release or an event, in your style and ready to post or print.", need: "Branding", more: "/branding#pricing" },
+    mid: { t: "Print kit", p: "", why: "A set of matching pieces for a show or a launch: flyers, a poster and signs.", need: "Branding", more: "/branding#pricing" },
+    high: { t: "Print kit + brand kit", p: "", why: "Your look set first, then posters, flyers and merch graphics that all match.", need: "Branding", more: "/branding#pricing" },
   },
   other: {
-    low: { t: "A flyer or a sign", p: "from $75", why: "A flyer, a menu or a sign in your brand, ready to print. Tell me what it's for.", need: "Branding", more: "/branding#pricing" },
-    mid: { t: "Print kit", p: "from $400", why: "A menu, an A-frame and two signs, all in your brand and ready to print.", need: "Branding", more: "/branding#pricing" },
-    high: { t: "Print kit + brand kit", p: "from $950", why: "Your look set first, then printed pieces that all match it.", need: "Branding", more: "/branding#pricing" },
+    low: { t: "A flyer or a sign", p: "", why: "A flyer, a menu or a sign in your brand, ready to print. Tell me what it's for.", need: "Branding", more: "/branding#pricing" },
+    mid: { t: "Print kit", p: "", why: "A menu, an A-frame and two signs, all in your brand and ready to print.", need: "Branding", more: "/branding#pricing" },
+    high: { t: "Print kit + brand kit", p: "", why: "Your look set first, then printed pieces that all match it.", need: "Branding", more: "/branding#pricing" },
   },
 };
 
 const GRAPHICS: Record<Level, Pick> = {
-  low: { t: "Social pack", p: "from $350", why: "Your brand set up in Canva with 20 templates: posts, carousels, stories, Reel and highlight covers, a flyer and a price menu. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  mid: { t: "Social pack", p: "from $350", why: "Your brand set up in Canva with 20 templates, stickers and a caption guide. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
-  high: { t: "Brand kit + Social starter", p: "from $750", why: "Your colors, fonts and voice set first, then 10 starter templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
+  low: { t: "Social pack", p: "", why: "Your brand set up in Canva with 20 templates: posts, carousels, stories, Reel and highlight covers, a flyer and a price menu. You edit them yourself.", need: "Social Media / Content", more: "/creative-direction-content#more" },
+  mid: { t: "Social pack", p: "", why: "Your brand set up in Canva with 20 templates, stickers and a caption guide. Pair it with a brand kit if your look needs work first.", need: "Social Media / Content", more: "/creative-direction-content#more" },
+  high: { t: "Brand kit + Social starter", p: "", why: "Your colors, fonts and voice set first, then 10 starter templates built from them, so every post looks like you.", need: "Branding", more: "/branding" },
 };
 
 const WEBFIX: Record<Level, Pick> = {
-  low: { t: "Website fix", p: "from $250", why: "One new page, a refresh or a repair to the site you already have. No starting over unless it makes sense.", need: "Website", more: "/websites" },
-  mid: { t: "Website fix", p: "from $250", why: "One new page, a refresh or a repair. If it needs more than a fix, I'll tell you honestly before we start.", need: "Website", more: "/websites" },
-  high: { t: "Simple site + SEO", p: "$1,000", why: "If you're ready to spend more, a fresh site is often better value than patching an old one.", need: "Website", more: "/websites" },
+  low: { t: "Website fix", p: "", why: "One new page, a refresh or a repair to the site you already have. No starting over unless it makes sense.", need: "Website", more: "/websites" },
+  mid: { t: "Website fix", p: "", why: "One new page, a refresh or a repair. If it needs more than a fix, I'll tell you honestly before we start.", need: "Website", more: "/websites" },
+  high: { t: "Simple site + SEO", p: "", why: "If you're ready to spend more, a fresh site is often better value than patching an old one.", need: "Website", more: "/websites" },
 };
 
 function suggest(niche: Niche, stage: Stage, follow: string | null, level: Level): Pick {
@@ -291,12 +291,11 @@ export function ProjectQuiz() {
           <p className="so-micro so-quiz-cap">MY SUGGESTION · START HERE</p>
           <div className="so-quiz-pick">
             <p className="so-quiz-pick-t">{pick.t}</p>
-            <p className="so-quiz-pick-p">{pick.p}</p>
           </div>
           <p className="so-quiz-why">{pick.why}</p>
           {detail && <p className="so-quiz-why so-quiz-niche">{detail}</p>}
           <div className="so-quiz-ctas">
-            <a className="so-quiz-go" href={fixHref(bookHref(pick.need, `${pick.t} (${pick.p})${note ? `, ${note}` : ""}`))}>
+            <a className="so-quiz-go" href={fixHref(bookHref(pick.need, `${pick.t}${note ? `, ${note}` : ""}`))}>
               Start with this →
             </a>
             <a className="so-quiz-more" href={fixHref(pick.more)}>

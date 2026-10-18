@@ -202,7 +202,7 @@ function SocialPacksPage() {
             </div>
             <div>
               <p className="sp-k">Full social pack</p>
-              <p className="sp-big">20 designs · from $350</p>
+              <p className="sp-big">20 designs</p>
               <p className="sp-d">Everything above, plus stickers, a flyer, a price menu and a caption guide. You approve every design first.</p>
             </div>
           </div>
@@ -309,12 +309,12 @@ function SocialPacksPage() {
             <p className="so-serif so-hs-close-t">Want a pack <em>in your brand?</em></p>
             <div className="so-hs-ctas">
               <a href={bookHref("Branding", "Social pack")} className="so-hs-btn is-light">Get a social pack →</a>
-              <a href="/branding#pricing" className="so-hs-more">See branding prices</a>
+              <a href="/branding#pricing" className="so-hs-more">See branding options</a>
             </div>
           </div>
         </section>
       </div>
-      <BookBar service="Social packs" price="from $350" need="Branding" />
+      <BookBar service="Social packs" need="Branding" />
     </div>
   );
 }

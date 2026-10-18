@@ -168,13 +168,13 @@ function DirectionAndContentPage() {
           label="MONTHLY CONTENT"
           title="Content every month."
           items={[
-            { t: "Starter", p: "$600/mo", d: "An easy, affordable start.", list: ["A 1 hour pro photo shoot in month one, then every third month, plus iPhone content", "About 15 edited photos from each shoot, yours to keep", "8 posts on 1 platform", "Captions, hashtags + a 30-day plan", "3 post + 3 story templates in Canva", "Highlight covers in your colors", "A profile + bio refresh in month one", "Your photos, videos + brand files organized in Google Drive or Dropbox"] },
-            { t: "Growth", p: "$1,500/mo", tag: "BEST VALUE", d: "Where accounts start to grow.", list: ["Everything in Starter, plus:", "A photo + video shoot, about 30 edited photos", "16 posts + 8 reels", "A set of stories every week", "Instagram + TikTok, plus Facebook", "Monthly trend + competitor research", "Hooks, trending audio + reel ideas", "10 post + 10 story templates, plus stickers", "A monthly calendar you approve", "A monthly results recap", "Audit + strategy free in month one"] },
-            { t: "Full", p: "$2,800/mo", d: "Made and posted for you, start to finish.", list: ["Everything in Growth, plus:", "A second shoot, 50+ edited photos a month", "24 posts + 12 reels", "Stories posted for you every week", "Instagram, TikTok, Facebook + LinkedIn", "Ad-ready cuts of your best reels", "Fresh photos for your Google Business Profile", "I post for you + a monthly report and check-in", "A strategy session every quarter", "New social pack designs every month", "Priority booking for shoots"] },
-            { t: "Direction retainer", p: "from $550/mo", d: "For brands with their own team. A monthly plan, and I review everything before it posts.", list: ["A monthly content plan", "Shot lists + references for your team", "I review everything before it posts", "A monthly check-in"] },
-            { t: "Signature", p: "from $4,000/mo", d: "A styled campaign every month, with video and ad creative.", list: ["Everything in Full", "A styled campaign shoot every month", "Video + ad creative", "For brands that want something truly beautiful"] },
+            { t: "Starter", p: "", d: "An easy, affordable start.", list: ["A 1 hour pro photo shoot in month one, then every third month, plus iPhone content", "About 15 edited photos from each shoot, yours to keep", "8 posts on 1 platform", "Captions, hashtags + a 30-day plan", "3 post + 3 story templates in Canva", "Highlight covers in your colors", "A profile + bio refresh in month one", "Your photos, videos + brand files organized in Google Drive or Dropbox"] },
+            { t: "Growth", p: "", tag: "BEST VALUE", d: "Where accounts start to grow.", list: ["Everything in Starter, plus:", "A photo + video shoot, about 30 edited photos", "16 posts + 8 reels", "A set of stories every week", "Instagram + TikTok, plus Facebook", "Monthly trend + competitor research", "Hooks, trending audio + reel ideas", "10 post + 10 story templates, plus stickers", "A monthly calendar you approve", "A monthly results recap", "Audit + strategy free in month one"] },
+            { t: "Full", p: "", d: "Made and posted for you, start to finish.", list: ["Everything in Growth, plus:", "A second shoot, 50+ edited photos a month", "24 posts + 12 reels", "Stories posted for you every week", "Instagram, TikTok, Facebook + LinkedIn", "Ad-ready cuts of your best reels", "Fresh photos for your Google Business Profile", "I post for you + a monthly report and check-in", "A strategy session every quarter", "New social pack designs every month", "Priority booking for shoots"] },
+            { t: "Direction retainer", p: "", d: "For brands with their own team. A monthly plan, and I review everything before it posts.", list: ["A monthly content plan", "Shot lists + references for your team", "I review everything before it posts", "A monthly check-in"] },
+            { t: "Signature", p: "", d: "A styled campaign every month, with video and ad creative.", list: ["Everything in Full", "A styled campaign shoot every month", "Video + ad creative", "For brands that want something truly beautiful"] },
           ]}
-          foot={<>Monthly plans start with a 3-month commitment, and paying all 3 months upfront saves you 10%. Every template and post is yours to approve before it goes out. Monthly clients get 20% off single one-time add-ons, like camera video (not packages, which already include their savings), and the website care plan for $100 a month instead of $150. Booked separately, the Growth shoot, templates and audit come to about $1,600, before any posts or reels. Need something printed? Menus, signs and flyers can be added to any plan, from $75. <a className="so-bw-inline" href="/branding#pricing">See print + signage →</a></>}
+          foot={<>Monthly plans start with a 3-month commitment, and paying 3 months upfront saves you more. Every template and post is yours to approve before it goes out. Monthly clients also get a discount on one-time add-ons and the website care plan. Ask for pricing on any plan.</>}
         />
             ) },
             { id: "one-time", t: "One time", node: (
@@ -185,10 +185,10 @@ function DirectionAndContentPage() {
           label="ONE TIME"
           title="No monthly plan needed."
           items={[
-            { t: "Content day", p: "$350", d: "About 2 hours on iPhone, 5 to 8 edited short videos for Reels and TikTok.", list: [] },
-            { t: "Photo + content day", p: "from $900", tag: "MOST COMPLETE", d: "A brand photo shoot and short videos in one visit, with a shot list up front and captions for every video included. Fills your feed and your website for weeks.", list: ["A brand photo shoot + short videos in one visit", "A shot list planned up front", "Edited photos + 5 to 8 short videos", "Captions written for every video", "Enough to post for weeks"] },
-            { t: "Social pack", p: "from $350", d: "Everything to keep posting on your own: your brand set up in Canva, 20 designs you edit yourself (posts, carousels, stories, Reel covers, highlight covers, a flyer, a price menu, a promo + an email header), story stickers, a caption guide and a 30 minute walkthrough. Every template approved by you first.", list: [] },
-            { t: "Audit + strategy", p: "from $400", d: "Know what to post and why. Free when you go monthly: it comes off your first month.", list: [] },
+            { t: "Content day", p: "", d: "About 2 hours on iPhone, 5 to 8 edited short videos for Reels and TikTok.", list: [] },
+            { t: "Photo + content day", p: "", tag: "MOST COMPLETE", d: "A brand photo shoot and short videos in one visit, with a shot list up front and captions for every video included. Fills your feed and your website for weeks.", list: ["A brand photo shoot + short videos in one visit", "A shot list planned up front", "Edited photos + 5 to 8 short videos", "Captions written for every video", "Enough to post for weeks"] },
+            { t: "Social pack", p: "", d: "Everything to keep posting on your own: your brand set up in Canva, 20 designs you edit yourself (posts, carousels, stories, Reel covers, highlight covers, a flyer, a price menu, a promo + an email header), story stickers, a caption guide and a 30 minute walkthrough. Every template approved by you first.", list: [] },
+            { t: "Audit + strategy", p: "", d: "Know what to post and why. Free when you go monthly: it comes off your first month.", list: [] },
           ]}
           foot={<>Everything I make for you is delivered organized in a shared Google Drive or Dropbox folder, so you can always find it. Want headshots or brand photos for your feed? <a className="so-bw-inline" href="/photography">See photography →</a></>}
         />
@@ -204,7 +204,7 @@ function DirectionAndContentPage() {
 
         <ServiceCta current="direction" title="Let's make something real." sub="SET THE DIRECTION, THEN KEEP IT GOING." />
       </div>
-      <BookBar service="Social + Content" price="from $350" need="Social Media / Content" />
+      <BookBar service="Social + Content" need="Social Media / Content" />
     </div>
   );
 }

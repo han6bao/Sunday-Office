@@ -55,7 +55,7 @@ const STEPS = [
 ];
 
 const FAQ = [
-  { q: "How much does a video cost?", a: "A phone content day is $350. Camera video starts at $1,500, and brand films start at $2,500. Tell me where it will live and what it needs to do, and you'll get a clear price before anything is booked." },
+  { q: "How much does a video cost?", a: "It depends on the size of the project. Ask and I'll send pricing for what you need. Tell me where it will live and what it needs to do, and you'll get a clear price before anything is booked." },
   { q: "Do you come up with the idea?", a: "Yes. Every project starts with the idea and the feeling, and I plan the shots around that. If you already have an idea, we build from yours." },
   { q: "Will I get vertical versions for Reels and TikTok?", a: "Yes. One shoot gets cut for everywhere you need it: the main piece, vertical cuts, short teasers and loops." },
   { q: "Can I get photos from the same shoot?", a: <>Yes. I grab stills along the way, so one day of production covers more than one need. <a href="/photography">See photography →</a></> },
@@ -123,9 +123,9 @@ function MovingImagePage() {
           need="Film + Commercials"
           title="Where film starts."
           items={[
-            { t: "Camera video", p: "from $1,500", d: "Polished video on pro cameras.", list: ["An idea + shot list first", "Half-day shoot with a videographer I direct", "1 hero video, 60 to 90 seconds, color graded with music", "3 vertical cuts for social"] },
-            { t: "Brand film or commercial", p: "from $2,500", tag: "THE BIG ONE", d: "For your website, an ad or a launch.", list: ["Idea, script + shot list", "Casting, location + styling planned with you", "Full-day shoot, directed on set", "A 1 to 2 minute film", "Cuts for every platform"] },
-            { t: "Campaign direction", p: "from $1,200", d: "Already have a crew? I'll direct it.", list: ["The idea + the rollout plan", "Casting, locations + styling", "A shot list for photo + video", "A day on set, directing"] },
+            { t: "Camera video", p: "", d: "Polished video on pro cameras.", list: ["An idea + shot list first", "Half-day shoot with a videographer I direct", "1 hero video, 60 to 90 seconds, color graded with music", "3 vertical cuts for social"] },
+            { t: "Brand film or commercial", p: "", tag: "THE BIG ONE", d: "For your website, an ad or a launch.", list: ["Idea, script + shot list", "Casting, location + styling planned with you", "Full-day shoot, directed on set", "A 1 to 2 minute film", "Cuts for every platform"] },
+            { t: "Campaign direction", p: "", d: "Already have a crew? I'll direct it.", list: ["The idea + the rollout plan", "Casting, locations + styling", "A shot list for photo + video", "A day on set, directing"] },
           ]}
           foot={<>You'll know the final number before anything is booked. Just need Reels and short videos? That's a phone content day, on <a className="so-bw-inline" href="/creative-direction-content">Social + Content →</a></>}
         />
@@ -138,9 +138,9 @@ function MovingImagePage() {
           label="CAMPAIGN PACKAGES"
           title="Photo + video, planned as one."
           items={[
-            { t: "The Drop", p: "$1,200", d: "For a launch, a promo, a new menu or a release.", list: ["Shoot direction: concept, moodboard + shot list", "A half-day photo shoot, 30+ edited photos", "A phone content day, 5 to 8 short videos", "Save $150 vs. booking separately"] },
-            { t: "The Campaign", p: "$3,200", tag: "MOST BOOKED", d: "Look like a real brand campaign, in photos and video.", list: ["Campaign direction: the plan, casting, styling + on-set direction", "A half-day photo shoot, 30+ edited photos", "A camera video, 60 to 90 seconds + 3 vertical cuts", "A phone content day for behind the scenes + Reels", "Save $400 vs. booking separately"] },
-            { t: "The Premiere", p: "from $4,900", d: "The big one: an opening, a rebrand reveal or a release.", list: ["Campaign direction from start to finish", "A full-day photo shoot", "A brand film, 1 to 2 minutes, cut for every platform", "A phone content day", "The full social pack to keep posting in the same look", "Save $600 vs. booking separately"] },
+            { t: "The Drop", p: "", d: "For a launch, a promo, a new menu or a release.", list: ["Shoot direction: concept, moodboard + shot list", "A half-day photo shoot, 30+ edited photos", "A phone content day, 5 to 8 short videos"] },
+            { t: "The Campaign", p: "", tag: "MOST BOOKED", d: "Look like a real brand campaign, in photos and video.", list: ["Campaign direction: the plan, casting, styling + on-set direction", "A half-day photo shoot, 30+ edited photos", "A camera video, 60 to 90 seconds + 3 vertical cuts", "A phone content day for behind the scenes + Reels"] },
+            { t: "The Premiere", p: "", d: "The big one: an opening, a rebrand reveal or a release.", list: ["Campaign direction from start to finish", "A full-day photo shoot", "A brand film, 1 to 2 minutes, cut for every platform", "A phone content day", "The full social pack to keep posting in the same look"] },
           ]}
           foot="Campaign packages are for brands that already have a look. Starting from scratch? The Signature adds the full brand. Every campaign is planned as one project, so the photos and video feel like the same world."
         />
@@ -154,7 +154,7 @@ function MovingImagePage() {
 
         <ServiceCta current="moving" title="Have something that should move?" sub="ITS OWN PROJECT, OR PART OF A BIGGER CAMPAIGN." />
       </div>
-      <BookBar service="Film + Commercials" price="from $1,500" need="Film + Commercials" />
+      <BookBar service="Film + Commercials" need="Film + Commercials" />
     </div>
   );
 }

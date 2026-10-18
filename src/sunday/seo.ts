@@ -21,7 +21,7 @@ export const SEO: Record<string, Seo> = {
   "/branding": {
     title: "Branding + World Building in Seattle | Sunday Office",
     description:
-      "Seattle branding agency for local businesses: brand identity, brand makeovers, brand kits, voice and the whole world around your logo. Logos from $350, brand kits from $550.",
+      "Seattle branding agency for local businesses: brand identity, brand makeovers, brand kits, voice and the whole world around your logo.",
   },
   "/logo-identity": {
     title: "Logo + Brand Identity Design in Seattle | Sunday Office",
@@ -31,7 +31,7 @@ export const SEO: Record<string, Seo> = {
   "/websites": {
     title: "Website Design in Seattle for Small Businesses | Sunday Office",
     description:
-      "Seattle website design for small businesses: custom, mobile-first sites and website makeovers that show the work, answer questions and get you booked. Websites from $850.",
+      "Seattle website design for small businesses: custom, mobile-first sites and website makeovers that show the work, answer questions and get you booked.",
   },
   "/photography": {
     title: "Seattle Photographer for Brands, Portraits + Events | Sunday Office",
@@ -64,24 +64,24 @@ export const SEO: Record<string, Seo> = {
       "Social packs from Sunday Office: 20 posts, stories and covers in your brand, editable in Canva. Plus a simple step-by-step guide to using Canva.",
   },
   "/digitals": {
-    title: "Model Digitals Seattle + Tacoma | Agency Digitals $375 | Sunday Office",
+    title: "Model Digitals Seattle + Tacoma | Agency-Ready Digitals | Sunday Office",
     description:
-      "Model digitals for new and working models in Seattle and Tacoma: front, three-quarter, profile and full length in natural light, with direction the whole time. $375.",
+      "Model digitals for new and working models in Seattle and Tacoma: front, three-quarter, profile and full length in natural light, with direction the whole time.",
   },
   "/headshots": {
-    title: "Seattle Headshot Photographer | Headshots from $150 | Sunday Office",
+    title: "Seattle Headshot Photographer | Sunday Office",
     description:
-      "Professional and creative headshots in Seattle by Hana. Sessions from $150, with direction the whole time so you look like yourself.",
+      "Professional and creative headshots in Seattle by Hana. Direction the whole time so you look like yourself.",
   },
   "/moving-image": {
     title: "Seattle Commercials + Brand Films | Film + Commercials | Sunday Office",
     description:
-      "Seattle commercials, brand films and campaign video for local businesses and artists. Camera video from $1,500, brand films from $2,500.",
+      "Seattle commercials, brand films and campaign video for local businesses and artists.",
   },
   "/creative-direction-content": {
     title: "Social Media Content Seattle | Social + Content | Sunday Office",
     description:
-      "Seattle social media content: content days, short videos, social packs editable in Canva and monthly content plans from $600 a month. I make the assets, you stay in control.",
+      "Seattle social media content: content days, short videos, social packs editable in Canva and monthly content plans. I make the assets, you stay in control.",
   },
 
   /* Case studies */

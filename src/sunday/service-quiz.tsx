@@ -88,7 +88,6 @@ export function ServiceQuiz({ c }: { c: QuizCfg }) {
         <div className="dq-card so-chapter-fade">
           <span className="fd-quiz-k">Where I'd start{who ? ` · for ${who.t.toLowerCase()}` : ""}</span>
           <p className="fd-quiz-t dq-head">{what.rec.t}</p>
-          <p className="sq-price">{what.rec.p}</p>
           <p className="dq-para">{what.rec.why}</p>
           <dl className="dq-res">
             {how && (
@@ -98,7 +97,7 @@ export function ServiceQuiz({ c }: { c: QuizCfg }) {
             {c.note && <div><dt>Good to know</dt><dd className="sq-dd">{c.note}</dd></div>}
           </dl>
           <div className="dq-end">
-            <a className="fd-quiz-b" href={bookHref(c.need, what.rec.t)}>Start with this <span aria-hidden="true">→</span></a>
+            <a className="fd-quiz-b" href={bookHref(c.need, what.rec.t)}>Ask for pricing <span aria-hidden="true">→</span></a>
             {what.rec.more && <a className="sq-more" href={what.rec.more.h}>{what.rec.more.t} →</a>}
             <button type="button" className="dq-back" onClick={restart}>Retake the quiz</button>
           </div>

@@ -200,17 +200,16 @@ export type Price = { t: string; p: string; d: string; tag?: string; list?: stri
 /** Pricing in the same cards as the homepage packages: name, price, who it's
  *  for, what's in it, and one tap to ask about it. */
 function priceFoot(x: Price) {
-  return x.foot ?? (x.p === "Quoted" ? "QUOTED PER PROJECT" : x.p === "Ask me" ? "BUILT AROUND YOU" : x.p.includes("/mo") ? "PER MONTH" : x.p.includes("/hr") ? "PER HOUR" : x.p.startsWith("from") ? "STARTING PRICE" : "FLAT PRICE");
+  return x.p.includes("/mo") ? "MONTHLY · PRICING ON REQUEST" : "PRICING ON REQUEST";
 }
 
 function PriceCard({ x, need }: { x: Price; need?: string }) {
   return (
-    <a href={need ? bookHref(need, `${x.t} (${x.p})`) : "/#inquiry"} className={"so-pk-card" + (x.tag ? " is-feat" : "")}>
+    <a href={need ? bookHref(need, x.t) : "/#inquiry"} className={"so-pk-card" + (x.tag ? " is-feat" : "")}>
       <span className="so-pk-top">
         <span className="so-pk-name">{x.t}</span>
         {x.tag && <span className="so-pk-tag">{x.tag}</span>}
       </span>
-      <span className="so-pk-price">{x.p}</span>
       <span className="so-pk-who">{x.d}</span>
       {x.list && x.list.length > 0 && (
         <ul className="so-pk-list">
@@ -233,7 +232,7 @@ function PriceCard({ x, need }: { x: Price; need?: string }) {
  *  tap-to-open rows beside it, so the page shows one clear choice first. */
 export function PriceList({
   id = "pricing",
-  label = "PRICING",
+  label = "WAYS TO WORK TOGETHER",
   title,
   items,
   foot,
@@ -269,7 +268,6 @@ export function PriceList({
                 <details key={x.t} className="so-row">
                   <summary>
                     <span className="so-row-t">{x.t}</span>
-                    <span className="so-row-p">{x.p}</span>
                     <span className="so-row-plus" aria-hidden />
                   </summary>
                   <div className="so-row-body">
@@ -281,7 +279,7 @@ export function PriceList({
                         ))}
                       </ul>
                     )}
-                    <a className="so-row-go" href={need ? bookHref(need, `${x.t} (${x.p})`) : "/#inquiry"}>
+                    <a className="so-row-go" href={need ? bookHref(need, x.t) : "/#inquiry"}>
                       Ask about it →
                     </a>
                   </div>
@@ -450,7 +448,6 @@ export function FitPicker({
           <div key={on} className="so-chapter-fade so-fit-card">
             <p className="so-micro">MY SUGGESTION</p>
             <p className="so-fit-pick">{o.pick}</p>
-            <p className="so-fit-price">{o.price}</p>
             <p className="so-fit-why">{o.why}</p>
             <a className="so-fit-go" href={bookHref(need, o.pkg ?? o.pick)}>
               Start with this <span aria-hidden>→</span>
@@ -545,7 +542,6 @@ export function BookBar({ service, price, need }: { service: string; price?: str
     <div className={"so-bookbar" + (show ? " is-on" : "")} aria-hidden={!show}>
       <span className="so-bookbar-t">
         <b>{service}</b>
-        {price && <span>{price}</span>}
       </span>
       <a href={bookHref(need)} tabIndex={show ? 0 : -1}>
         Start a project <span aria-hidden>→</span>
@@ -571,12 +567,11 @@ export function PriceRows({ id, label, title, groups, need, foot }: { id?: strin
                 <details key={r.t} className="so-row">
                   <summary>
                     <span className="so-row-t">{r.t}</span>
-                    <span className="so-row-p">{r.p}</span>
                     <span className="so-row-plus" aria-hidden />
                   </summary>
                   <div className="so-row-body">
                     <p className="so-row-d">{r.d}</p>
-                    <a className="so-row-go" href={bookHref(need, `${r.t} (${r.p})`)}>Ask about it →</a>
+                    <a className="so-row-go" href={bookHref(need, r.t)}>Ask about it →</a>
                   </div>
                 </details>
               ))}

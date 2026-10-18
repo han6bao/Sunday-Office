@@ -338,7 +338,7 @@ export function HelpBottom({ c }: { c: HelpCfg }) {
   return (
     <>
       <Timeline label="WHAT HAPPENS WHEN" title="From hello to done, step by step." steps={c.timeline} note="Your exact timeline comes with your price, before anything starts. The more you have ready (see the checklist below), the faster it goes." />
-      <Estimate label="BUILD YOUR ESTIMATE" title={c.estTitle} need={c.need} base={c.base} extras={c.extras} packages={c.packages ?? []} />
+      {/* estimate builder removed: prices are shared on request */}
       <LearnMore>
         <Checklist label="BEFORE WE START" title="What to have ready." note="None of this is required to book. It just makes everything faster. Tap each one as you get it together." items={c.prep} />
         <GoodGuide label="FREE GUIDE" title={c.guideTitle} intro={`Whether you hire me or not, here's what makes it work. Tap through the ${c.guide.length}.`} items={c.guide} />
