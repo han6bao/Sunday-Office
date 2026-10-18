@@ -39,16 +39,16 @@ const PHOTOS = [
 
 /* A black ground like the photos, with the green of the grillz as the accent. */
 const THEME = {
-  paper: "#0d0d0c",
-  paper2: "#171614",
-  ink: "#f2ede5",
-  ink2: "rgba(242, 237, 229, 0.74)",
-  mute: "#8e877d",
-  rule: "rgba(242, 237, 229, 0.14)",
-  accent: "#7cc47f",
-  deep: "#1c1b19",
-  deepInk: "#f2ede5",
-  deepMute: "#a59d91",
+  paper: "#f3eee6",
+  paper2: "#ebe4d8",
+  ink: "#1b1918",
+  ink2: "rgba(27, 25, 24, 0.74)",
+  mute: "#857b70",
+  rule: "rgba(27, 25, 24, 0.14)",
+  accent: "#2f6b3a",
+  deep: "#e9e2d5",
+  deepInk: "#1b1918",
+  deepMute: "#857b70",
 };
 
 function GreenGrillzPage() {
