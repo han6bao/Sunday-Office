@@ -13,7 +13,7 @@ const A = "/assets/campaigns/elena-qiu";
 
 /* How I approached it. */
 const APPROACH = [
-  { t: "Movement over details", d: "There were several photographers at the show, and the detail shots were covered. So I followed the clothes in motion: how the straps swing, how the fabric moves when she walks." },
+  { t: "Feeling over details", d: "Other photographers at the show covered the details and specifics. My job was the story: how the outfits make you feel, and how they move when someone wears them." },
   { t: "Video and storytelling", d: "I shot as much film as stills. A few seconds of someone walking toward you says more about a garment than a flat lay ever will." },
   { t: "Directed posing", d: "I helped the models find poses that suit the clothes: low, close to the wall, leaning on each other. Nothing stiff, nothing that looks like a catalog." },
   { t: "Cold, cinematic color", d: "Washed whites, blue-green shadows and soft contrast, so the set feels like a still from a film instead of a product page." },
@@ -26,7 +26,7 @@ const FRAMES: { src: string; cap: string; video?: string }[] = [
   { src: `${A}/eq-02.jpg`, cap: "Full length, in motion" },
   { src: `${A}/eq-03.jpg`, cap: "Crouched, with the cage skirt" },
   { src: `${A}/film-02-poster.jpg`, video: `${A}/film-02.mp4`, cap: "Film · walking in" },
-  { src: `${A}/eq-04.jpg`, cap: "The details, frame by frame" },
+  { src: `${A}/eq-04.jpg`, cap: "The whole set, frame by frame" },
 ];
 
 const FOR_BRANDS = [
@@ -95,11 +95,11 @@ function ElenaQiuPage() {
 
         <section className="scr-sec">
           <p className="so-micro">THE THINKING</p>
-          <h2 className="so-serif scr-h">Not every frame <em>needs to be sharp.</em></h2>
+          <h2 className="so-serif scr-h">How it feels, <em>not how it's made.</em></h2>
           <p className="scr-p">
             These are editorials from her 2023 show. I've shot for her for
             years, and my photos have been part of her social media for a long
-            time. Here's how I approached this one.
+            time. For this show, my job was the feeling, not the details. Here's how I approached it.
           </p>
           <ol className="scr-roles">
             {APPROACH.map((r, i) => (
