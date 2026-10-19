@@ -12833,6 +12833,10 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .scr-post-soon { aspect-ratio: auto; width: clamp(240px, 30vw, 360px); }
 .scr-tab:focus-visible { outline: 2px solid #141414; outline-offset: 2px; }
 @media (max-width: 720px) { .scr-post-ig, .scr-post-soon { width: 60vw; min-height: 300px; } }
+/* Elena Qiu: the cover is now a film, full width under the title */
+.eq-cover { grid-template-columns: 1fr; }
+.eq-cover-film { margin: clamp(28px, 4vw, 44px) 0 0; }
+.eq-cover-film video { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 18px; background: #dfe6e6; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

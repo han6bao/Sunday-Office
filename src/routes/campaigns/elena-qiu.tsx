@@ -30,6 +30,7 @@ const FEED: FeedFrame[] = [
   { ...clip("eqv-recap", "The recap", 960), sound: true },
   clip("eqv-15", "Face to face"),
   photo("eq-01", "Two looks against the brick"),
+  photo("eq-hero", "Mid-step in the cage skirt"),
   clip("eqv-11", "Upside down"),
   clip("eqv-12", "Close to the lens"),
   photo("eq-03", "Crouched, with the cage skirt"),
@@ -71,10 +72,13 @@ function ElenaQiuPage() {
             </p>
             <p className="so-micro mt-3">WOMENSWEAR · PHOTOS + FILM · 2023 SHOW</p>
           </div>
-          <figure className="eq-cover-img">
-            <img src={`${A}/eq-hero.jpg`} alt="A model in Elena Qiu's white cage skirt and crushed top, mid-step against a whitewashed brick wall" />
-          </figure>
         </section>
+        <figure className="eq-cover-film">
+          <video autoPlay muted loop playsInline preload="auto" poster={`${A}/clips/eq-hero.jpg`} aria-label="Models in Elena Qiu's white pieces against a whitewashed brick wall">
+            <source src={`${A}/clips/eq-hero.mp4`} type="video/mp4" />
+            <source src={`${A}/clips/eq-hero.webm`} type="video/webm" />
+          </video>
+        </figure>
 
         <CaseFacts
           items={[
