@@ -217,7 +217,7 @@ export const SEO: Record<string, Seo> = {
   },
   "/campaigns/jaydyn-f-scream": {
     title: "Jaydyn F. SCREAM Music Video + Release Content | Sunday Office Seattle",
-    description: "Gaffer, set photos, behind the scenes and styled shoots for Seattle rapper Jaydyn F.'s SCREAM music video and release rollout, directed by Real World Jake.",
+    description: "Lighting, set photos, behind the scenes and styled shoots for Seattle rapper Jaydyn F.'s SCREAM music video and release rollout, directed by Real World Jake.",
   },
   "/campaigns/elena-qiu": {
     title: "Elena Qiu Fashion Show Editorial + Film | Seattle Fashion Photographer | Sunday Office",

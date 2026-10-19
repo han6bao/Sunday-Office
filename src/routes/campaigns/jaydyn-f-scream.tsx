@@ -15,9 +15,9 @@ const VIDEO = "https://www.youtube.com/watch?v=0UHpD8zIySQ";
 
 /* What I did on the release. */
 const ROLES = [
-  { t: "Gaffer", d: "I lit the set: the haze, the cold blues and the light that cuts through it." },
-  { t: "Production assistant", d: "Whatever the day needed, so the shoot kept moving." },
-  { t: "Set photographer", d: "Stills shot alongside the video, in the same light and the same world." },
+  { t: "Lighting", d: "I helped with the lights and the flashes all through the video." },
+  { t: "Production assistant", d: "Carrying gear, helping direct people and keeping the shoot moving." },
+  { t: "Set photographer", d: "Stills shot alongside the video, then edited by me. The color and mood in the photos are my edit." },
   { t: "Behind the scenes", d: "Photos and clips from the whole day, made to be posted." },
   { t: "Styled shoots", d: "Separate portrait setups for the cover, the profiles and the rollout." },
   { t: "The look", d: "The small details on him before every take, so every frame was ready." },
@@ -147,7 +147,7 @@ function ScreamPage() {
 
         <VideoCover />
         <p className="scr-credits">
-          Shot and edited by Real World Jake · Creative direction by Jaydyn F. and Real World Jake · Produced by Jaydyn F. · PA, gaffer and photos by Hana ·{" "}
+          Shot and edited by Real World Jake · Creative direction by Jaydyn F. and Real World Jake · Produced by Jaydyn F. · PA, lighting and photos by Hana ·{" "}
           <a className="so-bw-inline" href={VIDEO} target="_blank" rel="noreferrer">Watch on YouTube ↗</a>
         </p>
 
@@ -155,7 +155,7 @@ function ScreamPage() {
           items={[
             { k: "FOR", v: "Jaydyn F., Seattle rapper" },
             { k: "THE RELEASE", v: "SCREAM, single and music video, October 2026" },
-            { k: "MY PART", v: "Gaffer, PA, set photographer, behind the scenes and styled shoots" },
+            { k: "MY PART", v: "Lighting, PA, set photographer, behind the scenes and styled shoots" },
           ]}
         />
 
