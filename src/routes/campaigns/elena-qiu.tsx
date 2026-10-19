@@ -3,6 +3,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseFacts } from "../../sunday/case-kit";
 import { bookHref } from "../../sunday/service-kit";
+import { SwipeFeed, type FeedFrame } from "../../sunday/swipe-feed";
 
 export const Route = createFileRoute("/campaigns/elena-qiu")({
   head: () => seoHead("/campaigns/elena-qiu"),
@@ -21,13 +22,15 @@ const APPROACH = [
   { t: "A little haunting", d: "Darker and quieter than a typical show recap, to match the mood of her work." },
 ];
 
-const FRAMES: { src: string; cap: string; video?: string }[] = [
-  { src: `${A}/film-01-poster.jpg`, video: `${A}/film-01.mp4`, cap: "Film · two looks, face to face" },
-  { src: `${A}/eq-01.jpg`, cap: "Two looks against the brick" },
-  { src: `${A}/eq-03.jpg`, cap: "Crouched, with the cage skirt" },
-  { src: `${A}/film-02-poster.jpg`, video: `${A}/film-02.mp4`, cap: "Film · walking in" },
-  { src: `${A}/eq-04.jpg`, cap: "The whole set, frame by frame" },
+/* The editorial as a swipe feed. Films play once their .mp4 files are added. */
+const FEED: FeedFrame[] = [
+  { src: `${A}/film-01-poster.jpg`, video: `${A}/film-01.mp4`, alt: "Two models lying face to face on a white brick floor", set: "film", cap: "Film · face to face" },
+  { src: `${A}/eq-01.jpg`, alt: "Two models in Elena Qiu's white pieces against the brick", set: "photo", cap: "Two looks against the brick" },
+  { src: `${A}/eq-03.jpg`, alt: "A model crouched inside a white cage skirt", set: "photo", cap: "Crouched, with the cage skirt" },
+  { src: `${A}/film-02-poster.jpg`, video: `${A}/film-02.mp4`, alt: "A model walking toward the camera past a brick wall", set: "film", cap: "Film · walking in" },
+  { src: `${A}/eq-04.jpg`, alt: "A grid of frames from the Elena Qiu editorial", set: "photo", cap: "The whole set, frame by frame" },
 ];
+const SETS = { photo: "Photos", film: "Film" };
 
 const FOR_BRANDS = [
   { t: "Show and runway coverage", d: "Film and photos that capture how the collection moves." },
@@ -113,22 +116,8 @@ function ElenaQiuPage() {
 
         <section className="scr-sec">
           <p className="so-micro">THE EDITORIAL · PHOTOS + FILM</p>
-          <div className="so-photo-grid mt-6">
-            {FRAMES.map((ph, i) => (
-              <div key={ph.src} className="so-photo-cell">
-                {ph.video ? (
-                  <video className="eq-film" controls playsInline muted loop preload="metadata" poster={ph.src}>
-                    <source src={ph.video} type="video/mp4" />
-                  </video>
-                ) : (
-                  <img src={ph.src} alt={`Elena Qiu editorial: ${ph.cap.toLowerCase()}`} loading="lazy" />
-                )}
-                <span className="so-photo-cap">
-                  {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
-                </span>
-              </div>
-            ))}
-          </div>
+          <p className="scr-rd" style={{ marginTop: 10 }}>Swipe through the photos and films. The films play on their own.</p>
+          <SwipeFeed frames={FEED} sets={SETS} />
           <p className="scr-p">
             More from our other projects is coming soon. See her collections at{" "}
             <a className="so-bw-inline" href="https://elenaqiu.com/" target="_blank" rel="noreferrer">elenaqiu.com ↗</a>

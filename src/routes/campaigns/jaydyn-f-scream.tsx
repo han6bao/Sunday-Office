@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { SwipeFeed, type FeedFrame } from "../../sunday/swipe-feed";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseFacts } from "../../sunday/case-kit";
@@ -25,70 +26,11 @@ const ROLES = [
 
 /* The feed: photos and clips from the release, swiped like a post.
    Add more frames here; a clip just needs `video` (an .mp4) and a poster `src`. */
-type Frame = { src: string; alt: string; set: "set" | "bts" | "styled"; video?: string; w?: number; h?: number };
-const FEED: Frame[] = [
+const FEED: FeedFrame[] = [
   { src: `${A}/scream-motion.jpg`, alt: "Three figures in flowing white fabric, blurred in motion through haze", set: "set", w: 16, h: 9 },
   { src: `${A}/scream-styled.jpg`, alt: "Jaydyn F. in a white jacket, hands over his face, three frames side by side", set: "styled", w: 16, h: 9 },
 ];
-const SET_NAMES = { set: "From the set", bts: "Behind the scenes", styled: "Styled shoot" } as const;
-const IG = "https://www.instagram.com/sundayoffice.ag/";
-
-/* A clip in the feed plays on its own, muted, while it's on screen. Tap for sound. */
-function FeedClip({ f }: { f: Frame }) {
-  const ref = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
-  useEffect(() => {
-    const v = ref.current;
-    if (!v) return;
-    const io = new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause()), { threshold: 0.6 });
-    io.observe(v);
-    return () => io.disconnect();
-  }, []);
-  return (
-    <>
-      <video ref={ref} src={f.video} poster={f.src} muted={muted} loop playsInline preload="metadata" aria-label={f.alt} />
-      <button type="button" className="scr-sound" onClick={() => setMuted((m) => !m)}>{muted ? "Sound on" : "Sound off"}</button>
-    </>
-  );
-}
-
-function Feed() {
-  const [only, setOnly] = useState<"all" | Frame["set"]>("all");
-  const row = useRef<HTMLDivElement>(null);
-  const list = only === "all" ? FEED : FEED.filter((f) => f.set === only);
-  const nudge = (d: number) => row.current?.scrollBy({ left: d * row.current.clientWidth * 0.7, behavior: "smooth" });
-  return (
-    <>
-      <div className="scr-tabs" role="tablist" aria-label="Filter the feed">
-        {(["all", "set", "bts", "styled"] as const).map((k) => (
-          <button key={k} type="button" role="tab" aria-selected={only === k} className={"scr-tab" + (only === k ? " is-on" : "")} onClick={() => setOnly(k)}>
-            {k === "all" ? "Everything" : SET_NAMES[k]}
-          </button>
-        ))}
-        <span className="scr-arrows">
-          <button type="button" aria-label="Scroll back" onClick={() => nudge(-1)}>←</button>
-          <button type="button" aria-label="Scroll forward" onClick={() => nudge(1)}>→</button>
-        </span>
-      </div>
-      <div className="scr-feed" ref={row}>
-        {list.map((f) => (
-          <figure key={f.src + (f.video ?? "")} className="scr-post" style={{ aspectRatio: `${f.w ?? 4} / ${f.h ?? 5}` }}>
-            {f.video ? <FeedClip f={f} /> : <img src={f.src} alt={f.alt} loading="lazy" />}
-            <figcaption>{SET_NAMES[f.set]}</figcaption>
-          </figure>
-        ))}
-        {list.length === 0 && (
-          <div className="scr-post scr-post-soon"><span className="so-micro">More frames coming soon</span></div>
-        )}
-        <a className="scr-post scr-post-ig" href={IG} target="_blank" rel="noreferrer">
-          <span className="so-micro">KEEP SCROLLING</span>
-          <span className="so-serif">More on Instagram</span>
-          <span className="scr-ig-h">@sundayoffice.ag ↗</span>
-        </a>
-      </div>
-    </>
-  );
-}
+const SET_NAMES = { set: "From the set", bts: "Behind the scenes", styled: "Styled shoot" };
 
 /* The music video. Loads YouTube only when someone presses play,
    and always offers the YouTube link in case the player can't load. */
@@ -224,7 +166,7 @@ function ScreamPage() {
           <p className="so-micro">THE GALLERY</p>
           <h2 className="so-serif scr-h">Everything I made <em>for the release.</em></h2>
           <p className="scr-rd" style={{ marginTop: 10 }}>Swipe through the set, the behind the scenes and the styled shoot. Clips play on their own.</p>
-          <Feed />
+          <SwipeFeed frames={FEED} sets={SET_NAMES} />
         </section>
 
         <section className="scr-sec">
