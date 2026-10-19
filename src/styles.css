@@ -12832,3 +12832,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .scr-cover:hover .scr-play { transform: scale(1.06); }
 /* Selected work: keep the grid inside the screen so the filter chips scroll sideways on phones */
 @media (max-width: 899px) { #work.fd-frame { grid-template-columns: minmax(0, 1fr); } #work.fd-frame > * { min-width: 0; } .scr-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-right: -20px; padding-right: 20px; } .scr-tabs::-webkit-scrollbar { display: none; } .scr-tab { flex: 0 0 auto; } }
+/* Elena Qiu: the film */
+.eq-filmsec { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.eq-film-v video { display: block; width: 100%; max-width: 440px; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 18px; background: #141414; }
+@media (max-width: 720px) { .eq-filmsec { grid-template-columns: 1fr; } .eq-film-v video { max-width: 100%; } }

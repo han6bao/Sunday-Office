@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 /* A feed of photos and clips you swipe sideways, like an Instagram post.
    Clips play on their own, muted, while on screen. If a clip's file isn't
    there yet, its poster shows as a still instead. Ends on an Instagram card. */
-export type FeedFrame = { src: string; alt: string; set: string; cap?: string; video?: string; w?: number; h?: number };
+export type FeedFrame = { src: string; alt: string; set: string; cap?: string; video?: string; sound?: boolean; w?: number; h?: number };
 
 const IG = "https://www.instagram.com/sundayoffice.ag/";
 
@@ -21,8 +21,12 @@ function Clip({ f }: { f: FeedFrame }) {
   if (broken) return <img src={f.src} alt={f.alt} loading="lazy" />;
   return (
     <>
-      <video ref={ref} src={f.video} poster={f.src} muted={muted} loop playsInline preload="metadata" aria-label={f.alt} onError={() => setBroken(true)} />
-      <button type="button" className="scr-sound" onClick={() => setMuted((m) => !m)}>{muted ? "Sound on" : "Sound off"}</button>
+      <video ref={ref} poster={f.src} muted={muted} loop playsInline preload="metadata" aria-label={f.alt}>
+        {/* MP4 for Safari and most phones, WebM as a second option. If neither loads, show the still. */}
+        <source src={f.video} type="video/mp4" />
+        <source src={f.video!.replace(/\.mp4$/, ".webm")} type="video/webm" onError={() => setBroken(true)} />
+      </video>
+      {f.sound && <button type="button" className="scr-sound" onClick={() => setMuted((m) => !m)}>{muted ? "Sound on" : "Sound off"}</button>}
     </>
   );
 }

@@ -22,15 +22,26 @@ const APPROACH = [
   { t: "A little haunting", d: "Darker and quieter than a typical show recap, to match the mood of her work." },
 ];
 
-/* The editorial as a swipe feed. Films play once their .mp4 files are added. */
+/* The editorial as a swipe feed: clips from the day mixed with the stills. */
+const C = `${A}/clips`;
+const clip = (n: string, cap: string, h = 1080): FeedFrame => ({ src: `${C}/${n}.jpg`, video: `${C}/${n}.mp4`, alt: `A clip from the Elena Qiu editorial: ${cap.toLowerCase()}`, set: "clip", cap, w: 720, h });
+const photo = (n: string, cap: string): FeedFrame => ({ src: `${A}/${n}.jpg`, alt: `Elena Qiu editorial: ${cap.toLowerCase()}`, set: "photo", cap });
 const FEED: FeedFrame[] = [
-  { src: `${A}/film-01-poster.jpg`, video: `${A}/film-01.mp4`, alt: "Two models lying face to face on a white brick floor", set: "film", cap: "Film · face to face" },
-  { src: `${A}/eq-01.jpg`, alt: "Two models in Elena Qiu's white pieces against the brick", set: "photo", cap: "Two looks against the brick" },
-  { src: `${A}/eq-03.jpg`, alt: "A model crouched inside a white cage skirt", set: "photo", cap: "Crouched, with the cage skirt" },
-  { src: `${A}/film-02-poster.jpg`, video: `${A}/film-02.mp4`, alt: "A model walking toward the camera past a brick wall", set: "film", cap: "Film · walking in" },
-  { src: `${A}/eq-04.jpg`, alt: "A grid of frames from the Elena Qiu editorial", set: "photo", cap: "The whole set, frame by frame" },
+  clip("eqv-15", "Face to face"),
+  photo("eq-01", "Two looks against the brick"),
+  clip("eqv-11", "Upside down"),
+  clip("eqv-12", "Close to the lens"),
+  photo("eq-03", "Crouched, with the cage skirt"),
+  clip("eqv-01", "Looking down", 1066),
+  clip("eqv-14", "Against the wall"),
+  clip("eqv-17", "Eyes closed", 1086),
+  photo("eq-04", "The whole set, frame by frame"),
+  clip("eqv-13", "Turning away"),
+  clip("eqv-02", "Hand to face", 1086),
+  clip("eqv-walk", "Walking in", 900),
+  clip("eqv-16", "The cage skirt, moving", 1086),
 ];
-const SETS = { photo: "Photos", film: "Film" };
+const SETS = { clip: "Clips", photo: "Photos" };
 
 const FOR_BRANDS = [
   { t: "Show and runway coverage", d: "Film and photos that capture how the collection moves." },
@@ -114,9 +125,27 @@ function ElenaQiuPage() {
           </ol>
         </section>
 
+        <section className="scr-sec eq-filmsec">
+          <div className="eq-film-v">
+            <video controls playsInline preload="metadata" poster={`${A}/clips/eq-film.jpg`}>
+              <source src={`${A}/clips/eq-film.mp4`} type="video/mp4" />
+              <source src={`${A}/clips/eq-film.webm`} type="video/webm" />
+            </video>
+          </div>
+          <div>
+            <p className="so-micro">THE FILM</p>
+            <h2 className="so-serif scr-h">Forty-six seconds <em>of the day.</em></h2>
+            <p className="scr-p">
+              The short film I cut from the editorial: the looks in motion,
+              the faces up close and the pieces doing what they do when
+              someone actually wears them. Turn the sound on.
+            </p>
+          </div>
+        </section>
+
         <section className="scr-sec">
-          <p className="so-micro">THE EDITORIAL · PHOTOS + FILM</p>
-          <p className="scr-rd" style={{ marginTop: 10 }}>Swipe through the photos and films. The films play on their own.</p>
+          <p className="so-micro">THE EDITORIAL · CLIPS + STILLS</p>
+          <p className="scr-rd" style={{ marginTop: 10 }}>Swipe through the clips and stills. The clips play on their own.</p>
           <SwipeFeed frames={FEED} sets={SETS} />
           <p className="scr-p">
             More from our other projects is coming soon. See her collections at{" "}
