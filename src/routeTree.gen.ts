@@ -59,6 +59,7 @@ import { Route as CampaignsLeonThomasRouteImport } from './routes/campaigns/leon
 import { Route as CampaignsKenshiKillzRouteImport } from './routes/campaigns/kenshi-killz'
 import { Route as CampaignsJazminsEventsRouteImport } from './routes/campaigns/jazmins-events'
 import { Route as CampaignsJaydynFRouteImport } from './routes/campaigns/jaydyn-f'
+import { Route as CampaignsJaydynFScreamRouteImport } from './routes/campaigns/jaydyn-f-scream'
 import { Route as CampaignsHighwayRouteImport } from './routes/campaigns/highway'
 import { Route as CampaignsGreenGrillzRouteImport } from './routes/campaigns/green-grillz'
 import { Route as CampaignsExhibitionRouteImport } from './routes/campaigns/exhibition'
@@ -325,6 +326,11 @@ const CampaignsJaydynFRoute = CampaignsJaydynFRouteImport.update({
   path: '/campaigns/jaydyn-f',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CampaignsJaydynFScreamRoute = CampaignsJaydynFScreamRouteImport.update({
+  id: '/campaigns/jaydyn-f-scream',
+  path: '/campaigns/jaydyn-f-scream',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CampaignsHighwayRoute = CampaignsHighwayRouteImport.update({
   id: '/campaigns/highway',
   path: '/campaigns/highway',
@@ -447,6 +453,7 @@ export interface FileRoutesByFullPath {
   '/campaigns/green-grillz': typeof CampaignsGreenGrillzRoute
   '/campaigns/highway': typeof CampaignsHighwayRoute
   '/campaigns/jaydyn-f': typeof CampaignsJaydynFRoute
+  '/campaigns/jaydyn-f-scream': typeof CampaignsJaydynFScreamRoute
   '/campaigns/jazmins-events': typeof CampaignsJazminsEventsRoute
   '/campaigns/kenshi-killz': typeof CampaignsKenshiKillzRoute
   '/campaigns/leon-thomas': typeof CampaignsLeonThomasRoute
@@ -513,6 +520,7 @@ export interface FileRoutesByTo {
   '/campaigns/green-grillz': typeof CampaignsGreenGrillzRoute
   '/campaigns/highway': typeof CampaignsHighwayRoute
   '/campaigns/jaydyn-f': typeof CampaignsJaydynFRoute
+  '/campaigns/jaydyn-f-scream': typeof CampaignsJaydynFScreamRoute
   '/campaigns/jazmins-events': typeof CampaignsJazminsEventsRoute
   '/campaigns/kenshi-killz': typeof CampaignsKenshiKillzRoute
   '/campaigns/leon-thomas': typeof CampaignsLeonThomasRoute
@@ -580,6 +588,7 @@ export interface FileRoutesById {
   '/campaigns/green-grillz': typeof CampaignsGreenGrillzRoute
   '/campaigns/highway': typeof CampaignsHighwayRoute
   '/campaigns/jaydyn-f': typeof CampaignsJaydynFRoute
+  '/campaigns/jaydyn-f-scream': typeof CampaignsJaydynFScreamRoute
   '/campaigns/jazmins-events': typeof CampaignsJazminsEventsRoute
   '/campaigns/kenshi-killz': typeof CampaignsKenshiKillzRoute
   '/campaigns/leon-thomas': typeof CampaignsLeonThomasRoute
@@ -648,6 +657,7 @@ export interface FileRouteTypes {
     | '/campaigns/green-grillz'
     | '/campaigns/highway'
     | '/campaigns/jaydyn-f'
+    | '/campaigns/jaydyn-f-scream'
     | '/campaigns/jazmins-events'
     | '/campaigns/kenshi-killz'
     | '/campaigns/leon-thomas'
@@ -714,6 +724,7 @@ export interface FileRouteTypes {
     | '/campaigns/green-grillz'
     | '/campaigns/highway'
     | '/campaigns/jaydyn-f'
+    | '/campaigns/jaydyn-f-scream'
     | '/campaigns/jazmins-events'
     | '/campaigns/kenshi-killz'
     | '/campaigns/leon-thomas'
@@ -780,6 +791,7 @@ export interface FileRouteTypes {
     | '/campaigns/green-grillz'
     | '/campaigns/highway'
     | '/campaigns/jaydyn-f'
+    | '/campaigns/jaydyn-f-scream'
     | '/campaigns/jazmins-events'
     | '/campaigns/kenshi-killz'
     | '/campaigns/leon-thomas'
@@ -846,6 +858,7 @@ export interface RootRouteChildren {
   CampaignsGreenGrillzRoute: typeof CampaignsGreenGrillzRoute
   CampaignsHighwayRoute: typeof CampaignsHighwayRoute
   CampaignsJaydynFRoute: typeof CampaignsJaydynFRoute
+  CampaignsJaydynFScreamRoute: typeof CampaignsJaydynFScreamRoute
   CampaignsJazminsEventsRoute: typeof CampaignsJazminsEventsRoute
   CampaignsKenshiKillzRoute: typeof CampaignsKenshiKillzRoute
   CampaignsLeonThomasRoute: typeof CampaignsLeonThomasRoute
@@ -1216,6 +1229,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CampaignsJaydynFRouteImport
       parentRoute: typeof rootRouteImport
     }
+
+    '/campaigns/jaydyn-f-scream': {
+      id: '/campaigns/jaydyn-f-scream'
+      path: '/campaigns/jaydyn-f-scream'
+      fullPath: '/campaigns/jaydyn-f-scream'
+      preLoaderRoute: typeof CampaignsJaydynFScreamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/campaigns/highway': {
       id: '/campaigns/highway'
       path: '/campaigns/highway'
@@ -1377,6 +1398,7 @@ const rootRouteChildren: RootRouteChildren = {
   CampaignsGreenGrillzRoute: CampaignsGreenGrillzRoute,
   CampaignsHighwayRoute: CampaignsHighwayRoute,
   CampaignsJaydynFRoute: CampaignsJaydynFRoute,
+  CampaignsJaydynFScreamRoute: CampaignsJaydynFScreamRoute,
   CampaignsJazminsEventsRoute: CampaignsJazminsEventsRoute,
   CampaignsKenshiKillzRoute: CampaignsKenshiKillzRoute,
   CampaignsLeonThomasRoute: CampaignsLeonThomasRoute,

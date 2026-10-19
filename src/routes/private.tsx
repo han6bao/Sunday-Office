@@ -24,6 +24,7 @@ const FILES: { t: string; h: string }[] = [
   { t: "Exhibition", h: "/campaigns/exhibition" },
   { t: "Nine Vicious × Custom Grillz", h: "/campaigns/green-grillz" },
   { t: "Highway", h: "/campaigns/highway" },
+  { t: "Jaydyn F. · SCREAM", h: "/campaigns/jaydyn-f-scream" },
   { t: "Jaydyn F.", h: "/campaigns/jaydyn-f" },
   { t: "Jazmin Events", h: "/websites/jazmins-events" },
   { t: "Kenshi Killz", h: "/campaigns/kenshi-killz" },

@@ -721,6 +721,7 @@ const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; li
   { src: "/assets/campaigns/pilates-haus-cover.png", alt: "Pilates Haus, a reformer Pilates studio in Seattle", t: "Pilates Haus", w: "Website + brand kit", d: "A new reformer Pilates studio in Seattle, with a site and brand kit built around their logo.", links: [{ t: "Visit their website", h: "https://pilates-haus-seattle.vercel.app/" }], study: "" },
   { src: "/assets/campaigns/joe-lopez-cover.png", alt: "Joe Lopez Photography website", t: "Joe Lopez Photography", w: "Website", d: "A new site for a Michigan wedding and quinceañera photographer.", links: [{ t: "Visit their website", h: "https://joe-lopez-photography.vercel.app/" }], study: "" },
   { src: "/assets/campaigns/leon-thomas/lt-01.jpg", alt: "Leon Thomas performing at Vice Seattle", t: "Leon Thomas × Vice", w: "Event photography", d: "His tour afterparty at Vice Seattle, photographed for the venue.", links: [{ t: "Visit Vice Seattle", h: "https://www.viceseattle.com/" }], study: "/campaigns/leon-thomas" },
+  { src: "/assets/campaigns/jaydyn-f/scream-blue.jpg", alt: "Jaydyn F. crouched in blue haze with a red laser line", t: "Jaydyn F. · SCREAM", w: "Music video release", d: "Gaffer, set photos and behind the scenes for his new single. The photos carried the whole rollout, down to his profile pictures.", links: [{ t: "Watch the video", h: "https://www.youtube.com/watch?v=0UHpD8zIySQ" }], study: "/campaigns/jaydyn-f-scream" },
   { src: "/assets/campaigns/elena-qiu/eq-01.jpg", alt: "Two models in Elena Qiu's white pieces against a brick wall", t: "Elena Qiu", w: "Fashion editorial + film", d: "Editorials for a New York womenswear designer from Seattle, shot around her shows for years.", links: [{ t: "Visit her website", h: "https://elenaqiu.com/" }], study: "/campaigns/elena-qiu" },
   { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", alt: "The lounge at Selaras Haus, a beauty studio in Tacoma", t: "Selaras Haus", w: "Interior photography", d: "A calm, warm studio in downtown Tacoma, photographed for its social media and branding.", links: [{ t: "See their Instagram", h: "https://www.instagram.com/selarashaus/" }], study: "/campaigns/selaras-haus" },
   { src: "/assets/campaigns/ellis-digitals/ed-01.jpg", alt: "Ellis in denim on denim, sitting on a white floor at LOFT Tacoma", t: "Ellis", w: "Model digitals", d: "My first client, shot again on a Sunday as Sunday Office opened. Digitals and a styled denim look at LOFT Tacoma.", links: [], study: "/campaigns/ellis-digitals" },
@@ -1042,6 +1043,7 @@ const WORK_TAGS: Record<string, string[]> = {
   "Studio headshots": ["Headshots"],
   "Nine Vicious × Custom Grillz": ["Content", "Photography"],
   "Jaydyn F.": ["Content", "Video"],
+  "Jaydyn F. · SCREAM": ["Video", "Photography"],
   "Chutneys Bellevue": ["Video", "Photography"],
 };
 const WORK_FILTERS = ["All", "Branding", "Websites", "Photography", "Headshots", "Content", "Video"];

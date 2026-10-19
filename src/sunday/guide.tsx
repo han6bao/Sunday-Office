@@ -51,6 +51,7 @@ const CASES: { t: string; href: string }[] = [
   { t: "Selaras Haus", href: "/campaigns/selaras-haus" },
   { t: "Nine Vicious × Custom Grillz", href: "/campaigns/green-grillz" },
   { t: "Exhibition", href: "/campaigns/exhibition" },
+  { t: "Jaydyn F. · SCREAM", href: "/campaigns/jaydyn-f-scream" },
   { t: "Jaydyn F.", href: "/campaigns/jaydyn-f" },
   { t: "Chutneys Bellevue", href: "/campaigns/chutneys" },
   { t: "Leon Thomas × Vice", href: "/campaigns/leon-thomas" },

@@ -215,9 +215,13 @@ export const SEO: Record<string, Seo> = {
     description:
       "Nightlife photography of Leon Thomas at the Mutts Don't Heel tour afterparty at Vice Seattle, photographed by Hana.",
   },
+  "/campaigns/jaydyn-f-scream": {
+    title: "Jaydyn F. SCREAM Music Video + Release Content | Sunday Office Seattle",
+    description: "Gaffer, set photos, behind the scenes and styled shoots for Seattle rapper Jaydyn F.'s SCREAM music video and release rollout, directed by Real World Jake.",
+  },
   "/campaigns/elena-qiu": {
-    title: "Elena Qiu Fashion Editorial Photography + Film | Sunday Office",
-    description: "Editorial photos and short films for New York womenswear designer Elena Qiu, from Seattle. Fashion show editorials by Sunday Office.",
+    title: "Elena Qiu Fashion Show Editorial + Film | Seattle Fashion Photographer | Sunday Office",
+    description: "Cinematic show editorials and short films for New York womenswear designer Elena Qiu. Fashion campaign photography and video for designers and clothing brands, from Sunday Office in Seattle.",
   },
   "/campaigns/avery-tien": {
     title: "Avery Tien Fashion Portraits Seattle | Sunday Office",

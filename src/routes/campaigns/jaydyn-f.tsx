@@ -298,6 +298,11 @@ function JaydynCase() {
           </div>
         )}
 
+        <a href="/campaigns/jaydyn-f-scream" className="scr-next">
+          <span className="so-micro">THE LATEST RELEASE</span>
+          <span className="so-serif">SCREAM: the music video and its rollout →</span>
+        </a>
+
         <CaseBookingCta />
 
         <div style={{ marginTop: 56 }}>
