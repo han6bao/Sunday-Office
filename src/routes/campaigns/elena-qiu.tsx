@@ -136,7 +136,7 @@ function ElenaQiuPage() {
             <p className="so-micro">THE FILM</p>
             <h2 className="so-serif scr-h">Forty-six seconds <em>of the day.</em></h2>
             <p className="scr-p">
-              The short film I cut from the editorial: the looks in motion,
+              A short film from the editorial: the looks in motion,
               the faces up close and the pieces doing what they do when
               someone actually wears them. Turn the sound on.
             </p>
