@@ -125,24 +125,6 @@ function ElenaQiuPage() {
           </ol>
         </section>
 
-        <section className="scr-sec eq-filmsec">
-          <div className="eq-film-v">
-            <video controls playsInline preload="metadata" poster={`${A}/clips/eq-film.jpg`}>
-              <source src={`${A}/clips/eq-film.mp4`} type="video/mp4" />
-              <source src={`${A}/clips/eq-film.webm`} type="video/webm" />
-            </video>
-          </div>
-          <div>
-            <p className="so-micro">THE FILM</p>
-            <h2 className="so-serif scr-h">Forty-six seconds <em>of the day.</em></h2>
-            <p className="scr-p">
-              A short film from the editorial: the looks in motion,
-              the faces up close and the pieces doing what they do when
-              someone actually wears them. Turn the sound on.
-            </p>
-          </div>
-        </section>
-
         <section className="scr-sec">
           <p className="so-micro">THE EDITORIAL · CLIPS + STILLS</p>
           <p className="scr-rd" style={{ marginTop: 10 }}>Swipe through the clips and stills. The clips play on their own.</p>

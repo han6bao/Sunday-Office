@@ -12836,3 +12836,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .eq-filmsec { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
 .eq-film-v video { display: block; width: 100%; max-width: 440px; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 18px; background: #141414; }
 @media (max-width: 720px) { .eq-filmsec { grid-template-columns: 1fr; } .eq-film-v video { max-width: 100%; } }
+.scr-post-ig { aspect-ratio: auto; width: clamp(220px, 24vw, 300px); }
+.scr-post-soon { aspect-ratio: auto; width: clamp(240px, 30vw, 360px); }
+.scr-tab:focus-visible { outline: 2px solid #141414; outline-offset: 2px; }
+@media (max-width: 720px) { .scr-post-ig, .scr-post-soon { width: 60vw; min-height: 300px; } }

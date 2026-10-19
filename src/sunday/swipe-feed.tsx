@@ -37,6 +37,8 @@ export function SwipeFeed({ frames, sets }: { frames: FeedFrame[]; sets: Record<
   const list = only === "all" ? frames : frames.filter((f) => f.set === only);
   const nudge = (d: number) => row.current?.scrollBy({ left: d * row.current.clientWidth * 0.7, behavior: "smooth" });
   const keys = Object.keys(sets);
+  // Switching sets starts the row from the first frame again.
+  useEffect(() => { row.current?.scrollTo({ left: 0, behavior: "instant" as ScrollBehavior }); }, [only]);
   return (
     <>
       <div className="scr-tabs" role="tablist" aria-label="Filter the feed">
