@@ -27,6 +27,7 @@ const C = `${A}/clips`;
 const clip = (n: string, cap: string, h = 1080): FeedFrame => ({ src: `${C}/${n}.jpg`, video: `${C}/${n}.mp4`, alt: `A clip from the Elena Qiu editorial: ${cap.toLowerCase()}`, set: "clip", cap, w: 720, h });
 const photo = (n: string, cap: string): FeedFrame => ({ src: `${A}/${n}.jpg`, alt: `Elena Qiu editorial: ${cap.toLowerCase()}`, set: "photo", cap });
 const FEED: FeedFrame[] = [
+  { ...clip("eqv-recap", "The recap", 960), sound: true },
   clip("eqv-15", "Face to face"),
   photo("eq-01", "Two looks against the brick"),
   clip("eqv-11", "Upside down"),
