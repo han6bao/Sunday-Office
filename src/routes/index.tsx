@@ -911,7 +911,7 @@ const MORE_WORK: { t: string; w: string; k: string[]; src: string; h: string }[]
   { t: "Big Baby Gucci", w: "Artist photography", k: ["Photography"], src: "/assets/campaigns/big-baby-gucci/bbg-01.jpg", h: "/campaigns/big-baby-gucci" },
   { t: "Paradice × Itz Pz", w: "Studio portraits", k: ["Photography"], src: "/assets/campaigns/paradice/pz01.jpg", h: "/campaigns/paradice" },
   { t: "Still Different", w: "Artist photography", k: ["Photography"], src: "/assets/campaigns/still-different/sd-01.jpg", h: "/campaigns/still-different" },
-  { t: "Elena Qiu", w: "Fashion editorial", k: ["Photography", "Video"], src: "/assets/campaigns/elena-qiu/eq-02.jpg", h: "/campaigns/elena-qiu" },
+  { t: "Elena Qiu", w: "Fashion editorial", k: ["Photography", "Video"], src: "/assets/campaigns/elena-qiu/eq-hero.jpg", h: "/campaigns/elena-qiu" },
   { t: "Avery Tien", w: "Portraits", k: ["Photography"], src: "/assets/campaigns/avery-tien/at01.jpg", h: "/campaigns/avery-tien" },
   { t: "DJ Prashant × The Hiyu", w: "Event photography", k: ["Photography"], src: "/assets/campaigns/dj-prashant-hiyu/djp-01.jpg", h: "/campaigns/dj-prashant-hiyu" },
   { t: "DJ WZRD", w: "Nightlife photography", k: ["Photography"], src: "/assets/campaigns/dj-wzrd/dj-01.jpg", h: "/campaigns/dj-wzrd" },

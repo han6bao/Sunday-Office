@@ -8,7 +8,7 @@ export const Route = createFileRoute("/photography/creative")({
 });
 
 const PHOTOS: RoomPhoto[] = [
-  { src: "/assets/campaigns/elena-qiu/eq-02.jpg", h: "/campaigns/elena-qiu", cap: "Elena Qiu" },
+  { src: "/assets/campaigns/elena-qiu/eq-hero.jpg", h: "/campaigns/elena-qiu", cap: "Elena Qiu" },
   { src: "/assets/campaigns/exhibition/exh2.jpg", h: "/campaigns/exhibition", cap: "Exhibition" },
   { src: "/assets/campaigns/highway-chitos/forever-cover.jpg", h: "/campaigns/highway", cap: "Highway, album cover" },
   { src: "/assets/campaigns/still-different/sd-05.jpg", h: "/campaigns/still-different", cap: "Still Different" },

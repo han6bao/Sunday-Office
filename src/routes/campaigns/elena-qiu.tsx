@@ -23,7 +23,7 @@ const APPROACH = [
 
 const FRAMES: { src: string; cap: string; video?: string }[] = [
   { src: `${A}/film-01-poster.jpg`, video: `${A}/film-01.mp4`, cap: "Film · two looks, face to face" },
-  { src: `${A}/eq-02.jpg`, cap: "Full length, in motion" },
+  { src: `${A}/eq-01.jpg`, cap: "Two looks against the brick" },
   { src: `${A}/eq-03.jpg`, cap: "Crouched, with the cage skirt" },
   { src: `${A}/film-02-poster.jpg`, video: `${A}/film-02.mp4`, cap: "Film · walking in" },
   { src: `${A}/eq-04.jpg`, cap: "The whole set, frame by frame" },
@@ -58,7 +58,7 @@ function ElenaQiuPage() {
             <p className="so-micro mt-3">WOMENSWEAR · PHOTOS + FILM · 2023 SHOW</p>
           </div>
           <figure className="eq-cover-img">
-            <img src={`${A}/eq-01.jpg`} alt="Two models in Elena Qiu's white pieces against a whitewashed brick wall" />
+            <img src={`${A}/eq-hero.jpg`} alt="A model in Elena Qiu's white cage skirt and crushed top, mid-step against a whitewashed brick wall" />
           </figure>
         </section>
 

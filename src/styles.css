@@ -12819,9 +12819,14 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .eq-cover { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(28px, 5vw, 72px); align-items: end; }
 .eq-title { font-size: clamp(56px, 10vw, 140px); margin-top: 14px; line-height: .95; }
 .eq-lead { margin-top: 22px; font-size: clamp(18px, 1.7vw, 22px); line-height: 1.5; max-width: 40ch; }
-.eq-cover-img { margin: 0; justify-self: end; width: 100%; max-width: 420px; }
-.eq-cover-img img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px; }
+.eq-cover-img { margin: 0; justify-self: end; width: 100%; max-width: 520px; }
+.eq-cover-img img { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 18px; }
 @media (max-width: 720px) {
   .eq-cover { grid-template-columns: 1fr; }
   .eq-cover-img { justify-self: start; max-width: 100%; }
 }
+.scr-cover { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; cursor: pointer; display: grid; place-content: center; justify-items: center; gap: 14px; color: #f4efe8; background: radial-gradient(ellipse at 50% 60%, #26302f 0%, #121414 70%); font: inherit; }
+.scr-cover .so-micro { color: rgba(244,239,232,.7); }
+.scr-cover-t { font-family: "Instrument Serif", serif; font-size: clamp(56px, 11vw, 150px); line-height: .9; letter-spacing: .02em; }
+.scr-play { width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center; background: #f4efe8; color: #141414; font-size: 22px; padding-left: 4px; transition: transform .2s ease; }
+.scr-cover:hover .scr-play { transform: scale(1.06); }

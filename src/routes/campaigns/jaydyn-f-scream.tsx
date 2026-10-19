@@ -90,6 +90,38 @@ function Feed() {
   );
 }
 
+/* The music video. Loads YouTube only when someone presses play,
+   and always offers the YouTube link in case the player can't load. */
+function VideoCover() {
+  const [on, setOn] = useState(false);
+  return (
+    <div className="scr-frame scr-hero">
+      {on ? (
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/0UHpD8zIySQ?autoplay=1&rel=0"
+          title="Jaydyn F. SCREAM, official music video"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+          allowFullScreen
+        />
+      ) : (
+        <button
+          type="button"
+          className="scr-cover"
+          onClick={() => {
+            // Previews can't load YouTube inside the page, so open it on YouTube there.
+            if (/claude|anthropic|usercontent/.test(window.location.hostname)) window.open(VIDEO, "_blank", "noreferrer");
+            else setOn(true);
+          }} aria-label="Play the SCREAM music video">
+          <span className="so-micro">JAYDYN F. · OFFICIAL MUSIC VIDEO</span>
+          <span className="scr-cover-t">SCREAM</span>
+          <span className="scr-play" aria-hidden="true">▶</span>
+          <span className="so-micro">PRESS PLAY</span>
+        </button>
+      )}
+    </div>
+  );
+}
+
 /* For other artists: what one release day can turn into. */
 const FOR_ARTISTS = [
   { t: "A set that looks like the song", d: "Light and mood planned with your director, so the video feels like a world." },
@@ -113,15 +145,7 @@ function ScreamPage() {
         </h1>
         <p className="so-micro mt-3">A NEW SINGLE, ITS MUSIC VIDEO AND EVERYTHING AROUND IT</p>
 
-        <div className="scr-frame scr-hero">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/0UHpD8zIySQ?rel=0"
-            title="Jaydyn F. SCREAM, official music video"
-            loading="lazy"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            allowFullScreen
-          />
-        </div>
+        <VideoCover />
         <p className="scr-credits">
           Shot and edited by Real World Jake · Creative direction by Jaydyn F. and Real World Jake · Produced by Jaydyn F. · PA, gaffer and photos by Hana ·{" "}
           <a className="so-bw-inline" href={VIDEO} target="_blank" rel="noreferrer">Watch on YouTube ↗</a>
