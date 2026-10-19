@@ -57,7 +57,6 @@ export function SwipeFeed({ frames, sets }: { frames: FeedFrame[]; sets: Record<
         {list.map((f) => (
           <figure key={f.src + (f.video ?? "")} className="scr-post" style={{ aspectRatio: `${f.w ?? 4} / ${f.h ?? 5}` }}>
             {f.video ? <Clip f={f} /> : <img src={f.src} alt={f.alt} loading="lazy" />}
-            <figcaption>{f.cap ?? sets[f.set]}</figcaption>
           </figure>
         ))}
         {list.length === 0 && (

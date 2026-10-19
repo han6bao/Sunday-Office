@@ -32,7 +32,6 @@ const FEED: FeedFrame[] = [
   clip("eqv-11", "Upside down"),
   clip("eqv-12", "Close to the lens"),
   photo("eq-03", "Crouched, with the cage skirt"),
-  clip("eqv-01", "Looking down", 1066),
   clip("eqv-14", "Against the wall"),
   clip("eqv-17", "Eyes closed", 1086),
   photo("eq-04", "The whole set, frame by frame"),
