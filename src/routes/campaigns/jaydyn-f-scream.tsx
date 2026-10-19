@@ -26,11 +26,54 @@ const ROLES = [
 
 /* The feed: photos and clips from the release, swiped like a post.
    Add more frames here; a clip just needs `video` (an .mp4) and a poster `src`. */
+const S = `${A}/scream`;
 const FEED: FeedFrame[] = [
-  { src: `${A}/scream-motion.jpg`, alt: "Three figures in flowing white fabric, blurred in motion through haze", set: "set", w: 16, h: 9 },
-  { src: `${A}/scream-styled.jpg`, alt: "Jaydyn F. in a white jacket, hands over his face, three frames side by side", set: "styled", w: 16, h: 9 },
+  { src: `${S}/sc-01.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1672, h: 941 },
+  { src: `${S}/sc-02.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1086, h: 1448 },
+  { src: `${S}/sc-03.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1536, h: 1024 },
+  { src: `${S}/sc-04.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-05.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1536, h: 1024 },
+  { src: `${S}/sc-06.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1200, h: 1800 },
+  { src: `${S}/sc-07.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1122, h: 1402 },
+  { src: `${S}/sc-08.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1024, h: 1536 },
+  { src: `${S}/sc-09.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1800, h: 1012 },
+  { src: `${S}/sc-10.jpg`, alt: "Jaydyn F. in a white jacket, hands over his face, three frames side by side", set: "styled", w: 1800, h: 1012 },
+  { src: `${S}/sc-11.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1122, h: 1402 },
+  { src: `${S}/sc-12.jpg`, alt: "Behind the scenes on the SCREAM music video shoot", set: "bts", w: 1620, h: 1080 },
+  { src: `${S}/sc-13.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1200, h: 1800 },
+  { src: `${S}/sc-14.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-15.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1200, h: 1800 },
+  { src: `${S}/sc-16.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1200, h: 1800 },
+  { src: `${S}/sc-17.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1108, h: 1387 },
+  { src: `${S}/sc-18.jpg`, alt: "Behind the scenes on the SCREAM music video shoot", set: "bts", w: 1800, h: 1200 },
+  { src: `${S}/sc-19.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-20.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-21.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1200, h: 1800 },
+  { src: `${S}/sc-22.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-23.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1536, h: 1024 },
+  { src: `${S}/sc-24.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1086, h: 1448 },
+  { src: `${S}/sc-25.jpg`, alt: "Behind the scenes on the SCREAM music video shoot", set: "bts", w: 1800, h: 1200 },
+  { src: `${S}/sc-26.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1200, h: 1800 },
+  { src: `${S}/sc-27.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-28.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-29.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-30.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1536, h: 1024 },
+  { src: `${S}/sc-31.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1086, h: 1448 },
+  { src: `${S}/sc-32.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1672, h: 941 },
+  { src: `${S}/sc-33.jpg`, alt: "Behind the scenes on the SCREAM music video shoot", set: "bts", w: 1200, h: 1800 },
+  { src: `${S}/sc-34.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-35.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-36.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 926, h: 1646 },
+  { src: `${S}/sc-37.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1080, h: 1620 },
+  { src: `${S}/sc-38.jpg`, alt: "Jaydyn F. on the SCREAM studio set, lit with spotlights and red lasers", set: "studio", w: 1200, h: 1800 },
+  { src: `${S}/sc-39.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1024, h: 1536 },
+  { src: `${S}/sc-40.jpg`, alt: "Masked figures in white in a field at golden hour, from the SCREAM shoot", set: "field", w: 1672, h: 941 },
+  { src: `${S}/sc-41.jpg`, alt: "Behind the scenes on the SCREAM music video shoot", set: "bts", w: 1012, h: 1800 },
+  { src: `${S}/sc-42.jpg`, alt: "Behind the scenes on the SCREAM music video shoot", set: "bts", w: 1200, h: 1800 },
+  { src: `${S}/sc-43.jpg`, alt: "Behind the scenes on the SCREAM music video shoot", set: "bts", w: 1800, h: 1200 },
+  { src: `${S}/sc-44.jpg`, alt: "Behind the scenes on the SCREAM music video shoot", set: "bts", w: 1200, h: 1800 },
 ];
-const SET_NAMES = { set: "From the set", bts: "Behind the scenes", styled: "Styled shoot" };
+const SET_NAMES = { studio: "Studio set", field: "Field set", bts: "Behind the scenes", styled: "Styled shoot" };
 
 /* The music video. Loads YouTube only when someone presses play,
    and always offers the YouTube link in case the player can't load. */
@@ -165,7 +208,7 @@ function ScreamPage() {
         <section className="scr-sec" id="gallery">
           <p className="so-micro">THE GALLERY</p>
           <h2 className="so-serif scr-h">Everything I made <em>for the release.</em></h2>
-          <p className="scr-rd" style={{ marginTop: 10 }}>Swipe through the set, the behind the scenes and the styled shoot. Clips play on their own.</p>
+          <p className="scr-rd" style={{ marginTop: 10 }}>Two locations, a studio and a field, plus the behind the scenes and the styled shoot. Swipe through, or pick a set.</p>
           <SwipeFeed frames={FEED} sets={SET_NAMES} />
         </section>
 
