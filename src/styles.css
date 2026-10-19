@@ -12746,3 +12746,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .wa-row:hover .sp-t { color: #9e2b2e; }
 @media (max-width: 640px) { .hb-row { grid-template-columns: minmax(0, 1fr) auto; } .hb-i { grid-column: 1 / -1; } }
 .fd-mk-item + .fd-mk-item { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(43,38,34,.14); }
+
+/* Elena Qiu: films sit in the photo grid */
+.so-photo-cell video.eq-film { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: #e9e2d5; }
+.so-photo-cell:has(video.eq-film) .so-photo-cap { top: 12px; bottom: auto; }

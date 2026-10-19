@@ -20,6 +20,7 @@ const FILES: { t: string; h: string }[] = [
   { t: "Iconic 2000s Boat Party", h: "/campaigns/dj-prashant-hiyu" },
   { t: "DJ Wzrd", h: "/campaigns/dj-wzrd" },
   { t: "Essential Brows Studio", h: "/websites/essential-brows-studio" },
+  { t: "Elena Qiu", h: "/campaigns/elena-qiu" },
   { t: "Exhibition", h: "/campaigns/exhibition" },
   { t: "Nine Vicious × Custom Grillz", h: "/campaigns/green-grillz" },
   { t: "Highway", h: "/campaigns/highway" },

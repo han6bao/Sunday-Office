@@ -215,6 +215,10 @@ export const SEO: Record<string, Seo> = {
     description:
       "Nightlife photography of Leon Thomas at the Mutts Don't Heel tour afterparty at Vice Seattle, photographed by Hana.",
   },
+  "/campaigns/elena-qiu": {
+    title: "Elena Qiu Fashion Editorial Photography + Film | Sunday Office",
+    description: "Editorial photos and short films for New York womenswear designer Elena Qiu, from Seattle. Fashion show editorials by Sunday Office.",
+  },
   "/campaigns/avery-tien": {
     title: "Avery Tien Fashion Portraits Seattle | Sunday Office",
     description: "Fashion portraits of Seattle designer Avery Tien, photographed by Hana of Sunday Office.",

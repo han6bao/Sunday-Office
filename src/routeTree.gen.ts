@@ -70,6 +70,7 @@ import { Route as CampaignsChitosRouteImport } from './routes/campaigns/chitos'
 import { Route as CampaignsBigBabyGucciRouteImport } from './routes/campaigns/big-baby-gucci'
 import { Route as CampaignsBarBistroRouteImport } from './routes/campaigns/bar-bistro'
 import { Route as CampaignsAveryTienRouteImport } from './routes/campaigns/avery-tien'
+import { Route as CampaignsElenaQiuRouteImport } from './routes/campaigns/elena-qiu'
 import { Route as CampaignsAngieTiaraBeautyRouteImport } from './routes/campaigns/angie-tiara-beauty'
 import { Route as ArchiveSplatRouteImport } from './routes/archive/$'
 
@@ -380,6 +381,11 @@ const CampaignsAveryTienRoute = CampaignsAveryTienRouteImport.update({
   path: '/campaigns/avery-tien',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CampaignsElenaQiuRoute = CampaignsElenaQiuRouteImport.update({
+  id: '/campaigns/elena-qiu',
+  path: '/campaigns/elena-qiu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CampaignsAngieTiaraBeautyRoute =
   CampaignsAngieTiaraBeautyRouteImport.update({
     id: '/campaigns/angie-tiara-beauty',
@@ -429,6 +435,7 @@ export interface FileRoutesByFullPath {
   '/archive/$': typeof ArchiveSplatRoute
   '/campaigns/angie-tiara-beauty': typeof CampaignsAngieTiaraBeautyRoute
   '/campaigns/avery-tien': typeof CampaignsAveryTienRoute
+  '/campaigns/elena-qiu': typeof CampaignsElenaQiuRoute
   '/campaigns/bar-bistro': typeof CampaignsBarBistroRoute
   '/campaigns/big-baby-gucci': typeof CampaignsBigBabyGucciRoute
   '/campaigns/chitos': typeof CampaignsChitosRoute
@@ -494,6 +501,7 @@ export interface FileRoutesByTo {
   '/archive/$': typeof ArchiveSplatRoute
   '/campaigns/angie-tiara-beauty': typeof CampaignsAngieTiaraBeautyRoute
   '/campaigns/avery-tien': typeof CampaignsAveryTienRoute
+  '/campaigns/elena-qiu': typeof CampaignsElenaQiuRoute
   '/campaigns/bar-bistro': typeof CampaignsBarBistroRoute
   '/campaigns/big-baby-gucci': typeof CampaignsBigBabyGucciRoute
   '/campaigns/chitos': typeof CampaignsChitosRoute
@@ -560,6 +568,7 @@ export interface FileRoutesById {
   '/archive/$': typeof ArchiveSplatRoute
   '/campaigns/angie-tiara-beauty': typeof CampaignsAngieTiaraBeautyRoute
   '/campaigns/avery-tien': typeof CampaignsAveryTienRoute
+  '/campaigns/elena-qiu': typeof CampaignsElenaQiuRoute
   '/campaigns/bar-bistro': typeof CampaignsBarBistroRoute
   '/campaigns/big-baby-gucci': typeof CampaignsBigBabyGucciRoute
   '/campaigns/chitos': typeof CampaignsChitosRoute
@@ -627,6 +636,7 @@ export interface FileRouteTypes {
     | '/archive/$'
     | '/campaigns/angie-tiara-beauty'
     | '/campaigns/avery-tien'
+    | '/campaigns/elena-qiu'
     | '/campaigns/bar-bistro'
     | '/campaigns/big-baby-gucci'
     | '/campaigns/chitos'
@@ -692,6 +702,7 @@ export interface FileRouteTypes {
     | '/archive/$'
     | '/campaigns/angie-tiara-beauty'
     | '/campaigns/avery-tien'
+    | '/campaigns/elena-qiu'
     | '/campaigns/bar-bistro'
     | '/campaigns/big-baby-gucci'
     | '/campaigns/chitos'
@@ -757,6 +768,7 @@ export interface FileRouteTypes {
     | '/archive/$'
     | '/campaigns/angie-tiara-beauty'
     | '/campaigns/avery-tien'
+    | '/campaigns/elena-qiu'
     | '/campaigns/bar-bistro'
     | '/campaigns/big-baby-gucci'
     | '/campaigns/chitos'
@@ -822,6 +834,7 @@ export interface RootRouteChildren {
   WebsitesRoute: typeof WebsitesRoute
   CampaignsAngieTiaraBeautyRoute: typeof CampaignsAngieTiaraBeautyRoute
   CampaignsAveryTienRoute: typeof CampaignsAveryTienRoute
+  CampaignsElenaQiuRoute: typeof CampaignsElenaQiuRoute
   CampaignsBarBistroRoute: typeof CampaignsBarBistroRoute
   CampaignsBigBabyGucciRoute: typeof CampaignsBigBabyGucciRoute
   CampaignsChitosRoute: typeof CampaignsChitosRoute
@@ -1280,6 +1293,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CampaignsAveryTienRouteImport
       parentRoute: typeof rootRouteImport
     }
+
+    '/campaigns/elena-qiu': {
+      id: '/campaigns/elena-qiu'
+      path: '/campaigns/elena-qiu'
+      fullPath: '/campaigns/elena-qiu'
+      preLoaderRoute: typeof CampaignsElenaQiuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/campaigns/angie-tiara-beauty': {
       id: '/campaigns/angie-tiara-beauty'
       path: '/campaigns/angie-tiara-beauty'
@@ -1344,6 +1365,7 @@ const rootRouteChildren: RootRouteChildren = {
   WebsitesRoute: WebsitesRoute,
   CampaignsAngieTiaraBeautyRoute: CampaignsAngieTiaraBeautyRoute,
   CampaignsAveryTienRoute: CampaignsAveryTienRoute,
+  CampaignsElenaQiuRoute: CampaignsElenaQiuRoute,
   CampaignsBarBistroRoute: CampaignsBarBistroRoute,
   CampaignsBigBabyGucciRoute: CampaignsBigBabyGucciRoute,
   CampaignsChitosRoute: CampaignsChitosRoute,

@@ -47,6 +47,7 @@ const SERVICES: { t: string; href: string }[] = [
 const CASES: { t: string; href: string }[] = [
   { t: "Essential Brows", href: "/websites/essential-brows-studio" },
   { t: "Jazmin's Events", href: "/websites/jazmins-events" },
+  { t: "Elena Qiu", href: "/campaigns/elena-qiu" },
   { t: "Selaras Haus", href: "/campaigns/selaras-haus" },
   { t: "Nine Vicious × Custom Grillz", href: "/campaigns/green-grillz" },
   { t: "Exhibition", href: "/campaigns/exhibition" },

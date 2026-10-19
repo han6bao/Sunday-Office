@@ -125,7 +125,7 @@ function PhotographyPage() {
           items={[
             { t: "Leon Thomas × Vice", w: "Event coverage", d: "The Mutts Don't Heel afterparty in Seattle.", img: "/assets/campaigns/leon-thomas/lt-01.jpg", h: "/campaigns/leon-thomas" },
             { t: "Nine Vicious × Custom Grillz", w: "Artist portraits", d: "Featured by Our Generation Music, and fans made it their profile picture.", img: "/assets/campaigns/green-grillz/nine-01.jpg", h: "/campaigns/green-grillz" },
-            { t: "Chutneys Bellevue", w: "Food + promo photos", d: "The plates, the room and the color of the food.", img: "/assets/campaigns/chutneys/ch-02.jpg", h: "/campaigns/chutneys" },
+            { t: "Elena Qiu", w: "Fashion editorial", d: "Show editorials for a New York designer from Seattle.", img: "/assets/campaigns/elena-qiu/eq-03.jpg", h: "/campaigns/elena-qiu" },
             { t: "Avery Tien", w: "Portraits", d: "Portraits that look like the person in them.", img: "/assets/photography/avery-02.jpg", h: "/campaigns/avery-tien" },
           ]}
         />
