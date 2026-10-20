@@ -1328,12 +1328,7 @@ function BioSwipe() {
     const step = first ? first.offsetWidth + 12 : el.clientWidth;
     setAt(Math.min(el.children.length - 1, Math.round(el.scrollLeft / step)));
   };
-  // The row takes the height of the card on screen, so short chapters don't leave a gap.
-  useEffect(() => {
-    const el = row.current;
-    const card = el?.children[at] as HTMLElement | undefined;
-    if (el && card) el.style.height = card.offsetHeight + "px";
-  }, [at]);
+
   return (
     <div className="bio-swipe">
       <div className="bio-swipe-row" ref={row} onScroll={onScroll}>
@@ -1347,7 +1342,7 @@ function BioSwipe() {
           </article>
         ))}
       </div>
-      <p className="bio-swipe-no" aria-live="polite">{at === 0 ? <>Meet Hana <span aria-hidden="true">· swipe →</span></> : <>{String(at).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")}</>}</p>
+      <p className="bio-swipe-no" aria-live="polite">{at === 0 ? <>swipe →</> : <>{String(at).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")}</>}</p>
     </div>
   );
 }
@@ -1418,7 +1413,7 @@ function FeedStart() {
             <button type="button" role="tab" aria-selected={tab === "write"} className={tab === "write" ? "is-on" : ""} onClick={() => setTab("write")}>Write to me</button>
             <button type="button" role="tab" aria-selected={tab === "quiz"} className={tab === "quiz" ? "is-on" : ""} onClick={() => setTab("quiz")}>Take the quiz</button>
           </div>
-          <div className="so-office-card" id="inquiry">
+          <div className="so-office-card" id="inquiry" ref={(el) => { if (el) { const h = el.offsetHeight; if (h > (parseFloat(el.style.minHeight) || 0)) el.style.minHeight = h + "px"; } }}>
             {tab === "write" ? <InquiryForm /> : <div className="fd-sheet-quiz is-live" id="quiz"><ProjectQuiz /></div>}
           </div>
         </div>

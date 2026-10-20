@@ -13120,3 +13120,21 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   .bio-swipe-cover img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 18px 40px -26px rgba(43,38,34,.45); }
   .bio-swipe-box { background: #fbf9f5; border: 1px solid rgba(43,38,34,.12); border-radius: 16px; padding: 20px 18px; box-sizing: border-box; }
 }
+/* Quiz inside Let's Begin: no slide-in, no jumping */
+.fd-sheet .so-quiz-q { animation: none !important; }
+.fd-start, .fd-sheet { overflow-anchor: none; }
+.fd-sheet .so-office-card { transition: none !important; }
+/* Bio on phones: every page the same size, like flipping a book */
+@media (max-width: 720px) {
+  .bio-swipe-row { height: auto !important; align-items: stretch !important; transition: none !important; }
+  .bio-swipe-card { flex: 0 0 86% !important; height: min(118vw, 520px) !important; box-sizing: border-box; }
+  .bio-swipe-cover img { width: 100%; height: 100% !important; object-fit: cover; }
+  .bio-swipe-box { overflow-y: auto; overscroll-behavior: contain; padding: 18px 16px !important; }
+  .bio-swipe-box .bio-swipe-t { font-size: 22px; margin-bottom: 8px; }
+  .bio-swipe-box p { font-size: 13.5px !important; line-height: 1.55 !important; margin-bottom: 8px !important; }
+}
+@media (max-width: 720px) {
+  .bio-swipe-no { font-size: 9px !important; letter-spacing: .2em; margin-top: 6px !important; opacity: .5 !important; }
+  #about-hana.fd-frame { padding-bottom: 32px !important; min-height: 0 !important; }
+  #about-hana .bio-grid, #about-hana .bio-side { min-height: 0 !important; margin-bottom: 0 !important; padding-bottom: 0 !important; }
+}
