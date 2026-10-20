@@ -12979,6 +12979,24 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 }
 .eq-cover2 + .eq-cover-film, .eq-cover-film { margin-top: clamp(24px, 3vw, 36px); }
 body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(24px, 3vw, 36px) !important; }
+/* Elena opener, quieter: smaller type, more air */
+.eq-cover2 { margin: clamp(24px, 4vw, 56px) 0 clamp(8px, 2vw, 20px); gap: clamp(28px, 5vw, 72px); align-items: end; }
+.eq-cover2 .eq-title { font-size: clamp(44px, 6vw, 84px); letter-spacing: -.01em; }
+.eq-cover2 .so-micro-red { font-size: 10px; letter-spacing: .26em; }
+.eq-cover2-rule { background: rgba(43,38,34,.16); }
+.eq-cover2 .eq-lead { font-size: clamp(15px, 1.15vw, 17px); line-height: 1.7; max-width: 40ch; color: rgba(43,38,34,.78); }
+.eq-cover2-text .so-micro { font-size: 10px; letter-spacing: .26em; margin-top: 18px; opacity: .7; }
+body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40px, 5vw, 72px) !important; }
+/* Instagram end card: quiet, same height as the posts */
+.scr-post-ig { background: transparent; border: 1px solid rgba(43,38,34,.16); color: #2b2622 !important; height: clamp(340px, 62vh, 560px); width: clamp(200px, 20vw, 260px); gap: 14px; }
+.scr-post-ig .so-micro { color: rgba(43,38,34,.55); font-size: 10px; }
+.scr-post-ig .so-serif { font-size: clamp(22px, 2.2vw, 28px); line-height: 1.1; }
+.scr-ig-h { font-size: 13px; text-decoration: none !important; display: inline-flex; align-items: center; gap: 8px; justify-content: center; }
+.scr-post-ig::after { content: "→"; display: grid; place-items: center; width: 40px; height: 40px; margin: 6px auto 0; border-radius: 50%; border: 1px solid rgba(43,38,34,.25); font-size: 15px; transition: background .2s ease, color .2s ease; }
+.scr-post-ig:hover::after { background: #141414; color: #f4efe8; border-color: #141414; }
+.scr-post-ig:hover .scr-ig-h { text-decoration: none !important; }
+@media (max-width: 720px) { .scr-post-ig { width: 56vw; height: auto; aspect-ratio: 2 / 3; min-height: 0; } }
+@media (max-width: 720px) { .scr-post-ig { align-self: stretch; aspect-ratio: auto; height: auto; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
