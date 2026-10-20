@@ -814,7 +814,7 @@ function FeedServices() {
         {FEED_SERVICES.map((x) => (
           <a key={x.n} href={ph(x.h)} className={x.big ? "is-big" : ""}>
             <span className="fd-sn">
-              {x.big ? <img className="fd-wb-img" src="/assets/lettering/world-building.svg" alt={x.n} /> : x.n}
+              {x.big ? <span className="fd-wb-t">{x.n}</span> : x.n}
               {x.d && <span className="fd-sd">{x.d}</span>}
             </span>
             <span className="fd-sp">{x.p ? x.p + " " : ""}<span className="fd-sv-arr" aria-hidden="true">→</span></span>

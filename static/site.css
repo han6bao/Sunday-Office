@@ -13224,6 +13224,26 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   .fd-page #build .fd-services a.is-big .fd-sn { font-size: clamp(44px, 4vw, 60px) !important; }
   .fd-page #build .fd-services a .fd-sd { margin-top: 2px !important; font-size: 14.5px !important; }
 }
+/* Guide slides on phones and tablets: use the full width, never clip at 380px */
+@media (max-width: 899px) {
+  .fd-page #build > .fd-mk, .fd-page #build .fd-mk { max-width: none !important; width: auto !important; }
+}
+/* World Building: same serif as the other services, just bigger and heavier, with a line under it */
+.fd-page #build .fd-services a.is-big .fd-sn, .fd-page #build .fd-services a.is-big:hover .fd-sn, .fd-page #build .fd-services a.is-big:focus-visible .fd-sn {
+  font-family: var(--fd-display) !important; font-style: normal !important; text-transform: none !important; letter-spacing: -.005em !important; word-spacing: normal !important;
+  font-weight: 400 !important; white-space: normal !important;
+  font-size: clamp(40px, 3.8vw, 54px) !important; line-height: 1.05 !important; padding: 0 !important; margin: 0 !important;
+  background: none !important; color: #3f3a35 !important; -webkit-text-fill-color: #3f3a35 !important;
+  -webkit-text-stroke: .028em #3f3a35 !important; paint-order: stroke fill;
+}
+.fd-page #build .fd-services a.is-big .fd-sn .fd-cap, .fd-page #build .fd-services a.is-big:hover .fd-sn .fd-cap { font: inherit !important; color: inherit !important; -webkit-text-fill-color: inherit !important; margin: 0 !important; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { -webkit-text-stroke: 0 !important; font-size: 15px !important; margin-top: 8px !important; }
+.fd-page #build .fd-services a.is-big { border-bottom: 1px solid rgba(120,105,85,.32) !important; padding-bottom: 18px !important; margin-bottom: 4px !important; }
+@media (max-width: 899px) {
+  .fd-page #build .fd-services a.is-big .fd-sn { font-size: 34px !important; }
+}
+.fd-page #build .fd-services a.is-big .fd-wb-t { display: block; }
+.fd-page #build .fd-services a.is-big .fd-sn .fd-sd { padding: 0 !important; margin-left: 0 !important; text-indent: 0 !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
