@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { SiteBar } from "./site-bar";
 import { BookBar, FaqList, WorkCards, bookHref } from "./service-kit";
 import { StructuredData } from "../components/StructuredData";
@@ -112,45 +112,80 @@ export function NeedPage({ slug }: { slug: string }) {
   );
 }
 
-/* The two free guides: a checklist people can work through on their own. */
+/* The two free guides: one stage at a time, so it flows instead of one long scroll.
+   Each stage pairs its checklist with a piece of my work. */
 export function GuidePage({ slug }: { slug: string }) {
   const g = GUIDES.find((x) => x.slug === slug) as Guide;
   const total = g.stages.reduce((a, s) => a + s.items.length, 0);
   const [done, setDone] = useState<string[]>([]);
+  const [at, setAt] = useState(0);
+  const top = useRef<HTMLDivElement>(null);
   const flip = (k: string) => setDone((d) => (d.includes(k) ? d.filter((x) => x !== k) : [...d, k]));
+  const go = (n: number) => {
+    setAt(n);
+    const el = top.current;
+    if (el && el.getBoundingClientRect().top < 0) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const s = g.stages[at];
+  const stageDone = (i: number) => g.stages[i].items.every((it) => done.includes(g.stages[i].t + it.t));
   return (
     <Shell>
-      <Hero kicker={g.kicker} h1={g.h1} lead={g.lead} />
-      <div className="gd2-progress" aria-live="polite">
-        <span className="gd2-bar"><i style={{ width: `${(done.length / total) * 100}%` }} /></span>
-        <span className="so-micro">{done.length} of {total} done</span>
+      <div className="gd3-hero">
+        <Hero kicker={g.kicker} h1={g.h1} lead={g.lead} />
       </div>
-      <nav className="so-bw-jump" aria-label="Stages" style={{ marginTop: 20 }}>
-        {g.stages.map((s, i) => <a key={s.t} href={`#stage-${i + 1}`}>{String(i + 1).padStart(2, "0")} {s.t}</a>)}
-      </nav>
-      {g.stages.map((s, i) => (
-        <section key={s.t} id={`stage-${i + 1}`} className="so-bw-sec">
-          <p className="so-micro">STAGE {String(i + 1).padStart(2, "0")}</p>
-          <h2 className="so-serif so-bw-h">{s.t}</h2>
-          <p className="sp-d" style={{ marginTop: 6 }}>{s.sub}</p>
-          <ol className="sp-steps gd2-list">
-            {s.items.map((it) => {
-              const k = s.t + it.t;
-              const on = done.includes(k);
-              return (
-                <li key={k} className={on ? "is-done" : ""}>
-                  <button type="button" className="sp-check" aria-pressed={on} aria-label={`Mark "${it.t}" done`} onClick={() => flip(k)}>{on ? "✓" : ""}</button>
-                  <div>
-                    <p className="sp-t">{it.t}</p>
-                    <p className="sp-d">{it.d}</p>
-                    {it.link && <a className="sp-tip gd2-link" href={it.link.h}>{it.link.t} →</a>}
-                  </div>
-                </li>
-              );
-            })}
-          </ol>
+
+      <div className="gd3" ref={top}>
+        <div className="gd3-top">
+          <div className="gd2-progress" aria-live="polite" style={{ margin: 0 }}>
+            <span className="gd2-bar"><i style={{ width: `${(done.length / total) * 100}%` }} /></span>
+            <span className="so-micro">{done.length} of {total} done</span>
+          </div>
+          <nav className="gd3-tabs" aria-label="Stages">
+            {g.stages.map((st, i) => (
+              <button key={st.t} type="button" className={"gd3-tab" + (i === at ? " is-on" : "") + (stageDone(i) ? " is-done" : "")} aria-current={i === at} onClick={() => go(i)}>
+                <span>{stageDone(i) ? "✓" : String(i + 1).padStart(2, "0")}</span>{st.t}
+              </button>
+            ))}
+          </nav>
+        </div>
+
+        <section className="gd3-stage so-chapter-fade" key={s.t} aria-label={s.t}>
+          <div className="gd3-main">
+            <p className="so-micro">STAGE {String(at + 1).padStart(2, "0")} OF {String(g.stages.length).padStart(2, "0")}</p>
+            <h2 className="so-serif gd3-h">{s.t}</h2>
+            <p className="sp-d" style={{ marginTop: 6 }}>{s.sub}</p>
+            <ol className="sp-steps gd2-list">
+              {s.items.map((it) => {
+                const k = s.t + it.t;
+                const on = done.includes(k);
+                return (
+                  <li key={k} className={on ? "is-done" : ""}>
+                    <button type="button" className="sp-check" aria-pressed={on} aria-label={`Mark "${it.t}" done`} onClick={() => flip(k)}>{on ? "✓" : ""}</button>
+                    <div>
+                      <p className="sp-t">{it.t}</p>
+                      <p className="sp-d">{it.d}</p>
+                      {it.link && <a className="sp-tip gd2-link" href={it.link.h}>{it.link.t} →</a>}
+                    </div>
+                  </li>
+                );
+              })}
+            </ol>
+            <div className="gd3-nav">
+              {at > 0 ? <button type="button" className="gd3-btn is-ghost" onClick={() => go(at - 1)}>← {g.stages[at - 1].t}</button> : <span />}
+              {at < g.stages.length - 1
+                ? <button type="button" className="gd3-btn" onClick={() => go(at + 1)}>Next: {g.stages[at + 1].t} →</button>
+                : <a className="gd3-btn" href={bookHref(g.need, g.h1.replace(/\.$/, ""))}>Ask me where to start →</a>}
+            </div>
+          </div>
+          {s.work && (
+            <a className="gd3-work" href={s.work.h} {...(s.work.h.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}>
+              <img src={s.work.img} alt={s.work.t} loading="lazy" />
+              <span className="gd3-work-cap"><span className="so-micro">MY WORK</span>{s.work.t} <span aria-hidden="true">→</span></span>
+            </a>
+          )}
         </section>
-      ))}
+      </div>
+
       <section className="so-hs-close">
         <div className="so-hs-close-cta">
           <p className="so-serif so-hs-close-t">Want a <em>hand with it?</em></p>

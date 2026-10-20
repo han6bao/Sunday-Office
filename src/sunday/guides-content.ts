@@ -6,7 +6,7 @@ export type Guide = {
   lead: string;
   seoTitle: string;
   seoDesc: string;
-  stages: { t: string; sub: string; items: GuideItem[] }[];
+  stages: { t: string; sub: string; work?: { img: string; t: string; h: string }; items: GuideItem[] }[];
   close: string;
   need: string;
 };
@@ -24,6 +24,7 @@ export const GUIDES: Guide[] = [
     stages: [
       {
         t: "Make it official",
+        work: { img: "/assets/campaigns/timber-and-tonic-cover.png", t: "Timber & Tonic · a new mobile bar, site in progress", h: "https://timber-and-tonic.vercel.app/" },
         sub: "Do these first. Everything else depends on them.",
         items: [
           { t: "Choose your business structure", d: "Sole proprietor, LLC or corporation. Free advisors can help you decide.", link: { t: "Free advising in Washington", h: WA } },
@@ -35,6 +36,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Know who you're for",
+        work: { img: "/assets/campaigns/pilates-haus-cover.png", t: "Pilates Haus · a new studio, built around who it's for", h: "https://pilates-haus-seattle.vercel.app/" },
         sub: "Ten minutes of thinking that makes every later decision easier.",
         items: [
           { t: "Describe your ideal customer", d: "Who they are, what they need and where they already look for it." },
@@ -44,6 +46,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Build the brand",
+        work: { img: "/assets/campaigns/jazmins-events/kit-guide.jpg", t: "Jazmin's Events · branded from scratch", h: "/websites/jazmins-events" },
         sub: "Do this before the website and the flyers, so everything matches.",
         items: [
           { t: "A logo that works small and large", d: "On a sign, a receipt and a profile picture.", link: { t: "Logo + Identity", h: "/logo-identity" } },
@@ -53,6 +56,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Give people somewhere to land",
+        work: { img: "/assets/campaigns/essential-brows-studio/cover.jpg", t: "Essential Brows · from a booking link to a home of its own", h: "/websites/essential-brows-studio" },
         sub: "Your home base, so you're not living in DMs.",
         items: [
           { t: "Buy your domain", d: "yourname.com, in your own name." },
@@ -63,6 +67,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Look the part",
+        work: { img: "/assets/headshots/standard-01.jpg", t: "Studio headshots", h: "/headshots" },
         sub: "People trust what they can see.",
         items: [
           { t: "Professional photos of you", d: "For your site, Google and LinkedIn.", link: { t: "Headshots", h: "/headshots" } },
@@ -72,6 +77,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Get found",
+        work: { img: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", t: "Selaras Haus · photos for social and branding", h: "/campaigns/selaras-haus" },
         sub: "So people who've never heard of you can find you.",
         items: [
           { t: "Create your Google Business Profile", d: "Free. Fill in every field and add real photos.", link: { t: "Showing up on Google", h: "/show-up-on-google" } },
@@ -82,6 +88,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Tell people you're open",
+        work: { img: "/assets/campaigns/chutneys/ch-02.jpg", t: "Chutneys Bellevue · a commercial + promo photos", h: "/campaigns/chutneys" },
         sub: "A launch you plan beats a launch you hope for.",
         items: [
           { t: "Plan a launch post and a few weeks after", d: "Introduce yourself, show the work, say how to book." },
@@ -103,6 +110,7 @@ export const GUIDES: Guide[] = [
     stages: [
       {
         t: "Take an honest look",
+        work: { img: "/assets/campaigns/joe-lopez-cover.png", t: "Joe Lopez Photography · a new site", h: "https://joe-lopez-photography.vercel.app/" },
         sub: "Before changing anything, see what customers see.",
         items: [
           { t: "Search your business on Google", d: "What shows up? Is your info right? Are there photos and reviews?" },
@@ -113,6 +121,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Decide: refresh or rebuild",
+        work: { img: "/assets/campaigns/pilates-haus-cover.png", t: "Pilates Haus · a brand kit built around their logo", h: "https://pilates-haus-seattle.vercel.app/" },
         sub: "Not everything needs to start over.",
         items: [
           { t: "Keep what people recognize", d: "If customers know your logo, a brand kit built around it may be enough.", link: { t: "Build a World", h: "/branding" } },
@@ -122,6 +131,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Refresh the look",
+        work: { img: "/assets/photography/avery-01.jpg", t: "Avery Tien · portraits", h: "/campaigns/avery-tien" },
         sub: "The fastest way to look like the business you are now.",
         items: [
           { t: "Update your colors, fonts and voice", d: "Small changes, used consistently, feel like a big upgrade.", link: { t: "Creative branding", h: "/creative-branding" } },
@@ -131,6 +141,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Fix the website",
+        work: { img: "/assets/campaigns/essential-brows-studio/site-phones.jpg", t: "Essential Brows · a site that books", h: "/websites/essential-brows-studio" },
         sub: "Where most people decide whether to book.",
         items: [
           { t: "Cut the words in half", d: "What you do, who it's for, how to book. The rest goes lower or goes away." },
@@ -141,6 +152,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Reset your content",
+        work: { img: "/assets/campaigns/jaydyn-f/scream/sc-02.jpg", t: "Jaydyn F. · weeks of content from one release", h: "/campaigns/jaydyn-f-scream" },
         sub: "Show people the new version of you.",
         items: [
           { t: "Plan a relaunch moment", d: "A post or short series that says what's new." },
@@ -150,6 +162,7 @@ export const GUIDES: Guide[] = [
       },
       {
         t: "Keep it up",
+        work: { img: "/assets/campaigns/green-grillz/nine-01.jpg", t: "Nine Vicious × Custom Grillz · photos that kept traveling", h: "/campaigns/green-grillz" },
         sub: "A revamp lasts when someone looks after it.",
         items: [
           { t: "Refresh photos each season", d: "A few times a year keeps things from going stale." },
