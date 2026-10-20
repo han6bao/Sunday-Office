@@ -54,74 +54,75 @@ function EllisPage() {
           <span className="arr">←</span> Back to Sunday Office
         </a>
 
-        {/* Cover */}
-        <section className="ed-cover">
-          <div className="ed-cover-txt">
-            <p className="so-micro so-micro-red">MODEL DIGITALS · LOFT TACOMA</p>
-            <h1 className="ed-h">Ellis.</h1>
-            <p className="ed-lead">My first client, shot again on a Sunday, the week Sunday Office opened.</p>
-            <dl className="ed-facts">
-              <div><dt>Date</dt><dd>October 11, 2026</dd></div>
-              <div><dt>Location</dt><dd>LOFT, Tacoma</dd></div>
-              <div><dt>Looks</dt><dd>Digitals + one styled</dd></div>
-              <div><dt>Gallery</dt><dd>19 photos: 15 in the package, plus 4 he added</dd></div>
-            </dl>
+        {/* Comp card: front + back, the way agencies see it */}
+        <p className="so-micro so-micro-red">MODEL DIGITALS · LOFT TACOMA</p>
+        <section className="cc" aria-label="Ellis comp card">
+          <div className="cc-card cc-front">
+            <Img n="e-5837.jpg" onOpen={setOpen} className="cc-front-img" pos="center 22%" />
+            <div className="cc-name">
+              <h1>Ellis</h1>
+              <span>Model digitals · Tacoma</span>
+            </div>
           </div>
-          <Img n="e-5837.jpg" onOpen={setOpen} className="ed-cover-img" pos="center 25%" />
+          <div className="cc-card cc-back">
+            <div className="cc-grid">
+              <Img n="e-5840.jpg" onOpen={setOpen} pos="center 20%" />
+              <Img n="e-5842.jpg" onOpen={setOpen} pos="center 25%" />
+              <Img n="e-5841.jpg" onOpen={setOpen} pos="center 40%" />
+              <Img n="e-5862.jpg" onOpen={setOpen} pos="center 45%" />
+            </div>
+            <dl className="cc-stats">
+              <div><dt>Looks</dt><dd>2</dd></div>
+              <div><dt>Photos</dt><dd>19</dd></div>
+              <div><dt>Place</dt><dd>LOFT Tacoma</dd></div>
+              <div><dt>Shot</dt><dd>Oct 2026</dd></div>
+            </dl>
+            <p className="cc-mark">Sunday Office</p>
+          </div>
         </section>
 
         {/* Story */}
         <section className="ed-story">
-          <p className="ed-pull">Ellis was the first person who ever booked me. Years later, we shot his digitals on a Sunday, the week I opened Sunday Office.</p>
-          <p className="ed-p">He's a model. I've helped him walk the runway for Seattle Pride and we keep making creative work together. These are the photos he sends to agencies, scouts and casting.</p>
+          <p className="ed-pull">Ellis was the first person who ever booked me. Years later, we shot his digitals on a Sunday, right when I opened Sunday Office.</p>
+          <p className="ed-p">He's a model. I've helped him walk the runway for Seattle Pride and we keep making creative work together. These are the photos he sends to agencies, scouts and casting: front, profile, full length and one styled look for range, laid out above the way a comp card would show them.</p>
         </section>
 
         {/* Look 01 */}
-        <section className="ed-look">
-          <p className="ed-k"><span>01</span> The digitals</p>
+        <section className="ed-look cc-sheet">
+          <div className="cc-sheet-head"><p className="ed-k"><span>01</span> The digitals</p><span className="cc-sheet-n">White tee · wide jeans</span></div>
           <div className="ed-grid ed-grid-2">
             <Img n="e-5839.jpg" onOpen={setOpen} />
-            <Img n="e-5840.jpg" onOpen={setOpen} />
-          </div>
-          <div className="ed-grid ed-grid-wide">
-            <Img n="e-5841.jpg" onOpen={setOpen} />
-            <p className="ed-p ed-side">A white tee, wide jeans and nothing else. Digitals are meant to show exactly who walks in the door, so the light stays natural and the edit stays honest.</p>
-          </div>
-          <div className="ed-grid ed-grid-3">
-            <Img n="e-5842.jpg" onOpen={setOpen} />
             <Img n="e-5844.jpg" onOpen={setOpen} />
-            <Img n="e-5849.jpg" onOpen={setOpen} />
           </div>
+          <p className="ed-p cc-note">Digitals are meant to show exactly who walks in the door, so the light stays natural and the edit stays honest.</p>
         </section>
 
         {/* Look 02 */}
-        <section className="ed-look">
-          <p className="ed-k"><span>02</span> The styled look</p>
-          <Img n="e-5862.jpg" onOpen={setOpen} className="ed-full" pos="center 45%" />
+        <section className="ed-look cc-sheet">
+          <div className="cc-sheet-head"><p className="ed-k"><span>02</span> The styled look</p><span className="cc-sheet-n">Denim on denim</span></div>
           <div className="ed-grid ed-grid-3">
             <Img n="e-5853.jpg" onOpen={setOpen} />
-            <Img n="e-5854.jpg" onOpen={setOpen} />
-            <Img n="e-5855.jpg" onOpen={setOpen} />
-          </div>
-          <div className="ed-grid ed-grid-2 ed-grid-land">
-            <Img n="e-5858.jpg" onOpen={setOpen} />
-            <Img n="e-5859.jpg" onOpen={setOpen} />
-          </div>
-          <div className="ed-grid ed-grid-3">
             <Img n="e-5860.jpg" onOpen={setOpen} />
-            <Img n="e-5861.jpg" onOpen={setOpen} />
             <Img n="e-5863.jpg" onOpen={setOpen} />
           </div>
-          <div className="ed-grid ed-grid-2">
-            <Img n="e-5864.jpg" onOpen={setOpen} />
+          <Img n="e-5858.jpg" onOpen={setOpen} className="ed-full" />
+          <div className="ed-grid ed-grid-3">
+            <Img n="e-5854.jpg" onOpen={setOpen} />
+            <Img n="e-5861.jpg" onOpen={setOpen} />
             <Img n="e-5865.jpg" onOpen={setOpen} />
           </div>
+          <div className="ed-grid ed-grid-2">
+            <Img n="e-5855.jpg" onOpen={setOpen} />
+            <Img n="e-5864.jpg" onOpen={setOpen} />
+          </div>
+          <Img n="e-5859.jpg" onOpen={setOpen} className="ed-full" />
         </section>
 
         {/* The extras */}
         <section className="ed-story ed-extra">
           <p className="so-micro">MORE THAN THE PACKAGE</p>
           <p className="ed-pull">His package came with 15 photos. He loved the set enough to add 4 more.</p>
+          <div className="ed-extra-img"><Img n="e-5849.jpg" onOpen={setOpen} /></div>
           <p className="ed-p">Going through the gallery together, there were a few frames he didn't want to leave behind, so we added them. That's always an option: if you'd like more photos than your package includes, you can add them.</p>
         </section>
 

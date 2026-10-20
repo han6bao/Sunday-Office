@@ -12852,3 +12852,35 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .ed-more { margin: 28px 0 30px; padding-top: 24px; border-top: 1px solid rgba(244,239,232,.16); }
 .ed-more-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(26px, 3vw, 36px); color: #f4efe8; margin: 0 0 10px; }
 @media (max-width: 620px) { .ed-grid-3 { grid-template-columns: 1fr 1fr; } .ed-grid-3 .ed-img:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+/* Ellis as a comp card */
+.cc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 36px); margin-top: 18px; }
+.cc-card { background: #fbf9f5; border: 1px solid rgba(43,38,34,.12); border-radius: 4px; padding: clamp(14px, 1.6vw, 22px); box-shadow: 0 18px 40px -24px rgba(43,38,34,.35); display: flex; flex-direction: column; }
+.cc-front .cc-front-img { aspect-ratio: auto; flex: 1; min-height: 0; }
+.cc-front .cc-front-img img { height: 100%; }
+.cc-front { aspect-ratio: 5.5 / 8.5; }
+.cc-back { aspect-ratio: 5.5 / 8.5; }
+.cc-name { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 16px; }
+.cc-name h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(48px, 6.5vw, 96px); line-height: .85; letter-spacing: .04em; text-transform: uppercase; margin: 0; color: #2b2622; }
+.cc-name span, .cc-mark, .cc-sheet-n { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: #9a8f83; }
+.cc-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }
+.cc-grid .ed-img { aspect-ratio: auto; height: 100%; }
+.cc-grid .ed-img img { height: 100%; }
+.cc-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 16px 0 0; border-top: 1px solid rgba(43,38,34,.18); }
+.cc-stats div { padding: 10px 0 0; }
+.cc-stats dt { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: #9a8f83; }
+.cc-stats dd { margin: 4px 0 0; font-family: "Instrument Serif", Georgia, serif; font-size: clamp(15px, 1.4vw, 19px); color: #2b2622; }
+.cc-mark { margin: 12px 0 0; text-align: right; }
+.cc-sheet { background: #fbf9f5; border: 1px solid rgba(43,38,34,.12); border-radius: 4px; padding: clamp(16px, 2.4vw, 32px); box-shadow: 0 18px 40px -28px rgba(43,38,34,.3); }
+.cc-sheet-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.cc-sheet-head .ed-k { margin-bottom: 4px; }
+.cc-note { margin: 18px 0 0; }
+@media (max-width: 760px) {
+  .cc { grid-template-columns: 1fr; }
+  .cc-front, .cc-back { aspect-ratio: auto; }
+  .cc-front .cc-front-img { aspect-ratio: 4 / 5; flex: none; }
+  .cc-grid { grid-template-rows: none; }
+  .cc-grid .ed-img { aspect-ratio: 3 / 4; }
+  .cc-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.ed-extra-img { width: min(320px, 70%); margin: 8px auto 24px; }
+.ed-extra-img .ed-img { aspect-ratio: 2 / 3; }
