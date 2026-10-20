@@ -55,6 +55,7 @@ function BarBistroPage() {
       <BnBar left="Bar Bistro" right="Photography" />
 
       <BnHero
+        cover={[{ src: `${A}/bb-08.jpg`, alt: "Steak, shrimp risotto and a plate of mains on the table at Bar Bistro" }]}
         note="Notes by Hana · Sunday Office"
         title={
           <>

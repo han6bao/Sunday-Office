@@ -1,3 +1,4 @@
+import { PhotoOpen, type OpenImg } from "./case-kit";
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { SiteBar } from "./site-bar";
 
@@ -194,9 +195,10 @@ export function BnBar({ left, right }: { left: ReactNode; right: ReactNode }) {
   );
 }
 
-export function BnHero({ note, title, lede, extra }: { note: ReactNode; title: ReactNode; lede: ReactNode; extra?: ReactNode }) {
+export function BnHero({ note, title, lede, extra, cover }: { note: ReactNode; title: ReactNode; lede: ReactNode; extra?: ReactNode; cover?: OpenImg[] }) {
   return (
     <section className="bn-hero">
+      {cover && <PhotoOpen imgs={cover} />}
       <p className="bn-note">{note}</p>
       <h1>{title}</h1>
       <p className="bn-lede">{lede}</p>

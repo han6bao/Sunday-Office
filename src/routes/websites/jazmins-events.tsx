@@ -48,6 +48,7 @@ function JazminsCase() {
       <BnBar left="Jazmin's Events & Coordinating" right="Brand + website · 2026" />
 
       <BnHero
+        cover={[{ src: `${A}/brand-guide.png`, alt: "The Jazmin's Events brand guide: logos, colors, type and textures" }]}
         note="Notes by Hana · Sunday Office"
         title={
           <>

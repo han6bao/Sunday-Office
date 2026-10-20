@@ -53,6 +53,7 @@ function SelarasHausPage() {
       <BnBar left="Selaras Haus" right="Photography" />
 
       <BnHero
+        cover={[{ src: `${A}/at-09.jpg`, alt: "A treatment in progress in the lounge at Selaras Haus" }, { src: `${A}/at-08.jpg`, alt: "The treatment station at Selaras Haus" }, { src: `${A}/at-10.jpg`, alt: "Three bottles of Selaras Haus product on a wood shelf" }]}
         note="Notes by Hana · Sunday Office"
         title={
           <>

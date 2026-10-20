@@ -57,6 +57,7 @@ function GreenGrillzPage() {
       <BnBar left="Nine Vicious × Custom Grillz" right="Photography + promotion" />
 
       <BnHero
+        cover={[{ src: PHOTOS[0].src, alt: PHOTOS[0].alt, pos: "center 30%" }]}
         note="Notes by Hana · Sunday Office"
         title={
           <>
@@ -243,7 +244,7 @@ function GreenGrillzPage() {
       </BnNote>
 
       <BnNote
-        media={<img src={PHOTOS[0].src} alt={PHOTOS[0].alt} loading="lazy" />}
+        media={null}
         label="A note on credit"
         title={
           <>

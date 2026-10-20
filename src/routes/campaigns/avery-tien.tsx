@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
+import { CaseFacts, CaseRead, PhotoOpen } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/avery-tien")({
   head: () => seoHead("/campaigns/avery-tien"),
@@ -22,6 +22,8 @@ function AveryTienPage() {
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
+
+        <PhotoOpen imgs={[{ src: "/assets/campaigns/avery-tien/at02.jpg", alt: "Avery Tien in a studded black corset against deep blue", pos: "center 20%" }]} />
 
         <p className="so-micro so-micro-red">FASHION · PORTRAITS · SEATTLE</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>

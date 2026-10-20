@@ -52,6 +52,7 @@ function EssentialBrowsCase() {
       <BnBar left="Essential Brows Studio" right="Website + brand kit · 2026" />
 
       <BnHero
+        cover={[{ src: `${A}/cover.jpg`, alt: "The Essential Brows website on a pink desktop" }]}
         note="Notes by Hana · Sunday Office"
         title={
           <>

@@ -3,7 +3,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
+import { CaseFacts, CaseRead, PhotoOpen } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/still-different")({
   head: () => seoHead("/campaigns/still-different"),
@@ -28,6 +28,8 @@ function StillDifferentPage() {
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
+
+        <PhotoOpen imgs={[{ src: "/assets/campaigns/still-different/sd-04.jpg", alt: "Still Different at the ETC shop, back to the camera, facing the rack and screen", pos: "center 35%" }]} />
 
         <p className="so-micro so-micro-red">MUSIC · GEAR · SHOOT</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>

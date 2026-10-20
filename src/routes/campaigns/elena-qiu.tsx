@@ -28,8 +28,8 @@ const clip = (n: string, cap: string, h = 1080): FeedFrame => ({ src: `${C}/${n}
 const photo = (n: string, cap: string): FeedFrame => ({ src: `${A}/${n}.jpg`, alt: `Elena Qiu editorial: ${cap.toLowerCase()}`, set: "photo", cap });
 const FEED: FeedFrame[] = [
   { ...clip("eqv-recap", "The recap", 960), sound: true },
-  clip("eqv-15", "Face to face"),
   photo("eq-01", "Two looks against the brick"),
+  clip("eqv-15", "Face to face"),
   photo("eq-hero", "Mid-step in the cage skirt"),
   clip("eqv-11", "Upside down"),
   clip("eqv-12", "Close to the lens"),
@@ -61,16 +61,19 @@ function ElenaQiuPage() {
         </a>
 
         {/* Cover */}
-        <section className="eq-cover">
-          <div className="eq-cover-text">
-            <p className="so-micro so-micro-red">CAMPAIGN · FASHION EDITORIAL · NEW YORK</p>
+        <section className="eq-cover2">
+          <div className="eq-cover2-name">
+            <p className="so-micro so-micro-red">CAMPAIGN · FASHION EDITORIAL</p>
             <h1 className="so-serif eq-title">Elena Qiu.</h1>
+          </div>
+          <span className="eq-cover2-rule" aria-hidden="true" />
+          <div className="eq-cover2-text">
             <p className="eq-lead">
-              Show editorials for a womenswear designer from Seattle, now in
-              New York. Shot for movement, mood and story, and made to feel
-              a little haunting.
+              Show editorials for a fashion designer from Seattle, now in New
+              York. Shot for movement, mood and story, and made to feel a
+              little haunting.
             </p>
-            <p className="so-micro mt-3">WOMENSWEAR · PHOTOS + FILM · 2023 SHOW</p>
+            <p className="so-micro mt-3">PHOTOS + FILM · 2023 SHOW</p>
           </div>
         </section>
         <figure className="eq-cover-film">
@@ -82,7 +85,7 @@ function ElenaQiuPage() {
 
         <CaseFacts
           items={[
-            { k: "FOR", v: "Elena Qiu, womenswear designer" },
+            { k: "FOR", v: "Elena Qiu, fashion designer" },
             { k: "WHAT I DID", v: "Show editorials, short films and posing direction" },
             { k: "SINCE", v: "We've worked together for years, on more than one collection" },
           ]}
@@ -94,7 +97,7 @@ function ElenaQiuPage() {
             <p className="scr-p">
               <strong>Elena Qiu</strong> is a Taiwanese-American designer who
               grew up in Seattle and now works in New York. She makes custom,
-              one-of-a-kind womenswear with bold silhouettes, statement
+              one-of-a-kind pieces with bold silhouettes, statement
               shoulders and layered textures, so women can take up space
               freely. Her work has been in <strong>Vogue</strong>, and she's
               been interviewed by <strong>CNN</strong>.

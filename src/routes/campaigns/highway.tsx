@@ -48,29 +48,13 @@ function HighwayPage() {
           <span className="arr">←</span> Back to Sunday Office
         </a>
 
-        <p className="so-micro so-micro-red">MUSIC · ALBUM COVER · PHOTOGRAPHY</p>
-        <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 88px)", marginTop: 14 }}>
-          Highway.
-        </h1>
-        <p className="so-micro mt-3">@HIGHWAY2009 · SEATTLE, WA · FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA</p>
-        <CaseFacts
-          items={[
-            { k: "FOR", v: "Highway, Seattle rapper" },
-            { k: "WHAT I DID", v: "Album cover photo, test shots, promo photos" },
-            { k: "RESULT", v: "Used as the cover of Forever (Count Fast Millionaire) and on his socials" },
-          ]}
-        />
-        <hr className="so-rule mt-6" />
-
-        <CaseRead label="THE ARTIST" items={ARTIST.map((x) => ({ t: x.t, d: x.d }))} />
-
         {/* The cover */}
-        <div style={{ marginTop: 44 }}>
+        <div style={{ marginBottom: 40 }}>
           <img
             src="/assets/campaigns/highway-chitos/forever-cover.jpg"
             alt="Forever (Count Fast Millionaire) album cover"
             loading="lazy"
-            style={{ width: "100%", maxWidth: 420, display: "block", borderRadius: 14, aspectRatio: "1 / 1", objectFit: "cover" }}
+            style={{ width: "100%", maxWidth: 560, display: "block", borderRadius: 14, aspectRatio: "1 / 1", objectFit: "cover" }}
           />
           <p className="so-micro" style={{ marginTop: 10, color: "var(--color-verm)", letterSpacing: "0.14em" }}>
             FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA
@@ -87,6 +71,23 @@ function HighwayPage() {
             </a>
           </div>
         </div>
+
+        <p className="so-micro so-micro-red">MUSIC · ALBUM COVER · PHOTOGRAPHY</p>
+        <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 88px)", marginTop: 14 }}>
+          Highway.
+        </h1>
+        <p className="so-micro mt-3">@HIGHWAY2009 · SEATTLE, WA · FOREVER (COUNT FAST MILLIONAIRE) · COVER PHOTO BY HANA</p>
+        <CaseFacts
+          items={[
+            { k: "FOR", v: "Highway, Seattle rapper" },
+            { k: "WHAT I DID", v: "Album cover photo, test shots, promo photos" },
+            { k: "RESULT", v: "Used as the cover of Forever (Count Fast Millionaire) and on his socials" },
+          ]}
+        />
+        <hr className="so-rule mt-6" />
+
+        <CaseRead label="THE ARTIST" items={ARTIST.map((x) => ({ t: x.t, d: x.d }))} />
+
 
         <CaseRead label="MY PROCESS" items={PROCESS.map((x) => ({ t: x.t, d: x.d }))} />
 

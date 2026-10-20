@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
+import { CaseFacts, CaseRead, PhotoOpen } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/leon-thomas")({
   head: () => seoHead("/campaigns/leon-thomas"),
@@ -36,6 +36,8 @@ function LeonThomasPage() {
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
+
+        <PhotoOpen imgs={[{ src: "/assets/campaigns/leon-thomas/lt-03.jpg", alt: "The crowd around the DJ booth at the Leon Thomas afterparty at Vice Seattle", pos: "center 40%" }]} />
 
         <p className="so-micro so-micro-red">MUSIC · NIGHTLIFE · FEATURE</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 96px)", marginTop: 14 }}>

@@ -3,7 +3,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
+import { CaseFacts, CaseRead, PhotoOpen } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/dj-wzrd")({
   head: () => seoHead("/campaigns/dj-wzrd"),
@@ -29,6 +29,8 @@ function DjWzrdPage() {
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
+
+        <PhotoOpen imgs={[{ src: PHOTOS[5].src, alt: PHOTOS[5].cap }]} />
 
         <p className="so-micro so-micro-red">DJ · NIGHTLIFE · PHOTOGRAPHY</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
@@ -94,25 +96,6 @@ function DjWzrdPage() {
         {/* Frames — hero halo, room under, then the middle four */}
         <div style={{ marginTop: 56 }}>
           <p className="so-micro">THE FRAMES · 6 · PHOTOS BY HANA</p>
-
-          {/* hero */}
-          <button
-            className="so-photo-cell"
-            type="button"
-            onClick={() => setOpen(5)}
-            aria-label={PHOTOS[5].cap}
-            style={{ display: "block", width: "100%", marginTop: 14, borderRadius: 20, overflow: "hidden" }}
-          >
-            <img
-              src={PHOTOS[5].src}
-              alt={PHOTOS[5].cap}
-              loading="lazy"
-              style={{ width: "100%", aspectRatio: "16 / 10", objectFit: "cover", display: "block" }}
-            />
-            <span className="so-photo-cap" style={{ fontSize: 12 }}>
-              THE HERO · {PHOTOS[5].cap.toUpperCase()} · CLICK TO EXPAND
-            </span>
-          </button>
 
           {/* the room */}
           <button

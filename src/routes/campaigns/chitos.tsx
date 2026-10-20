@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
+import { CaseFacts, CaseRead, PhotoOpen } from "../../sunday/case-kit";
 import type { CSSProperties } from "react";
 import { useState } from "react";
 
@@ -54,6 +54,8 @@ function ChitosPage() {
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
+
+        <PhotoOpen imgs={PHOTOS.slice(0, 1).map((ph) => ({ src: ph.src, alt: ph.cap }))} />
 
         <p className="so-micro so-micro-red">GRAFFITI · FASHION · ART DIRECTION</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 88px)", marginTop: 14 }}>
@@ -111,7 +113,7 @@ function ChitosPage() {
         <div style={{ marginTop: 64, borderTop: "1px solid var(--color-sepia)", paddingTop: 24 }}>
           <p className="so-micro" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>01 · THE FRAMES · 3 · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
-            {PHOTOS.map((ph, i) => (
+            {PHOTOS.map((ph, i) => i < 1 ? null : (
               <button
                 key={ph.src}
                 className="so-photo-cell"
@@ -121,7 +123,7 @@ function ChitosPage() {
               >
                 <img src={ph.src} alt={ph.cap} loading="lazy" />
                 <span className="so-photo-cap">
-                  FRAME {String(i + 1).padStart(2, "0")}
+                  FRAME {String(i + 1 - 1).padStart(2, "0")}
                 </span>
               </button>
             ))}

@@ -52,6 +52,7 @@ function PublicHousePage() {
       <BnBar left="Public House" right="Photography" />
 
       <BnHero
+        cover={[{ src: PHOTOS[0].src, alt: PHOTOS[0].alt, pos: "center 30%" }]}
         note="Notes by Hana · Sunday Office"
         title={
           <>
@@ -125,7 +126,6 @@ function PublicHousePage() {
           call="One lit arch with shelves up to the ceiling. The light sits under the bottles, so the whole wall glows."
           why="It is the center of the room and the part people remember. Building the set around it gives their feed one clear picture of the place."
         >
-          <BnShot src={PHOTOS[0].src} alt={PHOTOS[0].alt} cap="The arch" />
         </BnDec>
 
         <BnDec

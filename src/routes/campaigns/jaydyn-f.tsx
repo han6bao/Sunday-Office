@@ -3,7 +3,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { useState } from "react";
 import { CaseBookingCta } from "../../sunday/services";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
+import { CaseFacts, CaseRead, PhotoOpen } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/jaydyn-f")({
   head: () => seoHead("/campaigns/jaydyn-f"),
@@ -48,6 +48,8 @@ function JaydynCase() {
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
+
+        <PhotoOpen imgs={[{ src: GALLERY[0].src, alt: "Jaydyn F. in motion, a frame from his release shoot" }]} />
 
         <p className="so-micro so-micro-red">CASE STUDY · ARTIST SOCIAL · MUSIC</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
@@ -150,7 +152,7 @@ function JaydynCase() {
         <div style={{ marginTop: 44 }}>
           <p className="so-micro">THE WORK · PHOTOS BY HANA · TAP TO OPEN</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 14, marginTop: 14 }}>
-            {GALLERY.map((g, i) => (
+            {GALLERY.map((g, i) => i === 0 ? null : (
               <button
                 key={g.src}
                 type="button"

@@ -3,7 +3,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
+import { CaseFacts, CaseRead, PhotoOpen } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/dj-prashant-hiyu")({
   head: () => seoHead("/campaigns/dj-prashant-hiyu"),
@@ -30,7 +30,7 @@ const PHOTOS = [
 /* Editorial hierarchy — wide stage opener, portrait crops, one full-width, pairs */
 const LAYOUT: { s: number; a: string }[] = [
   { s: 4, a: "16 / 10" },
-  { s: 2, a: "4 / 5" },
+  { s: 6, a: "21 / 9" },
   { s: 2, a: "4 / 5" },
   { s: 2, a: "4 / 5" },
   { s: 2, a: "4 / 5" },
@@ -74,6 +74,8 @@ function BoatPartyPage() {
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
+
+        <PhotoOpen imgs={PHOTOS.slice(0, 1).map((ph) => ({ src: ph.src, alt: ph.cap }))} />
 
         <p className="so-micro so-micro-red">MUSIC · EVENT · BOAT</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
@@ -129,6 +131,7 @@ function BoatPartyPage() {
           <p className="so-micro">THE FRAMES · 14 · PHOTOS BY HANA</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", columnGap: 14, rowGap: 20, marginTop: 14, alignItems: "start" }}>
             {PHOTOS.map((ph, i) => {
+              if (i < 1) return null;
               const L = LAYOUT[i];
               return (
                 <button
@@ -146,7 +149,7 @@ function BoatPartyPage() {
                     style={{ width: "100%", aspectRatio: L.a, objectFit: "cover", borderRadius: 14, display: "block" }}
                   />
                   <span className="so-photo-cap" style={{ fontSize: 12 }}>
-                    {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
+                    {String(i + 1 - 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
                   </span>
                 </button>
               );

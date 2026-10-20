@@ -3,7 +3,7 @@ import { seoHead } from "../../sunday/seo";
 import { SiteBar } from "../../sunday/site-bar";
 import { CaseBookingCta } from "../../sunday/services";
 import { useState } from "react";
-import { CaseFacts, CaseRead } from "../../sunday/case-kit";
+import { CaseFacts, CaseRead, PhotoOpen } from "../../sunday/case-kit";
 
 export const Route = createFileRoute("/campaigns/big-baby-gucci")({
   head: () => seoHead("/campaigns/big-baby-gucci"),
@@ -31,6 +31,8 @@ function BigBabyGucciPage() {
         <a href="/" className="so-arrow" style={{ marginBottom: 40 }}>
           <span className="arr">←</span> Back to Sunday Office
         </a>
+
+        <PhotoOpen imgs={PHOTOS.slice(0, 3).map((ph) => ({ src: ph.src, alt: ph.cap }))} />
 
         <p className="so-micro so-micro-red">MUSIC · LIVE · PHOTOGRAPHY</p>
         <h1 className="so-serif" style={{ fontSize: "clamp(40px, 8vw, 92px)", marginTop: 14 }}>
@@ -103,7 +105,7 @@ function BigBabyGucciPage() {
         <div style={{ marginTop: 56 }}>
           <p className="so-micro">THE PHOTOS · 8 · PHOTOS BY HANA</p>
           <div className="so-photo-grid mt-6">
-            {PHOTOS.map((ph, i) => (
+            {PHOTOS.map((ph, i) => i < 3 ? null : (
               <button
                 key={ph.src}
                 className="so-photo-cell"
@@ -113,7 +115,7 @@ function BigBabyGucciPage() {
               >
                 <img src={ph.src} alt={ph.cap} loading="lazy" />
                 <span className="so-photo-cap">
-                  {String(i + 1).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
+                  {String(i + 1 - 3).padStart(2, "0")}<span className="so-cap-label"> · {ph.cap}</span>
                 </span>
               </button>
             ))}

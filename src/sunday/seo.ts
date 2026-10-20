@@ -225,7 +225,7 @@ export const SEO: Record<string, Seo> = {
   },
   "/campaigns/elena-qiu": {
     title: "Elena Qiu Fashion Show Editorial + Film | Seattle Fashion Photographer | Sunday Office",
-    description: "Cinematic show editorials and short films for New York womenswear designer Elena Qiu. Fashion campaign photography and video for designers and clothing brands, from Sunday Office in Seattle.",
+    description: "Cinematic show editorials and short films for New York fashion designer Elena Qiu. Fashion campaign photography and video for designers and clothing brands, from Sunday Office in Seattle.",
   },
   "/campaigns/avery-tien": {
     title: "Avery Tien Fashion Portraits Seattle | Sunday Office",

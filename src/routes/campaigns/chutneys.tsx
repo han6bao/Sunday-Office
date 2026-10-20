@@ -50,6 +50,7 @@ function ChutneysPage() {
       <BnBar left="Chutneys" right="Commercial + photography" />
 
       <BnHero
+        cover={[{ src: PHOTOS[1].src, alt: PHOTOS[1].alt }]}
         note="Notes by Hana · Sunday Office"
         title={
           <>
@@ -179,7 +180,7 @@ function ChutneysPage() {
       </BnDecisions>
 
       <BnNote
-        media={<img src={PHOTOS[1].src} alt={PHOTOS[1].alt} loading="lazy" />}
+        media={null}
         label="A note on credit"
         title={
           <>

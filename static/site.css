@@ -12952,5 +12952,33 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
   .gd3-top { top: 56px; }
 }
 
+/* ---- Pictures-first opener for case studies ---- */
+.po { display: grid; gap: 12px; margin: 0 0 clamp(28px, 4vw, 48px); height: clamp(320px, 62vh, 640px); }
+.po figure { margin: 0; min-height: 0; overflow: hidden; border-radius: 18px; background: #e7e1d8; }
+.po img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.po-1 { grid-template-columns: 1fr; }
+.po-2 { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); }
+.po-3 { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); grid-template-rows: 1fr 1fr; }
+.po-3 figure:first-child { grid-row: 1 / 3; }
+.bn-hero .po { margin-bottom: 8px; }
+@media (max-width: 720px) {
+  .po { height: auto; }
+  .po figure { aspect-ratio: 4 / 5; }
+  .po-1 figure { aspect-ratio: 4 / 3; }
+  .po-2, .po-3 { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
+  .po-3 figure:first-child { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 4 / 3; }
+}
+/* Elena: name | rule | words, then the film */
+.eq-cover2 { display: grid; grid-template-columns: auto 1px minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+.eq-cover2 .eq-title { margin: 8px 0 0; line-height: .9; }
+.eq-cover2-rule { align-self: stretch; background: rgba(43,38,34,.25); width: 1px; }
+.eq-cover2 .eq-lead { margin: 0; max-width: 34ch; font-size: clamp(18px, 1.8vw, 24px); }
+@media (max-width: 720px) {
+  .eq-cover2 { grid-template-columns: 1fr; gap: 16px; }
+  .eq-cover2-rule { width: 64px; height: 1px; align-self: auto; }
+}
+.eq-cover2 + .eq-cover-film, .eq-cover-film { margin-top: clamp(24px, 3vw, 36px); }
+body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(24px, 3vw, 36px) !important; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
