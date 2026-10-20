@@ -13100,3 +13100,23 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 .lf-pair img { display: block; width: 100%; height: clamp(300px, 46vh, 520px); object-fit: cover; border-radius: 18px; }
 @media (max-width: 900px) { .lf-has { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 720px) { .lf-shoot, .lf-pair { grid-template-columns: 1fr; } .lf-room video { aspect-ratio: 4 / 5; } .lf-pair img { height: auto; aspect-ratio: 4 / 5; } }
+/* Start: tabs on every screen; the quiz tab shows the live quiz */
+.fd-page .fd-start .fd-tabs { display: flex; gap: 4px; padding: 4px; margin: 0 0 18px; background: rgba(27,25,24,.06); border-radius: 999px; }
+.fd-page .fd-start .fd-tabs button { all: unset; box-sizing: border-box; flex: 1; text-align: center; cursor: pointer; padding: 11px 10px; border-radius: 999px; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; }
+.fd-page .fd-start .fd-tabs button.is-on { background: #8d7d9e; color: #fff; }
+.fd-page .fd-start .fd-tabs button:focus-visible { outline: 2px solid #8d7d9e; outline-offset: 2px; }
+.fd-sheet-quiz.is-live { display: block !important; }
+.fd-sheet .fd-sheet-quiz .so-quiz { background: transparent !important; padding: 0 !important; margin: 0 !important; }
+/* Start tabs: readable inactive tab */
+.fd-page .fd-start .fd-tabs button:not(.is-on) { color: #5b5260 !important; }
+/* Bio on phones: label back, picture is the first swipe, chapters in boxes */
+@media (max-width: 720px) {
+  #about-hana .fd-file { display: flex !important; }
+  #about-hana .bio-cover { display: none !important; }
+  .bio-swipe { margin-top: 8px; }
+  .bio-swipe-row { gap: 12px; }
+  .bio-swipe-card { flex: 0 0 86%; width: auto; min-width: 0; padding-right: 0; }
+  .bio-swipe-cover { margin: 0; }
+  .bio-swipe-cover img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 18px 40px -26px rgba(43,38,34,.45); }
+  .bio-swipe-box { background: #fbf9f5; border: 1px solid rgba(43,38,34,.12); border-radius: 16px; padding: 20px 18px; box-sizing: border-box; }
+}

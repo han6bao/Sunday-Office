@@ -1324,7 +1324,9 @@ function BioSwipe() {
   const onScroll = () => {
     const el = row.current;
     if (!el) return;
-    setAt(Math.round(el.scrollLeft / el.clientWidth));
+    const first = el.children[0] as HTMLElement | undefined;
+    const step = first ? first.offsetWidth + 12 : el.clientWidth;
+    setAt(Math.min(el.children.length - 1, Math.round(el.scrollLeft / step)));
   };
   // The row takes the height of the card on screen, so short chapters don't leave a gap.
   useEffect(() => {
@@ -1335,14 +1337,17 @@ function BioSwipe() {
   return (
     <div className="bio-swipe">
       <div className="bio-swipe-row" ref={row} onScroll={onScroll}>
+        <figure className="bio-swipe-card bio-swipe-cover">
+          <img src="/assets/bio/cover-hana.jpg?v=3" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026." />
+        </figure>
         {CHAPTERS.map((c) => (
-          <article key={c.n} className="bio-swipe-card">
+          <article key={c.n} className="bio-swipe-card bio-swipe-box">
             <h3 className="bio-swipe-t">{c.t}</h3>
             {c.p.map((t, i) => <p key={i}>{t}</p>)}
           </article>
         ))}
       </div>
-      <p className="bio-swipe-no" aria-live="polite">{String(at + 1).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")} <span aria-hidden="true">· swipe →</span></p>
+      <p className="bio-swipe-no" aria-live="polite">{at === 0 ? <>Meet Hana <span aria-hidden="true">· swipe →</span></> : <>{String(at).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")}</>}</p>
     </div>
   );
 }
@@ -1398,16 +1403,13 @@ function FeedStart() {
             <span className="fd-line">Tell me what you're making and what feels off.</span>
             <span className="fd-line">A few lines is plenty.</span>
           </p>
-          <a className="fd-quiz-card" href="#quiz">
+          <a className="fd-quiz-card" href="#inquiry" onClick={() => setTab("quiz")}>
             <span className="fd-quiz-k">Not sure where to start?</span>
             <span className="fd-quiz-t">Take the one-minute quiz.</span>
             <span className="fd-quiz-d">A few questions, one clear first step.</span>
             <span className="fd-quiz-b">Start the quiz <span aria-hidden="true">→</span></span>
           </a>
           <ul className="fd-contact-strip">
-            <li><a href="mailto:hello@sundayoffice.agency">hello@sundayoffice.agency</a></li>
-            <li><a href="https://www.instagram.com/sundayoffice.ag" target="_blank" rel="noreferrer">@sundayoffice.ag</a></li>
-            <li>Seattle, WA</li>
             <li>Replies in 2 to 3 business days</li>
           </ul>
         </div>
@@ -1417,9 +1419,7 @@ function FeedStart() {
             <button type="button" role="tab" aria-selected={tab === "quiz"} className={tab === "quiz" ? "is-on" : ""} onClick={() => setTab("quiz")}>Take the quiz</button>
           </div>
           <div className="so-office-card" id="inquiry">
-            <p className="eyebrow-cap mt-4">The Inquiry</p>
-            <InquiryForm />
-            <div className="fd-sheet-quiz"><ProjectQuiz /></div>
+            {tab === "write" ? <InquiryForm /> : <div className="fd-sheet-quiz is-live" id="quiz"><ProjectQuiz /></div>}
           </div>
         </div>
       </div>
