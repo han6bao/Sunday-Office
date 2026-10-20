@@ -39,7 +39,7 @@ export const GUIDES: Guide[] = [
         items: [
           { t: "Describe your ideal customer", d: "Who they are, what they need and where they already look for it." },
           { t: "Write one sentence about what you do", d: "If a stranger can repeat it back, it works. Use it everywhere." },
-          { t: "Look at five competitors", d: "Notice what they all do the same. That's what you'll avoid.", link: { t: "How to stand out", h: "/stand-out" } },
+          { t: "Look at five businesses like yours", d: "Pick ones you admire. Notice what they all share, then find what only you bring.", link: { t: "How to stand out", h: "/stand-out" } },
         ],
       },
       {

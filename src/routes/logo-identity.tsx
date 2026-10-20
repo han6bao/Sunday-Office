@@ -304,9 +304,9 @@ function LogoIdentityPage() {
           title="Where logos start."
           feature
           items={[
-            { t: "Logo", p: "", d: "For when you need a logo.", list: ["Research on your industry + competitors", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
+            { t: "Logo", p: "", d: "For when you need a logo.", list: ["Research on your industry", "A new logo, designed from scratch", "Icon + wordmark versions", "Every file you need"] },
             { t: "Brand kit", p: "", d: "Built around the logo you already have.", list: ["Research + a moodboard", "Color palette + fonts", "The way it talks", "A one-page guide"] },
-            { t: "Full brand world", p: "", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + competitor research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
+            { t: "Full brand world", p: "", tag: "EVERYTHING", d: "The whole world, from scratch.", list: ["Audience + industry research", "Direction + moodboard", "Logo, identity + voice", "Full brand guide + templates"] },
           ]}
           foot={<>You'll know the final number before anything starts. Want print or a social pack too? <a className="so-bw-inline" href="/branding#addons">See add-ons →</a></>}
         />

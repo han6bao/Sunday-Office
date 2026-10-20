@@ -98,7 +98,7 @@ export const SEO: Record<string, Seo> = {
       "Need more leads and bookings? Get found on Google, look trustworthy at first glance and post content that brings people in. Help for Seattle small businesses.",
   },
   "/stand-out": {
-    title: "Stand Out From Competitors: Creative Branding in Seattle | Sunday Office",
+    title: "How to Make Your Business Stand Out: Creative Branding in Seattle | Sunday Office",
     description:
       "Look like everyone else in your industry? Creative branding, photos and content that make your business recognizable. Seattle creative agency Sunday Office.",
   },
