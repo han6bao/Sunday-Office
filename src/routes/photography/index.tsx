@@ -18,7 +18,7 @@ const ROOMS = [
   { t: "Events", tags: "Nightlife · performances · live coverage", img: "/assets/campaigns/leon-thomas/night-02.jpg", h: "/photography/events" },
   { t: "Creative", tags: "Editorial · conceptual · fashion · experimental", img: "/assets/campaigns/exhibition/exh2.jpg", h: "/photography/creative" },
   { t: "Headshots", tags: "Work · LinkedIn · actors · teams", img: "/assets/headshots/creative-01.jpg", h: "/headshots" },
-  { t: "Model digitals", tags: "For new + working models · agency-ready", img: "/assets/campaigns/ellis-digitals/ed-07.jpg", h: "/digitals" },
+  { t: "Model digitals", tags: "For new + working models · agency-ready", img: "/assets/campaigns/ellis-digitals/e-5837.jpg", h: "/digitals" },
 ];
 
 const INCLUDED = [

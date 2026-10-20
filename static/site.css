@@ -12837,6 +12837,14 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .eq-cover { grid-template-columns: 1fr; }
 .eq-cover-film { margin: clamp(28px, 4vw, 44px) 0 0; }
 .eq-cover-film video { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 18px; background: #dfe6e6; }
+/* Ellis: fuller gallery */
+.ed-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ed-grid-3 .ed-img { aspect-ratio: 2 / 3; }
+.ed-grid-land .ed-img { aspect-ratio: 4 / 3; }
+.ed-extra .so-micro { color: #9e2b2e; margin-bottom: 14px; }
+.ed-more { margin: 28px 0 30px; padding-top: 24px; border-top: 1px solid rgba(244,239,232,.16); }
+.ed-more-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(26px, 3vw, 36px); color: #f4efe8; margin: 0 0 10px; }
+@media (max-width: 620px) { .ed-grid-3 { grid-template-columns: 1fr 1fr; } .ed-grid-3 .ed-img:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

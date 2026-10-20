@@ -76,6 +76,7 @@ const FAQ = [
   { q: "What are digitals?", a: "Simple, natural photos that show agencies exactly what you look like today. No heavy makeup, no styling tricks and no reshaping. Some people call them polaroids." },
   { q: "Do you retouch them?", a: "Lightly. I clean up small things like a stray hair or a bit of dust, but I never change your face, your skin or your shape. That's the point of digitals." },
   { q: "Where do we shoot?", a: <>In a studio or on location with good natural light, your choice. Ellis's digitals were shot at LOFT in Tacoma. <a className="so-bw-inline" href="/campaigns/ellis-digitals">See them →</a></> },
+  { q: "Can I get more photos than my package?", a: "Yes. You can add extra photos before the shoot or when we go through your gallery together. More angles and expressions give you fresh options for different agencies, your comp card and your profiles, and it costs far less than booking a second shoot." },
   { q: "How fast do I get them?", a: "A sneak peek within 48 hours and the full gallery in about two weeks. We pick your selects together." },
   { q: "Can you help me get signed?", a: "I can't promise that, and anyone who does isn't being honest. What I can promise is digitals that show you clearly and help you put your best foot forward." },
   { q: "Do I need makeup or a stylist?", a: "No. Clean, moisturized skin is all you need. If you want a styled look after the digitals, we can plan that together." },
@@ -112,9 +113,9 @@ function DigitalsPage() {
         </div>
 
         <div className="dg-hero">
-          <img src={A + "ed-05.jpg"} alt="Ellis in a white tee and wide jeans, front-facing digital" />
-          <img src={A + "ed-06.jpg"} alt="Ellis full length in natural window light" />
-          <img src={A + "ed-07.jpg"} alt="Ellis three-quarter digital against white brick" />
+          <img src={A + "e-5840.jpg"} alt="Ellis in a white tee and wide jeans, front-facing digital" />
+          <img src={A + "e-5841.jpg"} alt="Ellis full length in natural window light" />
+          <img src={A + "e-5842.jpg"} alt="Ellis in profile against white brick" />
         </div>
 
         <ServiceQuiz c={QUIZ} />
@@ -156,13 +157,13 @@ function DigitalsPage() {
           need="Headshots"
           title="The session."
           items={[
-            { t: "Model digitals", p: "", tag: "FOR MODELS", d: "The full agency set, in natural light, with a natural edit.", list: ["Front, three-quarter, profile + full length", "Direction on every angle and expression", "Natural light that shows your real skin tone", "A light, honest edit", "Help picking the selects you send", "Sneak peek in 48 hours"] },
+            { t: "Model digitals", p: "", tag: "FOR MODELS", d: "The full agency set, in natural light, with a natural edit.", list: ["Front, three-quarter, profile + full length", "Direction on every angle and expression", "Natural light that shows your real skin tone", "A light, honest edit", "Help picking the selects you send", "Sneak peek in 48 hours", "Option to add more photos"] },
           ]}
           foot="Want a styled look for range too? We can add it in the same session. I'll quote it before we book."
         />
 
         <section className="so-bw-sec dg-case">
-          <img src={A + "ed-08.jpg"} alt="Ellis seated in a styled look at LOFT Tacoma" />
+          <img src={A + "e-5863.jpg"} alt="Ellis seated in a styled look at LOFT Tacoma" />
           <div>
             <p className="so-micro">A RECENT SHOOT</p>
             <h2 className="so-serif so-bw-h">Ellis, at LOFT Tacoma.</h2>

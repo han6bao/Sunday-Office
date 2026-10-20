@@ -28,6 +28,13 @@ const DID = [
   { t: "Selects", d: "Went through every frame together over coffee in Tacoma and picked the strongest." },
 ];
 
+const MORE = [
+  "More angles and expressions, so you can send fresh photos to different agencies",
+  "A styled look next to your digitals shows range",
+  "Extra frames for your comp card, Instagram and model profiles",
+  "Far less than booking a second shoot later",
+];
+
 function Img({ n, onOpen, className = "", pos }: { n: string; onOpen: (s: string) => void; className?: string; pos?: string }) {
   return (
     <button type="button" className={"ed-img " + className} onClick={() => onOpen(A + n)} aria-label="View larger">
@@ -57,9 +64,10 @@ function EllisPage() {
               <div><dt>Date</dt><dd>October 11, 2026</dd></div>
               <div><dt>Location</dt><dd>LOFT, Tacoma</dd></div>
               <div><dt>Looks</dt><dd>Digitals + one styled</dd></div>
+              <div><dt>Gallery</dt><dd>19 photos: 15 in the package, plus 4 he added</dd></div>
             </dl>
           </div>
-          <Img n="ed-08.jpg" onOpen={setOpen} className="ed-cover-img" pos="center 30%" />
+          <Img n="e-5837.jpg" onOpen={setOpen} className="ed-cover-img" pos="center 25%" />
         </section>
 
         {/* Story */}
@@ -72,28 +80,54 @@ function EllisPage() {
         <section className="ed-look">
           <p className="ed-k"><span>01</span> The digitals</p>
           <div className="ed-grid ed-grid-2">
-            <Img n="ed-07.jpg" onOpen={setOpen} />
-            <Img n="ed-05.jpg" onOpen={setOpen} pos="center 20%" />
+            <Img n="e-5839.jpg" onOpen={setOpen} />
+            <Img n="e-5840.jpg" onOpen={setOpen} />
           </div>
           <div className="ed-grid ed-grid-wide">
-            <Img n="ed-06.jpg" onOpen={setOpen} />
+            <Img n="e-5841.jpg" onOpen={setOpen} />
             <p className="ed-p ed-side">A white tee, wide jeans and nothing else. Digitals are meant to show exactly who walks in the door, so the light stays natural and the edit stays honest.</p>
+          </div>
+          <div className="ed-grid ed-grid-3">
+            <Img n="e-5842.jpg" onOpen={setOpen} />
+            <Img n="e-5844.jpg" onOpen={setOpen} />
+            <Img n="e-5849.jpg" onOpen={setOpen} />
           </div>
         </section>
 
         {/* Look 02 */}
         <section className="ed-look">
           <p className="ed-k"><span>02</span> The styled look</p>
-          <Img n="ed-01.jpg" onOpen={setOpen} className="ed-full" pos="center 40%" />
-          <div className="ed-grid ed-grid-2">
-            <Img n="ed-02.jpg" onOpen={setOpen} />
-            <Img n="ed-03.jpg" onOpen={setOpen} pos="center 60%" />
+          <Img n="e-5862.jpg" onOpen={setOpen} className="ed-full" pos="center 45%" />
+          <div className="ed-grid ed-grid-3">
+            <Img n="e-5853.jpg" onOpen={setOpen} />
+            <Img n="e-5854.jpg" onOpen={setOpen} />
+            <Img n="e-5855.jpg" onOpen={setOpen} />
           </div>
+          <div className="ed-grid ed-grid-2 ed-grid-land">
+            <Img n="e-5858.jpg" onOpen={setOpen} />
+            <Img n="e-5859.jpg" onOpen={setOpen} />
+          </div>
+          <div className="ed-grid ed-grid-3">
+            <Img n="e-5860.jpg" onOpen={setOpen} />
+            <Img n="e-5861.jpg" onOpen={setOpen} />
+            <Img n="e-5863.jpg" onOpen={setOpen} />
+          </div>
+          <div className="ed-grid ed-grid-2">
+            <Img n="e-5864.jpg" onOpen={setOpen} />
+            <Img n="e-5865.jpg" onOpen={setOpen} />
+          </div>
+        </section>
+
+        {/* The extras */}
+        <section className="ed-story ed-extra">
+          <p className="so-micro">MORE THAN THE PACKAGE</p>
+          <p className="ed-pull">His package came with 15 photos. He loved the set enough to add 4 more.</p>
+          <p className="ed-p">Going through the gallery together, there were a few frames he didn't want to leave behind, so we added them. That's always an option: if you'd like more photos than your package includes, you can add them.</p>
         </section>
 
         {/* Behind it */}
         <section className="ed-behind">
-          <Img n="ed-04.jpg" onOpen={setOpen} />
+          <Img n="e-5846.jpg" onOpen={setOpen} />
           <div>
             <p className="ed-k"><span>03</span> Behind the frame</p>
             <ol className="ed-did">
@@ -113,6 +147,13 @@ function EllisPage() {
             {AGENCIES.map((x) => <li key={x}>{x}</li>)}
           </ul>
           <p className="ed-p">I plan the shots, direct your posing and expression, keep the edit natural and help you pick the selects to send. Want a styled look too? We add it in the same session.</p>
+          <div className="ed-more">
+            <p className="ed-more-t">Want more photos than your package?</p>
+            <p className="ed-p">You can add extra photos, before the shoot or when we go through your gallery. It's worth it:</p>
+            <ul className="ed-check">
+              {MORE.map((x) => <li key={x}>{x}</li>)}
+            </ul>
+          </div>
           <div className="ed-cta">
             <a className="ed-btn" href={bookHref("Headshots", "Model digitals")}>Book your digitals →</a>
             <a className="ed-link" href="/digitals">How digitals work</a>
