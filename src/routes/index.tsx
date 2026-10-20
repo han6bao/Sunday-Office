@@ -1320,6 +1320,7 @@ function FeedLetter() {
 /* Phones only: one chapter per card, swiped sideways, with a count underneath. */
 function BioSwipe() {
   const [at, setAt] = useState(0);
+  const [flipped, setFlipped] = useState<number[]>([]);
   const row = useRef<HTMLDivElement>(null);
   const onScroll = () => {
     const el = row.current;
@@ -1335,11 +1336,20 @@ function BioSwipe() {
         <figure className="bio-swipe-card bio-swipe-cover">
           <img src="/assets/bio/cover-hana.jpg?v=3" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026." />
         </figure>
-        {CHAPTERS.map((c) => (
-          <article key={c.n} className="bio-swipe-card bio-swipe-box">
-            <h3 className="bio-swipe-t">{c.t}</h3>
-            {c.p.map((t, i) => <p key={i}>{t}</p>)}
-          </article>
+        {CHAPTERS.map((c, k) => (
+          <button key={c.n} type="button" className={"bio-swipe-card bio-flip" + (flipped.includes(k) ? " is-flipped" : "")} aria-pressed={flipped.includes(k)} aria-label={`${c.t}, tap to ${flipped.includes(k) ? "close" : "read"}`} onClick={() => setFlipped((f) => (f.includes(k) ? f.filter((x) => x !== k) : [...f, k]))}>
+            <span className="bio-flip-in">
+              <span className="bio-flip-face bio-flip-front">
+                <span className="bio-flip-n">{c.n}</span>
+                <span className="bio-flip-t">{c.t}</span>
+                <span className="bio-flip-hint">tap to read</span>
+              </span>
+              <span className="bio-flip-face bio-flip-back">
+                <span className="bio-swipe-t">{c.t}</span>
+                {c.p.map((t, i) => <span key={i} className="bio-flip-p">{t}</span>)}
+              </span>
+            </span>
+          </button>
         ))}
       </div>
       <p className="bio-swipe-no" aria-live="polite">{at === 0 ? <>swipe →</> : <>{String(at).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")}</>}</p>
