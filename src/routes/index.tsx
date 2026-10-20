@@ -798,15 +798,15 @@ function FeedServices() {
       <div className="fd-mk">
         <div className="fd-mk-item">
           <p className="fd-mk-k">Just started a business?</p>
-          <p className="fd-mk-d"><i>The free guide.</i> Everything you need, in order, from your license to your first post. <a className="fd-mk-a" href={ph("/just-started")}>Open the guide →</a></p>
+          <p className="fd-mk-d"><span className="fd-mk-txt"><i>The free guide.</i> Everything you need, in order, from your license to your first post. </span><a className="fd-mk-a" href={ph("/just-started")}>Open the guide →</a></p>
         </div>
         <div className="fd-mk-item">
           <p className="fd-mk-k">Already up and running?</p>
-          <p className="fd-mk-d"><i>The Makeover.</i> Keep what works and refresh the rest. <a className="fd-mk-a" href={ph("/revamp-your-business")}>The revamp guide →</a> <a className="fd-mk-a" href="#makeover">Makeover options →</a></p>
+          <p className="fd-mk-d"><span className="fd-mk-txt"><i>The Makeover.</i> Keep what works and refresh the rest. </span><a className="fd-mk-a" href={ph("/revamp-your-business")}>The revamp guide →</a> <a className="fd-mk-a" href="#makeover">Makeover options →</a></p>
         </div>
         <div className="fd-mk-item">
           <p className="fd-mk-k">Know what you need?</p>
-          <p className="fd-mk-d"><i>Start there.</i> More customers, a new website, standing out, showing up on Google. <a className="fd-mk-a" href={ph("/help")}>What do you need help with? →</a></p>
+          <p className="fd-mk-d"><span className="fd-mk-txt"><i>Start there.</i> More customers, a new website, standing out, showing up on Google. </span><a className="fd-mk-a" href={ph("/help")}>What do you need help with? →</a></p>
         </div>
       </div>
       <div className="fd-services">
@@ -1310,9 +1310,40 @@ function FeedLetter() {
               </li>
             ))}
           </ol>
+          <BioSwipe />
         </div>
       </div>
     </section>
+  );
+}
+
+/* Phones only: one chapter per card, swiped sideways, with a count underneath. */
+function BioSwipe() {
+  const [at, setAt] = useState(0);
+  const row = useRef<HTMLDivElement>(null);
+  const onScroll = () => {
+    const el = row.current;
+    if (!el) return;
+    setAt(Math.round(el.scrollLeft / el.clientWidth));
+  };
+  // The row takes the height of the card on screen, so short chapters don't leave a gap.
+  useEffect(() => {
+    const el = row.current;
+    const card = el?.children[at] as HTMLElement | undefined;
+    if (el && card) el.style.height = card.offsetHeight + "px";
+  }, [at]);
+  return (
+    <div className="bio-swipe">
+      <div className="bio-swipe-row" ref={row} onScroll={onScroll}>
+        {CHAPTERS.map((c) => (
+          <article key={c.n} className="bio-swipe-card">
+            <h3 className="bio-swipe-t">{c.t}</h3>
+            {c.p.map((t, i) => <p key={i}>{t}</p>)}
+          </article>
+        ))}
+      </div>
+      <p className="bio-swipe-no" aria-live="polite">{String(at + 1).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")} <span aria-hidden="true">· swipe →</span></p>
+    </div>
   );
 }
 

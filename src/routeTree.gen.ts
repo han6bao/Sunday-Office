@@ -37,6 +37,7 @@ import { Route as LaunchAProductRouteImport } from './routes/launch-a-product'
 import { Route as LaunchYourBusinessRouteImport } from './routes/launch-your-business'
 import { Route as DigitalsRouteImport } from './routes/digitals'
 import { Route as DigitalsPrepRouteImport } from './routes/digitals-prep'
+import { Route as LoftTacomaRouteImport } from './routes/loft-tacoma'
 import { Route as CreativeDirectionContentRouteImport } from './routes/creative-direction-content'
 import { Route as CreativeDirectionRouteImport } from './routes/creative-direction'
 import { Route as BrandingRouteImport } from './routes/branding'
@@ -214,6 +215,11 @@ const DigitalsRoute = DigitalsRouteImport.update({
 const DigitalsPrepRoute = DigitalsPrepRouteImport.update({
   id: '/digitals-prep',
   path: '/digitals-prep',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoftTacomaRoute = LoftTacomaRouteImport.update({
+  id: '/loft-tacoma',
+  path: '/loft-tacoma',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreativeDirectionContentRoute =
@@ -439,6 +445,7 @@ export interface FileRoutesByFullPath {
   '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
   '/digitals-prep': typeof DigitalsPrepRoute
+  '/loft-tacoma': typeof LoftTacomaRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -507,6 +514,7 @@ export interface FileRoutesByTo {
   '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
   '/digitals-prep': typeof DigitalsPrepRoute
+  '/loft-tacoma': typeof LoftTacomaRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -576,6 +584,7 @@ export interface FileRoutesById {
   '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
   '/digitals-prep': typeof DigitalsPrepRoute
+  '/loft-tacoma': typeof LoftTacomaRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -646,6 +655,7 @@ export interface FileRouteTypes {
     | '/launch-your-business'
     | '/digitals'
     | '/digitals-prep'
+    | '/loft-tacoma'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -714,6 +724,7 @@ export interface FileRouteTypes {
     | '/launch-your-business'
     | '/digitals'
     | '/digitals-prep'
+    | '/loft-tacoma'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -782,6 +793,7 @@ export interface FileRouteTypes {
     | '/launch-your-business'
     | '/digitals'
     | '/digitals-prep'
+    | '/loft-tacoma'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -851,6 +863,7 @@ export interface RootRouteChildren {
   LaunchYourBusinessRoute: typeof LaunchYourBusinessRoute
   DigitalsRoute: typeof DigitalsRoute
   DigitalsPrepRoute: typeof DigitalsPrepRoute
+  LoftTacomaRoute: typeof LoftTacomaRoute
   LogoIdentityRoute: typeof LogoIdentityRoute
   MovingImageRoute: typeof MovingImageRoute
   PrivateRoute: typeof PrivateRoute
@@ -1087,6 +1100,14 @@ declare module '@tanstack/react-router' {
       path: '/digitals-prep'
       fullPath: '/digitals-prep'
       preLoaderRoute: typeof DigitalsPrepRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+
+    '/loft-tacoma': {
+      id: '/loft-tacoma'
+      path: '/loft-tacoma'
+      fullPath: '/loft-tacoma'
+      preLoaderRoute: typeof LoftTacomaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/creative-direction-content': {
@@ -1400,6 +1421,7 @@ const rootRouteChildren: RootRouteChildren = {
   LaunchYourBusinessRoute: LaunchYourBusinessRoute,
   DigitalsRoute: DigitalsRoute,
   DigitalsPrepRoute: DigitalsPrepRoute,
+  LoftTacomaRoute: LoftTacomaRoute,
   LogoIdentityRoute: LogoIdentityRoute,
   MovingImageRoute: MovingImageRoute,
   PrivateRoute: PrivateRoute,

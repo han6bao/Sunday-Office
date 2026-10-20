@@ -63,6 +63,10 @@ export const SEO: Record<string, Seo> = {
     description:
       "Social packs from Sunday Office: 20 posts, stories and covers in your brand, editable in Canva. Plus a simple step-by-step guide to using Canva.",
   },
+  "/loft-tacoma": {
+    title: "Best Place for Model Digitals + Headshots in Seattle and Tacoma: LOFT Tacoma | Sunday Office",
+    description: "Where to get model digitals and headshots in Seattle and Tacoma. A real shoot at LOFT Tacoma: natural light, white brick, a huge mirror, sofas, easy parking and booking.",
+  },
   "/digitals-prep": {
     title: "How to Prepare for Model Digitals: What to Bring + Posing Guide | Sunday Office",
     description: "A free guide to preparing for model digitals: what to do a week, a day and the night before, what to bring, what to avoid, hair for every length and a posing guide.",
@@ -280,6 +284,7 @@ export const SEO: Record<string, Seo> = {
 
 /* Link previews: one shared card for the site, and a few pages with their own photo. */
 const OG_IMAGE: Record<string, string> = {
+  "/loft-tacoma": "/assets/campaigns/ellis-digitals/og-ellis.jpg",
   "/campaigns/ellis-digitals": "/assets/campaigns/ellis-digitals/og-ellis.jpg",
 };
 

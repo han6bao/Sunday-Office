@@ -13021,3 +13021,82 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   .scr-pitch > div { padding: 18px 0; border-left: 0 !important; }
   .scr-pitch > div + div { border-top: 1px solid rgba(244,239,232,.14); }
 }
+/* Phone: "What I do" trimmed to the essentials */
+@media (max-width: 720px) {
+  #build.fd-frame { padding-top: 40px !important; padding-bottom: 40px !important; }
+  #build .fd-file, #build .fd-ghost { display: none !important; }
+  #build .fd-script { font-size: 34px !important; line-height: 1.05 !important; margin-top: 0 !important; }
+  #build .fd-small { font-size: 15px !important; line-height: 1.5 !important; margin-top: 10px !important; }
+  #build .fd-services { margin-top: 22px !important; padding-top: 14px !important; }
+  #build .fd-sv-note { font-size: 9.5px !important; margin-bottom: 10px !important; }
+  #build .fd-services a { padding: 12px 0 !important; min-height: 0 !important; }
+  #build .fd-services a.is-big { padding: 14px 16px !important; }
+  #build .fd-services .fd-wb-img { height: 40px !important; width: auto !important; }
+  #build .fd-sn { font-size: 22px !important; line-height: 1.15 !important; padding-left: 0 !important; }
+  #build .fd-sd { display: none !important; }
+  #build .fd-mk { margin-top: 20px !important; padding-top: 0 !important; }
+  #build .fd-mk-item { padding: 10px 0 !important; }
+  #build .fd-mk-txt { display: none; }
+  #build .fd-mk-k { margin-bottom: 2px !important; }
+  #build .fd-mk-d { font-size: 15px !important; margin: 0 !important; }
+}
+@media (max-width: 720px) {
+  .fd-page #build .fd-services a, .fd-page #build .fd-services a:hover { padding: 11px 0 !important; min-height: 0 !important; font-size: 22px !important; }
+  .fd-page #build .fd-services a .fd-sn, .fd-page #build .fd-services a .fd-sn * { font-size: 22px !important; line-height: 1.15 !important; }
+  .fd-page #build .fd-services a.is-big { padding: 12px 14px !important; }
+  .fd-page #build .fd-services a.is-big .fd-wb-img { height: 34px !important; width: auto !important; }
+  .fd-page #build .fd-services a .fd-sv-arr { font-size: 15px !important; }
+}
+/* Bio on phones: no intro, one chapter at a time */
+.bio-swipe { display: none; }
+@media (max-width: 720px) {
+  #about-hana .bio-side > .fd-script, #about-hana .bio-side > .fd-small, #about-hana .bio-list, #about-hana .fd-file, #about-hana .fd-ghost { display: none !important; }
+  .bio-swipe { display: block; margin-top: 18px; }
+  .bio-swipe-row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 0; }
+  .bio-swipe-row::-webkit-scrollbar { display: none; }
+  .bio-swipe-card { flex: 0 0 100%; scroll-snap-align: start; padding-right: 18px; box-sizing: border-box; }
+  .bio-swipe-t { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1; margin: 0 0 10px; }
+  .bio-swipe-card p { font-size: 15px; line-height: 1.6; margin: 0 0 10px; opacity: .85; }
+  .bio-swipe-no { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; margin: 8px 0 0; opacity: .7; }
+}
+@media (max-width: 720px) {
+  #about-hana .bio-grid { grid-template-columns: minmax(0, 1fr) !important; }
+  #about-hana .bio-side { min-width: 0 !important; width: 100% !important; }
+  .bio-swipe { width: calc(100vw - 40px); max-width: 100%; }
+  .bio-swipe-row { align-items: flex-start; }
+  .bio-swipe-card { width: 100%; min-width: 100%; }
+}
+@media (max-width: 720px) {
+  .bio-swipe-row { transition: height .3s ease; }
+  /* Start a project: one column, room to breathe */
+  #office-hours.fd-frame { padding-top: 56px !important; padding-bottom: 56px !important; }
+  #office-hours .fd-file { display: none !important; }
+  #office-hours .fd-small { font-size: 15px !important; margin: 14px auto 28px !important; max-width: 30ch; }
+  #office-hours .so-office-card { padding: 22px 20px !important; border-radius: 22px !important; }
+  #office-hours .so-form { display: grid !important; grid-template-columns: 1fr !important; gap: 20px !important; }
+  #office-hours .so-form .so-field { grid-column: 1 / -1 !important; width: 100% !important; }
+  #office-hours .so-form .so-field input, #office-hours .so-form .so-field select { padding: 12px 0 !important; font-size: 17px !important; }
+  #office-hours .so-form-submit, #office-hours .so-form button[type="submit"] { width: 100% !important; justify-content: center !important; margin-top: 6px !important; }
+  #office-hours .fd-contact-strip { margin-top: 28px !important; gap: 10px !important; }
+  #office-hours .fd-contact-strip a[href^="mailto"] { display: none !important; }
+  /* Footer: lighter and shorter */
+  .ft2 .ft2-top { padding-top: 36px !important; gap: 22px !important; }
+  .ft2 .ft2-col { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 10px 16px !important; }
+  .ft2 .ft2-col a { font-size: 15px !important; }
+  .ft2 .ft2-line { margin: 22px 0 !important; }
+}
+@media (max-width: 720px) {
+  .ft2 .ft2-col { display: flex !important; flex-wrap: wrap !important; gap: 8px 20px !important; }
+  .ft2 .ft2-col > * { margin: 0 !important; padding: 0 !important; line-height: 1.5 !important; }
+}
+/* LOFT Tacoma guide */
+.lf-shoot { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+.lf-room { margin: 0; }
+.lf-room video { display: block; width: 100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius: 18px; background: #eceae4; }
+.lf-room figcaption { margin-top: 10px; }
+.lf-has { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 28px; margin-top: 22px; }
+.lf-has > div { padding: 16px 0; border-top: 1px solid rgba(43,38,34,.14); }
+.lf-pair { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; }
+.lf-pair img { display: block; width: 100%; height: clamp(300px, 46vh, 520px); object-fit: cover; border-radius: 18px; }
+@media (max-width: 900px) { .lf-has { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 720px) { .lf-shoot, .lf-pair { grid-template-columns: 1fr; } .lf-room video { aspect-ratio: 4 / 5; } .lf-pair img { height: auto; aspect-ratio: 4 / 5; } }
