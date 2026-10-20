@@ -36,6 +36,7 @@ import { Route as LaunchAWebsiteRouteImport } from './routes/launch-a-website'
 import { Route as LaunchAProductRouteImport } from './routes/launch-a-product'
 import { Route as LaunchYourBusinessRouteImport } from './routes/launch-your-business'
 import { Route as DigitalsRouteImport } from './routes/digitals'
+import { Route as DigitalsPrepRouteImport } from './routes/digitals-prep'
 import { Route as CreativeDirectionContentRouteImport } from './routes/creative-direction-content'
 import { Route as CreativeDirectionRouteImport } from './routes/creative-direction'
 import { Route as BrandingRouteImport } from './routes/branding'
@@ -208,6 +209,11 @@ const LaunchYourBusinessRoute = LaunchYourBusinessRouteImport.update({
 const DigitalsRoute = DigitalsRouteImport.update({
   id: '/digitals',
   path: '/digitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalsPrepRoute = DigitalsPrepRouteImport.update({
+  id: '/digitals-prep',
+  path: '/digitals-prep',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreativeDirectionContentRoute =
@@ -432,6 +438,7 @@ export interface FileRoutesByFullPath {
   '/launch-a-product': typeof LaunchAProductRoute
   '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
+  '/digitals-prep': typeof DigitalsPrepRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -499,6 +506,7 @@ export interface FileRoutesByTo {
   '/launch-a-product': typeof LaunchAProductRoute
   '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
+  '/digitals-prep': typeof DigitalsPrepRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -567,6 +575,7 @@ export interface FileRoutesById {
   '/launch-a-product': typeof LaunchAProductRoute
   '/launch-your-business': typeof LaunchYourBusinessRoute
   '/digitals': typeof DigitalsRoute
+  '/digitals-prep': typeof DigitalsPrepRoute
   '/logo-identity': typeof LogoIdentityRoute
   '/moving-image': typeof MovingImageRoute
   '/private': typeof PrivateRoute
@@ -636,6 +645,7 @@ export interface FileRouteTypes {
     | '/launch-a-product'
     | '/launch-your-business'
     | '/digitals'
+    | '/digitals-prep'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -703,6 +713,7 @@ export interface FileRouteTypes {
     | '/launch-a-product'
     | '/launch-your-business'
     | '/digitals'
+    | '/digitals-prep'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -770,6 +781,7 @@ export interface FileRouteTypes {
     | '/launch-a-product'
     | '/launch-your-business'
     | '/digitals'
+    | '/digitals-prep'
     | '/logo-identity'
     | '/moving-image'
     | '/private'
@@ -838,6 +850,7 @@ export interface RootRouteChildren {
   LaunchAProductRoute: typeof LaunchAProductRoute
   LaunchYourBusinessRoute: typeof LaunchYourBusinessRoute
   DigitalsRoute: typeof DigitalsRoute
+  DigitalsPrepRoute: typeof DigitalsPrepRoute
   LogoIdentityRoute: typeof LogoIdentityRoute
   MovingImageRoute: typeof MovingImageRoute
   PrivateRoute: typeof PrivateRoute
@@ -1066,6 +1079,14 @@ declare module '@tanstack/react-router' {
       path: '/digitals'
       fullPath: '/digitals'
       preLoaderRoute: typeof DigitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+
+    '/digitals-prep': {
+      id: '/digitals-prep'
+      path: '/digitals-prep'
+      fullPath: '/digitals-prep'
+      preLoaderRoute: typeof DigitalsPrepRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/creative-direction-content': {
@@ -1378,6 +1399,7 @@ const rootRouteChildren: RootRouteChildren = {
   LaunchAProductRoute: LaunchAProductRoute,
   LaunchYourBusinessRoute: LaunchYourBusinessRoute,
   DigitalsRoute: DigitalsRoute,
+  DigitalsPrepRoute: DigitalsPrepRoute,
   LogoIdentityRoute: LogoIdentityRoute,
   MovingImageRoute: MovingImageRoute,
   PrivateRoute: PrivateRoute,

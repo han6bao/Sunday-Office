@@ -138,6 +138,7 @@ function DigitalsPage() {
 
         <div id="prep">
           <Checklist label="HOW TO PREPARE" title="What to bring." items={PREP} note="Tap each one as you pack it. Not sure about an outfit? Send me a photo before the shoot." />
+          <p className="so-bw-d" style={{ marginTop: 18 }}>Want the full list? <a className="so-bw-inline" href="/digitals-prep">The complete prep guide →</a> A week out to the morning of, hair, what to avoid and posing.</p>
         </div>
 
         <section className="so-bw-sec">

@@ -35,10 +35,10 @@ const MORE = [
   "Far less than booking a second shoot later",
 ];
 
-function Img({ n, onOpen, className = "", pos }: { n: string; onOpen: (s: string) => void; className?: string; pos?: string }) {
+function Img({ n, onOpen, className = "", pos, zoom }: { n: string; onOpen: (s: string) => void; className?: string; pos?: string; zoom?: { s: number; o: string } }) {
   return (
     <button type="button" className={"ed-img " + className} onClick={() => onOpen(A + n)} aria-label="View larger">
-      <img src={A + n} alt="Ellis, model digitals at LOFT Tacoma" loading="lazy" style={pos ? { objectPosition: pos } : undefined} />
+      <img src={A + n} alt="Ellis, model digitals at LOFT Tacoma" loading="lazy" style={{ ...(pos ? { objectPosition: pos } : {}), ...(zoom ? { transform: `scale(${zoom.s})`, transformOrigin: zoom.o } : {}) }} />
     </button>
   );
 }
@@ -67,7 +67,7 @@ function EllisPage() {
           <div className="cc-card cc-back">
             <div className="cc-grid">
               <Img n="e-5840.jpg" onOpen={setOpen} pos="center 20%" />
-              <Img n="e-5842.jpg" onOpen={setOpen} pos="center 25%" />
+              <Img n="e-5842.jpg" onOpen={setOpen} pos="center 25%" zoom={{ s: 1.45, o: "42% 34%" }} />
               <Img n="e-5841.jpg" onOpen={setOpen} pos="center 40%" />
               <Img n="e-5862.jpg" onOpen={setOpen} pos="center 45%" />
             </div>
@@ -100,6 +100,7 @@ function EllisPage() {
         {/* Look 02 */}
         <section className="ed-look cc-sheet">
           <div className="cc-sheet-head"><p className="ed-k"><span>02</span> The styled look</p><span className="cc-sheet-n">Denim on denim</span></div>
+          <Img n="e-5859.jpg" onOpen={setOpen} className="ed-full" />
           <div className="ed-grid ed-grid-3">
             <Img n="e-5853.jpg" onOpen={setOpen} />
             <Img n="e-5860.jpg" onOpen={setOpen} />
@@ -115,7 +116,6 @@ function EllisPage() {
             <Img n="e-5855.jpg" onOpen={setOpen} />
             <Img n="e-5864.jpg" onOpen={setOpen} />
           </div>
-          <Img n="e-5859.jpg" onOpen={setOpen} className="ed-full" />
         </section>
 
         {/* The extras */}
@@ -147,6 +147,7 @@ function EllisPage() {
           <ul className="ed-check">
             {AGENCIES.map((x) => <li key={x}>{x}</li>)}
           </ul>
+          <p className="ed-p">Getting ready? <a className="ed-link" href="/digitals-prep">Here's how to prepare</a>: what to bring, hair, what to avoid and a posing guide.</p>
           <p className="ed-p">I plan the shots, direct your posing and expression, keep the edit natural and help you pick the selects to send. Want a styled look too? We add it in the same session.</p>
           <div className="ed-more">
             <p className="ed-more-t">Want more photos than your package?</p>
@@ -158,6 +159,7 @@ function EllisPage() {
           <div className="ed-cta">
             <a className="ed-btn" href={bookHref("Headshots", "Model digitals")}>Book your digitals →</a>
             <a className="ed-link" href="/digitals">How digitals work</a>
+            <a className="ed-link" href="/digitals-prep">How to prepare</a>
           </div>
         </section>
 

@@ -63,6 +63,10 @@ export const SEO: Record<string, Seo> = {
     description:
       "Social packs from Sunday Office: 20 posts, stories and covers in your brand, editable in Canva. Plus a simple step-by-step guide to using Canva.",
   },
+  "/digitals-prep": {
+    title: "How to Prepare for Model Digitals: What to Bring + Posing Guide | Sunday Office",
+    description: "A free guide to preparing for model digitals: what to do a week, a day and the night before, what to bring, what to avoid, hair for every length and a posing guide.",
+  },
   "/digitals": {
     title: "Model Digitals Seattle + Tacoma | Agency-Ready Digitals | Sunday Office",
     description:
