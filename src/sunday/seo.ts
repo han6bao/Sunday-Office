@@ -278,9 +278,15 @@ export const SEO: Record<string, Seo> = {
   },
 };
 
+/* Link previews: one shared card for the site, and a few pages with their own photo. */
+const OG_IMAGE: Record<string, string> = {
+  "/campaigns/ellis-digitals": "/assets/campaigns/ellis-digitals/og-ellis.jpg",
+};
+
 export function seoHead(path: string) {
   const s = SEO[path] ?? SEO["/"];
   const url = SITE + (path === "/" ? "/" : path);
+  const img = SITE + (OG_IMAGE[path] ?? "/og-card.jpg");
   return {
     meta: [
       { title: s.title },
@@ -288,6 +294,11 @@ export function seoHead(path: string) {
       { property: "og:title", content: s.title },
       { property: "og:description", content: s.description },
       { property: "og:url", content: url },
+      { property: "og:image", content: img },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: img },
       { property: "og:site_name", content: "Sunday Office" },
       { property: "og:locale", content: "en_US" },
       { name: "geo.region", content: "US-WA" },
