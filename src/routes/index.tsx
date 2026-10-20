@@ -1318,9 +1318,28 @@ function FeedLetter() {
 }
 
 /* Phones only: one chapter per card, swiped sideways, with a count underneath. */
+/* The last page of the bio, and the back of the cover. */
+function BioCta() {
+  return (
+    <span className="bio-cta">
+      <span className="bio-cta-k">THAT'S ME</span>
+      <span className="bio-cta-t">Now tell me about <em>you.</em></span>
+      <span className="bio-cta-d">What you're building, where you're stuck, or just an idea. I read every one.</span>
+      <a className="bio-cta-btn" href="#office-hours">Start a project →</a>
+      <a className="bio-cta-link" href="#work">See the work</a>
+    </span>
+  );
+}
+
 function BioSwipe() {
   const [at, setAt] = useState(0);
   const [flipped, setFlipped] = useState<number[]>([]);
+  const [coverOpen, setCoverOpen] = useState(false);
+  const go = (d: number) => {
+    const el = row.current;
+    const card = el?.children[Math.max(0, Math.min(CHAPTERS.length + 1, at + d))] as HTMLElement | undefined;
+    if (el && card) el.scrollTo({ left: card.offsetLeft - (el.children[0] as HTMLElement).offsetLeft, behavior: "smooth" });
+  };
   const row = useRef<HTMLDivElement>(null);
   const onScroll = () => {
     const el = row.current;
@@ -1333,11 +1352,16 @@ function BioSwipe() {
   return (
     <div className="bio-swipe">
       <div className="bio-swipe-row" ref={row} onScroll={onScroll}>
-        <figure className="bio-swipe-card bio-swipe-cover">
-          <img src="/assets/bio/cover-hana.jpg?v=3" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026." />
-        </figure>
+        <div role="button" tabIndex={0} className={"bio-swipe-card bio-flip bio-flip-cover" + (coverOpen ? " is-flipped" : "")} aria-pressed={coverOpen} aria-label="Hana, cover. Tap to turn it over" onClick={(e) => { if ((e.target as HTMLElement).closest("a")) return; setCoverOpen((o) => !o); }} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setCoverOpen((o) => !o); } }}>
+          <span className="bio-flip-in">
+            <span className="bio-flip-face bio-flip-front bio-cover-face">
+              <img src="/assets/bio/cover-hana.jpg?v=3" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026." />
+            </span>
+            <span className="bio-flip-face bio-flip-back bio-cta-face"><BioCta /></span>
+          </span>
+        </div>
         {CHAPTERS.map((c, k) => (
-          <button key={c.n} type="button" className={"bio-swipe-card bio-flip" + (flipped.includes(k) ? " is-flipped" : "")} aria-pressed={flipped.includes(k)} aria-label={`${c.t}, tap to ${flipped.includes(k) ? "close" : "read"}`} onClick={() => setFlipped((f) => (f.includes(k) ? f.filter((x) => x !== k) : [...f, k]))}>
+          <div key={c.n} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setFlipped((f) => (f.includes(k) ? f.filter((x) => x !== k) : [...f, k])); } }} className={"bio-swipe-card bio-flip" + (flipped.includes(k) ? " is-flipped" : "")} aria-pressed={flipped.includes(k)} aria-label={`${c.t}, tap to ${flipped.includes(k) ? "close" : "read"}`} onClick={() => setFlipped((f) => (f.includes(k) ? f.filter((x) => x !== k) : [...f, k]))}>
             <span className="bio-flip-in">
               <span className="bio-flip-face bio-flip-front">
                 <span className="bio-flip-n">{c.n}</span>
@@ -1349,10 +1373,15 @@ function BioSwipe() {
                 {c.p.map((t, i) => <span key={i} className="bio-flip-p">{t}</span>)}
               </span>
             </span>
-          </button>
+          </div>
         ))}
+        <div className="bio-swipe-card bio-cta-card"><BioCta /></div>
       </div>
-      <p className="bio-swipe-no" aria-live="polite">{at === 0 ? <>swipe →</> : <>{String(at).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")}</>}</p>
+      <div className="bio-swipe-nav">
+        <button type="button" aria-label="Previous page" disabled={at === 0} onClick={() => go(-1)}>←</button>
+        <p className="bio-swipe-no" aria-live="polite">{at === 0 ? <>swipe →</> : at > CHAPTERS.length ? <>the end</> : <>{String(at).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")}</>}</p>
+        <button type="button" aria-label="Next page" disabled={at > CHAPTERS.length} onClick={() => go(1)}>→</button>
+      </div>
     </div>
   );
 }
