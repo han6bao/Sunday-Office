@@ -13004,3 +13004,20 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 .scr-post-ig:hover .scr-ig-h { text-decoration: none !important; }
 @media (max-width: 720px) { .scr-post-ig { width: 56vw; height: auto; aspect-ratio: 2 / 3; min-height: 0; } }
 @media (max-width: 720px) { .scr-post-ig { align-self: stretch; aspect-ratio: auto; height: auto; } }
+/* Moving tile: a clip sits where the photo would */
+#work .fd-row .fd-tile video.fd-wvideo { display: block; width: 100%; object-fit: cover; filter: sepia(.42) saturate(.8) contrast(.96) brightness(.98); transition: filter .5s ease; }
+#work .fd-row .fd-tile:hover video.fd-wvideo { filter: none; }
+#work .fd-row .fd-tile video.fd-wvideo { height: clamp(320px, 40vh, 420px) !important; }
+/* "For artists / designers" list: one dark box with rows, like Ellis's "Need digitals?" */
+.scr-pitch { gap: 0; background: #1b1918 url(/assets/texture/paper-black.jpg); background-size: 768px; color: #f4efe8; border-radius: 20px; padding: clamp(10px, 2vw, 18px) clamp(20px, 3vw, 36px); }
+.scr-pitch > div { background: transparent; border-radius: 0; padding: clamp(18px, 2vw, 26px) clamp(0px, 1.2vw, 18px); }
+.scr-pitch > div + div { border-left: 1px solid rgba(244,239,232,.14); }
+.scr-pitch .scr-rt { color: #f4efe8; }
+@media (max-width: 900px) {
+  .scr-pitch > div:nth-child(3) { border-left: 0; }
+  .scr-pitch > div:nth-child(n+3) { border-top: 1px solid rgba(244,239,232,.14); }
+}
+@media (max-width: 720px) {
+  .scr-pitch > div { padding: 18px 0; border-left: 0 !important; }
+  .scr-pitch > div + div { border-top: 1px solid rgba(244,239,232,.14); }
+}

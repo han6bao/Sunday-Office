@@ -716,13 +716,13 @@ const FEED_SERVICES = [
 ];
 
 type Link = { t: string; h: string };
-const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; links: Link[]; study: string; r?: string }[] = [
+const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; links: Link[]; study: string; r?: string; v?: string }[] = [
   { src: "/assets/campaigns/essential-brows-studio/cover.jpg", alt: "The Essential Brows website on a pink desktop", t: "Essential Brows", w: "Website + brand kit", d: "A brow studio that ran on a booking link. Now it has a home of its own.", links: [{ t: "Visit their website", h: "https://www.essentialbrows.studio/" }], study: "/websites/essential-brows-studio" },
   { src: "/assets/campaigns/pilates-haus-cover.png", alt: "Pilates Haus, a reformer Pilates studio in Seattle", t: "Pilates Haus", w: "Website + brand kit", d: "A new reformer Pilates studio in Seattle, with a site and brand kit built around their logo.", links: [{ t: "Visit their website", h: "https://pilates-haus-seattle.vercel.app/" }], study: "" },
   { src: "/assets/campaigns/joe-lopez-cover.png", alt: "Joe Lopez Photography website", t: "Joe Lopez Photography", w: "Website", d: "A new site for a Michigan wedding and quinceañera photographer.", links: [{ t: "Visit their website", h: "https://joe-lopez-photography.vercel.app/" }], study: "" },
   { src: "/assets/campaigns/leon-thomas/lt-01.jpg", alt: "Leon Thomas performing at Vice Seattle", t: "Leon Thomas × Vice", w: "Event photography", d: "His tour afterparty at Vice Seattle, photographed for the venue.", links: [{ t: "Visit Vice Seattle", h: "https://www.viceseattle.com/" }], study: "/campaigns/leon-thomas" },
   { src: "/assets/campaigns/jaydyn-f/scream-blue.jpg", alt: "Jaydyn F. crouched in blue haze with a red laser line", t: "Jaydyn F. · SCREAM", w: "Music video release", d: "Lighting, set photos and behind the scenes for his new single. The photos carried the whole rollout, down to his profile pictures.", links: [{ t: "Watch the video", h: "https://www.youtube.com/watch?v=0UHpD8zIySQ" }], study: "/campaigns/jaydyn-f-scream" },
-  { src: "/assets/campaigns/elena-qiu/eq-01.jpg", alt: "Two models in Elena Qiu's white pieces against a brick wall", t: "Elena Qiu", w: "Fashion editorial + film", d: "Editorials for a New York fashion designer from Seattle, shot around her shows for years.", links: [{ t: "Visit her website", h: "https://elenaqiu.com/" }], study: "/campaigns/elena-qiu" },
+  { src: "/assets/campaigns/elena-qiu/eq-01.jpg", alt: "Two models in Elena Qiu's white pieces against a brick wall", v: "/assets/campaigns/elena-qiu/clips/eqv-14", t: "Elena Qiu", w: "Fashion editorial + film", d: "Editorials for a New York fashion designer from Seattle, shot around her shows for years.", links: [{ t: "Visit her website", h: "https://elenaqiu.com/" }], study: "/campaigns/elena-qiu" },
   { src: "/assets/campaigns/angie-tiara-beauty/at-01.jpg", alt: "The lounge at Selaras Haus, a beauty studio in Tacoma", t: "Selaras Haus", w: "Interior photography", d: "A calm, warm studio in downtown Tacoma, photographed for its social media and branding.", links: [{ t: "See their Instagram", h: "https://www.instagram.com/selarashaus/" }], study: "/campaigns/selaras-haus" },
   { src: "/assets/campaigns/ellis-digitals/e-5862.jpg", alt: "Ellis in denim on denim, sitting on a white floor at LOFT Tacoma", t: "Ellis", w: "Model digitals", d: "My first client, shot again on a Sunday, right when Sunday Office opened. Digitals and a styled denim look at LOFT Tacoma.", links: [], study: "/campaigns/ellis-digitals" },
   { src: "/assets/campaigns/green-grillz/nine-01.jpg", alt: "Nine Vicious in a red velvet jacket wearing green grillz", t: "Nine Vicious × Custom Grillz", w: "Photography + promotion", d: "My photos became the most-liked post on jeweler Marcus Adam's page.", links: [{ t: "See the Our Generation Music feature", h: "https://www.instagram.com/p/DekxqKWGSKY/" }, { t: "See Marcus Adam's page", h: "https://www.instagram.com/maarcusadam/" }], study: "/campaigns/green-grillz", r: "35K views · featured by Our Generation Music" },
@@ -1093,7 +1093,14 @@ function FeedWork() {
         {shown.map(({ w, i }) => (
           <button key={w.t} type="button" role="listitem" className="fd-tile" onClick={() => setOpen(i)}>
             <span className="fd-wmedia">
-              <img src={w.src} alt={w.alt} loading="lazy" />
+              {w.v ? (
+                <video className="fd-wvideo" autoPlay muted loop playsInline preload="metadata" poster={w.src} aria-label={w.alt}>
+                  <source src={`${w.v}.mp4`} type="video/mp4" />
+                  <source src={`${w.v}.webm`} type="video/webm" />
+                </video>
+              ) : (
+                <img src={w.src} alt={w.alt} loading="lazy" />
+              )}
               {/progress/i.test(w.w) && <span className="so-status so-status-on-card is-rec">In progress</span>}
               <span className="fd-wcap">
                 <span className="fd-ct">{w.t}</span>
