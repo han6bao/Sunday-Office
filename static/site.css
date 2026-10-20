@@ -13244,6 +13244,15 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 }
 .fd-page #build .fd-services a.is-big .fd-wb-t { display: block; }
 .fd-page #build .fd-services a.is-big .fd-sn .fd-sd { padding: 0 !important; margin-left: 0 !important; text-indent: 0 !important; }
+/* World Building: same space under it as every other service row */
+.fd-page #build .fd-services a.is-big { padding-bottom: 11px !important; margin-bottom: 0 !important; }
+@media (min-width: 900px) { .fd-page #build .fd-services a.is-big { padding-bottom: 13px !important; } }
+/* Bio cover on phones: kraft fills the whole card, so there's no empty band above or below the picture */
+@media (max-width: 720px) {
+  .bio-flip-cover .bio-cover-face { background: #bb9a6f !important; border-radius: 16px !important; overflow: hidden; }
+  .bio-flip-cover .bio-cover-face img { border-radius: 0 !important; box-shadow: none !important; }
+}
+@media (max-width: 720px) { .bio-flip-cover .bio-cover-face img { width: 100% !important; height: 100% !important; max-width: none !important; object-fit: cover !important; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

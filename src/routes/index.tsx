@@ -1355,7 +1355,7 @@ function BioSwipe() {
         <div role="button" tabIndex={0} className={"bio-swipe-card bio-flip bio-flip-cover" + (coverOpen ? " is-flipped" : "")} aria-pressed={coverOpen} aria-label="Hana, cover. Tap to turn it over" onClick={(e) => { if ((e.target as HTMLElement).closest("a")) return; setCoverOpen((o) => !o); }} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setCoverOpen((o) => !o); } }}>
           <span className="bio-flip-in">
             <span className="bio-flip-face bio-flip-front bio-cover-face">
-              <img src="/assets/bio/cover-hana.jpg?v=3" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026." />
+              <img src="/assets/bio/cover-hana-tall.jpg" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026." />
             </span>
             <span className="bio-flip-face bio-flip-back bio-cta-face"><BioCta /></span>
           </span>
@@ -1378,9 +1378,9 @@ function BioSwipe() {
         <div className="bio-swipe-card bio-cta-card"><BioCta /></div>
       </div>
       <div className="bio-swipe-nav">
-        <button type="button" aria-label="Previous page" disabled={at === 0} onClick={() => go(-1)}>←</button>
+        {at > 0 && <button type="button" aria-label="Previous page" disabled={at === 0} onClick={() => go(-1)}>←</button>}
         <p className="bio-swipe-no" aria-live="polite">{at === 0 ? <>swipe →</> : at > CHAPTERS.length ? <>the end</> : <>{String(at).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")}</>}</p>
-        <button type="button" aria-label="Next page" disabled={at > CHAPTERS.length} onClick={() => go(1)}>→</button>
+        {at > 0 && <button type="button" aria-label="Next page" disabled={at > CHAPTERS.length} onClick={() => go(1)}>→</button>}
       </div>
     </div>
   );
