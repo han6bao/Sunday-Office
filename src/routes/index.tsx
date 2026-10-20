@@ -1283,14 +1283,20 @@ function BioBox({ k, onClose, onGo }: { k: number; onClose: () => void; onGo: (d
 
 function FeedLetter() {
   const [open, setOpen] = useState<number | null>(null);
+  const [coverOpen, setCoverOpen] = useState(false);
   return (
     <section className="fd-frame fd-st fd-st-cream fd-letter-frame fd-bio" id="about-hana" aria-label="Meet Hana">
       <FeedFile>FILE NO. 005 · MEET HANA</FeedFile>
       <p className="fd-ghost" aria-hidden="true">05</p>
       <div className="bio-grid">
-        <figure className="bio-cover bio-cover-img">
-          <img src="/assets/bio/cover-hana.jpg?v=3" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026. Founder, creative producer. Seattle, WA. Building worlds." />
-        </figure>
+        <div role="button" tabIndex={0} className={"bio-cover bio-cover-img bio-dflip" + (coverOpen ? " is-flipped" : "")} aria-pressed={coverOpen} aria-label="Hana, cover. Click to turn it over" onClick={(e) => { if ((e.target as HTMLElement).closest("a")) return; setCoverOpen((o) => !o); }} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setCoverOpen((o) => !o); } }}>
+          <span className="bio-dflip-in">
+            <span className="bio-dflip-face">
+              <img src="/assets/bio/cover-hana.jpg?v=3" alt="Hana, in cross-stitch on kraft paper. Sunday Office, est 2026. Founder, creative producer. Seattle, WA. Building worlds." />
+            </span>
+            <span className="bio-dflip-face bio-dflip-back"><BioCta /></span>
+          </span>
+        </div>
         <div className="bio-side">
           <p className="fd-script">Hi, I'm Hana.</p>
           <p className="fd-small">Six things about how I see, what I believe and what I'm building. Tap one to open it.</p>
@@ -1310,6 +1316,7 @@ function FeedLetter() {
               </li>
             ))}
           </ol>
+          <p className="bio-end">Now tell me about <em>you.</em> <a href="#office-hours">Start a project →</a></p>
           <BioSwipe />
         </div>
       </div>

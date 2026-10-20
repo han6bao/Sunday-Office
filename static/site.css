@@ -13253,6 +13253,28 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   .bio-flip-cover .bio-cover-face img { border-radius: 0 !important; box-shadow: none !important; }
 }
 @media (max-width: 720px) { .bio-flip-cover .bio-cover-face img { width: 100% !important; height: 100% !important; max-width: none !important; object-fit: cover !important; } }
+/* Bio on desktop: the cover turns over to the same call to action as on phones */
+.bio-dflip { perspective: 1800px; background: none !important; overflow: visible !important; box-shadow: none !important; cursor: pointer; outline: none; }
+.bio-dflip:focus-visible .bio-dflip-in { outline: 2px solid #2b2622; outline-offset: 4px; }
+.bio-dflip-in { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.bio-dflip.is-flipped .bio-dflip-in { transform: rotateY(180deg); }
+.bio-dflip:not(.is-flipped):hover .bio-dflip-in { transform: rotateY(-4deg); }
+.bio-dflip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; overflow: hidden; background: #bb9a6f; box-shadow: 0 1px 1px rgba(70,50,25,.2), 0 30px 50px -30px rgba(70,50,25,.5); }
+.bio-dflip-face img { position: static !important; display: block; width: 100% !important; height: 100% !important; object-fit: cover; }
+.bio-dflip-back { transform: rotateY(180deg); background: #2b2622; color: #f6f1e8; display: flex; align-items: center; padding: clamp(28px, 4vw, 52px); box-sizing: border-box; }
+.bio-dflip-back .bio-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.bio-dflip-back .bio-cta-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .24em; opacity: .6; }
+.bio-dflip-back .bio-cta-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(40px, 4vw, 58px); line-height: 1.02; }
+.bio-dflip-back .bio-cta-d { font-size: 16px; line-height: 1.6; opacity: .8; max-width: 30ch; }
+.bio-dflip-back .bio-cta-btn { margin-top: 8px; background: #f6f1e8; color: #2b2622 !important; border-radius: 999px; padding: 14px 24px; font-size: 15px; font-weight: 600; text-decoration: none; }
+.bio-dflip-back .bio-cta-link { color: #f6f1e8 !important; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(246,241,232,.4); }
+.bio-end { margin-top: 28px; font-family: "Instrument Serif", Georgia, serif; font-size: 24px; color: #4f4944; }
+.bio-end a { margin-left: 10px; font-family: inherit; font-size: 18px; color: #2b2622; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(43,38,34,.35); white-space: nowrap; }
+@media (max-width: 720px) {
+  .bio-end, #about-hana .bio-dflip { display: none !important; }
+  /* the first card on phones: square corners */
+  .bio-flip-cover, .bio-flip-cover .bio-flip-in, .bio-flip-cover .bio-flip-face, .bio-flip-cover .bio-cover-face, .bio-flip-cover .bio-cover-face img { border-radius: 0 !important; }
+}
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
