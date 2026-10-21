@@ -13326,6 +13326,14 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 #work .fd-row:has(.fd-tile2) { height: auto !important; max-height: none !important; grid-auto-rows: auto !important; }
 #work .fd-tile2 .fd-wcap2 > span { position: static !important; inset: auto !important; transform: none !important; display: block !important; text-shadow: none !important; padding: 0 !important; background: none !important; }
 #work .fd-row .fd-tile2 .fd-wmedia, #work .fd-row .fd-tile2.is-tall .fd-wmedia { aspect-ratio: 4 / 5 !important; }
+/* File 004: the number sits in its own box instead of stretching edge to edge */
+.fd-stat-box { max-width: 620px; margin-top: clamp(24px, 4vw, 48px); padding: clamp(24px, 3.4vw, 40px); border-radius: 22px; background: rgba(251,248,252,.1); border: 1px solid rgba(251,248,252,.28); box-shadow: 0 30px 60px -40px rgba(30,20,40,.5); }
+.fd-stat-box .fd-stat { display: block; width: 100%; text-align: left; margin: 0 !important; padding: 0 !important; }
+.fd-stat-box .fd-big { font-size: clamp(88px, 11vw, 160px) !important; line-height: .9 !important; color: rgba(251,248,252,.92) !important; -webkit-text-fill-color: rgba(251,248,252,.92) !important; }
+.fd-stat-box .fd-stat-foot { margin-top: 22px !important; padding: 0 !important; }
+.fd-stat-box .fd-note { max-width: 40ch; }
+@media (max-width: 720px) { .fd-stat-box { padding: 22px; border-radius: 18px; } }
+@media (min-width: 721px) { .fd-stat-box { margin-left: auto; margin-right: auto; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

@@ -1165,6 +1165,7 @@ function FeedProof() {
   return (
     <section className="fd-frame fd-lav" aria-label="Results">
       <FeedFile>FILE NO. 004 · WHERE THE WORK WENT</FeedFile>
+      <div className="fd-stat-box">
       <button type="button" className="fd-stat" onClick={next} aria-label={`${s.n}. ${s.d} Show the next number.`}>
         <span className="fd-big" key={"n" + i}>{s.n}</span>
       </button>
@@ -1181,6 +1182,7 @@ function FeedProof() {
         <button type="button" className="fd-next" onClick={next}>
           {String(i + 1).padStart(2, "0")} / {String(FEED_STATS.length).padStart(2, "0")} · Tap for the next one
         </button>
+      </div>
       </div>
     </section>
   );
