@@ -13332,3 +13332,4 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 #work .fd-row .fd-tile2 .fd-wmedia { flex: 0 0 auto; min-height: 0 !important; max-height: none !important; }
 #work .fd-row:has(.fd-tile2) { height: auto !important; max-height: none !important; grid-auto-rows: auto !important; }
 #work .fd-tile2 .fd-wcap2 > span { position: static !important; inset: auto !important; transform: none !important; display: block !important; text-shadow: none !important; padding: 0 !important; background: none !important; }
+#work .fd-row .fd-tile2 .fd-wmedia, #work .fd-row .fd-tile2.is-tall .fd-wmedia { aspect-ratio: 4 / 5 !important; }

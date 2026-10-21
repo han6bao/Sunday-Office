@@ -1092,8 +1092,8 @@ function FeedWork() {
         </div>
       </div>
       <div className="fd-row" role="list" ref={rowRef}>
-        {shown.map(({ w, i }, k) => (
-          <button key={w.t} type="button" role="listitem" className={"fd-tile fd-tile2" + (k % 3 === 0 ? " is-tall" : "")} onClick={() => setOpen(i)} aria-label={`${w.t}, ${w.w}`}>
+        {shown.map(({ w, i }) => (
+          <button key={w.t} type="button" role="listitem" className="fd-tile fd-tile2" onClick={() => setOpen(i)} aria-label={`${w.t}, ${w.w}`}>
             <span className={"fd-wmedia" + (SHOW_WORK_COVERS ? "" : " fd-paper")}>
               {SHOW_WORK_COVERS && (w.v ? (
                 <video className="fd-wvideo" autoPlay muted loop playsInline preload="metadata" poster={w.src} aria-label={w.alt}>
