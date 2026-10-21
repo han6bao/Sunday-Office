@@ -13282,3 +13282,53 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   /* the first card on phones: square corners */
   .bio-flip-cover, .bio-flip-cover .bio-flip-in, .bio-flip-cover .bio-flip-face, .bio-flip-cover .bio-cover-face, .bio-flip-cover .bio-cover-face img { border-radius: 0 !important; }
 }
+
+/* ===== File 001 refresh: one section, lighter guides, quiet hover, darker service names ===== */
+@media (min-width: 900px) {
+  .fd-page #build.fd-frame { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) !important; column-gap: clamp(32px, 4vw, 64px) !important; }
+  .fd-page #build > .fd-small { max-width: 46ch !important; }
+  .fd-page #build > .fd-mk.fd-mk2 { max-width: 560px !important; }
+}
+.fd-page #build .fd-mk.fd-mk2 { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 0 !important; border-top: 1px solid rgba(120,105,85,.22) !important; padding-top: 0 !important; }
+.fd-page #build .fd-mk2 .fd-mk-item { display: flex !important; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: none !important; border: 0 !important; border-bottom: 1px solid rgba(120,105,85,.22) !important; border-radius: 0 !important; padding: 16px 0 !important; margin: 0 !important; text-decoration: none; color: inherit; box-shadow: none !important; }
+.fd-page #build .fd-mk2 .fd-mk-q { font-family: "Instrument Serif", Georgia, serif; font-size: 21px; line-height: 1.2; color: #3f3a35; }
+.fd-page #build .fd-mk2 .fd-mk-go { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: #857b70; white-space: nowrap; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(133,123,112,.4); transition: color .2s; }
+.fd-page #build .fd-mk2 .fd-mk-item:hover .fd-mk-go, .fd-page #build .fd-mk2 .fd-mk-item:focus-visible .fd-mk-go { color: #2b2622; text-decoration-color: currentColor; }
+@media (max-width: 899px) {
+  .fd-page #build .fd-mk.fd-mk2 { display: grid !important; overflow: visible !important; margin: 28px 0 0 !important; padding: 0 !important; }
+  .fd-page #build .fd-mk2 .fd-mk-item { flex: none !important; padding: 14px 0 !important; }
+  .fd-page #build .fd-mk2 .fd-mk-q { font-size: 18px; }
+  .fd-page #build .fd-mk2 .fd-mk-go { font-size: 15px; }
+}
+/* services: darker names, quiet hover (no grey block) */
+.fd-page #build .fd-services a:not(.is-big) .fd-sn { color: #4a443e !important; -webkit-text-fill-color: #4a443e !important; }
+.fd-page #build .fd-services a:hover, .fd-page #build .fd-services a:focus-visible { background: none !important; background-image: none !important; padding-left: 0 !important; padding-right: 0 !important; border-bottom-color: rgba(120,105,85,.22) !important; }
+.fd-page #build .fd-services a.is-big:hover, .fd-page #build .fd-services a.is-big:focus-visible { border-bottom-color: rgba(120,105,85,.32) !important; }
+.fd-page #build .fd-services a:hover .fd-sn, .fd-page #build .fd-services a:focus-visible .fd-sn { color: #1f1b18 !important; -webkit-text-fill-color: #1f1b18 !important; font-style: normal !important; }
+.fd-page #build .fd-services a .fd-sv-arr { display: inline-block; transition: transform .25s ease, opacity .25s ease; }
+.fd-page #build .fd-services a:hover .fd-sv-arr, .fd-page #build .fd-services a:focus-visible .fd-sv-arr { transform: translateX(6px); opacity: 1 !important; color: #2b2622 !important; -webkit-text-fill-color: #2b2622 !important; }
+.fd-page #build .fd-services a:hover .fd-sd { color: #6b6258 !important; -webkit-text-fill-color: #6b6258 !important; }
+
+/* big ghost numbers: fainter, tucked up and left so they sit behind the heading instead of through it */
+.fd-page #build > .fd-ghost, .fd-page #work > .fd-ghost { opacity: .45; transform: translate(-.08em, -.12em); }
+
+/* ===== File 002 refresh: blank paper covers for now, caption under the card, mixed heights ===== */
+#work .fd-row { align-items: start !important; }
+#work .fd-row .fd-tile2 { display: flex !important; flex-direction: column; gap: 14px; overflow: visible !important; border-radius: 0 !important; background: none !important; }
+#work .fd-row .fd-tile2 .fd-wmedia { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1; height: auto !important; border-radius: 14px; overflow: hidden; }
+#work .fd-row .fd-tile2.is-tall .fd-wmedia { aspect-ratio: 4 / 5; }
+#work .fd-row .fd-tile2 .fd-wmedia img, #work .fd-row .fd-tile2 .fd-wmedia video { width: 100% !important; height: 100% !important; object-fit: cover; display: block; }
+#work .fd-row .fd-tile2 .fd-wmedia::after { display: none !important; }
+#work .fd-paper { background: #fbfaf6 url(/assets/texture/paper-cream.jpg) center / 520px; box-shadow: inset 0 0 0 1px rgba(43,38,34,.06), 0 18px 40px -28px rgba(30,20,40,.45); }
+#work .fd-paper::before { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.35); }
+#work .fd-tile2 .fd-wcap2 { display: flex; flex-direction: column; gap: 3px; text-align: left; padding: 0 2px; }
+#work .fd-tile2 .fd-ct { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1.15; color: #fbf8fc; }
+#work .fd-tile2 .fd-cw { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 16px; color: rgba(251,248,252,.78); }
+#work .fd-tile2 .fd-cr { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(251,248,252,.7); margin-top: 4px; }
+#work .fd-tile2:hover .fd-wmedia, #work .fd-tile2:focus-visible .fd-wmedia { transform: translateY(-4px); }
+#work .fd-tile2 .fd-wmedia { transition: transform .35s ease; }
+#work .fd-tile2 .fd-tags, #work .fd-tile2 .so-status { display: none !important; }
+#work .fd-row .fd-tile2 { height: auto !important; min-height: 0 !important; max-height: none !important; }
+#work .fd-row .fd-tile2 .fd-wmedia { flex: 0 0 auto; min-height: 0 !important; max-height: none !important; }
+#work .fd-row:has(.fd-tile2) { height: auto !important; max-height: none !important; grid-auto-rows: auto !important; }
+#work .fd-tile2 .fd-wcap2 > span { position: static !important; inset: auto !important; transform: none !important; display: block !important; text-shadow: none !important; padding: 0 !important; background: none !important; }

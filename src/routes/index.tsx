@@ -795,19 +795,19 @@ function FeedServices() {
       <p className="fd-small">
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
       </p>
-      <div className="fd-mk">
-        <div className="fd-mk-item">
-          <p className="fd-mk-k">Just started a business?</p>
-          <p className="fd-mk-d"><span className="fd-mk-txt"><i>The free guide.</i> Everything you need, in order, from your license to your first post. </span><a className="fd-mk-a" href={ph("/just-started")}>Open the guide →</a></p>
-        </div>
-        <div className="fd-mk-item">
-          <p className="fd-mk-k">Already up and running?</p>
-          <p className="fd-mk-d"><span className="fd-mk-txt"><i>The Makeover.</i> Keep what works and refresh the rest. </span><a className="fd-mk-a" href={ph("/revamp-your-business")}>The revamp guide →</a> <a className="fd-mk-a" href="#makeover">Makeover options →</a></p>
-        </div>
-        <div className="fd-mk-item">
-          <p className="fd-mk-k">Know what you need?</p>
-          <p className="fd-mk-d"><span className="fd-mk-txt"><i>Start there.</i> More customers, a new website, standing out, showing up on Google. </span><a className="fd-mk-a" href={ph("/help")}>What do you need help with? →</a></p>
-        </div>
+      <div className="fd-mk fd-mk2">
+        <a className="fd-mk-item" href={ph("/just-started")}>
+          <span className="fd-mk-q">Just started a business?</span>
+          <span className="fd-mk-go">Open the free guide →</span>
+        </a>
+        <a className="fd-mk-item" href={ph("/revamp-your-business")}>
+          <span className="fd-mk-q">Already up and running?</span>
+          <span className="fd-mk-go">See the makeover →</span>
+        </a>
+        <a className="fd-mk-item" href={ph("/help")}>
+          <span className="fd-mk-q">Know what you need?</span>
+          <span className="fd-mk-go">Start there →</span>
+        </a>
       </div>
       <div className="fd-services">
         <p className="fd-sv-note">Start with one, or build the whole world.</p>
@@ -1047,10 +1047,12 @@ const WORK_TAGS: Record<string, string[]> = {
   "Chutneys Bellevue": ["Video", "Photography"],
 };
 const WORK_FILTERS = ["All", "Branding", "Websites", "Photography", "Headshots", "Content", "Video"];
-const workRank = (t: string) => {
-  const k = WORK_FILTERS.indexOf((WORK_TAGS[t] ?? [])[0] ?? "");
-  return k < 0 ? 99 : k;
-};
+
+/* Strongest work first, finished websites next, anything still in progress last. */
+const WORK_ORDER = ["Elena Qiu", "Jaydyn F. · SCREAM", "Ellis", "Essential Brows", "Nine Vicious × Custom Grillz", "Pilates Haus", "Leon Thomas × Vice", "Selaras Haus", "Joe Lopez Photography", "Exhibition", "Jaydyn F.", "Chutneys Bellevue", "Studio headshots"];
+const orderOf = (w: { t: string; w: string }) => (/progress/i.test(w.w) ? 100 : WORK_ORDER.indexOf(w.t) === -1 ? 50 : WORK_ORDER.indexOf(w.t));
+/* Covers are blank paper for now, until Hana picks the picture for each card. Set to true to show the photos again. */
+const SHOW_WORK_COVERS = false;
 
 function FeedWork() {
   const [open, setOpen] = useState<number | null>(null);
@@ -1059,7 +1061,7 @@ function FeedWork() {
   const tags = (t: string) => WORK_TAGS[t] ?? [];
   const shown = FEED_WORK.map((w, i) => ({ w, i }))
     .filter(({ w }) => f === "All" || tags(w.t).includes(f))
-    .sort((a, b) => workRank(a.w.t) - workRank(b.w.t) || a.i - b.i);
+    .sort((a, b) => orderOf(a.w) - orderOf(b.w) || a.i - b.i);
   const pick = (x: string) => {
     setF(x);
     rowRef.current?.scrollTo({ left: 0, behavior: "smooth" });
@@ -1090,25 +1092,23 @@ function FeedWork() {
         </div>
       </div>
       <div className="fd-row" role="list" ref={rowRef}>
-        {shown.map(({ w, i }) => (
-          <button key={w.t} type="button" role="listitem" className="fd-tile" onClick={() => setOpen(i)}>
-            <span className="fd-wmedia">
-              {w.v ? (
+        {shown.map(({ w, i }, k) => (
+          <button key={w.t} type="button" role="listitem" className={"fd-tile fd-tile2" + (k % 3 === 0 ? " is-tall" : "")} onClick={() => setOpen(i)} aria-label={`${w.t}, ${w.w}`}>
+            <span className={"fd-wmedia" + (SHOW_WORK_COVERS ? "" : " fd-paper")}>
+              {SHOW_WORK_COVERS && (w.v ? (
                 <video className="fd-wvideo" autoPlay muted loop playsInline preload="metadata" poster={w.src} aria-label={w.alt}>
                   <source src={`${w.v}.mp4`} type="video/mp4" />
                   <source src={`${w.v}.webm`} type="video/webm" />
                 </video>
               ) : (
                 <img src={w.src} alt={w.alt} loading="lazy" />
-              )}
-              {/progress/i.test(w.w) && <span className="so-status so-status-on-card is-rec">In progress</span>}
-              <span className="fd-wcap">
-                <span className="fd-ct">{w.t}</span>
-                <span className="fd-cw">{w.w}</span>
-                {w.r && <span className="fd-cr">{w.r}</span>}
-              </span>
+              ))}
             </span>
-            <span className="fd-tags">{tags(w.t).map((x) => <span key={x}>{x}</span>)}</span>
+            <span className="fd-wcap2">
+              <span className="fd-ct">{w.t}</span>
+              <span className="fd-cw">{w.w}</span>
+              {w.r && <span className="fd-cr">{w.r}</span>}
+            </span>
           </button>
         ))}
       </div>
