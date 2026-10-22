@@ -1179,9 +1179,11 @@ function FeedProof() {
             </>
           )}
         </p>
-        <button type="button" className="fd-next" onClick={next}>
-          {String(i + 1).padStart(2, "0")} / {String(FEED_STATS.length).padStart(2, "0")} · Tap for the next one
-        </button>
+        <div className="fd-dots" role="group" aria-label="Choose a number">
+          {FEED_STATS.map((x, k) => (
+            <button key={k} type="button" className={k === i ? "is-on" : ""} aria-label={`Show ${x.n}`} aria-pressed={k === i} onClick={() => setI(k)} />
+          ))}
+        </div>
       </div>
       </div>
     </section>

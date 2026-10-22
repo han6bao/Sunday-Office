@@ -13334,6 +13334,28 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 .fd-stat-box .fd-note { max-width: 40ch; }
 @media (max-width: 720px) { .fd-stat-box { padding: 22px; border-radius: 18px; } }
 @media (min-width: 721px) { .fd-stat-box { margin-left: auto; margin-right: auto; } }
+.fd-dots { display: flex; gap: 10px; margin-top: 22px; }
+.fd-dots button { all: unset; cursor: pointer; width: 7px; height: 7px; border-radius: 50%; background: rgba(251,248,252,.35); transition: background .2s, transform .2s; }
+.fd-dots button.is-on { background: rgba(251,248,252,.95); transform: scale(1.25); }
+.fd-dots button:focus-visible { outline: 1px solid #fbf8fc; outline-offset: 3px; }
+/* Footer on phones: clear labels, one link per line, full wordmark */
+@media (max-width: 720px) {
+  #office-hours.fd-frame { padding-bottom: 28px !important; }
+  footer.so-footer.ft2 { padding-top: 36px !important; padding-bottom: 0 !important; }
+  .ft2 .ft2-top { display: grid !important; grid-template-columns: 1fr 1fr !important; column-gap: 20px !important; row-gap: 28px !important; padding-top: 32px !important; }
+  .ft2 .ft2-line { grid-column: 1 / -1 !important; font-size: 26px !important; line-height: 1.15 !important; padding-right: 0 !important; margin: 0 !important; }
+  .ft2 .ft2-col { display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 0 !important; }
+  .ft2 .ft2-col h5 { display: block !important; margin: 0 0 10px !important; }
+  .ft2 .ft2-col:nth-of-type(3) { grid-column: 1 / -1 !important; border-top: 1px solid rgba(244,239,247,.25); padding-top: 22px !important; }
+  .ft2 .ft2-col:nth-of-type(3) h5 { display: block !important; }
+  .ft2 .ft2-col .foot-link { display: block !important; margin: 0 !important; padding: 6px 0 !important; font-size: 17px !important; line-height: 1.3 !important; }
+  .ft2 .ft2-col .foot-link.ft2-hm { display: none !important; }
+  .ft2 .ft2-mark { font-size: 20vw !important; line-height: 1.25 !important; margin: 28px 0 0 !important; padding-bottom: .12em !important; overflow: visible !important; }
+}
+@media (max-width: 720px) {
+  html body footer.so-footer.ft2 .ft2-top .ft2-col h5 { display: block !important; }
+  html body footer.so-footer.ft2 .ft2-top .ft2-col:nth-of-type(2) h5 { visibility: hidden !important; }
+}
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
