@@ -13363,3 +13363,15 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   html body footer.so-footer.ft2 .ft2-top .ft2-col h5 { display: block !important; }
   html body footer.so-footer.ft2 .ft2-top .ft2-col:nth-of-type(2) h5 { visibility: hidden !important; }
 }
+/* Section numbers: a small italic number above the heading, not a giant one behind it */
+html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost {
+  display: block !important; position: static !important; transform: none !important; opacity: 1 !important;
+  font-family: "Instrument Serif", Georgia, serif !important; font-style: italic !important; font-weight: 400 !important;
+  font-size: clamp(48px, 5vw, 72px) !important; line-height: 1 !important; letter-spacing: 0 !important;
+  margin: 0 0 6px !important; padding: 0 !important; background: none !important;
+  color: #b07a82 !important; -webkit-text-fill-color: #b07a82 !important; -webkit-text-stroke: 0 !important;
+}
+html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-fill-color: #f3d9e1 !important; }
+@media (max-width: 720px) {
+  html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost { font-size: 44px !important; margin-bottom: 2px !important; }
+}
