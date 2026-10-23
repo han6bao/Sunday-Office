@@ -774,14 +774,12 @@ function FeedPhoto() {
   return (
     <div className={"fd-media" + (HERO_VIDEO ? "" : " fd-media-empty")}>
       {HERO_VIDEO ? (<video src={HERO_VIDEO} poster="/assets/work/hero-edit-poster.jpg" autoPlay muted loop playsInline aria-label="A short reel of Sunday Office video work" />) : null}
-      <div className="fd-media-over">
-        <p className="fd-hero-k">Sunday Office · Seattle</p>
-        <h1 className="fd-hero-h">Build <em>Your World.</em></h1>
-        <span className="fd-hero-line" aria-hidden="true" />
-        <div className="fd-hero-sub">
-          <p>Brand, web and content for Seattle businesses and creators.<br />Built to be seen, made to be remembered.<br />From first launch to full makeover.</p>
-          <a className="fd-hero-btn" href="#office-hours">Start a project <span aria-hidden="true">→</span></a>
-        </div>
+      <div className="fd-media-over hx">
+        <a className="hx-v" href={ph("/branding")}>World Building</a>
+        <a className="hx-v" href={ph("/photography")}>Photography</a>
+        <h1 className="hx-t"><span className="hx-c">Build</span><em>your</em><span className="hx-c">World</span></h1>
+        <a className="hx-v" href={ph("/websites")}>Web Design</a>
+        <a className="hx-v" href={ph("/creative-direction-content")}>Content Creation</a>
       </div>
     </div>);
 }
@@ -832,7 +830,6 @@ function FeedServices() {
       <p className="fd-small">
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
       </p>
-      <BrandFlips />
       <div className="fd-mk fd-mk2">
         <a className="fd-mk-item" href={ph("/just-started")}>
           <span className="fd-mk-q">Just started a business?</span>
