@@ -809,17 +809,65 @@ function FeedServices() {
           <span className="fd-mk-go">Start there →</span>
         </a>
       </div>
-      <div className="fd-services">
-        <p className="fd-sv-note">Start with one, or build the whole world.</p>
-        {FEED_SERVICES.map((x) => (
-          <a key={x.n} href={ph(x.h)} className={x.big ? "is-big" : ""}>
-            <span className="fd-sn">
-              {x.big ? <span className="fd-wb-t">{x.n}</span> : x.n}
-              {x.d && <span className="fd-sd">{x.d}</span>}
-            </span>
-            <span className="fd-sp">{x.p ? x.p + " " : ""}<span className="fd-sv-arr" aria-hidden="true">→</span></span>
-          </a>
-        ))}
+    </section>
+  );
+}
+
+/* Services, one page at a time: the section pins in place and each scroll turns to the next service. */
+const SERVICE_PAGES = [
+  { t: "World Building", d: "Your brand, and the whole world around it: the name, the logo, the colors, the voice and how it all shows up. Where every project starts.", h: "/branding", go: "See world building" },
+  { t: "Websites", d: "A home for the brand that books clients while you sleep. Designed, written and built to be found on Google.", h: "/websites", go: "See websites" },
+  { t: "Photography", d: "Portraits, products, spaces and events. Shot to feel like you, and edited to match your brand.", h: "/photography", go: "See photography" },
+  { t: "Film + Commercials", d: "Brand films, commercials and campaign video, from the first idea to the final cut.", h: "/moving-image", go: "See film" },
+  { t: "Social + Content", d: "Content days, social packs and monthly content, so your page keeps looking like your brand.", h: "/creative-direction-content", go: "See social + content" },
+];
+
+function ServiceScroll() {
+  const wrap = useRef<HTMLDivElement>(null);
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const on = () => {
+      const el = wrap.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      const span = r.height - window.innerHeight;
+      const p = span > 0 ? Math.min(0.9999, Math.max(0, -r.top / span)) : 0;
+      setI(Math.floor(p * SERVICE_PAGES.length));
+    };
+    on();
+    window.addEventListener("scroll", on, { passive: true });
+    window.addEventListener("resize", on);
+    return () => { window.removeEventListener("scroll", on); window.removeEventListener("resize", on); };
+  }, []);
+  const jump = (k: number) => {
+    const el = wrap.current;
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY;
+    const span = el.offsetHeight - window.innerHeight;
+    window.scrollTo({ top: top + (span * (k + 0.5)) / SERVICE_PAGES.length, behavior: "smooth" });
+  };
+  const s = SERVICE_PAGES[i];
+  return (
+    <section className="svs" aria-label="Services" ref={wrap} style={{ height: `${SERVICE_PAGES.length * 100}vh` }}>
+      <div className="svs-pin">
+        <div className="svs-media fd-paper" aria-hidden="true" />
+        <div className="svs-text">
+          <p className="svs-k">Start with one, or build the whole world.</p>
+          <div className="svs-bars" role="tablist" aria-label="Services">
+            {SERVICE_PAGES.map((x, k) => (
+              <button key={x.t} type="button" role="tab" aria-selected={k === i} aria-label={x.t} className={k === i ? "is-on" : k < i ? "is-done" : ""} onClick={() => jump(k)}>
+                <span className="svs-bar" />
+                <span className="svs-bn">{String(k + 1).padStart(2, "0")}</span>
+              </button>
+            ))}
+          </div>
+          <div className="svs-page" key={i}>
+            <p className="svs-n">{String(i + 1).padStart(2, "0")}</p>
+            <h3 className="svs-t">{s.t}</h3>
+            <p className="svs-d">{s.d}</p>
+            <a className="svs-go" href={ph(s.h)}>{s.go} →</a>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -1483,6 +1531,7 @@ function Index() {
       <main className="fd-page">
         <FeedPhoto />
         <FeedServices />
+        <ServiceScroll />
         <FeedWork />
         {/* makeover section removed */}
         <FeedQuote />
