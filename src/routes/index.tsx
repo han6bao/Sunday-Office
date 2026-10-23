@@ -828,7 +828,7 @@ function FeedServices() {
     <section className="fd-frame fd-st fd-st-cream" id="build" aria-label="Services">
       <FeedFile>FILE NO. 001 · WHAT I DO</FeedFile>
       <p className="fd-ghost" aria-hidden="true">01</p>
-      <p className="fd-script">Start with the brand.</p>
+      <p className="fd-script">Start with <em>the brand.</em></p>
       <p className="fd-small">
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
       </p>

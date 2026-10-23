@@ -13640,6 +13640,23 @@ html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, htm
   font-family: var(--so-title) !important; font-style: italic !important; font-weight: 400 !important; letter-spacing: 0 !important;
 }
 html { font-synthesis: none; }
+/* Mix E: Swarsh Daisy titles (italic for emphasis), Actalle numbers, Manrope text */
+@font-face { font-family: "Swarsh Daisy"; src: url(/assets/fonts/SwarshDaisy-Regular.woff) format("woff"); font-style: normal; font-display: swap; }
+@font-face { font-family: "Swarsh Daisy"; src: url(/assets/fonts/SwarshDaisy-Italic.woff) format("woff"); font-style: italic; font-display: swap; }
+@font-face { font-family: "Actalle"; src: url(/assets/fonts/Actalle.woff) format("woff"); font-display: swap; }
+:root { --so-title: "Swarsh Daisy", "Cormorant Garamond", Georgia, serif; }
+html body .fd-page #build > .fd-script, html body #about-hana .fd-script, html body .bio-flip-t, html body .bio-flip-back .bio-swipe-t,
+html body .fd-page #build .fd-mk2 .fd-mk-q, html body:not(:has(.fd-page)) h1.so-serif, html body:not(:has(.fd-page)) h2.so-serif, html body:not(:has(.fd-page)) .so-bw-h,
+html body .ed-h2, html body .cc-name h1, html body .eq-cover2 h1,
+html body .fd-page #work h2, html body .svs-t, html body .bf-t, html body .bio-cta-t, html body .bio-dflip-back .bio-cta-t, html body .fd-quiz-t, html body .fd-start .fd-script {
+  font-family: var(--so-title) !important; font-weight: 400 !important; font-style: normal !important; letter-spacing: -.015em !important; line-height: 1.04 !important;
+}
+html body .fd-script em, html body .bio-cta-t em, html body h1.so-serif em, html body h2.so-serif em, html body .so-bw-h em, html body .fd-quiz-t em {
+  font-family: "Swarsh Daisy", Georgia, serif !important; font-style: italic !important;
+}
+html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, html body .svs-n {
+  font-family: "Actalle", "Cormorant Garamond", Georgia, serif !important; font-style: normal !important; font-weight: 400 !important;
+}
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
