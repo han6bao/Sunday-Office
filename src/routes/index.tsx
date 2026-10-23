@@ -1357,7 +1357,7 @@ function FeedLetter() {
         </div>
         <div className="bio-side">
           <p className="fd-script">Hi, I'm Hana.</p>
-          <p className="fd-small">Six things about how I see, what I believe and what I'm building. Tap one to open it.</p>
+          <p className="fd-small">Six things about how I see, what I believe and what I'm building. Tap a card to turn it over.</p>
           <ol className="bio-list">
             {CHAPTERS.map((c, k) => (
               <li key={c.n} className={open === k ? "is-open" : undefined}>
@@ -1410,7 +1410,8 @@ function BioSwipe() {
     const el = row.current;
     if (!el) return;
     const first = el.children[0] as HTMLElement | undefined;
-    const step = first ? first.offsetWidth + 12 : el.clientWidth;
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 12;
+    const step = first ? first.offsetWidth + gap : el.clientWidth;
     setAt(Math.min(el.children.length - 1, Math.round(el.scrollLeft / step)));
   };
 
@@ -1443,9 +1444,9 @@ function BioSwipe() {
         <div className="bio-swipe-card bio-cta-card"><BioCta /></div>
       </div>
       <div className="bio-swipe-nav">
-        {at > 0 && <button type="button" aria-label="Previous page" disabled={at === 0} onClick={() => go(-1)}>←</button>}
+        {<button type="button" className={at === 0 ? "is-start" : ""} aria-label="Previous page" disabled={at === 0} onClick={() => go(-1)}>←</button>}
         <p className="bio-swipe-no" aria-live="polite">{at === 0 ? <>swipe →</> : at > CHAPTERS.length ? <>the end</> : <>{String(at).padStart(2, "0")} / {String(CHAPTERS.length).padStart(2, "0")}</>}</p>
-        {at > 0 && <button type="button" aria-label="Next page" disabled={at > CHAPTERS.length} onClick={() => go(1)}>→</button>}
+        {<button type="button" className={at === 0 ? "is-start" : ""} aria-label="Next page" disabled={at > CHAPTERS.length} onClick={() => go(1)}>→</button>}
       </div>
     </div>
   );

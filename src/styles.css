@@ -13421,3 +13421,54 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
 .svs-list li span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; color: #e7c3cc; }
 .svs-d { margin-bottom: 22px !important; }
 @media (max-width: 720px) { .svs-list { margin-bottom: 16px; } .svs-list li { padding: 10px 0; font-size: 18px; } .svs-d { margin-bottom: 14px !important; } .svs-t { font-size: 32px; } }
+/* Bio cards on phones: shorter, closer to a book page; long chapters scroll inside the card */
+@media (max-width: 720px) {
+  html body .bio-swipe-card { height: min(122vw, 500px) !important; }
+  html body .bio-flip-back { justify-content: flex-start !important; overflow-y: auto !important; -webkit-overflow-scrolling: touch; padding: 22px 20px !important; }
+  html body .bio-flip-back .bio-swipe-t { font-size: 23px !important; margin-bottom: 10px !important; }
+  html body .bio-flip-p { font-size: 14px !important; line-height: 1.55 !important; margin-bottom: 10px !important; }
+  html body .bio-flip-t { font-size: 36px !important; }
+  html body .bio-flip, html body .bio-flip-in { background: transparent !important; }
+}
+
+/* ===== Bio on desktop: the same book of flip cards as on phones ===== */
+@media (min-width: 721px) {
+  #about-hana .bio-grid { display: block !important; }
+  #about-hana .bio-list, #about-hana .bio-dflip, #about-hana .bio-end { display: none !important; }
+  #about-hana .bio-side { width: 100% !important; max-width: none !important; }
+  .bio-swipe { display: block !important; margin-top: 36px; }
+  .bio-swipe-row { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 4px 12px; padding-inline-end: calc(100% - 380px); }
+  .bio-swipe-row::-webkit-scrollbar { display: none; }
+  .bio-swipe-card { flex: 0 0 360px !important; width: 360px !important; height: 500px !important; scroll-snap-align: start; box-sizing: border-box; }
+  .bio-flip { all: unset; box-sizing: border-box; display: block; cursor: pointer; perspective: 1600px; scroll-snap-align: start; flex: 0 0 360px !important; width: 360px; height: 500px; }
+  .bio-flip:focus-visible { outline: 2px solid #2a2523; outline-offset: 3px; border-radius: 16px; }
+  .bio-flip-in { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+  .bio-flip.is-flipped .bio-flip-in { transform: rotateY(180deg); }
+  .bio-flip:not(.is-flipped):hover .bio-flip-in { transform: rotateY(-5deg); }
+  .bio-flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 16px; border: 1px solid rgba(43,38,34,.12); background: #fbf9f5; box-sizing: border-box; overflow: hidden; }
+  .bio-flip-front { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 14px; padding: 32px; background: #f6f1e8; box-shadow: 0 24px 50px -36px rgba(43,38,34,.4); }
+  .bio-flip-n { font-family: var(--font-mono); font-size: 11px; letter-spacing: .24em; opacity: .55; }
+  .bio-flip-t { font-family: "Instrument Serif", Georgia, serif; font-size: 42px; line-height: 1.02; color: #2a2523; max-width: 10ch; }
+  .bio-flip-hint { font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; opacity: .45; margin-top: 8px; }
+  .bio-flip-back { transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: flex-start; overflow-y: auto; padding: 28px 26px; text-align: left; }
+  .bio-flip-back .bio-swipe-t { display: block; font-family: "Instrument Serif", Georgia, serif; font-size: 26px; line-height: 1.1; margin: 0 0 12px; color: #2a2523; }
+  .bio-flip-p { display: block; font-size: 14.5px; line-height: 1.6; margin: 0 0 10px; color: #4a443e; }
+  .bio-flip-cover .bio-cover-face { background: #bb9a6f !important; border: 0 !important; padding: 0 !important; border-radius: 0 !important; }
+  .bio-flip-cover .bio-cover-face img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .bio-flip-cover .bio-cta-face, .bio-cta-card { background: #2a2523 !important; color: #f6f1e8; border: 0 !important; display: flex; flex-direction: column; justify-content: center; padding: 32px 28px !important; border-radius: 16px; }
+  .bio-flip-cover .bio-cta-face { border-radius: 0 !important; }
+  .bio-cta-card { display: flex !important; }
+  .bio-swipe .bio-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+  .bio-swipe .bio-cta-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .24em; opacity: .6; }
+  .bio-swipe .bio-cta-t { font-family: "Instrument Serif", Georgia, serif; font-size: 40px; line-height: 1.02; color: #f6f1e8; }
+  .bio-swipe .bio-cta-d { font-size: 15px; line-height: 1.55; opacity: .8; max-width: 28ch; }
+  .bio-swipe .bio-cta-btn { margin-top: 6px; background: #f6f1e8; color: #2a2523 !important; border-radius: 999px; padding: 13px 22px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .bio-swipe .bio-cta-link { color: #f6f1e8 !important; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(246,241,232,.4); }
+  .bio-swipe-nav { display: flex; align-items: center; gap: 14px; margin-top: 18px; }
+  .bio-swipe-nav .bio-swipe-no { font-family: var(--font-mono); font-size: 11px; letter-spacing: .18em; margin: 0; min-width: 72px; text-align: center; opacity: .6; }
+  .bio-swipe-nav button { all: unset; cursor: pointer; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(43,38,34,.22); font-size: 14px; }
+  .bio-swipe-nav button:disabled { opacity: .25; cursor: default; }
+  .bio-swipe-nav button:focus-visible { outline: 2px solid #2a2523; outline-offset: 2px; }
+}
+@media (min-width: 721px) and (prefers-reduced-motion: reduce) { .bio-flip-in { transition: none; } }
+@media (max-width: 720px) { .bio-swipe-nav button.is-start { display: none !important; } }
