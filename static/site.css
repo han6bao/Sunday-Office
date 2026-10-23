@@ -13623,6 +13623,23 @@ html body .svs-go, html body .bf-go { font-size: 15px !important; font-weight: 6
 html body .fd-tile2 .fd-ct { font-size: 17px !important; font-weight: 600; }
 html body .fd-tile2 .fd-cw { font-size: 14px !important; }
 html body .so-brandlock span, html body .so-sitebar-brand span { font-family: "Instrument Serif", Georgia, serif !important; font-size: 22px !important; letter-spacing: 0 !important; }
+/* Pairing 01: Cormorant Garamond titles + italic numbers, Manrope for everything else */
+:root { --so-title: "Cormorant Garamond", "Cormorant", Georgia, serif; }
+html body .fd-page #build > .fd-script, html body #about-hana .fd-script, html body .bio-flip-t, html body .bio-flip-back .bio-swipe-t,
+html body .fd-page #build .fd-mk2 .fd-mk-q, html body:not(:has(.fd-page)) h1.so-serif, html body:not(:has(.fd-page)) h2.so-serif, html body:not(:has(.fd-page)) .so-bw-h,
+html body .ed-h2, html body .cc-name h1, html body .eq-cover2 h1,
+html body .fd-page #work h2, html body .svs-t, html body .bf-t, html body .bio-cta-t, html body .bio-dflip-back .bio-cta-t, html body .fd-quiz-t, html body .fd-start .fd-script {
+  font-family: var(--so-title) !important; font-weight: 500 !important; font-style: normal !important; letter-spacing: -.01em !important; line-height: 1.04 !important;
+}
+html body .fd-page #build .fd-mk2 .fd-mk-q { font-size: 24px !important; letter-spacing: 0 !important; }
+html body .fd-page #build > .fd-script { font-size: clamp(48px, 5.6vw, 84px) !important; }
+html body .svs-t { font-size: clamp(38px, 7vh, 64px) !important; }
+html body .bio-flip-t { font-size: 40px !important; }
+html body .bio-flip-back .bio-swipe-t { font-size: 30px !important; }
+html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, html body .svs-n {
+  font-family: var(--so-title) !important; font-style: italic !important; font-weight: 400 !important; letter-spacing: 0 !important;
+}
+html { font-synthesis: none; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
