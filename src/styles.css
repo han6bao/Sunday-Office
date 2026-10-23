@@ -8310,8 +8310,8 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
    a soft italic serif (Fraunces) and a calligraphy script (Pinyon).
    ===================================================================== */
 :root {
-  --font-display: "Instrument Serif", "Playfair Display", Georgia, serif;
-  --font-script: "Monsieur La Doulaise", "Pinyon Script", "Instrument Serif", cursive;
+  --font-display: Manrope, "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Monsieur La Doulaise", "Pinyon Script", Manrope, "Helvetica Neue", Arial, sans-serif;
   --sx-violet: #6b5678;
   --sx-mauve: #8b779a;
   --sx-mauve-deep: #7a6689;
@@ -10171,7 +10171,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .so-pk-head .so-serif,
 .so-start-head .so-serif,
 .so-reel-title {
-  font-family: "Instrument Serif", Georgia, serif !important;
+  font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important;
   font-weight: 400 !important;
   letter-spacing: -0.02em !important;
   line-height: 0.98 !important;
@@ -10231,7 +10231,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-wrap { max-width: 1200px; margin-inline: auto; padding-top: 72px; position: relative; z-index: 1; }
 .bn img { display: block; max-width: 100%; height: auto; }
 .bn a { color: var(--bn-accent); text-underline-offset: 3px; }
-.bn h1, .bn h2, .bn h3 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; margin: 0; letter-spacing: -.01em; text-wrap: balance; color: var(--bn-ink); }
+.bn h1, .bn h2, .bn h3 { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 400; margin: 0; letter-spacing: -.01em; text-wrap: balance; color: var(--bn-ink); }
 .bn h1 em, .bn h2 em, .bn h3 em { font-style: italic; color: var(--bn-accent); }
 .bn p { margin: 0; text-wrap: pretty; }
 .bn-note { font: 500 11.5px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--bn-mute); }
@@ -10258,7 +10258,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-chrome span { margin-left: 10px; font: 400 12px/1 var(--font-mono); color: var(--bn-mute); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .bn-panel figcaption, .bn-cap { padding: 12px 14px; border-top: 1px solid var(--bn-rule); font: 400 12px/1.45 var(--font-mono); color: var(--bn-mute); }
 .bn-then { padding: clamp(22px, 3.4vw, 40px); display: grid; align-content: center; gap: 18px; }
-.bn-then blockquote { margin: 0; font: italic 400 clamp(22px, 2.4vw, 30px)/1.25 "Instrument Serif", Georgia, serif; color: var(--bn-ink); }
+.bn-then blockquote { margin: 0; font: italic 400 clamp(22px, 2.4vw, 30px)/1.25 Manrope, "Helvetica Neue", Arial, sans-serif; color: var(--bn-ink); }
 .bn-then-meta { display: grid; gap: 6px; }
 .bn-panel-now { background: var(--bn-deep); border-color: var(--bn-deep); }
 .bn-panel-now .bn-chrome { border-color: rgba(255,255,255,.12); }
@@ -10272,7 +10272,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-sec h2 { font-size: clamp(36px, 4.8vw, 64px); line-height: .98; margin-top: 16px; }
 .bn-body { display: grid; gap: 18px; align-content: start; color: var(--bn-ink-2); font-size: 18px; max-width: 64ch; }
 .bn-body strong { color: var(--bn-ink); font-weight: 600; }
-.bn-pull { font: 400 clamp(26px, 3vw, 38px)/1.12 "Instrument Serif", Georgia, serif !important; color: var(--bn-ink) !important; border-left: 2px solid var(--bn-accent); padding-left: 20px; }
+.bn-pull { font: 400 clamp(26px, 3vw, 38px)/1.12 Manrope, "Helvetica Neue", Arial, sans-serif!important; color: var(--bn-ink) !important; border-left: 2px solid var(--bn-accent); padding-left: 20px; }
 .bn-pull small { display: block; margin-top: 12px; font: 500 11.5px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--bn-mute); }
 
 .bn-rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; counter-reset: bnr; }
@@ -10284,7 +10284,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-cmp { width: 100%; border-collapse: collapse; font-size: 16px; }
 .bn-cmp th, .bn-cmp td { text-align: left; vertical-align: top; padding: 16px 16px 16px 0; border-top: 1px solid var(--bn-rule); }
 .bn-cmp thead th { font: 500 11.5px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--bn-mute); border-top: 0; padding-bottom: 10px; }
-.bn-cmp tbody th { font: 400 22px/1.15 "Instrument Serif", Georgia, serif; color: var(--bn-ink); width: 22%; }
+.bn-cmp tbody th { font: 400 22px/1.15 Manrope, "Helvetica Neue", Arial, sans-serif; color: var(--bn-ink); width: 22%; }
 .bn-cmp td { color: var(--bn-ink-2); width: 39%; }
 .bn-cmp td.now { color: var(--bn-ink); }
 .bn-cmp td.now::before { content: "→ "; color: var(--bn-accent); }
@@ -10309,7 +10309,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-sw div { aspect-ratio: 1; border: 1px solid var(--bn-rule); display: flex; align-items: flex-end; padding: 8px; font: 400 10.5px/1.3 var(--font-mono); }
 .bn-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .bn-stats div { border-top: 1px solid var(--bn-accent); padding-top: 12px; display: grid; gap: 6px; align-content: start; }
-.bn-stats b { font: 400 clamp(36px, 4vw, 52px)/.95 "Instrument Serif", Georgia, serif; color: var(--bn-ink); }
+.bn-stats b { font: 400 clamp(36px, 4vw, 52px)/.95 Manrope, "Helvetica Neue", Arial, sans-serif; color: var(--bn-ink); }
 .bn-stats span { font-size: 15px; color: var(--bn-ink-2); line-height: 1.4; }
 
 .bn-logo-note { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(20px, 5vw, 64px); align-items: center; background: var(--bn-deep); color: var(--bn-deep-ink); padding: clamp(24px, 4vw, 48px); margin-block: clamp(32px, 5vw, 56px); }
@@ -10323,7 +10323,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-next-mark { color: var(--bn-accent); }
 .bn-next strong { color: var(--bn-ink); font-weight: 600; }
 
-.bn-quote { font: italic 400 clamp(24px, 2.8vw, 34px)/1.25 "Instrument Serif", Georgia, serif; color: var(--bn-ink); }
+.bn-quote { font: italic 400 clamp(24px, 2.8vw, 34px)/1.25 Manrope, "Helvetica Neue", Arial, sans-serif; color: var(--bn-ink); }
 
 .bn-close { text-align: center; padding-block: clamp(64px, 10vw, 140px); border-top: 1px solid var(--bn-rule); display: grid; gap: 22px; justify-items: center; margin-top: clamp(40px, 5vw, 72px); }
 .bn-close h2 { font-size: clamp(44px, 7.6vw, 112px); line-height: .92; max-width: 14ch; }
@@ -10388,7 +10388,7 @@ figure.so-hx-bleed > figcaption.so-hx-cap {
 .bn-tour-list button.is-on { background: var(--bn-deep); color: var(--bn-deep-ink); }
 .bn-tour-no { font: 500 11.5px/1.7 var(--font-mono); letter-spacing: .08em; color: var(--bn-accent); }
 .bn-tour-list button.is-on .bn-tour-no { color: var(--bn-deep-mute); }
-.bn-tour-t { display: block; font: 400 21px/1.15 "Instrument Serif", Georgia, serif; color: inherit; }
+.bn-tour-t { display: block; font: 400 21px/1.15 Manrope, "Helvetica Neue", Arial, sans-serif; color: inherit; }
 .bn-tour-list button:not(.is-on) .bn-tour-t { color: var(--bn-ink); }
 .bn-tour-d { display: block; font-size: 14px; line-height: 1.4; margin-top: 4px; opacity: .85; }
 .bn-tour-note { margin-top: 14px !important; font-size: 14px; color: var(--bn-mute); }
@@ -10467,7 +10467,7 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 /* Other ways to work with me: one quiet line per option */
 .so-rgroups { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 56px; margin-top: 26px; }
 @media (max-width: 760px) { .so-rgroups { grid-template-columns: 1fr; } }
-.so-rgroup-h { font-family: "Instrument Serif", Georgia, serif; font-size: 26px; line-height: 1.1; margin: 0; }
+.so-rgroup-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 26px; line-height: 1.1; margin: 0; }
 .so-rgroup-sub { font-size: 14px; opacity: .7; margin: 6px 0 0; }
 .so-rows { margin-top: 14px; border-top: 1px solid var(--color-sepia); }
 .so-row { border-bottom: 1px solid var(--color-sepia); }
@@ -10502,7 +10502,7 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 .so-quiz-dots span.is-on { background: #8b779a; }
 .so-quiz-dots span.is-done { background: #2a2523; }
 .so-quiz-q { border: 0; padding: 0; margin: 18px 0 0; animation: bnFade .35s ease; }
-.so-quiz-h { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.05; padding: 0; margin-bottom: 20px; color: #151213; }
+.so-quiz-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.05; padding: 0; margin-bottom: 20px; color: #151213; }
 .so-quiz-opts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .so-quiz-opts.is-four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .so-quiz-opt { text-align: left; border: 1px solid rgba(21,18,19,.16); background: #fff; border-radius: 12px; padding: 16px 18px; cursor: pointer; display: grid; gap: 4px; font: inherit; color: inherit; transition: border-color .2s ease, transform .2s ease, background .2s ease; }
@@ -10512,7 +10512,7 @@ html.is-scrolling .so-workcard { pointer-events: none; }
 .so-quiz-opt-d { font-size: 14px; color: #6f6560; line-height: 1.4; }
 .so-quiz-result { margin-top: 18px; animation: bnFade .4s ease; }
 .so-quiz-pick { display: flex; align-items: baseline; gap: 14px 22px; flex-wrap: wrap; margin-top: 10px; }
-.so-quiz-pick-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(36px, 5vw, 60px); line-height: 1; }
+.so-quiz-pick-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(36px, 5vw, 60px); line-height: 1; }
 .so-quiz-pick-p { font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #8b779a; }
 .so-quiz-why { margin-top: 14px; max-width: 60ch; font-size: 17px; line-height: 1.55; color: #3a3234; }
 .so-quiz-niche { margin-top: 8px; color: #6f6560; font-size: 15px; }
@@ -10560,8 +10560,8 @@ h2.so-script, .so-script {
 /* ============ Feed-style homepage (fd-) ============ */
 .fd-page { --fd-cream: #f2eee6; --fd-ink: #2a2523; --fd-soft: #5d5853; --fd-black: #2a2523; --fd-on-black: #efe9de; --fd-lav: #8d7d9e; --fd-lav-deep: #74658a; --fd-on-lav: #f4eff7;
   --fd-script: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", "Apple Chancery", cursive;
-  --fd-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
-  --fd-body: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --fd-display: Manrope, "Helvetica Neue", Arial, sans-serif;
+  --fd-body: Manrope, "Helvetica Neue", Arial, sans-serif;
   --fd-gutter: clamp(20px, 5vw, 72px);
   background: var(--fd-cream); color: var(--fd-ink); }
 .fd-frame { padding-inline: var(--fd-gutter); padding-block: clamp(72px, 12vw, 160px); position: relative; }
@@ -10585,7 +10585,7 @@ h2.so-script, .so-script {
 .fd-services a:hover .fd-sn, .fd-services a:focus-visible .fd-sn { font-style: italic; }
 
 .fd-work-head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; margin-bottom: clamp(32px, 5vw, 56px); }
-.fd-work-head h2 { font-family: var(--fd-display); font-weight: 400; font-style: italic; font-size: clamp(34px, 4.4vw, 56px); margin: 0; }
+.fd-work-head h2 { font-family: var(--fd-display); font-weight: 400; font-style: normal; font-size: clamp(34px, 4.4vw, 56px); margin: 0; }
 .fd-more { display: flex; gap: 22px; flex-wrap: wrap; font-family: var(--fd-body); font-size: 15px; }
 .fd-more a { color: var(--fd-soft); text-decoration: none; border-bottom: 1px solid transparent; }
 .fd-more a:hover, .fd-more a:focus-visible { color: var(--fd-ink); border-bottom-color: currentColor; }
@@ -10598,7 +10598,7 @@ h2.so-script, .so-script {
 @media (max-width: 720px) { .fd-grid { grid-template-columns: 1fr; } }
 
 .fd-lav { background: var(--fd-lav); color: var(--fd-on-lav); min-height: min(92vh, 900px); display: grid; align-content: space-between; gap: 48px; }
-.fd-big { font-family: var(--fd-display); font-style: italic; font-size: clamp(130px, 30vw, 420px); line-height: .8; margin: 0; color: var(--fd-lav-deep); letter-spacing: -.02em; }
+.fd-big { font-family: var(--fd-display); font-style: normal; font-size: clamp(130px, 30vw, 420px); line-height: .8; margin: 0; color: var(--fd-lav-deep); letter-spacing: -.02em; }
 .fd-note { font-family: var(--fd-body); font-weight: 300; font-size: 17px; line-height: 1.6; max-width: 46ch; margin: 0; }
 
 .fd-page .fd-start { background: var(--fd-cream); color: var(--fd-ink); }
@@ -10688,7 +10688,7 @@ body:has(.fd-page) .so-nav, body:has(.fd-page) .so-nav.is-scrolled { background:
 /* Slow ticker between the photo and services */
 .fd-ticker { background: #efebe3; border-block: 1px solid rgba(27,25,24,.12); overflow: hidden; padding-block: 18px; position: relative; }
 .fd-ticker-track { display: flex; width: max-content; animation: fd-tick 60s linear infinite; }
-.fd-ticker span { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(22px, 2.6vw, 34px); color: #1b1918; white-space: pre; padding-right: .3em; }
+.fd-ticker span { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(22px, 2.6vw, 34px); color: #1b1918; white-space: pre; padding-right: .3em; }
 @keyframes fd-tick { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .fd-ticker-track { animation: none; } }
 
@@ -10698,7 +10698,7 @@ body:has(.fd-page) .so-nav, body:has(.fd-page) .so-nav.is-scrolled { background:
 .fd-mw ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(27,25,24,.14); }
 .fd-mw li a { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: baseline; padding-block: 16px; border-bottom: 1px solid rgba(27,25,24,.14); color: inherit; text-decoration: none; transition: padding .35s cubic-bezier(.2,.7,.2,1), opacity .3s; }
 .fd-mw-no { font-family: var(--font-mono, "IBM Plex Mono", monospace); font-size: 11px; letter-spacing: .1em; opacity: .55; }
-.fd-mw-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(26px, 3.4vw, 46px); line-height: 1.05; }
+.fd-mw-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(26px, 3.4vw, 46px); line-height: 1.05; }
 .fd-mw-w { font-family: var(--fd-body); font-style: italic; font-size: 15px; color: var(--fd-soft); white-space: nowrap; }
 @media (hover: hover) {
   .fd-mw ul:hover a { opacity: .38; }
@@ -10728,25 +10728,25 @@ body:has(.fd-page) .so-nav, body:has(.fd-page) .so-nav.is-scrolled { background:
 html:has(.fd-page), body:has(.fd-page) { background: #f2eee6; }
 
 /* menu bar */
-body:has(.fd-page) .so-brandlock span { font-family: "Instrument Serif", Georgia, serif; font-size: 21px; font-weight: 400; letter-spacing: .01em; }
+body:has(.fd-page) .so-brandlock span { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 21px; font-weight: 400; letter-spacing: .01em; }
 
 /* quiz: paper, not white boxes */
 .fd-page .fd-start .so-quiz { background: transparent !important; border: 0; border-top: 1px solid rgba(27,25,24,.16); border-radius: 0; padding-inline: 0; }
-.fd-page .so-quiz-h { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; font-size: clamp(28px, 3.4vw, 42px) !important; }
+.fd-page .so-quiz-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 400 !important; font-size: clamp(28px, 3.4vw, 42px) !important; }
 .fd-page .so-quiz-opt { background: transparent !important; border: 1px solid rgba(27,25,24,.16) !important; border-radius: 0 !important; box-shadow: none !important; transition: background .2s, border-color .2s; }
 .fd-page .so-quiz-opt:hover, .fd-page .so-quiz-opt:focus-visible { background: rgba(255,255,255,.45) !important; border-color: rgba(27,25,24,.45) !important; }
-.fd-page .so-quiz-opt-t { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; font-size: 22px !important; }
-.fd-page .so-quiz-opt-d, .fd-page .so-quiz-why, .fd-page .so-quiz-small { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 300 !important; }
-.fd-page .so-quiz-pick-t { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; }
-.fd-page .so-quiz-foot button { font-family: "Instrument Serif", Georgia, serif !important; }
+.fd-page .so-quiz-opt-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 400 !important; font-size: 22px !important; }
+.fd-page .so-quiz-opt-d, .fd-page .so-quiz-why, .fd-page .so-quiz-small { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 300 !important; }
+.fd-page .so-quiz-pick-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 400 !important; }
+.fd-page .so-quiz-foot button { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; }
 
 /* inquiry: lines on paper, not a white card */
 .fd-page .so-office-card { background: transparent !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; padding-inline: 0 !important; border-top: 1px solid rgba(27,25,24,.16) !important; padding-top: 36px !important; }
-.fd-page .so-office-card .eyebrow-cap { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic; font-size: clamp(28px, 3.4vw, 42px) !important; text-transform: none !important; letter-spacing: 0 !important; color: #1b1918 !important; }
-.fd-page .so-field input, .fd-page .so-field textarea, .fd-page .so-field select { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 300 !important; font-size: 17px !important; background: transparent !important; }
+.fd-page .so-office-card .eyebrow-cap { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-style: normal; font-size: clamp(28px, 3.4vw, 42px) !important; text-transform: none !important; letter-spacing: 0 !important; color: #1b1918 !important; }
+.fd-page .so-field input, .fd-page .so-field textarea, .fd-page .so-field select { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 300 !important; font-size: 17px !important; background: transparent !important; }
 .fd-page .so-field textarea { border-radius: 0 !important; }
 .fd-page .so-field input::placeholder, .fd-page .so-field textarea::placeholder { font-style: italic; }
-.fd-page .so-form .so-btn { border-radius: 0 !important; font-family: "Instrument Serif", Georgia, serif !important; font-size: 20px !important; letter-spacing: .01em !important; text-transform: none !important; padding: 14px 28px !important; }
+.fd-page .so-form .so-btn { border-radius: 0 !important; font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-size: 20px !important; letter-spacing: .01em !important; text-transform: none !important; padding: 14px 28px !important; }
 
 /* work section: calmer sizes */
 .fd-mw-t { font-size: clamp(22px, 2.4vw, 32px); }
@@ -10755,7 +10755,7 @@ body:has(.fd-page) .so-brandlock span { font-family: "Instrument Serif", Georgia
 .fd-mk-t { font-size: clamp(44px, 5vw, 68px); }
 
 /* footer in the same voice */
-body:has(.fd-page) .so-footer .foot-link { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 15px; }
+body:has(.fd-page) .so-footer .foot-link { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 15px; }
 body:has(.fd-page) .so-footer h5 { font-family: "IBM Plex Mono", monospace; font-weight: 400; }
 
 /* One solid color: every frame on the same cream paper, only File 4 stays lavender */
@@ -10769,8 +10769,8 @@ body:has(.fd-page) .so-footer h5 { font-family: "IBM Plex Mono", monospace; font
 .fd-page #about-hana { background: var(--fd-cream) !important; position: relative; isolation: isolate; }
 .fd-page #about-hana::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: url(/assets/texture/paper-light.png), url(/assets/texture/paper-glow.png); background-size: 512px, 512px; background-position: 0 0, 0 0; }
 .fd-page #about-hana .fd-file { margin-bottom: clamp(36px, 6vw, 72px); }
-.fd-page #about-hana .so-profile-body p:not(.so-micro) { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; }
-.fd-page #about-hana .lead { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic; font-weight: 400 !important; }
+.fd-page #about-hana .so-profile-body p:not(.so-micro) { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; }
+.fd-page #about-hana .lead { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-style: normal; font-weight: 400 !important; }
 
 /* Paper v3: one soft, cloudy, seamless sheet (like cotton paper), no specks */
 .fd-page .fd-frame::before, .fd-page #about-hana::before, .fd-ei-back::after, .fd-ei-pocket::after, .fd-ei-top::after, .fd-ei-card::after, .fd-env-back::after, .fd-env-flap::after, .fd-ei-intro::before { background-image: none !important; }
@@ -10800,7 +10800,7 @@ body:has(.fd-page) .so-burger-lines span { background: #2a2523 !important; }
 body:has(.fd-page) .so-nav .so-nav-link.cta { background: #2a2523 !important; color: #f2eee6 !important; }
 .fd-services a.is-big { padding-block: 26px 24px; }
 .fd-services a.is-big .fd-sn { font-family: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", cursive; font-size: clamp(40px, 5vw, 64px); line-height: 1.05; }
-.fd-sd { display: block; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-style: normal; font-size: 15px; color: var(--fd-soft); margin-top: 6px; }
+.fd-sd { display: block; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-style: normal; font-size: 15px; color: var(--fd-soft); margin-top: 6px; }
 
 /* ===== Black paper sections: Selected work and Let's begin ===== */
 .fd-page .fd-dark, .fd-page .fd-start { background-color: #2a2523 !important; background-image: url(/assets/texture/paper-brown.jpg) !important; background-size: 768px 768px !important; color: #efe9de !important; }
@@ -10811,14 +10811,14 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #2a2523 !important; co
 
 /* Selected work: a row you scroll, tiles open a box */
 .fd-dark .fd-work-head h2 { color: #efe9de; }
-.fd-more-hint { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 300; font-size: 15px; color: rgba(239,233,222,.6); margin: 0; }
+.fd-more-hint { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-weight: 300; font-size: 15px; color: rgba(239,233,222,.6); margin: 0; }
 .fd-row { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(220px, 24vw, 340px); gap: clamp(14px, 1.6vw, 22px); overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 18px; margin-inline: calc(var(--fd-gutter) * -1); padding-inline: var(--fd-gutter); scrollbar-width: thin; scrollbar-color: rgba(239,233,222,.3) transparent; }
 .fd-tile { all: unset; cursor: pointer; scroll-snap-align: start; display: grid; color: #efe9de; }
 .fd-tile img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.2,.7,.2,1), opacity .3s; }
 .fd-tile:hover img, .fd-tile:focus-visible img { transform: scale(1.02); opacity: .92; }
 .fd-tile:focus-visible { outline: 1px solid #efe9de; outline-offset: 6px; }
-.fd-tile .fd-ct { margin-top: 12px; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; }
-.fd-tile .fd-cw { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 14px; color: rgba(239,233,222,.6); }
+.fd-tile .fd-ct { margin-top: 12px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 15px; }
+.fd-tile .fd-cw { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: 14px; color: rgba(239,233,222,.6); }
 
 /* More work, on black */
 .fd-dark .fd-mw-h { color: rgba(239,233,222,.7); }
@@ -10837,12 +10837,12 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #2a2523 !important; co
 .fd-box-x { all: unset; cursor: pointer; position: absolute; top: 12px; right: 16px; font-size: 28px; line-height: 1; color: #1b1918; padding: 4px 8px; }
 .fd-box-x:focus-visible { outline: 1px solid #1b1918; }
 .fd-box-w { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; opacity: .65; margin: 0; }
-.fd-box-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; margin: 0; }
-.fd-box-d { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: #5d5853; margin: 4px 0 0; }
+.fd-box-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; margin: 0; }
+.fd-box-d { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: #5d5853; margin: 4px 0 0; }
 .fd-box-q { font-family: "Monsieur La Doulaise", "Pinyon Script", cursive; font-size: 34px; margin: 18px 0 0; }
 .fd-box-links { display: grid; gap: 10px; justify-items: start; }
-.fd-box-links a { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: #1b1918; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
-.fd-box-links a.fd-box-main { font-family: "Instrument Serif", Georgia, serif; font-size: 20px; background: #2a2523; color: #f2eee6; border: 0; padding: 12px 20px; }
+.fd-box-links a { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; color: #1b1918; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.fd-box-links a.fd-box-main { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 20px; background: #2a2523; color: #f2eee6; border: 0; padding: 12px 20px; }
 @media (max-width: 640px) { .fd-box { grid-template-columns: 1fr; } .fd-box > img { min-height: 0; aspect-ratio: 4 / 3; } }
 
 /* Makeover on its own cream frame */
@@ -10851,7 +10851,7 @@ body:has(.fd-page) .so-nav .so-nav-link.cta { background: #2a2523 !important; co
 /* Meet Hana: a letter on paper */
 .fd-letter { position: relative; max-width: 760px; margin-inline: auto; background-color: #f8f5ef; background-image: url(/assets/texture/paper-cream.jpg); background-blend-mode: soft-light; padding: clamp(36px, 6vw, 80px) clamp(28px, 6vw, 84px); box-shadow: 0 1px 0 rgba(255,255,255,.7) inset, 0 30px 60px -36px rgba(60,50,40,.45); rotate: -.4deg; }
 .fd-letter-hi { font-size: clamp(54px, 7vw, 96px) !important; margin-bottom: 18px !important; max-width: 60%; }
-.fd-letter-p { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 17px; line-height: 1.75; color: #3d3833; margin: 0 0 16px; max-width: 54ch; }
+.fd-letter-p { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 17px; line-height: 1.75; color: #3d3833; margin: 0 0 16px; max-width: 54ch; }
 .fd-letter-sign { margin: 26px 0 10px; }
 .fd-letter-sign .fd-sign-name { font-size: clamp(60px, 8vw, 104px); }
 .fd-polaroid { position: absolute; top: clamp(-40px, -3vw, -20px); right: clamp(-30px, -2vw, 10px); width: clamp(150px, 22vw, 230px); margin: 0; background: #fbfaf7; padding: 10px 10px 34px; box-shadow: 0 18px 34px -16px rgba(40,30,20,.45); rotate: 4deg; z-index: 2; }
@@ -10885,7 +10885,7 @@ html:has(.fd-about), body:has(.fd-about), .fd-about { background-color: #f2eee6 
 body:has(.fd-about) .page-paper { display: none; }
 .fd-about-h { font-family: "Monsieur La Doulaise", "Pinyon Script", "Snell Roundhand", cursive !important; font-weight: 400 !important; font-size: clamp(64px, 11vw, 150px) !important; line-height: 1 !important; letter-spacing: 0 !important; }
 .fd-about-h em { font-style: normal !important; color: inherit !important; font-family: inherit !important; }
-.fd-about p { font-family: "Instrument Serif", Georgia, serif; }
+.fd-about p { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
 body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; }
 .fd-letter-hi { max-width: none !important; }
 
@@ -10909,7 +10909,7 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-quote.is-open .fd-quote-img { width: min(640px, 70vw); }
 .fd-quote-hint { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: #5c5955; opacity: .75; }
 .fd-why { max-width: 56ch; text-align: center; animation: fd-up .6s cubic-bezier(.2,.7,.2,1) both; }
-.fd-why p { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 18px; line-height: 1.75; color: #4a4744; margin: 0 0 14px; }
+.fd-why p { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 18px; line-height: 1.75; color: #4a4744; margin: 0 0 14px; }
 /* Media first: full screen under the menu bar; File 001 barely there */
 .fd-page .fd-media { height: min(100svh, 1000px); }
 .fd-media-file { font-size: 9px !important; letter-spacing: .26em !important; color: rgba(242, 238, 230, .5) !important; bottom: 16px !important; }
@@ -10959,9 +10959,9 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-hero-h { margin: 0; font-family: "Monsieur La Doulaise", "Pinyon Script", cursive; font-weight: 400; white-space: nowrap; line-height: 1.15; font-size: min(12.4vw, 260px); padding-block: .2em .3em; margin-block: -.2em -.3em; padding-inline: .05em .15em;
   background-image: url(/assets/texture/ink-white.png); background-size: 256px; -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; text-shadow: none; filter: drop-shadow(0 2px 18px rgba(0,0,0,.25)); }
 .fd-hero-sub { display: flex; justify-content: space-between; align-items: end; gap: 16px 40px; flex-wrap: wrap; }
-.fd-hero-sub p { margin: 0; max-width: 52ch; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: rgba(244,240,233,.9); }
+.fd-hero-sub p { margin: 0; max-width: 52ch; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 16px; line-height: 1.6; color: rgba(244,240,233,.9); }
 .fd-hero-sub p b { font-weight: 400; color: #f4f0e9; }
-.fd-hero-sub a { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: #f4f0e9; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; white-space: nowrap; }
+.fd-hero-sub a { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; color: #f4f0e9; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; white-space: nowrap; }
 @media (max-width: 640px) { .fd-hero-h { font-size: 13.4vw; } .fd-hero-sub p { font-size: 15px; } }
 /* Let's Begin: apostrophe floats above the t-s join so the letters stay connected */
 .fd-apos { display: inline-block; width: 0; position: relative; left: .03em; top: -.24em; -webkit-text-fill-color: currentColor; background: none; }
@@ -11015,12 +11015,12 @@ body:has(.fd-about) .so-sitebar { background: rgba(242,238,230,.94) !important; 
 .fd-media:not(.fd-media-empty) .fd-hero-h { font-size: min(11vw, 220px); }
 @media (max-width: 720px) { .fd-page .fd-media:not(.fd-media-empty) { height: 82svh !important; min-height: 480px; } }
 /* Hero heading in the wordmark's serif (Instrument Serif) instead of script */
-.fd-page .fd-hero-h { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400; font-style: normal; line-height: .95 !important; letter-spacing: -.015em; word-spacing: 0; padding-block: .06em .08em; margin-block: 0; white-space: nowrap; }
+.fd-page .fd-hero-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 400; font-style: normal; line-height: .95 !important; letter-spacing: -.015em; word-spacing: 0; padding-block: .06em .08em; margin-block: 0; white-space: nowrap; }
 .fd-page .fd-media:not(.fd-media-empty) .fd-hero-h, .fd-page .fd-media-empty .fd-hero-h { font-size: min(12.5vw, 230px); }
 @media (max-width: 640px) { .fd-page .fd-hero-h { font-size: 15vw !important; } }
 /* Major titles in the wordmark serif (Instrument Serif). Let's Begin and the signature stay handwritten. */
 .fd-page .fd-script:not(.fd-start .fd-script), .fd-page .fd-mk-t, .fd-page .fd-work-head h2 {
-  font-family: "Instrument Serif", Georgia, serif !important; font-style: normal !important; font-weight: 400 !important;
+  font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-style: normal !important; font-weight: 400 !important;
   line-height: 1 !important; letter-spacing: -.012em !important; word-spacing: 0 !important; padding-inline: 0 !important; margin-inline-start: 0 !important;
   background-image: none !important; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important;
 }
@@ -11054,10 +11054,10 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
    Cream envelope paper and lavender card paper, big tone-on-tone italic numerals, small quiet serif text.
    Hero, Serve first (003) and the numbers card (004) are left as they are. */
 .fd-page .fd-st { position: relative; min-height: min(94vh, 960px); display: grid; align-content: start; overflow: hidden; }
-.fd-ghost { margin: clamp(8px, 2vw, 24px) 0 clamp(24px, 4vw, 56px); font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(150px, 27vw, 400px); line-height: .78; letter-spacing: -.03em; pointer-events: none; user-select: none; }
+.fd-ghost { margin: clamp(8px, 2vw, 24px) 0 clamp(24px, 4vw, 56px); font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-weight: 400; font-size: clamp(150px, 27vw, 400px); line-height: .78; letter-spacing: -.03em; pointer-events: none; user-select: none; }
 .fd-st-cream .fd-ghost { color: #e2dccf; }
 .fd-st-lav .fd-ghost { color: #7d6d90; }
-.fd-page .fd-st .fd-small, .fd-page .fd-st .fd-letter-p { font-family: "Instrument Serif", Georgia, serif !important; font-size: clamp(18px, 1.5vw, 21px) !important; line-height: 1.45 !important; max-width: 46ch; }
+.fd-page .fd-st .fd-small, .fd-page .fd-st .fd-letter-p { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-size: clamp(18px, 1.5vw, 21px) !important; line-height: 1.45 !important; max-width: 46ch; }
 
 /* lavender card paper (same as the numbers card) */
 .fd-page .fd-frame.fd-st-lav, .fd-page .fd-frame.fd-start.fd-st-lav { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; color: #f4eff7 !important; }
@@ -11116,12 +11116,12 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .nb-photo { margin: 0; width: 72%; aspect-ratio: 4 / 5; background: #fbfaf6; padding: 3.2% 3.2% 11%; box-shadow: 0 1px 2px rgba(60,50,40,.18), 0 14px 26px -14px rgba(60,50,40,.45); position: relative; }
 .nb-photo::before { content: ""; position: absolute; left: 50%; top: -4.5%; width: 34%; height: 9%; translate: -50% 0; background: rgba(236,230,214,.78); box-shadow: 0 1px 2px rgba(60,50,40,.08); }
 .nb-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.nb-hi { margin: 4.2cqw 0 0; font-family: "Instrument Serif", Georgia, serif; font-size: 3.9cqw; line-height: 1; color: #2a2724; }
+.nb-hi { margin: 4.2cqw 0 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 3.9cqw; line-height: 1; color: #2a2724; }
 .nb-sub { margin: 1.2cqw 0 0; font-family: "IBM Plex Mono", monospace; font-size: .78cqw; letter-spacing: .18em; text-transform: uppercase; color: #8a847b; }
 .nb-no { margin: 0; font-family: "IBM Plex Mono", monospace; font-size: .8cqw; letter-spacing: .22em; color: #9a948a; }
 .nb-t { margin: 1.4cqw 0 1.6cqw; font-family: "Sacramento", "Monsieur La Doulaise", cursive; font-weight: 400; font-size: 4.6cqw; line-height: 1.1; color: #4f4b47; }
 .nb-p { display: grid; gap: .95cqw; }
-.nb-p p { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-size: 1.36cqw; line-height: 1.42; color: #4a4642; }
+.nb-p p { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 1.36cqw; line-height: 1.42; color: #4a4642; }
 .nb-page { animation: nb-in .5s ease .26s both; }
 @keyframes nb-in { from { opacity: 0; } to { opacity: 1; } }
 /* the turning sheet */
@@ -11139,7 +11139,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .nb-corner:disabled { cursor: default; }
 .nb-corner:disabled::after { display: none; }
 .nb-nav { display: flex; align-items: center; justify-content: center; gap: clamp(14px, 3vw, 36px); margin-top: clamp(18px, 3vw, 34px); flex-wrap: wrap; }
-.nb-nav > button { all: unset; cursor: pointer; font-family: "Instrument Serif", Georgia, serif; font-size: 19px; color: #2a2724; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.nb-nav > button { all: unset; cursor: pointer; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 19px; color: #2a2724; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .nb-nav > button:disabled { opacity: .3; cursor: default; }
 .nb-nav ol { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; }
 .nb-nav ol button { all: unset; cursor: pointer; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .12em; color: #9a948a; padding: 6px 7px; border-bottom: 1px solid transparent; }
@@ -11162,7 +11162,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
   .nb-p p { font-size: 17px; }
 }
 /* World building in the wordmark serif, italic, so the list matches */
-.fd-page .fd-services a.is-big .fd-sn { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic !important; font-size: clamp(36px, 4.2vw, 56px) !important; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; background-image: none !important; padding-inline: 0 !important; margin-inline-start: 0 !important; line-height: 1.05 !important; }
+.fd-page .fd-services a.is-big .fd-sn { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-style: normal !important; font-size: clamp(36px, 4.2vw, 56px) !important; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; background-image: none !important; padding-inline: 0 !important; margin-inline-start: 0 !important; line-height: 1.05 !important; }
 .fd-page .fd-services a.is-big .fd-sn .fd-sd { -webkit-text-fill-color: #6b655d !important; color: #6b655d !important; }
 .nb { width: 100%; }
 .nb-book { aspect-ratio: 1491 / 1073; filter: none; }
@@ -11172,7 +11172,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page .fd-start.fd-st-lav .fd-script { display: block; text-align: center; white-space: nowrap; line-height: 1.12 !important; margin: clamp(4px, 1vw, 14px) auto clamp(4px, 1vw, 16px) !important; padding-inline: .08em !important; }
 /* world building: lowercase pencil handwriting */
 .fd-page .fd-services a.is-big .fd-sn { font-family: "Sacramento", cursive !important; font-style: normal !important; text-transform: lowercase; font-size: clamp(40px, 4.4vw, 60px) !important; line-height: 1.15 !important; color: #5d5955 !important; -webkit-text-fill-color: #5d5955 !important; opacity: .92; }
-.fd-page .fd-services a.is-big .fd-sn .fd-sd { text-transform: none; font-family: "Instrument Serif", Georgia, serif; }
+.fd-page .fd-services a.is-big .fd-sn .fd-sd { text-transform: none; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
 
 /* ===== Meet Hana: one clean cloth-bound notebook, built in CSS so the pages can really turn ===== */
 .bk { max-width: 1080px; width: 100%; margin: clamp(-70px, -5vw, -30px) auto 0; }
@@ -11195,10 +11195,10 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .is-two .bk-ph-b { width: 46%; aspect-ratio: 4 / 5; justify-self: end; margin-right: 4%; margin-top: -4cqw; }
 .bk-cap { margin: 0; font-family: "Sacramento", cursive; font-size: 2.3cqw; color: #8a847b; text-transform: lowercase; }
 .bk-right-in { display: flex; flex-direction: column; }
-.bk-hello { margin: 0 0 .4cqw; font-family: "Instrument Serif", Georgia, serif; font-size: 1cqw; letter-spacing: .2em; text-transform: uppercase; color: #9a948a; }
+.bk-hello { margin: 0 0 .4cqw; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 1cqw; letter-spacing: .2em; text-transform: uppercase; color: #9a948a; }
 .bk-t { margin: 0 0 1.6cqw; font-family: "Sacramento", cursive; font-weight: 400; font-size: 4.2cqw; line-height: 1.05; color: #4f4b47; }
 .bk-p { display: grid; gap: .9cqw; }
-.bk-p p { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-size: 1.32cqw; line-height: 1.42; color: #4a4642; }
+.bk-p p { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 1.32cqw; line-height: 1.42; color: #4a4642; }
 .bk-no { margin: auto 0 0; align-self: flex-end; padding-top: 1.4cqw; font-family: "IBM Plex Mono", monospace; font-size: .85cqw; letter-spacing: .22em; color: #9a948a; }
 .bk-curl { position: absolute; right: 0; bottom: 0; width: 0; height: 0; border-style: solid; border-width: 2.2cqw 2.2cqw 0 0; border-color: #e9e4d8 transparent transparent transparent; box-shadow: -3px -3px 6px -2px rgba(60,50,40,.18); transition: border-width .25s ease; }
 .bk-right:hover .bk-curl { border-width: 3.4cqw 3.4cqw 0 0; }
@@ -11395,7 +11395,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
   .bk-sf-back { display: none; }
   .bk-face-in { min-height: 0; }
 }
-.fd-page .fd-services a.is-big .fd-sn .fd-sd { display: block; word-spacing: normal !important; letter-spacing: 0 !important; text-transform: none !important; font-family: "Instrument Serif", Georgia, serif !important; font-size: 15px !important; line-height: 1.5 !important; margin-top: 4px; padding: 0 !important; }
+.fd-page .fd-services a.is-big .fd-sn .fd-sd { display: block; word-spacing: normal !important; letter-spacing: 0 !important; text-transform: none !important; font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-size: 15px !important; line-height: 1.5 !important; margin-top: 4px; padding: 0 !important; }
 .fd-page .fd-services a.is-big { padding-bottom: 22px !important; }
 .bk-book { perspective: 3800px !important; perspective-origin: 50% 45%; }
 .fd-page .fd-services a.is-big { margin-bottom: 14px; }
@@ -11412,11 +11412,11 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .so-menu-panel::before, .so-menu-panel::after { display: none !important; }
 .so-menu-file, .so-menu-no, .so-menu-foot .so-micro { color: rgba(244,239,247,.7) !important; }
 .so-menu-list a, .so-menu-link { border-color: rgba(244,239,247,.28) !important; color: #f4eff7 !important; }
-.so-menu-name { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; font-style: normal !important; letter-spacing: -.01em !important; color: #f4eff7 !important; }
+.so-menu-name { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 400 !important; font-style: normal !important; letter-spacing: -.01em !important; color: #f4eff7 !important; }
 .so-menu-link:hover .so-menu-name, .so-menu-link:focus-visible .so-menu-name { font-style: italic !important; }
 .so-menu-arr { color: #f4eff7 !important; }
-.so-menu-cta { background: #f4eff7 !important; color: #2a2433 !important; border-color: #f4eff7 !important; font-family: "Instrument Serif", Georgia, serif !important; text-transform: none !important; letter-spacing: 0 !important; font-size: 20px !important; }
-.so-menu-foot, .so-menu-foot a { color: #f4eff7 !important; font-family: "Instrument Serif", Georgia, serif !important; font-size: 18px !important; }
+.so-menu-cta { background: #f4eff7 !important; color: #2a2433 !important; border-color: #f4eff7 !important; font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; text-transform: none !important; letter-spacing: 0 !important; font-size: 20px !important; }
+.so-menu-foot, .so-menu-foot a { color: #f4eff7 !important; font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-size: 18px !important; }
 
 /* ===== File 001: two columns, title on the left, the services as a quiet price list on the right ===== */
 @media (min-width: 900px) {
@@ -11428,9 +11428,9 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .fd-page #build .fd-services { border-top: 1px solid rgba(120,105,85,.22) !important; }
 .fd-page #build .fd-services a { display: grid !important; grid-template-columns: 1fr auto; align-items: baseline; gap: 6px 24px; padding: 22px 0 !important; border-bottom: 1px solid rgba(120,105,85,.22) !important; margin: 0 !important; text-decoration: none; }
 .fd-page #build .fd-services a .fd-sn { font-size: clamp(30px, 2.8vw, 40px) !important; line-height: 1.1 !important; }
-.fd-page #build .fd-services a .fd-sd { display: block; font-family: "Instrument Serif", Georgia, serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; margin-top: 6px; letter-spacing: 0 !important; word-spacing: normal !important; font-style: normal !important; text-transform: none !important; }
+.fd-page #build .fd-services a .fd-sd { display: block; font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-size: 15px !important; line-height: 1.5 !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; margin-top: 6px; letter-spacing: 0 !important; word-spacing: normal !important; font-style: normal !important; text-transform: none !important; }
 .fd-page #build .fd-services a.is-big .fd-sn { font-size: clamp(46px, 4.4vw, 64px) !important; }
-.fd-page #build .fd-sp { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic; font-size: 19px !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; white-space: nowrap; }
+.fd-page #build .fd-sp { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-style: normal; font-size: 19px !important; color: #857b70 !important; -webkit-text-fill-color: #857b70 !important; white-space: nowrap; }
 .fd-sv-arr { display: inline-block; margin-left: 6px; opacity: 0; transform: translateX(-6px); transition: opacity .25s ease, transform .25s ease; }
 .fd-page #build .fd-services a:hover .fd-sv-arr, .fd-page #build .fd-services a:focus-visible .fd-sv-arr { opacity: 1; transform: none; }
 .fd-page #build .fd-services a:not(.is-big):hover .fd-sn { font-style: italic; }
@@ -11475,12 +11475,12 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 /* Let's begin: centered, calmer intro text, apostrophe sitting on the t */
 .fd-page .fd-start.fd-st-lav { text-align: center; }
 .fd-page .fd-start.fd-st-lav > .fd-file { text-align: left; }
-.fd-page .fd-start.fd-st-lav .fd-small { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 300 !important; font-size: 18px !important; line-height: 1.65 !important; max-width: 44ch; margin: clamp(6px, 1.2vw, 16px) auto 0 !important; color: #f4eff7 !important; }
+.fd-page .fd-start.fd-st-lav .fd-small { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 300 !important; font-size: 18px !important; line-height: 1.65 !important; max-width: 44ch; margin: clamp(6px, 1.2vw, 16px) auto 0 !important; color: #f4eff7 !important; }
 .fd-page .fd-start.fd-st-lav .fd-small a { white-space: nowrap; border-bottom: 1px solid rgba(244,239,247,.6); text-decoration: none; }
 .fd-page .fd-start.fd-st-lav .fd-sheet { text-align: left; }
 .fd-hand-mld .fd-lets::after { top: .42em !important; left: calc(var(--ap-x, 2em) - .06em) !important; }
 /* body text in the stationery sections: the readable serif, not the condensed one */
-.fd-page .fd-st .fd-small { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 300 !important; font-size: 17px !important; line-height: 1.65 !important; }
+.fd-page .fd-st .fd-small { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 300 !important; font-size: 17px !important; line-height: 1.65 !important; }
 .fd-hand-mld .fd-lets::after { left: calc(var(--ap-x, 2em) - .2em) !important; top: .36em !important; }
 /* service rows: World Building capitalized; rows fill lavender with white text on hover */
 .fd-page #build .fd-services a.is-big .fd-sn { text-transform: none !important; }
@@ -11513,17 +11513,17 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 .bio-ph span { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .24em; text-transform: uppercase; color: #a59d91; }
 .bio-cn { margin-top: 16px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .2em; color: #9a9086; }
 .bio-ct { margin-top: 4px; font-family: "Monsieur La Doulaise", cursive; font-size: 34px; line-height: 1.2; color: #585552; padding: .05em .05em 0 0; }
-.bio-cl { margin-top: 6px; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 14.5px; line-height: 1.55; color: #6b655d; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.bio-more { margin-top: auto; padding-top: 14px; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #4a443d; }
+.bio-cl { margin-top: 6px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 14.5px; line-height: 1.55; color: #6b655d; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.bio-more { margin-top: auto; padding-top: 14px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; color: #4a443d; }
 .bio-back { position: fixed; inset: 0; z-index: 200; background: rgba(40,32,48,.45); display: grid; place-items: center; padding: 20px; animation: fd-up .3s ease both; }
 .bio-box { position: relative; width: min(680px, 100%); max-height: calc(100svh - 40px); overflow: auto; background-color: #f8f6f0; background-image: url(/assets/texture/paper-cream.jpg); background-size: 800px; padding: clamp(28px, 5vw, 56px); box-shadow: 0 40px 80px -30px rgba(30,20,40,.55); }
 .bio-x { all: unset; position: absolute; top: 14px; right: 18px; font-size: 28px; line-height: 1; cursor: pointer; color: #6b655d; }
 .bio-no { margin: 0; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .22em; color: #9a9086; }
 .bio-t { margin: 8px 0 18px; font-family: "Monsieur La Doulaise", cursive; font-weight: 400; font-size: clamp(46px, 6vw, 64px); line-height: 1.2; color: #585552; padding: .05em .1em 0 0; }
 .bio-p { display: grid; gap: 14px; }
-.bio-p p { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 17px; line-height: 1.7; color: #3f3a35; }
+.bio-p p { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 17px; line-height: 1.7; color: #3f3a35; }
 .bio-nav { display: flex; justify-content: space-between; gap: 16px; margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(120,105,85,.22); }
-.bio-nav button { all: unset; cursor: pointer; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #4a443d; }
+.bio-nav button { all: unset; cursor: pointer; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; color: #4a443d; }
 .bio-nav button:disabled { visibility: hidden; }
 .bio-ct .bk-ap, .bio-t .bk-ap { display: inline-block; margin: 0 -.32em 0 -.18em; }
 
@@ -11558,7 +11558,7 @@ html.on-hero .so-nav .so-mobile-menu[open] .so-menu-panel, html.on-hero .so-nav 
 
 /* ===== Inner pages: same cream + lavender paper as the homepage ===== */
 html:not(:has(.fd-page)):not(:has(.fd-about)), body:not(:has(.fd-page)):not(:has(.fd-about)) { background-color: #f2eee6 !important; background-image: url(/assets/texture/paper-cream.jpg) !important; background-size: 768px 768px !important; }
-body:not(:has(.fd-page)):not(:has(.fd-about)) .so-serif { font-family: "Instrument Serif", Georgia, serif !important; font-weight: 400 !important; letter-spacing: -.01em; }
+body:not(:has(.fd-page)):not(:has(.fd-about)) .so-serif { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-weight: 400 !important; letter-spacing: -.01em; }
 body:not(:has(.fd-page)):not(:has(.fd-about)) h1.so-serif, body:not(:has(.fd-page)):not(:has(.fd-about)) h2.so-serif { color: #857b70 !important; }
 body:not(:has(.fd-page)) .so-pricing, body:not(:has(.fd-page)) .so-bw-sec[class*="pricing"] { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; }
 body:not(:has(.fd-page)) .so-pricing h2.so-serif, body:not(:has(.fd-page)) .so-pricing .so-serif { color: #f4eff7 !important; }
@@ -11595,7 +11595,7 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 .bio-list button { all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: grid; grid-template-columns: 44px 1fr auto; align-items: baseline; gap: 12px; padding: 16px 10px; transition: background-color .25s ease; }
 .bio-list button:hover, .bio-list button:focus-visible { background-color: rgba(225,220,208,.45); }
 .bio-ln { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .2em; color: #9a9086; }
-.bio-lt { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; color: #6b6258; }
+.bio-lt { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.1; color: #6b6258; }
 .bio-la { font-size: 16px; color: #857b70; opacity: 0; transition: opacity .25s ease; }
 .bio-list button:hover .bio-la, .bio-list button:focus-visible .bio-la { opacity: 1; }
 .fd-bio .bio-row, .fd-bio .bio-head { display: none; }
@@ -11622,12 +11622,12 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 @media (min-width: 1100px) { .fd-page #build .fd-services a.is-big .fd-sn .fd-sd { white-space: nowrap; } }
 @media (max-width: 899px) { .fd-page #build .fd-services a.is-big { padding: 18px 16px 20px !important; } .fd-page #build .fd-services a.is-big .fd-sn { font-size: 46px !important; } }
 /* Bio chapters open in place, like a table of contents (no pop-up box) */
-.fd-bio .bio-list .bio-la { display: inline-block; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1; transition: transform .35s ease; }
+.fd-bio .bio-list .bio-la { display: inline-block; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; line-height: 1; transition: transform .35s ease; }
 .fd-bio .bio-list li.is-open .bio-la { transform: rotate(45deg); }
 .fd-bio .bio-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s ease; }
 .fd-bio .bio-list li.is-open .bio-panel { grid-template-rows: 1fr; }
 .fd-bio .bio-panel-in { overflow: hidden; min-height: 0; padding-left: 105px; padding-right: 40px; }
-.fd-bio .bio-panel-in p { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; line-height: 1.7; color: #6e665e; margin: 0 0 14px; max-width: 58ch; }
+.fd-bio .bio-panel-in p { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #6e665e; margin: 0 0 14px; max-width: 58ch; }
 .fd-bio .bio-panel-in p:first-child { margin-top: 2px; }
 .fd-bio .bio-panel-in p:last-child { margin-bottom: 26px; }
 .fd-bio .bio-list li.is-open > button { background: transparent !important; }
@@ -11636,7 +11636,7 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 .fd-bio .bio-list .bio-la { opacity: .6; }
 .fd-bio .bio-list li.is-open .bio-la { opacity: 1; }
 /* Let's Begin: Instrument Serif italic, white chalk, like the other titles (option 8) */
-.fd-page .fd-start.fd-st-lav .fd-script.fd-start-h { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic !important; font-weight: 400 !important; letter-spacing: -.01em !important; line-height: 1.05 !important; text-transform: none !important; margin: 0 auto .18em !important; padding: .02em .08em .06em !important; white-space: nowrap; text-align: center; color: transparent !important; -webkit-text-fill-color: transparent !important; background-image: url(/assets/texture/chalk-white.png) !important; background-size: 260px !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-stroke: 0 !important; }
+.fd-page .fd-start.fd-st-lav .fd-script.fd-start-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-style: normal !important; font-weight: 400 !important; letter-spacing: -.01em !important; line-height: 1.05 !important; text-transform: none !important; margin: 0 auto .18em !important; padding: .02em .08em .06em !important; white-space: nowrap; text-align: center; color: transparent !important; -webkit-text-fill-color: transparent !important; background-image: url(/assets/texture/chalk-white.png) !important; background-size: 260px !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-stroke: 0 !important; }
 /* Bio: a clear "Read +" tap pill on every row */
 .fd-bio .bio-tap { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px 7px 14px; border: 1px solid rgba(141,125,158,.45); border-radius: 999px; color: #7a6a8c; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; line-height: 1; align-self: center; transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
 .fd-bio .bio-tap .bio-la { font-size: 15px !important; opacity: 1 !important; color: inherit; letter-spacing: 0; }
@@ -11666,8 +11666,8 @@ body:not(:has(.fd-page)) .so-sitebar, body:not(:has(.fd-page)) .so-nav { backgro
 .fd-page #build .fd-services a.is-big .fd-sn { -webkit-mask-image: linear-gradient(transparent calc(100% - 32px), #000 calc(100% - 32px)), url(/assets/texture/chalk-white-2.png); mask-image: linear-gradient(transparent calc(100% - 32px), #000 calc(100% - 32px)), url(/assets/texture/chalk-white-2.png); -webkit-mask-size: 100% 100%, 220px; mask-size: 100% 100%, 220px; -webkit-mask-repeat: no-repeat, repeat; mask-repeat: no-repeat, repeat; }
 /* ===== Let's Begin: quiz link ===== */
 .fd-page .fd-start .fd-guide-links { margin: 18px auto 0; text-align: center; }
-.fd-page .fd-start .fd-guide-links a { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: rgba(250,246,240,.92); text-decoration: none; border-bottom: 1px solid rgba(250,246,240,.35); padding-bottom: 3px; transition: border-color .25s ease, color .25s ease; }
-.fd-page .fd-start .fd-guide-links a em { font-family: "Instrument Serif", Georgia, serif; font-size: 1.25em; font-style: italic; }
+.fd-page .fd-start .fd-guide-links a { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; color: rgba(250,246,240,.92); text-decoration: none; border-bottom: 1px solid rgba(250,246,240,.35); padding-bottom: 3px; transition: border-color .25s ease, color .25s ease; }
+.fd-page .fd-start .fd-guide-links a em { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 1.25em; font-style: normal; }
 .fd-page .fd-start .fd-guide-links a:hover { color: #fff; border-color: rgba(255,255,255,.85); }
 
 /* ===== Guide rooms (#links, #quiz) ===== */
@@ -11687,16 +11687,16 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .gd-wash { position: fixed; inset: 0; background: radial-gradient(ellipse at 50% 35%, rgba(141,125,158,.25), rgba(110,96,128,.7) 75%); pointer-events: none; }
 .gd-inner { position: relative; z-index: 2; max-width: 760px; margin: 0 auto; padding: clamp(80px, 12vh, 130px) 24px 70px; text-align: center; }
 .gd-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: rgba(255,255,255,.75); margin: 0 0 14px; animation: gd-up .7s ease both; }
-.gd-h { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(54px, 9vw, 110px); line-height: 1; margin: 0; color: transparent; background: url(/assets/texture/chalk-white-2.png); background-size: 220px; -webkit-background-clip: text; background-clip: text; padding: 0 .06em .12em; animation: gd-up .8s .05s ease both; }
+.gd-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-weight: 400; font-size: clamp(54px, 9vw, 110px); line-height: 1; margin: 0; color: transparent; background: url(/assets/texture/chalk-white-2.png); background-size: 220px; -webkit-background-clip: text; background-clip: text; padding: 0 .06em .12em; animation: gd-up .8s .05s ease both; }
 .gd-line { display: block; width: 1px; height: 64px; margin: 10px auto 14px; background: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,0)); animation: gd-up .8s .1s ease both; }
-.gd-sub { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: rgba(255,255,255,.88); margin: 0 0 34px; animation: gd-up .8s .12s ease both; }
+.gd-sub { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; color: rgba(255,255,255,.88); margin: 0 0 34px; animation: gd-up .8s .12s ease both; }
 .gd-list { list-style: none; margin: 0; padding: 0; text-align: left; border-top: 1px solid rgba(255,255,255,.25); }
 .gd-list li { border-bottom: 1px solid rgba(255,255,255,.25); animation: gd-up .7s ease both; }
 .gd-list a { display: grid; grid-template-columns: 44px 1fr auto; grid-template-areas: "n t a" "n d a"; column-gap: 14px; align-items: center; padding: 18px 12px; color: #fff; text-decoration: none; transition: background-color .3s ease; }
 .gd-list a:hover, .gd-list a:focus-visible { background: rgba(255,255,255,.08); }
 .gd-n { grid-area: n; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .2em; color: rgba(255,255,255,.6); align-self: start; padding-top: 12px; }
-.gd-t { grid-area: t; font-family: "Instrument Serif", Georgia, serif; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.05; }
-.gd-d { grid-area: d; font-family: "Instrument Serif", Georgia, serif; font-size: 14px; color: rgba(255,255,255,.72); margin-top: 4px; }
+.gd-t { grid-area: t; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(28px, 3.6vw, 40px); line-height: 1.05; }
+.gd-d { grid-area: d; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 14px; color: rgba(255,255,255,.72); margin-top: 4px; }
 .gd-a { grid-area: a; font-family: Georgia, serif; font-size: 20px; color: rgba(255,255,255,.55); transition: color .3s ease; }
 .gd-list a:hover .gd-a { color: #fff; }
 .gd-foot { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.6); margin: 30px 0 0; }
@@ -11707,26 +11707,26 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .gd-quiz-file { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: #8f857a; white-space: nowrap; }
 .gd-quiz-rule { flex: 1; height: 1px; background: rgba(133,123,112,.3); }
 .gd-quiz-inner { max-width: 880px; margin: 0 auto; padding: clamp(20px, 5vh, 56px) 24px 80px; animation: gd-up .7s ease both; }
-.gd-quiz-h { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(44px, 7vw, 86px); line-height: 1; color: #857b70; margin: 0; text-align: center; }
-.gd-quiz-sub { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: #857b70; text-align: center; margin: 14px auto 8px; max-width: 46ch; }
+.gd-quiz-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-weight: 400; font-size: clamp(44px, 7vw, 86px); line-height: 1; color: #857b70; margin: 0; text-align: center; }
+.gd-quiz-sub { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; color: #857b70; text-align: center; margin: 14px auto 8px; max-width: 46ch; }
 .gd-quiz .so-quiz { background: transparent; color: #5f5850; padding: 0; margin-top: 30px; border-radius: 0; }
 .gd-quiz .so-quiz-cap, .gd-quiz .so-micro { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .26em; color: #8d7d9e; }
-.gd-quiz .so-quiz-h { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; color: #6b6258; margin-bottom: 20px; padding: 0; }
+.gd-quiz .so-quiz-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(30px, 4vw, 44px); line-height: 1.1; color: #6b6258; margin-bottom: 20px; padding: 0; }
 .gd-quiz .so-quiz-opt { background: rgba(255,255,255,.45); border: 1px solid rgba(133,123,112,.25); border-radius: 14px; color: #5f5850; transition: background-color .25s ease, border-color .25s ease; }
 .gd-quiz .so-quiz-opt:hover, .gd-quiz .so-quiz-opt:focus-visible { background: rgba(141,125,158,.1); border-color: rgba(141,125,158,.55); transform: none; }
-.gd-quiz .so-quiz-opt-t { font-family: "Instrument Serif", Georgia, serif; font-size: 24px; color: #5f5850; }
-.gd-quiz .so-quiz-opt-d { font-family: "Instrument Serif", Georgia, serif; color: #8f857a; }
+.gd-quiz .so-quiz-opt-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 24px; color: #5f5850; }
+.gd-quiz .so-quiz-opt-d { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; color: #8f857a; }
 .gd-quiz .so-quiz-dots span { background: rgba(133,123,112,.25); }
 .gd-quiz .so-quiz-dots span.is-done, .gd-quiz .so-quiz-dots span.is-on { background: #8d7d9e; }
 .gd-quiz .so-quiz-result { background: #8d7d9e url(/assets/texture/paper-lav.jpg); background-size: cover; color: #fff; border-radius: 18px; padding: clamp(24px, 4vw, 44px); }
 .gd-quiz .so-quiz-result .so-quiz-cap { color: rgba(255,255,255,.75); }
-.gd-quiz .so-quiz-pick-t { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(40px, 5vw, 60px); color: #fff; }
-.gd-quiz .so-quiz-pick-p { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 24px; color: rgba(255,255,255,.85); }
-.gd-quiz .so-quiz-why, .gd-quiz .so-quiz-small { font-family: "Instrument Serif", Georgia, serif; color: rgba(255,255,255,.9); }
+.gd-quiz .so-quiz-pick-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(40px, 5vw, 60px); color: #fff; }
+.gd-quiz .so-quiz-pick-p { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: 24px; color: rgba(255,255,255,.85); }
+.gd-quiz .so-quiz-why, .gd-quiz .so-quiz-small { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; color: rgba(255,255,255,.9); }
 .gd-quiz .so-quiz-go { background: #fff; color: #5d4f6e; border-radius: 999px; }
 .gd-quiz .so-quiz-more { color: #fff; }
 .gd-quiz .so-quiz-foot button { color: #8f857a; }
-.gd-quiz-alt { font-family: "Instrument Serif", Georgia, serif; font-size: 15px; color: #857b70; text-align: center; margin-top: 40px; }
+.gd-quiz-alt { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 15px; color: #857b70; text-align: center; margin-top: 40px; }
 .gd-quiz-alt a { color: #6b5d7c; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 640px) {
   .gd-list a { grid-template-columns: 30px 1fr auto; padding: 15px 6px; }
@@ -11736,11 +11736,11 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (prefers-reduced-motion: reduce) { .gd, .gd * { animation: none !important; } .gd-reel { display: none; } }
 .gd-quiz .so-quiz-top .so-quiz-cap { visibility: hidden; }
 .gd-quiz .so-quiz-result .so-quiz-cap { color: rgba(255,255,255,.8) !important; }
-.gd-quiz a.so-quiz-go, .gd-quiz a.so-quiz-go:visited { background: #fff !important; color: #5d4f6e !important; -webkit-text-fill-color: #5d4f6e !important; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+.gd-quiz a.so-quiz-go, .gd-quiz a.so-quiz-go:visited { background: #fff !important; color: #5d4f6e !important; -webkit-text-fill-color: #5d4f6e !important; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 15px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
 .gd-quiz a.so-quiz-go:hover { background: #f3eef8 !important; }
-.gd-quiz a.so-quiz-more { color: #fff !important; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); }
+.gd-quiz a.so-quiz-more { color: #fff !important; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); }
 .gd-quiz .so-quiz-foot button { font-family: "IBM Plex Mono", ui-monospace, monospace !important; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #8f857a !important; }
-.gd-quiz .so-quiz-pick-p { font-family: "Instrument Serif", Georgia, serif !important; letter-spacing: 0 !important; }
+.gd-quiz .so-quiz-pick-p { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; letter-spacing: 0 !important; }
 .gd-close { white-space: nowrap; } @media (max-width: 640px) { .gd-quiz-rule { min-width: 12px; } .gd-quiz-bar .gd-close { padding: 8px 12px; } }
 /* Shorter sections overall */
 .fd-page > section.fd-frame, .fd-page > .fd-frame { padding-top: clamp(52px, 6.5vw, 96px) !important; padding-bottom: clamp(52px, 6.5vw, 96px) !important; min-height: 0 !important; }
@@ -11803,9 +11803,9 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-quiz-card { display: flex; flex-direction: column; align-items: flex-start; width: 100%; box-sizing: border-box; margin-top: 32px; padding: 26px 28px 28px; border-radius: 18px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.28); color: #fff; text-decoration: none; transition: background-color .3s ease, border-color .3s ease; }
 .fd-quiz-card:hover, .fd-quiz-card:focus-visible { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.5); }
 .fd-quiz-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.75); }
-.fd-quiz-t { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.1; margin: 10px 0 6px; }
-.fd-quiz-d { font-family: "Instrument Serif", Georgia, serif; font-size: 15px; color: rgba(255,255,255,.85); margin-bottom: 18px; }
-.fd-quiz-b { display: inline-flex; gap: 8px; align-items: center; background: #fff; color: #5d4f6e; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; padding: 12px 22px; border-radius: 999px; transition: background-color .25s ease; }
+.fd-quiz-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(28px, 2.6vw, 36px); line-height: 1.1; margin: 10px 0 6px; }
+.fd-quiz-d { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 15px; color: rgba(255,255,255,.85); margin-bottom: 18px; }
+.fd-quiz-b { display: inline-flex; gap: 8px; align-items: center; background: #fff; color: #5d4f6e; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 15px; padding: 12px 22px; border-radius: 999px; transition: background-color .25s ease; }
 .fd-quiz-card:hover .fd-quiz-b { background: #f3eef8; }
 @media (max-width: 899px) {
   .fd-page .fd-start .fd-start-grid { grid-template-columns: 1fr; gap: 28px; }
@@ -11819,7 +11819,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-page .fd-bio .bio-grid { max-width: 1180px; margin-left: auto !important; margin-right: auto !important; grid-template-columns: minmax(0, 440px) minmax(0, 1fr) !important; align-items: start !important; }
 .fd-page .fd-bio .bio-cover { max-width: 440px; }
 .fd-page .fd-bio .bio-side { position: relative; max-width: 640px; padding-top: clamp(24px, 4vw, 64px); }
-.fd-page .fd-bio .bio-side::before { content: "05"; position: absolute; top: -.18em; right: -.04em; font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(110px, 12vw, 190px); line-height: 1; color: rgba(133,123,112,.14); pointer-events: none; z-index: 0; }
+.fd-page .fd-bio .bio-side::before { content: "05"; position: absolute; top: -.18em; right: -.04em; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(110px, 12vw, 190px); line-height: 1; color: rgba(133,123,112,.14); pointer-events: none; z-index: 0; }
 .fd-page .fd-bio .bio-side > * { position: relative; z-index: 1; }
 @media (max-width: 860px) { .fd-page .fd-bio .bio-side { padding-top: 8px; } .fd-page .fd-bio .bio-side::before { top: -.5em; font-size: 110px; } }
 /* Footer: one-line wordmark, calmer columns, single mark */
@@ -11889,7 +11889,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 /* ===== Footer option 2: giant wordmark across the bottom ===== */
 .so-footer.ft2 { padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 72px) 0 !important; overflow: hidden; position: relative; }
 .ft2-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; align-items: start; }
-.ft2-line { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(26px, 2.4vw, 36px); line-height: 1.15; color: #f4eff7; margin: 0; max-width: 16ch; }
+.ft2-line { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(26px, 2.4vw, 36px); line-height: 1.15; color: #f4eff7; margin: 0; max-width: 16ch; }
 .ft2-col h5 { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .26em; text-transform: uppercase; color: rgba(244,239,247,.75); margin: 0 0 6px; font-weight: 400; border: 0 !important; padding: 0 !important; }
 .ft2-col { border: 0 !important; padding: 0 !important; }
 .ft2-col .foot-link { display: block; margin: 9px 0; }
@@ -11982,7 +11982,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 899px) {
   .fd-page .fd-start .fd-start-left .fd-quiz-card { display: none !important; }
   .fd-tabs { display: flex; gap: 4px; padding: 4px; margin: -4px 0 22px; background: rgba(27,25,24,.06); border-radius: 999px; }
-  .fd-tabs button { all: unset; box-sizing: border-box; flex: 1; text-align: center; cursor: pointer; padding: 11px 10px; border-radius: 999px; font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 15px; color: #5f5850; transition: background-color .25s ease, color .25s ease; }
+  .fd-tabs button { all: unset; box-sizing: border-box; flex: 1; text-align: center; cursor: pointer; padding: 11px 10px; border-radius: 999px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 15px; color: #5f5850; transition: background-color .25s ease, color .25s ease; }
   .fd-tabs button.is-on { background: #8d7d9e; color: #fff; }
   .fd-sheet.is-quiz .so-office-card > :not(.fd-tabs):not(.fd-sheet-quiz) { display: none !important; }
   .fd-sheet.is-quiz .fd-sheet-quiz { display: block; }
@@ -11998,7 +11998,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 @media (max-width: 899px) { .fd-wb-img { width: min(100%, 340px); } }
 /* Directory: service pages as pills under "What I do" */
 .gd-svc { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 12px 18px 70px; margin-top: -4px; }
-.gd-pill { font-family: "Instrument Serif", Georgia, serif; font-weight: 300; font-size: 14px; color: #fff; text-decoration: none; padding: 8px 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; transition: background-color .25s ease, border-color .25s ease; }
+.gd-pill { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 300; font-size: 14px; color: #fff; text-decoration: none; padding: 8px 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; transition: background-color .25s ease, border-color .25s ease; }
 .gd-pill:hover, .gd-pill:focus-visible { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.7); }
 @media (max-width: 640px) { .gd-svc { padding-left: 42px; } .gd-pill { font-size: 13px; padding: 7px 12px; } }
 .gd-list .gd-svc a.gd-pill { display: inline-block !important; grid-template-columns: none !important; grid-template-areas: none !important; padding: 8px 15px !important; white-space: nowrap; line-height: 1.2; } @media (max-width: 640px) { .gd-list .gd-svc a.gd-pill { padding: 7px 12px !important; } }
@@ -12016,7 +12016,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 }
 @media (max-width: 640px) { .fd-media:not(.fd-media-empty) .fd-hero-sub { bottom: auto !important; top: 560px; } .fd-page .fd-media:not(.fd-media-empty) .fd-hero-line { height: 90px !important; } }
 /* Hero: Start a project as a real button */
-.fd-media .fd-hero-sub a.fd-hero-btn { display: inline-flex; align-items: center; gap: 10px; background: #f4efe8; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; text-decoration: none !important; border: 0 !important; border-bottom: 0 !important; padding: 13px 26px; border-radius: 999px; font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 15px; letter-spacing: 0; box-shadow: 0 10px 30px -12px rgba(0,0,0,.5); transition: background-color .25s ease, transform .25s ease; }
+.fd-media .fd-hero-sub a.fd-hero-btn { display: inline-flex; align-items: center; gap: 10px; background: #f4efe8; color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; text-decoration: none !important; border: 0 !important; border-bottom: 0 !important; padding: 13px 26px; border-radius: 999px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-size: 15px; letter-spacing: 0; box-shadow: 0 10px 30px -12px rgba(0,0,0,.5); transition: background-color .25s ease, transform .25s ease; }
 .fd-media .fd-hero-sub a.fd-hero-btn:hover, .fd-media .fd-hero-sub a.fd-hero-btn:focus-visible { background: #fff; }
 .fd-media .fd-hero-sub a.fd-hero-btn::after, .fd-media .fd-hero-sub a.fd-hero-btn::before { display: none !important; }
 @media (max-width: 640px) { .fd-media:not(.fd-media-empty) .fd-hero-sub { top: calc(50% + 128px) !important; } }
@@ -12030,7 +12030,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 .fd-box-x { border-radius: 999px !important; }
 .fd-quiz-card { border-radius: 22px; }
 .fd-box a[class*="go"], .fd-box .fd-box-go, .fd-box-body a:first-of-type { border-radius: 999px !important; } .fd-page .fd-start .fd-sheet button[type="submit"], .fd-page .fd-start .fd-sheet .so-send { border-radius: 999px !important; } .fd-page .fd-start .fd-sheet textarea { border-radius: 12px !important; }
-.fd-media .fd-hero-sub a.fd-hero-btn { font-family: "Instrument Serif", Georgia, serif !important; font-size: 20px !important; font-weight: 400 !important; padding: 12px 26px !important; }
+.fd-media .fd-hero-sub a.fd-hero-btn { font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-size: 20px !important; font-weight: 400 !important; padding: 12px 26px !important; }
 /* What I do rows: clearly clickable */
 .fd-page #build .fd-services a { cursor: pointer; }
 .fd-page #build .fd-services a .fd-sv-arr { display: inline-block !important; opacity: .45; margin-left: 6px; transition: opacity .25s ease, transform .25s ease; }
@@ -12093,18 +12093,18 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 /* 05 moved back to the right, tucked against "Hana." */
 .fd-page .fd-bio .bio-side::before { content: none !important; }
 .fd-page .fd-bio .bio-side .fd-script { display: inline-block; position: relative; z-index: 1; }
-.fd-page .fd-bio .bio-side .fd-script::after { content: "05"; position: absolute; left: calc(100% - .12em); bottom: .52em; z-index: -1; font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(110px, 12vw, 190px); line-height: 1; color: rgba(133,123,112,.17); pointer-events: none; white-space: nowrap; }
+.fd-page .fd-bio .bio-side .fd-script::after { content: "05"; position: absolute; left: calc(100% - .12em); bottom: .52em; z-index: -1; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(110px, 12vw, 190px); line-height: 1; color: rgba(133,123,112,.17); pointer-events: none; white-space: nowrap; }
 @media (max-width: 860px) { .fd-page .fd-bio .bio-side .fd-script::after { font-size: 88px; left: calc(100% - .14em); } }
 .fd-page .fd-bio .bio-side .fd-script::after { -webkit-text-fill-color: rgba(133,123,112,.17) !important; background: none !important; text-shadow: none !important; opacity: 1; left: calc(100% - .22em); bottom: .42em; }
 
 /* Tiny makeover note under "Start with the brand." */
 .fd-mk { margin-top: 44px; max-width: 420px; padding-top: 20px; border-top: 1px solid rgba(120,105,85,.22); }
 .fd-mk-k { margin: 0 0 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #9e8f7e; }
-.fd-mk-h { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 34px; line-height: 1.1; color: #4a4540; }
-.fd-mk-d { margin: 8px 0 14px; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; font-size-adjust: .56; line-height: 1.55; color: #857b70; }
-.fd-mk-row { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0 0 16px; font-family: "Instrument Serif", Georgia, serif; font-size: 16px; font-size-adjust: .56; color: #4a4540; }
+.fd-mk-h { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: 34px; line-height: 1.1; color: #4a4540; }
+.fd-mk-d { margin: 8px 0 14px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; font-size-adjust: .56; line-height: 1.55; color: #857b70; }
+.fd-mk-row { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0 0 16px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; font-size-adjust: .56; color: #4a4540; }
 .fd-mk-row i { color: #857b70; margin-left: 4px; }
-.fd-mk-a { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; font-size-adjust: .56; color: #1b1918; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
+.fd-mk-a { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; font-size-adjust: .56; color: #1b1918; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; }
 .fd-mk-a:hover { color: #9e2b2e; }
 @media (min-width: 900px) {
   .fd-page #build > .fd-mk { grid-column: 1; align-self: end; }
@@ -12138,7 +12138,7 @@ html.gd-lock, html.gd-lock body { overflow: hidden !important; }
 
 /* Makeover room (same look as the directory) */
 .gd-mk .gd-d i { font-style: italic; color: rgba(255,255,255,.92); }
-.gd-mk-alt { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; font-size-adjust: .56; color: rgba(255,255,255,.8); margin: 30px 0 0; max-width: 52ch; animation: gd-up .8s .7s ease both; }
+.gd-mk-alt { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; font-size-adjust: .56; color: rgba(255,255,255,.8); margin: 30px 0 0; max-width: 52ch; animation: gd-up .8s .7s ease both; }
 .gd-mk-alt a { color: #fff; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255,255,255,.5); }
 
 /* Pricing bands: one continuous paper texture edge to edge (no flat strips at the sides) */
@@ -12149,7 +12149,7 @@ html, body { overflow-x: clip; }
 
 /* More work: type filters. The picked type moves to the top. */
 .fd-mw-types { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
-.fd-mw-type { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border: 1px solid rgba(244,239,247,.38); border-radius: 999px; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; font-size-adjust: .56; color: rgba(244,239,247,.85); transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.fd-mw-type { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border: 1px solid rgba(244,239,247,.38); border-radius: 999px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 15px; font-size-adjust: .56; color: rgba(244,239,247,.85); transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
 .fd-mw-type:hover { border-color: rgba(244,239,247,.8); color: #fff; }
 .fd-mw-type:focus-visible { outline: 2px solid #f4eff7; outline-offset: 2px; }
 .fd-mw-type.is-on { background: #f4eff7; color: #4a3f58; border-color: #f4eff7; }
@@ -12163,7 +12163,7 @@ html, body { overflow-x: clip; }
 /* Selected work: service filters + tags under each tile */
 #work .fd-work-head { flex-wrap: wrap; row-gap: 18px; }
 #work .fd-work-filters { display: flex; flex-wrap: wrap; gap: 8px; order: 3; flex: 1 1 100%; }
-.fd-wf { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border: 1px solid rgba(244,239,247,.4); border-radius: 999px; font-family: "Instrument Serif", Georgia, serif; font-size: 15px; font-size-adjust: .56; color: rgba(244,239,247,.88); transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
+.fd-wf { all: unset; box-sizing: border-box; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; padding: 7px 14px; border: 1px solid rgba(244,239,247,.4); border-radius: 999px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 15px; font-size-adjust: .56; color: rgba(244,239,247,.88); transition: background-color .25s ease, color .25s ease, border-color .25s ease; }
 .fd-wf span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; opacity: .7; }
 .fd-wf:hover { border-color: rgba(244,239,247,.85); color: #fff; }
 .fd-wf:focus-visible { outline: 2px solid #f4eff7; outline-offset: 2px; }
@@ -12187,7 +12187,7 @@ html, body { overflow-x: clip; }
 .so-for-list { list-style: none; margin: 24px 0 28px; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .so-for-list li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid rgba(120,105,85,.22); border-radius: 18px; background: rgba(255,255,255,.35); }
 .so-for-no { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; color: #9e2b2e; }
-.so-for-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; color: #2b2622; }
+.so-for-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; color: #2b2622; }
 .so-for-d { font-size: 15px; line-height: 1.55; color: #6e665e; }
 .so-for-go { display: inline-flex; align-items: center; gap: 8px; background: #2a2523; color: #f4efe8 !important; padding: 13px 22px; border-radius: 999px; text-decoration: none !important; font-size: 15px; font-weight: 500; }
 .so-for-go:hover { background: #9e2b2e; }
@@ -12204,7 +12204,7 @@ html, body { overflow-x: clip; }
 .hk-slot-ic { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid currentColor; font-size: 18px; opacity: .85; }
 .hk-slot.is-video .hk-slot-ic { background: #efe9de; color: #1b1918; border-color: #efe9de; padding-left: 4px; }
 .hk-slot-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .2em; text-transform: uppercase; opacity: .7; }
-.hk-slot-l { font-family: "Instrument Serif", Georgia, serif; font-size: 18px; font-size-adjust: .56; line-height: 1.3; max-width: 24ch; }
+.hk-slot-l { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-size-adjust: .56; line-height: 1.3; max-width: 24ch; }
 .hk-slot-n { font-size: 12px; opacity: .65; max-width: 28ch; }
 .so-madeby-strip { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 8px; }
 
@@ -12213,7 +12213,7 @@ html, body { overflow-x: clip; }
 .hk-watch-d { font-size: 14px; color: #6e665e; margin: 10px 0 0; }
 
 .hk-quote { text-align: center; padding: clamp(40px, 6vw, 80px) 0; border-top: 1px solid rgba(120,105,85,.22); border-bottom: 1px solid rgba(120,105,85,.22); }
-.hk-quote-q { margin: 18px auto 14px; max-width: 30ch; font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.15; color: #2b2622; }
+.hk-quote-q { margin: 18px auto 14px; max-width: 30ch; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.15; color: #2b2622; }
 .hk-quote-mark { display: block; font-size: 1.6em; line-height: .6; color: #9e2b2e; }
 .hk-quote-ph { display: inline-block; padding: 6px 14px; border: 1.5px dashed rgba(120,105,85,.45); }
 .hk-quote-who { font-family: var(--font-mono); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #857b70; }
@@ -12234,7 +12234,7 @@ html, body { overflow-x: clip; }
 .hk-tl-list li { position: relative; display: flex; flex-direction: column; gap: 6px; padding-right: 18px; }
 .hk-tl-dot { position: relative; z-index: 1; width: 36px; height: 36px; border-radius: 50%; background: #2a2523; color: #f4efe8; display: grid; place-items: center; font-family: var(--font-mono); font-size: 11px; margin-bottom: 8px; }
 .hk-tl-when { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #9e2b2e; }
-.hk-tl-t { font-family: "Instrument Serif", Georgia, serif; font-size: 24px; color: #2b2622; line-height: 1.1; }
+.hk-tl-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 24px; color: #2b2622; line-height: 1.1; }
 .hk-tl-d { font-size: 14px; line-height: 1.55; color: #6e665e; }
 .hk-tl-note { margin-top: 22px; }
 
@@ -12245,12 +12245,12 @@ html, body { overflow-x: clip; }
 .hk-est-opt:hover { border-color: rgba(27,25,24,.5); }
 .hk-est-opt:focus-visible { outline: 2px solid #1b1918; outline-offset: 2px; }
 .hk-est-opt.is-on { border-color: #1b1918; background: #fff; box-shadow: inset 0 0 0 1px #1b1918; }
-.hk-est-t { grid-area: t; font-family: "Instrument Serif", Georgia, serif; font-size: 21px; color: #2b2622; }
+.hk-est-t { grid-area: t; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 21px; color: #2b2622; }
 .hk-est-d { grid-area: d; font-size: 13px; color: #857b70; }
-.hk-est-p { grid-area: p; font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 19px; color: #2b2622; }
+.hk-est-p { grid-area: p; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: 19px; color: #2b2622; }
 .hk-est-sum { position: sticky; top: 90px; background: #2a2523 url(/assets/texture/paper-brown.jpg); background-size: 768px; color: #f4efe8; border-radius: 20px; padding: clamp(22px, 3vw, 34px); }
 .hk-est-sum .so-micro { color: rgba(244,239,232,.65); }
-.hk-est-total { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(46px, 5vw, 68px); line-height: 1; margin: 10px 0 14px; }
+.hk-est-total { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(46px, 5vw, 68px); line-height: 1; margin: 10px 0 14px; }
 .hk-est-sum ul { list-style: none; margin: 0 0 16px; padding: 0; border-top: 1px solid rgba(244,239,232,.2); }
 .hk-est-sum li { padding: 9px 0; border-bottom: 1px solid rgba(244,239,232,.14); font-size: 15px; }
 .hk-est-pk { font-size: 15px; line-height: 1.5; background: rgba(244,239,232,.1); border-radius: 12px; padding: 12px 14px; margin: 0 0 16px; }
@@ -12264,7 +12264,7 @@ html, body { overflow-x: clip; }
 .hk-check-list button:focus-visible { outline: 2px solid #1b1918; outline-offset: 2px; }
 .hk-check-box { grid-area: b; width: 22px; height: 22px; border: 1.5px solid #857b70; border-radius: 6px; display: grid; place-items: center; font-size: 13px; color: #f4efe8; margin-top: 3px; }
 .hk-check-list button.is-on .hk-check-box { background: #2a2523; border-color: #1b1918; }
-.hk-check-t { grid-area: t; font-family: "Instrument Serif", Georgia, serif; font-size: 21px; color: #2b2622; }
+.hk-check-t { grid-area: t; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 21px; color: #2b2622; }
 .hk-check-list button.is-on .hk-check-t { text-decoration: line-through; text-decoration-color: rgba(43,38,34,.4); }
 .hk-check-d { grid-area: d; font-size: 14px; color: #857b70; }
 
@@ -12273,13 +12273,13 @@ html, body { overflow-x: clip; }
 .hk-guide-list button { all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: grid; grid-template-columns: 40px minmax(0, 1fr); padding: 14px 4px; border-bottom: 1px solid rgba(120,105,85,.22); color: #857b70; transition: color .2s ease, padding .25s ease; }
 .hk-guide-list button.is-on { color: #2b2622; padding-left: 12px; }
 .hk-guide-n { font-family: var(--font-mono); font-size: 11px; color: #9e2b2e; padding-top: 6px; }
-.hk-guide-t { font-family: "Instrument Serif", Georgia, serif; font-size: 23px; }
+.hk-guide-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 23px; }
 .hk-guide-show { position: sticky; top: 90px; }
-.hk-guide-st { font-family: "Instrument Serif", Georgia, serif; font-size: 28px; color: #2b2622; margin: 16px 0 0; }
+.hk-guide-st { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 28px; color: #2b2622; margin: 16px 0 0; }
 
 .hk-gloss-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 24px 0 0; }
 .hk-gloss-grid div { padding: 18px; border: 1px solid rgba(120,105,85,.22); border-radius: 14px; background: rgba(255,255,255,.3); }
-.hk-gloss-grid dt { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; color: #2b2622; margin-bottom: 6px; }
+.hk-gloss-grid dt { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; color: #2b2622; margin-bottom: 6px; }
 .hk-gloss-grid dd { margin: 0; font-size: 14px; line-height: 1.55; color: #6e665e; }
 
 @media (max-width: 860px) {
@@ -12301,18 +12301,18 @@ html, body { overflow-x: clip; }
 .hk-gal-grid .hk-gal-3 { grid-column: 2 / span 2; }
 @media (max-width: 760px) { .hk-gal-grid { grid-template-columns: 1fr 1fr; } .hk-gal-grid .hk-gal-0 { grid-row: auto; grid-column: 1 / -1; aspect-ratio: 4 / 3 !important; } .hk-gal-grid .hk-gal-3 { grid-column: 1 / -1; } }
 .hk-reel-cta { display: flex; flex-wrap: wrap; gap: 14px 22px; align-items: center; margin-top: 16px; }
-.hk-reel-alt { font-family: "Instrument Serif", Georgia, serif; font-size: 17px; font-size-adjust: .56; color: #1b1918; text-decoration: underline; text-underline-offset: 4px; }
+.hk-reel-alt { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; font-size-adjust: .56; color: #1b1918; text-decoration: underline; text-underline-offset: 4px; }
 .hk-reel .hk-slot { max-height: 560px; }
 .hk-get-list { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
 .hk-get-list li { display: grid; grid-template-columns: 28px minmax(0, 1fr); grid-template-areas: "c t" "c d"; gap: 2px 10px; padding: 16px 0; border-top: 1px solid rgba(120,105,85,.22); }
 .hk-get-ck { grid-area: c; width: 22px; height: 22px; border-radius: 50%; background: #2a2523; color: #f4efe8; display: grid; place-items: center; font-size: 12px; margin-top: 3px; }
-.hk-get-t { grid-area: t; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; color: #2b2622; }
+.hk-get-t { grid-area: t; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; color: #2b2622; }
 .hk-get-d { grid-area: d; font-size: 14px; color: #6e665e; line-height: 1.5; }
 .hk-work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
 .hk-work-card { display: flex; flex-direction: column; gap: 8px; text-decoration: none !important; color: #2b2622 !important; }
 .hk-work-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #ece6dd; display: block; }
 .hk-work-card img[src$=".svg"], .hk-work-card img[src$="logo.png"] { object-fit: contain; padding: 14%; }
-.hk-work-t { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; }
+.hk-work-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; }
 .hk-work-card:hover .hk-work-t { color: #9e2b2e; }
 @media (max-width: 760px) { .hk-get-list, .hk-work-grid { grid-template-columns: 1fr; } .hk-reel .hk-slot { aspect-ratio: 4 / 3 !important; } }
 #campaigns .so-pk-card, #campaigns .so-pk-card * { color: #1b1918 !important; -webkit-text-fill-color: #1b1918 !important; } #campaigns .so-pk-card .so-pk-who, #campaigns .so-pk-card .so-micro { color: #6a645e !important; -webkit-text-fill-color: #6a645e !important; } #campaigns .so-pk-card .so-pk-tag { color: #fff !important; -webkit-text-fill-color: #fff !important; } #campaigns .so-pk-card { border-radius: 18px; }
@@ -12326,8 +12326,8 @@ html, body { overflow-x: clip; }
 .wb-mk-top { display: flex; justify-content: space-between; align-items: center; }
 .wb-mk-where { font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; opacity: .7; }
 .wb-mk-card.is-rec .wb-mk-where { opacity: 1; color: #f3c3bd; }
-.wb-mk-t { font-family: "Instrument Serif", Georgia, serif; font-size: 30px; line-height: 1.05; margin-top: 6px; }
-.wb-mk-p { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 20px; }
+.wb-mk-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 30px; line-height: 1.05; margin-top: 6px; }
+.wb-mk-p { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: 20px; }
 .wb-mk-d { font-size: 14px; line-height: 1.55; opacity: .8; }
 .wb-mk-card ul { list-style: none; margin: 6px 0 0; padding: 0; border-top: 1px solid currentColor; border-color: rgba(120,105,85,.25); }
 .wb-mk-card.is-rec ul { border-color: rgba(244,239,232,.2); }
@@ -12337,7 +12337,7 @@ html, body { overflow-x: clip; }
 .wb-mk-go { margin-top: auto; padding-top: 14px; font-size: 15px; font-weight: 500; }
 .wb-plat-table { margin-top: 24px; border-top: 1px solid rgba(120,105,85,.3); }
 .wb-plat-row { display: grid; grid-template-columns: 160px 1fr 1fr; gap: 20px; padding: 16px 0; border-bottom: 1px solid rgba(120,105,85,.2); font-size: 15px; line-height: 1.5; color: #5d5853; }
-.wb-plat-row > span:first-child { font-family: "Instrument Serif", Georgia, serif; font-size: 20px; color: #2b2622; }
+.wb-plat-row > span:first-child { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 20px; color: #2b2622; }
 .wb-plat-row > span:nth-child(2) { color: #1b1918; }
 .wb-plat-row.is-head > span { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #857b70; }
 .wb-plat-row.is-head i { font-style: normal; background: #2a2523; color: #f4efe8; padding: 3px 8px; border-radius: 999px; margin-left: 8px; font-size: 9px; }
@@ -12361,7 +12361,7 @@ body:not(:has(.fd-page)) .so-micro { letter-spacing: .26em; font-size: 10.5px; }
 .so-for-list { gap: 32px; }
 .wb-tools-grid { gap: 32px; }
 .wb-tools-grid ul { display: block; }
-.wb-tools-grid li { display: inline; background: none; border: 0; padding: 0; font-family: "Instrument Serif", Georgia, serif; font-size: 19px; font-size-adjust: .56; }
+.wb-tools-grid li { display: inline; background: none; border: 0; padding: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 19px; font-size-adjust: .56; }
 .wb-tools-grid li:not(:last-child)::after { content: " · "; color: #b3a898; }
 .hk-gloss-grid { gap: 28px 32px; }
 .wb-mk-card { border-radius: 0; background: none; border: 0; border-top: 1px solid rgba(43,38,34,.3); padding: 24px 0 0; }
@@ -12381,8 +12381,8 @@ body:not(:has(.fd-page)) .so-micro { letter-spacing: .26em; font-size: 10.5px; }
 .hk-more { border-top: 1px solid rgba(43,38,34,.22); border-bottom: 1px solid rgba(43,38,34,.22); padding-block: 0 !important; }
 .hk-more summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 30px 0; }
 .hk-more summary::-webkit-details-marker { display: none; }
-.hk-more-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(22px, 2.4vw, 30px); color: #2b2622; }
-.hk-more-plus { font-family: "Instrument Serif", Georgia, serif; font-size: 34px; color: #9e2b2e; transition: transform .35s ease; }
+.hk-more-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(22px, 2.4vw, 30px); color: #2b2622; }
+.hk-more-plus { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 34px; color: #9e2b2e; transition: transform .35s ease; }
 .hk-more[open] .hk-more-plus { transform: rotate(45deg); }
 .hk-more-body > .so-bw-sec:first-child { padding-top: 12px; }
 @media (max-width: 760px) { .hk-more summary { grid-template-columns: minmax(0, 1fr) auto; } .hk-more summary .so-micro { grid-column: 1 / -1; } }
@@ -12437,18 +12437,18 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 .ed-img:hover img { transform: scale(1.02); }
 .ed-cover { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 80px); align-items: end; }
 .ed-cover-img { aspect-ratio: 4 / 5; max-height: 82vh; }
-.ed-h { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(88px, 15vw, 220px); line-height: .85; letter-spacing: -.03em; margin: 18px 0 22px; color: #2b2622; }
-.ed-lead { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.25; color: #5d5853; max-width: 20ch; margin: 0 0 36px; }
+.ed-h { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-size: clamp(88px, 15vw, 220px); line-height: .85; letter-spacing: -.03em; margin: 18px 0 22px; color: #2b2622; }
+.ed-lead { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.25; color: #5d5853; max-width: 20ch; margin: 0 0 36px; }
 .ed-facts { display: grid; gap: 0; margin: 0; border-top: 1px solid rgba(43,38,34,.2); }
 .ed-facts div { display: grid; grid-template-columns: 110px 1fr; padding: 12px 0; border-bottom: 1px solid rgba(43,38,34,.2); }
 .ed-facts dt { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: #9a8f83; }
-.ed-facts dd { margin: 0; font-family: "Instrument Serif", Georgia, serif; font-size: 18px; color: #2b2622; }
+.ed-facts dd { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 18px; color: #2b2622; }
 .ed-story { max-width: 760px; margin: clamp(80px, 12vw, 160px) auto; text-align: center; }
-.ed-pull { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.15; color: #2b2622; margin: 0 0 24px; }
+.ed-pull { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.15; color: #2b2622; margin: 0 0 24px; }
 .ed-p { font-size: 16px; font-weight: 300; line-height: 1.7; color: #5d5853; max-width: 56ch; margin: 0 auto 16px; }
 .ed-story .ed-p { margin-inline: auto; }
 .ed-look { margin-top: clamp(64px, 9vw, 120px); }
-.ed-k { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(30px, 3.4vw, 44px); color: #2b2622; margin: 0 0 22px; display: flex; gap: 16px; align-items: baseline; }
+.ed-k { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(30px, 3.4vw, 44px); color: #2b2622; margin: 0 0 22px; display: flex; gap: 16px; align-items: baseline; }
 .ed-k span { font-family: var(--font-mono); font-style: normal; font-size: 11px; letter-spacing: .14em; color: #9e2b2e; }
 .ed-grid { display: grid; gap: 14px; margin-top: 14px; }
 .ed-grid-2 { grid-template-columns: 1fr 1fr; }
@@ -12461,12 +12461,12 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 .ed-behind .ed-img { aspect-ratio: 2 / 3; }
 .ed-did { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(43,38,34,.2); counter-reset: d; }
 .ed-did li { display: grid; grid-template-columns: 130px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid rgba(43,38,34,.2); }
-.ed-did b { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 20px; color: #2b2622; }
+.ed-did b { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-size: 20px; color: #2b2622; }
 .ed-did span { font-size: 15px; font-weight: 300; line-height: 1.55; color: #5d5853; }
 .ed-models { margin-top: clamp(80px, 12vw, 160px); padding: clamp(32px, 5vw, 64px); background: #2a2523 url(/assets/texture/paper-brown.jpg); background-size: 768px; color: #f4efe8; border-radius: 20px; }
 .ed-models .so-micro { color: rgba(244,239,232,.6); }
 .ed-models .ed-p { color: rgba(244,239,232,.82); margin-left: 0; }
-.ed-h2 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(48px, 6vw, 84px); line-height: 1; margin: 12px 0 20px; color: #f4efe8; }
+.ed-h2 { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-size: clamp(48px, 6vw, 84px); line-height: 1; margin: 12px 0 20px; color: #f4efe8; }
 .ed-check { list-style: none; margin: 8px 0 28px; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; max-width: 900px; }
 .ed-check li { padding: 12px 0 12px 30px; border-top: 1px solid rgba(244,239,232,.16); position: relative; font-size: 15px; color: #f4efe8; }
 .ed-check li::before { content: "✓"; position: absolute; left: 0; top: 12px; color: #f3c3bd; }
@@ -12493,10 +12493,10 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 .dq-bar { flex: 1; height: 2px; background: rgba(255,255,255,.25); border-radius: 2px; overflow: hidden; }
 .dq-bar i { display: block; height: 100%; background: #fff; transition: width .4s ease; }
 .dq-opts { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 4px; }
-.dq-opt { font-family: "Instrument Serif", Georgia, serif; font-size: 17px; text-transform: lowercase; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 9px 18px; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.dq-opt { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; text-transform: lowercase; color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 9px 18px; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
 .dq-opt:hover { background: rgba(255,255,255,.18); }
 .dq-opt.is-on { background: #fff; color: #5d4f6e; border-color: #fff; }
-.dq-input { font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #fff; background: transparent; border: 1px dashed rgba(255,255,255,.45); border-radius: 999px; padding: 9px 18px; outline: none; max-width: 220px; }
+.dq-input { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; color: #fff; background: transparent; border: 1px dashed rgba(255,255,255,.45); border-radius: 999px; padding: 9px 18px; outline: none; max-width: 220px; }
 .dq-input::placeholder { color: rgba(255,255,255,.65); }
 .dq-go { border: 0; cursor: pointer; margin-top: 20px; }
 .dq-back { margin-top: 18px; background: none; border: 0; padding: 0; cursor: pointer; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.75); }
@@ -12506,7 +12506,7 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 .dq-res { display: grid; gap: 14px; margin: 22px 0 0; width: 100%; max-width: 62ch; }
 .dq-res div { border-top: 1px solid rgba(255,255,255,.25); padding-top: 12px; }
 .dq-res dt { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.7); }
-.dq-res dd { margin: 6px 0 0; font-family: "Instrument Serif", Georgia, serif; font-size: 18px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.dq-res dd { margin: 6px 0 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 18px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .dq-res dd a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.4); }
 .dq-end { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 26px; }
 .dq-end .fd-quiz-b { text-decoration: none; }
@@ -12527,7 +12527,7 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 .mw-ways-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 0 48px; margin-top: 18px; }
 .mw-ways-grid > div { border-top: 1px solid var(--color-sepia); padding-top: 18px; }
 .mw-ways-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-stone); margin: 0; }
-.mw-ways-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; margin: 8px 0 6px; }
+.mw-ways-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(26px, 3vw, 34px); line-height: 1.1; margin: 8px 0 6px; }
 .mw-ways-d { margin: 0 0 18px; line-height: 1.55; max-width: 44ch; }
 .mw-ways-not { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--color-sepia); line-height: 1.55; max-width: 70ch; color: var(--color-stone); }
 .mw-ways-not b { color: var(--color-print); font-weight: 600; }
@@ -12535,10 +12535,10 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 /* Social packs how-to page */
 .sp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 0 40px; margin-top: 22px; }
 .sp-cell { border-top: 1px solid var(--color-sepia); padding: 16px 0 18px; }
-.sp-t { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1.15; margin: 0 0 4px; }
+.sp-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; line-height: 1.15; margin: 0 0 4px; }
 .sp-d { margin: 0; line-height: 1.55; color: var(--color-stone); max-width: 48ch; }
 .sp-k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-stone); margin: 0 0 8px; }
-.sp-big { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.05; margin: 0 0 8px; }
+.sp-big { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(28px, 3.4vw, 40px); line-height: 1.05; margin: 0 0 8px; }
 .sp-sizes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px 48px; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--color-print); }
 .sp-tips { list-style: none; padding: 0; margin: 12px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 10px 40px; }
 .sp-tips li { line-height: 1.55; border-top: 1px solid var(--color-sepia); padding-top: 12px; }
@@ -12572,10 +12572,10 @@ body:not(:has(.fd-page)) .so-bw-intro p, body:not(:has(.fd-page)) .so-lead { fon
 /* Service quizzes */
 .sq .dq-opts { gap: 10px; }
 .sq-opt { text-transform: none !important; font-size: 17px; text-align: left; }
-.sq-price { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(22px, 2.4vw, 28px); margin: 0 0 6px; color: #fff; }
+.sq-price { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(22px, 2.4vw, 28px); margin: 0 0 6px; color: #fff; }
 .sq-dd { font-family: inherit !important; font-size: 15px !important; line-height: 1.6; display: block !important; color: rgba(255,255,255,.92); }
 .sq-dd a { color: #fff; border-bottom: 1px solid rgba(255,255,255,.45); text-decoration: none; }
-.sq-more { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45); font-family: "Instrument Serif", Georgia, serif; font-size: 17px; }
+.sq-more { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45); font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; }
 
 /* Model digitals page */
 .dg-hero { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 12px; margin-top: 40px; }
@@ -12645,7 +12645,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .sp-pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .sp-pic-empty { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 16px; text-align: center;
   border: 1px solid rgba(43,38,34,.14); border-radius: 4px; background: repeating-linear-gradient(135deg, rgba(43,38,34,.025) 0 12px, transparent 12px 24px); }
-.sp-pic-empty span { font-family: "Instrument Serif", Georgia, serif; font-size: 18px; color: #6b6259; }
+.sp-pic-empty span { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 18px; color: #6b6259; }
 .sp-pic-empty code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 10.5px; letter-spacing: .08em; color: #9a8f84; }
 .sp-pic-hero { margin-top: clamp(48px, 6vw, 80px) !important; }
 .sp-pic-wide { margin-top: 28px; }
@@ -12692,7 +12692,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
   .ft2-col:nth-child(2), .ft2-col:nth-child(3) { display: contents; }
   .ft2-top { display: flex !important; flex-direction: column; }
   .ft2-col .foot-link { margin: 0 !important; }
-  .ft2-col:nth-child(2) .foot-link, .ft2-col:nth-child(3) .foot-link { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1.5; }
+  .ft2-col:nth-child(2) .foot-link, .ft2-col:nth-child(3) .foot-link { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; line-height: 1.5; }
   .ft2-col:nth-child(4) { border-top: 1px solid rgba(244,239,247,.32) !important; padding-top: 18px !important; margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px 18px; }
   .ft2-col:nth-child(4) .foot-link { font-size: 15px; }
 }
@@ -12711,7 +12711,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 
 /* Need pages, free guides + help hub */
 .nd-signs { list-style: none; padding: 0; margin: 14px 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 0 40px; }
-.nd-signs li { border-top: 1px solid var(--color-sepia); padding: 16px 0; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1.25; color: #1b1918; }
+.nd-signs li { border-top: 1px solid var(--color-sepia); padding: 16px 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; line-height: 1.25; color: #1b1918; }
 .nd-steps { list-style: none; padding: 0; margin: 18px 0 0; }
 .nd-steps li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; padding: 18px 0; border-top: 1px solid var(--color-sepia); }
 .nd-no { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: .14em; color: #9e2b2e; padding-top: 6px; }
@@ -12720,7 +12720,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .nd-svc { display: flex; flex-direction: column; gap: 4px; padding: 18px 0; border-top: 1px solid #1b1918; text-decoration: none; color: inherit; }
 .nd-svc:hover .sp-t { color: #9e2b2e; }
 .nd-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
-.nd-chip { font-family: "Instrument Serif", Georgia, serif; font-size: 18px; color: #1b1918; text-decoration: none; border: 1px solid var(--color-sepia); border-radius: 999px; padding: 8px 16px; transition: background-color .2s ease, color .2s ease; }
+.nd-chip { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 18px; color: #1b1918; text-decoration: none; border: 1px solid var(--color-sepia); border-radius: 999px; padding: 8px 16px; transition: background-color .2s ease, color .2s ease; }
 .nd-chip:hover { background: #2a2523; color: #f4efe8; }
 .gd2-progress { display: flex; align-items: center; gap: 14px; margin-top: 30px; max-width: 520px; }
 .gd2-bar { flex: 1; height: 3px; background: rgba(43,38,34,.14); border-radius: 3px; overflow: hidden; }
@@ -12736,7 +12736,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .hb-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: baseline; padding: 18px 0; border-top: 1px solid var(--color-sepia); text-decoration: none; color: #1b1918; }
 .hb-row:last-child { border-bottom: 1px solid var(--color-sepia); }
 .hb-i { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #8a7f74; }
-.hb-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.15; }
+.hb-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(22px, 2.6vw, 32px); line-height: 1.15; }
 .hb-a { color: #9e2b2e; transition: transform .25s ease; }
 .hb-row:hover .hb-a { transform: translateX(4px); }
 .hb-row:hover .hb-t { color: #9e2b2e; }
@@ -12827,7 +12827,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 }
 .scr-cover { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; cursor: pointer; display: grid; place-content: center; justify-items: center; gap: 14px; color: #f4efe8; background: radial-gradient(ellipse at 50% 60%, #26302f 0%, #121414 70%); font: inherit; }
 .scr-cover .so-micro { color: rgba(244,239,232,.7); }
-.scr-cover-t { font-family: "Instrument Serif", serif; font-size: clamp(56px, 11vw, 150px); line-height: .9; letter-spacing: .02em; }
+.scr-cover-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(56px, 11vw, 150px); line-height: .9; letter-spacing: .02em; }
 .scr-play { width: 68px; height: 68px; border-radius: 50%; display: grid; place-items: center; background: #f4efe8; color: #141414; font-size: 22px; padding-left: 4px; transition: transform .2s ease; }
 .scr-cover:hover .scr-play { transform: scale(1.06); }
 /* Selected work: keep the grid inside the screen so the filter chips scroll sideways on phones */
@@ -12850,7 +12850,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .ed-grid-land .ed-img { aspect-ratio: 4 / 3; }
 .ed-extra .so-micro { color: #9e2b2e; margin-bottom: 14px; }
 .ed-more { margin: 28px 0 30px; padding-top: 24px; border-top: 1px solid rgba(244,239,232,.16); }
-.ed-more-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(26px, 3vw, 36px); color: #f4efe8; margin: 0 0 10px; }
+.ed-more-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(26px, 3vw, 36px); color: #f4efe8; margin: 0 0 10px; }
 @media (max-width: 620px) { .ed-grid-3 { grid-template-columns: 1fr 1fr; } .ed-grid-3 .ed-img:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 /* Ellis as a comp card */
 .cc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(18px, 3vw, 36px); margin-top: 18px; }
@@ -12860,7 +12860,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .cc-front { aspect-ratio: 5.5 / 8.5; }
 .cc-back { aspect-ratio: 5.5 / 8.5; }
 .cc-name { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-top: 16px; }
-.cc-name h1 { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(48px, 6.5vw, 96px); line-height: .85; letter-spacing: .04em; text-transform: uppercase; margin: 0; color: #2b2622; }
+.cc-name h1 { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-size: clamp(48px, 6.5vw, 96px); line-height: .85; letter-spacing: .04em; text-transform: uppercase; margin: 0; color: #2b2622; }
 .cc-name span, .cc-mark, .cc-sheet-n { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .2em; text-transform: uppercase; color: #9a8f83; }
 .cc-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }
 .cc-grid .ed-img { aspect-ratio: auto; height: 100%; }
@@ -12868,7 +12868,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .cc-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 16px 0 0; border-top: 1px solid rgba(43,38,34,.18); }
 .cc-stats div { padding: 10px 0 0; }
 .cc-stats dt { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .2em; text-transform: uppercase; color: #9a8f83; }
-.cc-stats dd { margin: 4px 0 0; font-family: "Instrument Serif", Georgia, serif; font-size: clamp(15px, 1.4vw, 19px); color: #2b2622; }
+.cc-stats dd { margin: 4px 0 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(15px, 1.4vw, 19px); color: #2b2622; }
 .cc-mark { margin: 12px 0 0; text-align: right; }
 .cc-sheet { background: #fbf9f5; border: 1px solid rgba(43,38,34,.12); border-radius: 4px; padding: clamp(16px, 2.4vw, 32px); box-shadow: 0 18px 40px -28px rgba(43,38,34,.3); }
 .cc-sheet-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
@@ -12889,7 +12889,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .dp-when { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
 .dp-when-col { background: #fbf9f5; border: 1px solid rgba(43,38,34,.12); border-radius: 16px; padding: 22px; }
 .dp-when-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; color: #9e2b2e; margin: 0; }
-.dp-when-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; margin: 8px 0 6px; color: #2b2622; }
+.dp-when-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(24px, 2.2vw, 30px); line-height: 1.1; margin: 8px 0 6px; color: #2b2622; }
 .dp-when-list { list-style: none; padding: 0; margin: 16px 0 0; display: grid; gap: 0; }
 .dp-when-list li { display: grid; gap: 3px; padding: 12px 0; border-top: 1px solid rgba(43,38,34,.12); }
 .dp-when-list b { font-weight: 600; font-size: 15px; }
@@ -12907,7 +12907,7 @@ body:not(:has(.fd-page)) .so-hs-title { color: #1b1918 !important; -webkit-text-
 .dp-checks .is-on span:last-child { opacity: .55; text-decoration: line-through; }
 .dp-mirror { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: clamp(24px, 4vw, 56px); align-items: center; margin-top: 28px; }
 .dp-mirror img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; }
-.dp-mirror-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(28px, 3vw, 40px); margin: 8px 0 10px; }
+.dp-mirror-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(28px, 3vw, 40px); margin: 8px 0 10px; }
 .dp-mirror .so-link-jump { display: inline-block; margin-top: 14px; }
 .dp-avoid { list-style: none; padding: 0; margin: 22px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 28px; }
 .dp-avoid li { padding: 13px 0 13px 28px; border-top: 1px solid rgba(43,38,34,.14); position: relative; font-size: 15px; }
@@ -13055,7 +13055,7 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   .bio-swipe-row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 0; }
   .bio-swipe-row::-webkit-scrollbar { display: none; }
   .bio-swipe-card { flex: 0 0 100%; scroll-snap-align: start; padding-right: 18px; box-sizing: border-box; }
-  .bio-swipe-t { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: 26px; line-height: 1.1; margin: 0 0 10px; }
+  .bio-swipe-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-size: 26px; line-height: 1.1; margin: 0 0 10px; }
   .bio-swipe-card p { font-size: 15px; line-height: 1.6; margin: 0 0 10px; opacity: .85; }
   .bio-swipe-no { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; margin: 8px 0 0; opacity: .7; }
 }
@@ -13102,7 +13102,7 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 @media (max-width: 720px) { .lf-shoot, .lf-pair { grid-template-columns: 1fr; } .lf-room video { aspect-ratio: 4 / 5; } .lf-pair img { height: auto; aspect-ratio: 4 / 5; } }
 /* Start: tabs on every screen; the quiz tab shows the live quiz */
 .fd-page .fd-start .fd-tabs { display: flex; gap: 4px; padding: 4px; margin: 0 0 18px; background: rgba(27,25,24,.06); border-radius: 999px; }
-.fd-page .fd-start .fd-tabs button { all: unset; box-sizing: border-box; flex: 1; text-align: center; cursor: pointer; padding: 11px 10px; border-radius: 999px; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; }
+.fd-page .fd-start .fd-tabs button { all: unset; box-sizing: border-box; flex: 1; text-align: center; cursor: pointer; padding: 11px 10px; border-radius: 999px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; }
 .fd-page .fd-start .fd-tabs button.is-on { background: #8d7d9e; color: #fff; }
 .fd-page .fd-start .fd-tabs button:focus-visible { outline: 2px solid #8d7d9e; outline-offset: 2px; }
 .fd-sheet-quiz.is-live { display: block !important; }
@@ -13156,10 +13156,10 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   .bio-flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 16px; border: 1px solid rgba(43,38,34,.12); background: #fbf9f5; box-sizing: border-box; overflow: hidden; }
   .bio-flip-front { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 28px; gap: 14px; background: #f6f1e8; }
   .bio-flip-n { font-family: var(--font-mono); font-size: 10px; letter-spacing: .24em; opacity: .55; }
-  .bio-flip-t { font-family: "Instrument Serif", Georgia, serif; font-size: 40px; line-height: 1.02; color: #2b2622; max-width: 10ch; }
+  .bio-flip-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 40px; line-height: 1.02; color: #2b2622; max-width: 10ch; }
   .bio-flip-hint { font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; opacity: .45; margin-top: 8px; }
   .bio-flip-back { transform: rotateY(180deg); padding: 20px 18px; display: flex; flex-direction: column; text-align: left; }
-  .bio-flip-back .bio-swipe-t { display: block; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1.1; margin: 0 0 10px; }
+  .bio-flip-back .bio-swipe-t { display: block; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; line-height: 1.1; margin: 0 0 10px; }
   .bio-flip-p { display: block; font-size: 13px; line-height: 1.55; margin: 0 0 8px; opacity: .85; }
 }
 @media (max-width: 720px) {
@@ -13210,7 +13210,7 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
   .bio-cta-card { flex: 0 0 100% !important; scroll-snap-align: start; scroll-snap-stop: always; display: flex; flex-direction: column; box-sizing: border-box; }
   .bio-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; text-align: left; }
   .bio-cta-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .24em; opacity: .6; }
-  .bio-cta-t { font-family: "Instrument Serif", Georgia, serif; font-size: 40px; line-height: 1.02; color: #f6f1e8; }
+  .bio-cta-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 40px; line-height: 1.02; color: #f6f1e8; }
   .bio-cta-t em { font-style: italic; }
   .bio-cta-d { font-size: 14.5px; line-height: 1.55; opacity: .8; max-width: 30ch; }
   .bio-cta-btn { margin-top: 8px; display: inline-block; background: #f6f1e8; color: #2b2622 !important; border-radius: 999px; padding: 13px 22px; font-size: 14px; font-weight: 600; text-decoration: none; }
@@ -13271,11 +13271,11 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 .bio-dflip-back { transform: rotateY(180deg); background: #2b2622; color: #f6f1e8; display: flex; align-items: center; padding: clamp(28px, 4vw, 52px); box-sizing: border-box; }
 .bio-dflip-back .bio-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
 .bio-dflip-back .bio-cta-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .24em; opacity: .6; }
-.bio-dflip-back .bio-cta-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(40px, 4vw, 58px); line-height: 1.02; }
+.bio-dflip-back .bio-cta-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(40px, 4vw, 58px); line-height: 1.02; }
 .bio-dflip-back .bio-cta-d { font-size: 16px; line-height: 1.6; opacity: .8; max-width: 30ch; }
 .bio-dflip-back .bio-cta-btn { margin-top: 8px; background: #f6f1e8; color: #2b2622 !important; border-radius: 999px; padding: 14px 24px; font-size: 15px; font-weight: 600; text-decoration: none; }
 .bio-dflip-back .bio-cta-link { color: #f6f1e8 !important; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(246,241,232,.4); }
-.bio-end { margin-top: 28px; font-family: "Instrument Serif", Georgia, serif; font-size: 24px; color: #4f4944; }
+.bio-end { margin-top: 28px; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 24px; color: #4f4944; }
 .bio-end a { margin-left: 10px; font-family: inherit; font-size: 18px; color: #2b2622; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(43,38,34,.35); white-space: nowrap; }
 @media (max-width: 720px) {
   .bio-end, #about-hana .bio-dflip { display: none !important; }
@@ -13291,8 +13291,8 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 }
 .fd-page #build .fd-mk.fd-mk2 { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; gap: 0 !important; border-top: 1px solid rgba(120,105,85,.22) !important; padding-top: 0 !important; }
 .fd-page #build .fd-mk2 .fd-mk-item { display: flex !important; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: none !important; border: 0 !important; border-bottom: 1px solid rgba(120,105,85,.22) !important; border-radius: 0 !important; padding: 16px 0 !important; margin: 0 !important; text-decoration: none; color: inherit; box-shadow: none !important; }
-.fd-page #build .fd-mk2 .fd-mk-q { font-family: "Instrument Serif", Georgia, serif; font-size: 21px; line-height: 1.2; color: #3f3a35; }
-.fd-page #build .fd-mk2 .fd-mk-go { font-family: "Instrument Serif", Georgia, serif; font-size: 16px; color: #857b70; white-space: nowrap; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(133,123,112,.4); transition: color .2s; }
+.fd-page #build .fd-mk2 .fd-mk-q { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 21px; line-height: 1.2; color: #3f3a35; }
+.fd-page #build .fd-mk2 .fd-mk-go { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 16px; color: #857b70; white-space: nowrap; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(133,123,112,.4); transition: color .2s; }
 .fd-page #build .fd-mk2 .fd-mk-item:hover .fd-mk-go, .fd-page #build .fd-mk2 .fd-mk-item:focus-visible .fd-mk-go { color: #2b2622; text-decoration-color: currentColor; }
 @media (max-width: 899px) {
   .fd-page #build .fd-mk.fd-mk2 { display: grid !important; overflow: visible !important; margin: 28px 0 0 !important; padding: 0 !important; }
@@ -13322,8 +13322,8 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 #work .fd-paper { background: #fbfaf6 url(/assets/texture/paper-cream.jpg) center / 520px; box-shadow: inset 0 0 0 1px rgba(43,38,34,.06), 0 18px 40px -28px rgba(30,20,40,.45); }
 #work .fd-paper::before { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.35); }
 #work .fd-tile2 .fd-wcap2 { display: flex; flex-direction: column; gap: 3px; text-align: left; padding: 0 2px; }
-#work .fd-tile2 .fd-ct { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; line-height: 1.15; color: #fbf8fc; }
-#work .fd-tile2 .fd-cw { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: 16px; color: rgba(251,248,252,.78); }
+#work .fd-tile2 .fd-ct { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 22px; line-height: 1.15; color: #fbf8fc; }
+#work .fd-tile2 .fd-cw { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: 16px; color: rgba(251,248,252,.78); }
 #work .fd-tile2 .fd-cr { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(251,248,252,.7); margin-top: 4px; }
 #work .fd-tile2:hover .fd-wmedia, #work .fd-tile2:focus-visible .fd-wmedia { transform: translateY(-4px); }
 #work .fd-tile2 .fd-wmedia { transition: transform .35s ease; }
@@ -13366,7 +13366,7 @@ body:not(:has(.fd-page)) .so-shell > figure.eq-cover-film { margin-top: clamp(40
 /* Section numbers: a small italic number above the heading, not a giant one behind it */
 html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost {
   display: block !important; position: static !important; transform: none !important; opacity: 1 !important;
-  font-family: "Instrument Serif", Georgia, serif !important; font-style: italic !important; font-weight: 400 !important;
+  font-family: Manrope, "Helvetica Neue", Arial, sans-serif!important; font-style: normal !important; font-weight: 400 !important;
   font-size: clamp(48px, 5vw, 72px) !important; line-height: 1 !important; letter-spacing: 0 !important;
   margin: 0 0 6px !important; padding: 0 !important; background: none !important;
   color: #b07a82 !important; -webkit-text-fill-color: #b07a82 !important; -webkit-text-stroke: 0 !important;
@@ -13393,10 +13393,10 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
 .svs-bars button:focus-visible .svs-bn { outline: 1px solid #efe8dd; outline-offset: 3px; }
 .svs-page { animation: svsIn .6s cubic-bezier(.2,.7,.2,1) both; }
 @keyframes svsIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-.svs-n { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-size: clamp(48px, 5vw, 72px); line-height: 1; color: #e7c3cc; margin: 0 0 8px; }
-.svs-t { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; font-size: clamp(40px, 4.4vw, 64px); line-height: 1.05; margin: 0 0 22px; color: #f6f1e8; }
-.svs-d { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.6; color: rgba(239,232,221,.8); max-width: 34ch; margin: 0 0 26px; }
-.svs-go { font-family: "Instrument Serif", Georgia, serif; font-size: 18px; color: #f6f1e8; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(246,241,232,.4); }
+.svs-n { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-style: normal; font-size: clamp(48px, 5vw, 72px); line-height: 1; color: #e7c3cc; margin: 0 0 8px; }
+.svs-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-size: clamp(40px, 4.4vw, 64px); line-height: 1.05; margin: 0 0 22px; color: #f6f1e8; }
+.svs-d { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.6; color: rgba(239,232,221,.8); max-width: 34ch; margin: 0 0 26px; }
+.svs-go { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 18px; color: #f6f1e8; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: rgba(246,241,232,.4); }
 .svs-go:hover { text-decoration-color: currentColor; }
 @media (max-width: 720px) {
   .svs-pin { grid-template-columns: 1fr; grid-template-rows: 38% 1fr; }
@@ -13417,7 +13417,7 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
 .svs-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(42,37,35,0) 70%, rgba(42,37,35,.55)); }
 @media (max-width: 720px) { .svs-media::after { background: linear-gradient(180deg, rgba(42,37,35,0) 70%, rgba(42,37,35,.6)); } .svs-pin { padding-top: 72px; box-sizing: border-box; } }
 .svs-list { list-style: none; margin: 0 0 28px; padding: 0; border-top: 1px solid rgba(239,232,221,.18); max-width: 440px; }
-.svs-list li { display: flex; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid rgba(239,232,221,.18); font-family: "Instrument Serif", Georgia, serif; font-size: clamp(20px, 1.7vw, 24px); line-height: 1.2; color: #f6f1e8; }
+.svs-list li { display: flex; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid rgba(239,232,221,.18); font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(20px, 1.7vw, 24px); line-height: 1.2; color: #f6f1e8; }
 .svs-list li span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; color: #e7c3cc; }
 .svs-d { margin-bottom: 22px !important; }
 @media (max-width: 720px) { .svs-list { margin-bottom: 16px; } .svs-list li { padding: 10px 0; font-size: 18px; } .svs-d { margin-bottom: 14px !important; } .svs-t { font-size: 32px; } }
@@ -13448,10 +13448,10 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
   .bio-flip-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 16px; border: 1px solid rgba(43,38,34,.12); background: #fbf9f5; box-sizing: border-box; overflow: hidden; }
   .bio-flip-front { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 14px; padding: 32px; background: #f6f1e8; box-shadow: 0 24px 50px -36px rgba(43,38,34,.4); }
   .bio-flip-n { font-family: var(--font-mono); font-size: 11px; letter-spacing: .24em; opacity: .55; }
-  .bio-flip-t { font-family: "Instrument Serif", Georgia, serif; font-size: 42px; line-height: 1.02; color: #2a2523; max-width: 10ch; }
+  .bio-flip-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 42px; line-height: 1.02; color: #2a2523; max-width: 10ch; }
   .bio-flip-hint { font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; opacity: .45; margin-top: 8px; }
   .bio-flip-back { transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: flex-start; overflow-y: auto; padding: 28px 26px; text-align: left; }
-  .bio-flip-back .bio-swipe-t { display: block; font-family: "Instrument Serif", Georgia, serif; font-size: 26px; line-height: 1.1; margin: 0 0 12px; color: #2a2523; }
+  .bio-flip-back .bio-swipe-t { display: block; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 26px; line-height: 1.1; margin: 0 0 12px; color: #2a2523; }
   .bio-flip-p { display: block; font-size: 14.5px; line-height: 1.6; margin: 0 0 10px; color: #4a443e; }
   .bio-flip-cover .bio-cover-face { background: #bb9a6f !important; border: 0 !important; padding: 0 !important; border-radius: 0 !important; }
   .bio-flip-cover .bio-cover-face img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -13460,7 +13460,7 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
   .bio-cta-card { display: flex !important; }
   .bio-swipe .bio-cta { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
   .bio-swipe .bio-cta-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .24em; opacity: .6; }
-  .bio-swipe .bio-cta-t { font-family: "Instrument Serif", Georgia, serif; font-size: 40px; line-height: 1.02; color: #f6f1e8; }
+  .bio-swipe .bio-cta-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 40px; line-height: 1.02; color: #f6f1e8; }
   .bio-swipe .bio-cta-d { font-size: 15px; line-height: 1.55; opacity: .8; max-width: 28ch; }
   .bio-swipe .bio-cta-btn { margin-top: 6px; background: #f6f1e8; color: #2a2523 !important; border-radius: 999px; padding: 13px 22px; font-size: 14px; font-weight: 600; text-decoration: none; }
   .bio-swipe .bio-cta-link { color: #f6f1e8 !important; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(246,241,232,.4); }
@@ -13497,9 +13497,9 @@ html.on-hero .so-nav .so-nav-link.cta { opacity: 0 !important; visibility: hidde
 .bf-label { position: absolute; left: 12px; bottom: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; background: rgba(251,249,245,.92); color: #2a2523; border-radius: 999px; padding: 6px 11px; }
 .bf-back { transform: rotateY(180deg); background: #2a2523 url(/assets/texture/paper-brown.jpg); background-size: 768px; color: #f6f1e8; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: clamp(22px, 2.6vw, 34px); box-sizing: border-box; }
 .bf-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #e7c3cc; }
-.bf-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(32px, 3vw, 44px); line-height: 1.02; }
-.bf-d { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(17px, 1.35vw, 19px); line-height: 1.5; color: rgba(246,241,232,.82); }
-.bf-go { margin-top: 6px; align-self: flex-start; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #f6f1e8 !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(246,241,232,.4); }
+.bf-t { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(32px, 3vw, 44px); line-height: 1.02; }
+.bf-d { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: clamp(17px, 1.35vw, 19px); line-height: 1.5; color: rgba(246,241,232,.82); }
+.bf-go { margin-top: 6px; align-self: flex-start; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-size: 17px; color: #f6f1e8 !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(246,241,232,.4); }
 @media (max-width: 720px) { .bf-row .bf { flex: 0 0 76%; scroll-snap-align: start; } }
 @media (prefers-reduced-motion: reduce) { .bf-in { transition: none; } }
 /* Two cards in view at a time, slide for the rest, tap to flip (01 brand cards + the bio book on desktop) */
@@ -13616,3 +13616,16 @@ html body .fd-page #build > .fd-script { font-size: clamp(44px, 5.2vw, 76px) !im
 html body .fd-page #work h2 { font-size: clamp(48px, 6vw, 88px) !important; }
 html body .svs-t { font-size: clamp(32px, 6vh, 56px) !important; }
 html body .bio-flip-t { font-size: 34px !important; }
+
+/* One type system: Manrope for everything, mono only for tiny labels, script only for lettering art */
+html { font-synthesis: none; }
+html body { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
+html body .so-serif, html body .so-script:not(img) { font-family: Manrope, "Helvetica Neue", Arial, sans-serif !important; font-style: normal !important; }
+html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, html body .svs-n { font-family: Manrope, "Helvetica Neue", Arial, sans-serif !important; font-style: normal !important; font-weight: 300 !important; letter-spacing: -.04em !important; }
+html body .svs-list li, html body .fd-wf, html body .svs-go, html body .bf-go, html body .fd-mk-go, html body .fd-more-hint, html body .fd-tile2 .fd-ct, html body .fd-tile2 .fd-cw { font-family: Manrope, "Helvetica Neue", Arial, sans-serif !important; font-style: normal !important; letter-spacing: -.01em; }
+html body .svs-list li { font-size: clamp(16px, 2.2vh, 20px) !important; font-weight: 500; }
+html body .svs-d, html body .bf-d, html body .fd-small, html body .sp-d, html body p { letter-spacing: -.005em; }
+html body .fd-wf { font-size: 14px !important; }
+html body .svs-go, html body .bf-go { font-size: 15px !important; font-weight: 600; }
+html body .fd-tile2 .fd-ct { font-size: 17px !important; font-weight: 600; }
+html body .fd-tile2 .fd-cw { font-size: 14px !important; }
