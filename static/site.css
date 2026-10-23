@@ -13752,6 +13752,7 @@ html body .hx-t em { font-family: "Actalle", "Pinyon Script", cursive !important
 html body .hx-c { font-weight: 300 !important; letter-spacing: .06em !important; font-size: clamp(26px, 3.6vw, 54px) !important; }
 @media (max-width: 720px) { html body .hx-t em { font-size: 96px !important; } html body .hx-c { font-size: 22px !important; } }
 html body .hx-t em { margin: 0 .04em 0 -.02em !important; }
+html body .hx-v { white-space: nowrap !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
