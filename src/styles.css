@@ -13588,7 +13588,7 @@ header.so-nav { transition: opacity .35s ease, visibility .35s; }
 
 /* ===== Titles in the Sunday Office logo face (soft, high-contrast serif), logo brown on light grounds ===== */
 @font-face { font-family: "Sunday Display"; src: url(/assets/fonts/SundayDisplay.woff) format("woff"); font-display: swap; }
-:root { --so-title: "Sunday Display", "Instrument Serif", Georgia, serif; --so-brown: #3f2416; }
+:root { --so-title: Manrope, "Helvetica Neue", Arial, sans-serif; --so-brown: #3f2416; }
 /* on light backgrounds: logo face + logo brown */
 html body .fd-page #build > .fd-script,
 html body #about-hana .fd-script,
@@ -13604,3 +13604,15 @@ html body .fd-page #work h2, html body .svs-t, html body .bf-t, html body .bio-c
   font-family: var(--so-title) !important; font-style: normal !important; font-weight: 400 !important; letter-spacing: -.025em !important;
 }
 html body .bio-cta-t em { font-style: normal !important; }
+/* Titles: same face as the Menu button (Manrope), semibold, in the logo brown */
+html body .fd-page #build > .fd-script, html body #about-hana .fd-script, html body .bio-flip-t, html body .bio-flip-back .bio-swipe-t,
+html body .fd-page #build .fd-mk2 .fd-mk-q, html body:not(:has(.fd-page)) h1.so-serif, html body:not(:has(.fd-page)) h2.so-serif, html body:not(:has(.fd-page)) .so-bw-h,
+html body .ed-h2, html body .cc-name h1, html body .eq-cover2 h1,
+html body .fd-page #work h2, html body .svs-t, html body .bf-t, html body .bio-cta-t, html body .bio-dflip-back .bio-cta-t, html body .fd-quiz-t {
+  font-weight: 600 !important; letter-spacing: -.035em !important; line-height: 1.02 !important;
+}
+html body .fd-page #build .fd-mk2 .fd-mk-q { letter-spacing: -.015em !important; font-size: 19px !important; }
+html body .fd-page #build > .fd-script { font-size: clamp(44px, 5.2vw, 76px) !important; }
+html body .fd-page #work h2 { font-size: clamp(48px, 6vw, 88px) !important; }
+html body .svs-t { font-size: clamp(32px, 6vh, 56px) !important; }
+html body .bio-flip-t { font-size: 34px !important; }
