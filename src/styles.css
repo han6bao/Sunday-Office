@@ -13585,3 +13585,22 @@ header.so-nav { transition: opacity .35s ease, visibility .35s; }
 .so-logo { display: block; height: 40px; width: auto; }
 @media (max-width: 720px) { .so-logo { height: 34px; } }
 .so-brandlock, .so-sitebar-brand { display: inline-flex !important; align-items: center; }
+
+/* ===== Titles in the Sunday Office logo face (soft, high-contrast serif), logo brown on light grounds ===== */
+@font-face { font-family: "Sunday Display"; src: url(/assets/fonts/SundayDisplay.woff) format("woff"); font-display: swap; }
+:root { --so-title: "Sunday Display", "Instrument Serif", Georgia, serif; --so-brown: #3f2416; }
+/* on light backgrounds: logo face + logo brown */
+html body .fd-page #build > .fd-script,
+html body #about-hana .fd-script,
+html body .bio-flip-t, html body .bio-flip-back .bio-swipe-t,
+html body .fd-page #build .fd-mk2 .fd-mk-q,
+html body:not(:has(.fd-page)) h1.so-serif, html body:not(:has(.fd-page)) h2.so-serif, html body:not(:has(.fd-page)) .so-bw-h,
+html body .ed-h2, html body .cc-name h1, html body .eq-cover2 h1 {
+  font-family: var(--so-title) !important; font-style: normal !important; font-weight: 400 !important; letter-spacing: -.025em !important;
+  color: var(--so-brown) !important; -webkit-text-fill-color: var(--so-brown) !important; background-image: none !important; -webkit-text-stroke: 0 !important;
+}
+/* on dark or lavender backgrounds: logo face, light color stays */
+html body .fd-page #work h2, html body .svs-t, html body .bf-t, html body .bio-cta-t, html body .bio-dflip-back .bio-cta-t, html body .fd-quiz-t {
+  font-family: var(--so-title) !important; font-style: normal !important; font-weight: 400 !important; letter-spacing: -.025em !important;
+}
+html body .bio-cta-t em { font-style: normal !important; }

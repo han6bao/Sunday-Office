@@ -1220,7 +1220,7 @@ function FeedQuote() {
     <section className={"fd-frame fd-quote" + (open ? " is-open" : "")} aria-label="Serve first. Sell later.">
       <div className="fd-quote-file"><FeedFile>FILE NO. 003 · MY PHILOSOPHY</FeedFile></div>
       <button type="button" className="fd-quote-btn" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="fd-why">
-        <img className="fd-quote-img" src="/assets/lettering/serve-first.png" alt="Serve first. Sell later." />
+        <img className="fd-quote-img" src="/assets/lettering/serve-first-brown.png" alt="Serve first. Sell later." />
         <span className="fd-quote-hint">{open ? "Close" : "Tap to read my philosophy"}</span>
       </button>
       <div className="fd-why" id="fd-why" hidden={!open}>
