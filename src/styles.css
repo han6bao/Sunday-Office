@@ -13770,3 +13770,9 @@ html body .fd-page #build > .fd-small { color: rgba(242,237,228,.75) !important;
 html body .fd-page #build .fd-mk.fd-mk2, html body .fd-page #build .fd-mk2 .fd-mk-item { border-color: rgba(242,237,228,.2) !important; }
 html body .fd-page #build .fd-mk2 .fd-mk-go { color: rgba(242,237,228,.7) !important; text-decoration-color: rgba(242,237,228,.35) !important; }
 html body .fd-page #build .fd-mk2 .fd-mk-item:hover .fd-mk-go, html body .fd-page #build .fd-mk2 .fd-mk-item:focus-visible .fd-mk-go { color: #f6f1e8 !important; }
+/* Hero pillars always fit the screen: size by height, no letter-spacing growth on hover */
+html body .hx-v { font-size: clamp(11px, 1.75vh, 15px) !important; letter-spacing: .06em !important; padding: 6px 4px !important; }
+html body .hx-v:hover, html body .hx-v:focus-visible { letter-spacing: .06em !important; }
+html body .fd-media:not(.fd-media-empty) .fd-media-over.hx { padding-top: clamp(64px, 9vh, 96px) !important; padding-bottom: clamp(20px, 4vh, 48px) !important; }
+html body .hx-t em { font-size: clamp(90px, min(15vw, 22vh), 230px) !important; }
+html body .hx-c { font-size: clamp(22px, min(3.6vw, 5.5vh), 54px) !important; }
