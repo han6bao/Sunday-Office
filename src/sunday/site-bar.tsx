@@ -1,4 +1,3 @@
-import { SunMark } from "./brand";
 
 /* The same top bar on every inner page, so the site feels like one place. */
 export function SiteBar() {
@@ -6,13 +5,12 @@ export function SiteBar() {
     <header className="so-sitebar">
       <div className="so-shell so-sitebar-in">
         <a href="/" className="so-sitebar-brand" aria-label="Sunday Office, home">
-          <SunMark size={26} color="currentColor" />
-          <span>Sunday Office</span>
+          <img className="so-logo" src="/assets/brand/logo-brown-sm.png" alt="Sunday Office" width="75" height="40" />
         </a>
         <nav className="so-sitebar-links" aria-label="Site">
           <a href="/#build">Services</a>
           <a href="/#work">Work</a>
-          <a href="/about">About</a>
+          <a href="/#about-hana">About</a>
           <a href="/#office-hours" className="so-sitebar-cta">
             Start a project
           </a>

@@ -185,7 +185,7 @@ function PrivateRoom() {
         )}
 
         <div style={{ marginTop: 56 }}>
-          <a href="/about" className="so-arrow">
+          <a href="/#about-hana" className="so-arrow">
             <span className="arr">←</span> Back
           </a>
         </div>

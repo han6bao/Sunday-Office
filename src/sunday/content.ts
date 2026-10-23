@@ -877,5 +877,5 @@ export const needOptions = [
 export const navLinks = [
   { label: "Services", href: "#build" },
   { label: "Work", href: "#work" },
-  { label: "About", href: "/about" },
+  { label: "About", href: "/#about-hana" },
 ];

@@ -13574,6 +13574,10 @@ header.so-nav { transition: opacity .35s ease, visibility .35s; }
   .svs-list li { padding: 8px 0 !important; font-size: 16.5px !important; }
 }
 @media (max-width: 720px) { html body .svs-pin { grid-template-rows: minmax(90px, 1fr) auto !important; } }
+/* New logo in the header */
+.so-logo { display: block; height: 40px; width: auto; }
+@media (max-width: 720px) { .so-logo { height: 34px; } }
+.so-brandlock, .so-sitebar-brand { display: inline-flex !important; align-items: center; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

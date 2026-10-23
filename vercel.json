@@ -61,6 +61,11 @@
       "source": "/campaigns/jazmins-events",
       "destination": "/websites/jazmins-events",
       "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/#about-hana",
+      "permanent": true
     }
   ]
 }

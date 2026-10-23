@@ -142,8 +142,7 @@ function Header() {
       <NavState />
       <div className="so-shell so-nav-inner">
         <a href="#top" className="so-brandlock" aria-label="Sunday Office, back to top">
-          <SunMark size={28} color="var(--so-nav-ink, var(--color-ink))" />
-          <span>Sunday Office</span>
+          <img className="so-logo" src="/assets/brand/logo-brown-sm.png" alt="Sunday Office" width="75" height="40" />
         </a>
         <nav className="so-nav-links" aria-label="Primary">
           {navLinks.map((l) => (
@@ -544,7 +543,7 @@ function MeetHana() {
               </div>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 24, flexWrap: "wrap" }}>
-              <a href="/about" className="so-about-plus" aria-label="More about Hana" title="More about Hana">
+              <a href="/#about-hana" className="so-about-plus" aria-label="More about Hana" title="More about Hana">
                 +
               </a>
               <span className="so-micro" style={{ color: "var(--color-stone)", letterSpacing: "0.14em" }}>
@@ -1296,7 +1295,7 @@ function FeedHana() {
             Sunday Office grew from that. Today I lead it as an independent creative agency rooted in photography, creative direction,
             culture and story.
           </p>
-          <a className="fd-link" href="/about">More about me</a>
+          
         </div>
       </div>
     </section>

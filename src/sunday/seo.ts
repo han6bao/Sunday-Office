@@ -11,11 +11,6 @@ export const SEO: Record<string, Seo> = {
     description:
       "Sunday Office is a Seattle creative agency for local businesses and artists: branding, brand makeovers, website design, photography, video, creative direction and social content. Founded by Seattle photographer Hana.",
   },
-  "/about": {
-    title: "About Hana | Seattle Photographer + Founder of Sunday Office",
-    description:
-      "Meet Hana, Seattle photographer and founder of Sunday Office, a Seattle creative agency for branding, websites, photography and creative direction.",
-  },
 
   /* Services */
   "/branding": {
