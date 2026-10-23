@@ -13655,7 +13655,7 @@ html body .fd-script em, html body .bio-cta-t em, html body h1.so-serif em, html
   font-family: "Swarsh Daisy", Georgia, serif !important; font-style: italic !important;
 }
 html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, html body .svs-n {
-  font-family: "Actalle", "Cormorant Garamond", Georgia, serif !important; font-style: normal !important; font-weight: 400 !important;
+  font-family: "Avarice Delicate", "Cormorant Garamond", Georgia, serif !important; font-style: normal !important; font-weight: 400 !important;
 }
 html body .fd-page .fd-hero-h, html body .fd-hero-h { font-family: var(--so-title) !important; font-weight: 400 !important; font-style: normal !important; letter-spacing: -.015em !important; }
 html body .fd-page .fd-hero-h em, html body .fd-hero-h em { font-family: "Swarsh Daisy", Georgia, serif !important; font-style: italic !important; }
@@ -13664,7 +13664,7 @@ html body .fd-media .fd-hero-sub a.fd-hero-btn, html body .fd-page .fd-hero-btn 
 @media (max-width: 720px) { html body .fd-media .fd-hero-sub a.fd-hero-btn, html body .fd-page .fd-hero-btn { font-size: 13.5px !important; padding: 9px 18px !important; } }
 /* Every small number in the Actalle script, soft rose */
 html body .svs-bn, html body .svs-list li span, html body .bio-flip-n, html body .fd-mk-n, html body .bf-k + .bf-n {
-  font-family: "Actalle", "Cormorant Garamond", Georgia, serif !important; font-style: normal !important; letter-spacing: 0 !important; text-transform: none !important;
+  font-family: "Avarice Delicate", "Cormorant Garamond", Georgia, serif !important; font-style: normal !important; letter-spacing: 0 !important; text-transform: none !important;
 }
 html body .svs-bn { font-size: 22px !important; }
 html body .svs-list li span { font-size: 22px !important; color: #e7c3cc; min-width: 30px; }
@@ -13709,6 +13709,11 @@ html body .svs-bars button.is-on .svs-bn { color: #f6f1e8; }
   html body .fd-page p.fd-quiz-t, html body .fd-page .fd-quiz-t { font-size: 30px !important; line-height: 1.1 !important; }
   html body .fd-page p.ft2-line { font-size: 24px !important; line-height: 1.2 !important; }
 }
+/* Numbers in Avarice Delicate */
+@font-face { font-family: "Avarice Delicate"; src: url(/assets/fonts/AvariceDelicate.woff) format("woff"); font-display: swap; }
+html body .svs-bn { font-size: 15px !important; letter-spacing: .04em !important; }
+html body .svs-list li span { font-size: 18px !important; }
+@media (max-width: 720px) { html body .svs-bn { font-size: 14px !important; } html body .svs-list li span { font-size: 16px !important; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
