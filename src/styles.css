@@ -13383,7 +13383,7 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
 .svs-media.fd-paper { box-shadow: none; }
 .svs-text { display: flex; flex-direction: column; justify-content: center; padding: 96px clamp(28px, 6vw, 110px) 48px; }
 .svs-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(239,232,221,.6); margin: 0 0 28px; }
-.svs-bars { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; margin-bottom: clamp(36px, 6vh, 64px); }
+.svs-bars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: clamp(36px, 6vh, 64px); }
 .svs-bars button { all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 12px; }
 .svs-bar { display: block; height: 1px; background: rgba(239,232,221,.25); transition: background .4s; }
 .svs-bars button.is-done .svs-bar { background: rgba(239,232,221,.5); }

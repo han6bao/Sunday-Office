@@ -816,11 +816,8 @@ function FeedServices() {
 /* Services, one page at a time: the section pins in place and each scroll turns to the next service. */
 const SERVICE_PAGES = [
   { t: "World Building", d: "Your brand, and the whole world around it. Where every project starts.", b: ["Name, logo + identity", "Colors, type + voice", "A brand guide for everything after"], h: "/branding", go: "See world building" },
-  { t: "Websites", d: "A home for the brand that books clients while you sleep.", b: ["Design + the words on every page", "Built to book clients", "Set up to be found on Google"], h: "/websites", go: "See websites" },
-  { t: "Photography", d: "Shot to feel like you, and edited to match your brand.", b: ["Portraits + brand photos", "Products + food", "Spaces + events"], h: "/photography", go: "See photography" },
-  { t: "Headshots", d: "Clean, natural headshots, booked in one short session.", b: ["Studio or on location", "Model digitals for agencies", "Picked + edited with you"], h: "/headshots", go: "See headshots" },
-  { t: "Film + Commercials", d: "Video from the first idea to the final cut.", b: ["Brand films", "Commercials", "Campaign + event video"], h: "/moving-image", go: "See film" },
-  { t: "Social + Content", d: "So your page keeps looking like your brand.", b: ["Content days", "Social packs", "Monthly content"], h: "/creative-direction-content", go: "See social + content" },
+  { t: "Websites + Digital", d: "A home for the brand that books clients while you sleep.", b: ["Design + the words on every page", "Built to book clients", "Set up to be found on Google"], h: "/websites", go: "See websites" },
+  { t: "Photo + Film", d: "Shot to feel like you, and made to match your brand.", b: ["Photography + headshots", "Brand films + commercials", "Social content, by the day or monthly"], h: "/photography", go: "See photo + film" },
 ];
 
 function ServiceScroll() {
