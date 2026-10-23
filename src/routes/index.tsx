@@ -779,7 +779,7 @@ function FeedPhoto() {
         <h1 className="fd-hero-h">Build <em>Your World.</em></h1>
         <span className="fd-hero-line" aria-hidden="true" />
         <div className="fd-hero-sub">
-          <p><b>Sunday Office</b> is an independent creative agency in Seattle. Whether you're starting fresh or ready for a makeover, I start with the brand, then bring it to life through websites, photography and creative direction.</p>
+          <p>Brand, web and content for Seattle businesses and creators.<br />Built to be seen, made to be remembered.<br />From first launch to full makeover.</p>
           <a className="fd-hero-btn" href="#office-hours">Start a project <span aria-hidden="true">→</span></a>
         </div>
       </div>
