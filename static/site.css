@@ -13409,6 +13409,11 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
 .svs-media::before { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.3); }
 .svs-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(42,37,35,0) 70%, rgba(42,37,35,.55)); }
 @media (max-width: 720px) { .svs-media::after { background: linear-gradient(180deg, rgba(42,37,35,0) 70%, rgba(42,37,35,.6)); } .svs-pin { padding-top: 72px; box-sizing: border-box; } }
+.svs-list { list-style: none; margin: 0 0 28px; padding: 0; border-top: 1px solid rgba(239,232,221,.18); max-width: 440px; }
+.svs-list li { display: flex; gap: 18px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid rgba(239,232,221,.18); font-family: "Instrument Serif", Georgia, serif; font-size: clamp(20px, 1.7vw, 24px); line-height: 1.2; color: #f6f1e8; }
+.svs-list li span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; color: #e7c3cc; }
+.svs-d { margin-bottom: 22px !important; }
+@media (max-width: 720px) { .svs-list { margin-bottom: 16px; } .svs-list li { padding: 10px 0; font-size: 18px; } .svs-d { margin-bottom: 14px !important; } .svs-t { font-size: 32px; } }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

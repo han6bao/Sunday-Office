@@ -815,12 +815,12 @@ function FeedServices() {
 
 /* Services, one page at a time: the section pins in place and each scroll turns to the next service. */
 const SERVICE_PAGES = [
-  { t: "World Building", d: "Your brand, and the whole world around it: the name, the logo, the colors, the voice and how it all shows up. Where every project starts.", h: "/branding", go: "See world building" },
-  { t: "Websites", d: "A home for the brand that books clients while you sleep. Designed, written and built to be found on Google.", h: "/websites", go: "See websites" },
-  { t: "Photography", d: "Portraits, products, spaces and events. Shot to feel like you, and edited to match your brand.", h: "/photography", go: "See photography" },
-  { t: "Headshots", d: "Clean, natural headshots and model digitals for your website, LinkedIn, press and agencies, booked in one short session.", h: "/headshots", go: "See headshots" },
-  { t: "Film + Commercials", d: "Brand films, commercials and campaign video, from the first idea to the final cut.", h: "/moving-image", go: "See film" },
-  { t: "Social + Content", d: "Content days, social packs and monthly content, so your page keeps looking like your brand.", h: "/creative-direction-content", go: "See social + content" },
+  { t: "World Building", d: "Your brand, and the whole world around it. Where every project starts.", b: ["Name, logo + identity", "Colors, type + voice", "A brand guide for everything after"], h: "/branding", go: "See world building" },
+  { t: "Websites", d: "A home for the brand that books clients while you sleep.", b: ["Design + the words on every page", "Built to book clients", "Set up to be found on Google"], h: "/websites", go: "See websites" },
+  { t: "Photography", d: "Shot to feel like you, and edited to match your brand.", b: ["Portraits + brand photos", "Products + food", "Spaces + events"], h: "/photography", go: "See photography" },
+  { t: "Headshots", d: "Clean, natural headshots, booked in one short session.", b: ["Studio or on location", "Model digitals for agencies", "Picked + edited with you"], h: "/headshots", go: "See headshots" },
+  { t: "Film + Commercials", d: "Video from the first idea to the final cut.", b: ["Brand films", "Commercials", "Campaign + event video"], h: "/moving-image", go: "See film" },
+  { t: "Social + Content", d: "So your page keeps looking like your brand.", b: ["Content days", "Social packs", "Monthly content"], h: "/creative-direction-content", go: "See social + content" },
 ];
 
 function ServiceScroll() {
@@ -866,6 +866,11 @@ function ServiceScroll() {
             <p className="svs-n">{String(i + 1).padStart(2, "0")}</p>
             <h3 className="svs-t">{s.t}</h3>
             <p className="svs-d">{s.d}</p>
+            <ol className="svs-list">
+              {s.b.map((x, k) => (
+                <li key={x}><span>{String(k + 1).padStart(2, "0")}</span>{x}</li>
+              ))}
+            </ol>
             <a className="svs-go" href={ph(s.h)}>{s.go} →</a>
           </div>
         </div>
