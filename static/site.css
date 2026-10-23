@@ -13468,6 +13468,73 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
 /* Header "Start a project" stays hidden while the hero video is on screen */
 html.on-hero .so-nav .so-nav-link.cta { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
 .so-nav .so-nav-link.cta { transition: opacity .3s ease, visibility .3s; }
+/* 01: three pictures of brand work */
+.fd-page #build > .fd-brandpics { grid-column: 1 / -1 !important; grid-row: 6 !important; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 22px); margin-top: clamp(36px, 5vw, 64px); }
+.fd-brandpics figure { margin: 0; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.fd-brandpics img { display: block; width: 100%; max-width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: 14px; box-shadow: 0 20px 44px -34px rgba(43,38,34,.45); }
+.fd-brandpics figcaption { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #8a8076; }
+@media (max-width: 720px) {
+  .fd-page #build > .fd-brandpics { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 12px; margin: 28px -20px 0; padding: 0 20px; }
+  .fd-brandpics::-webkit-scrollbar { display: none; }
+  .fd-brandpics figure { flex: 0 0 72%; scroll-snap-align: start; }
+}
+/* 01 brand flip cards */
+.bf-row figure { display: none; }
+.bf { all: unset; box-sizing: border-box; display: block; cursor: pointer; perspective: 1600px; aspect-ratio: 4 / 5; min-width: 0; max-width: 100%; }
+.bf:focus-visible { outline: 2px solid #2a2523; outline-offset: 3px; border-radius: 16px; }
+.bf-in { position: relative; display: block; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.bf.is-flipped .bf-in { transform: rotateY(180deg); }
+.bf:not(.is-flipped):hover .bf-in { transform: rotateY(-5deg); }
+.bf-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 16px; overflow: hidden; box-shadow: 0 22px 46px -34px rgba(43,38,34,.45); }
+.bf-front img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.bf-label { position: absolute; left: 12px; bottom: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; background: rgba(251,249,245,.92); color: #2a2523; border-radius: 999px; padding: 6px 11px; }
+.bf-back { transform: rotateY(180deg); background: #2a2523 url(/assets/texture/paper-brown.jpg); background-size: 768px; color: #f6f1e8; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: clamp(22px, 2.6vw, 34px); box-sizing: border-box; }
+.bf-k { font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #e7c3cc; }
+.bf-t { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(32px, 3vw, 44px); line-height: 1.02; }
+.bf-d { font-family: "Instrument Serif", Georgia, serif; font-size: clamp(17px, 1.35vw, 19px); line-height: 1.5; color: rgba(246,241,232,.82); }
+.bf-go { margin-top: 6px; align-self: flex-start; font-family: "Instrument Serif", Georgia, serif; font-size: 17px; color: #f6f1e8 !important; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(246,241,232,.4); }
+@media (max-width: 720px) { .bf-row .bf { flex: 0 0 76%; scroll-snap-align: start; } }
+@media (prefers-reduced-motion: reduce) { .bf-in { transition: none; } }
+/* Two cards in view at a time, slide for the rest, tap to flip (01 brand cards + the bio book on desktop) */
+.fd-page #build > .bf-wrap { display: block !important; }
+.bf-row { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 2px 14px; }
+.bf-row::-webkit-scrollbar { display: none; }
+.bf-row .bf { flex: 0 0 calc(50% - 10px); aspect-ratio: auto; height: min(600px, 72vh); scroll-snap-align: start; }
+.bf-nav { display: flex; gap: 12px; margin-top: 8px; }
+.bf-nav button { all: unset; cursor: pointer; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(43,38,34,.22); font-size: 14px; color: #2a2523; }
+.bf-nav button:focus-visible { outline: 2px solid #2a2523; outline-offset: 2px; }
+@media (max-width: 720px) {
+  .fd-page #build > .bf-wrap { margin: 28px 0 0 !important; padding: 0 !important; overflow: visible !important; }
+  .bf-row .bf { flex: 0 0 calc(50% - 6px); height: auto; aspect-ratio: 3 / 4; }
+  .bf-row { gap: 12px; }
+  .bf-back { padding: 14px !important; gap: 6px; }
+  .bf-t { font-size: 22px !important; }
+  .bf-d { font-size: 13px !important; line-height: 1.4 !important; }
+  .bf-go { font-size: 13px; }
+  .bf-k { font-size: 8.5px; }
+  .bf-label { font-size: 8px; left: 8px; bottom: 8px; padding: 4px 8px; }
+}
+@media (min-width: 721px) {
+  .bio-swipe-row { padding-inline-end: 4px !important; }
+  .bio-swipe-card, .bio-flip { flex: 0 0 calc(50% - 10px) !important; width: auto !important; height: min(600px, 72vh) !important; }
+  .bio-flip-t { font-size: 52px !important; }
+  .bio-flip-back { padding: 40px 44px !important; }
+  .bio-flip-back .bio-swipe-t { font-size: 32px !important; }
+  .bio-flip-p { font-size: 16px !important; line-height: 1.65 !important; max-width: 52ch; }
+}
+@media (min-width: 721px) { #about-hana .bio-swipe { width: 100% !important; max-width: none !important; } #about-hana .bio-swipe-row { width: 100% !important; } }
+/* service pages: the link becomes a real button */
+.svs-go { display: inline-flex; align-items: center; gap: 10px; background: #f6f1e8; color: #2a2523 !important; text-decoration: none !important; border-radius: 999px; padding: 13px 24px; font-size: 17px; transition: background .2s, transform .2s; }
+.svs-go:hover, .svs-go:focus-visible { background: #fff; transform: translateY(-1px); outline: none; }
+@media (max-width: 720px) { .svs-go { padding: 11px 20px; font-size: 15px; } }
+@media (min-width: 721px) { #about-hana .bio-grid { width: 100% !important; justify-self: stretch !important; grid-column: 1 / -1 !important; } }
+@media (min-width: 721px) { #about-hana .bio-flip-cover .bio-cover-face { background: #bb9a6f url(/assets/texture/kraft.jpg) center / 420px !important; } #about-hana .bio-flip-cover .bio-cover-face img { object-fit: contain !important; } }
+@media (min-width: 721px) {
+  #about-hana .bio-swipe { max-width: 900px !important; }
+  #about-hana .bio-swipe-card, #about-hana .bio-flip { height: auto !important; aspect-ratio: 5 / 7; }
+  #about-hana .bio-flip-cover .bio-cover-face { background: #bb9a6f !important; }
+  #about-hana .bio-flip-cover .bio-cover-face img { object-fit: cover !important; }
+}
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

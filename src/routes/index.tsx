@@ -786,6 +786,43 @@ function FeedPhoto() {
     </div>);
 }
 
+/* 01: three pieces of brand work as flip cards. Front is the picture, back says what it is. */
+const BRAND_FLIPS = [
+  { src: "/assets/campaigns/essential-brows-studio/brand-kit.jpg", alt: "The Essential Brows brand kit: logo, colors and type", k: "Essential Brows", t: "Brand kit", d: "A brow studio that ran on a booking link. I gave it a name lockup, colors, type and a voice, so everything after looks like one place.", h: "/websites/essential-brows-studio" },
+  { src: "/assets/campaigns/jazmins-events/kit-guide.jpg", alt: "The Jazmin's Events brand guide in sage, ivory and gold", k: "Jazmin's Events", t: "Brand guide", d: "A brand-new wedding planner, branded from scratch: the monogram, the palette, the type and a guide to keep it all consistent.", h: "/websites/jazmins-events" },
+  { src: "/assets/campaigns/essential-brows-studio/cover.jpg", alt: "The Essential Brows website on a pink desktop", k: "Essential Brows", t: "Website", d: "Then the brand became a home of its own: a site built to book clients, so the booking link isn't the whole business anymore.", h: "/websites/essential-brows-studio" },
+];
+
+function BrandFlips() {
+  const [on, setOn] = useState<number[]>([]);
+  const flip = (k: number) => setOn((f) => (f.includes(k) ? f.filter((x) => x !== k) : [...f, k]));
+  const row = useRef<HTMLDivElement>(null);
+  const slide = (d: number) => { const el = row.current; const c = el?.firstElementChild as HTMLElement | null; if (el && c) el.scrollBy({ left: d * (c.offsetWidth + 20), behavior: "smooth" }); };
+  return (
+    <div className="fd-brandpics bf-wrap">
+    <div className="bf-row" ref={row}>
+      {BRAND_FLIPS.map((b, k) => (
+        <div key={b.src} role="button" tabIndex={0} className={"bf" + (on.includes(k) ? " is-flipped" : "")} aria-pressed={on.includes(k)} aria-label={`${b.k}, ${b.t}. Tap to turn it over`} onClick={(e) => { if ((e.target as HTMLElement).closest("a")) return; flip(k); }} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(k); } }}>
+          <span className="bf-in">
+            <span className="bf-face bf-front">
+              <img src={b.src} alt={b.alt} loading="lazy" />
+              <span className="bf-label">{b.k} · {b.t}</span>
+            </span>
+            <span className="bf-face bf-back">
+              <span className="bf-k">{b.k}</span>
+              <span className="bf-t">{b.t}</span>
+              <span className="bf-d">{b.d}</span>
+              <a className="bf-go" href={ph(b.h)}>See the project →</a>
+            </span>
+          </span>
+        </div>
+      ))}
+    </div>
+    <div className="bf-nav"><button type="button" aria-label="Previous" onClick={() => slide(-1)}>←</button><button type="button" aria-label="Next" onClick={() => slide(1)}>→</button></div>
+    </div>
+  );
+}
+
 function FeedServices() {
   return (
     <section className="fd-frame fd-st fd-st-cream" id="build" aria-label="Services">
@@ -795,6 +832,7 @@ function FeedServices() {
       <p className="fd-small">
         Then everything after it gets easier to make. One person, one point of contact, from the logo to the last post.
       </p>
+      <BrandFlips />
       <div className="fd-mk fd-mk2">
         <a className="fd-mk-item" href={ph("/just-started")}>
           <span className="fd-mk-q">Just started a business?</span>
