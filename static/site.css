@@ -13659,6 +13659,56 @@ html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, htm
 }
 html body .fd-page .fd-hero-h, html body .fd-hero-h { font-family: var(--so-title) !important; font-weight: 400 !important; font-style: normal !important; letter-spacing: -.015em !important; }
 html body .fd-page .fd-hero-h em, html body .fd-hero-h em { font-family: "Swarsh Daisy", Georgia, serif !important; font-style: italic !important; }
+/* Hero button: smaller and quieter */
+html body .fd-media .fd-hero-sub a.fd-hero-btn, html body .fd-page .fd-hero-btn { font-size: 14px !important; padding: 10px 20px !important; min-height: 0 !important; height: auto !important; letter-spacing: 0 !important; font-weight: 500 !important; gap: 8px; }
+@media (max-width: 720px) { html body .fd-media .fd-hero-sub a.fd-hero-btn, html body .fd-page .fd-hero-btn { font-size: 13.5px !important; padding: 9px 18px !important; } }
+/* Every small number in the Actalle script, soft rose */
+html body .svs-bn, html body .svs-list li span, html body .bio-flip-n, html body .fd-mk-n, html body .bf-k + .bf-n {
+  font-family: "Actalle", "Cormorant Garamond", Georgia, serif !important; font-style: normal !important; letter-spacing: 0 !important; text-transform: none !important;
+}
+html body .svs-bn { font-size: 22px !important; }
+html body .svs-list li span { font-size: 22px !important; color: #e7c3cc; min-width: 30px; }
+html body .bio-flip-n { font-size: 30px !important; opacity: .8 !important; color: #b07a82; }
+html body .svs-bars button.is-on .svs-bn { color: #f6f1e8; }
+/* ===== Phones: calmer type scale everywhere ===== */
+@media (max-width: 720px) {
+  html body { font-size: 15px; }
+  html body .fd-page p, html body .fd-page li, html body .fd-small, html body .sp-d, html body .fd-why p, html body .svs-d, html body .bf-d,
+  html body:not(:has(.fd-page)) p, html body:not(:has(.fd-page)) li { font-size: 15px !important; line-height: 1.6 !important; }
+  html body .fd-why p { text-align: left !important; }
+  html body .fd-hero-sub p, html body .fd-media-over p { font-size: 14px !important; line-height: 1.55 !important; }
+  /* service pages */
+  html body .svs-text { padding-top: 14px !important; padding-bottom: 14px !important; }
+  html body .svs-k { font-size: 9px !important; letter-spacing: .18em !important; margin-bottom: 10px !important; }
+  html body .svs-bars { gap: 10px !important; margin-bottom: 10px !important; }
+  html body .svs-bars button { gap: 6px !important; }
+  html body .svs-bn { font-size: 17px !important; }
+  html body .svs-n { font-size: 30px !important; margin: 0 !important; }
+  html body .svs-t { font-size: 34px !important; margin: 0 0 8px !important; }
+  html body .svs-d { font-size: 14.5px !important; line-height: 1.5 !important; margin: 0 0 10px !important; max-width: 34ch; }
+  html body .svs-list { margin: 0 0 14px !important; }
+  html body .svs-list li { font-size: 15px !important; padding: 9px 0 !important; gap: 12px !important; }
+  html body .svs-list li span { font-size: 17px !important; min-width: 22px; }
+  html body .svs-go { font-size: 14px !important; padding: 10px 18px !important; font-weight: 500 !important; }
+  /* titles a touch smaller on phones */
+  html body .fd-page #build > .fd-script { font-size: 44px !important; }
+  html body .fd-page #work h2 { font-size: 46px !important; }
+  html body .fd-page #build .fd-mk2 .fd-mk-q { font-size: 21px !important; }
+  html body .fd-mk2 .fd-mk-go, html body .fd-wf, html body .fd-tile2 .fd-cw { font-size: 13.5px !important; }
+  html body .fd-tile2 .fd-ct { font-size: 16px !important; }
+  html body .bf-t { font-size: 28px !important; }
+  html body .bio-flip-p { font-size: 14px !important; }
+}
+@media (max-width: 720px) {
+  html body .fd-page p.svs-k, html body p.svs-k { font-size: 9px !important; line-height: 1.5 !important; }
+  html body .fd-page p.svs-n, html body p.svs-n { font-size: 30px !important; line-height: 1 !important; }
+  html body .fd-page #build > p.fd-ghost, html body .fd-page #work > p.fd-ghost { font-size: 34px !important; line-height: 1 !important; }
+  html body .fd-page p.fd-script { line-height: 1.04 !important; }
+  html body .fd-page p.fd-script { font-size: 44px !important; }
+  html body .fd-page p.so-micro, html body p.so-micro, html body .fd-page p.fd-hero-k, html body .fd-page .fd-file, html body .fd-page p.bio-swipe-no, html body .fd-page p.fd-mk-k, html body p.ed-k, html body p.cc-sheet-n { font-size: 10px !important; line-height: 1.4 !important; }
+  html body .fd-page p.fd-quiz-t, html body .fd-page .fd-quiz-t { font-size: 30px !important; line-height: 1.1 !important; }
+  html body .fd-page p.ft2-line { font-size: 24px !important; line-height: 1.2 !important; }
+}
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
