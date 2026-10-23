@@ -142,7 +142,8 @@ function Header() {
       <NavState />
       <div className="so-shell so-nav-inner">
         <a href="#top" className="so-brandlock" aria-label="Sunday Office, back to top">
-          <img className="so-logo" src="/assets/brand/logo-brown-sm.png" alt="Sunday Office" width="75" height="40" />
+          <SunMark size={28} color="var(--so-nav-ink, var(--color-ink))" />
+          <span>Sunday Office</span>
         </a>
         <nav className="so-nav-links" aria-label="Primary">
           {navLinks.map((l) => (
