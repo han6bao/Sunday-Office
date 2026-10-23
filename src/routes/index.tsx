@@ -818,6 +818,7 @@ const SERVICE_PAGES = [
   { t: "World Building", d: "Your brand, and the whole world around it: the name, the logo, the colors, the voice and how it all shows up. Where every project starts.", h: "/branding", go: "See world building" },
   { t: "Websites", d: "A home for the brand that books clients while you sleep. Designed, written and built to be found on Google.", h: "/websites", go: "See websites" },
   { t: "Photography", d: "Portraits, products, spaces and events. Shot to feel like you, and edited to match your brand.", h: "/photography", go: "See photography" },
+  { t: "Headshots", d: "Clean, natural headshots and model digitals for your website, LinkedIn, press and agencies, booked in one short session.", h: "/headshots", go: "See headshots" },
   { t: "Film + Commercials", d: "Brand films, commercials and campaign video, from the first idea to the final cut.", h: "/moving-image", go: "See film" },
   { t: "Social + Content", d: "Content days, social packs and monthly content, so your page keeps looking like your brand.", h: "/creative-direction-content", go: "See social + content" },
 ];
