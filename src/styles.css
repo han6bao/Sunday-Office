@@ -13472,3 +13472,6 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
 }
 @media (min-width: 721px) and (prefers-reduced-motion: reduce) { .bio-flip-in { transition: none; } }
 @media (max-width: 720px) { .bio-swipe-nav button.is-start { display: none !important; } }
+/* Header "Start a project" stays hidden while the hero video is on screen */
+html.on-hero .so-nav .so-nav-link.cta { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+.so-nav .so-nav-link.cta { transition: opacity .3s ease, visibility .3s; }
