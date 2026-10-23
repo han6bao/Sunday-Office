@@ -13657,6 +13657,8 @@ html body .fd-script em, html body .bio-cta-t em, html body h1.so-serif em, html
 html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, html body .svs-n {
   font-family: "Actalle", "Cormorant Garamond", Georgia, serif !important; font-style: normal !important; font-weight: 400 !important;
 }
+html body .fd-hero-h { font-family: var(--so-title) !important; font-weight: 400 !important; font-style: normal !important; letter-spacing: -.015em !important; }
+html body .fd-hero-h em { font-family: "Swarsh Daisy", Georgia, serif !important; font-style: italic !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
