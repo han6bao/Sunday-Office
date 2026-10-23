@@ -775,7 +775,7 @@ function FeedPhoto() {
     <div className={"fd-media" + (HERO_VIDEO ? "" : " fd-media-empty")}>
       {HERO_VIDEO ? (<video src={HERO_VIDEO} poster="/assets/work/hero-edit-poster.jpg" autoPlay muted loop playsInline aria-label="A short reel of Sunday Office video work" />) : null}
       <div className="fd-media-over hx">
-        <a className="hx-v" href={ph("/branding")}>World Building</a>
+        <a className="hx-v" href={ph("/branding")}>Branding</a>
         <a className="hx-v" href={ph("/photography")}>Photography</a>
         <h1 className="hx-t"><span className="hx-c">Build</span><em>your</em><span className="hx-c">World</span></h1>
         <a className="hx-v" href={ph("/websites")}>Web Design</a>
