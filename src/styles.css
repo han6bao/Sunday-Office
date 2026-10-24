@@ -13859,3 +13859,12 @@ html body .svs-list li span { color: #f3e7c4 !important; -webkit-text-fill-color
 html body .fd-page .svs-k { color: #f3e7c4 !important; -webkit-text-fill-color: #f3e7c4 !important; opacity: .85 !important; }
 html body .svs-bars button.is-on .svs-bar { background: #f3e7c4 !important; }
 html body .svs-bars button.is-on .svs-bn { color: #f3e7c4 !important; -webkit-text-fill-color: #f3e7c4 !important; }
+/* Light cream for small labels and active chips on dark (lavender stays only in section 04) */
+:root { --cream-acc: #f3e7c4; }
+html body .fd-page .fd-frame:not(.fd-lav) .fd-file, html body .fd-page .fd-frame:not(.fd-lav) .fd-file span,
+html body .fd-page .svs-k, html body .fd-page .so-micro, html body .fd-page .bio-cta-k, html body .fd-page .bf-k, html body .fd-page .fd-quiz-k, html body .fd-page .bio-swipe-no {
+  color: var(--cream-acc) !important; -webkit-text-fill-color: var(--cream-acc) !important; opacity: .8 !important; }
+html body .fd-page .fd-frame:not(.fd-lav) .fd-file hr { border-top-color: rgba(243,231,196,.25) !important; }
+html body .fd-page .fd-wf.is-on { background: var(--cream-acc) !important; border-color: var(--cream-acc) !important; color: #292523 !important; }
+html body .fd-page .fd-wf.is-on span { color: #292523 !important; opacity: .6; }
+html body .fd-page .fd-dots button.is-on { background: var(--cream-acc) !important; }
