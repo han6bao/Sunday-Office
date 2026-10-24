@@ -13869,3 +13869,4 @@ html body .fd-page .fd-wf.is-on { background: var(--cream-acc) !important; borde
 html body .fd-page .fd-wf.is-on span { color: #292523 !important; opacity: .6; }
 html body .fd-page .fd-dots button.is-on { background: var(--cream-acc) !important; }
 html body footer.so-footer .ft2-mark { -webkit-mask-image: none !important; mask-image: none !important; color: #f7f3f8 !important; -webkit-text-fill-color: #f7f3f8 !important; text-shadow: 0 0 1px rgba(247,243,248,.6); }
+html body footer.so-footer .ft2-mark { margin-bottom: -.2em !important; line-height: 1.05 !important; }
