@@ -850,9 +850,10 @@ function FeedServices() {
 
 /* Services, one page at a time: the section pins in place and each scroll turns to the next service. */
 const SERVICE_PAGES = [
-  { t: "World Building", d: "Your brand, and the whole world around it. Where every project starts.", b: ["Name, logo + identity", "Colors, type + voice", "A brand guide for everything after"], h: "/branding", go: "See world building" },
-  { t: "Websites + Digital", d: "A home for the brand that books clients while you sleep.", b: ["Design + the words on every page", "Built to book clients", "Set up to be found on Google"], h: "/websites", go: "See websites" },
-  { t: "Photo + Film", d: "Shot to feel like you, and made to match your brand.", b: ["Photography + headshots", "Brand films + commercials", "Social content, by the day or monthly"], h: "/photography", go: "See photo + film" },
+  { t: "Branding", d: "Your brand, and the whole world around it. Where every project starts.", b: ["Name, logo + identity", "Colors, type + voice", "A brand guide for everything after"], h: "/branding", go: "See branding" },
+  { t: "Photography", d: "Shot to feel like you, and edited to match your brand.", b: ["Portraits + headshots", "Products, food + spaces", "Events + campaigns"], h: "/photography", go: "See photography" },
+  { t: "Web Design", d: "A home for the brand that books clients while you sleep.", b: ["Design + the words on every page", "Built to book clients", "Set up to be found on Google"], h: "/websites", go: "See web design" },
+  { t: "Content Creation", d: "So your page keeps looking like your brand, every week.", b: ["Content days + social packs", "Brand films + short video", "Monthly content"], h: "/creative-direction-content", go: "See content" },
 ];
 
 function ServiceScroll() {
@@ -1218,7 +1219,7 @@ function FeedQuote() {
     <section className={"fd-frame fd-quote" + (open ? " is-open" : "")} aria-label="Serve first. Sell later.">
       <div className="fd-quote-file"><FeedFile>FILE NO. 003 · MY PHILOSOPHY</FeedFile></div>
       <button type="button" className="fd-quote-btn" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="fd-why">
-        <img className="fd-quote-img" src="/assets/lettering/serve-first-brown.png" alt="Serve first. Sell later." />
+        <img className="fd-quote-img" src="/assets/lettering/serve-first-cream.png" alt="Serve first. Sell later." />
         <span className="fd-quote-hint">{open ? "Close" : "Tap to read my philosophy"}</span>
       </button>
       <div className="fd-why" id="fd-why" hidden={!open}>

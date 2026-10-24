@@ -13383,7 +13383,7 @@ html body .fd-page #work > .fd-ghost { color: #f3d9e1 !important; -webkit-text-f
 .svs-media.fd-paper { box-shadow: none; }
 .svs-text { display: flex; flex-direction: column; justify-content: center; padding: 96px clamp(28px, 6vw, 110px) 48px; }
 .svs-k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(239,232,221,.6); margin: 0 0 28px; }
-.svs-bars { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: clamp(36px, 6vh, 64px); }
+.svs-bars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: clamp(36px, 6vh, 64px); }
 .svs-bars button { all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 12px; }
 .svs-bar { display: block; height: 1px; background: rgba(239,232,221,.25); transition: background .4s; }
 .svs-bars button.is-done .svs-bar { background: rgba(239,232,221,.5); }
@@ -13776,3 +13776,38 @@ html body .hx-v:hover, html body .hx-v:focus-visible { letter-spacing: .06em !im
 html body .fd-media:not(.fd-media-empty) .fd-media-over.hx { padding-top: clamp(64px, 9vh, 96px) !important; padding-bottom: clamp(20px, 4vh, 48px) !important; }
 html body .hx-t em { font-size: clamp(90px, min(15vw, 22vh), 230px) !important; }
 html body .hx-c { font-size: clamp(22px, min(3.6vw, 5.5vh), 54px) !important; }
+
+/* ===== Dark site: brown-black everywhere, lavender as the accent, section 04 stays lavender ===== */
+:root { --dk: #292523; --dk-ink: #f2ede4; --dk-soft: rgba(242,237,228,.72); --dk-line: rgba(242,237,228,.16); --lav-acc: #b9a8cf; }
+html body:has(.fd-page), html body:has(.fd-page) .page-paper { background-color: var(--dk) !important; }
+html body .fd-page, html body .fd-page .fd-frame:not(.fd-lav), html body .fd-page .svs, html body .fd-page #work.fd-frame, html body .fd-page .fd-quote, html body .fd-page #about-hana.fd-frame, html body .fd-page #office-hours.fd-frame {
+  background-color: var(--dk) !important; background-image: url(/assets/texture/paper-brown.jpg) !important; background-size: 768px !important; color: var(--dk-ink) !important;
+}
+/* text on dark */
+html body .fd-page .fd-frame:not(.fd-lav) :is(h1, h2, h3, .fd-script, .fd-script em, .fd-mk-q, .fd-ct, .bio-swipe-t, .fd-quiz-t, .fd-sign-name) { color: var(--dk-ink) !important; -webkit-text-fill-color: var(--dk-ink) !important; }
+html body .fd-page .fd-frame:not(.fd-lav) :is(p, li, .fd-small, .fd-cw, .fd-note, .fd-why p, .fd-quote-hint, .fd-more-hint) { color: var(--dk-soft) !important; -webkit-text-fill-color: var(--dk-soft) !important; }
+html body .fd-page .fd-frame:not(.fd-lav) .fd-file, html body .fd-page .fd-frame:not(.fd-lav) .fd-file span { color: rgba(242,237,228,.55) !important; }
+html body .fd-page .fd-frame:not(.fd-lav) .fd-file hr, html body .fd-page .fd-frame:not(.fd-lav) .fd-mk2, html body .fd-page .fd-frame:not(.fd-lav) .fd-mk-item { border-color: var(--dk-line) !important; }
+html body .fd-page .fd-frame:not(.fd-lav) a:not(.fd-tile):not(.bio-cta-btn):not(.so-hs-btn) { color: var(--dk-soft); }
+/* lavender accents */
+html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, html body .svs-n { color: var(--lav-acc) !important; -webkit-text-fill-color: var(--lav-acc) !important; }
+html body .svs-list li span { color: var(--lav-acc) !important; }
+html body .svs-bars button.is-on .svs-bar { background: var(--lav-acc) !important; }
+html body .fd-page .fd-wf.is-on { background: var(--lav-acc) !important; color: var(--dk) !important; border-color: var(--lav-acc) !important; }
+html body .fd-page .fd-wf { border-color: var(--dk-line) !important; color: var(--dk-soft) !important; }
+html body .fd-page .fd-mk2 .fd-mk-item:hover .fd-mk-go, html body .fd-page .svs-go:hover { color: var(--lav-acc) !important; }
+html body .fd-page .fd-arrow, html body .fd-page .bio-swipe-nav button, html body .fd-page .bf-nav button { border-color: var(--dk-line) !important; color: var(--dk-ink) !important; }
+html body .fd-page .bio-swipe-no, html body .fd-page .bio-flip-n { color: var(--lav-acc) !important; }
+html body .fd-page .fd-dots button.is-on { background: var(--dk-ink) !important; }
+/* footer + header on dark */
+html body:has(.fd-page) .so-footer { background-color: #211d1b !important; }
+html body:has(.fd-page) .so-nav { background: rgba(41,37,35,.92) !important; color: var(--dk-ink) !important; border-color: var(--dk-line) !important; }
+html body:has(.fd-page) .so-nav .so-brandlock, html body:has(.fd-page) .so-nav .so-brandlock span, html body:has(.fd-page) .so-nav .so-nav-burger, html body:has(.fd-page) .so-nav .so-nav-burger * { color: var(--dk-ink) !important; -webkit-text-fill-color: var(--dk-ink) !important; border-color: var(--dk-line) !important; }
+html body:has(.fd-page) .so-nav .so-brandlock svg * { stroke: var(--dk-ink); }
+html body:has(.fd-page) .so-nav .so-nav-link.cta { background: var(--dk-ink) !important; color: var(--dk) !important; }
+html body .fd-page #about-hana .fd-script, html body .fd-page #about-hana .fd-script em { color: var(--dk-ink) !important; -webkit-text-fill-color: var(--dk-ink) !important; }
+html body .fd-page #about-hana .fd-ghost { display: none !important; }
+html body:has(.fd-page) footer.so-footer, html body:has(.fd-page) footer.so-footer.ft2 { background-color: #211d1b !important; background-image: url(/assets/texture/paper-brown.jpg) !important; background-size: 768px !important; }
+html body:has(.fd-page) footer.so-footer .ft2-mark { color: var(--lav-acc) !important; -webkit-text-fill-color: var(--lav-acc) !important; opacity: .9; }
+html body:has(.fd-page) footer.so-footer .ft2-top { border-color: var(--dk-line) !important; }
+html body .fd-page .fd-bio .bio-side::before, html body .fd-page .fd-bio .bio-side .fd-script::after { content: none !important; display: none !important; }
