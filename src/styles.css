@@ -13808,7 +13808,6 @@ html body:has(.fd-page) .so-nav .so-nav-link.cta { background: var(--dk-ink) !im
 html body .fd-page #about-hana .fd-script, html body .fd-page #about-hana .fd-script em { color: var(--dk-ink) !important; -webkit-text-fill-color: var(--dk-ink) !important; }
 html body .fd-page #about-hana .fd-ghost { display: none !important; }
 html body:has(.fd-page) footer.so-footer, html body:has(.fd-page) footer.so-footer.ft2 { background-color: #211d1b !important; background-image: url(/assets/texture/paper-brown.jpg) !important; background-size: 768px !important; }
-html body:has(.fd-page) footer.so-footer .ft2-mark { color: var(--lav-acc) !important; -webkit-text-fill-color: var(--lav-acc) !important; opacity: .9; }
 html body:has(.fd-page) footer.so-footer .ft2-top { border-color: var(--dk-line) !important; }
 html body .fd-page .fd-bio .bio-side::before, html body .fd-page .fd-bio .bio-side .fd-script::after { content: none !important; display: none !important; }
 /* Sprinkle lavender: small labels and text links */
@@ -13848,3 +13847,12 @@ html body .fd-page .fd-mk2 .fd-mk-go, html body .fd-page .fd-link, html body .fd
 @media (max-width: 720px) {
   html body .fd-page #build .fd-mk2 .fd-mk-item { flex-direction: column !important; align-items: flex-start !important; gap: 6px !important; }
 }
+/* Footer script: solid textured white, cut off so only the top half shows */
+html body footer.so-footer .ft2-mark {
+  -webkit-text-stroke: 0 !important; color: #f6f2f8 !important; -webkit-text-fill-color: transparent !important;
+  background: #f6f2f8 url(/assets/texture/ink-white.png) !important; background-size: 260px !important; -webkit-background-clip: text !important; background-clip: text !important;
+  line-height: 1 !important; margin-bottom: -.5em !important; padding-top: .1em !important;
+}
+html body footer.so-footer .ft2-mark { background: none !important; -webkit-background-clip: border-box !important; background-clip: border-box !important; color: #f7f3f8 !important; -webkit-text-fill-color: #f7f3f8 !important; opacity: 1 !important; filter: none !important; mix-blend-mode: normal !important;
+  -webkit-mask-image: url(/assets/texture/grain-soft.png); mask-image: url(/assets/texture/grain-soft.png); -webkit-mask-size: 320px; mask-size: 320px; margin-bottom: -.42em !important; }
+html body .svs-list li span { color: #f3e7c4 !important; -webkit-text-fill-color: #f3e7c4 !important; }
