@@ -13804,6 +13804,14 @@ html body:has(.fd-page) footer.so-footer, html body:has(.fd-page) footer.so-foot
 html body:has(.fd-page) footer.so-footer .ft2-mark { color: var(--lav-acc) !important; -webkit-text-fill-color: var(--lav-acc) !important; opacity: .9; }
 html body:has(.fd-page) footer.so-footer .ft2-top { border-color: var(--dk-line) !important; }
 html body .fd-page .fd-bio .bio-side::before, html body .fd-page .fd-bio .bio-side .fd-script::after { content: none !important; display: none !important; }
+/* Sprinkle lavender: small labels and text links */
+html body .fd-page .fd-frame:not(.fd-lav) .fd-file, html body .fd-page .fd-frame:not(.fd-lav) .fd-file span,
+html body .fd-page .svs-k, html body .fd-page .so-micro, html body .fd-page .bio-cta-k, html body .fd-page .bf-k, html body .fd-page .fd-quiz-k, html body .fd-page .ft2-col h5,
+html body:has(.fd-page) footer.so-footer .ft2-col h5 { color: var(--lav-acc) !important; -webkit-text-fill-color: var(--lav-acc) !important; opacity: .9 !important; }
+html body .fd-page .fd-frame:not(.fd-lav) .fd-file hr { border-top-color: rgba(185,168,207,.3) !important; }
+html body .fd-page .fd-mk2 .fd-mk-go, html body .fd-page .fd-link, html body .fd-page .bio-cta-link, html body .fd-page .bf-go, html body .fd-page .so-link-jump { color: var(--lav-acc) !important; -webkit-text-fill-color: var(--lav-acc) !important; text-decoration-color: rgba(185,168,207,.45) !important; }
+html body .fd-page .fd-mk2 .fd-mk-item:hover .fd-mk-go, html body .fd-page .fd-link:hover { color: var(--dk-ink) !important; -webkit-text-fill-color: var(--dk-ink) !important; }
+html body:has(.fd-page) footer.so-footer .foot-link:hover { color: var(--lav-acc) !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
