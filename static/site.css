@@ -13827,6 +13827,20 @@ html body:has(.fd-page) footer.so-footer { background: transparent !important; b
 html body .fd-page .fd-frame.fd-lav { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 140px, #000 calc(100% - 140px), transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 140px, #000 calc(100% - 140px), transparent 100%); padding-top: clamp(120px, 14vw, 180px) !important; padding-bottom: clamp(120px, 14vw, 180px) !important; }
 /* Numbers back to soft pink; labels and links stay lavender */
 html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, html body .svs-n, html body .svs-list li span, html body .fd-page .bio-flip-n { color: #e7c3cc !important; -webkit-text-fill-color: #e7c3cc !important; }
+/* Footer back to the original: lavender paper, big white script running off the bottom */
+html body:has(.fd-page) footer.so-footer, html body:has(.fd-page) footer.so-footer.ft2, html body footer.so-footer.ft2 { background-color: #8d7d9e !important; background-image: url(/assets/texture/paper-lav.jpg) !important; background-size: 768px 768px !important; }
+html body footer.so-footer .ft2-mark { font-family: "Monsieur La Doulaise", "Pinyon Script", cursive !important; font-style: normal !important; color: #f4eff7 !important; -webkit-text-fill-color: #f4eff7 !important; opacity: 1 !important; font-size: 22.2vw !important; line-height: 1.1 !important; margin-bottom: -.14em !important; white-space: nowrap; }
+html body footer.so-footer { overflow: hidden; }
+html body footer.so-footer .ft2-line { font-family: "Instrument Serif", Georgia, serif !important; font-style: italic !important; color: #f4eff7 !important; }
+html body footer.so-footer .foot-link, html body footer.so-footer .ft2-col h5 { color: #f4eff7 !important; -webkit-text-fill-color: #f4eff7 !important; }
+html body footer.so-footer .ft2-col h5 { opacity: .75 !important; }
+html body footer.so-footer .ft2-top, html body footer.so-footer .ft2-col { border-color: rgba(244,239,247,.3) !important; }
+@media (max-width: 720px) { html body footer.so-footer .ft2-mark { font-size: 24vw !important; } }
+/* Text links in soft pink; on phones each link sits under its question */
+html body .fd-page .fd-mk2 .fd-mk-go, html body .fd-page .fd-link, html body .fd-page .bio-cta-link, html body .fd-page .bf-go, html body .fd-page .so-link-jump { color: #e7c3cc !important; -webkit-text-fill-color: #e7c3cc !important; text-decoration-color: rgba(231,195,204,.45) !important; }
+@media (max-width: 720px) {
+  html body .fd-page #build .fd-mk2 .fd-mk-item { flex-direction: column !important; align-items: flex-start !important; gap: 6px !important; }
+}
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
