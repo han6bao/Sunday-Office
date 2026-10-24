@@ -13819,3 +13819,6 @@ html body .fd-page .fd-frame:not(.fd-lav) .fd-file hr { border-top-color: rgba(1
 html body .fd-page .fd-mk2 .fd-mk-go, html body .fd-page .fd-link, html body .fd-page .bio-cta-link, html body .fd-page .bf-go, html body .fd-page .so-link-jump { color: var(--lav-acc) !important; -webkit-text-fill-color: var(--lav-acc) !important; text-decoration-color: rgba(185,168,207,.45) !important; }
 html body .fd-page .fd-mk2 .fd-mk-item:hover .fd-mk-go, html body .fd-page .fd-link:hover { color: var(--dk-ink) !important; -webkit-text-fill-color: var(--dk-ink) !important; }
 html body:has(.fd-page) footer.so-footer .foot-link:hover { color: var(--lav-acc) !important; }
+/* 04: no box, number in the title face */
+html body .fd-stat-box { background: none !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; }
+html body .fd-stat-box .fd-big, html body .fd-big { font-family: "Swarsh Daisy", Georgia, serif !important; font-weight: 400 !important; letter-spacing: -.02em !important; font-size: clamp(110px, 15vw, 220px) !important; line-height: .9 !important; }
