@@ -13822,3 +13822,15 @@ html body:has(.fd-page) footer.so-footer .foot-link:hover { color: var(--lav-acc
 /* 04: no box, number in the title face */
 html body .fd-stat-box { background: none !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; border-radius: 0 !important; }
 html body .fd-stat-box .fd-big, html body .fd-big { font-family: "Swarsh Daisy", Georgia, serif !important; font-weight: 400 !important; letter-spacing: -.02em !important; font-size: clamp(110px, 15vw, 220px) !important; line-height: .9 !important; }
+/* One continuous dark paper behind the whole homepage, so sections don't show seams */
+html body:has(.fd-page) { background: #292523 url(/assets/texture/paper-brown.jpg) repeat !important; background-size: 768px !important; }
+html body .fd-page, html body .fd-page .fd-frame:not(.fd-lav), html body .fd-page .svs, html body .fd-page #work.fd-frame, html body .fd-page .fd-quote, html body .fd-page #about-hana.fd-frame, html body .fd-page #office-hours.fd-frame, html body .fd-page #build.fd-frame {
+  background: transparent !important; background-image: none !important; box-shadow: none !important; border-top: 0 !important; border-bottom: 0 !important;
+}
+html body .fd-page .fd-frame:not(.fd-lav)::before, html body .fd-page .fd-frame:not(.fd-lav)::after { box-shadow: none !important; }
+html body:has(.fd-page) .page-paper { display: none !important; }
+html body:has(.fd-page) footer.so-footer { background: transparent !important; background-image: none !important; }
+/* 04 melts into the dark above and below, no hard edges */
+html body .fd-page .fd-frame.fd-lav { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 140px, #000 calc(100% - 140px), transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 140px, #000 calc(100% - 140px), transparent 100%); padding-top: clamp(120px, 14vw, 180px) !important; padding-bottom: clamp(120px, 14vw, 180px) !important; }
+/* Numbers back to soft pink; labels and links stay lavender */
+html body .fd-page #build > .fd-ghost, html body .fd-page #work > .fd-ghost, html body .svs-n, html body .svs-list li span, html body .fd-page .bio-flip-n { color: #e7c3cc !important; -webkit-text-fill-color: #e7c3cc !important; }

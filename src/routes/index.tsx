@@ -766,10 +766,13 @@ function FeedPhoto() {
   useEffect(() => {
     const el = document.querySelector(".fd-media:not(.fd-media-empty)");
     const root = document.documentElement;
-    if (!el || !("IntersectionObserver" in window)) return;
-    const io = new IntersectionObserver(([e]) => root.classList.toggle("on-hero", e.isIntersecting), { rootMargin: "-80px 0px 0px 0px", threshold: 0 });
-    io.observe(el);
-    return () => { io.disconnect(); root.classList.remove("on-hero"); };
+    if (!el) return;
+    root.classList.add("on-hero");
+    const check = () => root.classList.toggle("on-hero", el.getBoundingClientRect().bottom > 80);
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    window.addEventListener("resize", check);
+    return () => { window.removeEventListener("scroll", check); window.removeEventListener("resize", check); root.classList.remove("on-hero"); };
   }, []);
   return (
     <div className={"fd-media" + (HERO_VIDEO ? "" : " fd-media-empty")}>
