@@ -13861,6 +13861,7 @@ html body .fd-page .fd-frame:not(.fd-lav) .fd-file hr { border-top-color: rgba(2
 html body .fd-page .fd-wf.is-on { background: var(--cream-acc) !important; border-color: var(--cream-acc) !important; color: #292523 !important; }
 html body .fd-page .fd-wf.is-on span { color: #292523 !important; opacity: .6; }
 html body .fd-page .fd-dots button.is-on { background: var(--cream-acc) !important; }
+html body footer.so-footer .ft2-mark { -webkit-mask-image: none !important; mask-image: none !important; color: #f7f3f8 !important; -webkit-text-fill-color: #f7f3f8 !important; text-shadow: 0 0 1px rgba(247,243,248,.6); }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
