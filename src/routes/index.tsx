@@ -768,7 +768,12 @@ function FeedPhoto() {
     const root = document.documentElement;
     if (!el) return;
     root.classList.add("on-hero");
-    const check = () => root.classList.toggle("on-hero", el.getBoundingClientRect().bottom > 80);
+    const check = () => {
+      root.classList.toggle("on-hero", el.getBoundingClientRect().bottom > 80);
+      /* header takes the color of whatever section is under it */
+      const lav = [...document.querySelectorAll(".fd-lav, footer.so-footer")].some((s) => { const r = s.getBoundingClientRect(); return r.top < 72 && r.bottom > 72; });
+      root.classList.toggle("nav-lav", lav);
+    };
     check();
     window.addEventListener("scroll", check, { passive: true });
     window.addEventListener("resize", check);

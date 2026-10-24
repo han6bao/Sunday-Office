@@ -13863,6 +13863,18 @@ html body .fd-page .fd-wf.is-on span { color: #292523 !important; opacity: .6; }
 html body .fd-page .fd-dots button.is-on { background: var(--cream-acc) !important; }
 html body footer.so-footer .ft2-mark { -webkit-mask-image: none !important; mask-image: none !important; color: #f7f3f8 !important; -webkit-text-fill-color: #f7f3f8 !important; text-shadow: 0 0 1px rgba(247,243,248,.6); }
 html body footer.so-footer .ft2-mark { margin-bottom: -.2em !important; line-height: 1.05 !important; }
+/* Header matches the section under it: dark brown by default, lavender over lavender sections */
+html body:has(.fd-page) header.so-nav { background: rgba(41,37,35,.94) url(/assets/texture/paper-brown.jpg) !important; background-size: 768px !important; border-bottom: 1px solid rgba(242,237,228,.08) !important; box-shadow: none !important; transition: background-color .4s ease, opacity .35s ease, visibility .35s; }
+html body:has(.fd-page) header.so-nav::before, html body:has(.fd-page) header.so-nav::after { display: none !important; }
+html.nav-lav body:has(.fd-page) header.so-nav { background: #8d7d9e url(/assets/texture/paper-lav.jpg) !important; background-size: 768px !important; border-bottom-color: rgba(244,239,247,.15) !important; }
+html body:has(.fd-page) header.so-nav .so-brandlock, html body:has(.fd-page) header.so-nav .so-brandlock span, html body:has(.fd-page) header.so-nav .so-nav-burger, html body:has(.fd-page) header.so-nav .so-burger-label { color: #f2ede4 !important; -webkit-text-fill-color: #f2ede4 !important; }
+html body:has(.fd-page) header.so-nav .so-burger-lines span { background: #f2ede4 !important; }
+html body:has(.fd-page) header.so-nav .so-nav-burger { border-color: rgba(242,237,228,.25) !important; background: transparent !important; }
+html body:has(.fd-page) header.so-nav .so-nav-link.cta { background: #f2ede4 !important; color: #292523 !important; border-color: #f2ede4 !important; }
+html body:has(.fd-page) header.so-nav .so-brandlock svg { color: #f2ede4; }
+html body:has(.fd-page) header.so-nav.so-nav, html body:has(.fd-page) header.so-nav.is-scrolled.is-scrolled { background: #292523 url(/assets/texture/paper-brown.jpg) !important; background-size: 768px !important; }
+html.nav-lav body:has(.fd-page) header.so-nav.so-nav, html.nav-lav body:has(.fd-page) header.so-nav.is-scrolled.is-scrolled { background: #8d7d9e url(/assets/texture/paper-lav.jpg) !important; background-size: 768px !important; }
+html body:has(.fd-page) header.so-nav { --so-nav-ink: #f2ede4 !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
