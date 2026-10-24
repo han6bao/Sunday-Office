@@ -773,6 +773,9 @@ function FeedPhoto() {
       /* header takes the color of whatever section is under it */
       const lav = [...document.querySelectorAll(".fd-lav, footer.so-footer")].some((s) => { const r = s.getBoundingClientRect(); return r.top < 72 && r.bottom > 72; });
       root.classList.toggle("nav-lav", lav);
+      const q = document.querySelector(".fd-quote");
+      const qr = q?.getBoundingClientRect();
+      root.classList.toggle("nav-cream", !!qr && qr.top < 72 && qr.bottom > 72);
     };
     check();
     window.addEventListener("scroll", check, { passive: true });
@@ -1227,7 +1230,7 @@ function FeedQuote() {
     <section className={"fd-frame fd-quote" + (open ? " is-open" : "")} aria-label="Serve first. Sell later.">
       <div className="fd-quote-file"><FeedFile>FILE NO. 003 · MY PHILOSOPHY</FeedFile></div>
       <button type="button" className="fd-quote-btn" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="fd-why">
-        <img className="fd-quote-img" src="/assets/lettering/serve-first-cream.png" alt="Serve first. Sell later." />
+        <img className="fd-quote-img" src="/assets/lettering/serve-first-brown.png" alt="Serve first. Sell later." />
         <span className="fd-quote-hint">{open ? "Close" : "Tap to read my philosophy"}</span>
       </button>
       <div className="fd-why" id="fd-why" hidden={!open}>

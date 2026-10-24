@@ -13875,6 +13875,21 @@ html body:has(.fd-page) header.so-nav .so-brandlock svg { color: #f2ede4; }
 html body:has(.fd-page) header.so-nav.so-nav, html body:has(.fd-page) header.so-nav.is-scrolled.is-scrolled { background: #1c1c1f url(/assets/texture/paper-brown.jpg) !important; background-size: 768px !important; }
 html.nav-lav body:has(.fd-page) header.so-nav.so-nav, html.nav-lav body:has(.fd-page) header.so-nav.is-scrolled.is-scrolled { background: #8d7d9e url(/assets/texture/paper-lav.jpg) !important; background-size: 768px !important; }
 html body:has(.fd-page) header.so-nav { --so-nav-ink: #f2ede4 !important; }
+/* 03 Serve first: cream paper section, brown script, soft fade into the black */
+html body .fd-page .fd-quote { background: #f2ede4 url(/assets/texture/paper-cream.jpg) !important; background-size: 768px !important; color: #3f2416 !important;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 120px, #000 calc(100% - 120px), transparent 100%); padding-top: clamp(120px, 14vw, 180px) !important; padding-bottom: clamp(120px, 14vw, 180px) !important; }
+html body .fd-page .fd-quote .fd-file, html body .fd-page .fd-quote .fd-file span { color: #8a7a6c !important; -webkit-text-fill-color: #8a7a6c !important; }
+html body .fd-page .fd-quote .fd-file hr { border-top-color: rgba(63,36,22,.2) !important; }
+html body .fd-page .fd-quote .fd-quote-hint, html body .fd-page .fd-quote .fd-why p { color: #6b5a4e !important; -webkit-text-fill-color: #6b5a4e !important; }
+html body .fd-page .fd-quote .fd-quote-img { mix-blend-mode: multiply !important; }
+html body .fd-page section.fd-frame.fd-quote.fd-quote:not(.fd-lav):not(.fd-dark):not(.fd-start) { background: #f2ede4 url(/assets/texture/paper-cream.jpg) !important; background-size: 768px !important; }
+html body .fd-page section.fd-frame.fd-quote.fd-quote:not(.fd-lav):not(.fd-dark):not(.fd-start) :is(p, .fd-quote-hint) { color: #6b5a4e !important; -webkit-text-fill-color: #6b5a4e !important; }
+html body .fd-page section.fd-frame.fd-quote.fd-quote:not(.fd-lav):not(.fd-dark):not(.fd-start) .fd-file, html body .fd-page section.fd-frame.fd-quote.fd-quote:not(.fd-lav):not(.fd-dark):not(.fd-start) .fd-file span { color: #8a7a6c !important; -webkit-text-fill-color: #8a7a6c !important; }
+html.nav-cream body:has(.fd-page) header.so-nav.so-nav, html.nav-cream body:has(.fd-page) header.so-nav.is-scrolled.is-scrolled { background: #f2ede4 url(/assets/texture/paper-cream.jpg) !important; background-size: 768px !important; border-bottom-color: rgba(63,36,22,.1) !important; --so-nav-ink: #3f2416 !important; }
+html.nav-cream body:has(.fd-page) header.so-nav .so-brandlock, html.nav-cream body:has(.fd-page) header.so-nav .so-brandlock span, html.nav-cream body:has(.fd-page) header.so-nav .so-nav-burger, html.nav-cream body:has(.fd-page) header.so-nav .so-burger-label { color: #3f2416 !important; -webkit-text-fill-color: #3f2416 !important; }
+html.nav-cream body:has(.fd-page) header.so-nav .so-burger-lines span { background: #3f2416 !important; }
+html.nav-cream body:has(.fd-page) header.so-nav .so-nav-burger { border-color: rgba(63,36,22,.25) !important; }
+html.nav-cream body:has(.fd-page) header.so-nav .so-nav-link.cta { background: #1c1c1f !important; color: #f2ede4 !important; border-color: #1c1c1f !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
