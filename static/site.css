@@ -13849,6 +13849,9 @@ html body footer.so-footer .ft2-mark {
 html body footer.so-footer .ft2-mark { background: none !important; -webkit-background-clip: border-box !important; background-clip: border-box !important; color: #f7f3f8 !important; -webkit-text-fill-color: #f7f3f8 !important; opacity: 1 !important; filter: none !important; mix-blend-mode: normal !important;
   -webkit-mask-image: url(/assets/texture/grain-soft.png); mask-image: url(/assets/texture/grain-soft.png); -webkit-mask-size: 320px; mask-size: 320px; margin-bottom: -.42em !important; }
 html body .svs-list li span { color: #f3e7c4 !important; -webkit-text-fill-color: #f3e7c4 !important; }
+html body .fd-page .svs-k { color: #f3e7c4 !important; -webkit-text-fill-color: #f3e7c4 !important; opacity: .85 !important; }
+html body .svs-bars button.is-on .svs-bar { background: #f3e7c4 !important; }
+html body .svs-bars button.is-on .svs-bn { color: #f3e7c4 !important; -webkit-text-fill-color: #f3e7c4 !important; }
 
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}
