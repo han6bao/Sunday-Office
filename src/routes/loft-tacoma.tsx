@@ -80,7 +80,7 @@ function LoftPage() {
             <a className="so-bw-inline" href="/campaigns/ellis-digitals" style={{ display: "inline-block", marginTop: 14 }}>See Ellis's full digitals →</a>
           </div>
           <figure className="lf-room">
-            <video autoPlay muted loop playsInline preload="metadata" poster={L + "loft-room.jpg"} aria-label="The empty room at LOFT Tacoma: big windows and a white floor">
+            <video autoPlay muted loop playsInline preload="metadata" onLoadedMetadata={(e) => { e.currentTarget.playbackRate = 0.5; }} onPlay={(e) => { e.currentTarget.playbackRate = 0.5; }} poster={L + "loft-room.jpg"} aria-label="The empty room at LOFT Tacoma: big windows and a white floor">
               <source src={L + "loft-room.mp4"} type="video/mp4" />
               <source src={L + "loft-room.webm"} type="video/webm" />
             </video>
