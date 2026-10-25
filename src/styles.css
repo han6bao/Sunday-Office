@@ -13897,3 +13897,5 @@ html.nav-cream body:has(.fd-page) header.so-nav .so-brandlock, html.nav-cream bo
 html.nav-cream body:has(.fd-page) header.so-nav .so-burger-lines span { background: #3f2416 !important; }
 html.nav-cream body:has(.fd-page) header.so-nav .so-nav-burger { border-color: rgba(63,36,22,.25) !important; }
 html.nav-cream body:has(.fd-page) header.so-nav .so-nav-link.cta { background: #121317 !important; color: #f2ede4 !important; border-color: #121317 !important; }
+/* No fades: clean straight edges on 04 and 03 */
+html body .fd-page .fd-frame.fd-lav, html body .fd-page section.fd-frame.fd-quote.fd-quote:not(.fd-lav):not(.fd-dark):not(.fd-start), html body .fd-page .fd-quote { -webkit-mask-image: none !important; mask-image: none !important; padding-top: clamp(72px, 9vw, 120px) !important; padding-bottom: clamp(72px, 9vw, 120px) !important; }
