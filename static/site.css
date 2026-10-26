@@ -13894,5 +13894,31 @@ html.nav-cream body:has(.fd-page) header.so-nav .so-nav-link.cta { background: #
 html body .fd-page .fd-frame.fd-lav, html body .fd-page section.fd-frame.fd-quote.fd-quote:not(.fd-lav):not(.fd-dark):not(.fd-start), html body .fd-page .fd-quote { -webkit-mask-image: none !important; mask-image: none !important; padding-top: clamp(72px, 9vw, 120px) !important; padding-bottom: clamp(72px, 9vw, 120px) !important; }
 html body .hx-t em { font-family: "Pinyon Script Local", "Pinyon Script", cursive !important; }
 
+/* ===== Brand touches sprinkled through the site ===== */
+html body .fd-file { display:flex; align-items:center; gap:10px; }
+html body .fd-file .fd-file-mark { flex:none; opacity:.85; }
+html body .fd-wmedia.fd-paper { position:relative; }
+html body .fd-paper-brand { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+html body .fd-paper-brand img { width:46%; max-width:180px; height:auto; opacity:.13; mix-blend-mode:multiply; }
+html body .fd-page .fd-brandbreak { background:transparent; color:#f3e7c4; text-align:center; padding:clamp(72px,9vw,120px) 16px; display:flex; flex-direction:column; align-items:center; gap:18px; }
+html body .fd-brandbreak .bb-word { width:min(520px,78vw); height:auto; display:block; }
+html body .fd-brandbreak .bb-line { font-family:Manrope,sans-serif; font-size:clamp(11px,1.1vw,13px); letter-spacing:.22em; text-transform:uppercase; color:#f6f1e8; opacity:.8; margin:6px 0 0; }
+html body .fd-brandbreak .bb-place { font-family:"Swarsh Daisy",Georgia,serif; font-style:italic; font-size:clamp(18px,1.8vw,22px); color:#e7c3cc; margin:0; }
+html body .ft2 .ft2-sun { color:#f7f3f8; display:block; margin:0 0 14px; opacity:.9; }
+.so-signoff { background:#121317 url(/assets/texture/paper-brown.jpg); color:#f6f1e8; text-align:center; padding:clamp(64px,8vw,104px) 16px clamp(96px,10vw,120px); display:flex; flex-direction:column; align-items:center; gap:16px; }
+.so-signoff-home { display:flex; flex-direction:column; align-items:center; gap:18px; color:#f3e7c4; text-decoration:none; }
+.so-signoff-home img { width:min(360px,70vw); height:auto; display:block; }
+.so-signoff-line { font-family:"Swarsh Daisy",Georgia,serif; font-size:clamp(26px,3vw,36px); margin:6px 0 0; color:#f6f1e8; }
+.so-signoff-line em { font-family:"Pinyon Script Local","Pinyon Script",cursive; font-style:normal; font-size:1.5em; color:#e7c3cc; }
+.so-signoff-pillars, .so-signoff-meta { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 22px; margin:0; font-family:Manrope,sans-serif; }
+.so-signoff-pillars a { font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:#f3e7c4; text-decoration:none; }
+.so-signoff-pillars a:hover { color:#e7c3cc; }
+.so-signoff-meta { font-size:14px; color:rgba(246,241,232,.7); }
+.so-signoff-meta a { color:#e7c3cc; text-decoration:underline; text-underline-offset:4px; }
+html body .fd-tile2 .fd-wmedia.fd-paper .fd-paper-brand img { width:46% !important; max-width:170px !important; height:auto !important; object-fit:contain !important; position:static !important; inset:auto !important; aspect-ratio:auto !important; }
+html body footer.so-signoff p.so-signoff-line { font-size:clamp(26px,3vw,36px) !important; line-height:1.1 !important; }
+html body footer.so-signoff .so-signoff-pillars a { font-size:12px !important; }
+html body .fd-paper-brand i { display:block; width:46%; max-width:170px; aspect-ratio:710/376; background:url(/assets/brand/logo-ink-sm.png) center/contain no-repeat; opacity:.13; }
+
 :root{--font-sans:"Manrope","Helvetica Neue",Arial,sans-serif;--font-display:"Playfair Display",Georgia,serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;--font-cjk:"Zhi Mang Xing","KaiTi",serif;}
 html,body{background:var(--color-rice);}

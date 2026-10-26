@@ -662,6 +662,7 @@ function Footer() {
   return (
     <footer className="so-footer ft2" id="office">
       <div className="ft2-top">
+        <SunMark size={30} color="currentColor" className="ft2-sun" />
         <p className="ft2-line">We build worlds for people with something worth seeing.</p>
         <div className="ft2-col">
           <h5>What we do</h5>
@@ -737,6 +738,7 @@ const FEED_WORK: { src: string; alt: string; t: string; w: string; d: string; li
 function FeedFile({ children }: { children: string }) {
   return (
     <div className="fd-file">
+      <SunMark size={13} color="currentColor" className="fd-file-mark" />
       <span>{children}</span>
       <hr />
     </div>
@@ -1152,6 +1154,18 @@ const orderOf = (w: { t: string; w: string }) => (/progress/i.test(w.w) ? 100 : 
 /* Covers are blank paper for now, until Hana picks the picture for each card. Set to true to show the photos again. */
 const SHOW_WORK_COVERS = false;
 
+/* A quiet brand moment between sections: the wheel, the wordmark, the four pillars. */
+function BrandBreak() {
+  return (
+    <section className="fd-brandbreak" aria-label="Sunday Office">
+      <SunMark size={34} color="currentColor" className="bb-mark" />
+      <img className="bb-word" src="/assets/brand/logo-cream.png" alt="sunday office" loading="lazy" />
+      <p className="bb-line">Branding · Photography · Web Design · Content Creation</p>
+      <p className="bb-place">Seattle, WA</p>
+    </section>
+  );
+}
+
 function FeedWork() {
   const [open, setOpen] = useState<number | null>(null);
   const [f, setF] = useState("All");
@@ -1193,6 +1207,9 @@ function FeedWork() {
         {shown.map(({ w, i }) => (
           <button key={w.t} type="button" role="listitem" className="fd-tile fd-tile2" onClick={() => setOpen(i)} aria-label={`${w.t}, ${w.w}`}>
             <span className={"fd-wmedia" + (SHOW_WORK_COVERS ? "" : " fd-paper")}>
+              {!SHOW_WORK_COVERS && (
+                <span className="fd-paper-brand" aria-hidden="true"><i /></span>
+              )}
               {SHOW_WORK_COVERS && (w.v ? (
                 <video className="fd-wvideo" autoPlay muted loop playsInline preload="metadata" poster={w.src} aria-label={w.alt}>
                   <source src={`${w.v}.mp4`} type="video/mp4" />
@@ -1583,6 +1600,7 @@ function Index() {
         <FeedPhoto />
         <FeedServices />
         <ServiceScroll />
+        <BrandBreak />
         <FeedWork />
         {/* makeover section removed */}
         <FeedQuote />
