@@ -1,4 +1,3 @@
-import { BrandSignoff } from "../sunday/brand-signoff";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -217,7 +216,6 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
-      <BrandSignoff />
       <InquireBar />
     </QueryClientProvider>
   );
