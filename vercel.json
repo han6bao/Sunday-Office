@@ -2,11 +2,146 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "echo 'static site: no install'",
-  "buildCommand": "cp -R public/. static/",
-  "outputDirectory": "static",
+  "buildCommand": "echo 'static site: nothing to build'",
+  "outputDirectory": "site",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-hana",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/archive",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/branding",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/angie-tiara-beauty",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/avery-tien",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/bar-bistro",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/big-baby-gucci",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/chitos",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/chutneys",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/dj-prashant-hiyu",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/dj-wzrd",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/elena-qiu",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/ellis-digitals",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/essential-brows-studio",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/exhibition",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/green-grillz",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/highway",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/jaydyn-f",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/jaydyn-f-scream",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/jazmins-events",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/kenshi-killz",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/leon-thomas",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/paradice",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/public-house",
+      "destination": "/",
+      "permanent": true
+    },
     {
       "source": "/campaigns/reelclip",
       "destination": "/",
@@ -18,7 +153,22 @@
       "permanent": true
     },
     {
+      "source": "/campaigns/selaras-haus",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/campaigns/soniqreign",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/soul-social",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/campaigns/still-different",
       "destination": "/",
       "permanent": true
     },
@@ -28,43 +178,193 @@
       "permanent": true
     },
     {
-      "source": "/campaigns/soul-social",
-      "destination": "/campaigns/public-house",
-      "permanent": true
-    },
-    {
-      "source": "/campaigns/angie-tiara-beauty",
-      "destination": "/campaigns/selaras-haus",
+      "source": "/creative-branding",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/creative-direction",
-      "destination": "/creative-direction-content",
+      "destination": "/",
       "permanent": true
     },
     {
-      "source": "/archive",
-      "destination": "/photography",
-      "permanent": false
+      "source": "/creative-direction-content",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/digitals",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/digitals-prep",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for-beauty-and-wellness",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for-event-planners",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/for-restaurants",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/get-more-customers",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/headshots",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/help",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/just-started",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/launch-a-product",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/launch-a-website",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/launch-your-business",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/loft-tacoma",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/logo-identity",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/moving-image",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/photo-and-video-content",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/photography",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/photography/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/photography/brands",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/photography/creative",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/photography/events",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/photography/people",
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/private",
       "destination": "/",
-      "permanent": false
-    },
-    {
-      "source": "/campaigns/essential-brows-studio",
-      "destination": "/websites/essential-brows-studio",
       "permanent": true
     },
     {
-      "source": "/campaigns/jazmins-events",
-      "destination": "/websites/jazmins-events",
+      "source": "/promote-your-business",
+      "destination": "/",
       "permanent": true
     },
     {
-      "source": "/about",
-      "destination": "/#about-hana",
+      "source": "/revamp-your-business",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/show-up-on-google",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/social-media-content",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/social-packs",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/stand-out",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/washington-business-resources",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/website-makeover",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/websites",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/websites/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/websites/essential-brows-studio",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/websites/jazmins-events",
+      "destination": "/",
       "permanent": true
     }
   ]
