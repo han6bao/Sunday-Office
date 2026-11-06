@@ -423,11 +423,10 @@ a.dcard:focus-visible{outline:2px solid #2a2230;outline-offset:6px}
 /* video coming soon: a thin, light frame */
 .mvid{border:2px solid rgba(255,255,255,.6)}
 
-.nums:not(.mini) .nv{font-size:clamp(28px,3vw,46px);font-variant-numeric:tabular-nums;white-space:nowrap}
+.nums:not(.mini) .nv{white-space:nowrap}
 
-/* footer signature: full script lettering, like the Serve first lettering */
-.sig{height:auto;overflow:visible;font-size:clamp(64px,8.5vw,140px);padding:calc(var(--sg) * .4) 16px var(--sg);align-items:center}
-.sig span{margin-top:0;color:#fff;line-height:1.3;word-spacing:.08em}
+/* footer signature: thin hand-lettered script, big and cropped */
+.sig .sigimg{display:block;flex:none;height:1.25em;width:auto;max-width:none;margin-top:-.04em;user-select:none}
 </style>
 </helmet>
 <div id="top" class="wrap" style="font-family: Manrope, 'Helvetica Neue', Arial, sans-serif">
@@ -636,9 +635,9 @@ a.dcard:focus-visible{outline:2px solid #2a2230;outline-offset:6px}
 </div>
 </div>
 <div class="nums" role="list" aria-label="Real results">
-<div class="num" role="listitem"><span class="nv cnt" data-to="2000000" data-suf="">2,000,000</span><span class="nd">views on a Seahawks post I helped make for a Seattle culture page</span></div>
-<div class="num" role="listitem"><span class="nv cnt" data-to="120000" data-suf="">120,000</span><span class="nd">views on a Reel for a Seattle artist</span></div>
-<div class="num" role="listitem"><span class="nv cnt" data-to="80000" data-suf="+">80,000+</span><span class="nd">views on same-day wedding content, 60K in the first few days</span></div>
+<div class="num" role="listitem"><span class="nv cnt" data-to="2000000" data-suf="">2M</span><span class="nd">views on a Seahawks post I helped make for a Seattle culture page</span></div>
+<div class="num" role="listitem"><span class="nv cnt" data-to="120000" data-suf="">120K</span><span class="nd">views on a Reel for a Seattle artist</span></div>
+<div class="num" role="listitem"><span class="nv cnt" data-to="80000" data-suf="+">80K+</span><span class="nd">views on same-day wedding content, 60K in the first few days</span></div>
 <div class="num" role="listitem"><span class="nv cnt" data-to="2" data-suf="×">2×</span><span class="nd">the followers for a Tacoma furniture store</span></div>
 </div>
 </div>
@@ -732,7 +731,7 @@ a.dcard:focus-visible{outline:2px solid #2a2230;outline-offset:6px}
 </form>
 </div>
 </section>
-<footer class="sig" aria-label="Sunday Office"><span>Sunday Office</span></footer>
+<footer class="sig" aria-label="Sunday Office"><img class="sigimg" src="/_blob/3d5a90e42ba380b39d4810cd509b8ad5" alt="Sunday Office"></footer>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":810}}'>
@@ -758,7 +757,7 @@ let i = 0, f = 0, rolling = false;
 const $ = (id) => document.getElementById(id);
 document.addEventListener('click', (e) => { const b = e.target.closest && e.target.closest('#vfgo'); if (!b) return; rolling = !rolling; const v = $('vf'); if (v) v.classList.toggle('go', rolling); const st = $('vfst'); if (st) st.textContent = rolling ? 'Rec' : 'Paused'; const m = b.querySelector('.mvl'); if (m) m.textContent = rolling ? '' : 'Press to roll'; });
 setInterval(() => { if (!rolling) return; f += 1; const tc = $('vftc'); if (tc) { const fr = f % 24, sec = Math.floor(f / 24); const p = (n) => String(n).padStart(2, '0'); tc.textContent = p(Math.floor(sec / 3600)) + ':' + p(Math.floor(sec / 60) % 60) + ':' + p(sec % 60) + ':' + p(fr); } if (f % 48 === 0) { const sl = document.querySelectorAll('#vf .sl'); if (!sl.length) return; sl[i % sl.length].classList.remove('on'); i += 1; const n = sl[i % sl.length]; n.classList.add('on'); const c = $('vfcap'); if (c) c.textContent = n.getAttribute('data-cap'); } }, 1000 / 24);
-const run = (el) => { if (el.__done) return; el.__done = 1; const to = +el.getAttribute('data-to'), suf = el.getAttribute('data-suf'); const t0 = performance.now(), D = 2400; const step = (t) => { const k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e).toLocaleString('en-US') + suf; if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
+const run = (el) => { if (el.__done) return; el.__done = 1; const to = +el.getAttribute('data-to'), suf = el.getAttribute('data-suf'); const t0 = performance.now(), D = 2400; const step = (t) => { const k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3); const v = Math.round(to * e); el.textContent = (v >= 1e6 ? (Math.floor(v / 1e5) / 10).toFixed(1).replace(/\.0$/, '') + 'M' : v >= 1e3 ? Math.floor(v / 1e3) + 'K' : String(v)) + suf; if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
 if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) { const vis = (el) => { const r = el.getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight || 800; return r.height > 0 && r.top < vh * 0.9 && r.bottom > 0; }; const check = () => document.querySelectorAll('.cnt').forEach((el) => { if (!el.__w) { el.__w = 1; el.textContent = '0' + el.getAttribute('data-suf'); } if (!el.__done && vis(el)) run(el); }); check(); window.addEventListener('scroll', check, { passive: true }); document.addEventListener('scroll', check, { passive: true, capture: true }); window.addEventListener('resize', check); setInterval(check, 500); }
 }
 componentDidUpdate() { window.__soComp = this; const st = this.state || {};
