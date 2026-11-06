@@ -125,7 +125,8 @@ html = f'''<!doctype html>
 {head(title, desc, '/')}
 <script type="application/ld+json">{json.dumps(ld)}</script>
 {helmet}
-<style>@media (max-width:760px){{.dbox{{left:auto !important;margin:0 auto}}}}
+<style>@font-face{{font-family:'Pinyon Script';src:url(/assets/fonts/PinyonScript-Regular.ttf) format('truetype');font-display:swap}}
+@media (max-width:760px){{.dbox{{left:auto !important;margin:0 auto}}}}
 .nojs{{max-width:640px;margin:0 auto;padding:60px 24px;color:#fff;font-family:Manrope,Arial,sans-serif}}</style>
 </head>
 <body>
@@ -197,6 +198,8 @@ for slug in SLUGS:
 for f in ['favicon.svg', 'og-card.jpg']:
     shutil.copy('/home/claude/sunday-office/public/' + f, OUT + '/' + f)
 shutil.copy(WEB + '/dc.js', OUT + '/dc.js')
+os.makedirs(OUT + '/assets/fonts', exist_ok=True)
+shutil.copy('/home/claude/sunday-office/public/assets/fonts/PinyonScript-Regular.ttf', OUT + '/assets/fonts/PinyonScript-Regular.ttf')
 open(OUT + '/robots.txt', 'w').write(f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
 open(OUT + '/sitemap.xml', 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{u}</loc></url>\n' for u in sitemap) + '</urlset>\n')
 open(OUT + '/404.html', 'w').write(f'''<!doctype html><html lang="en"><head>{head('Page not found · Sunday Office', 'This page moved.', '/404')}
