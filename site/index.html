@@ -422,6 +422,16 @@ a.dcard:focus-visible{outline:2px solid #2a2230;outline-offset:6px}
 .phlabel{left:42.1%;top:68.6%;width:14.6%;height:3.8%;transform:translate(-50%,-50%) rotate(20deg) skewX(-4.5deg)}
 .phlabel span{font-size:2.7cqw}
 @media (max-width:760px){.phone{position:relative;right:auto;top:auto;bottom:auto;transform:none;width:min(96vw,560px);margin:0}}
+
+/* even section rhythm: the same breathing room above and below every section */
+.wrap{--sg:clamp(56px,7vw,112px)}
+.phil,.meet,.quiz,.inq{padding-top:var(--sg);padding-bottom:var(--sg)}
+.phil{padding-bottom:var(--sg)}
+.sig{margin-top:calc(var(--sg) * .25)}
+@media (min-width:761px){.dial{height:calc(min(33vw,520px) * .991 + var(--sg) * 2);min-height:0}}
+@media (max-width:760px){.dial{padding:var(--sg) 16px}}
+/* video coming soon: a thin, light frame */
+.mvid{border:2px solid rgba(255,255,255,.6)}
 </style>
 
 <style>@media (max-width:760px){.dbox{left:auto !important;margin:0 auto}}
