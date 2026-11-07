@@ -416,11 +416,11 @@ a.dcard:focus-visible{outline:2px solid #2a2230;outline-offset:6px}
 
 .nolink{pointer-events:none;cursor:default}.nolink .dlink,.nolink .dopen{display:none!important}
 
-/* the original phone, no table */
-.phone{aspect-ratio:1490/1056;width:min(46vw,720px);right:3vw;top:50%;bottom:auto;margin:0;transform:translateY(-50%)}
-.pkey{width:4.6%;height:6%;transform:translate(-50%,-50%) rotate(19deg)}
-.phlabel{left:42.1%;top:68.6%;width:14.6%;height:3.8%;transform:translate(-50%,-50%) rotate(20deg) skewX(-4.5deg)}
-.phlabel span{font-size:2.7cqw}
+/* the white desk phone, no table */
+.phone{aspect-ratio:1455/1081;width:min(46vw,720px);right:3vw;top:50%;bottom:auto;margin:0;transform:translateY(-50%)}
+.pkey{width:4.8%;height:6%;transform:translate(-50%,-50%) rotate(19deg)}
+.phlabel{left:38.9%;top:68.4%;width:15.6%;height:3.6%;transform:translate(-50%,-50%) rotate(19.5deg) skewX(-6deg)}
+.phlabel span{font-size:2.6cqw}
 @media (max-width:760px){.phone{position:relative;right:auto;top:auto;bottom:auto;transform:none;width:min(96vw,560px);margin:0}}
 
 /* even section rhythm: the same breathing room above and below every section */
@@ -430,12 +430,13 @@ a.dcard:focus-visible{outline:2px solid #2a2230;outline-offset:6px}
 @media (min-width:761px){.dial{height:calc(min(33vw,520px) * .991 + var(--sg) * 2);min-height:0}}
 @media (max-width:760px){.dial{padding:var(--sg) 16px}}
 /* video coming soon: a thin, light frame */
-.mvid{border:2px solid rgba(255,255,255,.6)}
+.mvid{border:5px solid #fff}
 
 .nums:not(.mini) .nv{white-space:nowrap}
 
-/* footer signature: thin hand-lettered script, big and cropped */
-.sig .sigimg{display:block;flex:none;height:1.25em;width:auto;max-width:none;margin-top:-.04em;user-select:none}
+
+.dcard .dt{text-transform:uppercase;letter-spacing:.08em}
+.dcard img{object-position:center 22%}
 </style>
 
 <style>@font-face{font-family:'Pinyon Script';src:url(/assets/fonts/PinyonScript-Regular.ttf) format('truetype');font-display:swap}
@@ -609,7 +610,7 @@ a.dcard:focus-visible{outline:2px solid #2a2230;outline-offset:6px}
 </sc-if>
 </div>
 <div class="phone">
-<img class="phimg" src="/assets/phone.webp" alt="A cream push-button desk phone">
+<img class="phimg" src="/assets/phone-white.webp" alt="A white push-button desk phone">
 <div class="phlabel" aria-live="polite" aria-label="Number dialed"><span>{{dScreen}}</span></div>
 <sc-for list="{{keys}}" as="k" hint-placeholder-count="13">
 <button type="button" class="pkey" style="{{k.pos}}" aria-label="{{k.aria}}" onClick="{{k.press}}"></button>
@@ -749,7 +750,7 @@ a.dcard:focus-visible{outline:2px solid #2a2230;outline-offset:6px}
 </form>
 </div>
 </section>
-<footer class="sig" aria-label="Sunday Office"><img class="sigimg" src="/assets/sunday-office-script.png" alt="Sunday Office"></footer>
+<footer class="sig" aria-label="Sunday Office"><span>Sunday Office</span></footer>
 </div>
 </template>
 <script src="/dc.js"></script>
@@ -777,8 +778,9 @@ let i = 0, f = 0, rolling = false;
 const $ = (id) => document.getElementById(id);
 document.addEventListener('click', (e) => { const b = e.target.closest && e.target.closest('#vfgo'); if (!b) return; rolling = !rolling; const v = $('vf'); if (v) v.classList.toggle('go', rolling); const st = $('vfst'); if (st) st.textContent = rolling ? 'Rec' : 'Paused'; const m = b.querySelector('.mvl'); if (m) m.textContent = rolling ? '' : 'Press to roll'; });
 setInterval(() => { if (!rolling) return; f += 1; const tc = $('vftc'); if (tc) { const fr = f % 24, sec = Math.floor(f / 24); const p = (n) => String(n).padStart(2, '0'); tc.textContent = p(Math.floor(sec / 3600)) + ':' + p(Math.floor(sec / 60) % 60) + ':' + p(sec % 60) + ':' + p(fr); } if (f % 48 === 0) { const sl = document.querySelectorAll('#vf .sl'); if (!sl.length) return; sl[i % sl.length].classList.remove('on'); i += 1; const n = sl[i % sl.length]; n.classList.add('on'); const c = $('vfcap'); if (c) c.textContent = n.getAttribute('data-cap'); } }, 1000 / 24);
-const run = (el) => { if (el.__done) return; el.__done = 1; const to = +el.getAttribute('data-to'), suf = el.getAttribute('data-suf'); const t0 = performance.now(), D = 2400; const step = (t) => { const k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3); const v = Math.round(to * e); el.textContent = (v >= 1e6 ? (Math.floor(v / 1e5) / 10).toFixed(1).replace(/\.0$/, '') + 'M' : v >= 1e3 ? Math.floor(v / 1e3) + 'K' : String(v)) + suf; if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
-if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) { const vis = (el) => { const r = el.getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight || 800; return r.height > 0 && r.top < vh * 0.9 && r.bottom > 0; }; const check = () => document.querySelectorAll('.cnt').forEach((el) => { if (!el.__w) { el.__w = 1; el.textContent = '0' + el.getAttribute('data-suf'); } if (!el.__done && vis(el)) run(el); }); check(); window.addEventListener('scroll', check, { passive: true }); document.addEventListener('scroll', check, { passive: true, capture: true }); window.addEventListener('resize', check); setInterval(check, 500); }
+window.__soFmt = (v) => v >= 1e6 ? (Math.floor(v / 1e5) / 10).toFixed(1).replace(/\.0$/, '') + 'M' : v >= 1e3 ? Math.floor(v / 1e3) + 'K' : String(v);
+const run = (el) => { if (el.__done) return; el.__done = 1; const to = +el.getAttribute('data-to'), suf = el.getAttribute('data-suf'); const t0 = performance.now(), D = 2000; const step = (t) => { const k = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - k, 3); const v = Math.round(to * (0.55 + 0.45 * e)); el.textContent = (v >= 1e6 ? (Math.floor(v / 1e5) / 10).toFixed(1).replace(/\.0$/, '') + 'M' : v >= 1e3 ? Math.floor(v / 1e3) + 'K' : String(v)) + suf; if (k < 1) requestAnimationFrame(step); }; requestAnimationFrame(step); };
+if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) { const vis = (el) => { const r = el.getBoundingClientRect(), vh = window.innerHeight || document.documentElement.clientHeight || 800; return r.height > 0 && r.top < vh * 0.9 && r.bottom > 0; }; const check = () => document.querySelectorAll('.cnt').forEach((el) => { if (!el.__w) { el.__w = 1; el.textContent = window.__soFmt(Math.round(+el.getAttribute('data-to') * 0.55)) + el.getAttribute('data-suf'); } if (!el.__done && vis(el)) run(el); }); check(); window.addEventListener('scroll', check, { passive: true }); document.addEventListener('scroll', check, { passive: true, capture: true }); window.addEventListener('resize', check); setInterval(check, 500); }
 }
 componentDidUpdate() { window.__soComp = this; const st = this.state || {};
 if (st.vault && this._vt !== st.vtick) { this._vt = st.vtick; const el = document.getElementById('drawer'); if (el) el.scrollIntoView({ block: 'start', behavior: 'smooth' }); const b = document.getElementById('dbody'); if (b) b.scrollLeft = 0; }
@@ -928,6 +930,10 @@ const PIL = [
 { t: 'Event coverage', d: 'Your event or night, photographed and delivered fast enough to post.' },
 { t: 'Camera video or brand film', d: 'A directed video shoot with a hero film and vertical cuts, up to a full commercial.' }
 ], steps: [{ t: 'Talk', d: 'What the photos are for and where they will live.' }, { t: 'Plan the day', d: 'A shot list, a moodboard and the location, sorted ahead of time.' }, { t: 'Shoot', d: 'Directed, relaxed and on time.' }, { t: 'Deliver', d: 'Edited and organized, ready for your site and social.' }], work: [
+{ src: '/assets/digitals2.jpg', alt: 'Ellis in a white tee and wide jeans against a white brick wall', t: 'Digitals', d: 'Agency-ready model digitals in natural light, plus a styled look. Shot with Ellis at LOFT Tacoma.' },
+{ src: '/assets/headshots2.jpg', alt: 'A headshot of a woman with long dark hair against soft pink light', t: 'Headshots', d: 'Clean, natural headshots for your website, LinkedIn and press.' },
+{ src: '/assets/sh.jpg', alt: 'The lounge at Selaras Haus, two chairs by the window, shot on flash', t: 'Selaras Haus', d: 'Interior photos of a new beauty studio in downtown Tacoma.' },
+{ src: '/assets/bb-card.jpg', alt: 'A tall mojito with mint and lime at Bar Bistro', t: 'Bar Bistro', d: 'Food and drink photos for a Tacoma bar, kept dark and warm for their feed.' },
 { src: '/assets/ch.jpg', alt: 'A dish at Chutneys Bellevue', t: 'Chutneys Bellevue', d: 'A commercial and promo photos for a North Indian restaurant.' }
 ] },
 { k: 'C', n: '04', name: 'Content & Campaigns', title: 'Content made with a plan behind it.', intro: 'Photos, videos and campaigns made for you, with a strategy for what to post and when. You or your team post it; I make it and plan it.', items: [
@@ -940,13 +946,16 @@ const PIL = [
 ], steps: [{ t: 'Look', d: 'What is working now, and who you want to reach.' }, { t: 'Plan', d: 'A content plan and a shot list built around your goals.' }, { t: 'Make', d: 'Shoot days for photos and video, edited for every platform.' }, { t: 'Hand off', d: 'Everything ready to post, with captions and a calendar.' }], work: [
 { v: '/assets/eq-hero.mp4', alt: 'Elena Qiu film: two models face each other against a white brick wall', t: 'Elena Qiu', d: 'Editorials and film for a New York fashion designer from Seattle.', big: 1 },
 { src: '/assets/lt.jpg', alt: 'Leon Thomas performing at Vice Seattle', t: 'Leon Thomas × Vice', d: 'His tour afterparty, photographed for the venue.' },
-{ src: '/assets/jd05.jpg', alt: 'Jaydyn F. crouched in a pool of light', t: 'Jaydyn F.', d: 'Release content around his music. One reel passed 120K views.' },
+{ src: '/assets/sj-card.jpg', alt: 'Shaleah Jean holding a phone up beside a vintage mic', t: 'Shaleah Jean', d: 'Promo photos for a Seattle R&B artist, plus behind the scenes on her ReelClip performance.' },
 { src: '/assets/nine.jpg', alt: 'Nine Vicious in a red velvet jacket wearing green grillz', t: 'Nine Vicious × Custom Grillz', d: 'The promo post reached 35K views and made the discovery page.' },
-{ src: '/assets/kk04.jpg', alt: 'Kenshi Killz on a hill under a blue sky', t: 'Kenshi Killz', d: 'Promo photos for a Seattle artist.' }
+{ src: '/assets/jd05.jpg', alt: 'Jaydyn F. crouched in a pool of light', t: 'Jaydyn F.', d: 'Release content around his music. One reel passed 120K views.' },
+{ src: '/assets/pz-card.jpg', alt: 'Itz Pz in a black paisley Paradice jacket, arms out', t: 'Itz Pz × Paradice', d: 'Promo photos that became campaign content for a Seattle streetwear label, right before he signed with Empire.' },
+{ src: '/assets/sd-card2.jpg', alt: 'Still Different from behind in an ETC jacket, inside the ETC shop in Tacoma', t: 'Still Different × ETC', d: 'Artist photos in a Tacoma streetwear label, made for him and for the brand.' },
+{ src: '/assets/kk-card.jpg', alt: 'Kenshi Killz leaning over an old TV on the grass', t: 'Kenshi Killz', d: 'Promo photos for a Seattle artist.' }
 ] }
 ];
 const vault = st.vault || null;
-const WH = (t) => /Jazmin/i.test(t) ? '' : /Essential/.test(t) ? '/work/essential-brows' : /GREAN/.test(t) ? 'https://grean-matcha.vercel.app/' : /Leon/.test(t) ? '/work/leon-thomas' : /Chutneys/.test(t) ? '/work/chutneys' : /Nine Vicious/.test(t) ? '/work/nine-vicious' : /Kenshi/.test(t) ? '/work/kenshi-killz' : /Jaydyn/.test(t) ? '/work/jaydyn-f' : '/work/elena-qiu';
+const WH = (t) => /Jazmin/i.test(t) ? '' : /Headshot/i.test(t) ? '/work/headshots' : /Ellis|Digitals/.test(t) ? '/work/ellis' : /Shaleah/.test(t) ? '/work/shaleah-jean' : /Bar Bistro/.test(t) ? '/work/bar-bistro' : /Itz Pz|Paradice/.test(t) ? '/work/itz-pz' : /Still Different/.test(t) ? '/work/still-different' : /Selaras/.test(t) ? '/work/selaras-haus' : /Essential/.test(t) ? '/work/essential-brows' : /GREAN/.test(t) ? 'https://grean-matcha.vercel.app/' : /Leon/.test(t) ? '/work/leon-thomas' : /Chutneys/.test(t) ? '/work/chutneys' : /Nine Vicious/.test(t) ? '/work/nine-vicious' : /Kenshi/.test(t) ? '/work/kenshi-killz' : /Jaydyn/.test(t) ? '/work/jaydyn-f' : '/work/elena-qiu';
 PIL.forEach((x) => { x.work = x.work.map((w) => Object.assign({}, w, { h: WH(w.t + ' ' + (w.alt || '')), isV: !!w.v, isImg: !w.v, tg: /^http/.test(WH(w.t + ' ' + (w.alt || ''))) ? '_blank' : '_self', cls: 'pnl dcard' + (WH(w.t + ' ' + (w.alt || '')) ? '' : ' nolink') + (w.big ? ' big' : '') + (w.v ? ' vid' : '') })); });
 PIL.forEach((x) => { x.steps = x.steps.map((sp, j) => Object.assign({}, sp, { n: '0' + (j + 1) })); });
 const pillars = PIL.map((x, i) => { const nx = PIL[(i + 1) % PIL.length]; return Object.assign({}, x, { id: 'v-' + x.k, kicker: x.n + ' · ' + x.name, tabCls: 'dtab' + (vault === x.k ? ' on' : ''), go: openV(x.k), next: openV(nx.k), nextLabel: 'Next: ' + nx.name, startLabel: 'Start a ' + x.name + ' project', start: () => this.setState({ vault: null, f: Object.assign({}, f, { need: f.need ? f.need : x.name }) }) }); });
@@ -957,7 +966,7 @@ const DI = [
 { src: '/assets/lt.jpg', alt: 'Leon Thomas performing at Vice Seattle', t: 'Leon Thomas × Vice', w: 'Event photography', d: 'His tour afterparty at Vice Seattle, photographed for the venue.', h: '/work/leon-thomas' },
 { src: '/assets/jd03.jpg', alt: 'Jaydyn F. in a white jacket with a red laser line', t: 'Jaydyn F. · SCREAM', w: 'Music video release', d: 'Lighting, set photos and behind the scenes for his new single. The photos carried the whole rollout.', h: '/work/jaydyn-scream' },
 { src: '/assets/eq01.jpg', alt: 'Two models in Elena Qiu’s white pieces', t: 'Elena Qiu', w: 'Fashion editorial + film', d: 'Editorials for a New York fashion designer from Seattle, shot around her shows for years.', h: '/work/elena-qiu' },
-{ src: '/assets/sh.jpg', alt: 'The lounge at Selaras Haus, a beauty studio in Tacoma', t: 'Selaras Haus', w: 'Interior photography', d: 'A calm, warm studio in downtown Tacoma, photographed for its social media and branding.', h: '/work/selaras-haus' },
+{ src: '/assets/sh-card.jpg', alt: 'A soft armchair and a palm in the Selaras Haus studio in Tacoma', t: 'Selaras Haus', w: 'Interior photography', d: 'A calm, warm studio in downtown Tacoma, photographed for its social media and branding.', h: '/work/selaras-haus' },
 { src: '/assets/ch.jpg', alt: 'A dish at Chutneys Bellevue', t: 'Chutneys Bellevue', w: 'Commercial + photos', d: 'A commercial and promo photos for a North Indian restaurant.', h: '/work/chutneys' },
 { src: '/assets/nine.jpg', alt: 'Nine Vicious in a red velvet jacket wearing green grillz', t: 'Nine Vicious × Custom Grillz', w: 'Photography + promotion', d: 'My photos became the most-liked post on jeweler Marcus Adam’s page.', h: '/work/nine-vicious' },
 { src: '/assets/exh.jpg', alt: 'A styled portrait from the Exhibition campaign', t: 'Exhibition', w: 'Campaign direction', d: 'A campaign I directed from the idea to the day on set.', h: '/work/exhibition' },
@@ -966,13 +975,16 @@ const DI = [
 { src: '/assets/kk04.jpg', alt: 'Kenshi Killz on a hill under a blue sky', t: 'Kenshi Killz', w: 'Promo photos', d: 'Promo photos for a Seattle artist, plus location and on-set help for her ReelClip TV performance.', h: '/work/kenshi-killz' },
 { src: '/assets/sd.jpg', alt: 'Still Different in a studio', t: 'Still Different × ETC', w: 'Artist + gear photography', d: 'Portraits and gear photos for an artist and his brand.', h: '/work/still-different' },
 { src: '/assets/dj.jpg', alt: 'DJ Wzrd singing under pink light', t: 'DJ Wzrd', w: 'Nightlife photography', d: 'Nightlife photography for a Seattle DJ.', h: '/work/dj-wzrd' },
+{ src: '/assets/bb-dial.jpg', alt: 'Three cocktails beside a lit candle at Bar Bistro', t: 'Bar Bistro', w: 'Food + drink photography', d: 'Food and drink photos for a Tacoma bar and restaurant, plus a table shoot with Tacoma Uncovered.', h: '/work/bar-bistro' },
+{ src: '/assets/pz-dial.jpg', alt: 'Itz Pz in a Paradice paisley jacket', t: 'Itz Pz × Paradice', w: 'Artist + streetwear campaign', d: 'Promo photos for a Seattle rapper in Paradice Worldwide, right before he signed with Empire.', h: '/work/itz-pz' },
+{ src: '/assets/sj-dial.jpg', alt: 'Shaleah Jean on a park bench in a white puffer jacket', t: 'Shaleah Jean', w: 'Artist photos + ReelClip performance', d: 'Promo photos for a Seattle R&B artist, granddaughter of Bootsy Collins, plus behind the scenes on her ReelClip segment.', h: '/work/shaleah-jean' },
 { src: '/assets/ebkit.jpg', alt: 'The Essential Brows brand kit', t: 'Essential Brows brand kit', w: 'Brand kit', d: 'Her logo, kept, with a calm, clean brand kit built around it.', h: '/work/essential-brows' }
 ];
 const dial = st.dial || '';
 const shown = st.shown || 0;
 const commit = (num) => this.setState({ shown: parseInt(num, 10), dial: '', lastDial: num });
 const pressD = (d) => () => { const nd = ((this.state && this.state.dial) || '') + d; if (nd.length >= 2) { commit(nd); return; } this.setState({ dial: nd }); setTimeout(() => { if (this.state && this.state.dial === nd) commit(nd); }, 1100); };
-const KP = {'1': 'left:45.9%;top:39.4%', '2': 'left:51.0%;top:42.0%', '3': 'left:56.2%;top:44.7%', '4': 'left:43.7%;top:45.8%', '5': 'left:48.9%;top:48.4%', '6': 'left:54.1%;top:51.1%', '7': 'left:41.3%;top:52.5%', '8': 'left:46.7%;top:55.1%', '9': 'left:52.0%;top:57.8%', '*': 'left:39.0%;top:59.3%', '0': 'left:44.4%;top:62.0%', '#': 'left:49.8%;top:64.8%', 'R': 'left:55.7%;top:68.1%'};
+const KP = {'1': 'left:43.4%;top:41.7%', '2': 'left:48.5%;top:44.2%', '3': 'left:53.8%;top:46.6%', '4': 'left:41.0%;top:47.5%', '5': 'left:46.2%;top:50.1%', '6': 'left:51.6%;top:52.6%', '7': 'left:38.5%;top:53.6%', '8': 'left:43.9%;top:56.2%', '9': 'left:49.4%;top:58.8%', '*': 'left:35.9%;top:59.8%', '0': 'left:41.5%;top:62.4%', '#': 'left:47.0%;top:65.2%', 'R': 'left:54.7%;top:61.8%'};
 const callD = () => { const d = (this.state && this.state.dial) || ''; if (d) commit(d); };
 const keys = ['1','2','3','4','5','6','7','8','9'].map((d) => ({ aria: 'Dial ' + d, pos: KP[d], press: pressD(d) })).concat([
 { aria: 'Clear', pos: KP['*'], press: () => this.setState({ dial: '', shown: 0, lastDial: '' }) },

@@ -24,9 +24,9 @@ body{margin:0;background:#9b87a0}
 .pg.js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.pg.js .rv{opacity:1;transform:none;transition:none}}
 .ph.gal{display:flex;flex-direction:column;gap:12px}
-.ph.gal img.big{width:100%;height:auto;max-height:90vh;object-fit:cover}
+.ph.gal img.big{width:100%;height:auto;max-height:90vh;object-fit:cover;object-position:center 20%}
 .strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:rgba(42,34,48,.35) transparent}
-.strip img{flex:0 0 auto;height:clamp(200px,26vw,320px);width:auto;scroll-snap-align:start}
+.strip img,.ph .strip img{flex:0 0 auto;height:clamp(200px,26vw,320px);width:auto;max-width:none;aspect-ratio:auto;scroll-snap-align:start}
 .hint{color:rgba(42,34,48,.55)}
 .fcap{font-size:13px;color:rgba(42,34,48,.7)}
 .pg{min-height:100vh;background:url(/assets/tile-flat.jpg) center top/100% auto repeat-y,#9b87a0;color:#fff;font-family:Manrope,'Helvetica Neue',Arial,sans-serif;padding-bottom:90px}
@@ -44,7 +44,7 @@ body{margin:0;background:#9b87a0}
 .facts div{display:flex;flex-direction:column;gap:4px;min-width:0}
 .facts dt{font-weight:800;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,34,48,.58)}
 .facts dd{margin:0;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
-.hero{display:block;width:100%;height:auto;max-height:78vh;object-fit:cover}
+.hero{display:block;width:100%;height:auto;max-height:78vh;object-fit:cover;object-position:center 22%}
 .pull{margin:0;font-weight:500;font-size:clamp(20px,2.4vw,28px);line-height:1.4;letter-spacing:-.01em;max-width:30em}
 .sec{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid rgba(42,34,48,.2)}
 .sm{font-weight:800;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(42,34,48,.6)}
@@ -82,6 +82,11 @@ img.zm{cursor:zoom-in}
 .brk img{display:block}
 .sec .brk{margin-top:4px}
 
+.tclip{flex:0 0 auto;margin:0;width:clamp(260px,44vw,460px);scroll-snap-align:start;display:flex;flex-direction:column;gap:8px}
+.tclip video{display:block;width:100%;aspect-ratio:1266/720;object-fit:cover;background:#d9d0dd}
+.tclip figcaption{font-size:13px;line-height:1.5;color:rgba(42,34,48,.75)}
+.tclip figcaption b{color:#2a2230;font-weight:600}
+.tour{display:flex;flex-direction:column;gap:6px;margin-top:6px}
 .yt{position:relative;width:100%;aspect-ratio:16/9;background:#1a161c}
 .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 video.widefilm{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#d9d0dd}

@@ -31,7 +31,7 @@ def asset(i):
 def blobs(s):
     return re.sub(r'/_blob/([0-9a-f]{32})', lambda m: asset(m.group(1)), s)
 
-SLUGS = ['ellis','essential-brows','leon-thomas','jaydyn-scream','elena-qiu','selaras-haus','chutneys','nine-vicious','exhibition','jaydyn-f','kenshi-killz','still-different','dj-wzrd']
+SLUGS = ['ellis','essential-brows','leon-thomas','jaydyn-scream','elena-qiu','selaras-haus','chutneys','nine-vicious','exhibition','jaydyn-f','kenshi-killz','still-different','dj-wzrd','bar-bistro','itz-pz','shaleah-jean','headshots']
 def links(s):
     s = re.sub(r'p-([a-z0-9-]+)\.dc\.html', lambda m: '/work/' + m.group(1), s)
     return s
