@@ -269,6 +269,15 @@ button:focus,button:focus-visible{outline:none}
 .phwhy{display:block !important;max-height:0;opacity:0;overflow:hidden;margin-top:0 !important;transform:translateY(6px);transition:max-height .9s cubic-bezier(.2,.6,.2,1),opacity .8s ease,transform .8s ease,margin .6s ease}
 .phwhy.open{max-height:420px;opacity:1;transform:none;margin-top:18px !important}
 @media (min-width:821px){.two::after{content:'';position:absolute;left:50%;top:27%;bottom:24%;width:1px;background:rgba(242,233,216,.28);pointer-events:none;z-index:2}}
+
+@media (max-width:820px){
+  .two .mid{align-self:start;margin-top:12svh}
+  .phil2{align-items:flex-start}
+  .phil2 .phbox{padding-top:calc(env(safe-area-inset-top,0px) + clamp(28px,5vh,56px) + 12px + 12svh)}
+}
+.bn ul{display:block;width:min(320px,100%);margin:0 auto 30px;counter-reset:bn;border-top:1px solid rgba(122,46,46,.18)}
+.bn li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 2px;border-bottom:1px solid rgba(122,46,46,.18);text-align:left;counter-increment:bn}
+.bn li::before{content:counter(bn,decimal-leading-zero);font-size:10px;letter-spacing:.2em;opacity:.55;order:2}
 @media (prefers-reduced-motion:reduce){html{scroll-snap-type:none}.js .two .mid > *,.js .two .base{opacity:1;transform:none;transition:none}}
 body{margin:0}
 </style>
