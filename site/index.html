@@ -288,6 +288,8 @@ img::selection,.one ::selection{background:transparent}
 .sgm{position:absolute;z-index:2;bottom:clamp(14px,2.2vw,30px);font-style:normal;font-family:var(--sans);font-size:clamp(9px,.75vw,11px);font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:#7a2e2e}
 .sgm.l{left:max(20px,3vw)}.sgm.r{right:max(20px,3vw)}
 
+.orn{position:absolute;z-index:0;bottom:clamp(6px,1vw,14px);width:clamp(64px,8.5vw,150px);height:auto;pointer-events:none}
+.orn.l{left:clamp(8px,1.2vw,20px)}.orn.r{right:clamp(8px,1.2vw,20px)}
 @media (prefers-reduced-motion:reduce){html{scroll-snap-type:none}.js .two .mid > *,.js .two .base{opacity:1;transform:none;transition:none}}
 body{margin:0}
 </style>
@@ -348,7 +350,7 @@ body{margin:0}
   </div>
 </section>
 
-<footer class="sig" aria-label="Sunday Office"><span>Sunday Office</span></footer>
+<footer class="sig" aria-label="Sunday Office"><img class="orn l" src="w/orn-l.png" alt="" aria-hidden="true" draggable="false"><img class="orn r" src="w/orn-r.png" alt="" aria-hidden="true" draggable="false"><span>Sunday Office</span></footer>
 </div>
 
 <div class="gal" id="gal" role="dialog" aria-modal="true" aria-label="Work" hidden>
