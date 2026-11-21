@@ -248,6 +248,8 @@ button:focus,button:focus-visible{outline:none}
   .panel.hero{background:#fff}
   .panel.hero > img,.panel.hero > video{inset:clamp(40px,7vh,72px) max(56px,5vw);width:calc(100% - 2*max(56px,5vw));height:calc(100% - 2*clamp(40px,7vh,72px));object-fit:contain;object-position:center}
 }
+
+@media (max-width:820px){.m-tag .dot{margin:0 .5em}.wheel{position:absolute;left:50%;margin:0 0 0 -15px;top:calc(100svh - env(safe-area-inset-top,0px) - 26px - env(safe-area-inset-bottom,0px) - 64px)}}
 @media (prefers-reduced-motion:reduce){html{scroll-snap-type:none}.js .two .mid > *,.js .two .base{opacity:1;transform:none;transition:none}}
 body{margin:0}
 </style>
