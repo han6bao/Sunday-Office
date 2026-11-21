@@ -268,6 +268,7 @@ button:focus,button:focus-visible{outline:none}
 
 .phwhy{display:block !important;max-height:0;opacity:0;overflow:hidden;margin-top:0 !important;transform:translateY(6px);transition:max-height .9s cubic-bezier(.2,.6,.2,1),opacity .8s ease,transform .8s ease,margin .6s ease}
 .phwhy.open{max-height:420px;opacity:1;transform:none;margin-top:18px !important}
+@media (min-width:821px){.two::after{content:'';position:absolute;left:50%;top:14%;bottom:24%;width:1px;background:rgba(242,233,216,.28);pointer-events:none;z-index:2}}
 @media (prefers-reduced-motion:reduce){html{scroll-snap-type:none}.js .two .mid > *,.js .two .base{opacity:1;transform:none;transition:none}}
 body{margin:0}
 </style>
