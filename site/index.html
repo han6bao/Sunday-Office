@@ -283,6 +283,8 @@ button:focus,button:focus-visible{outline:none}
 .sig::before{content:'';position:absolute;left:0;right:0;top:0;height:max(520px,100vh);height:max(520px,100svh);background:#90a6b2 url(two.webp) center/cover no-repeat;transform:scaleY(-1);pointer-events:none}
 .sig span{position:relative;z-index:1;color:#5c2b22 !important}
 .lim{color:#f4e2ba !important}
+img,video,picture,svg,.one,.one *,.sig,.sig *,.wheel{-webkit-user-select:none;user-select:none;-webkit-user-drag:none;-webkit-touch-callout:none}
+img::selection,.one ::selection{background:transparent}
 @media (prefers-reduced-motion:reduce){html{scroll-snap-type:none}.js .two .mid > *,.js .two .base{opacity:1;transform:none;transition:none}}
 body{margin:0}
 </style>
@@ -291,7 +293,7 @@ body{margin:0}
 <body>
 <section class="slide one" aria-label="Sunday Office, Seattle">
   <span class="m-tag">Sunday Office<span class="dot">·</span>Seattle<button type="button" class="wheel" aria-label="Scroll down"><svg viewBox="0 0 200 200" aria-hidden="true"><path fill-rule="evenodd" fill="currentColor" d="M 182 100 A 82 82 0 1 1 18 100 A 82 82 0 1 1 182 100 Z M 175 100 A 75 75 0 1 1 25 100 A 75 75 0 1 1 175 100 Z M 135 100 A 35 35 0 1 1 65 100 A 35 35 0 1 1 135 100 Z M 135 96.5 L 175 96.5 L 175 103.5 L 135 103.5 Z M 120.531 128.561 L 140.531 163.202 L 134.469 166.702 L 114.469 132.061 Z M 85.531 132.061 L 65.531 166.702 L 59.469 163.202 L 79.469 128.561 Z M 65 103.5 L 25 103.5 L 25 96.5 L 65 96.5 Z M 79.469 71.439 L 59.469 36.798 L 65.531 33.298 L 85.531 67.939 Z M 114.469 67.939 L 134.469 33.298 L 140.531 36.798 L 120.531 71.439 Z"/></svg></button></span>
-  <picture><source media="(max-width:820px)" srcset="one-m.webp"><img src="one.webp" alt="Hana kneeling on a lilac studio floor, reading her laptop. Sunday Office, Seattle." width="2400" height="1350"></picture>
+  <picture><source media="(max-width:820px)" srcset="one-m.webp"><img draggable="false" src="one.webp" alt="Hana kneeling on a lilac studio floor, reading her laptop. Sunday Office, Seattle." width="2400" height="1350"></picture>
 </section>
 
 <div class="blue">
