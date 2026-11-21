@@ -285,6 +285,8 @@ button:focus,button:focus-visible{outline:none}
 .lim{color:#f2e9d8 !important}
 img,video,picture,svg,.one,.one *,.sig,.sig *,.wheel{-webkit-user-select:none;user-select:none;-webkit-user-drag:none;-webkit-touch-callout:none}
 img::selection,.one ::selection{background:transparent}
+.sgm{position:absolute;z-index:2;bottom:clamp(14px,2.2vw,30px);font-style:normal;font-family:var(--sans);font-size:clamp(9px,.75vw,11px);font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:#7a2e2e}
+.sgm.l{left:max(20px,3vw)}.sgm.r{right:max(20px,3vw)}
 @media (prefers-reduced-motion:reduce){html{scroll-snap-type:none}.js .two .mid > *,.js .two .base{opacity:1;transform:none;transition:none}}
 body{margin:0}
 </style>
@@ -345,7 +347,7 @@ body{margin:0}
   </div>
 </section>
 
-<footer class="sig" aria-label="Sunday Office"><span>Sunday Office</span></footer>
+<footer class="sig" aria-label="Sunday Office"><i class="sgm l">Est. 2026</i><i class="sgm r">Seattle, WA</i><span>Sunday Office</span></footer>
 </div>
 
 <div class="gal" id="gal" role="dialog" aria-modal="true" aria-label="Work" hidden>
