@@ -278,6 +278,10 @@ button:focus,button:focus-visible{outline:none}
 .bn ul{display:block;width:min(320px,100%);margin:0 auto 30px;counter-reset:bn;border-top:1px solid rgba(122,46,46,.18)}
 .bn li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 2px;border-bottom:1px solid rgba(122,46,46,.18);text-align:left;counter-increment:bn}
 .bn li::before{content:counter(bn,decimal-leading-zero);font-size:10px;letter-spacing:.2em;opacity:.55;order:2}
+
+.sig{position:relative}
+.sig::before{content:'';position:absolute;left:0;right:0;top:0;height:max(520px,100vh);height:max(520px,100svh);background:#90a6b2 url(two.webp) center/cover no-repeat;transform:scaleY(-1);pointer-events:none}
+.sig span{position:relative;z-index:1}
 @media (prefers-reduced-motion:reduce){html{scroll-snap-type:none}.js .two .mid > *,.js .two .base{opacity:1;transform:none;transition:none}}
 body{margin:0}
 </style>
