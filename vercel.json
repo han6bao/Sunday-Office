@@ -366,6 +366,16 @@
       "source": "/websites/jazmins-events",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/work/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/work",
+      "destination": "/",
+      "permanent": false
     }
   ]
 }
